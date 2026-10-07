@@ -38,4 +38,4 @@ The laboratory is co-led by two principal investigators:
 
 경북대학교 에너지화학공학과 ACE² Lab은 김태욱 교수와 임창용 교수가 공동으로 운영하는 연구실입니다. 차세대 화학 및 에너지 소재·소자 분야를 연구하며, 최근에는 초고속 펄스광(IPL) 열처리와 레이저 유도 그래핀을 활용한 에너지 저장 소자, 센서, 양자점 소재를 다루고 있습니다.
 
-Our recent work covers supercapacitors, lithium-ion battery anodes, colloidal quantum dot solids and flexible sensors. Selected publications and lab news are listed below.
+Our recent work covers supercapacitors, lithium-ion battery anodes, colloidal quantum dot solids and flexible sensors. Selected publications and lab news are listed below. Meet our full research team on the [Members](/members/) page.

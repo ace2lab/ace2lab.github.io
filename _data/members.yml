@@ -1,0 +1,147 @@
+# ============================================================
+# ACE² Lab Team Members Data
+# Kyungpook National University
+# ============================================================
+
+# ------------------------------------------------------------
+# 1. Principal Investigators (Co-PIs)
+# ------------------------------------------------------------
+- id: taewook-kim
+  group: pi
+  order: 1
+  name_ko: 김태욱
+  name_en: Taewook Kim
+  title_ko: 교수
+  title_en: Professor
+  affiliation_ko: 경북대학교 에너지화학공학과
+  affiliation_en: Department of Energy Chemical Engineering, KNU
+  email: taewook@knu.ac.kr
+  photo: ""
+  topics:
+    - Energy Materials
+    - Supercapacitors
+    - Electrochemical Catalysis
+  links:
+    email: taewook@knu.ac.kr
+    scholar: ""
+    orcid: ""
+  bio: "경북대학교 에너지화학공학과 교수. 차세대 에너지 저장 소재 및 전기화학 소자 연구를 이끌고 있습니다."
+
+- id: changyong-yim
+  group: pi
+  order: 2
+  name_ko: 임창용
+  name_en: Changyong Yim
+  title_ko: 부교수
+  title_en: Associate Professor
+  affiliation_ko: 경북대학교 에너지화학공학과
+  affiliation_en: Department of Energy Chemical Engineering, KNU
+  email: cy.yim@knu.ac.kr
+  photo: ""
+  topics:
+    - Pulsed Light Processing (IPL)
+    - Colloidal Quantum Dots
+    - Flexible Sensors
+  links:
+    email: cy.yim@knu.ac.kr
+    scholar: "https://scholar.google.com/citations?user=oYBJT_kAAAAJ"
+    orcid: "https://orcid.org/0000-0002-4370-4038"
+    github: "https://github.com/Cdragon-github"
+  bio: "경북대학교 에너지화학공학과 부교수. 초고속 광열처리 기술(IPL) 기반의 차세대 나노소재 합성 및 유연 센서/에너지 소자를 연구하고 있습니다."
+
+# ------------------------------------------------------------
+# 2. Graduate Students (Ph.D. & M.S.)
+# ------------------------------------------------------------
+- id: jaeho-lee
+  group: phd
+  order: 1
+  name_ko: 이재호
+  name_en: Jaeho Lee
+  role_ko: 박사과정
+  role_en: Ph.D. Student
+  topics:
+    - Supercapacitors
+    - MOF / Sulfide Composites
+  email: ""
+  photo: ""
+
+- id: jaebin-ahn
+  group: ms
+  order: 2
+  name_ko: 안재빈
+  name_en: Jaebin Ahn
+  role_ko: 석사과정
+  role_en: M.S. Student
+  topics:
+    - Nanocomposites
+    - Battery Anodes
+  email: ""
+  photo: ""
+
+- id: myeongseo-kang
+  group: ms
+  order: 3
+  name_ko: 강명서
+  name_en: Myeongseo Kang
+  role_ko: 석사과정
+  role_en: M.S. Student
+  topics:
+    - Flexible Sensors
+    - Laser-Induced Graphene
+  email: ""
+  photo: ""
+
+# ------------------------------------------------------------
+# 3. Undergraduate Researchers
+# ------------------------------------------------------------
+- id: gyeongjin-kim
+  group: ug
+  order: 1
+  name_ko: 김경진
+  name_en: Gyeongjin Kim
+  role_ko: 학부연구생
+  role_en: Undergraduate Researcher
+  topics:
+    - Functional Nanomaterials
+  email: ""
+  photo: ""
+
+- id: sungwoo-kim
+  group: ug
+  order: 2
+  name_ko: 김성우
+  name_en: Sungwoo Kim
+  role_ko: 학부연구생
+  role_en: Undergraduate Researcher
+  topics:
+    - Chemical Engineering
+  email: ""
+  photo: ""
+
+- id: minsoo-kim
+  group: ug
+  order: 3
+  name_ko: 김민수
+  name_en: Minsoo Kim
+  role_ko: 학부연구생
+  role_en: Undergraduate Researcher
+  topics:
+    - Energy Materials
+  email: ""
+  photo: ""
+
+# ------------------------------------------------------------
+# 4. Proud Alumni
+# ------------------------------------------------------------
+- id: heejin-lee
+  group: alumni
+  order: 1
+  name_ko: 이희진
+  name_en: Huijin Lee
+  degree: M.S.
+  grad_year: 2026
+  thesis: "Study on High-Performance Supercapacitor Electrodes"
+  now:
+    affiliation: "Industry / Institute"
+    position: "Researcher"
+    url: ""

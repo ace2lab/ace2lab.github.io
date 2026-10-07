@@ -1,0 +1,276 @@
+/* ============================================================
+   ACE² Lab Hybrid Team Grid & Member Card CSS
+   Inspired by Greene Lab LWT & Optimized for al-folio v1
+   ============================================================ */
+
+.team-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-section {
+  margin-bottom: 3.5rem;
+}
+
+.team-section__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--global-divider-color, #e2e8f0);
+  color: var(--global-text-color, #1e293b);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team-section__count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--global-text-color-light, #64748b);
+  background: var(--global-bg-color, #f1f5f9);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--global-divider-color, #cbd5e1);
+}
+
+/* Grids */
+.team-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.team-grid--pi {
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .team-grid--pi {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Member Card */
+.member-card {
+  background: var(--global-card-bg-color, #ffffff);
+  border: 1px solid var(--global-divider-color, #e2e8f0);
+  border-radius: 14px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.member-card--pi {
+  padding: 2.25rem 1.5rem;
+  border: 1.5px solid var(--global-theme-color, #0284c7);
+  background: linear-gradient(180deg, var(--global-card-bg-color, #ffffff) 0%, rgba(2, 132, 199, 0.03) 100%);
+}
+
+/* Avatar */
+.member-card__avatar-wrapper {
+  margin-bottom: 1rem;
+}
+
+.member-card__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--global-bg-color, #f8fafc);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.member-card--pi .member-card__avatar {
+  width: 145px;
+  height: 145px;
+}
+
+.member-card__avatar--placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--global-theme-color, #0284c7) 0%, #38bdf8 100%);
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.member-card--pi .member-card__avatar--placeholder {
+  width: 145px;
+  height: 145px;
+  font-size: 2.6rem;
+}
+
+/* Content */
+.member-card__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.member-card__name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  color: var(--global-text-color, #1e293b);
+}
+
+.member-card__name-en {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--global-text-color-light, #64748b);
+  margin-top: 0.15rem;
+}
+
+.member-card__role {
+  margin: 0.4rem 0 0.75rem 0;
+}
+
+.member-card__role .badge {
+  font-size: 0.78rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.badge-primary {
+  background-color: var(--global-theme-color, #0284c7) !important;
+  color: #ffffff !important;
+}
+
+.badge-secondary {
+  background-color: var(--global-divider-color, #e2e8f0) !important;
+  color: var(--global-text-color, #334155) !important;
+}
+
+.badge-outline {
+  border: 1px solid var(--global-theme-color, #0284c7);
+  color: var(--global-theme-color, #0284c7);
+  background: transparent;
+}
+
+.member-card__bio {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--global-text-color, #334155);
+  margin: 0.5rem 0 1rem 0;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+/* Topic Tags */
+.member-card__topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.6rem 0;
+}
+
+.topic-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--global-bg-color, #f1f5f9);
+  color: var(--global-text-color, #475569);
+  border: 1px solid var(--global-divider-color, #e2e8f0);
+}
+
+/* Links */
+.member-card__links {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  align-items: center;
+}
+
+.link-icon {
+  color: var(--global-text-color-light, #64748b);
+  font-size: 1.15rem;
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.link-icon:hover {
+  color: var(--global-theme-color, #0284c7);
+  transform: scale(1.15);
+}
+
+/* Alumni List */
+.alumni-list {
+  background: var(--global-card-bg-color, #ffffff);
+  border: 1px solid var(--global-divider-color, #e2e8f0);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.alumni-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--global-divider-color, #e2e8f0);
+  font-size: 0.95rem;
+  transition: background 0.15s ease;
+}
+
+.alumni-row:last-child {
+  border-bottom: none;
+}
+
+.alumni-row:hover {
+  background: var(--global-bg-color, #f8fafc);
+}
+
+.alumni-row__left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.alumni-row__thesis {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light, #64748b);
+  margin-left: 0.5rem;
+}
+
+.alumni-row__now {
+  font-weight: 600;
+  color: var(--global-theme-color, #0284c7);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .alumni-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}

@@ -1,0 +1,60 @@
+{% assign m = include.member %}
+{% assign variant = include.variant | default: 'regular' %}
+
+<div class="member-card member-card--{{ variant }}" id="member-{{ m.id }}">
+  <div class="member-card__avatar-wrapper">
+    {% if m.photo and m.photo != '' %}
+      <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__avatar" loading="lazy">
+    {% else %}
+      <div class="member-card__avatar member-card__avatar--placeholder">
+        <span>{{ m.name_en | slice: 0, 1 }}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="member-card__content">
+    <h3 class="member-card__name">
+      {{ m.name_ko }}
+      <span class="member-card__name-en">{{ m.name_en }}</span>
+    </h3>
+
+    <div class="member-card__role">
+      {% if variant == 'pi' %}
+        <span class="badge badge-primary">{{ m.title_ko }} · {{ m.title_en }}</span>
+      {% else %}
+        <span class="badge badge-secondary">{{ m.role_ko }}</span>
+      {% endif %}
+    </div>
+
+    {% if variant == 'pi' and m.bio and m.bio != '' %}
+      <p class="member-card__bio">{{ m.bio }}</p>
+    {% endif %}
+
+    {% if m.topics and m.topics.size > 0 %}
+      <div class="member-card__topics">
+        {% for t in m.topics %}
+          <span class="topic-tag">{{ t }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if m.links %}
+      <div class="member-card__links">
+        {% if m.links.email and m.links.email != '' %}
+          <a href="mailto:{{ m.links.email }}" title="Email" class="link-icon"><i class="fa-solid fa-envelope"></i></a>
+        {% endif %}
+        {% if m.links.scholar and m.links.scholar != '' %}
+          <a href="{{ m.links.scholar }}" target="_blank" rel="noopener" title="Google Scholar" class="link-icon"
+            ><i class="ai ai-google-scholar"></i
+          ></a>
+        {% endif %}
+        {% if m.links.orcid and m.links.orcid != '' %}
+          <a href="{{ m.links.orcid }}" target="_blank" rel="noopener" title="ORCID" class="link-icon"><i class="ai ai-orcid"></i></a>
+        {% endif %}
+        {% if m.links.github and m.links.github != '' %}
+          <a href="{{ m.links.github }}" target="_blank" rel="noopener" title="GitHub" class="link-icon"><i class="fa-brands fa-github"></i></a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{% assign a = include.alumni %}
+
+<div class="alumni-row">
+  <div class="alumni-row__left">
+    <span class="alumni-row__badge badge badge-outline">{{ a.degree }} · {{ a.grad_year }}</span>
+    <span class="alumni-row__name"
+      ><strong>{{ a.name_ko }}</strong> <span class="text-muted">({{ a.name_en }})</span></span
+    >
+  </div>
+  {% if a.thesis and a.thesis != '' %}
+    <div class="alumni-row__thesis">
+      <i class="fa-solid fa-graduation-cap"></i> <em>"{{ a.thesis }}"</em>
+    </div>
+  {% endif %}
+  <div class="alumni-row__now">
+    <span class="alumni-row__arrow">→</span>
+    <span class="alumni-row__dest">
+      {% if a.now.url and a.now.url != '' %}
+        <a href="{{ a.now.url }}" target="_blank" rel="noopener">{{ a.now.affiliation }}</a>
+      {% else %}
+        {{ a.now.affiliation }}
+      {% endif %}
+      {% if a.now.position and a.now.position != '' %}
+        <span class="text-muted">({{ a.now.position }})</span>
+      {% endif %}
+    </span>
+  </div>
+</div>
