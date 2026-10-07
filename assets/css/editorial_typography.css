@@ -1,0 +1,340 @@
+/* ============================================================
+   ACE² Lab — Site-Wide Editorial Typography & Design System
+   Kyungpook National University (KNU)
+   
+   Design Principles:
+   1. Editorial Calm      — whitespace & hairlines over heavy boxes
+   2. Dual-Script Family  — Pretendard Variable for Korean + Latin glyphs
+   3. Tone over Chroma    — slate neutrals with Deep Navy (#1e3a5f) accent
+   4. 4px Rhythm          — strict modular scale and line height
+   5. Academic Parity     — balanced visual weight for Co-PIs and research
+   ============================================================ */
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+:root {
+  /* Suppress al-folio core magenta (#b509ac) with Deep Academic Navy */
+  --global-theme-color: #1e3a5f !important;
+  --global-hover-color: #0f172a !important;
+  --global-hover-text-color: #ffffff !important;
+
+  --global-bg-color: #ffffff;
+  --global-card-bg-color: #ffffff;
+  --global-text-color: #334155;
+  --global-text-color-light: #64748b;
+  --global-divider-color: #e2e8f0;
+  --global-code-bg-color: #f8fafc;
+
+  /* Font Family SSOT */
+  --font-editorial:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+}
+
+html[data-theme="dark"] {
+  /* Suppress al-folio core cyan (#2698ba) with Desaturated Steel Blue */
+  --global-theme-color: #9db7d9 !important;
+  --global-hover-color: #cbd5e1 !important;
+  --global-hover-text-color: #0f172a !important;
+
+  --global-bg-color: #1c1c1d;
+  --global-card-bg-color: #23262b;
+  --global-text-color: #cbd5e1;
+  --global-text-color-light: #94a3b8;
+  --global-divider-color: rgba(148, 163, 184, 0.16);
+  --global-code-bg-color: #2a2e35;
+}
+
+/* ------------------------------------------------------------
+   Global Reset & Typography
+   ------------------------------------------------------------ */
+body,
+html {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--global-text-color);
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-editorial);
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  font-weight: 600;
+  color: var(--global-text-color);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Links */
+a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--global-hover-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ------------------------------------------------------------
+   Navigation Bar & Header Refinements
+   ------------------------------------------------------------ */
+.navbar {
+  border-bottom: 1px solid var(--global-divider-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.navbar-brand {
+  font-family: var(--font-editorial);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-size: 1.15rem;
+}
+
+.nav-item .nav-link {
+  font-family: var(--font-editorial);
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
+  padding: 0.5rem 0.85rem !important;
+  transition: color 0.15s ease;
+}
+
+/* Active Nav Indicator */
+.nav-item.active .nav-link {
+  font-weight: 600;
+  color: var(--global-theme-color) !important;
+}
+
+/* ------------------------------------------------------------
+   Hero & Welcome Section (Home Page)
+   ------------------------------------------------------------ */
+.hero-banner {
+  padding: 2.5rem 0 2rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+  margin-bottom: 2.5rem;
+}
+
+.hero-banner__title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  color: var(--global-text-color);
+}
+
+.hero-banner__subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--global-text-color-light);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.hero-banner__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  color: var(--global-text-color);
+}
+
+/* ------------------------------------------------------------
+   Research Pillar Cards (Projects & Overview)
+   ------------------------------------------------------------ */
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin: 1.5rem 0 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .research-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.research-card {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  position: relative;
+}
+
+.research-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 2px;
+  background: var(--global-theme-color);
+  opacity: 0.7;
+}
+
+.research-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--global-theme-color);
+  box-shadow: 0 8px 24px -12px rgba(15, 23, 42, 0.1);
+}
+
+.research-card__tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--global-theme-color);
+  margin-bottom: 0.5rem;
+}
+
+.research-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 0.75rem 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.research-card__desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--global-text-color);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.research-card__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+}
+
+.research-topic-chip {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  color: var(--global-text-color-light);
+}
+
+/* ------------------------------------------------------------
+   Publications Refinements
+   ------------------------------------------------------------ */
+.publications ol.bibliography {
+  list-style: none;
+  padding-left: 0;
+}
+
+.publications ol.bibliography li {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.publications .title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  line-height: 1.45;
+  margin-bottom: 0.35rem;
+}
+
+.publications .author {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.publications .author em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--global-theme-color);
+}
+
+.publications .periodical {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  font-style: normal;
+}
+
+.publications .periodical em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.publications .links a.btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
