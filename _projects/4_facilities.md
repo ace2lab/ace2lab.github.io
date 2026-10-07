@@ -1,36 +1,61 @@
 ---
 layout: page
 title: Research Facilities & Instrumentation
-description: Advanced photonic sintering, laser micromachining, and electrochemical diagnostics
+description: Synthesis, thermal processing, characterization and utility equipment of ACE² Lab
 img: assets/img/10.jpg
 importance: 4
 category: facilities
 related_publications: false
 ---
 
-## Experimental Facilities & Key Instrumentation
+<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
 
-ACE² Lab maintains advanced synthesis, nanomanufacturing, and analytical equipment to conduct cutting-edge materials and device research.
+{% assign facility_groups = site.data.facilities | group_by: "category" %}
 
-### 1. Photonic & Nanomanufacturing Systems
+<div class="ed-page">
 
-- **Intense Pulsed Light (IPL) System**:
-  - High-energy Xenon flash lamp with pulse duration ranging from microseconds to milliseconds.
-  - Multi-pulse programming for controlled flash sintering, carbonization, and defect healing.
-- **CO₂ / UV Laser Micromachining Workstation**:
-  - Precision laser direct writing system for Laser-Induced Graphene (LIG) and micro-patterning of flexible substrates.
+  <p class="ed-lede">
+    {{ site.data.facilities.size }} instruments in {{ facility_groups.size }} categories. Location indicates building and room number.
+  </p>
 
-### 2. Electrochemical Characterization Suites
+  <nav class="ed-index" aria-label="Facility categories">
+    {% for group in facility_groups %}
+      <a href="#{{ group.name | slugify }}">{{ group.name | escape }}<span class="ed-index__count">{{ group.items.size }}</span></a>
+    {% endfor %}
+  </nav>
 
-- **Multi-channel Potentiostat / Galvanostat with EIS**:
-  - High-precision frequency response analyzer for cyclic voltammetry (CV), electrochemical impedance spectroscopy (EIS), and chronopotentiometry.
-- **Battery & Supercapacitor Testing Systems**:
-  - Automated multi-channel battery cyclers for long-term cycling stability, C-rate capability, and galvanostatic charge-discharge (GCD) tests.
-- **Argon Atmosphere Glovebox System**:
-  - Controlled inert atmosphere (< 0.1 ppm H₂O and O₂) for moisture-sensitive coin-cell assembly and organic electrolyte handling.
+{% for group in facility_groups %}
 
-### 3. Materials Synthesis & Analytical Tools
+<section class="ed-section" id="{{ group.name | slugify }}">
+<h2 class="ed-section__title">
+{{ group.name | escape }}
+<span class="ed-section__count">{{ group.items.size }}</span>
+</h2>
 
-- High-temperature tube & box furnaces with controlled gas atmospheres (Ar, N₂, Forming Gas).
-- Probe sonicator, high-speed centrifuge, and spin-coaters for colloidal nanomaterial processing.
-- Thin-film resistance, Four-point probe station, and digital source meters for real-time sensor testing.
+      <div class="ed-spec" role="table" aria-label="{{ group.name | escape }}">
+        <div class="ed-spec__head" role="row">
+          <span role="columnheader">Instrument</span>
+          <span role="columnheader">Manufacturer · Model</span>
+          <span role="columnheader">Location</span>
+        </div>
+        {% for item in group.items %}
+          <div class="ed-spec__row" role="row">
+            <span class="ed-spec__name" role="cell">{{ item.name | escape }}</span>
+            <span class="ed-spec__make" role="cell">
+              {%- if item.manufacturer and item.manufacturer != "" -%}
+                {{ item.manufacturer | escape }}
+              {%- endif -%}
+              {%- if item.model and item.model != "" -%}
+                {%- if item.manufacturer and item.manufacturer != "" %}<span class="ed-sep" aria-hidden="true">·</span>{% endif -%}
+                <span class="ed-spec__model">{{ item.model | escape }}</span>
+              {%- endif -%}
+            </span>
+            <span class="ed-spec__loc" role="cell">{{ item.location | escape }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+{% endfor %}
+
+</div>

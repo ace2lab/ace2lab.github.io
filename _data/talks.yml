@@ -1,0 +1,121 @@
+# ACE² Lab Conference Presentations & Talks
+
+- no: 15
+  year: 2025
+  title: "Fabrication of TiO₂/MXene Composite Photocatalysts via Intense Pulsed Light Processing for Organic Pollutant Removal"
+  presenters: "이희진, 김태욱, 임창용"
+  conference: "한국화학공학회 2025년도 추계학술대회"
+  date: "2025.10.18"
+  location: "제주ICC"
+
+- no: 14
+  year: 2025
+  title: "Flashlight-Assisted Fabrication of Cobalt Oxide-Decorated Porous Carbon Nanofibers for Supercapacitor Electrodes"
+  presenters: "이재호, 김태욱, 임창용"
+  conference: "한국화학공학회 2025년도 추계학술대회"
+  date: "2025.10.18"
+  location: "제주ICC"
+
+- no: 13
+  year: 2025
+  title: "Freeze-Dried Vertically Aligned Mxene Films with Improved Stability under High Scan Rates for Super Capacitor Applications"
+  presenters: "이동호, 김태욱, 임창용"
+  conference: "한국화학공학회 2025년도 추계학술대회"
+  date: "2025.10.17"
+  location: "제주ICC"
+
+- no: 12
+  year: 2025
+  title: "Printed Toner-Assisted Flash-Induced Graphene (FIG) Patterning for Micro-Supercapacitor Electrodes"
+  presenters: "안재빈, 김태욱, 임창용"
+  conference: "한국화학공학회 2025년도 추계학술대회"
+  date: "2025.10.17"
+  location: "제주ICC"
+
+- no: 11
+  year: 2025
+  title: "초고속 Intensive Pulsed Light 공정을 이용한 V₂O₅ 기반 VO₂ 합성과 선택적 B→M 상전이"
+  presenters: "김다윈, 김태욱, 임창용"
+  conference: "한국화학공학회 2025년도 추계학술대회"
+  date: "2025.10.17"
+  location: "제주ICC"
+
+- no: 10
+  year: 2025
+  title: "프린트 토너 기반 플래시 유도 그래핀(FIG) 패터닝 및 마이크로 슈퍼커패시터 전극 응용"
+  presenters: "안재빈, 김민수, 김성우, 김태욱, 임창용"
+  conference: "2025 Chem Frontier 화학공학 대학생 창의설계 경진대회"
+  date: "2025.09.26"
+  location: "수원 컨벤션센터"
+
+- no: 9
+  year: 2025
+  title: "Development of Porous TiO₂/MXene Composite Gas Sensors Using Flashlight"
+  presenters: "이희진, 김태욱, 임창용"
+  conference: "마이크로나노시스템학회 2025년도 춘계 학술대회"
+  date: "2025.03.26"
+  location: "제주 ICC"
+
+- no: 8
+  year: 2025
+  title: "Porous MXene/Carbon-based Nanofiber as Supercapacitor Electrode via Electrospinning"
+  presenters: "이재호, 김태욱, 임창용"
+  conference: "마이크로나노시스템학회 2025년도 춘계 학술대회"
+  date: "2025.03.26"
+  location: "제주 ICC"
+
+- no: 7
+  year: 2024
+  title: "Optimized Synthesis of Vanadium-Based MXene for Electrochemical Application"
+  presenters: "이희진, 김태욱, 임창용"
+  conference: "한국화학공학회 2024년도 가을 총회 및 학술대회"
+  date: "2024.10.18"
+  location: "부산 BEXCO"
+
+- no: 6
+  year: 2024
+  title: "Porous MXene/Carbon-based Nanofiber as Supercapacitor Electrode via Electrospinning"
+  presenters: "이재호, 팽창웅, 김태욱, 임창용"
+  conference: "한국화학공학회 2024년도 가을 총회 및 학술대회"
+  date: "2024.10.18"
+  location: "부산 BEXCO"
+
+- no: 5
+  year: 2024
+  title: "대량생산 가능한 Electrospun MXene/Carbon 나노섬유 웨어러블 스트레인 센서의 제조 기술 개발"
+  presenters: "김다윈, 안재빈, 이동호, 김태욱, 임창용"
+  conference: "2024 Chem Frontier 화학공학 대학생 창의설계 경진대회"
+  date: "2024.10.16"
+  location: "부산 BEXCO"
+
+- no: 4
+  year: 2024
+  title: "Synthesis and Optimization of Vanadium-Based MXene via MILD Etching Method"
+  presenters: "이희진, 김태욱, 임창용"
+  conference: "한국화학공학회 2024년도 봄 총회 및 학술대회"
+  date: "2024.4.26"
+  location: "제주 ICC"
+
+- no: 3
+  year: 2024
+  title: "Development of high-performance flexible supercapacitor electrodes using Intense Pulsed Light (IPL) rapid carbonization method on MXene/PAN hybrid nanofiber mats"
+  presenters: "이재호, 팽창웅, 김태욱, 임창용"
+  conference: "한국화학공학회 2024년도 봄 총회 및 학술대회"
+  date: "2024.4.26"
+  location: "제주 ICC"
+
+- no: 2
+  year: 2021
+  title: "Gas Sorption Analysis Using Micro-resonators and Flashlight based Material Synthesis"
+  presenters: "임창용"
+  conference: "한국화학공학회 신진연구자 심포지움"
+  date: "2021.4.11"
+  location: "부산 BEXCO"
+
+- no: 1
+  year: 2020
+  title: "Gas Sorption Analysis Using Micro-resonators and Flashlight based Material Synthesis"
+  presenters: "임창용"
+  conference: "한국화학공학회 대경지부"
+  date: "2020.12.11"
+  location: "영남대학교"

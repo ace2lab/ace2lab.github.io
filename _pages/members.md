@@ -86,4 +86,33 @@ nav_order: 2
   </section>
   {% endif %}
 
+  <!-- 5. Former Interns -->
+
+{% assign interns = site.data.interns %}
+{% assign intern_affiliations = interns | map: "affiliation" | uniq %}
+{% if interns.size > 0 %}
+
+  <section class="team-section" id="former-interns">
+    <h2 class="team-section__title">
+      Former Interns
+      <span class="team-section__count">{{ interns.size }}</span>
+    </h2>
+    {% if intern_affiliations.size == 1 %}
+      <p class="ed-section__note">{{ intern_affiliations.first | escape }}</p>
+    {% endif %}
+    <ul class="ed-roster" role="list">
+      {% for i in interns %}
+        <li class="ed-roster__row" id="{{ i.id }}">
+          <span class="ed-roster__name">{{ i.name_ko | escape }}</span>
+          <span class="ed-roster__cohort">{{ i.cohort | escape }}</span>
+          <span class="ed-roster__period">{{ i.period | escape }}</span>
+          {% if intern_affiliations.size > 1 %}
+            <span class="ed-roster__aff">{{ i.affiliation | escape }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
 </div>

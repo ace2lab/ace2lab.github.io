@@ -187,17 +187,135 @@
   photo: ""
 
 # ------------------------------------------------------------
+# ------------------------------------------------------------
 # 5. Proud Alumni
 # ------------------------------------------------------------
-- id: huijin-lee-alumni
+- id: jaeho-lee-alumni
   group: alumni
   order: 1
+  name_ko: 이재호
+  name_en: Jaeho Lee
+  degree: M.S.
+  grad_year: 2026
+  thesis: "Synthesis of Cobalt Oxide @ Porous Carbon Nanofibers via Intense Pulsed Light for Supercapacitor Electrodes"
+  now:
+    affiliation: "Ph.D. Course (2026.03 ~ Current)"
+    position: "Ph.D. Student"
+    url: ""
+
+- id: huijin-lee-alumni
+  group: alumni
+  order: 2
   name_ko: 이희진
   name_en: Huijin Lee
   degree: M.S.
   grad_year: 2026
-  thesis: "Study on High-Performance Supercapacitor Electrodes"
+  thesis: "Synthesis of TiO2/MXene Composite Photocatalyst via Intense Pulsed Light Processing for Organic Pollutant Removal"
   now:
-    affiliation: "Industry / Institute"
+    affiliation: "Alumni"
+    position: ""
+    url: ""
+
+- id: seonggwang-lee-alumni
+  group: alumni
+  order: 3
+  name_ko: 이성광
+  name_en: Seonggwang Lee
+  degree: M.S.
+  grad_year: 2026
+  thesis: "적층제조된 SUS 316L의 미세조직에 따른 수소취화 저항성 변화"
+  now:
+    affiliation: "Ph.D. Course (2026.03 ~ Current)"
+    position: "Ph.D. Student"
+    url: ""
+
+- id: kyuhyun-park-alumni
+  group: alumni
+  order: 4
+  name_ko: 박규현
+  name_en: Kyuhyun Park
+  degree: M.S.
+  grad_year: 2025
+  thesis: "ㅇㅇㅇㅇㅇㅇㅇ"
+  now:
+    affiliation: "Alumni"
+    position: ""
+    url: ""
+
+- id: changung-paeng-alumni
+  group: alumni
+  order: 5
+  name_ko: 팽창웅
+  name_en: Changung Paeng
+  degree: M.S.
+  grad_year: 2025
+  thesis: "Rapid structuring of porous MXene via intense pulsed light for energy storage devices"
+  now:
+    affiliation: "솔브레인 연구소"
+    position: "Researcher"
+    url: ""
+
+- id: junhyuck-ahn-alumni
+  group: alumni
+  order: 6
+  name_ko: 안준혁
+  name_en: Junhyuck Ahn
+  degree: M.S.
+  grad_year: 2024
+  thesis: "3D structured cobalt oxide via hydrothermal and instant heat treatment for supercapacitor electrodes"
+  now:
+    affiliation: "이엔에프테크놀로지 연구소"
+    position: "Researcher"
+    url: ""
+
+- id: subin-yang-alumni
+  group: alumni
+  order: 7
+  name_ko: 양수빈
+  name_en: Subin Yang
+  degree: B.S.
+  grad_year: 2024
+  thesis: ""
+  now:
+    affiliation: "SAMSUNG SDI"
+    position: "Researcher"
+    url: ""
+
+- id: tae-ho-yun-alumni
+  group: alumni
+  order: 8
+  name_ko: 윤태호 박사
+  name_en: Tae Ho Yun
+  degree: Postdoc
+  grad_year: 2024
+  thesis: ""
+  now:
+    affiliation: "SAMSUNG SDI"
+    position: "Researcher"
+    url: ""
+
+- id: ninad-velhal-alumni
+  group: alumni
+  order: 9
+  name_ko: 니나드 벨할 박사
+  name_en: Ninad Velhal
+  degree: Postdoc
+  grad_year: 2024
+  thesis: ""
+  now:
+    affiliation: "Alumni"
+    position: ""
+    url: ""
+
+- id: donghyun-lee-alumni
+  group: alumni
+  order: 10
+  name_ko: 이동현
+  name_en: Donghyun Lee
+  degree: B.S.
+  grad_year: 2023
+  thesis: ""
+  now:
+    affiliation: "LS MnM"
     position: "Researcher"
     url: ""
