@@ -5,9 +5,11 @@ permalink: /research/
 description: Research themes, ongoing projects, and facilities at ACE² Lab
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [research, facilities]
 horizontal: false
 ---
+
+<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
 
 <!-- pages/projects.md -->
 <div class="projects">

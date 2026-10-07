@@ -9,6 +9,8 @@ nav_order: 4
 
 <!-- _pages/publications.md -->
 
+<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
+
 <!-- Bibsearch Feature -->
 
 {% include bib_search.liquid %}

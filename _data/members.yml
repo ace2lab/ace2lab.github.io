@@ -1,6 +1,8 @@
 # ============================================================
-# ACE² Lab Team Members Data
-# Kyungpook National University
+# ACE² Lab Team Members Data (SSOT Aligned)
+# Advanced Chemical & Energy Engineering Laboratory
+# Department of Energy Chemical Engineering
+# College of Science and Technology, Kyungpook National University
 # ============================================================
 
 # ------------------------------------------------------------
@@ -44,8 +46,8 @@
     - Flexible Sensors
   links:
     email: cy.yim@knu.ac.kr
-    scholar: "https://scholar.google.com/citations?user=oYBJT_kAAAAJ"
-    orcid: "https://orcid.org/0000-0002-4370-4038"
+    scholar: "https://scholar.google.com/citations?user=2qPTMYUAAAAJ"
+    orcid: "https://orcid.org/0000-0001-5987-9580"
     github: "https://github.com/Cdragon-github"
   bio: "경북대학교 에너지화학공학과 부교수. 초고속 광열처리 기술(IPL) 기반의 차세대 나노소재 합성 및 유연 센서/에너지 소자를 연구하고 있습니다."
 
@@ -65,11 +67,24 @@
   email: ""
   photo: ""
 
-- id: jaebin-ahn
-  group: ms
+- id: dongho-lee
+  group: phd
   order: 2
+  name_ko: 이동호
+  name_en: Dongho Lee
+  role_ko: 석박통합과정
+  role_en: Integrated M.S.-Ph.D. Student
+  topics:
+    - Energy Materials
+    - Nanotechnology
+  email: ""
+  photo: ""
+
+- id: jaebin-an
+  group: ms
+  order: 3
   name_ko: 안재빈
-  name_en: Jaebin Ahn
+  name_en: Jaebin An
   role_ko: 석사과정
   role_en: M.S. Student
   topics:
@@ -80,7 +95,7 @@
 
 - id: myeongseo-kang
   group: ms
-  order: 3
+  order: 4
   name_ko: 강명서
   name_en: Myeongseo Kang
   role_ko: 석사과정
@@ -91,8 +106,37 @@
   email: ""
   photo: ""
 
+- id: dawin-kim
+  group: ms
+  order: 5
+  name_ko: 김다윈
+  name_en: Dawin Kim
+  role_ko: 석사과정
+  role_en: M.S. Student
+  topics:
+    - Functional Nanomaterials
+    - Electrochemical Devices
+  email: ""
+  photo: ""
+
 # ------------------------------------------------------------
-# 3. Undergraduate Researchers
+# 3. Researchers
+# ------------------------------------------------------------
+- id: huijin-lee-res
+  group: ms
+  order: 6
+  name_ko: 이희진
+  name_en: Huijin Lee
+  role_ko: 연구원
+  role_en: Researcher
+  topics:
+    - Supercapacitors
+    - Advanced Electrode Design
+  email: ""
+  photo: ""
+
+# ------------------------------------------------------------
+# 4. Undergraduate Researchers
 # ------------------------------------------------------------
 - id: gyeongjin-kim
   group: ug
@@ -106,23 +150,11 @@
   email: ""
   photo: ""
 
-- id: sungwoo-kim
+- id: minsu-kim
   group: ug
   order: 2
-  name_ko: 김성우
-  name_en: Sungwoo Kim
-  role_ko: 학부연구생
-  role_en: Undergraduate Researcher
-  topics:
-    - Chemical Engineering
-  email: ""
-  photo: ""
-
-- id: minsoo-kim
-  group: ug
-  order: 3
   name_ko: 김민수
-  name_en: Minsoo Kim
+  name_en: Minsu Kim
   role_ko: 학부연구생
   role_en: Undergraduate Researcher
   topics:
@@ -130,10 +162,34 @@
   email: ""
   photo: ""
 
+- id: donggeon-lee
+  group: ug
+  order: 3
+  name_ko: 이동건
+  name_en: Donggeon Lee
+  role_ko: 학부연구생
+  role_en: Undergraduate Researcher
+  topics:
+    - Chemical Engineering
+  email: ""
+  photo: ""
+
+- id: jongmin-lee
+  group: ug
+  order: 4
+  name_ko: 이종민
+  name_en: Jongmin Lee
+  role_ko: 학부연구생
+  role_en: Undergraduate Researcher
+  topics:
+    - Energy & Sensor Devices
+  email: ""
+  photo: ""
+
 # ------------------------------------------------------------
-# 4. Proud Alumni
+# 5. Proud Alumni
 # ------------------------------------------------------------
-- id: heejin-lee
+- id: huijin-lee-alumni
   group: alumni
   order: 1
   name_ko: 이희진
