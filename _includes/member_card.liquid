@@ -6,8 +6,12 @@
     {% if m.photo and m.photo != '' %}
       <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__avatar" loading="lazy">
     {% else %}
-      <div class="member-card__avatar member-card__avatar--placeholder">
-        <span>{{ m.name_en | slice: 0, 1 }}</span>
+      {% assign name_parts = m.name_en | split: ' ' %}
+      <div class="member-card__avatar member-card__avatar--placeholder" aria-hidden="true">
+        <span>
+          {{- name_parts.first | slice: 0, 1 -}}
+          {{- name_parts.last | slice: 0, 1 -}}
+        </span>
       </div>
     {% endif %}
   </div>
@@ -20,9 +24,12 @@
 
     <div class="member-card__role">
       {% if variant == 'pi' %}
-        <span class="badge badge-primary">{{ m.title_ko }} · {{ m.title_en }}</span>
+        <span class="member-role">
+          {{- m.title_ko -}}
+          <span class="member-role__sep">·</span>{{ m.title_en -}}
+        </span>
       {% else %}
-        <span class="badge badge-secondary">{{ m.role_ko }}</span>
+        <span class="member-role">{{ m.role_ko }}</span>
       {% endif %}
     </div>
 
@@ -41,18 +48,22 @@
     {% if m.links %}
       <div class="member-card__links">
         {% if m.links.email and m.links.email != '' %}
-          <a href="mailto:{{ m.links.email }}" title="Email" class="link-icon"><i class="fa-solid fa-envelope"></i></a>
+          <a href="mailto:{{ m.links.email }}" title="Email" aria-label="Email" class="link-icon"><i class="fa-solid fa-envelope"></i></a>
         {% endif %}
         {% if m.links.scholar and m.links.scholar != '' %}
-          <a href="{{ m.links.scholar }}" target="_blank" rel="noopener" title="Google Scholar" class="link-icon"
+          <a href="{{ m.links.scholar }}" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar" class="link-icon"
             ><i class="ai ai-google-scholar"></i
           ></a>
         {% endif %}
         {% if m.links.orcid and m.links.orcid != '' %}
-          <a href="{{ m.links.orcid }}" target="_blank" rel="noopener" title="ORCID" class="link-icon"><i class="ai ai-orcid"></i></a>
+          <a href="{{ m.links.orcid }}" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID" class="link-icon"
+            ><i class="ai ai-orcid"></i
+          ></a>
         {% endif %}
         {% if m.links.github and m.links.github != '' %}
-          <a href="{{ m.links.github }}" target="_blank" rel="noopener" title="GitHub" class="link-icon"><i class="fa-brands fa-github"></i></a>
+          <a href="{{ m.links.github }}" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub" class="link-icon"
+            ><i class="fa-brands fa-github"></i
+          ></a>
         {% endif %}
       </div>
     {% endif %}

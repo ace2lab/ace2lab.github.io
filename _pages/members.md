@@ -7,6 +7,8 @@ nav: true
 nav_order: 2
 ---
 
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="{{ '/assets/css/team_grid.css' | relative_url }}">
 
 <div class="team-container">
@@ -18,7 +20,7 @@ nav_order: 2
 
   <section class="team-section" id="principal-investigators">
     <h2 class="team-section__title">
-      <i class="fa-solid fa-user-tie"></i> Principal Investigators
+      Principal Investigators
       <span class="team-section__count">{{ pis.size }}</span>
     </h2>
     <div class="team-grid team-grid--pi">
@@ -36,7 +38,7 @@ nav_order: 2
 
   <section class="team-section" id="graduate-students">
     <h2 class="team-section__title">
-      <i class="fa-solid fa-graduation-cap"></i> Graduate Students
+      Graduate Students
       <span class="team-section__count">{{ grads.size }}</span>
     </h2>
     <div class="team-grid">
@@ -54,7 +56,7 @@ nav_order: 2
 
   <section class="team-section" id="undergraduate-researchers">
     <h2 class="team-section__title">
-      <i class="fa-solid fa-flask"></i> Undergraduate Researchers
+      Undergraduate Researchers
       <span class="team-section__count">{{ ugs.size }}</span>
     </h2>
     <div class="team-grid">
@@ -72,7 +74,7 @@ nav_order: 2
 
   <section class="team-section" id="proud-alumni">
     <h2 class="team-section__title">
-      <i class="fa-solid fa-award"></i> Proud Alumni
+      Proud Alumni
       <span class="team-section__count">{{ alumni.size }}</span>
     </h2>
     <div class="alumni-list">

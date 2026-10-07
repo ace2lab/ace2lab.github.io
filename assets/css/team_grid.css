@@ -1,49 +1,147 @@
 /* ============================================================
-   ACE² Lab Hybrid Team Grid & Member Card CSS
-   Inspired by Greene Lab LWT & Optimized for al-folio v1
+   ACE² Lab — Members page
+   Editorial Academic Minimalism · loaded on /members/ only
+
+   Principles
+   1. Editorial calm     — hairlines and whitespace, not boxes and shadows
+   2. Dual-script pairing — one family (Pretendard) for Hangul + Latin
+   3. Tone over chroma    — slate neutrals; one muted navy accent
+   4. 4px rhythm          — every space and line-height is a multiple of 4
+   5. Parity              — Co-PI cards are twins; roles are typographic
    ============================================================ */
 
+/* ------------------------------------------------------------
+   0. Tokens
+   Scoped to .team-container so nothing leaks into al-folio core,
+   and deliberately independent of --global-theme-color
+   (core sets that to magenta in light mode, cyan in dark).
+   ------------------------------------------------------------ */
 .team-container {
-  max-width: 1000px;
+  /* Typeface: Pretendard's Latin is Inter-derived, so one family
+     gives metric-matched Hangul + Latin. Fallbacks keep the same feel. */
+  --tm-font:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    system-ui, sans-serif;
+
+  /* Type scale — minor third (1.2) from 15px, rounded to 4px line grid */
+  --tm-fs-2xs: 0.75rem; /* 12 / 16 */
+  --tm-fs-xs: 0.8125rem; /* 13 / 20 */
+  --tm-fs-sm: 0.875rem; /* 14 / 24 */
+  --tm-fs-md: 0.9375rem; /* 15 / 24 */
+  --tm-fs-lg: 1.125rem; /* 18 / 28 */
+  --tm-fs-xl: 1.375rem; /* 22 / 28 */
+  --tm-fs-2xl: 1.75rem; /* 28 / 36 */
+
+  /* Space — 4px baseline */
+  --tm-s1: 0.25rem;
+  --tm-s2: 0.5rem;
+  --tm-s3: 0.75rem;
+  --tm-s4: 1rem;
+  --tm-s5: 1.25rem;
+  --tm-s6: 1.5rem;
+  --tm-s8: 2rem;
+  --tm-s10: 2.5rem;
+  --tm-s14: 3.5rem;
+  --tm-s20: 5rem;
+
+  /* Radii — one family, two sizes */
+  --tm-r-sm: 6px;
+  --tm-r-md: 12px;
+
+  /* Colour — light (slate neutrals + deep navy accent) */
+  --tm-ink: #0f172a; /* names, titles           17.9:1 on white */
+  --tm-text: #334155; /* body                    10.4:1 */
+  --tm-muted: #5b6b82; /* secondary / labels       5.4:1 */
+  --tm-faint: #8695aa; /* decorative only (hairline icons) */
+  --tm-surface: #ffffff;
+  --tm-sunken: #f6f8fb; /* chips, avatar field */
+  --tm-line: #e5e9f0; /* hairlines */
+  --tm-line-strong: #cfd6e2;
+  --tm-accent: #1e3a5f; /* deep navy */
+  --tm-accent-soft: rgba(30, 58, 95, 0.06);
+  --tm-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.12);
+
+  max-width: 960px;
   margin: 0 auto;
+  font-family: var(--tm-font);
+  font-weight: 400;
+  font-feature-settings: "kern" 1;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: var(--tm-text);
+
+  /* Korean: break between words, never mid-word */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
 }
 
+/* Dark — tonal elevation: lighter surface = closer to the reader.
+   Page bg is core's #1c1c1d, so surfaces step up from it with a cool tint. */
+html[data-theme="dark"] .team-container {
+  --tm-ink: #f1f5f9;
+  --tm-text: #cbd5e1;
+  --tm-muted: #94a3b8; /* 5.9:1 on #23262b */
+  --tm-faint: #64748b;
+  --tm-surface: #23262b;
+  --tm-sunken: #2a2e35;
+  --tm-line: rgba(148, 163, 184, 0.16);
+  --tm-line-strong: rgba(148, 163, 184, 0.3);
+  --tm-accent: #9db7d9; /* desaturated steel blue, not neon cyan */
+  --tm-accent-soft: rgba(157, 183, 217, 0.1);
+  --tm-shadow: 0 0 0 transparent; /* depth comes from surface tone, not shadow */
+}
+
+/* ------------------------------------------------------------
+   1. Sections
+   ------------------------------------------------------------ */
 .team-section {
-  margin-bottom: 3.5rem;
+  margin-bottom: var(--tm-s14);
 }
 
 .team-section__title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 2px solid var(--global-divider-color, #e2e8f0);
-  color: var(--global-text-color, #1e293b);
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: baseline;
+  gap: var(--tm-s3);
+  margin: 0 0 var(--tm-s8);
+  padding-bottom: var(--tm-s3);
+  border-bottom: 1px solid var(--tm-line);
+  font-family: var(--tm-font);
+  font-size: var(--tm-fs-xl);
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: var(--tm-ink);
+}
+
+/* Legacy icon glyphs are noise next to a typographic heading */
+.team-section__title > i {
+  display: none;
 }
 
 .team-section__count {
-  font-size: 0.9rem;
+  font-size: var(--tm-fs-xs);
   font-weight: 500;
-  color: var(--global-text-color-light, #64748b);
-  background: var(--global-bg-color, #f1f5f9);
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid var(--global-divider-color, #cbd5e1);
+  letter-spacing: 0;
+  color: var(--tm-muted);
+  background: none;
+  border: 0;
+  padding: 0;
 }
 
-/* Grids */
+/* ------------------------------------------------------------
+   2. Grids
+   ------------------------------------------------------------ */
 .team-grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--tm-s6);
+  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
 }
 
 .team-grid--pi {
   grid-template-columns: 1fr;
-  gap: 1.75rem;
+  gap: var(--tm-s6);
 }
 
 @media (min-width: 768px) {
@@ -52,225 +150,373 @@
   }
 }
 
-/* Member Card */
+/* ------------------------------------------------------------
+   3. Member card — shared grammar
+   Left-aligned, hairline border, no lift. The card is not a link,
+   so it does not pretend to be one.
+   ------------------------------------------------------------ */
 .member-card {
-  background: var(--global-card-bg-color, #ffffff);
-  border: 1px solid var(--global-divider-color, #e2e8f0);
-  border-radius: 14px;
-  padding: 1.5rem 1.25rem;
-  text-align: center;
-  transition:
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  align-items: flex-start;
+  padding: var(--tm-s6);
+  background: var(--tm-surface);
+  border: 1px solid var(--tm-line);
+  border-radius: var(--tm-r-md);
+  text-align: left;
 }
 
-.member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-}
-
-.member-card--pi {
-  padding: 2.25rem 1.5rem;
-  border: 1.5px solid var(--global-theme-color, #0284c7);
-  background: linear-gradient(180deg, var(--global-card-bg-color, #ffffff) 0%, rgba(2, 132, 199, 0.03) 100%);
-}
-
-/* Avatar */
+/* Avatar ------------------------------------------------ */
 .member-card__avatar-wrapper {
-  margin-bottom: 1rem;
+  margin-bottom: var(--tm-s5);
 }
 
 .member-card__avatar {
-  width: 120px;
-  height: 120px;
+  display: block;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--global-bg-color, #f8fafc);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: block;
+  background: var(--tm-sunken);
+  box-shadow: 0 0 0 1px var(--tm-line);
 }
 
-.member-card--pi .member-card__avatar {
-  width: 145px;
-  height: 145px;
-}
-
+/* Monogram placeholder: flat slate field + inner hairline ring */
 .member-card__avatar--placeholder {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--global-theme-color, #0284c7) 0%, #38bdf8 100%);
-  color: #ffffff;
-  font-size: 2.2rem;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-indent: 0.04em; /* optically re-centre after tracking */
+  line-height: 1;
+  color: var(--tm-muted);
+  user-select: none;
 }
 
-.member-card--pi .member-card__avatar--placeholder {
-  width: 145px;
-  height: 145px;
-  font-size: 2.6rem;
+.member-card__avatar--placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--tm-line);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-/* Content */
+/* Content ----------------------------------------------- */
 .member-card__content {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   flex-grow: 1;
+  width: 100%;
 }
 
+/* Name: Hangul leads, Latin follows on the same baseline family */
 .member-card__name {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0 0 0.25rem 0;
-  color: var(--global-text-color, #1e293b);
+  margin: 0;
+  font-family: var(--tm-font);
+  font-size: var(--tm-fs-lg);
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: var(--tm-ink);
 }
 
 .member-card__name-en {
   display: block;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--global-text-color-light, #64748b);
-  margin-top: 0.15rem;
+  margin-top: 0;
+  font-size: var(--tm-fs-xs);
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--tm-muted);
 }
 
+/* Role: typography, not a pill */
 .member-card__role {
-  margin: 0.4rem 0 0.75rem 0;
+  margin: var(--tm-s3) 0 0;
 }
 
-.member-card__role .badge {
-  font-size: 0.78rem;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  font-weight: 600;
+.member-role {
+  font-size: var(--tm-fs-xs);
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  color: var(--tm-accent);
 }
 
-.badge-primary {
-  background-color: var(--global-theme-color, #0284c7) !important;
-  color: #ffffff !important;
+.member-role__sep {
+  margin: 0 0.35em;
+  color: var(--tm-faint);
 }
 
-.badge-secondary {
-  background-color: var(--global-divider-color, #e2e8f0) !important;
-  color: var(--global-text-color, #334155) !important;
-}
-
-.badge-outline {
-  border: 1px solid var(--global-theme-color, #0284c7);
-  color: var(--global-theme-color, #0284c7);
-  background: transparent;
-}
-
+/* Bio */
 .member-card__bio {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: var(--global-text-color, #334155);
-  margin: 0.5rem 0 1rem 0;
-  padding: 0 0.5rem;
-  text-align: center;
+  margin: var(--tm-s4) 0 0;
+  padding: 0;
+  max-width: 34em;
+  font-size: var(--tm-fs-sm);
+  font-weight: 400;
+  line-height: 1.7; /* Hangul needs air; 24px @14px ≈ 1.7 */
+  letter-spacing: -0.015em;
+  color: var(--tm-text);
+  text-align: left;
+  text-wrap: pretty;
 }
 
-/* Topic Tags */
+/* Topics: hairline chips, no fill */
 .member-card__topics {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.4rem;
-  margin: 0.6rem 0;
+  justify-content: flex-start;
+  gap: var(--tm-s1) var(--tm-s2);
+  margin: var(--tm-s4) 0 0;
 }
 
 .topic-tag {
-  font-size: 0.72rem;
+  padding: 2px var(--tm-s2);
+  font-size: var(--tm-fs-2xs);
   font-weight: 500;
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  background: var(--global-bg-color, #f1f5f9);
-  color: var(--global-text-color, #475569);
-  border: 1px solid var(--global-divider-color, #e2e8f0);
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  color: var(--tm-muted);
+  background: transparent;
+  border: 1px solid var(--tm-line);
+  border-radius: var(--tm-r-sm);
+  word-break: keep-all;
 }
 
 /* Links */
 .member-card__links {
   display: flex;
-  gap: 0.85rem;
-  margin-top: auto;
-  padding-top: 1rem;
   align-items: center;
+  gap: var(--tm-s4);
+  margin-top: auto;
+  padding-top: var(--tm-s5);
 }
 
 .link-icon {
-  color: var(--global-text-color-light, #64748b);
-  font-size: 1.15rem;
-  transition:
-    color 0.15s ease,
-    transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--tm-muted);
+  transition: color 0.15s ease;
 }
 
-.link-icon:hover {
-  color: var(--global-theme-color, #0284c7);
-  transform: scale(1.15);
+.link-icon:hover,
+.link-icon:focus-visible {
+  color: var(--tm-accent);
+  text-decoration: none;
 }
 
-/* Alumni List */
+.link-icon:focus-visible,
+.alumni-row__dest a:focus-visible {
+  outline: 2px solid var(--tm-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------
+   4. Co-PI variant — horizontal, larger, identical for both PIs
+   Distinction by scale and structure, not by colour.
+   ------------------------------------------------------------ */
+.member-card--pi {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--tm-s8);
+  padding: var(--tm-s8);
+  border-radius: var(--tm-r-md);
+  box-shadow: var(--tm-shadow);
+}
+
+/* One quiet accent: a short navy rule on the top edge */
+.member-card--pi::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: var(--tm-s8);
+  width: 40px;
+  height: 2px;
+  background: var(--tm-accent);
+}
+
+.member-card--pi .member-card__avatar-wrapper {
+  flex: none;
+  margin: 0;
+}
+
+.member-card--pi .member-card__avatar {
+  width: 112px;
+  height: 112px;
+}
+
+.member-card--pi .member-card__avatar--placeholder {
+  font-size: 2rem;
+}
+
+.member-card--pi .member-card__avatar--placeholder::after {
+  inset: 6px;
+}
+
+.member-card--pi .member-card__content {
+  min-width: 0;
+}
+
+.member-card--pi .member-card__name {
+  font-size: var(--tm-fs-xl);
+  line-height: 28px;
+}
+
+.member-card--pi .member-card__name-en {
+  font-size: var(--tm-fs-sm);
+  line-height: 24px;
+}
+
+.member-card--pi .member-role {
+  font-size: var(--tm-fs-sm);
+}
+
+/* Narrow: stack avatar over text */
+@media (max-width: 575.98px) {
+  .member-card--pi {
+    flex-direction: column;
+    gap: var(--tm-s5);
+    padding: var(--tm-s6);
+  }
+
+  .member-card--pi::before {
+    left: var(--tm-s6);
+  }
+}
+
+/* ------------------------------------------------------------
+   5. Alumni — a typographic table, not a stack of cards
+   Grid: [degree · year] [name] [thesis] [→ destination]
+   ------------------------------------------------------------ */
 .alumni-list {
-  background: var(--global-card-bg-color, #ffffff);
-  border: 1px solid var(--global-divider-color, #e2e8f0);
-  border-radius: 12px;
-  overflow: hidden;
+  border-top: 1px solid var(--tm-line);
+  background: transparent;
 }
 
 .alumni-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid var(--global-divider-color, #e2e8f0);
-  font-size: 0.95rem;
-  transition: background 0.15s ease;
-}
-
-.alumni-row:last-child {
-  border-bottom: none;
-}
-
-.alumni-row:hover {
-  background: var(--global-bg-color, #f8fafc);
+  display: grid;
+  grid-template-columns: 7.5rem minmax(10rem, 14rem) 1fr auto;
+  align-items: baseline;
+  column-gap: var(--tm-s6);
+  padding: var(--tm-s4) var(--tm-s2);
+  border-bottom: 1px solid var(--tm-line);
+  font-size: var(--tm-fs-sm);
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: var(--tm-text);
 }
 
 .alumni-row__left {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  display: contents; /* let degree + name join the row grid */
+}
+
+.alumni-row__degree {
+  font-size: var(--tm-fs-xs);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--tm-muted);
+}
+
+.alumni-row__name {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--tm-ink);
+}
+
+.alumni-row__name-en {
+  margin-left: var(--tm-s2);
+  font-size: var(--tm-fs-xs);
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--tm-muted);
 }
 
 .alumni-row__thesis {
-  font-size: 0.85rem;
-  color: var(--global-text-color-light, #64748b);
-  margin-left: 0.5rem;
+  min-width: 0;
+  font-size: var(--tm-fs-xs);
+  font-style: normal;
+  color: var(--tm-muted);
+  text-wrap: pretty;
+}
+
+.alumni-row__thesis i {
+  display: none; /* icon is decoration; the italic quote already signals a title */
+}
+
+.alumni-row__thesis em {
+  font-style: normal;
 }
 
 .alumni-row__now {
-  font-weight: 600;
-  color: var(--global-theme-color, #0284c7);
   display: flex;
-  align-items: center;
-  gap: 0.4rem;
+  align-items: baseline;
+  gap: var(--tm-s2);
+  font-weight: 500;
+  color: var(--tm-ink);
+  text-align: right;
+  justify-content: flex-end;
 }
 
-@media (max-width: 768px) {
+.alumni-row__arrow {
+  color: var(--tm-faint);
+}
+
+.alumni-row__dest a {
+  color: var(--tm-accent);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 0.2s ease;
+}
+
+.alumni-row__dest a:hover {
+  background-size: 100% 1px;
+}
+
+.alumni-row__position {
+  font-weight: 400;
+  color: var(--tm-muted);
+}
+
+@media (max-width: 767.98px) {
   .alumni-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
+    grid-template-columns: 1fr;
+    row-gap: var(--tm-s1);
+    padding: var(--tm-s4) 0;
+  }
+
+  .alumni-row__now {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* ------------------------------------------------------------
+   6. Motion & print
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .link-icon,
+  .alumni-row__dest a {
+    transition: none;
+  }
+}
+
+@media print {
+  .member-card,
+  .alumni-row {
+    break-inside: avoid;
+    box-shadow: none;
   }
 }
