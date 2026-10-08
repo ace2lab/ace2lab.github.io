@@ -4,17 +4,6 @@ title: about
 permalink: /
 subtitle: Advanced Chemical & Energy Engineering Laboratory | KNU
 
-profile:
-  align: right
-  image: prof_pic_color.png
-  image_circular: false
-  more_info: >
-    <p>Department of Energy Chemical Engineering</p>
-    <p>College of Science and Technology</p>
-    <p>Kyungpook National University</p>
-    <p>Room 411, Building 7, Sangju Campus</p>
-    <p>경북대학교 과학기술대학 에너지화학공학과 (7호관 411호)</p>
-
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # clean academic minimalism
 
@@ -28,6 +17,12 @@ latest_posts:
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
+
+<style>
+  .post > header.post-header {
+    display: none;
+  }
+</style>
 
 <div class="ed-hero-banner">
   <div class="ed-hero-banner__inner">

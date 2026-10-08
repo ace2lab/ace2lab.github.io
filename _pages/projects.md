@@ -11,6 +11,12 @@ horizontal: false
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
 
+<style>
+  .post > header.post-header {
+    display: none;
+  }
+</style>
+
 <div class="ed-hero-banner">
   <div class="ed-hero-banner__inner">
     <div class="ed-hero-banner__label">ACE² LAB · RESEARCH & FACILITIES</div>
