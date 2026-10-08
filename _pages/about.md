@@ -54,45 +54,61 @@ The laboratory is jointly directed by two Principal Investigators:
 
 {% assign pis = site.data.members | where: "group", "pi" | sort: "order" %}
 
-<div class="pi-duo-grid">
+<div class="pi-showcase">
   {% for pi in pis %}
-    <div class="pi-card" id="pi-{{ pi.id }}">
-      <div class="pi-card__header">
+    <div class="pi-showcase-card" id="pi-{{ pi.id }}">
+      <div class="pi-showcase-card__portrait">
         <img
           src="{{ pi.photo | relative_url }}"
           alt="{{ pi.name_en }}"
-          class="pi-card__avatar"
+          class="pi-showcase-card__img"
           loading="lazy"
         >
-        <div class="pi-card__meta">
-          <h3 class="pi-card__name">
+      </div>
+      <div class="pi-showcase-card__content">
+        <div>
+          <div class="pi-showcase-card__role">
+            <span class="pi-role-tag">Co-Principal Investigator</span>
+            <span class="pi-rank-tag">{{ pi.title_en }} ({{ pi.title_ko }})</span>
+          </div>
+          <h3 class="pi-showcase-card__name">
             {{ pi.name_en }}
-            <span class="pi-card__name-ko">{{ pi.name_ko }}</span>
+            <span class="pi-showcase-card__name-ko">{{ pi.name_ko }} 교수</span>
           </h3>
-          <div class="pi-card__title">{{ pi.title_en }} ({{ pi.title_ko }})</div>
+          <div class="pi-showcase-card__affil">
+            {{ pi.affiliation_en }} ({{ pi.affiliation_ko }})
+          </div>
+          <p class="pi-showcase-card__bio">{{ pi.bio }}</p>
         </div>
-      </div>
-      <div class="pi-card__body">
-        <p>{{ pi.bio }}</p>
-        <div class="pi-card__topics">
-          {% for t in pi.topics %}
-            <span class="pi-card__topic">{{ t }}</span>
-          {% endfor %}
+        <div>
+          <div class="pi-showcase-card__topics">
+            {% for t in pi.topics %}
+              <span class="pi-topic-pill">{{ t }}</span>
+            {% endfor %}
+          </div>
+          <div class="pi-showcase-card__actions">
+            {% if pi.email and pi.email != "" %}
+              <a href="mailto:{{ pi.email }}" class="pi-action-btn" title="Email" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i> <span>Email</span>
+              </a>
+            {% endif %}
+            {% if pi.links.scholar and pi.links.scholar != "" %}
+              <a href="{{ pi.links.scholar }}" target="_blank" rel="noopener" class="pi-action-btn" title="Google Scholar" aria-label="Google Scholar">
+                <i class="ai ai-google-scholar"></i> <span>Scholar</span>
+              </a>
+            {% endif %}
+            {% if pi.links.orcid and pi.links.orcid != "" %}
+              <a href="{{ pi.links.orcid }}" target="_blank" rel="noopener" class="pi-action-btn" title="ORCID" aria-label="ORCID">
+                <i class="ai ai-orcid"></i> <span>ORCID</span>
+              </a>
+            {% endif %}
+            {% if pi.links.github and pi.links.github != "" %}
+              <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-action-btn" title="GitHub" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+              </a>
+            {% endif %}
+          </div>
         </div>
-      </div>
-      <div class="pi-card__footer">
-        {% if pi.email and pi.email != "" %}
-          <a href="mailto:{{ pi.email }}" class="pi-card__link" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        {% endif %}
-        {% if pi.links.scholar and pi.links.scholar != "" %}
-          <a href="{{ pi.links.scholar }}" target="_blank" rel="noopener" class="pi-card__link" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-        {% endif %}
-        {% if pi.links.orcid and pi.links.orcid != "" %}
-          <a href="{{ pi.links.orcid }}" target="_blank" rel="noopener" class="pi-card__link" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
-        {% endif %}
-        {% if pi.links.github and pi.links.github != "" %}
-          <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-card__link" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        {% endif %}
       </div>
     </div>
   {% endfor %}
@@ -104,41 +120,71 @@ The laboratory is jointly directed by two Principal Investigators:
 
 <div class="research-grid">
   <div class="research-card">
-    <div class="research-card__tag">Area 01</div>
-    <h3 class="research-card__title">Energy Storage & Materials</h3>
-    <div class="research-card__desc">
-      차세대 하이브리드 코인셀 슈퍼캐패시터 및 다공성 MXene/TiO₂ 복합소재 리튬이온전지 음극 설계. 고출력·고에너지밀도 전기화학 소자 구현.
+    <div class="research-card__media">
+      <img
+        src="{{ '/assets/img/research/area1_energy_storage.jpg' | relative_url }}"
+        alt="Energy Storage & Materials"
+        loading="lazy"
+        data-zoomable
+      >
+      <span class="research-card__badge">Area 01</span>
     </div>
-    <div class="research-card__topics">
-      <span class="research-topic-chip">Supercapacitors</span>
-      <span class="research-topic-chip">Battery Anodes</span>
-      <span class="research-topic-chip">MOF / MXene</span>
-    </div>
-  </div>
-
-  <div class="research-card">
-    <div class="research-card__tag">Area 02</div>
-    <h3 class="research-card__title">Photonic Nanomanufacturing</h3>
-    <div class="research-card__desc">
-      초고속 제논 플래시 펄스광(IPL) 열처리를 활용한 저온·밀리초 급 나노소재 소결, 콜로이드 양자점 표면 결함 치유 및 유연 기판 상 직접 공정.
-    </div>
-    <div class="research-card__topics">
-      <span class="research-topic-chip">IPL Processing</span>
-      <span class="research-topic-chip">Quantum Dots</span>
-      <span class="research-topic-chip">Roll-to-Roll</span>
+    <div class="research-card__content">
+      <h3 class="research-card__title">Energy Storage & Materials</h3>
+      <div class="research-card__desc">
+        차세대 하이브리드 코인셀 슈퍼캐패시터 및 다공성 MXene/TiO₂ 복합소재 리튬이온전지 음극 설계. 고출력·고에너지밀도 전기화학 소자 구현.
+      </div>
+      <div class="research-card__topics">
+        <span class="research-topic-chip">Supercapacitors</span>
+        <span class="research-topic-chip">Battery Anodes</span>
+        <span class="research-topic-chip">MOF / MXene</span>
+      </div>
     </div>
   </div>
 
   <div class="research-card">
-    <div class="research-card__tag">Area 03</div>
-    <h3 class="research-card__title">Sensors & Devices</h3>
-    <div class="research-card__desc">
-      레이저 유도 그래핀(LIG) 기반 고감도 유연 호흡/습도 센서 및 마이크로레조네이터 화학 센서 어레이를 통한 실시간 환경·생체 모니터링.
+    <div class="research-card__media">
+      <img
+        src="{{ '/assets/img/research/area2_photonic_ipl.jpg' | relative_url }}"
+        alt="Photonic Nanomanufacturing"
+        loading="lazy"
+        data-zoomable
+      >
+      <span class="research-card__badge">Area 02</span>
     </div>
-    <div class="research-card__topics">
-      <span class="research-topic-chip">LIG Sensors</span>
-      <span class="research-topic-chip">Respiration</span>
-      <span class="research-topic-chip">Environmental</span>
+    <div class="research-card__content">
+      <h3 class="research-card__title">Photonic Nanomanufacturing</h3>
+      <div class="research-card__desc">
+        초고속 제논 플래시 펄스광(IPL) 열처리를 활용한 저온·밀리초 급 나노소재 소결, 콜로이드 양자점 표면 결함 치유 및 유연 기판 상 직접 공정.
+      </div>
+      <div class="research-card__topics">
+        <span class="research-topic-chip">IPL Processing</span>
+        <span class="research-topic-chip">Quantum Dots</span>
+        <span class="research-topic-chip">Roll-to-Roll</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-card">
+    <div class="research-card__media">
+      <img
+        src="{{ '/assets/img/research/area3_flexible_sensors.jpg' | relative_url }}"
+        alt="Sensors & Devices"
+        loading="lazy"
+        data-zoomable
+      >
+      <span class="research-card__badge">Area 03</span>
+    </div>
+    <div class="research-card__content">
+      <h3 class="research-card__title">Sensors & Devices</h3>
+      <div class="research-card__desc">
+        레이저 유도 그래핀(LIG) 기반 고감도 유연 호흡/습도 센서 및 마이크로레조네이터 화학 센서 어레이를 통한 실시간 환경·생체 모니터링.
+      </div>
+      <div class="research-card__topics">
+        <span class="research-topic-chip">LIG Sensors</span>
+        <span class="research-topic-chip">Respiration</span>
+        <span class="research-topic-chip">Environmental</span>
+      </div>
     </div>
   </div>
 </div>
