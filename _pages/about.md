@@ -52,8 +52,51 @@ ACE² Lab은 경북대학교 과학기술대학 에너지화학공학과에서 '
 
 The laboratory is jointly directed by two Principal Investigators:
 
-- **[Prof. Taewook Kim](mailto:taewook@knu.ac.kr)** (김태욱 부교수) — Energy Materials, Supercapacitors, Electrochemical Catalysis
-- **[Prof. Changyong Yim](mailto:cy.yim@knu.ac.kr)** (임창용 부교수) — Intense Pulsed Light (IPL), Colloidal Quantum Dots, Flexible Sensors
+{% assign pis = site.data.members | where: "group", "pi" | sort: "order" %}
+
+<div class="pi-duo-grid">
+  {% for pi in pis %}
+    <div class="pi-card" id="pi-{{ pi.id }}">
+      <div class="pi-card__header">
+        <img
+          src="{{ pi.photo | relative_url }}"
+          alt="{{ pi.name_en }}"
+          class="pi-card__avatar"
+          loading="lazy"
+        >
+        <div class="pi-card__meta">
+          <h3 class="pi-card__name">
+            {{ pi.name_en }}
+            <span class="pi-card__name-ko">{{ pi.name_ko }}</span>
+          </h3>
+          <div class="pi-card__title">{{ pi.title_en }} ({{ pi.title_ko }})</div>
+        </div>
+      </div>
+      <div class="pi-card__body">
+        <p>{{ pi.bio }}</p>
+        <div class="pi-card__topics">
+          {% for t in pi.topics %}
+            <span class="pi-card__topic">{{ t }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="pi-card__footer">
+        {% if pi.email and pi.email != "" %}
+          <a href="mailto:{{ pi.email }}" class="pi-card__link" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        {% endif %}
+        {% if pi.links.scholar and pi.links.scholar != "" %}
+          <a href="{{ pi.links.scholar }}" target="_blank" rel="noopener" class="pi-card__link" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        {% endif %}
+        {% if pi.links.orcid and pi.links.orcid != "" %}
+          <a href="{{ pi.links.orcid }}" target="_blank" rel="noopener" class="pi-card__link" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
+        {% endif %}
+        {% if pi.links.github and pi.links.github != "" %}
+          <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-card__link" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
 
 ---
 

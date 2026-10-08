@@ -881,3 +881,287 @@ html[data-theme="dark"] {
     break-inside: avoid;
   }
 }
+
+/* ------------------------------------------------------------
+   Co-PI Duo Showcase (Landing Page)
+   ------------------------------------------------------------ */
+.pi-duo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--ed-s6, 1.5rem);
+  margin: var(--ed-s6, 1.5rem) 0;
+}
+
+.pi-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--global-card-bg-color, #ffffff);
+  border: 1px solid var(--ed-line, #e2e8f0);
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.pi-card__header {
+  display: flex;
+  gap: var(--ed-s4, 1rem);
+  padding: var(--ed-s5, 1.25rem);
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(163, 18, 58, 0.03), transparent);
+  border-bottom: 1px solid var(--ed-line, #e2e8f0);
+}
+
+.pi-card__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--ed-crimson, #a3123a);
+  flex-shrink: 0;
+}
+
+.pi-card__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.pi-card__name {
+  font-family: var(--ed-font-display, "Newsreader", serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--ed-ink, #0f172a);
+  line-height: 1.2;
+}
+
+.pi-card__name-ko {
+  font-family: var(--ed-font-sans, "Pretendard Variable", sans-serif);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ed-muted, #64748b);
+  margin-left: 6px;
+}
+
+.pi-card__title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ed-crimson, #a3123a);
+  margin-top: 3px;
+}
+
+.pi-card__body {
+  padding: var(--ed-s4, 1rem) var(--ed-s5, 1.25rem);
+  flex: 1;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ed-text, #334155);
+}
+
+.pi-card__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--ed-s3, 0.75rem);
+}
+
+.pi-card__topic {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--global-code-bg-color, #f1f5f9);
+  color: var(--ed-navy, #1e3a5f);
+  font-weight: 500;
+}
+
+.pi-card__footer {
+  padding: var(--ed-s3, 0.75rem) var(--ed-s5, 1.25rem);
+  border-top: 1px solid var(--ed-line, #e2e8f0);
+  display: flex;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.pi-card__link {
+  color: var(--ed-muted, #64748b);
+  transition: color 0.15s ease;
+}
+
+.pi-card__link:hover {
+  color: var(--ed-crimson, #a3123a);
+}
+
+/* ------------------------------------------------------------
+   Facilities with Photos
+   ------------------------------------------------------------ */
+.ed-spec--with-thumbs .ed-spec__head,
+.ed-spec--with-thumbs .ed-spec__row {
+  display: grid;
+  grid-template-columns: 84px minmax(9rem, 1.1fr) minmax(9rem, 1.4fr) 7.5rem;
+  column-gap: var(--ed-s5, 1.25rem);
+  align-items: center;
+}
+
+.ed-spec__thumb {
+  width: 76px;
+  height: 56px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--global-code-bg-color, #f1f5f9);
+  border: 1px solid var(--ed-line, #e2e8f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ed-spec__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.ed-spec__thumb img:hover {
+  transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+  .ed-spec--with-thumbs .ed-spec__head {
+    display: none;
+  }
+  .ed-spec--with-thumbs .ed-spec__row {
+    grid-template-columns: 76px minmax(0, 1fr);
+    grid-template-areas:
+      "thumb name"
+      "thumb make"
+      "thumb loc";
+    row-gap: 2px;
+    padding: var(--ed-s3, 0.75rem) 0;
+  }
+  .ed-spec--with-thumbs .ed-spec__thumb {
+    grid-area: thumb;
+  }
+  .ed-spec--with-thumbs .ed-spec__name {
+    grid-area: name;
+  }
+  .ed-spec--with-thumbs .ed-spec__make {
+    grid-area: make;
+  }
+  .ed-spec--with-thumbs .ed-spec__loc {
+    grid-area: loc;
+    text-align: left;
+  }
+}
+
+/* ------------------------------------------------------------
+   Gallery Photo Count & Album Grid
+   ------------------------------------------------------------ */
+.ed-album__cover {
+  position: relative;
+}
+
+.ed-album__badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.ed-album__expansion {
+  margin-top: var(--ed-s2, 0.5rem);
+}
+
+.ed-album__expansion-toggle {
+  font-size: 0.8rem;
+  color: var(--ed-crimson, #a3123a);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--ed-line, #e2e8f0);
+}
+
+.ed-album__expansion-toggle:hover {
+  opacity: 0.85;
+}
+
+.ed-album__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 6px;
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--global-code-bg-color, #f8f9fa);
+  border-radius: 4px;
+}
+
+.ed-album__thumb {
+  margin: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #000;
+}
+
+.ed-album__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.15s ease;
+}
+
+.ed-album__thumb img:hover {
+  transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------
+   Awards with Certificate Thumbnail
+   ------------------------------------------------------------ */
+.ed-entry--with-thumb {
+  display: flex;
+  gap: var(--ed-s4, 1rem);
+  align-items: flex-start;
+}
+
+.ed-entry__thumb {
+  width: 80px;
+  height: 105px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--ed-line, #e2e8f0);
+  background: var(--global-code-bg-color, #f1f5f9);
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.ed-entry__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.ed-entry__thumb img:hover {
+  transform: scale(1.05);
+}

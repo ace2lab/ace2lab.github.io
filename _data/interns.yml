@@ -1,79 +1,76 @@
-# ACE² Lab Former Undergraduate Interns
-
 - id: intern-1
-  name_ko: "오석현"
-  cohort: "21학번"
-  period: "2025.05 ~ 2026.03"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 오석현
+  cohort: 21학번
+  period: 2025.05 ~ 2026.03
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_1_오석현.jpg
 - id: intern-2
-  name_ko: "김성우"
-  cohort: "19학번"
-  period: "2025.01 ~ 2025.12"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 김성우
+  cohort: 19학번
+  period: 2025.01 ~ 2025.12
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_2_김성우.jpg
 - id: intern-3
-  name_ko: "우수민"
-  cohort: "20학번"
-  period: "2023.01 ~ 2025.02"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 우수민
+  cohort: 20학번
+  period: 2023.01 ~ 2025.02
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_3_우수민.jpg
 - id: intern-4
-  name_ko: "김우영"
-  cohort: "18학번"
-  period: "2023.07 ~ 2024. 07"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 김우영
+  cohort: 18학번
+  period: 2023.07 ~ 2024. 07
+  affiliation: 경북대학교 에너지화학공학과
 - id: intern-5
-  name_ko: "남재원"
-  cohort: "19학번"
-  period: "2023.07 ~ 2024. 06"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 남재원
+  cohort: 19학번
+  period: 2023.07 ~ 2024. 06
+  affiliation: 경북대학교 에너지화학공학과
 - id: intern-6
-  name_ko: "위건우"
-  cohort: "20학번"
-  period: "2021.03 ~ 2023. 09"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 위건우
+  cohort: 20학번
+  period: 2021.03 ~ 2023. 09
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_6_위건우.jpg
 - id: intern-7
-  name_ko: "차고은"
-  cohort: "16학번"
-  period: "2022.07 ~ 2022.11"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 차고은
+  cohort: 16학번
+  period: 2022.07 ~ 2022.11
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_7_차고은.jpg
 - id: intern-8
-  name_ko: "김유리"
-  cohort: "18학번"
-  period: "2022.03 ~ 2022.05"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 김유리
+  cohort: 18학번
+  period: 2022.03 ~ 2022.05
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_8_김유리.jpg
 - id: intern-9
-  name_ko: "김하민"
-  cohort: "16학번"
-  period: "2020.07 ~ 2022.01"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 김하민
+  cohort: 16학번
+  period: 2020.07 ~ 2022.01
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_9_김하민.jpg
 - id: intern-10
-  name_ko: "홍종택"
-  cohort: "20학번"
-  period: "2021.05 ~ 2021.08"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 홍종택
+  cohort: 20학번
+  period: 2021.05 ~ 2021.08
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_10_홍종택.jpg
 - id: intern-11
-  name_ko: "김희수"
-  cohort: "22학번"
-  period: "2021.05 ~ 2021.07"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 김희수
+  cohort: 22학번
+  period: 2021.05 ~ 2021.07
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_11_김희수.jpg
 - id: intern-12
-  name_ko: "백새연"
-  cohort: "18학번"
-  period: "2020.04 ~ 2021.07"
-  affiliation: "경북대학교 에너지화학공학과"
-
+  name_ko: 백새연
+  cohort: 18학번
+  period: 2020.04 ~ 2021.07
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_12_백새연.jpg
 - id: intern-13
-  name_ko: "박소연"
-  cohort: "17학번"
-  period: "2020.07 ~ 2021.02"
-  affiliation: "경북대학교 에너지화학공학과"
+  name_ko: 박소연
+  cohort: 17학번
+  period: 2020.07 ~ 2021.02
+  affiliation: 경북대학교 에너지화학공학과
+  photo: assets/img/team/interns/intern_13_박소연.jpg

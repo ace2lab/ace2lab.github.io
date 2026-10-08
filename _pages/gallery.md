@@ -25,18 +25,47 @@ nav_order: 6
             <li class="ed-album" id="album-{{ a.id }}">
               {% if a.cover and a.cover != "" %}
                 <figure class="ed-album__cover">
+                  {% if a.cover contains "assets/" %}
+                    {% assign cover_src = a.cover %}
+                  {% else %}
+                    {% assign cover_src = a.cover | prepend: '/assets/img/' %}
+                  {% endif %}
                   <img
-                    src="{{ a.cover | prepend: '/assets/img/' | relative_url }}"
+                    src="{{ cover_src | relative_url }}"
                     alt="{{ a.alt | default: a.title | escape }}"
                     loading="lazy"
                     decoding="async"
+                    data-zoomable
                   >
+                  {% if a.photos and a.photos.size > 1 %}
+                    <span class="ed-album__badge"><i class="fa-solid fa-camera"></i> {{ a.photos.size }}</span>
+                  {% endif %}
                 </figure>
               {% endif %}
               <time class="ed-album__date" datetime="{{ dp[0] }}-{{ dp[1] | prepend: '0' | slice: -2, 2 }}-{{ dp[2] | prepend: '0' | slice: -2, 2 }}">
                 {{- dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 -}}
               </time>
               <div class="ed-album__title">{{ a.title | escape }}</div>
+              {% if a.photos and a.photos.size > 1 %}
+                <details class="ed-album__expansion">
+                  <summary class="ed-album__expansion-toggle">
+                    <span>View all {{ a.photos.size }} photos</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </summary>
+                  <div class="ed-album__grid">
+                    {% for p in a.photos %}
+                      <figure class="ed-album__thumb">
+                        <img
+                          src="{{ p | relative_url }}"
+                          alt="{{ a.title | escape }} - photo {{ forloop.index }}"
+                          loading="lazy"
+                          data-zoomable
+                        >
+                      </figure>
+                    {% endfor %}
+                  </div>
+                </details>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>

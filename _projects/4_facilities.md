@@ -32,14 +32,27 @@ related_publications: false
 <span class="ed-section__count">{{ group.items.size }}</span>
 </h2>
 
-      <div class="ed-spec" role="table" aria-label="{{ group.name | escape }}">
+      <div class="ed-spec ed-spec--with-thumbs" role="table" aria-label="{{ group.name | escape }}">
         <div class="ed-spec__head" role="row">
+          <span role="columnheader">Photo</span>
           <span role="columnheader">Instrument</span>
           <span role="columnheader">Manufacturer · Model</span>
           <span role="columnheader">Location</span>
         </div>
         {% for item in group.items %}
           <div class="ed-spec__row" role="row">
+            <div class="ed-spec__thumb" role="cell">
+              {% if item.img and item.img != "" %}
+                <img
+                  src="{{ item.img | relative_url }}"
+                  alt="{{ item.name | escape }}"
+                  loading="lazy"
+                  data-zoomable
+                >
+              {% else %}
+                <div class="ed-spec__thumb--placeholder"><i class="fa-solid fa-microscope"></i></div>
+              {% endif %}
+            </div>
             <span class="ed-spec__name" role="cell">{{ item.name | escape }}</span>
             <span class="ed-spec__make" role="cell">
               {%- if item.manufacturer and item.manufacturer != "" -%}

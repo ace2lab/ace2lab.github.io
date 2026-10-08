@@ -1,92 +1,88 @@
-# ACE² Lab Research Awards
-
-- type: "우수상"
-  title: "2025 첨성인 대학원생 논문 경진대회"
-  recipient: "이희진"
-  issuer: "경북대학교 총장"
-  date: "2026.01.27"
+- type: 우수상
+  title: 2025 첨성인 대학원생 논문 경진대회
+  recipient: 이희진
+  issuer: 경북대학교 총장
+  date: 2026.01.27
   year: 2026
-
-- type: "장관상"
-  title: "2025 한국화학공학회 Chem frontier 포스터 심화 부문"
-  recipient: "안재빈, 김성우, 김민수"
-  issuer: "산업통상부 장관"
-  date: "2025.11.07"
+  img: assets/img/awards/award_1.jpg
+- type: 장관상
+  title: 2025 한국화학공학회 Chem frontier 포스터 심화 부문
+  recipient: 안재빈, 김성우, 김민수
+  issuer: 산업통상부 장관
+  date: 2025.11.07
   year: 2025
-
-- type: "우수연구교수"
-  title: "질적성과부분(JCR 5%)"
-  recipient: "임창용"
-  issuer: "경북대학교 총장"
-  date: "2025.03.14"
+  img: assets/img/awards/award_2.jpg
+- type: 우수연구교수
+  title: 질적성과부분(JCR 5%)
+  recipient: 임창용
+  issuer: 경북대학교 총장
+  date: 2025.03.14
   year: 2025
-
-- type: "Impact Recognition Award"
-  title: "한국화학공학회"
-  recipient: "임창용"
-  issuer: "한국화학공학회"
-  date: "2024.12.20"
+  img: assets/img/awards/award_3.jpg
+- type: Impact Recognition Award
+  title: 한국화학공학회
+  recipient: 임창용
+  issuer: 한국화학공학회
+  date: 2024.12.20
   year: 2024
-
-- type: "대상"
-  title: "2024 한국화학공학회 Chem frontier 포스터 심화 부문"
-  recipient: "이동호, 김다윈, 안재빈"
-  issuer: "롯데케미칼(주) 대표이사"
-  date: "2024.10.31"
+  img: assets/img/awards/award_4.jpg
+- type: 대상
+  title: 2024 한국화학공학회 Chem frontier 포스터 심화 부문
+  recipient: 이동호, 김다윈, 안재빈
+  issuer: 롯데케미칼(주) 대표이사
+  date: 2024.10.31
   year: 2024
-
-- type: "표창장"
-  title: "경북대학교 학위수여식"
-  recipient: "이재호"
-  issuer: "경북대학교 과학기술대학장"
-  date: "2024.02.23"
+  img: assets/img/awards/award_5.jpg
+- type: 표창장
+  title: 경북대학교 학위수여식
+  recipient: 이재호
+  issuer: 경북대학교 과학기술대학장
+  date: 2024.02.23
   year: 2024
-
-- type: "최우수상"
-  title: "2024 경북대학교 참여대학원생 성과대회"
-  recipient: "안준혁"
-  issuer: "스마트융복합재난관리교육연구단장"
-  date: "2024.01.24"
+  img: assets/img/awards/award_6.jpg
+- type: 최우수상
+  title: 2024 경북대학교 참여대학원생 성과대회
+  recipient: 안준혁
+  issuer: 스마트융복합재난관리교육연구단장
+  date: 2024.01.24
   year: 2024
-
-- type: "우수 포스터 발표상"
-  title: "2023년 추계 한국화학공학회 학술대회"
-  recipient: "팽창웅"
-  issuer: "한국화학공학회"
-  date: "2023.11.24"
+  img: assets/img/awards/award_7.jpg
+- type: 우수 포스터 발표상
+  title: 2023년 추계 한국화학공학회 학술대회
+  recipient: 팽창웅
+  issuer: 한국화학공학회
+  date: 2023.11.24
   year: 2023
-
-- type: "우수상"
-  title: "2023년 친환경에너지 페스티벌"
-  recipient: "김다윈, 안재빈"
-  issuer: "음성군수"
-  date: "2023.11.14"
+  img: assets/img/awards/award_8.jpg
+- type: 우수상
+  title: 2023년 친환경에너지 페스티벌
+  recipient: 김다윈, 안재빈
+  issuer: 음성군수
+  date: 2023.11.14
   year: 2023
-
-- type: "우수상"
-  title: "2023년 연구실 안전 대국민 공모전"
-  recipient: "이희진"
-  issuer: "국가연구안전관리본부장"
-  date: "2023.10.25"
+  img: assets/img/awards/award_9.jpg
+- type: 우수상
+  title: 2023년 연구실 안전 대국민 공모전
+  recipient: 이희진
+  issuer: 국가연구안전관리본부장
+  date: 2023.10.25
   year: 2023
-
-- type: "표창장"
-  title: "상주시장"
-  recipient: "팽창웅"
-  issuer: "상주시장"
-  date: "2023.02.17"
+  img: assets/img/awards/award_10.jpg
+- type: 표창장
+  title: 상주시장
+  recipient: 팽창웅
+  issuer: 상주시장
+  date: 2023.02.17
   year: 2023
-
-- type: "표창장"
-  title: "경북대학교 학위수여식"
-  recipient: "팽창웅"
-  issuer: "경북대학교 과학기술대학장"
-  date: "2023.02.17"
+- type: 표창장
+  title: 경북대학교 학위수여식
+  recipient: 팽창웅
+  issuer: 경북대학교 과학기술대학장
+  date: 2023.02.17
   year: 2023
-
-- type: "장려상"
-  title: "제 2 회 경북대학교 연구노트 경진대회"
-  recipient: "안준혁"
-  issuer: "경북대학교 총장"
-  date: "2022.12.26"
+- type: 장려상
+  title: 제 2 회 경북대학교 연구노트 경진대회
+  recipient: 안준혁
+  issuer: 경북대학교 총장
+  date: 2022.12.26
   year: 2022

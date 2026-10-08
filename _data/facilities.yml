@@ -1,246 +1,245 @@
-# ACE² Lab Laboratory Facilities & Equipment
-
 - id: 1
-  category: "Material Synthesis"
-  name: "Electrospinning"
-  manufacturer: "NanoNC"
-  model: "ESR200RD"
-  location: "7호관 414호"
-
+  category: Material Synthesis
+  name: Electrospinning
+  manufacturer: NanoNC
+  model: ESR200RD
+  location: 7호관 414호
+  img: assets/img/facilities/1_electrospinning.jpg
 - id: 2
-  category: "Material Synthesis"
-  name: "Flashlight"
-  manufacturer: "PSTEK"
-  model: "PSTEK HI-PULSE 15000"
-  location: "7호관 403호"
-
+  category: Material Synthesis
+  name: Flashlight
+  manufacturer: PSTEK
+  model: PSTEK HI-PULSE 15000
+  location: 7호관 403호
+  img: assets/img/facilities/2_flashlight.jpg
 - id: 3
-  category: "Material Synthesis"
-  name: "Spincoater"
-  manufacturer: "RHABDOS"
-  model: "SF-100ND"
-  location: "7호관 403호"
-
+  category: Material Synthesis
+  name: Spincoater
+  manufacturer: RHABDOS
+  model: SF-100ND
+  location: 7호관 403호
+  img: assets/img/facilities/3_spincoater.jpg
 - id: 4
-  category: "Material Synthesis"
-  name: "Sputter Coater"
-  manufacturer: "Cressington"
-  model: "108auto"
-  location: "7호관 403호"
-
+  category: Material Synthesis
+  name: Sputter Coater
+  manufacturer: Cressington
+  model: 108auto
+  location: 7호관 403호
+  img: assets/img/facilities/4_sputtercoater.jpg
 - id: 5
-  category: "Material Synthesis"
-  name: "Microwave Digestion System"
-  manufacturer: "Milestone"
-  model: "START D"
-  location: "7호관 403호"
-
+  category: Material Synthesis
+  name: Microwave Digestion System
+  manufacturer: Milestone
+  model: START D
+  location: 7호관 403호
+  img: assets/img/facilities/5_microwavedigestionsystem.jpg
 - id: 6
-  category: "Sample Preparation & Thermal Processing"
-  name: "Corona charger"
-  manufacturer: "Electro-Technic Products"
-  model: "BD-20ACV"
-  location: "7호관 414호"
-
+  category: Sample Preparation & Thermal Processing
+  name: Corona charger
+  manufacturer: Electro-Technic Products
+  model: BD-20ACV
+  location: 7호관 414호
+  img: assets/img/facilities/6_coronacharger.jpg
 - id: 7
-  category: "Sample Preparation & Thermal Processing"
-  name: "Probe sonicator"
-  manufacturer: "Misonix"
-  model: "Misonix Jack 4000 & Stand357"
-  location: "7호관 403호"
-
+  category: Sample Preparation & Thermal Processing
+  name: Probe sonicator
+  manufacturer: Misonix
+  model: Misonix Jack 4000 & Stand357
+  location: 7호관 403호
+  img: assets/img/facilities/7_probesonicator.jpg
 - id: 8
-  category: "Sample Preparation & Thermal Processing"
-  name: "Centrifuge"
-  manufacturer: "LABOGENE"
-  model: "1580R"
-  location: "7호관 414호"
-
+  category: Sample Preparation & Thermal Processing
+  name: Centrifuge
+  manufacturer: LABOGENE
+  model: 1580R
+  location: 7호관 414호
+  img: assets/img/facilities/8_centrifuge.jpg
 - id: 9
-  category: "Sample Preparation & Thermal Processing"
-  name: "Freeze Dryer"
-  manufacturer: "DAIHAN Scientific"
-  model: "Unifreez FD- 8"
-  location: "7호관 414호"
-
+  category: Sample Preparation & Thermal Processing
+  name: Freeze Dryer
+  manufacturer: DAIHAN Scientific
+  model: Unifreez FD- 8
+  location: 7호관 414호
+  img: assets/img/facilities/9_freezedryer.jpg
 - id: 10
-  category: "Sample Preparation & Thermal Processing"
-  name: "Forced Convection Oven"
-  manufacturer: "JSR"
-  model: "JSOF-150"
-  location: "7호관 414호"
-
+  category: Sample Preparation & Thermal Processing
+  name: Forced Convection Oven
+  manufacturer: JSR
+  model: JSOF-150
+  location: 7호관 414호
+  img: assets/img/facilities/10_forcedconvectionoven.jpg
 - id: 11
-  category: "Sample Preparation & Thermal Processing"
-  name: "Vacuum Oven"
-  manufacturer: "DAIHAN Scientific"
-  model: "ThermoStable OV-30"
-  location: "7호관 414호"
-
+  category: Sample Preparation & Thermal Processing
+  name: Vacuum Oven
+  manufacturer: DAIHAN Scientific
+  model: ThermoStable OV-30
+  location: 7호관 414호
+  img: assets/img/facilities/11_vacuumoven.jpg
 - id: 12
-  category: "Sample Preparation & Thermal Processing"
-  name: "Muffle Furnace"
-  manufacturer: "DAIHAN Scientific"
-  model: "FH-12"
-  location: "7호관 403호"
-
+  category: Sample Preparation & Thermal Processing
+  name: Muffle Furnace
+  manufacturer: DAIHAN Scientific
+  model: FH-12
+  location: 7호관 403호
+  img: assets/img/facilities/12_mufflefurnace.jpg
 - id: 13
-  category: "Sample Preparation & Thermal Processing"
-  name: "E-JIN Heating System"
-  manufacturer: "INTEC System"
-  model: "EJH- 1000"
-  location: "7호관 403호"
-
+  category: Sample Preparation & Thermal Processing
+  name: E-JIN Heating System
+  manufacturer: INTEC System
+  model: EJH- 1000
+  location: 7호관 403호
+  img: assets/img/facilities/13_ejinheatingsystem.jpg
 - id: 14
-  category: "Sample Preparation & Thermal Processing"
-  name: "CrushIR Hydraulic Press"
-  manufacturer: "PIKE Technologies"
-  model: "181-1100"
-  location: "8호관 313호"
-
+  category: Sample Preparation & Thermal Processing
+  name: CrushIR Hydraulic Press
+  manufacturer: PIKE Technologies
+  model: 181-1100
+  location: 8호관 313호
+  img: assets/img/facilities/14_crushirhydraulicpress.jpg
 - id: 15
-  category: "Characterization & Measurement"
-  name: "FT-IR Spectrometer"
-  manufacturer: "Thermo Fisher Scientific"
-  model: "Nicolet iS50"
-  location: "8호관 313호"
-
+  category: Characterization & Measurement
+  name: FT-IR Spectrometer
+  manufacturer: Thermo Fisher Scientific
+  model: Nicolet iS50
+  location: 8호관 313호
+  img: assets/img/facilities/15_ftirspectrometer.jpg
 - id: 16
-  category: "Characterization & Measurement"
-  name: "UV-Vis"
-  manufacturer: "SHIMADZU"
-  model: "UV-1900 i"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: UV-Vis
+  manufacturer: SHIMADZU
+  model: UV-1900 i
+  location: 7호관 403호
+  img: assets/img/facilities/16_uvvis.jpg
 - id: 17
-  category: "Characterization & Measurement"
-  name: "Gas Chromatography"
-  manufacturer: "Agilent Technologies"
-  model: "7890A"
-  location: "8호관 313호"
-
+  category: Characterization & Measurement
+  name: Gas Chromatography
+  manufacturer: Agilent Technologies
+  model: 7890A
+  location: 8호관 313호
+  img: assets/img/facilities/17_gaschromatography.jpg
 - id: 18
-  category: "Characterization & Measurement"
-  name: "Liquid Chromatography"
-  manufacturer: "SHIMADZU"
-  model: "Prominence"
-  location: "8호관 313호"
-
+  category: Characterization & Measurement
+  name: Liquid Chromatography
+  manufacturer: SHIMADZU
+  model: Prominence
+  location: 8호관 313호
+  img: assets/img/facilities/18_liquidchromatography.jpg
 - id: 19
-  category: "Characterization & Measurement"
-  name: "BET Analyzer"
-  manufacturer: "Malvern Panalytical"
-  model: "Micromeritics ASAP 2020 plus"
-  location: "8호관 313호"
-
+  category: Characterization & Measurement
+  name: BET Analyzer
+  manufacturer: Malvern Panalytical
+  model: Micromeritics ASAP 2020 plus
+  location: 8호관 313호
+  img: assets/img/facilities/19_betanalyzer.jpg
 - id: 20
-  category: "Characterization & Measurement"
-  name: "Zeta Potential & Particle Size Analyzer"
-  manufacturer: "Malvern Panalytical"
-  model: "Zetasizer Ultra Blue"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: Zeta Potential & Particle Size Analyzer
+  manufacturer: Malvern Panalytical
+  model: Zetasizer Ultra Blue
+  location: 7호관 403호
+  img: assets/img/facilities/20_zetapotentialparticlesizeanalyzer.jpg
 - id: 21
-  category: "Characterization & Measurement"
-  name: "Viscometer"
-  manufacturer: "Anton Paar"
-  model: "ViscoQC 300"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: Viscometer
+  manufacturer: Anton Paar
+  model: ViscoQC 300
+  location: 7호관 403호
+  img: assets/img/facilities/21_viscometer.jpg
 - id: 22
-  category: "Characterization & Measurement"
-  name: "pH meter"
-  manufacturer: "METTLER TOLEDO"
-  model: "SevenExcellence S470"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: pH meter
+  manufacturer: METTLER TOLEDO
+  model: SevenExcellence S470
+  location: 7호관 403호
+  img: assets/img/facilities/22_phmeter.jpg
 - id: 23
-  category: "Characterization & Measurement"
-  name: "Potentiostat"
-  manufacturer: "BioLogic"
-  model: "SP-150"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: Potentiostat
+  manufacturer: BioLogic
+  model: SP-150
+  location: 7호관 403호
+  img: assets/img/facilities/23_potentiostat.jpg
 - id: 24
-  category: "Characterization & Measurement"
-  name: "4 Point Probe"
-  manufacturer: "MS tech"
-  model: "M4P205"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: 4 Point Probe
+  manufacturer: MS tech
+  model: M4P205
+  location: 7호관 403호
+  img: assets/img/facilities/24_4pointprobe.jpg
 - id: 25
-  category: "Characterization & Measurement"
-  name: "Source measuring unit"
-  manufacturer: "KEITHLEY"
+  category: Characterization & Measurement
+  name: Source measuring unit
+  manufacturer: KEITHLEY
   model: "2450"
-  location: "7호관 403호"
-
+  location: 7호관 403호
+  img: assets/img/facilities/25_sourcemeasuringunit.jpg
 - id: 26
-  category: "Characterization & Measurement"
-  name: "Conductometer"
-  manufacturer: "Metrohm"
-  model: "712 Conductometer"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: Conductometer
+  manufacturer: Metrohm
+  model: 712 Conductometer
+  location: 7호관 403호
+  img: assets/img/facilities/26_conductometer.jpg
 - id: 27
-  category: "Characterization & Measurement"
-  name: "Keysight digital multimeter"
-  manufacturer: "KEYSIGHT"
-  model: "U1233A"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: Keysight digital multimeter
+  manufacturer: KEYSIGHT
+  model: U1233A
+  location: 7호관 403호
+  img: assets/img/facilities/27_keysightdigitalmultimeter.jpg
 - id: 28
-  category: "Characterization & Measurement"
-  name: "Mini-SEM"
-  manufacturer: "SEC"
-  model: "SNE-3000M"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: Mini-SEM
+  manufacturer: SEC
+  model: SNE-3000M
+  location: 7호관 403호
+  img: assets/img/facilities/28_minisem.jpg
 - id: 29
-  category: "Characterization & Measurement"
-  name: "Optical microscope"
-  manufacturer: "EG Tech"
-  model: "EGVM-35B"
-  location: "7호관 403호"
-
+  category: Characterization & Measurement
+  name: Optical microscope
+  manufacturer: EG Tech
+  model: EGVM-35B
+  location: 7호관 403호
+  img: assets/img/facilities/29_opticalmicroscope.jpg
 - id: 30
-  category: "Infrastructure & Utility"
-  name: "Glove Box"
-  manufacturer: "M.Braun Inertgas system"
-  model: "UNIlab Plus Glovebox"
-  location: "7호관 403호"
-
+  category: Infrastructure & Utility
+  name: Glove Box
+  manufacturer: M.Braun Inertgas system
+  model: UNIlab Plus Glovebox
+  location: 7호관 403호
+  img: assets/img/facilities/30_glovebox.jpg
 - id: 31
-  category: "Infrastructure & Utility"
-  name: "DI-water maker"
-  manufacturer: "Balmann Tech"
-  model: "Ultlma DUO200"
-  location: "7호관 414호"
-
+  category: Infrastructure & Utility
+  name: DI-water maker
+  manufacturer: Balmann Tech
+  model: Ultlma DUO200
+  location: 7호관 414호
+  img: assets/img/facilities/31_diwatermaker.jpg
 - id: 32
-  category: "Infrastructure & Utility"
-  name: "Gas cabinet"
-  manufacturer: "JIN Solution"
-  model: "N/A"
-  location: "8호관 313호"
-
+  category: Infrastructure & Utility
+  name: Gas cabinet
+  manufacturer: JIN Solution
+  model: N/A
+  location: 8호관 313호
+  img: assets/img/facilities/32_gascabinet.jpg
 - id: 33
-  category: "Infrastructure & Utility"
-  name: "Dry scrubber"
-  manufacturer: "SBM"
-  model: "SKY-D100"
-  location: "8호관 313호"
-
+  category: Infrastructure & Utility
+  name: Dry scrubber
+  manufacturer: SBM
+  model: SKY-D100
+  location: 8호관 313호
+  img: assets/img/facilities/33_dryscrubber.jpg
 - id: 34
-  category: "Infrastructure & Utility"
-  name: "Mass flow controller"
-  manufacturer: "ATOVAC"
-  model: "GMC1200"
-  location: "8호관 313호"
-
+  category: Infrastructure & Utility
+  name: Mass flow controller
+  manufacturer: ATOVAC
+  model: GMC1200
+  location: 8호관 313호
+  img: assets/img/facilities/34_massflowcontroller.jpg
 - id: 35
-  category: "Infrastructure & Utility"
-  name: "Gas sensor"
-  manufacturer: "MS Tech"
-  model: "MST-1000H"
-  location: "8호관 313호"
+  category: Infrastructure & Utility
+  name: Gas sensor
+  manufacturer: MS Tech
+  model: MST-1000H
+  location: 8호관 313호
+  img: assets/img/facilities/35_gassensor.jpg

@@ -46,7 +46,17 @@ nav_order: 5
           <ul class="ed-entries" role="list">
             {% for a in group.items %}
               {% assign dp = a.date | remove: " " | split: "." %}
-              <li class="ed-entry ed-entry--plain">
+              <li class="ed-entry ed-entry--plain{% if a.img and a.img != '' %} ed-entry--with-thumb{% endif %}">
+                {% if a.img and a.img != "" %}
+                  <div class="ed-entry__thumb">
+                    <img
+                      src="{{ a.img | relative_url }}"
+                      alt="{{ a.title | escape }}"
+                      loading="lazy"
+                      data-zoomable
+                    >
+                  </div>
+                {% endif %}
                 <div class="ed-entry__body">
                   <div class="ed-entry__title">{{ a.title | escape }}</div>
                   <div class="ed-entry__line">
