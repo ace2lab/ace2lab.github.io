@@ -1,0 +1,21 @@
+{% comment %}
+  ACE² Lab — AMTL-Inspired Editorial Hero Banner Component
+  Usage: {% include hero_banner.liquid label="..." title="..." subtitle="..." %}
+{% endcomment %}
+
+<div class="ed-hero-banner">
+  <div class="ed-hero-banner__inner">
+    {% if include.label and include.label != '' %}
+      <div class="ed-hero-banner__label">{{ include.label }}</div>
+    {% endif %}
+    <h1 class="ed-hero-banner__title">{{ include.title }}</h1>
+    {% if include.subtitle and include.subtitle != '' %}
+      <p class="ed-hero-banner__subtitle">{{ include.subtitle }}</p>
+    {% endif %}
+    {% if include.badges %}
+      <div class="ed-hero-banner__badges">
+        {{ include.badges }}
+      </div>
+    {% endif %}
+  </div>
+</div>

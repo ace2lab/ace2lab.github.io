@@ -1,0 +1,67 @@
+/* ============================================================
+   ACE² Lab — Design Tokens & Typography System
+   Kyungpook National University (KNU)
+   Inspired by AMTL & Classic Academic Editorial Principles
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+:root {
+  /* ------------------------------------------------------------
+     Brand Palette (Dual Hybrid: KNU Crimson + ACE² Navy)
+     ------------------------------------------------------------ */
+  --color-knu-crimson: #a3123a;
+  --color-knu-crimson-hover: #820e2e;
+  --color-knu-crimson-soft: rgba(163, 18, 58, 0.08);
+
+  --color-ace2-navy: #1e3a5f;
+  --color-ace2-navy-light: #2d5584;
+  --color-ace2-navy-soft: rgba(30, 58, 95, 0.08);
+
+  /* Neutrals & Surfaces (Light Mode) */
+  --color-ground: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-hover: #f1f5f9;
+  --color-ink: #1e293b;
+  --color-ink-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-line-strong: #cbd5e1;
+
+  /* AMTL-Style Hero Banner */
+  --banner-bg: #2d282a;
+  --banner-gradient: radial-gradient(1100px 300px at 12% 130%, rgba(163, 18, 58, 0.42), transparent 70%);
+  --banner-text: #ffffff;
+  --banner-text-muted: rgba(255, 255, 255, 0.78);
+
+  /* Typography Font Families */
+  --font-serif-editorial: "Newsreader", "Noto Serif KR", Georgia, serif;
+  --font-sans-body: "Pretendard Variable", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --font-mono-meta: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ------------------------------------------------------------
+   Dark Mode Overrides
+   ------------------------------------------------------------ */
+html[data-theme="dark"] {
+  --color-knu-crimson: #f0708f;
+  --color-knu-crimson-hover: #f7a0b5;
+  --color-knu-crimson-soft: rgba(240, 112, 143, 0.12);
+
+  --color-ace2-navy: #9db7d9;
+  --color-ace2-navy-light: #b8cde4;
+  --color-ace2-navy-soft: rgba(157, 183, 217, 0.14);
+
+  --color-ground: #141011;
+  --color-surface: #1c1719;
+  --color-surface-hover: #262022;
+  --color-ink: #f1f5f9;
+  --color-ink-muted: #94a3b8;
+  --color-line: #2d2628;
+  --color-line-strong: #453a3d;
+
+  --banner-bg: #1c1719;
+  --banner-gradient: radial-gradient(1100px 300px at 12% 130%, rgba(240, 112, 143, 0.28), transparent 70%);
+  --banner-text: #f1f5f9;
+  --banner-text-muted: rgba(241, 245, 249, 0.76);
+}

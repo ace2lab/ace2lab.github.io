@@ -29,26 +29,29 @@ latest_posts:
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
 
-<div class="hero-banner">
-  <div class="hero-banner__title">ACE² Lab</div>
-  <div class="hero-banner__subtitle">
-    Advanced Chemical & Energy Engineering Laboratory · 차세대 화학 및 에너지 공학 연구실
-    <br>
-    <span style="font-size: 0.95rem; color: var(--global-text-color-light);">
-      Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
-    </span>
-  </div>
-  <div class="hero-banner__badges">
-    <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Energy Storage</span>
-    <span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Intense Pulsed Light (IPL)</span>
-    <span class="hero-badge"><i class="fa-solid fa-microchip"></i> Flexible Sensors</span>
-    <span class="hero-badge"><i class="fa-solid fa-atom"></i> Colloidal Quantum Dots</span>
+<div class="ed-hero-banner">
+  <div class="ed-hero-banner__inner">
+    <div class="ed-hero-banner__label">KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB</div>
+    <h1 class="ed-hero-banner__title">Advanced Chemical & Energy Engineering Laboratory</h1>
+    <p class="ed-hero-banner__subtitle">
+      차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과
+      <br>
+      <span style="font-size: 0.92rem; opacity: 0.85;">
+        Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
+      </span>
+    </p>
+    <div class="ed-hero-banner__badges">
+      <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Energy Storage</span>
+      <span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Intense Pulsed Light (IPL)</span>
+      <span class="hero-badge"><i class="fa-solid fa-microchip"></i> Flexible Sensors</span>
+      <span class="hero-badge"><i class="fa-solid fa-atom"></i> Colloidal Quantum Dots</span>
+    </div>
   </div>
 </div>
 
 ## About the Laboratory
 
-ACE² Lab은 경북대학교 과학기술대학 에너지화학공학과에서 **김태욱 부교수**와 **임창용 부교수**가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지 공학 연구실입니다.
+ACE² Lab은 경북대학교 과학기술대학 에너지화학공학과에서 '김태욱 부교수'와 '임창용 부교수'가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지 공학 연구실입니다.
 
 초고속 펄스광(Intense Pulsed Light, IPL) 기반 광열처리 나노공정, 레이저 유도 그래핀(Laser-Induced Graphene, LIG), 2D 맥신(MXene) 및 금속유기골격체(MOF) 기반 복합소재 설계를 바탕으로 차세대 하이브리드 슈퍼캐패시터, 고성능 리튬이온전지 음극, 고민감도 유연 생체·환경 센서 및 고품질 양자점 광전소자를 집중적으로 연구하고 있습니다.
 
