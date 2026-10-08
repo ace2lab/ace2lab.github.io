@@ -10,7 +10,7 @@
    5. Academic Parity     — balanced visual weight for Co-PIs and research
    ============================================================ */
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import url("./ace2_tokens.css");
 
 :root {
   /* Suppress al-folio core magenta (#b509ac) with Deep Academic Navy */
@@ -26,8 +26,7 @@
   --global-code-bg-color: #f8fafc;
 
   /* Font Family SSOT */
-  --font-editorial:
-    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  --font-editorial: var(--font-sans-body);
 }
 
 html[data-theme="dark"] {
@@ -68,25 +67,34 @@ p {
 
 h1,
 h2,
+.ed-section__title,
+.ed-hero-banner__title {
+  font-family: var(--font-serif-editorial);
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+  font-weight: 500;
+  color: var(--color-ink, var(--global-text-color));
+}
+
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-editorial);
-  letter-spacing: -0.02em;
+  font-family: var(--font-sans-body);
+  letter-spacing: -0.015em;
   word-break: keep-all;
   font-weight: 600;
-  color: var(--global-text-color);
+  color: var(--color-ink, var(--global-text-color));
 }
 
 h1 {
-  font-size: 2rem;
-  line-height: 1.3;
+  font-size: 2.15rem;
+  line-height: 1.25;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   line-height: 1.35;
   margin-top: 2rem;
   margin-bottom: 0.85rem;
@@ -95,7 +103,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 1.4;
   margin-top: 1.5rem;
   margin-bottom: 0.6rem;
@@ -153,47 +161,80 @@ a:hover {
 /* ------------------------------------------------------------
    Hero & Welcome Section (Home Page)
    ------------------------------------------------------------ */
-.hero-banner {
-  padding: 2.5rem 0 2rem 0;
-  border-bottom: 1px solid var(--global-divider-color);
-  margin-bottom: 2.5rem;
+
+.ed-hero-banner {
+  background-color: var(--banner-bg);
+  background-image: var(--banner-gradient);
+  color: var(--banner-text);
+  padding: 44px 32px 38px;
+  border-radius: 8px;
+  margin: 10px 0 28px 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-banner__title {
-  font-size: 2.3rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.25;
-  margin-bottom: 0.5rem;
-  color: var(--global-text-color);
+
+.ed-hero-banner__label {
+  font-family: var(--font-mono-meta);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-knu-crimson);
+  margin-bottom: 10px;
 }
 
-.hero-banner__subtitle {
-  font-size: 1.1rem;
+
+.ed-hero-banner__title {
+  font-family: var(--font-serif-editorial);
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin-bottom: 12px;
+  color: #ffffff !important;
+  text-wrap: balance;
+}
+
+
+.ed-hero-banner__subtitle {
+  font-family: var(--font-sans-body);
+  font-size: 0.96rem;
   font-weight: 400;
-  color: var(--global-text-color-light);
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
+  color: var(--banner-text-muted) !important;
+  line-height: 1.65;
+  margin-bottom: 0;
+  max-width: 72ch;
+  word-break: keep-all;
 }
 
-.hero-banner__badges {
+
+.ed-hero-banner__badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-family: var(--font-mono-meta);
+  font-size: 0.74rem;
   font-weight: 500;
-  background: var(--global-code-bg-color);
-  border: 1px solid var(--global-divider-color);
-  color: var(--global-text-color);
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-badge i {
+  color: var(--color-knu-crimson);
 }
 
 /* ------------------------------------------------------------
@@ -434,10 +475,12 @@ html[data-theme="dark"] {
 
 .ed-index a {
   color: var(--ed-muted);
+  transition: color 0.15s ease;
 }
 
-.ed-index a:hover {
-  color: var(--ed-accent);
+.ed-index a:hover,
+.ed-index a.active {
+  color: var(--color-knu-crimson);
   text-decoration: none;
 }
 
@@ -555,10 +598,12 @@ html[data-theme="dark"] {
 }
 
 .ed-entry__num {
+  font-family: var(--font-mono-meta);
   font-size: var(--ed-fs-2xs);
   font-weight: 500;
   line-height: 24px;
-  color: var(--ed-muted);
+  color: var(--color-knu-crimson);
+  font-variant-numeric: tabular-nums;
 }
 
 .ed-entry__body {
@@ -611,18 +656,20 @@ html[data-theme="dark"] {
   opacity: 0.6;
 }
 
-/* Hairline tag: accent text, no fill */
+/* Hairline tag: subtle crimson tint with mono typography */
 .ed-tag {
   display: inline-block;
   margin-right: var(--ed-s2);
   padding: 0 var(--ed-s2);
-  border: 1px solid var(--ed-line);
+  border: 1px solid var(--color-knu-crimson-soft, var(--ed-line));
+  background: var(--color-knu-crimson-soft, transparent);
   border-radius: 4px;
+  font-family: var(--font-mono-meta);
   font-size: var(--ed-fs-2xs);
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: 0;
-  color: var(--ed-accent);
+  letter-spacing: 0.02em;
+  color: var(--color-knu-crimson);
 }
 
 /* ------------------------------------------------------------
