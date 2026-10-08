@@ -1,3 +1,16 @@
+- id: 28
+  title: 한국화학공학회 26년도 추계 학술대회 (Chem Frontier 장관상 수상)
+  date: 2026.10.06
+  year: 2026
+  cover: assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/cover.jpg
+  photos:
+    - assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/1.jpg
+    - assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/2.jpg
+    - assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/3.jpg
+    - assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/4.jpg
+    - assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/5.jpg
+    - assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/6.jpg
+    - assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/7.jpg
 - id: 1
   title: 한국화학공학회 26년도 춘계 학술대회
   date: 2026.04.22
