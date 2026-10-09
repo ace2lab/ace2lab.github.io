@@ -4,7 +4,7 @@ title: gallery
 description: Conferences, defenses and moments from ACE² Lab, newest first.
 permalink: /gallery/
 nav: true
-nav_order: 6
+nav_order: 7
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">

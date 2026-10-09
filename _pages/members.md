@@ -176,5 +176,5 @@ nav_order: 2
   {% endif %}
 
   <!-- Synchronous on purpose: it must run before first paint to avoid a flash of all panels -->
-  <script src="{{ '/assets/js/members_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </div>

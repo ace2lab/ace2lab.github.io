@@ -4,7 +4,7 @@ title: news
 description: Announcements, awards and media coverage of ACE² Lab.
 permalink: /news/
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">

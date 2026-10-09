@@ -1,0 +1,37 @@
+<div class="ed-spec ed-spec--with-thumbs" role="table" aria-label="{{ include.caption | escape }}">
+  <div class="ed-spec__head" role="row">
+    <span role="columnheader">Photo</span>
+    <span role="columnheader">Instrument</span>
+    <span role="columnheader">Manufacturer · Model</span>
+    <span role="columnheader">Location</span>
+  </div>
+  {% for item in include.items %}
+    <div class="ed-spec__row" role="row" id="fac-{{ item.id }}">
+      <div class="ed-spec__thumb" role="cell">
+        {% if item.img and item.img != '' %}
+          <img
+            src="{{ item.img | relative_url }}"
+            alt="{{ item.name | escape }}"
+            loading="lazy"
+            data-zoomable
+          >
+        {% else %}
+          <div class="ed-spec__thumb--placeholder"><i class="fa-solid fa-microscope"></i></div>
+        {% endif %}
+      </div>
+      <span class="ed-spec__name" role="cell">{{ item.name | escape }}</span>
+      <span class="ed-spec__make" role="cell">
+        {%- if item.manufacturer and item.manufacturer != '' -%}
+          {{ item.manufacturer | escape }}
+        {%- endif -%}
+        {%- if item.model and item.model != '' -%}
+          {%- if item.manufacturer and item.manufacturer != '' -%}
+            <span class="ed-sep" aria-hidden="true">·</span>
+          {%- endif -%}
+          <span class="ed-spec__model">{{ item.model | escape }}</span>
+        {%- endif -%}
+      </span>
+      <span class="ed-spec__loc" role="cell">{{ item.location | escape }}</span>
+    </div>
+  {% endfor %}
+</div>
