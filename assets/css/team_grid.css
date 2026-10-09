@@ -658,19 +658,23 @@ html[data-theme="dark"] .member-awards i {
   color: var(--tm-muted);
 }
 
+/* Where (institution) and what (title) both matter: the org is the bold
+   anchor, the role is a medium-weight title in full ink beneath the period. */
 .pi-timeline__role {
   margin-top: 2px;
   font-size: var(--tm-fs-sm);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   letter-spacing: -0.015em;
   color: var(--tm-ink);
 }
 
 .pi-timeline__org {
-  font-size: var(--tm-fs-xs);
+  font-size: var(--tm-fs-sm);
+  font-weight: 600;
   line-height: 20px;
-  color: var(--tm-text);
+  letter-spacing: -0.015em;
+  color: var(--tm-ink);
 }
 
 .pi-timeline__note {
@@ -839,8 +843,8 @@ html[data-theme="dark"] .pi-action:focus-visible {
 }
 
 /* ------------------------------------------------------------
-   5. Alumni — a typographic table, not a stack of cards
-   Grid: [degree · year] [name] [thesis] [→ destination]
+   5. Alumni — photo + typographic row
+   Grid: [portrait] [degree · name | thesis | → destination]
    ------------------------------------------------------------ */
 .alumni-list {
   border-top: 1px solid var(--tm-line);
@@ -849,19 +853,58 @@ html[data-theme="dark"] .pi-action:focus-visible {
 
 .alumni-row {
   display: grid;
-  grid-template-columns: 7.5rem minmax(10rem, 14rem) 1fr auto;
-  align-items: baseline;
-  column-gap: var(--tm-s6);
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--tm-s5);
   padding: var(--tm-s4) var(--tm-s2);
   border-bottom: 1px solid var(--tm-line);
   font-size: var(--tm-fs-sm);
   line-height: 24px;
   letter-spacing: -0.01em;
   color: var(--tm-text);
+  scroll-margin-top: 8rem;
+}
+
+.alumni-row__avatar-wrapper {
+  align-self: start;
+}
+
+.alumni-row__avatar {
+  display: block;
+  width: 56px;
+  height: 70px; /* 4:5, same as the member cards */
+  border-radius: var(--tm-r-sm);
+  object-fit: cover;
+  object-position: top center;
+  background: var(--tm-sunken);
+  border: 1px solid var(--tm-line);
+}
+
+.alumni-row__avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--tm-fs-md);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-indent: 0.04em;
+  line-height: 1;
+  color: var(--tm-muted);
+  user-select: none;
+}
+
+.alumni-row__body {
+  display: grid;
+  grid-template-columns: minmax(10rem, 15rem) minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: var(--tm-s6);
+  min-width: 0;
 }
 
 .alumni-row__left {
-  display: contents; /* let degree + name join the row grid */
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .alumni-row__degree {
@@ -936,15 +979,103 @@ html[data-theme="dark"] .pi-action:focus-visible {
 
 @media (max-width: 767.98px) {
   .alumni-row {
+    align-items: start;
+    column-gap: var(--tm-s4);
+    padding: var(--tm-s4) 0;
+  }
+
+  .alumni-row__body {
     grid-template-columns: 1fr;
     row-gap: var(--tm-s1);
-    padding: var(--tm-s4) 0;
   }
 
   .alumni-row__now {
     justify-content: flex-start;
     text-align: left;
   }
+}
+
+/* ------------------------------------------------------------
+   5b. Former interns — compact photo cards
+   ------------------------------------------------------------ */
+.intern-grid {
+  display: grid;
+  gap: var(--tm-s4);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.intern-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--tm-s4);
+  padding: var(--tm-s4);
+  background: var(--tm-surface);
+  border: 1px solid var(--tm-line);
+  border-radius: var(--tm-r-md);
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  scroll-margin-top: 8rem;
+}
+
+.intern-card:hover {
+  box-shadow: var(--tm-shadow);
+  border-color: var(--tm-line-strong);
+}
+
+.intern-card__avatar {
+  display: block;
+  width: 56px;
+  height: 70px;
+  border-radius: var(--tm-r-sm);
+  object-fit: cover;
+  object-position: top center;
+  background: var(--tm-sunken);
+  border: 1px solid var(--tm-line);
+}
+
+.intern-card__avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--tm-fs-md);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-indent: 0.04em;
+  line-height: 1;
+  color: var(--tm-muted);
+  user-select: none;
+}
+
+.intern-card__content {
+  min-width: 0;
+}
+
+.intern-card__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tm-s1) var(--tm-s2);
+  margin: 0;
+  font-family: var(--tm-font);
+  font-size: var(--tm-fs-md);
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: var(--tm-ink);
+}
+
+.intern-card__period,
+.intern-card__aff {
+  margin: 0;
+  font-size: var(--tm-fs-xs);
+  line-height: 20px;
+  color: var(--tm-muted);
+}
+
+.intern-card__period {
+  margin-top: var(--tm-s1);
 }
 
 /* ------------------------------------------------------------
@@ -1125,6 +1256,7 @@ html[data-theme="dark"] .pi-action:focus-visible {
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   .member-card,
+  .intern-card,
   .link-icon,
   .pi-action,
   .pi-action i,
@@ -1143,6 +1275,7 @@ html[data-theme="dark"] .pi-action:focus-visible {
 @media print {
   .member-card,
   .pi-profile,
+  .intern-card,
   .alumni-row {
     break-inside: avoid;
     box-shadow: none;

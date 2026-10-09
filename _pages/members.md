@@ -148,18 +148,29 @@ nav_order: 2
       {% if intern_affiliations.size == 1 %}
         <p class="ed-section__note">{{ intern_affiliations.first | escape }}</p>
       {% endif %}
-      <ul class="ed-roster" role="list">
+      <div class="intern-grid">
         {% for i in interns %}
-          <li class="ed-roster__row" id="{{ i.id }}">
-            <span class="ed-roster__name">{{ i.name_ko | escape }}</span>
-            <span class="ed-roster__cohort">{{ i.cohort | escape }}</span>
-            <span class="ed-roster__period">{{ i.period | escape }}</span>
-            {% if intern_affiliations.size > 1 %}
-              <span class="ed-roster__aff">{{ i.affiliation | escape }}</span>
+          <article class="intern-card" id="{{ i.id }}">
+            {% if i.photo and i.photo != '' %}
+              <img src="{{ i.photo | relative_url }}" alt="{{ i.name_ko | escape }}" class="intern-card__avatar" loading="lazy" decoding="async">
+            {% else %}
+              <div class="intern-card__avatar intern-card__avatar--placeholder" aria-hidden="true">
+                <span>{{ i.name_ko | slice: 0, 2 }}</span>
+              </div>
             {% endif %}
-          </li>
+            <div class="intern-card__content">
+              <h3 class="intern-card__name">
+                {{ i.name_ko | escape }}
+                <span class="member-badge">{{ i.cohort | escape }}</span>
+              </h3>
+              <p class="intern-card__period">{{ i.period | replace: '. ', '.' | escape }}</p>
+              {% if intern_affiliations.size > 1 %}
+                <p class="intern-card__aff">{{ i.affiliation | escape }}</p>
+              {% endif %}
+            </div>
+          </article>
         {% endfor %}
-      </ul>
+      </div>
     </section>
   </div>
   {% endif %}
