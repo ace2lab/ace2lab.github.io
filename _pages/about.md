@@ -4,19 +4,19 @@ title: about
 permalink: /
 subtitle: Advanced Chemical & Energy Engineering Laboratory | KNU
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # Option B: rendered in-body dual-column grid
 social: false # clean academic minimalism
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 6 # leave blank to include all the news in the `_news` folder
+  enabled: false # Option B: rendered in-body dual-column grid
+  scrollable: false
+  limit: 6
 
 latest_posts:
   enabled: false
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <style>
   .post > header.post-header {
@@ -24,22 +24,75 @@ latest_posts:
   }
 </style>
 
-<div class="ed-hero-banner">
-  <div class="ed-hero-banner__inner">
-    <div class="ed-hero-banner__label">KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB</div>
-    <h1 class="ed-hero-banner__title">Advanced Chemical & Energy Engineering Laboratory</h1>
-    <p class="ed-hero-banner__subtitle">
-      차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과
-      <br>
-      <span style="font-size: 0.92rem; opacity: 0.85;">
-        Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
-      </span>
+{% capture hero_badges %}
+<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Energy Storage</span>
+<span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Intense Pulsed Light (IPL)</span>
+<span class="hero-badge"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Flexible Sensors</span>
+<span class="hero-badge"><i class="fa-solid fa-atom" aria-hidden="true"></i> Colloidal Quantum Dots</span>
+{% endcapture %}
+
+{% capture hero_actions %}
+<a href="#research-areas" class="hero-action-btn hero-action-btn--primary"><i class="fa-solid fa-compass" aria-hidden="true"></i> Research Areas</a>
+<a href="{{ '/members/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-users" aria-hidden="true"></i> Meet Our Team</a>
+<a href="{{ '/publications/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Publications</a>
+{% endcapture %}
+
+{% capture hero_subtitle %}
+차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과
+<br>
+<span style="font-size: 0.92rem; opacity: 0.85;">
+Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
+</span>
+{% endcapture %}
+
+{% include hero_banner.liquid
+  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
+  title="Advanced Chemical & Energy Engineering Laboratory"
+  subtitle=hero_subtitle
+  badges=hero_badges
+  actions=hero_actions
+%}
+
+<div class="lab-mission-section">
+  <div class="lab-mission-quote">
+    <p class="lab-mission-quote__en">
+      Pioneering ultrafast photonic nanomanufacturing and functional nanomaterials for high-capacity electrochemical energy storage and wearable bio-environmental devices.
     </p>
-    <div class="ed-hero-banner__badges">
-      <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Energy Storage</span>
-      <span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Intense Pulsed Light (IPL)</span>
-      <span class="hero-badge"><i class="fa-solid fa-microchip"></i> Flexible Sensors</span>
-      <span class="hero-badge"><i class="fa-solid fa-atom"></i> Colloidal Quantum Dots</span>
+    <p class="lab-mission-quote__ko">
+      초고속 광열처리 나노공정과 기능성 나노소재 설계를 융합하여, 차세대 하이브리드 에너지 저장 소자 및 고민감도 유연 센서 기술을 혁신합니다.
+    </p>
+  </div>
+
+{% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni'" %}
+{% assign total_patents = site.data.patents.size %}
+{% assign total_domestic = site.data.domestic.size %}
+{% assign total_intl = 82 %}
+{% assign total_pubs_and_ip = total_intl | plus: total_domestic | plus: total_patents %}
+
+  <div class="lab-stats-grid">
+    <div class="lab-stat-card">
+      <div class="lab-stat-card__icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+      <div class="lab-stat-card__number">{{ active_members.size }}</div>
+      <div class="lab-stat-card__label">Active Researchers</div>
+      <div class="lab-stat-card__desc">2 Co-PIs · Graduate & Undergrad Researchers</div>
+    </div>
+    <div class="lab-stat-card">
+      <div class="lab-stat-card__icon"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i></div>
+      <div class="lab-stat-card__number">{{ total_pubs_and_ip }}</div>
+      <div class="lab-stat-card__label">Publications & IP</div>
+      <div class="lab-stat-card__desc">{{ total_intl }} Int'l Journal · {{ total_domestic }} Domestic · 14 IP (11 Filed · 3 Reg.)</div>
+    </div>
+    <div class="lab-stat-card">
+      <div class="lab-stat-card__icon"><i class="fa-solid fa-atom" aria-hidden="true"></i></div>
+      <div class="lab-stat-card__number">3</div>
+      <div class="lab-stat-card__label">Research Pillars</div>
+      <div class="lab-stat-card__desc">Energy · Photonics · Sensors</div>
+    </div>
+    <div class="lab-stat-card">
+      <div class="lab-stat-card__icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></div>
+      <div class="lab-stat-card__number">16 Yrs</div>
+      <div class="lab-stat-card__label">Research Track Record</div>
+      <div class="lab-stat-card__desc">2011 – 2026 · Est. 2020 at KNU</div>
     </div>
   </div>
 </div>
@@ -89,27 +142,27 @@ The laboratory is jointly directed by two Principal Investigators:
           <div class="pi-showcase-card__actions">
             {% if pi.email and pi.email != "" %}
               <a href="mailto:{{ pi.email }}" class="pi-action-btn" title="Email" aria-label="Email">
-                <i class="fa-solid fa-envelope"></i> <span>Email</span>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i> <span>Email</span>
               </a>
             {% endif %}
             {% if pi.links.scholar and pi.links.scholar != "" %}
               <a href="{{ pi.links.scholar }}" target="_blank" rel="noopener" class="pi-action-btn" title="Google Scholar" aria-label="Google Scholar">
-                <i class="ai ai-google-scholar"></i> <span>Scholar</span>
+                <i class="ai ai-google-scholar" aria-hidden="true"></i> <span>Scholar</span>
               </a>
             {% endif %}
             {% if pi.links.orcid and pi.links.orcid != "" %}
               <a href="{{ pi.links.orcid }}" target="_blank" rel="noopener" class="pi-action-btn" title="ORCID" aria-label="ORCID">
-                <i class="ai ai-orcid"></i> <span>ORCID</span>
+                <i class="ai ai-orcid" aria-hidden="true"></i> <span>ORCID</span>
               </a>
             {% endif %}
             {% if pi.links.researchgate and pi.links.researchgate != "" %}
               <a href="{{ pi.links.researchgate }}" target="_blank" rel="noopener" class="pi-action-btn" title="ResearchGate" aria-label="ResearchGate">
-                <i class="ai ai-researchgate"></i> <span>ResearchGate</span>
+                <i class="ai ai-researchgate" aria-hidden="true"></i> <span>ResearchGate</span>
               </a>
             {% endif %}
             {% if pi.links.github and pi.links.github != "" %}
               <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-action-btn" title="GitHub" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                <i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span>
               </a>
             {% endif %}
           </div>
@@ -121,7 +174,7 @@ The laboratory is jointly directed by two Principal Investigators:
 
 ---
 
-## Core Research Areas
+<h2 id="research-areas">Core Research Areas</h2>
 
 <div class="research-grid">
   <div class="research-card">
@@ -194,4 +247,27 @@ The laboratory is jointly directed by two Principal Investigators:
   </div>
 </div>
 
-For detailed project descriptions and laboratory facilities, please visit our [Research](/research/) page. Meet our team members on the [Members](/members/) page.
+For detailed project descriptions and laboratory facilities, please visit our [Research]({{ '/research/' | relative_url }}) page. Meet our team members on the [Members]({{ '/members/' | relative_url }}) page.
+
+---
+
+<div class="home-dual-grid">
+  <div class="home-dual-col--news">
+    {% include news_feed.liquid %}
+  </div>
+  <div class="home-dual-col--papers">
+    <div class="selected-papers-block">
+      <div class="selected-papers-block__header">
+        <h2 class="selected-papers-block__title">
+          <i class="fa-solid fa-star" aria-hidden="true"></i> Selected Publications
+        </h2>
+        <a href="{{ '/publications/' | relative_url }}" class="selected-papers-block__all-link">
+          All Publications <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="publications">
+        {% bibliography -q @*[selected=true]* %}
+      </div>
+    </div>
+  </div>
+</div>

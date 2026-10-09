@@ -1,0 +1,43 @@
+<div class="news-feed">
+  <div class="news-feed__header">
+    <h2 class="news-feed__title">
+      <i class="fa-solid fa-bullhorn" aria-hidden="true"></i> Latest News
+    </h2>
+    <a href="{{ '/news/' | relative_url }}" class="news-feed__all-link">
+      All News <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  {% assign news_items = site.news | sort: 'date' | reverse %}
+  {% assign current_time = 'now' | date: '%s' %}
+
+  <div class="news-feed__list">
+    {% for item in news_items limit: 5 %}
+      {% assign item_time = item.date | date: '%s' %}
+      {% assign diff_seconds = current_time | minus: item_time %}
+      <div class="news-feed-card">
+        <div class="news-feed-card__meta">
+          <time class="news-feed-card__date" datetime="{{ item.date | date_to_xmlschema }}">
+            {{ item.date | date: "%Y.%m.%d" }}
+          </time>
+          {% if diff_seconds < 2592000 and diff_seconds >= 0 %}
+            <span class="news-badge-new">NEW</span>
+          {% endif %}
+        </div>
+        <div class="news-feed-card__body">
+          {% if item.inline %}
+            {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+          {% else %}
+            <a class="news-feed-card__link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <div class="news-feed-card">
+        <div class="news-feed-card__body" style="color: var(--global-text-color-light);">
+          No recent announcements.
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
