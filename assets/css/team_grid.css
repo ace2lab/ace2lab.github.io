@@ -933,7 +933,180 @@ html[data-theme="dark"] .pi-action:focus-visible {
 }
 
 /* ------------------------------------------------------------
-   6. Motion & print
+   6. Tabs — hash-synced WAI-ARIA tablist (assets/js/members_tabs.js)
+   Progressive enhancement: the bar stays hidden and every panel is
+   visible until the script adds .is-tabbed to the container.
+   ------------------------------------------------------------ */
+.team-tabnav {
+  display: none;
+}
+
+.team-container.is-tabbed .team-tabnav {
+  --tm-navbar-h: 3.5rem; /* fixed al-folio navbar */
+  position: sticky;
+  top: var(--tm-navbar-h);
+  z-index: 10;
+  display: flex;
+  gap: var(--tm-s1);
+  margin: 0 0 var(--tm-s8);
+  padding: 0 var(--tm-s1);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  background: var(--tm-surface);
+  border-bottom: 1px solid var(--tm-line);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .team-container.is-tabbed .team-tabnav {
+    background: color-mix(in srgb, var(--tm-surface) 86%, transparent);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    backdrop-filter: saturate(160%) blur(12px);
+  }
+}
+
+.team-tabnav::-webkit-scrollbar {
+  display: none;
+}
+
+.team-tab {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tm-s2);
+  margin: 0;
+  padding: var(--tm-s3) var(--tm-s4);
+  font-family: var(--tm-font);
+  font-size: var(--tm-fs-sm);
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: var(--tm-muted);
+  background: none;
+  border: 0;
+  border-radius: var(--tm-r-sm) var(--tm-r-sm) 0 0;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+/* Active indicator: a 2px rule sitting on the bar's hairline */
+.team-tab::after {
+  content: "";
+  position: absolute;
+  left: var(--tm-s4);
+  right: var(--tm-s4);
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: var(--tm-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.team-tab:hover {
+  color: var(--tm-ink);
+  background: var(--tm-accent-soft);
+}
+
+.team-tab[aria-selected="true"] {
+  font-weight: 600;
+  color: var(--tm-ink);
+}
+
+.team-tab[aria-selected="true"]::after {
+  transform: scaleX(1);
+}
+
+.team-tab:focus-visible {
+  outline: 2px solid var(--tm-accent);
+  outline-offset: -2px;
+}
+
+.team-tab__count {
+  min-width: 1.5em;
+  padding: 0 0.45em;
+  font-size: var(--tm-fs-2xs);
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  color: var(--tm-muted);
+  background: var(--tm-sunken);
+  border-radius: 999px;
+}
+
+.team-tab[aria-selected="true"] .team-tab__count {
+  color: var(--tm-accent);
+  background: var(--tm-accent-soft);
+}
+
+/* Panels: scroll-margin keeps anchored content clear of navbar + sticky bar */
+.team-tabpanel {
+  scroll-margin-top: 7rem;
+}
+
+.team-tabpanel:focus {
+  outline: none;
+}
+
+.team-tabpanel:focus-visible {
+  outline: 2px solid var(--tm-accent);
+  outline-offset: 4px;
+  border-radius: var(--tm-r-sm);
+}
+
+.team-container.is-tabbed .team-tabpanel:not([hidden]) {
+  animation: team-panel-in 0.24s ease both;
+}
+
+@keyframes team-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The group heading is only needed when both PI profiles stack in one flow */
+.team-container.is-tabbed .team-section__title--print-only {
+  display: none;
+}
+
+/* Anchored legacy targets must clear the sticky bar as well */
+.team-container.is-tabbed .team-section[id],
+.team-container.is-tabbed .pi-profile,
+.team-container.is-tabbed .member-card {
+  scroll-margin-top: 8rem;
+}
+
+@media (max-width: 767.98px) {
+  .team-container.is-tabbed .team-tabnav {
+    /* bleed to the screen edge so the scroll affordance isn't clipped by page padding */
+    margin-left: calc(var(--tm-s4) * -1);
+    margin-right: calc(var(--tm-s4) * -1);
+    padding: 0 var(--tm-s3);
+  }
+
+  .team-tab {
+    padding: var(--tm-s3);
+  }
+
+  .team-tab::after {
+    left: var(--tm-s3);
+    right: var(--tm-s3);
+  }
+}
+
+/* ------------------------------------------------------------
+   7. Motion & print
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   .member-card,
@@ -941,8 +1114,14 @@ html[data-theme="dark"] .pi-action:focus-visible {
   .pi-action,
   .pi-action i,
   .pi-contact a,
-  .alumni-row__dest a {
+  .alumni-row__dest a,
+  .team-tab,
+  .team-tab::after {
     transition: none;
+  }
+
+  .team-container.is-tabbed .team-tabpanel:not([hidden]) {
+    animation: none;
   }
 }
 
@@ -952,5 +1131,20 @@ html[data-theme="dark"] .pi-action:focus-visible {
   .alumni-row {
     break-inside: avoid;
     box-shadow: none;
+  }
+
+  /* Never hide content on paper: all panels in sequence, no tab bar */
+  .team-container.is-tabbed .team-tabnav {
+    display: none;
+  }
+
+  .team-tabpanel,
+  .team-tabpanel[hidden] {
+    display: block !important;
+    animation: none !important;
+  }
+
+  .team-container.is-tabbed .team-section__title--print-only {
+    display: flex;
   }
 }
