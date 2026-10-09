@@ -1245,3 +1245,19 @@ html[data-theme="dark"] {
 .ed-entry__thumb img:hover {
   transform: scale(1.05);
 }
+
+/* ------------------------------------------------------------
+   Responsive Wide Canvas Container (1320px - 1340px)
+   Expands narrow 930px default to modern editorial wide viewport
+   ------------------------------------------------------------ */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1240px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1340px !important;
+  }
+}

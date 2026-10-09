@@ -61,7 +61,7 @@
   --tm-accent-soft: rgba(30, 58, 95, 0.06);
   --tm-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.12);
 
-  max-width: 960px;
+  max-width: 1340px;
   margin: 0 auto;
   font-family: var(--tm-font);
   font-weight: 400;
@@ -300,6 +300,17 @@ html[data-theme="dark"] .team-container {
 .member-meta .member-meta__muted {
   font-size: var(--tm-fs-2xs);
   color: var(--tm-muted);
+}
+
+.member-meta .member-meta__edu {
+  font-size: var(--tm-fs-xs);
+  line-height: 18px;
+  color: var(--tm-text);
+}
+
+.member-meta .member-meta__edu strong {
+  font-weight: 700;
+  color: var(--tm-ink);
 }
 
 .member-awards {
@@ -656,7 +667,7 @@ html[data-theme="dark"] .member-awards i {
 
 .pi-timeline__org {
   font-size: var(--tm-fs-sm);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.015em;
   color: var(--tm-ink);
@@ -930,8 +941,14 @@ html[data-theme="dark"] .pi-action:focus-visible {
   color: var(--tm-faint);
 }
 
+.alumni-row__dest {
+  font-weight: 700;
+  color: var(--tm-ink);
+}
+
 .alumni-row__dest a {
   color: var(--tm-accent);
+  font-weight: 700;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0 100%;
