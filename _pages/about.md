@@ -102,6 +102,11 @@ The laboratory is jointly directed by two Principal Investigators:
                 <i class="ai ai-orcid"></i> <span>ORCID</span>
               </a>
             {% endif %}
+            {% if pi.links.researchgate and pi.links.researchgate != "" %}
+              <a href="{{ pi.links.researchgate }}" target="_blank" rel="noopener" class="pi-action-btn" title="ResearchGate" aria-label="ResearchGate">
+                <i class="ai ai-researchgate"></i> <span>ResearchGate</span>
+              </a>
+            {% endif %}
             {% if pi.links.github and pi.links.github != "" %}
               <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-action-btn" title="GitHub" aria-label="GitHub">
                 <i class="fa-brands fa-github"></i> <span>GitHub</span>

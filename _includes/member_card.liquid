@@ -30,11 +30,46 @@
         </span>
       {% else %}
         <span class="member-role">{{ m.role_ko }}</span>
+        {% if m.degree_program %}
+          <span class="member-role__sep" aria-hidden="true">·</span>
+          <span class="member-program" style="font-size: var(--tm-fs-2xs); color: var(--tm-muted);">{{ m.degree_program }}</span>
+        {% endif %}
       {% endif %}
     </div>
 
-    {% if variant == 'pi' and m.bio and m.bio != '' %}
-      <p class="member-card__bio">{{ m.bio }}</p>
+    {% if variant == 'pi' %}
+      {% if m.office or m.phone %}
+        <div
+          class="member-card__contact"
+          style="margin-top: var(--tm-s2); font-size: var(--tm-fs-xs); color: var(--tm-muted); display: flex; flex-wrap: wrap; gap: var(--tm-s3);"
+        >
+          {% if m.office -%}
+            <span><i class="fa-solid fa-location-dot" style="color: var(--tm-faint); margin-right: 4px;"></i>{{ m.office }}</span>
+          {%- endif %}
+          {% if m.phone -%}
+            <span><i class="fa-solid fa-phone" style="color: var(--tm-faint); margin-right: 4px;"></i>{{ m.phone }}</span>
+          {%- endif %}
+        </div>
+      {% endif %}
+      {% if m.bio and m.bio != '' %}
+        <p class="member-card__bio">{{ m.bio }}</p>
+      {% endif %}
+    {% else %}
+      {% if m.project and m.project != '' %}
+        <div class="member-card__project" style="margin-top: var(--tm-s2); font-size: var(--tm-fs-xs); color: var(--tm-text);">
+          <i class="fa-solid fa-flask" style="color: var(--tm-faint); margin-right: 4px;"></i>{{ m.project }}
+        </div>
+      {% endif %}
+      {% if m.office and m.office != '' %}
+        <div class="member-card__office" style="margin-top: 2px; font-size: var(--tm-fs-2xs); color: var(--tm-muted);">
+          <i class="fa-solid fa-location-dot" style="color: var(--tm-faint); margin-right: 4px;"></i>{{ m.office }}
+        </div>
+      {% endif %}
+      {% if m.awards and m.awards.size > 0 %}
+        <div class="member-card__award" style="margin-top: 4px; font-size: var(--tm-fs-2xs); color: #d97706; font-weight: 500;">
+          <i class="fa-solid fa-award" style="margin-right: 4px;"></i>{{ m.awards.first }}
+        </div>
+      {% endif %}
     {% endif %}
 
     {% if m.topics and m.topics.size > 0 %}
@@ -45,10 +80,13 @@
       </div>
     {% endif %}
 
-    {% if m.links %}
+    {% assign member_email = m.links.email | default: m.email %}
+    {% if m.links or member_email != '' %}
       <div class="member-card__links">
-        {% if m.links.email and m.links.email != '' %}
-          <a href="mailto:{{ m.links.email }}" title="Email" aria-label="Email" class="link-icon"><i class="fa-solid fa-envelope"></i></a>
+        {% if member_email and member_email != '' %}
+          <a href="mailto:{{ member_email }}" title="Email ({{ member_email }})" aria-label="Email" class="link-icon"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
         {% endif %}
         {% if m.links.scholar and m.links.scholar != '' %}
           <a href="{{ m.links.scholar }}" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar" class="link-icon"
@@ -58,6 +96,11 @@
         {% if m.links.orcid and m.links.orcid != '' %}
           <a href="{{ m.links.orcid }}" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID" class="link-icon"
             ><i class="ai ai-orcid"></i
+          ></a>
+        {% endif %}
+        {% if m.links.researchgate and m.links.researchgate != '' %}
+          <a href="{{ m.links.researchgate }}" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate" class="link-icon"
+            ><i class="ai ai-researchgate"></i
           ></a>
         {% endif %}
         {% if m.links.github and m.links.github != '' %}
