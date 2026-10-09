@@ -26,7 +26,7 @@ nav_order: 2
     </h2>
     <div class="team-grid team-grid--pi">
       {% for m in pis %}
-        {% include member_card.liquid member=m variant="pi" %}
+        {% include pi_profile.liquid member=m %}
       {% endfor %}
     </div>
   </section>

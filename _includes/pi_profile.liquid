@@ -1,0 +1,158 @@
+{% comment %}
+  Co-PI executive profile: portrait + contact column, then identity,
+  summary, career/education timelines, topics and profile links.
+  Falls back to the long-form `bio` only when no `summary` is set.
+{% endcomment %}
+{% assign m = include.member %}
+{% assign member_email = m.links.email | default: m.email %}
+
+<article class="pi-profile" id="member-{{ m.id }}" aria-labelledby="member-{{ m.id }}-name">
+  <aside class="pi-profile__aside">
+    <figure class="pi-profile__portrait">
+      {% if m.photo and m.photo != '' %}
+        <img
+          src="{{ m.photo | relative_url }}"
+          alt="{{ m.name_en }} ({{ m.name_ko }})"
+          loading="lazy"
+          decoding="async"
+          style="object-position: {{ m.photo_position | default: 'center 20%' }};"
+        >
+      {% else %}
+        {% assign name_parts = m.name_en | split: ' ' %}
+        <span class="pi-profile__monogram" aria-hidden="true">
+          {{- name_parts.first | slice: 0, 1 -}}
+          {{- name_parts.last | slice: 0, 1 -}}
+        </span>
+      {% endif %}
+    </figure>
+
+    <dl class="pi-contact">
+      {% if m.office and m.office != '' %}
+        {% assign office_parts = m.office | split: ' (' %}
+        <div class="pi-contact__row">
+          <dt><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="tm-sr-only">Office</span></dt>
+          <dd>
+            {{ office_parts[0] }}
+            {% if office_parts.size > 1 %}
+              <span class="pi-contact__sub">{{ office_parts[1] | replace: ')', '' }}</span>
+            {% endif %}
+          </dd>
+        </div>
+      {% endif %}
+      {% if m.phone and m.phone != '' %}
+        <div class="pi-contact__row">
+          <dt><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="tm-sr-only">Phone</span></dt>
+          <dd>
+            <a href="tel:{{ m.phone | remove: '-' }}">{{ m.phone }}</a>
+          </dd>
+        </div>
+      {% endif %}
+      {% if member_email and member_email != '' %}
+        <div class="pi-contact__row">
+          <dt><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="tm-sr-only">Email</span></dt>
+          <dd>
+            <a href="mailto:{{ member_email }}">{{ member_email }}</a>
+          </dd>
+        </div>
+      {% endif %}
+    </dl>
+  </aside>
+
+  <div class="pi-profile__main">
+    <header class="pi-profile__header">
+      {% if m.role_en %}
+        <p class="pi-profile__eyebrow">{{ m.role_en }}</p>
+      {% endif %}
+      <h3 class="pi-profile__name" id="member-{{ m.id }}-name">
+        {{ m.name_ko }}
+        <span class="pi-profile__name-en" lang="en">{{ m.name_en }}</span>
+      </h3>
+      <p class="pi-profile__title">
+        {{ m.title_ko -}}
+        <span class="pi-profile__sep" aria-hidden="true">|</span><span lang="en">{{ m.title_en }}</span>
+      </p>
+      {% if m.affiliation_ko %}
+        <p class="pi-profile__affil">{{ m.affiliation_ko }}</p>
+      {% endif %}
+    </header>
+
+    {% if m.summary and m.summary != '' %}
+      <p class="pi-profile__summary">{{ m.summary }}</p>
+    {% elsif m.bio and m.bio != '' %}
+      <p class="pi-profile__summary">{{ m.bio }}</p>
+    {% endif %}
+
+    {% if m.career or m.degrees %}
+      <div class="pi-profile__history">
+        {% if m.career %}
+          <section class="pi-history" aria-label="Career">
+            <h4 class="pi-profile__label">Career</h4>
+            <ol class="pi-timeline">
+              {% for c in m.career %}
+                <li class="pi-timeline__item{% if forloop.first %} is-current{% endif %}">
+                  <span class="pi-timeline__period">{{ c.period }}</span>
+                  <span class="pi-timeline__role">{{ c.role }}</span>
+                  <span class="pi-timeline__org">{{ c.org }}</span>
+                  {% if c.note -%}
+                    <span class="pi-timeline__note">{{ c.note }}</span>
+                  {%- endif %}
+                </li>
+              {% endfor %}
+            </ol>
+          </section>
+        {% endif %}
+        {% if m.degrees %}
+          <section class="pi-history" aria-label="Education">
+            <h4 class="pi-profile__label">Education</h4>
+            <ol class="pi-timeline">
+              {% for d in m.degrees %}
+                <li class="pi-timeline__item">
+                  <span class="pi-timeline__period">{{ d.period }}</span>
+                  <span class="pi-timeline__role">{{ d.role }}</span>
+                  <span class="pi-timeline__org">{{ d.org }}</span>
+                  {% if d.note -%}
+                    <span class="pi-timeline__note">{{ d.note }}</span>
+                  {%- endif %}
+                </li>
+              {% endfor %}
+            </ol>
+          </section>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if m.topics and m.topics.size > 0 %}
+      <div class="pi-profile__block">
+        <h4 class="pi-profile__label">Research Topics</h4>
+        <ul class="pi-topics" role="list">
+          {% for t in m.topics %}
+            <li class="topic-tag">{{ t }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if m.links.scholar or m.links.orcid or m.links.researchgate or m.links.github %}
+      <nav class="pi-actions" aria-label="{{ m.name_en }} academic profiles">
+        {% if m.links.scholar and m.links.scholar != '' %}
+          <a class="pi-action" href="{{ m.links.scholar }}" target="_blank" rel="noopener"
+            ><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a
+          >
+        {% endif %}
+        {% if m.links.orcid and m.links.orcid != '' %}
+          <a class="pi-action" href="{{ m.links.orcid }}" target="_blank" rel="noopener"><i class="ai ai-orcid" aria-hidden="true"></i>ORCID</a>
+        {% endif %}
+        {% if m.links.researchgate and m.links.researchgate != '' %}
+          <a class="pi-action" href="{{ m.links.researchgate }}" target="_blank" rel="noopener"
+            ><i class="ai ai-researchgate" aria-hidden="true"></i>ResearchGate</a
+          >
+        {% endif %}
+        {% if m.links.github and m.links.github != '' %}
+          <a class="pi-action" href="{{ m.links.github }}" target="_blank" rel="noopener"
+            ><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a
+          >
+        {% endif %}
+      </nav>
+    {% endif %}
+  </div>
+</article>

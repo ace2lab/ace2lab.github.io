@@ -1,10 +1,13 @@
+{% comment %}
+  Student / researcher card. Co-PIs use pi_profile.liquid instead.
+{% endcomment %}
 {% assign m = include.member %}
 {% assign variant = include.variant | default: 'regular' %}
 
 <div class="member-card member-card--{{ variant }}" id="member-{{ m.id }}">
   <div class="member-card__avatar-wrapper">
     {% if m.photo and m.photo != '' %}
-      <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__avatar" loading="lazy">
+      <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__avatar" loading="lazy" decoding="async">
     {% else %}
       {% assign name_parts = m.name_en | split: ' ' %}
       <div class="member-card__avatar member-card__avatar--placeholder" aria-hidden="true">
@@ -23,53 +26,38 @@
     </h3>
 
     <div class="member-card__role">
-      {% if variant == 'pi' %}
-        <span class="member-role">
-          {{- m.title_ko -}}
-          <span class="member-role__sep">·</span>{{ m.title_en -}}
-        </span>
-      {% else %}
-        <span class="member-role">{{ m.role_ko }}</span>
-        {% if m.degree_program %}
-          <span class="member-role__sep" aria-hidden="true">·</span>
-          <span class="member-program" style="font-size: var(--tm-fs-2xs); color: var(--tm-muted);">{{ m.degree_program }}</span>
+      <span class="member-badge">{{ m.role_ko }}</span>
+      {% if m.degree_program %}
+        {% assign program_parts = m.degree_program | split: ' (' %}
+        {% if program_parts.size > 1 %}
+          <span class="member-card__period">{{ program_parts[1] | replace: ')', '' }}</span>
         {% endif %}
       {% endif %}
     </div>
 
-    {% if variant == 'pi' %}
-      {% if m.office or m.phone %}
-        <div
-          class="member-card__contact"
-          style="margin-top: var(--tm-s2); font-size: var(--tm-fs-xs); color: var(--tm-muted); display: flex; flex-wrap: wrap; gap: var(--tm-s3);"
-        >
-          {% if m.office -%}
-            <span><i class="fa-solid fa-location-dot" style="color: var(--tm-faint); margin-right: 4px;"></i>{{ m.office }}</span>
-          {%- endif %}
-          {% if m.phone -%}
-            <span><i class="fa-solid fa-phone" style="color: var(--tm-faint); margin-right: 4px;"></i>{{ m.phone }}</span>
-          {%- endif %}
-        </div>
-      {% endif %}
-      {% if m.bio and m.bio != '' %}
-        <p class="member-card__bio">{{ m.bio }}</p>
-      {% endif %}
-    {% else %}
-      {% if m.project and m.project != '' %}
-        <div class="member-card__project" style="margin-top: var(--tm-s2); font-size: var(--tm-fs-xs); color: var(--tm-text);">
-          <i class="fa-solid fa-flask" style="color: var(--tm-faint); margin-right: 4px;"></i>{{ m.project }}
-        </div>
-      {% endif %}
-      {% if m.office and m.office != '' %}
-        <div class="member-card__office" style="margin-top: 2px; font-size: var(--tm-fs-2xs); color: var(--tm-muted);">
-          <i class="fa-solid fa-location-dot" style="color: var(--tm-faint); margin-right: 4px;"></i>{{ m.office }}
-        </div>
-      {% endif %}
-      {% if m.awards and m.awards.size > 0 %}
-        <div class="member-card__award" style="margin-top: 4px; font-size: var(--tm-fs-2xs); color: #d97706; font-weight: 500;">
-          <i class="fa-solid fa-award" style="margin-right: 4px;"></i>{{ m.awards.first }}
-        </div>
-      {% endif %}
+    {% if m.project != blank or m.office != blank %}
+      <ul class="member-meta" role="list">
+        {% if m.project and m.project != '' %}
+          <li>
+            <i class="fa-solid fa-flask" aria-hidden="true"></i><span>{{ m.project }}</span>
+          </li>
+        {% endif %}
+        {% if m.office and m.office != '' %}
+          <li class="member-meta__muted">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{{ m.office }}</span>
+          </li>
+        {% endif %}
+      </ul>
+    {% endif %}
+
+    {% if m.awards and m.awards.size > 0 %}
+      <ul class="member-awards" role="list">
+        {% for award in m.awards %}
+          <li>
+            <i class="fa-solid fa-award" aria-hidden="true"></i><span>{{ award }}</span>
+          </li>
+        {% endfor %}
+      </ul>
     {% endif %}
 
     {% if m.topics and m.topics.size > 0 %}
