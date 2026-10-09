@@ -35,8 +35,13 @@
       {% endif %}
     </div>
 
-    {% if m.project != blank or m.office != blank %}
+    {% if m.project != blank or m.office != blank or m.education != blank %}
       <ul class="member-meta" role="list">
+        {% if m.education and m.education != '' %}
+          <li class="member-meta__edu">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>{{ m.education }}</span>
+          </li>
+        {% endif %}
         {% if m.project and m.project != '' %}
           <li>
             <i class="fa-solid fa-flask" aria-hidden="true"></i><span>{{ m.project }}</span>

@@ -1,6 +1,6 @@
 - id: taewook-kim
   group: pi
-  order: 1
+  order: 2
   name_ko: 김태욱
   name_en: Taewook Kim
   title_ko: 부교수 · 공학박사
@@ -52,7 +52,7 @@
   phone: +82-54-530-1332
 - id: changyong-yim
   group: pi
-  order: 2
+  order: 1
   name_ko: 임창용
   name_en: Changyong Yim
   title_ko: 부교수 · 공학박사
@@ -127,7 +127,7 @@
   email: mikybuzz@knu.ac.kr
   photo: assets/img/team/jaeho_lee.jpg
   degree_program: 박사과정 (2026.03 ~ 현재)
-  education: 경북대 대학원 공학석사 / 경북대 에너지화학공학과 공학사
+  education: <strong>경북대 대학원</strong> 공학석사 · <strong>경북대</strong> 에너지화학공학과 공학사
   project: IPL-Assisted Supercapacitor Electrodes
   office: 7호관 404호
   links:
@@ -146,78 +146,16 @@
   email: ehdgh61485@gmail.com
   photo: assets/img/team/dongho_lee.jpg
   degree_program: 석박통합과정 (2025.03 ~ 현재)
-  education: 경북대 대학원 미래과학기술융합학부 / 경북대 에너지화학공학과 공학사
+  education: <strong>경북대 대학원</strong> 미래과학기술융합학부 · <strong>경북대</strong> 에너지화학공학과 공학사
   project: SK PICGLOBAL, TEMC 산학과제
   office: 7호관 406호
   awards:
     - 2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)
   links:
     email: ehdgh61485@gmail.com
-- id: jaebin-an
-  group: ms
-  order: 3
-  name_ko: 안재빈
-  name_en: Jaebeen Ahn
-  role_ko: 석사과정
-  role_en: M.S. Student
-  topics:
-    - MXene Nanocomposites
-    - Flexible Tactile Sensors
-    - Battery Anodes
-  email: coco24245@knu.ac.kr
-  photo: assets/img/team/jaebeen_ahn.jpg
-  degree_program: 석사과정 (2026.03 ~ 현재)
-  education: 경북대 에너지화학공학과 공학사 / 경북대 대학원 석사과정
-  project: MXene, IPL Processing
-  office: 7호관 406호
-  awards:
-    - 2025 화공학회 Chem Frontier 산업통상부 장관상
-    - 2024 화공학회 대상
-  links:
-    email: coco24245@knu.ac.kr
-- id: myeongseo-kang
-  group: ms
-  order: 4
-  name_ko: 강명서
-  name_en: Myeong Seo Kang
-  role_ko: 석사과정
-  role_en: M.S. Student
-  topics:
-    - Flexible Sensors
-    - Laser-Induced Graphene
-    - Bio-Monitoring
-  email: audtj707@naver.com
-  photo: assets/img/team/myeong_seo_kang.jpg
-  degree_program: 석사과정 (2026.01 ~ 현재)
-  education: 경북대 에너지화학공학과 공학사 / 경북대 대학원 석사과정
-  project: Flexible Sensors, LIG
-  office: 7호관 404호
-  links:
-    email: audtj707@naver.com
-- id: dawin-kim
-  group: ms
-  order: 5
-  name_ko: 김다윈
-  name_en: Dawin Kim
-  role_ko: 석사과정
-  role_en: M.S. Student
-  topics:
-    - Functional Nanomaterials
-    - VO2 Smart Windows
-    - Electrochemical Devices
-  email: dawin2660@knu.ac.kr
-  photo: assets/img/team/dawin_kim.jpg
-  degree_program: 석사과정 (2025.03 ~ 현재)
-  education: 경북대 에너지화학공학과 공학사 / 경북대 대학원 석사과정
-  project: VO2 Thermochromics, MXene
-  office: 7호관 404호
-  awards:
-    - 2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)
-  links:
-    email: dawin2660@knu.ac.kr
 - id: huijin-lee-res
   group: ms
-  order: 6
+  order: 3
   name_ko: 이희진
   name_en: Huijin Lee
   role_ko: 연구원
@@ -229,35 +167,97 @@
   email: dlgmlswls32@naver.com
   photo: assets/img/team/huijin_lee.jpg
   degree_program: 연구원 (2026.02 ~ 현재)
-  education: 경북대 에너지화학공학과 공학석사 / 경북대 에너지화학공학과 공학사
+  education: <strong>경북대 대학원</strong> 에너지화학공학과 공학석사 · <strong>경북대</strong> 공학사
   project: MXene Synthesis & Applications
   office: 7호관 406호
   awards:
     - 2025 첨성인 대학원생 논문경진대회 우수상 (2026.01)
   links:
     email: dlgmlswls32@naver.com
-- id: gyeongjin-kim
-  group: ug
-  order: 1
-  name_ko: 김경진
-  name_en: Gyeongjin Kim
-  role_ko: 학부연구생
-  role_en: Undergraduate Researcher
+- id: dawin-kim
+  group: ms
+  order: 4
+  name_ko: 김다윈
+  name_en: Dawin Kim
+  role_ko: 석사과정
+  role_en: M.S. Student
   topics:
     - Functional Nanomaterials
-    - VO2 Synthesis
-    - Smart Sensors
-  email: gyeongjingim8@gmail.com
-  photo: assets/img/team/gyeongjin_kim.jpg
-  degree_program: 학부연구생 (4학년 / 22학번, 2026.01 ~ 현재)
+    - VO2 Smart Windows
+    - Electrochemical Devices
+  email: dawin2660@knu.ac.kr
+  photo: assets/img/team/dawin_kim.jpg
+  degree_program: 석사과정 (2025.03 ~ 현재)
+  education: <strong>경북대 대학원</strong> 석사과정 · <strong>경북대</strong> 에너지화학공학과 공학사
+  project: VO2 Thermochromics, MXene
+  office: 7호관 404호
+  awards:
+    - 2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)
+  links:
+    email: dawin2660@knu.ac.kr
+- id: jaebin-an
+  group: ms
+  order: 5
+  name_ko: 안재빈
+  name_en: Jaebeen Ahn
+  role_ko: 석사과정
+  role_en: M.S. Student
+  topics:
+    - MXene Nanocomposites
+    - Flexible Tactile Sensors
+    - Battery Anodes
+  email: coco24245@knu.ac.kr
+  photo: assets/img/team/jaebeen_ahn.jpg
+  degree_program: 석사과정 (2026.03 ~ 현재)
+  education: <strong>경북대 대학원</strong> 석사과정 · <strong>경북대</strong> 에너지화학공학과 공학사
+  project: MXene, IPL Processing
   office: 7호관 406호
   awards:
-    - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
+    - 2025 화공학회 Chem Frontier 산업통상부 장관상
+    - 2024 화공학회 대상
   links:
-    email: gyeongjingim8@gmail.com
+    email: coco24245@knu.ac.kr
+- id: myeongseo-kang
+  group: ms
+  order: 6
+  name_ko: 강명서
+  name_en: Myeong Seo Kang
+  role_ko: 석사과정
+  role_en: M.S. Student
+  topics:
+    - Flexible Sensors
+    - Laser-Induced Graphene
+    - Bio-Monitoring
+  email: audtj707@naver.com
+  photo: assets/img/team/myeong_seo_kang.jpg
+  degree_program: 석사과정 (2026.01 ~ 현재)
+  education: <strong>경북대 대학원</strong> 석사과정 · <strong>경북대</strong> 에너지화학공학과 공학사
+  project: Flexible Sensors, LIG
+  office: 7호관 404호
+  links:
+    email: audtj707@naver.com
+- id: wooyoung-kim
+  group: ms
+  order: 7
+  name_ko: 김우영
+  name_en: Wooyoung Kim
+  role_ko: 석사과정(학연)
+  role_en: M.S. Student (Joint)
+  topics:
+    - Ceramic Materials
+    - Solid Electrolytes
+    - Battery Composites
+  email: wykim@kicet.re.kr
+  photo: ""
+  degree_program: 석사과정(학연) (2024.09 ~ 현재)
+  education: <strong>한국세라믹기술연구원(KICET)</strong> 학연과정 · <strong>경북대</strong> 에너지화학공학과 공학사
+  project: Ceramic & Battery Composites
+  office: 한국세라믹기술연구원 / 7호관
+  links:
+    email: wykim@kicet.re.kr
 - id: minsu-kim
   group: ug
-  order: 2
+  order: 1
   name_ko: 김민수
   name_en: Minsu Kim
   role_ko: 학부연구생
@@ -268,32 +268,15 @@
   email: ben4709@naver.com
   photo: assets/img/team/minsu_kim.jpg
   degree_program: 학부연구생 (4학년 / 21학번, 2025.01 ~ 현재)
+  education: <strong>경북대학교</strong> 에너지화학공학과
   office: 7호관 404호
   awards:
-    - 2025 화공학회 Chem Frontier 산업통상부 장관상
+    - 2025 화공학회 Chem Frontier 산업통상자원부 장관상
   links:
     email: ben4709@naver.com
-- id: donggeon-lee
-  group: ug
-  order: 3
-  name_ko: 이동건
-  name_en: Donggeon Lee
-  role_ko: 학부연구생
-  role_en: Undergraduate Researcher
-  topics:
-    - Chemical Engineering
-    - Multifunctional Actuators
-  email: 2025009732@knu.ac.kr
-  photo: ""
-  degree_program: 학부연구생 (2학년 / 25학번, 2026.05 ~ 현재)
-  office: 7호관 406호
-  awards:
-    - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
-  links:
-    email: 2025009732@knu.ac.kr
 - id: jongmin-lee
   group: ug
-  order: 4
+  order: 2
   name_ko: 이종민
   name_en: Jongmin Lee
   role_ko: 학부연구생
@@ -305,11 +288,51 @@
   email: ljm0202324@naver.com
   photo: assets/img/team/jongmin_lee.jpg
   degree_program: 학부연구생 (4학년 / 21학번, 2025.05 ~ 현재)
+  education: <strong>경북대학교</strong> 에너지화학공학과
   office: 7호관 404호
   awards:
     - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
   links:
     email: ljm0202324@naver.com
+- id: gyeongjin-kim
+  group: ug
+  order: 3
+  name_ko: 김경진
+  name_en: Gyeongjin Kim
+  role_ko: 학부연구생
+  role_en: Undergraduate Researcher
+  topics:
+    - Functional Nanomaterials
+    - VO2 Synthesis
+    - Smart Sensors
+  email: gyeongjingim8@gmail.com
+  photo: assets/img/team/gyeongjin_kim.jpg
+  degree_program: 학부연구생 (4학년 / 22학번, 2026.01 ~ 현재)
+  education: <strong>경북대학교</strong> 에너지화학공학과
+  office: 7호관 406호
+  awards:
+    - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
+  links:
+    email: gyeongjingim8@gmail.com
+- id: donggeon-lee
+  group: ug
+  order: 4
+  name_ko: 이동건
+  name_en: Donggeon Lee
+  role_ko: 학부연구생
+  role_en: Undergraduate Researcher
+  topics:
+    - Chemical Engineering
+    - Multifunctional Actuators
+  email: 2025009732@knu.ac.kr
+  photo: ""
+  degree_program: 학부연구생 (2학년 / 25학번, 2026.05 ~ 현재)
+  education: <strong>경북대학교</strong> 에너지화학공학과
+  office: 7호관 406호
+  awards:
+    - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
+  links:
+    email: 2025009732@knu.ac.kr
 - id: jaeho-lee-alumni
   group: alumni
   order: 1
@@ -320,8 +343,8 @@
   thesis: Synthesis of Cobalt Oxide @ Porous Carbon Nanofibers via Intense Pulsed
     Light for Supercapacitor Electrodes
   now:
-    affiliation: Ph.D. Course (2026.03 ~ Current)
-    position: Ph.D. Student
+    affiliation: 경북대학교 대학원
+    position: 박사과정
     url: ""
   photo: assets/img/team/alumni/alumni_jaeho_lee.jpg
 - id: huijin-lee-alumni
@@ -334,8 +357,8 @@
   thesis: Synthesis of TiO2/MXene Composite Photocatalyst via Intense Pulsed Light
     Processing for Organic Pollutant Removal
   now:
-    affiliation: Alumni
-    position: ""
+    affiliation: 경북대학교
+    position: 연구원
     url: ""
   photo: assets/img/team/alumni/alumni_huijin_lee.jpg
 - id: seonggwang-lee-alumni
@@ -347,8 +370,8 @@
   grad_year: 2026
   thesis: 적층제조된 SUS 316L의 미세조직에 따른 수소취화 저항성 변화
   now:
-    affiliation: Ph.D. Course (2026.03 ~ Current)
-    position: Ph.D. Student
+    affiliation: 경북대학교 대학원
+    position: 박사과정
     url: ""
   photo: assets/img/team/alumni/alumni_seonggwang_lee.jpg
 - id: kyuhyun-park-alumni
