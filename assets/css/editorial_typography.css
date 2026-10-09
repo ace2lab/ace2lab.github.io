@@ -706,20 +706,219 @@ html[data-theme="dark"] {
 /* ------------------------------------------------------------
    Publications — restyle jekyll-scholar output inside the page
    ------------------------------------------------------------ */
-.ed-section .publications h2.bibliography {
-  margin: var(--ed-s8) 0 var(--ed-s3);
-  padding: 0;
-  border: 0;
-  font-size: var(--ed-fs-sm);
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0;
+
+/* Sticky Year Jump Bar */
+.pub-year-jump {
+  position: sticky;
+  top: calc(3.5rem + 45px); /* clears navbar + sticky section index */
+  z-index: 9;
+  margin: var(--ed-s4) 0 var(--ed-s6);
+  padding: var(--ed-s2) var(--ed-s3);
+  background: var(--ed-surface);
+  border: 1px solid var(--ed-line);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(8px);
+}
+
+.pub-year-jump__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--ed-s3);
+}
+
+.pub-year-jump__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono-meta);
+  font-size: var(--ed-fs-2xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-knu-crimson, #b8132b);
+  white-space: nowrap;
+  padding-right: var(--ed-s2);
+  border-right: 1px solid var(--ed-line);
+}
+
+.pub-year-jump__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 991px) {
+  .pub-year-jump {
+    top: 3.5rem;
+  }
+  .pub-year-jump__chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+}
+
+.pub-year-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-family: var(--font-mono-meta);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 18px;
   color: var(--ed-muted);
+  background: var(--ed-surface-alt, rgba(0, 0, 0, 0.02));
+  border: 1px solid var(--ed-line);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.pub-year-chip:hover {
+  color: var(--color-knu-crimson, #b8132b);
+  background: var(--color-knu-crimson-soft, rgba(184, 19, 43, 0.06));
+  border-color: var(--color-knu-crimson, #b8132b);
+  text-decoration: none;
+}
+
+.pub-year-chip.active {
+  color: #ffffff !important;
+  background: var(--color-knu-crimson, #b8132b) !important;
+  border-color: var(--color-knu-crimson, #b8132b) !important;
+  box-shadow: 0 2px 6px rgba(184, 19, 43, 0.25);
+}
+
+.pub-year-chip__count {
+  font-size: 0.68rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.pub-year-chip.active .pub-year-chip__count {
+  opacity: 1;
+}
+
+/* Year Headings in Bibliography */
+.ed-section .publications h2.bibliography {
+  display: flex;
+  align-items: center;
+  gap: var(--ed-s3);
+  margin: var(--ed-s10) 0 var(--ed-s5);
+  padding: var(--ed-s2) 0;
+  border-bottom: 2px solid var(--ed-line);
+  font-size: var(--ed-fs-xl);
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: var(--ed-ink);
+  scroll-margin-top: 140px; /* clears fixed navbar and sticky year jump bar */
+}
+
+.ed-section .publications h2.bibliography::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--ed-line);
+  opacity: 0.5;
+}
+
+.ed-section .publications ol.bibliography {
+  list-style: none;
+  padding-left: 0;
 }
 
 .ed-section .publications ol.bibliography li {
-  margin-bottom: var(--ed-s5);
-  padding-bottom: var(--ed-s5);
+  margin-bottom: var(--ed-s6);
+  padding-bottom: var(--ed-s6);
+  border-bottom: 1px solid var(--ed-line);
+  transition: all 0.2s ease;
+}
+
+/* 1340px Responsive Wide Layout Balance */
+@media (min-width: 992px) {
+  .publications ol.bibliography li .row {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .publications ol.bibliography li .row .abbr {
+    flex: 0 0 160px;
+    max-width: 160px;
+    padding-right: var(--ed-s6);
+  }
+  .publications ol.bibliography li .row .col-sm-8 {
+    flex: 1 1 auto;
+    max-width: calc(100% - 160px);
+    padding: 0;
+  }
+}
+
+/* Visual Badges: Cover Papers & Selected Papers */
+.pub-badge--cover {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #fff8e7 0%, #fff1c5 100%);
+  border: 1px solid #d4af37;
+  color: #8c6b00;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 1px 3px rgba(212, 175, 55, 0.2);
+  vertical-align: middle;
+}
+
+[data-theme="dark"] .pub-badge--cover {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border-color: rgba(212, 175, 55, 0.6);
+  color: #f3d46f;
+}
+
+.pub-badge--selected {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: var(--color-knu-crimson-soft, rgba(184, 19, 43, 0.08));
+  border: 1px solid var(--color-knu-crimson, #b8132b);
+  color: var(--color-knu-crimson, #b8132b);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+/* Card highlights for Cover & Selected papers */
+.publications ol.bibliography li.is-cover-paper,
+.publications ol.bibliography li:has(#lee2024suppression) {
+  border-left: 3px solid #d4af37;
+  padding-left: 1.25rem;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.05) 0%, transparent 100%);
+  border-radius: 0 8px 8px 0;
+}
+
+.publications ol.bibliography li.is-selected-paper,
+.publications ol.bibliography li:has(#velhal2024cobalt),
+.publications ol.bibliography li:has(#hong2024flashlight),
+.publications ol.bibliography li:has(#paeng2024rapid),
+.publications ol.bibliography li:has(#velhal2023exploring) {
+  border-left: 3px solid var(--color-knu-crimson, #b8132b);
+  padding-left: 1.25rem;
+  background: linear-gradient(90deg, rgba(184, 19, 43, 0.03) 0%, transparent 100%);
+  border-radius: 0 8px 8px 0;
 }
 
 /* ------------------------------------------------------------
