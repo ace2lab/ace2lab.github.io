@@ -37,18 +37,11 @@ latest_posts:
 <a href="{{ '/publications/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Publications</a>
 {% endcapture %}
 
-{% capture hero_subtitle %}
-차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과
-<br>
-<span style="font-size: 0.92rem; opacity: 0.85;">
-Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
-</span>
-{% endcapture %}
-
 {% include hero_banner.liquid
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Advanced Chemical & Energy Engineering Laboratory"
-  subtitle=hero_subtitle
+  subtitle="차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과"
+  subtitle_en="Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University"
   badges=hero_badges
   actions=hero_actions
 %}

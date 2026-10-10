@@ -1,26 +1,31 @@
 {% comment %}
   ACE² Lab — AMTL-Inspired Editorial Hero Banner Component
-  Usage: {% include hero_banner.liquid label="..." title="..." subtitle="..." %}
+  Usage: {% include hero_banner.liquid label="..." title="..." subtitle="..." subtitle_en="..." %}
+  subtitle    — primary (Korean) affiliation line
+  subtitle_en — secondary (English) line, rendered as its own high-contrast paragraph
 {% endcomment %}
 
 <div class="ed-hero-banner">
   <div class="ed-hero-banner__inner">
-    {% if include.label and include.label != '' %}
+    {%- if include.label and include.label != '' %}
       <div class="ed-hero-banner__label">{{ include.label }}</div>
-    {% endif %}
+    {%- endif %}
     <h1 class="ed-hero-banner__title">{{ include.title }}</h1>
-    {% if include.subtitle and include.subtitle != '' %}
-      <p class="ed-hero-banner__subtitle">{{ include.subtitle }}</p>
-    {% endif %}
-    {% if include.badges %}
+    {%- if include.subtitle and include.subtitle != '' %}
+      <p class="ed-hero-banner__subtitle">{{ include.subtitle | strip }}</p>
+    {%- endif %}
+    {%- if include.subtitle_en and include.subtitle_en != '' %}
+      <p class="ed-hero-banner__subtitle-en">{{ include.subtitle_en | strip }}</p>
+    {%- endif %}
+    {%- if include.badges %}
       <div class="ed-hero-banner__badges">
         {{ include.badges }}
       </div>
-    {% endif %}
-    {% if include.actions %}
+    {%- endif %}
+    {%- if include.actions %}
       <div class="ed-hero-banner__actions">
         {{ include.actions }}
       </div>
-    {% endif %}
+    {%- endif %}
   </div>
 </div>
