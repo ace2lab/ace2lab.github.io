@@ -658,6 +658,9 @@ html[data-theme="dark"] .news-feed-card {
 .news-feed-card--member {
   --news-accent: #1d4ed8;
 }
+.news-feed-card--honor {
+  --news-accent: #7c3aed;
+}
 .news-feed-card--milestone {
   --news-accent: #047857;
 }
@@ -666,6 +669,9 @@ html[data-theme="dark"] .news-feed-card--award {
 }
 html[data-theme="dark"] .news-feed-card--member {
   --news-accent: #93c5fd;
+}
+html[data-theme="dark"] .news-feed-card--honor {
+  --news-accent: #c4b5fd;
 }
 html[data-theme="dark"] .news-feed-card--milestone {
   --news-accent: #6ee7b7;
@@ -705,6 +711,10 @@ html[data-theme="dark"] .news-feed-card:hover {
   --cat-fg: #1e3a8a;
   --cat-bg: #dbeafe;
 }
+.news-cat-badge--honor {
+  --cat-fg: #4c1d95;
+  --cat-bg: #ede9fe;
+}
 .news-cat-badge--milestone {
   --cat-fg: #064e3b;
   --cat-bg: #d1fae5;
@@ -717,9 +727,169 @@ html[data-theme="dark"] .news-cat-badge--member {
   --cat-fg: #bfdbfe;
   --cat-bg: rgba(147, 197, 253, 0.16);
 }
+html[data-theme="dark"] .news-cat-badge--honor {
+  --cat-fg: #ddd6fe;
+  --cat-bg: rgba(196, 181, 253, 0.16);
+}
 html[data-theme="dark"] .news-cat-badge--milestone {
   --cat-fg: #a7f3d0;
   --cat-bg: rgba(110, 231, 183, 0.16);
+}
+
+/* News category legend: mirrors .fac-loc-legend; tokens match the card accent + badge pairs above */
+.news-cat-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin: 0 0 var(--ed-s6, 1.5rem);
+  padding: 10px 16px;
+  border: 1px solid var(--global-divider-color, #e2e8f0);
+  border-radius: 12px;
+  background: var(--global-card-bg-color, #ffffff);
+}
+
+.news-cat-legend__title {
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-right: 4px;
+}
+
+.news-cat-legend__item {
+  --lg-accent: #b45309;
+  --lg-text: #78350f;
+  --lg-bg: #fef3c7;
+  --lg-border: rgba(180, 83, 9, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: var(--lg-bg);
+  color: var(--lg-text);
+  border: 1px solid var(--lg-border);
+  white-space: nowrap;
+}
+
+.news-cat-legend__item[data-cat="member"] {
+  --lg-accent: #1d4ed8;
+  --lg-text: #1e3a8a;
+  --lg-bg: #dbeafe;
+  --lg-border: rgba(29, 78, 216, 0.4);
+}
+
+.news-cat-legend__item[data-cat="milestone"] {
+  --lg-accent: #047857;
+  --lg-text: #064e3b;
+  --lg-bg: #d1fae5;
+  --lg-border: rgba(4, 120, 87, 0.4);
+}
+
+.news-cat-legend__item[data-cat="honor"] {
+  --lg-accent: #7c3aed;
+  --lg-text: #4c1d95;
+  --lg-bg: #ede9fe;
+  --lg-border: rgba(124, 58, 237, 0.4);
+}
+
+html[data-theme="dark"] .news-cat-legend__item[data-cat="award"] {
+  --lg-accent: #fbbf24;
+  --lg-text: #fde68a;
+  --lg-bg: rgba(251, 191, 36, 0.16);
+  --lg-border: rgba(251, 191, 36, 0.4);
+}
+
+html[data-theme="dark"] .news-cat-legend__item[data-cat="member"] {
+  --lg-accent: #93c5fd;
+  --lg-text: #bfdbfe;
+  --lg-bg: rgba(147, 197, 253, 0.16);
+  --lg-border: rgba(147, 197, 253, 0.4);
+}
+
+html[data-theme="dark"] .news-cat-legend__item[data-cat="milestone"] {
+  --lg-accent: #6ee7b7;
+  --lg-text: #a7f3d0;
+  --lg-bg: rgba(110, 231, 183, 0.16);
+  --lg-border: rgba(110, 231, 183, 0.4);
+}
+
+html[data-theme="dark"] .news-cat-legend__item[data-cat="honor"] {
+  --lg-accent: #c4b5fd;
+  --lg-text: #ddd6fe;
+  --lg-bg: rgba(196, 181, 253, 0.16);
+  --lg-border: rgba(196, 181, 253, 0.4);
+}
+
+.news-cat-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lg-accent);
+}
+
+.news-cat-legend__count {
+  min-width: 22px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  text-align: center;
+  font-family: var(--font-mono-meta);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--lg-accent);
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .news-cat-legend {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .news-cat-legend__count {
+  color: #0f172a;
+}
+
+/* Patent status pills (Publications > Patents): emerald = registered, amber = filed */
+.ed-status-pill {
+  --pill-fg: #064e3b;
+  --pill-bg: #d1fae5;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: var(--pill-bg);
+  color: var(--pill-fg);
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+.ed-status-pill i {
+  font-size: 0.85em;
+}
+
+.ed-status-pill--filed {
+  --pill-fg: #78350f;
+  --pill-bg: #fef3c7;
+}
+
+html[data-theme="dark"] .ed-status-pill--registered {
+  --pill-fg: #a7f3d0;
+  --pill-bg: rgba(110, 231, 183, 0.16);
+}
+
+html[data-theme="dark"] .ed-status-pill--filed {
+  --pill-fg: #fde68a;
+  --pill-bg: rgba(251, 191, 36, 0.16);
 }
 
 .news-feed-card__body strong {
