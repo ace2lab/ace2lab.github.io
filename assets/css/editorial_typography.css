@@ -1710,18 +1710,62 @@ html[data-theme="dark"] {
   background: var(--global-code-bg-color, #f1f5f9);
   flex-shrink: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  display: block;
+  cursor: zoom-in;
 }
 
 .ed-entry__thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: zoom-in;
+  object-position: top center;
+  display: block;
   transition: transform 0.2s ease;
 }
 
-.ed-entry__thumb img:hover {
+.ed-entry__thumb:hover img,
+.ed-entry__thumb:focus-visible img {
   transform: scale(1.05);
+}
+
+/* Full-resolution certificate lightbox (assets/js/award_lightbox.js) */
+.ed-lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 96vw;
+  max-height: 96vh;
+  overflow: visible;
+}
+
+.ed-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.ed-lightbox__img {
+  display: block;
+  max-width: 96vw;
+  max-height: 96vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-out;
+  background: #fff;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ed-lightbox__close {
+  position: fixed;
+  top: 12px;
+  right: 18px;
+  z-index: 1;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 /* ------------------------------------------------------------
