@@ -1,9 +1,9 @@
 <div class="ed-spec ed-spec--with-thumbs" role="table" aria-label="{{ include.caption | escape }}">
   <div class="ed-spec__head" role="row">
-    <span role="columnheader">Photo</span>
-    <span role="columnheader">Instrument</span>
-    <span role="columnheader">Manufacturer · Model</span>
-    <span role="columnheader">Location</span>
+    <span role="columnheader"><i class="fa-solid fa-camera" aria-hidden="true"></i> Photo</span>
+    <span role="columnheader"><i class="fa-solid fa-microscope" aria-hidden="true"></i> Instrument</span>
+    <span role="columnheader"><i class="fa-solid fa-industry" aria-hidden="true"></i> Manufacturer · Model</span>
+    <span role="columnheader" class="text-end"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location</span>
   </div>
   {% for item in include.items %}
     <div class="ed-spec__row" role="row" id="fac-{{ item.id }}">
@@ -20,18 +20,19 @@
         {% endif %}
       </div>
       <span class="ed-spec__name" role="cell">{{ item.name | escape }}</span>
-      <span class="ed-spec__make" role="cell">
+      <div class="ed-spec__make" role="cell">
         {%- if item.manufacturer and item.manufacturer != '' -%}
-          {{ item.manufacturer | escape }}
+          <span class="ed-spec__vendor">{{ item.manufacturer | escape }}</span>
         {%- endif -%}
         {%- if item.model and item.model != '' -%}
-          {%- if item.manufacturer and item.manufacturer != '' -%}
-            <span class="ed-sep" aria-hidden="true">·</span>
-          {%- endif -%}
-          <span class="ed-spec__model">{{ item.model | escape }}</span>
+          <code class="ed-spec__model-badge">{{ item.model | escape }}</code>
         {%- endif -%}
-      </span>
-      <span class="ed-spec__loc" role="cell">{{ item.location | escape }}</span>
+      </div>
+      <div class="ed-spec__loc" role="cell">
+        {%- if item.location and item.location != '' -%}
+          <span class="ed-spec__loc-pill"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ item.location | escape }}</span>
+        {%- endif -%}
+      </div>
     </div>
   {% endfor %}
 </div>
