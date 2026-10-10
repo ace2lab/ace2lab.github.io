@@ -14,6 +14,9 @@ nav_order: 4
 {% assign thermal_items = all_facilities | where: "category", "Sample Preparation & Thermal Processing" %}
 {% assign char_items = all_facilities | where: "category", "Characterization & Measurement" %}
 {% assign utility_items = all_facilities | where: "category", "Infrastructure & Utility" %}
+{% assign r403_items = all_facilities | where: "location", "7호관 403호" %}
+{% assign r414_items = all_facilities | where: "location", "7호관 414호" %}
+{% assign r313_items = all_facilities | where: "location", "8호관 313호" %}
 {% assign facility_groups = all_facilities | group_by: "category" %}
 
 {% capture hero_subtitle %}{{ all_facilities.size }}대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템{% endcapture %}
@@ -35,6 +38,14 @@ nav_order: 4
 %}
 
 <div class="ed-page ace2-tab-container">
+
+  <!-- Location Legend (room color semantics) -->
+  <div class="fac-loc-legend" role="group" aria-label="Laboratory room color legend">
+    <span class="fac-loc-legend__title"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location</span>
+    <span class="fac-loc-legend__item" data-room="r403"><span class="fac-loc-legend__dot" aria-hidden="true"></span>7호관 403호<span class="fac-loc-legend__count">{{ r403_items.size }}</span></span>
+    <span class="fac-loc-legend__item" data-room="r414"><span class="fac-loc-legend__dot" aria-hidden="true"></span>7호관 414호<span class="fac-loc-legend__count">{{ r414_items.size }}</span></span>
+    <span class="fac-loc-legend__item" data-room="r313"><span class="fac-loc-legend__dot" aria-hidden="true"></span>8호관 313호<span class="fac-loc-legend__count">{{ r313_items.size }}</span></span>
+  </div>
 
   <!-- Accessible Tab Navigation -->
   <div class="ace2-tabnav" role="tablist" aria-label="Research facilities tabs">

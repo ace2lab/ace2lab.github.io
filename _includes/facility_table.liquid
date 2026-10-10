@@ -6,7 +6,17 @@
     <span role="columnheader" class="text-end"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location</span>
   </div>
   {% for item in include.items %}
-    <div class="ed-spec__row" role="row" id="fac-{{ item.id }}">
+    {%- case item.location -%}
+      {%- when '7호관 403호' -%}
+        {%- assign room_key = 'r403' -%}
+      {%- when '7호관 414호' -%}
+        {%- assign room_key = 'r414' -%}
+      {%- when '8호관 313호' -%}
+        {%- assign room_key = 'r313' -%}
+      {%- else -%}
+        {%- assign room_key = 'none' -%}
+    {%- endcase -%}
+    <div class="ed-spec__row" role="row" id="fac-{{ item.id }}" data-room="{{ room_key }}">
       <div class="ed-spec__thumb" role="cell">
         {% if item.img and item.img != '' %}
           <img
