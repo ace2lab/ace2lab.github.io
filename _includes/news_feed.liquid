@@ -1,11 +1,7 @@
 <div class="news-feed">
   <div class="news-feed__header">
-    <h2 class="news-feed__title">
-      <i class="fa-solid fa-bullhorn" aria-hidden="true"></i> Latest News
-    </h2>
-    <a href="{{ '/news/' | relative_url }}" class="news-feed__all-link">
-      All News <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-    </a>
+    <h2 class="news-feed__title"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i> Latest News</h2>
+    <a href="{{ '/news/' | relative_url }}" class="news-feed__all-link"> All News <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> </a>
   </div>
 
   {% assign news_items = site.news | sort: 'date' | reverse %}
@@ -18,7 +14,7 @@
       <div class="news-feed-card">
         <div class="news-feed-card__meta">
           <time class="news-feed-card__date" datetime="{{ item.date | date_to_xmlschema }}">
-            {{ item.date | date: "%Y.%m.%d" }}
+            {{ item.date | date: '%Y.%m.%d' }}
           </time>
           {% if diff_seconds < 2592000 and diff_seconds >= 0 %}
             <span class="news-badge-new">NEW</span>
@@ -34,9 +30,7 @@
       </div>
     {% else %}
       <div class="news-feed-card">
-        <div class="news-feed-card__body" style="color: var(--global-text-color-light);">
-          No recent announcements.
-        </div>
+        <div class="news-feed-card__body" style="color: var(--global-text-color-light);">No recent announcements.</div>
       </div>
     {% endfor %}
   </div>
