@@ -2150,6 +2150,159 @@ html[data-theme="dark"] .ed-spec__loc-pill {
   border-color: rgba(157, 183, 217, 0.25);
 }
 
+/* Room color coding (7호관 403호 navy, 7호관 414호 teal, 8호관 313호 burgundy) */
+[data-room] {
+  --room-accent: #1e3a5f;
+  --room-text: #1e3a5f;
+  --room-bg: rgba(30, 58, 95, 0.07);
+  --room-border: rgba(30, 58, 95, 0.28);
+  --room-icon: #1d4ed8;
+  --room-glow: rgba(30, 58, 95, 0.18);
+}
+
+[data-room="r403"] {
+  --room-accent: #1e3a5f;
+  --room-text: #1e3a5f;
+  --room-bg: rgba(30, 58, 95, 0.07);
+  --room-border: rgba(30, 58, 95, 0.28);
+  --room-icon: #1d4ed8;
+  --room-glow: rgba(30, 58, 95, 0.18);
+}
+
+[data-room="r414"] {
+  --room-accent: #0f766e;
+  --room-text: #0b5f58;
+  --room-bg: rgba(15, 118, 110, 0.08);
+  --room-border: rgba(15, 118, 110, 0.32);
+  --room-icon: #0f766e;
+  --room-glow: rgba(15, 118, 110, 0.2);
+}
+
+[data-room="r313"] {
+  --room-accent: #a3123a;
+  --room-text: #8a0f31;
+  --room-bg: rgba(163, 18, 58, 0.07);
+  --room-border: rgba(163, 18, 58, 0.3);
+  --room-icon: #b45309;
+  --room-glow: rgba(163, 18, 58, 0.18);
+}
+
+html[data-theme="dark"] [data-room="r403"],
+html[data-theme="dark"] [data-room="none"] {
+  --room-accent: #6b9bea;
+  --room-text: #a9c6f5;
+  --room-bg: rgba(107, 155, 234, 0.14);
+  --room-border: rgba(107, 155, 234, 0.4);
+  --room-icon: #8db4f0;
+  --room-glow: rgba(107, 155, 234, 0.28);
+}
+
+html[data-theme="dark"] [data-room="r414"] {
+  --room-accent: #2dd4bf;
+  --room-text: #5eead4;
+  --room-bg: rgba(45, 212, 191, 0.12);
+  --room-border: rgba(45, 212, 191, 0.38);
+  --room-icon: #5eead4;
+  --room-glow: rgba(45, 212, 191, 0.25);
+}
+
+html[data-theme="dark"] [data-room="r313"] {
+  --room-accent: #f0708f;
+  --room-text: #f8b4c6;
+  --room-bg: rgba(240, 112, 143, 0.14);
+  --room-border: rgba(240, 112, 143, 0.4);
+  --room-icon: #fbbf24;
+  --room-glow: rgba(240, 112, 143, 0.28);
+}
+
+.ed-spec--with-thumbs .ed-spec__row[data-room] {
+  border-left: 4px solid var(--room-accent);
+}
+
+.ed-spec--with-thumbs .ed-spec__row[data-room]:hover,
+html[data-theme="dark"] .ed-spec--with-thumbs .ed-spec__row[data-room]:hover {
+  border-color: var(--room-border);
+  border-left-color: var(--room-accent);
+  box-shadow:
+    0 6px 16px var(--room-glow),
+    0 0 0 1px var(--room-border);
+}
+
+.ed-spec__row[data-room] .ed-spec__loc-pill,
+html[data-theme="dark"] .ed-spec__row[data-room] .ed-spec__loc-pill {
+  background: var(--room-bg);
+  color: var(--room-text);
+  border-color: var(--room-border);
+}
+
+.ed-spec__loc-pill i {
+  color: var(--room-icon, currentColor);
+}
+
+.fac-loc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin: 0 0 var(--ed-s6, 1.5rem);
+  padding: 10px 16px;
+  border: 1px solid var(--global-divider-color, #e2e8f0);
+  border-radius: 12px;
+  background: var(--global-card-bg-color, #ffffff);
+}
+
+.fac-loc-legend__title {
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-right: 4px;
+}
+
+.fac-loc-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: var(--room-bg);
+  color: var(--room-text);
+  border: 1px solid var(--room-border);
+  white-space: nowrap;
+}
+
+.fac-loc-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--room-accent);
+}
+
+.fac-loc-legend__count {
+  min-width: 22px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  text-align: center;
+  font-family: var(--font-mono-meta);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--room-accent);
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .fac-loc-legend {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="dark"] .fac-loc-legend__count {
+  color: #0f172a;
+}
+
 @media (max-width: 1100px) and (min-width: 769px) {
   .ed-spec--with-thumbs .ed-spec__head,
   .ed-spec--with-thumbs .ed-spec__row {
