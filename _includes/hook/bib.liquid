@@ -1,0 +1,15 @@
+{% comment %}
+  al_folio_core bib.liquid hook: appends funding acknowledgment and press coverage to the periodical block.
+  Journal and date are folded into entrytype so the funding/press blocks follow them instead of the date.
+{% endcomment %}
+{% if entry.funding or entry.press %}
+  {% capture entrytype %}{{ entrytype }}{{ entrymonth }}{{ entryyear }}{% endcapture %}
+  {% assign entrymonth = '' %}
+  {% assign entryyear = '' %}
+  {% if entry.funding %}
+    {% capture entrytype %}{{ entrytype }}<div class="ed-entry__funding"><span class="ed-label">Funding</span>{{ entry.funding | escape }}</div>{% endcapture %}
+  {% endif %}
+  {% if entry.press %}
+    {% capture entrytype %}{{ entrytype }}<div class="ed-entry__press"><a href="{{ entry.press }}" target="_blank" rel="noopener" class="ed-pill ed-pill--press"{% if entry.press_title %} title="{{ entry.press_title | escape }}"{% endif %}><i class="fa-solid fa-newspaper" aria-hidden="true"></i> 언론보도 ({{ entry.press_media | default: '기사' | escape }}) <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i></a></div>{% endcapture %}
+  {% endif %}
+{% endif %}

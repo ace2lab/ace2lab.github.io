@@ -19,6 +19,8 @@
   date: 2025.11.07
   year: 2025
   img: assets/img/awards/award_2.jpg
+  press: "https://www.etnews.com/20251118000380"
+  press_media: "전자신문"
 - type: 우수연구교수
   title: 질적성과부분(JCR 5%)
   recipient: 임창용
@@ -40,6 +42,8 @@
   date: 2024.10.31
   year: 2024
   img: assets/img/awards/award_5.jpg
+  press: "https://www.newsis.com/view/NISX20241105_0002947119"
+  press_media: "뉴시스"
 - type: 표창장
   title: 경북대학교 학위수여식
   recipient: 이재호

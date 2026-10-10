@@ -62,6 +62,13 @@ nav_order: 6
                       <span class="ed-sep" aria-hidden="true">·</span>{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}
                     {%- endif %}
                   </div>
+                  {% if a.press and a.press != "" %}
+                    <div class="ed-entry__line">
+                      <a href="{{ a.press }}" target="_blank" rel="noopener" class="ed-pill ed-pill--press">
+                        <i class="fa-solid fa-newspaper" aria-hidden="true"></i> 언론보도 ({{ a.press_media | default: '기사' | escape }}) <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  {% endif %}
                 </div>
               </li>
             {% endfor %}
