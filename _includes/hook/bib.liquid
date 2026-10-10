@@ -8,7 +8,7 @@
   {% assign entrymonth = '' %}
   {% assign entryyear = '' %}
   {% if journal_meta %}
-    {% capture entrytype %}{{ entrytype }}<div class="ed-entry__jcr"><span class="pub-badge {{ journal_meta.badge_class }}"><i class="fa-solid fa-trophy"></i> {{ journal_meta.badge_label }}</span></div>{% endcapture %}
+    {% capture entrytype %}{{ entrytype }}<div class="ed-entry__jcr"><span class="pub-badge {{ journal_meta.badge_class }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ journal_meta.badge_label }}</span></div>{% endcapture %}
   {% endif %}
   {% if entry.funding %}
     {% capture entrytype %}{{ entrytype }}<div class="ed-entry__funding"><span class="ed-label">Funding</span>{{ entry.funding | escape }}</div>{% endcapture %}

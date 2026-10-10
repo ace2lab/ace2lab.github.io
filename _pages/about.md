@@ -38,6 +38,7 @@ latest_posts:
 {% endcapture %}
 
 {% include hero_banner.liquid
+  variant="home"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Advanced Chemical & Energy Engineering Laboratory"
   subtitle="차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과"
@@ -264,3 +265,5 @@ For detailed project descriptions and laboratory facilities, please visit our [R
     </div>
   </div>
 </div>
+
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

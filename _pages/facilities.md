@@ -9,38 +9,30 @@ nav_order: 4
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
-<style>
-  .post > header.post-header {
-    display: none;
-  }
-</style>
-
-<div class="ed-hero-banner">
-  <div class="ed-hero-banner__inner">
-    <div class="ed-hero-banner__label">KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB</div>
-    <h1 class="ed-hero-banner__title">Research Facilities & Instrumentation</h1>
-    <p class="ed-hero-banner__subtitle">
-      35대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템
-      <br>
-      <span style="font-size: 0.92rem; opacity: 0.85;">
-        State-of-the-art materials synthesis, ultrafast photonic sintering, and electrochemical characterization facilities.
-      </span>
-    </p>
-    <div class="ed-hero-banner__badges">
-      <span class="hero-badge"><i class="fa-solid fa-flask"></i> Material Synthesis (5)</span>
-      <span class="hero-badge"><i class="fa-solid fa-fire-burner"></i> Sample Prep & Thermal (9)</span>
-      <span class="hero-badge"><i class="fa-solid fa-chart-line"></i> Characterization (15)</span>
-      <span class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Utility & Infrastructure (6)</span>
-    </div>
-  </div>
-</div>
-
 {% assign all_facilities = site.data.facilities %}
 {% assign synthesis_items = all_facilities | where: "category", "Material Synthesis" %}
 {% assign thermal_items = all_facilities | where: "category", "Sample Preparation & Thermal Processing" %}
 {% assign char_items = all_facilities | where: "category", "Characterization & Measurement" %}
 {% assign utility_items = all_facilities | where: "category", "Infrastructure & Utility" %}
 {% assign facility_groups = all_facilities | group_by: "category" %}
+
+{% capture hero_subtitle %}{{ all_facilities.size }}대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템{% endcapture %}
+
+{% capture hero_badges %}
+<span class="hero-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i> Material Synthesis ({{ synthesis_items.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i> Sample Prep & Thermal ({{ thermal_items.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Characterization ({{ char_items.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Utility & Infrastructure ({{ utility_items.size }})</span>
+{% endcapture %}
+
+{% include hero_banner.liquid
+  variant="page"
+  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
+  title="Research Facilities & Instrumentation"
+  subtitle=hero_subtitle
+  subtitle_en="State-of-the-art materials synthesis, ultrafast photonic sintering, and electrochemical characterization facilities."
+  badges=hero_badges
+%}
 
 <div class="ed-page ace2-tab-container">
 
@@ -135,3 +127,5 @@ nav_order: 4
   <!-- Synchronous tab initializer -->
   <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </div>
+
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

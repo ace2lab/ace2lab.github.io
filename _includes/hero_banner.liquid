@@ -1,11 +1,21 @@
 {% comment %}
   ACE² Lab — AMTL-Inspired Editorial Hero Banner Component
-  Usage: {% include hero_banner.liquid label="..." title="..." subtitle="..." subtitle_en="..." %}
+  Usage: {% include hero_banner.liquid variant="page" label="..." title="..." subtitle="..." subtitle_en="..." %}
+  variant     — "page" (default: compact sub-page banner) or "home" (full-height landing banner)
   subtitle    — primary (Korean) affiliation line
   subtitle_en — secondary (English) line, rendered as its own high-contrast paragraph
+  badges / actions — pre-captured HTML; mark decorative <i> icons aria-hidden="true"
+  The banner carries the page <h1>, so the layout's duplicate post header is hidden.
 {% endcomment %}
+{% assign hero_variant = include.variant | default: 'page' %}
 
-<div class="ed-hero-banner">
+<style>
+  .post > header.post-header {
+    display: none;
+  }
+</style>
+
+<div class="ed-hero-banner ed-hero-banner--{{ hero_variant }}">
   <div class="ed-hero-banner__inner">
     {%- if include.label and include.label != '' %}
       <div class="ed-hero-banner__label">{{ include.label }}</div>
@@ -15,7 +25,7 @@
       <p class="ed-hero-banner__subtitle">{{ include.subtitle | strip }}</p>
     {%- endif %}
     {%- if include.subtitle_en and include.subtitle_en != '' %}
-      <p class="ed-hero-banner__subtitle-en">{{ include.subtitle_en | strip }}</p>
+      <p class="ed-hero-banner__subtitle-en" lang="en">{{ include.subtitle_en | strip }}</p>
     {%- endif %}
     {%- if include.badges %}
       <div class="ed-hero-banner__badges">

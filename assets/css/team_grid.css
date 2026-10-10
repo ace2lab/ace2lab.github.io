@@ -51,7 +51,7 @@
   /* Colour — light (slate neutrals + deep navy accent) */
   --tm-ink: #0f172a; /* names, titles           17.9:1 on white */
   --tm-text: #334155; /* body                    10.4:1 */
-  --tm-muted: #5b6b82; /* secondary / labels       5.4:1 */
+  --tm-muted: var(--c-muted, #4b5a70); /* secondary / labels  7.0:1 — SSOT ace2_tokens.css */
   --tm-faint: #8695aa; /* decorative only (hairline icons) */
   --tm-surface: #ffffff;
   --tm-sunken: #f6f8fb; /* chips, avatar field */
@@ -82,7 +82,7 @@
 html[data-theme="dark"] .team-container {
   --tm-ink: #f1f5f9;
   --tm-text: #cbd5e1;
-  --tm-muted: #94a3b8; /* 5.9:1 on #23262b */
+  --tm-muted: var(--c-muted, #94a3b8); /* 5.9:1 on #23262b */
   --tm-faint: #64748b;
   --tm-surface: #23262b;
   --tm-sunken: #2a2e35;
@@ -286,7 +286,7 @@ html[data-theme="dark"] .team-container {
   grid-template-columns: 16px 1fr;
   column-gap: var(--tm-s2);
   align-items: baseline;
-  font-size: var(--tm-fs-xs);
+  font-size: var(--fs-meta, 0.875rem);
   line-height: 20px;
   color: var(--tm-text);
 }
@@ -298,13 +298,13 @@ html[data-theme="dark"] .team-container {
 }
 
 .member-meta .member-meta__muted {
-  font-size: var(--tm-fs-2xs);
+  font-size: var(--fs-label, 0.8125rem);
   color: var(--tm-muted);
 }
 
 .member-meta .member-meta__edu {
-  font-size: var(--tm-fs-xs);
-  line-height: 18px;
+  font-size: var(--fs-meta, 0.875rem);
+  line-height: 20px;
   color: var(--tm-text);
 }
 
@@ -320,8 +320,8 @@ html[data-theme="dark"] .team-container {
 }
 
 .member-awards li {
-  font-size: var(--tm-fs-2xs);
-  line-height: 18px;
+  font-size: var(--fs-meta, 0.875rem);
+  line-height: 20px;
   font-weight: 500;
   color: var(--tm-ink);
 }
@@ -362,14 +362,18 @@ html[data-theme="dark"] .member-awards i {
 .member-card__links {
   display: flex;
   align-items: center;
-  gap: var(--tm-s4);
+  gap: 0; /* the 44px hit boxes already space the glyphs */
   margin-top: auto;
-  padding-top: var(--tm-s5);
+  margin-left: -14px; /* first glyph aligns with the text edge */
+  padding-top: var(--tm-s3);
 }
 
 .link-icon {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px; /* WCAG 2.5.5 touch target */
   font-size: 1rem;
   line-height: 1;
   color: var(--tm-muted);
@@ -499,7 +503,7 @@ html[data-theme="dark"] .member-awards i {
   margin: 0;
   font-weight: 400;
   font-size: 0.75rem;
-  color: var(--tm-faint);
+  color: var(--tm-muted); /* field icon carries meaning: >= 4.5:1, not decorative faint */
   text-align: center;
 }
 
@@ -780,7 +784,7 @@ html[data-theme="dark"] .pi-action:focus-visible {
 @media (min-width: 900px) {
   .pi-profile__aside {
     position: sticky;
-    top: 5rem; /* clears the fixed al-folio navbar */
+    top: 7rem; /* clears the fixed al-folio navbar + sticky members tab bar */
     align-self: start;
   }
 }

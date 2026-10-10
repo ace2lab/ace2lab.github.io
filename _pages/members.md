@@ -7,12 +7,8 @@ nav: true
 nav_order: 2
 ---
 
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <link rel="stylesheet" href="{{ '/assets/css/team_grid.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-
-<div class="team-container">
 
 {% assign yim = site.data.members | where: "id", "changyong-yim" | first %}
 {% assign kim = site.data.members | where: "id", "taewook-kim" | first %}
@@ -22,6 +18,24 @@ nav_order: 2
 {% assign alumni = site.data.members | where: "group", "alumni" | sort: "grad_year" | reverse %}
 {% assign interns = site.data.interns %}
 {% assign intern_affiliations = interns | map: "affiliation" | uniq %}
+
+{% capture hero_badges %}
+<span class="hero-badge"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> Principal Investigators ({{ site.data.members | where: "group", "pi" | size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i> Current Members ({{ current_count }})</span>
+<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Alumni ({{ alumni.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Former Interns ({{ interns.size }})</span>
+{% endcapture %}
+
+{% include hero_banner.liquid
+  variant="page"
+  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
+  title="Research Team & Members"
+  subtitle="차세대 화학 및 에너지 공학 연구실 연구책임자, 대학원생, 학부연구생 및 졸업생"
+  subtitle_en="Principal investigators, graduate students, undergraduate researchers, and alumni of ACE² Lab."
+  badges=hero_badges
+%}
+
+<div class="team-container">
 
   <!-- Tab bar: hidden until members_tabs.js marks the container .is-tabbed (no JS / print = all panels in sequence) -->
   <nav class="team-tabnav" role="tablist" aria-label="Members tabs">

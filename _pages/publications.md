@@ -11,31 +11,30 @@ nav_order: 5
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
-<style>
-  .post > header.post-header {
-    display: none;
-  }
-</style>
+{% capture intl_count %}{% bibliography_count %}{% endcapture %}
+{% assign intl_count = intl_count | strip | plus: 0 %}
+{% if intl_count == 0 %}
+{% assign intl_count = 82 %}
+{% endif %}
+{% assign total_count = intl_count | plus: site.data.domestic.size | plus: site.data.patents.size | plus: site.data.talks.size %}
 
-<div class="ed-hero-banner">
-  <div class="ed-hero-banner__inner">
-    <div class="ed-hero-banner__label">KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB</div>
-    <h1 class="ed-hero-banner__title">Publications & Intellectual Property</h1>
-    <p class="ed-hero-banner__subtitle">
-      총 115편 연구 성과 (국제 SCI 학술지 82편 · 국내 학술지 4편 · 특허 14건 · 학회 발표 15편)
-      <br>
-      <span style="font-size: 0.92rem; opacity: 0.85;">
-        Peer-reviewed international journal articles, domestic publications, registered & filed patents, and invited presentations.
-      </span>
-    </p>
-    <div class="ed-hero-banner__badges">
-      <span class="hero-badge"><i class="fa-solid fa-earth-americas"></i> International Journals (82)</span>
-      <span class="hero-badge"><i class="fa-solid fa-flag"></i> Domestic Journals (4)</span>
-      <span class="hero-badge"><i class="fa-solid fa-certificate"></i> Patents & IP (14)</span>
-      <span class="hero-badge"><i class="fa-solid fa-microphone"></i> Presentations (15)</span>
-    </div>
-  </div>
-</div>
+{% capture hero_subtitle %}총 {{ total_count }}편 연구 성과 (국제 SCI 학술지 {{ intl_count }}편 · 국내 학술지 {{ site.data.domestic.size }}편 · 특허 {{ site.data.patents.size }}건 · 학회 발표 {{ site.data.talks.size }}편){% endcapture %}
+
+{% capture hero_badges %}
+<span class="hero-badge"><i class="fa-solid fa-earth-americas" aria-hidden="true"></i> International Journals ({{ intl_count }})</span>
+<span class="hero-badge"><i class="fa-solid fa-flag" aria-hidden="true"></i> Domestic Journals ({{ site.data.domestic.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Patents & IP ({{ site.data.patents.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Presentations ({{ site.data.talks.size }})</span>
+{% endcapture %}
+
+{% include hero_banner.liquid
+  variant="page"
+  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
+  title="Publications & Intellectual Property"
+  subtitle=hero_subtitle
+  subtitle_en="Peer-reviewed international journal articles, domestic publications, registered & filed patents, and invited presentations."
+  badges=hero_badges
+%}
 
 {% assign domestic_by_year = site.data.domestic | group_by: "year" | sort: "name" | reverse %}
 {% assign talks_by_year = site.data.talks | group_by: "year" | sort: "name" | reverse %}
@@ -48,7 +47,7 @@ nav_order: 5
   <!-- Accessible Tab Navigation -->
   <div class="ace2-tabnav" role="tablist" aria-label="Publications category tabs">
     <button type="button" role="tab" class="ace2-tab" id="tab-journals" aria-controls="panel-journals" aria-selected="false" tabindex="-1" data-hash="journals" data-default="true" data-aliases="international,papers,articles">
-      International Journals<span class="ace2-tab__count">82</span>
+      International Journals<span class="ace2-tab__count">{{ intl_count }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-domestic" aria-controls="panel-domestic" aria-selected="false" tabindex="-1" data-hash="domestic" data-aliases="domestic-journals,korean">
       Domestic Journals<span class="ace2-tab__count">{{ site.data.domestic.size }}</span>
@@ -66,12 +65,12 @@ nav_order: 5
     <section class="ed-section" id="journals">
       <h2 class="ed-section__title">
         International Journals
-        <span class="ed-section__count">82</span>
+        <span class="ed-section__count">{{ intl_count }}</span>
       </h2>
 
       <nav class="pub-year-jump" aria-label="Jump to publication year">
         <div class="pub-year-jump__inner">
-          <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left"></i> Year</span>
+          <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Year</span>
           <div class="pub-year-jump__chips" id="pubYearChips">
             <a href="#y2026" class="pub-year-chip" data-year="2026">2026<span class="pub-year-chip__count">5</span></a>
             <a href="#y2025" class="pub-year-chip" data-year="2025">2025<span class="pub-year-chip__count">2</span></a>
@@ -330,7 +329,7 @@ nav_order: 5
           if (/cover/i.test(text)) {
             isCover = true;
             p.innerHTML =
-              '<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award"></i> ' +
+              '<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> ' +
               text +
               '</span>';
           }

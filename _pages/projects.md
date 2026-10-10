@@ -9,33 +9,21 @@ nav_order: 3
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
-<style>
-  .post > header.post-header {
-    display: none;
-  }
-</style>
+{% capture hero_badges %}
+<span class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> Energy Materials (Pillar 01)</span>
+<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Photonic Sintering (Pillar 02)</span>
+<span class="hero-badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i> Flexible Sensors (Pillar 03)</span>
+<a href="{{ '/facilities/' | relative_url }}" class="hero-badge"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> View {{ site.data.facilities.size }} Lab Facilities <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+{% endcapture %}
 
-<div class="ed-hero-banner">
-  <div class="ed-hero-banner__inner">
-    <div class="ed-hero-banner__label">ACE² LAB · RESEARCH PILLARS</div>
-    <h1 class="ed-hero-banner__title">Core Research Areas & Scientific Innovations</h1>
-    <p class="ed-hero-banner__subtitle">
-      차세대 에너지 저장 및 변환 소재부터 초고속 광열처리 나노공정, 유연 생체·환경 센서 소자까지
-      <br>
-      <span style="font-size: 0.92rem; opacity: 0.85;">
-        Pioneering ultrafast photonic nanomanufacturing, multifunctional energy storage, and flexible sensory electronics.
-      </span>
-    </p>
-    <div class="ed-hero-banner__badges">
-      <span class="hero-badge"><i class="fa-solid fa-battery-half"></i> Energy Materials (Pillar 01)</span>
-      <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Photonic Sintering (Pillar 02)</span>
-      <span class="hero-badge"><i class="fa-solid fa-wave-square"></i> Flexible Sensors (Pillar 03)</span>
-      <a href="{{ '/facilities/' | relative_url }}" class="hero-badge" style="color: inherit; text-decoration: none;">
-        <i class="fa-solid fa-cubes-stacked"></i> View 35 Lab Facilities <i class="fa-solid fa-arrow-right" style="font-size: 0.75em; margin-left: 2px;"></i>
-      </a>
-    </div>
-  </div>
-</div>
+{% include hero_banner.liquid
+  variant="page"
+  label="ACE² LAB · RESEARCH PILLARS"
+  title="Core Research Areas & Scientific Innovations"
+  subtitle="차세대 에너지 저장 및 변환 소재부터 초고속 광열처리 나노공정, 유연 생체·환경 센서 소자까지"
+  subtitle_en="Pioneering ultrafast photonic nanomanufacturing, multifunctional energy storage, and flexible sensory electronics."
+  badges=hero_badges
+%}
 
 <div class="ed-page ace2-tab-container">
 
@@ -77,56 +65,56 @@ nav_order: 3
 
       <div class="ed-pillar__grid">
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> Hybrid Coin-Cell Supercapacitors</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Hybrid Coin-Cell Supercapacitors</h3>
           <p class="ed-pillar__topic-body">
             Synthesis of metal-organic framework (MOF) derived nanostructures and transition metal sulphide composite arrays (e.g. Co-MOF/Ni-Co sulphide nanopetals) establishing ultra-stable interfaces delivering high energy density without sacrificing power capability.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> 2D MXene & Nanocomposite Anodes</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> 2D MXene & Nanocomposite Anodes</h3>
           <p class="ed-pillar__topic-body">
             Instantaneous restructuring of dense 2D MXene sheets into highly porous, accessible conductive architectures. Development of porous MXene/TiO₂ nanocomposites to mitigate volumetric expansion in lithium-ion battery anodes.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> In-situ / Operando Diagnostics</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> In-situ / Operando Diagnostics</h3>
           <p class="ed-pillar__topic-body">
             Dynamic cyclic voltammetry (CV), electrochemical impedance spectroscopy (EIS), and galvanostatic charge-discharge (GCD) profiling under extreme operating conditions.
           </p>
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark"></i> Representative Publications</h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> Representative Publications</h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Journal of Energy Storage (2024)</span>
           <span class="ed-pillar__pub-title">Cobalt-Based Metal-Organic Framework/Nickel-Cobalt Sulphide Composite Nanopetal Arrays for High-Performance Hybrid Coin Cell Supercapacitor</span>
           <a href="https://doi.org/10.1016/j.est.2024.111764" target="_blank" rel="noopener" class="ed-pillar__pub-link">
-            DOI: 10.1016/j.est.2024.111764 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            DOI: 10.1016/j.est.2024.111764 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </li>
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Chemical Engineering Journal (2024)</span>
           <span class="ed-pillar__pub-title">Flashlight Treatment for Instantaneous Structuring of Dense MXene Film into Porous MXene/TiO2 Nanocomposite for Lithium-Ion Battery Anodes</span>
           <a href="https://doi.org/10.1016/j.cej.2024.149598" target="_blank" rel="noopener" class="ed-pillar__pub-link">
-            DOI: 10.1016/j.cej.2024.149598 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            DOI: 10.1016/j.cej.2024.149598 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </li>
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">ACS Applied Energy Materials (2023)</span>
           <span class="ed-pillar__pub-title">Exploring the Effect of Ultrafast Intensive Pulsed Light (IPL) Annealing on the Structure and Performance of Cobalt Oxide Electrodes for Supercapacitors</span>
           <a href="https://doi.org/10.1021/acsaem.3c00656" target="_blank" rel="noopener" class="ed-pillar__pub-link">
-            DOI: 10.1021/acsaem.3c00656 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            DOI: 10.1021/acsaem.3c00656 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
 
       <footer class="ed-pillar__footer-action">
         <a href="{{ '/facilities/#characterization' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-microscope"></i> Core Instruments: Potentiostats, Glove Box & BET Analyzer →
+          <i class="fa-solid fa-microscope" aria-hidden="true"></i> Core Instruments: Potentiostats, Glove Box & BET Analyzer →
         </a>
         <a href="{{ '/publications/#journals' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-newspaper"></i> View all energy publications in Publications →
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> View all energy publications in Publications →
         </a>
       </footer>
     </article>
@@ -158,49 +146,49 @@ nav_order: 3
 
       <div class="ed-pillar__grid">
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> Intense Pulsed Light (IPL) Sintering</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Intense Pulsed Light (IPL) Sintering</h3>
           <p class="ed-pillar__topic-body">
             Broad-spectrum xenon flash lamp delivering high-energy optical pulses (microsecond to millisecond durations). Photothermal conversion inducing instantaneous surface temperatures exceeding 800 °C while maintaining ambient bulk substrate temperature.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> Colloidal Quantum Dot (CQD) Solids</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Colloidal Quantum Dot (CQD) Solids</h3>
           <p class="ed-pillar__topic-body">
             Suppression and healing of thermally induced surface traps in quantum dot thin films via pulsed photonic sintering. Significant enhancement of carrier mobility, charge extraction efficiency, and optoelectronic device longevity.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> Flexible Polymer Nanomanufacturing</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Flexible Polymer Nanomanufacturing</h3>
           <p class="ed-pillar__topic-body">
             Roll-to-roll compatible sintering of metal nanoparticles, conductive metal oxides, and 2D materials directly on low-temperature PET, PI, and paper substrates.
           </p>
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark"></i> Representative Publications</h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> Representative Publications</h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Small (2024, Front Cover)</span>
           <span class="ed-pillar__pub-title">Suppression of Thermally Induced Surface Traps in Colloidal Quantum Dot Solids via Ultrafast Pulsed Light</span>
           <a href="https://doi.org/10.1002/smll.202400380" target="_blank" rel="noopener" class="ed-pillar__pub-link">
-            DOI: 10.1002/smll.202400380 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            DOI: 10.1002/smll.202400380 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </li>
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Chemical Engineering Journal (2024)</span>
           <span class="ed-pillar__pub-title">Flashlight Treatment for Instantaneous Structuring of Dense MXene Film into Porous MXene/TiO2 Nanocomposite for Lithium-Ion Battery Anodes</span>
           <a href="https://doi.org/10.1016/j.cej.2024.149598" target="_blank" rel="noopener" class="ed-pillar__pub-link">
-            DOI: 10.1016/j.cej.2024.149598 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            DOI: 10.1016/j.cej.2024.149598 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
 
       <footer class="ed-pillar__footer-action">
         <a href="{{ '/facilities/#synthesis' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-bolt"></i> Core Instruments: PSTEK Flashlight, Sputter Coater & Spin Coater →
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i> Core Instruments: PSTEK Flashlight, Sputter Coater & Spin Coater →
         </a>
         <a href="{{ '/publications/#journals' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-newspaper"></i> View all photonic publications in Publications →
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> View all photonic publications in Publications →
         </a>
       </footer>
     </article>
@@ -232,49 +220,49 @@ nav_order: 3
 
       <div class="ed-pillar__grid">
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> Laser-Induced Graphene (LIG) Sensors</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Laser-Induced Graphene (LIG) Sensors</h3>
           <p class="ed-pillar__topic-body">
             Direct laser writing of 3D porous graphene on commercial polyimide films without requiring masks or vacuum environments. Ultra-rapid and highly flexible humidity sensors optimized for continuous human respiration and breath-pattern monitoring.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> Microresonator Chemical Sensing</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Microresonator Chemical Sensing</h3>
           <p class="ed-pillar__topic-body">
             Direct integration of Metal-Organic Frameworks (MOFs) and functional porous polymers on microcantilever and microresonator surfaces for sub-ppm chemical vapor discrimination and VOC monitoring.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot"></i> Environmental Catalysis & Emissions</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Environmental Catalysis & Emissions</h3>
           <p class="ed-pillar__topic-body">
             Advanced sorbent regeneration and industrial plant desulfurization technology for PM2.5/fine dust reduction and continuous environmental hazard monitoring.
           </p>
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark"></i> Representative Publications</h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> Representative Publications</h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">ACS Applied Nano Materials (2024)</span>
           <span class="ed-pillar__pub-title">Rapid and Flexible Humidity Sensor Based on Laser-Induced Graphene for Monitoring Human Respiration</span>
           <a href="https://doi.org/10.1021/acsanm.3c05283" target="_blank" rel="noopener" class="ed-pillar__pub-link">
-            DOI: 10.1021/acsanm.3c05283 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            DOI: 10.1021/acsanm.3c05283 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </li>
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">ACS Applied Energy Materials (2023)</span>
           <span class="ed-pillar__pub-title">Exploring the Effect of Ultrafast Intensive Pulsed Light (IPL) Annealing on the Structure and Performance of Cobalt Oxide Electrodes for Supercapacitors</span>
           <a href="https://doi.org/10.1021/acsaem.3c00656" target="_blank" rel="noopener" class="ed-pillar__pub-link">
-            DOI: 10.1021/acsaem.3c00656 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            DOI: 10.1021/acsaem.3c00656 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
         </li>
       </ul>
 
       <footer class="ed-pillar__footer-action">
         <a href="{{ '/facilities/#characterization' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-satellite-dish"></i> Core Instruments: Gas Sensor System, Mini-SEM & Keysight DMM →
+          <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i> Core Instruments: Gas Sensor System, Mini-SEM & Keysight DMM →
         </a>
         <a href="{{ '/publications/#journals' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-newspaper"></i> View all sensor publications in Publications →
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> View all sensor publications in Publications →
         </a>
       </footer>
     </article>
@@ -284,3 +272,5 @@ nav_order: 3
   <!-- Synchronous tab initializer -->
   <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </div>
+
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

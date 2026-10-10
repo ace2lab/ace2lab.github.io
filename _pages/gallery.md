@@ -7,13 +7,30 @@ nav: true
 nav_order: 7
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% assign albums_by_year = site.data.gallery | group_by: "year" | sort: "name" | reverse %}
+{% assign photo_total = 0 %}
+{% for a in site.data.gallery %}
+{% assign photo_total = photo_total | plus: a.photos.size %}
+{% endfor %}
+
+{% capture hero_badges %}
+<span class="hero-badge"><i class="fa-solid fa-images" aria-hidden="true"></i> {{ site.data.gallery.size }} Albums</span>
+<span class="hero-badge"><i class="fa-solid fa-camera" aria-hidden="true"></i> {{ photo_total }} Photos</span>
+<span class="hero-badge"><i class="fa-solid fa-calendar" aria-hidden="true"></i> Since {{ albums_by_year.last.name }}</span>
+{% endcapture %}
+
+{% include hero_banner.liquid
+  variant="page"
+  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
+  title="Gallery"
+  subtitle="학회 발표, 학위 심사 및 연구실 활동 기록"
+  subtitle_en="Conferences, defenses and moments from ACE² Lab, newest first."
+  badges=hero_badges
+%}
 
 <div class="ed-page">
-
-  <p class="ed-lede">{{ site.data.gallery.size }} albums since {{ albums_by_year.last.name }}.</p>
 
   <div class="ed-rail">
     {% for group in albums_by_year %}
@@ -38,7 +55,7 @@ nav_order: 7
                     data-zoomable
                   >
                   {% if a.photos and a.photos.size > 1 %}
-                    <span class="ed-album__badge"><i class="fa-solid fa-camera"></i> {{ a.photos.size }}</span>
+                    <span class="ed-album__badge"><i class="fa-solid fa-camera" aria-hidden="true"></i> {{ a.photos.size }}</span>
                   {% endif %}
                 </figure>
               {% endif %}
@@ -50,7 +67,7 @@ nav_order: 7
                 <details class="ed-album__expansion">
                   <summary class="ed-album__expansion-toggle">
                     <span>View all {{ a.photos.size }} photos</span>
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                   </summary>
                   <div class="ed-album__grid">
                     {% for p in a.photos %}

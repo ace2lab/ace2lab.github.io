@@ -7,10 +7,24 @@ nav: true
 nav_order: 6
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% assign awards_by_year = site.data.awards | group_by: "year" | sort: "name" | reverse %}
 {% assign press_by_year = site.data.press | group_by: "year" | sort: "name" | reverse %}
+
+{% capture hero_badges %}
+<span class="hero-badge"><i class="fa-solid fa-award" aria-hidden="true"></i> Awards ({{ site.data.awards.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> In the Press ({{ site.data.press.size }})</span>
+{% endcapture %}
+
+{% include hero_banner.liquid
+  variant="page"
+  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
+  title="News, Awards & Press"
+  subtitle="연구실 소식, 수상 실적 및 언론 보도"
+  subtitle_en="Announcements, awards and media coverage of ACE² Lab."
+  badges=hero_badges
+%}
 
 <div class="ed-page">
 
