@@ -2167,3 +2167,72 @@ html[data-theme="dark"] {
   color: #ffffff !important;
   text-decoration: none;
 }
+
+/* ------------------------------------------------------------
+   Funding acknowledgment & press coverage (publications, awards)
+   ------------------------------------------------------------ */
+.ed-entry__funding {
+  margin-top: 2px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+}
+
+.ed-entry__funding .ed-label {
+  margin-right: 0.5rem;
+  font-weight: 600;
+  color: var(--global-text-color-light);
+}
+
+.ed-entry__press {
+  margin-top: 4px;
+}
+
+.ed-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1px 10px;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ed-pill--press {
+  border-color: rgba(15, 118, 110, 0.35);
+  background: rgba(15, 118, 110, 0.07);
+  color: #0f766e;
+}
+
+.ed-pill--press:hover {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.ed-ext-icon {
+  font-size: 0.65rem;
+  opacity: 0.75;
+}
+
+html[data-theme="dark"] .ed-pill--press {
+  border-color: rgba(94, 234, 212, 0.35);
+  background: rgba(94, 234, 212, 0.08);
+  color: #5eead4;
+}
+
+html[data-theme="dark"] .ed-pill--press:hover {
+  border-color: #5eead4;
+  background: #5eead4;
+  color: var(--global-hover-text-color, #0f172a);
+}
