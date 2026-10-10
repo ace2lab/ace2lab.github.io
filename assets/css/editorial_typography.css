@@ -633,6 +633,140 @@ html[data-theme="dark"] .news-feed-card {
   word-break: keep-all;
 }
 
+/* Selected Publications: drop the year heading (kills the empty gap above the list) */
+.selected-papers-block .publications h2.bibliography {
+  display: none !important;
+}
+.selected-papers-block .publications ol.bibliography {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* News cards: category accent (left border), badges, semantic highlights.
+   Text/background pairs are chosen for >= 7:1 (AAA) in light and dark modes. */
+.news-feed-card {
+  --news-accent: var(--global-divider-color, #e2e8f0);
+  border-left: 4px solid var(--news-accent);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.news-feed-card--award {
+  --news-accent: #b45309;
+}
+.news-feed-card--member {
+  --news-accent: #1d4ed8;
+}
+.news-feed-card--milestone {
+  --news-accent: #047857;
+}
+html[data-theme="dark"] .news-feed-card--award {
+  --news-accent: #fbbf24;
+}
+html[data-theme="dark"] .news-feed-card--member {
+  --news-accent: #93c5fd;
+}
+html[data-theme="dark"] .news-feed-card--milestone {
+  --news-accent: #6ee7b7;
+}
+.news-feed-card:hover {
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
+}
+html[data-theme="dark"] .news-feed-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.news-cat-badge {
+  --cat-fg: #334155;
+  --cat-bg: #f1f5f9;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: var(--cat-bg);
+  color: var(--cat-fg);
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+.news-cat-badge i {
+  font-size: 0.85em;
+}
+.news-cat-badge--award {
+  --cat-fg: #78350f;
+  --cat-bg: #fef3c7;
+}
+.news-cat-badge--member {
+  --cat-fg: #1e3a8a;
+  --cat-bg: #dbeafe;
+}
+.news-cat-badge--milestone {
+  --cat-fg: #064e3b;
+  --cat-bg: #d1fae5;
+}
+html[data-theme="dark"] .news-cat-badge--award {
+  --cat-fg: #fde68a;
+  --cat-bg: rgba(251, 191, 36, 0.16);
+}
+html[data-theme="dark"] .news-cat-badge--member {
+  --cat-fg: #bfdbfe;
+  --cat-bg: rgba(147, 197, 253, 0.16);
+}
+html[data-theme="dark"] .news-cat-badge--milestone {
+  --cat-fg: #a7f3d0;
+  --cat-bg: rgba(110, 231, 183, 0.16);
+}
+
+.news-feed-card__body strong {
+  font-weight: 700;
+  color: var(--color-ink, #0f172a);
+}
+html[data-theme="dark"] .news-feed-card__body strong {
+  color: #f1f5f9;
+}
+.news-feed-card__body strong.news-highlight-award {
+  padding: 0 4px;
+  border-radius: 3px;
+  background: #fef3c7;
+  color: #78350f;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+html[data-theme="dark"] .news-feed-card__body strong.news-highlight-award {
+  background: rgba(251, 191, 36, 0.18);
+  color: #fde68a;
+}
+.news-highlight-badge {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 1px 8px;
+  border: 1px solid #b45309;
+  border-radius: 999px;
+  background: #fffbeb;
+  color: #78350f;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1.5;
+}
+html[data-theme="dark"] .news-highlight-badge {
+  border-color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  color: #fde68a;
+}
+.news-degree {
+  color: #475569;
+  font-size: 0.88em;
+  font-weight: 500;
+}
+html[data-theme="dark"] .news-degree {
+  color: #cbd5e1;
+}
+
 /* ------------------------------------------------------------
    Research Pillar Cards (Projects & Overview)
    ------------------------------------------------------------ */
