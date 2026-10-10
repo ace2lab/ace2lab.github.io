@@ -95,6 +95,14 @@ nav_order: 5
 
       {% include bib_search.liquid %}
 
+      <div class="pub-contribution-legend" role="note" aria-label="Author contribution notation">
+        <span><span class="author-symbol">†</span> Equal contribution (Co-first author)</span>
+        <span>·</span>
+        <span><span class="author-symbol">*</span> Corresponding author</span>
+        <span>·</span>
+        <span><strong>Underlined Bold</strong> ACE² Lab member</span>
+      </div>
+
       <div class="publications">
         {% bibliography %}
       </div>
@@ -278,22 +286,41 @@ nav_order: 5
         }
       });
 
-      // 2. Identify and decorate Cover & Selected papers
-      var selectedIds = new Set([
-        'velhal2024cobalt',
-        'lee2024suppression',
-        'hong2024flashlight',
-        'paeng2024rapid',
-        'velhal2023exploring'
-      ]);
+      // 2. List of all 26 ACE² Lab members for exact full-name bolding
+      var labMembers = [
+        'Changyong Yim', 'Taewook Kim',
+        'Dawin Kim', 'Dongho Lee', 'Jaebeen Ahn', 'Gyeongjin Kim', 'Jongmin Lee', 'Donggun Lee', 'Minsu Kim', 'Myeong Seo Kang', 'Arunkumar Shanmugasundaram',
+        'Changung Paeng', 'Donghyun Lee', 'Huijin Lee', 'Jaeho Lee', 'Junhyuck Ahn', 'Junhyeok Ahn', 'Kyuhyun Park', 'Ninad Velhal', 'Ninad B. Velhal', 'Seong Gwang Lee', 'Seonggwang Lee', 'Subin Yang', 'Tae Ho Yun', 'Taeho Yoon',
+        'Seokhyun Oh', 'Sungwoo Kim', 'Sumin Woo', 'Gunwoo Wi', 'Goeun Cha', 'Yuri Kim', 'Hamin Kim', 'Jongtaek Hong', 'Huisu Kim', 'Saeyeon Baek', 'Soyeon Park'
+      ];
 
       var items = document.querySelectorAll('.publications ol.bibliography > li');
       items.forEach(function (li) {
         var entryDiv = li.querySelector('div[id]');
         var entryId = entryDiv ? entryDiv.id : '';
         var titleDiv = li.querySelector('.title');
+        var authorDiv = li.querySelector('.author');
 
-        // Check for Cover note
+        // 2A. Author enhancement: bold lab members & style contribution symbols
+        if (authorDiv && !authorDiv.getAttribute('data-enhanced')) {
+          authorDiv.setAttribute('data-enhanced', 'true');
+          var html = authorDiv.innerHTML;
+
+          // Style contribution symbols: † (co-first) and * (corresponding)
+          html = html.replace(/†/g, '<span class="author-symbol">†</span>');
+          html = html.replace(/\*/g, '<span class="author-symbol">*</span>');
+
+          // Bold lab members with exact name matching
+          labMembers.forEach(function (member) {
+            var escaped = member.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+            var regex = new RegExp('\\b(' + escaped + ')\\b', 'g');
+            html = html.replace(regex, '<strong>$1</strong>');
+          });
+
+          authorDiv.innerHTML = html;
+        }
+
+        // 2B. Check for Cover note
         var periodicals = li.querySelectorAll('.periodical');
         var isCover = false;
         periodicals.forEach(function (p) {
@@ -309,17 +336,6 @@ nav_order: 5
 
         if (isCover) {
           li.classList.add('is-cover-paper');
-        }
-
-        // Check for Selected paper
-        if (selectedIds.has(entryId)) {
-          li.classList.add('is-selected-paper');
-          if (titleDiv && !titleDiv.querySelector('.pub-badge--selected')) {
-            var badge = document.createElement('span');
-            badge.className = 'pub-badge pub-badge--selected';
-            badge.innerHTML = '<i class="fa-solid fa-star"></i> Featured';
-            titleDiv.appendChild(badge);
-          }
         }
       });
 

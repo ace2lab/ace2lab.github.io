@@ -1,0 +1,82 @@
+# JCR 2024 (Clarivate Journal Citation Reports) SSOT
+# Metric benchmarks for ACE² Lab international publications
+
+"Advanced Energy Materials":
+  abbr: "Adv. Energy Mater."
+  if: 24.4
+  jcr: "Top 1%"
+  badge_label: "JCR Top 1% · IF 24.4"
+  badge_class: "pub-badge--jcr-top1"
+  category: "Energy & Fuels (Top 1.5%)"
+
+"ACS Nano":
+  abbr: "ACS Nano"
+  if: 15.8
+  jcr: "Top 5%"
+  badge_label: "JCR Top 5% · IF 15.8"
+  badge_class: "pub-badge--jcr-top5"
+  category: "Materials Science, Multidisciplinary (Top 4.2%)"
+
+"Chemical Engineering Journal":
+  abbr: "Chem. Eng. J."
+  if: 13.3
+  jcr: "Top 3%"
+  badge_label: "JCR Top 3% · IF 13.3"
+  badge_class: "pub-badge--jcr-top3"
+  category: "Engineering, Chemical (Top 2.2%)"
+
+"Small":
+  abbr: "Small"
+  if: 13.0
+  jcr: "Top 5%"
+  badge_label: "JCR Top 5% · IF 13.0"
+  badge_class: "pub-badge--jcr-top5"
+  category: "Nanoscience & Nanotechnology (Top 4.8%)"
+
+"Journal of Materials Chemistry A":
+  abbr: "J. Mater. Chem. A"
+  if: 10.7
+  jcr: "Top 10%"
+  badge_label: "JCR Top 10% · IF 10.7"
+  badge_class: "pub-badge--if10"
+  category: "Energy & Fuels (Top 9.5%)"
+
+"Carbon":
+  abbr: "Carbon"
+  if: 10.5
+  jcr: "Top 10%"
+  badge_label: "JCR Top 10% · IF 10.5"
+  badge_class: "pub-badge--if10"
+  category: "Materials Science, Multidisciplinary (Top 8.9%)"
+
+"Sensors and Actuators B: Chemical":
+  abbr: "Sens. Actuators B"
+  if: 8.4
+  jcr: "Top 3%"
+  badge_label: "JCR Top 3% · IF 8.4"
+  badge_class: "pub-badge--jcr-top3"
+  category: "Instruments & Instrumentation (Top 2.1%)"
+
+"Applied Surface Science":
+  abbr: "Appl. Surf. Sci."
+  if: 6.7
+  jcr: "Top 5%"
+  badge_label: "JCR Top 5%"
+  badge_class: "pub-badge--jcr-top5"
+  category: "Chemistry, Physical (Top 4.5%)"
+
+"Journal of Energy Storage":
+  abbr: "J. Energy Storage"
+  if: 8.9
+  jcr: "Top 10%"
+  badge_label: "JCR Top 10%"
+  badge_class: "pub-badge--jcr-top10"
+  category: "Electrochemistry (Top 9.2%)"
+
+"ACS Applied Materials & Interfaces":
+  abbr: "ACS Appl. Mater. Interfaces"
+  if: 8.3
+  jcr: "Q1"
+  badge_label: "Q1 · IF 8.3"
+  badge_class: "pub-badge--q1"
+  category: "Materials Science, Multidisciplinary (Top 12%)"

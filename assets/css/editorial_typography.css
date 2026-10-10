@@ -1185,24 +1185,163 @@ html[data-theme="dark"] {
   color: #f3d46f;
 }
 
-.pub-badge--selected {
+/* JCR & Academic Prestige Badges */
+.pub-badge--jcr-top1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(217, 119, 6, 0.1);
+  border: 1px solid #d97706;
+  color: #b45309;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+[data-theme="dark"] .pub-badge--jcr-top1 {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+  color: #fbbf24;
+}
+
+.pub-badge--jcr-top3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid #7c3aed;
+  color: #6d28d9;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+[data-theme="dark"] .pub-badge--jcr-top3 {
+  background: rgba(167, 139, 250, 0.15);
+  border-color: #a78bfa;
+  color: #c4b5fd;
+}
+
+.pub-badge--jcr-top5 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid #0284c7;
+  color: #0369a1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+[data-theme="dark"] .pub-badge--jcr-top5 {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #7dd3fc;
+}
+
+.pub-badge--jcr-top10 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(13, 148, 136, 0.08);
+  border: 1px solid #0d9488;
+  color: #0f766e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+[data-theme="dark"] .pub-badge--jcr-top10 {
+  background: rgba(45, 212, 191, 0.15);
+  border-color: #2dd4bf;
+  color: #5eead4;
+}
+
+.pub-badge--if10 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid #10b981;
+  color: #047857;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+[data-theme="dark"] .pub-badge--if10 {
+  background: rgba(52, 211, 153, 0.15);
+  border-color: #34d399;
+  color: #6ee7b7;
+}
+
+.pub-badge--q1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(71, 85, 105, 0.08);
+  border: 1px solid #64748b;
+  color: #334155;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+[data-theme="dark"] .pub-badge--q1 {
+  background: rgba(148, 163, 184, 0.15);
+  border-color: #94a3b8;
+  color: #cbd5e1;
+}
+
+/* Naver News Pill Link */
+.ed-pill--naver {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin-left: 0.5rem;
-  padding: 0.15rem 0.55rem;
+  padding: 0.18rem 0.6rem;
   border-radius: 4px;
-  background: var(--color-knu-crimson-soft, rgba(184, 19, 43, 0.08));
-  border: 1px solid var(--color-knu-crimson, #b8132b);
-  color: var(--color-knu-crimson, #b8132b);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  vertical-align: middle;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(3, 199, 90, 0.1);
+  border: 1px solid #03c75a;
+  color: #028a3e;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.ed-pill--naver:hover {
+  background: #03c75a;
+  color: #ffffff;
+}
+[data-theme="dark"] .ed-pill--naver {
+  background: rgba(3, 199, 90, 0.18);
+  border-color: #03c75a;
+  color: #2edb7c;
+}
+[data-theme="dark"] .ed-pill--naver:hover {
+  background: #03c75a;
+  color: #0f172a;
 }
 
-/* Card highlights for Cover & Selected papers */
+/* Card highlights for Cover & Top papers */
 .publications ol.bibliography li.is-cover-paper,
 .publications ol.bibliography li:has(#lee2024suppression) {
   border-left: 3px solid #d4af37;
@@ -1211,15 +1350,40 @@ html[data-theme="dark"] {
   border-radius: 0 8px 8px 0;
 }
 
-.publications ol.bibliography li.is-selected-paper,
-.publications ol.bibliography li:has(#velhal2024cobalt),
-.publications ol.bibliography li:has(#hong2024flashlight),
-.publications ol.bibliography li:has(#paeng2024rapid),
-.publications ol.bibliography li:has(#velhal2023exploring) {
-  border-left: 3px solid var(--color-knu-crimson, #b8132b);
-  padding-left: 1.25rem;
-  background: linear-gradient(90deg, rgba(184, 19, 43, 0.03) 0%, transparent 100%);
-  border-radius: 0 8px 8px 0;
+/* Lab member bold styling in author list */
+.publications ol.bibliography li .author strong {
+  font-weight: 700;
+  color: var(--color-ink, #1e293b);
+  border-bottom: 1.5px solid rgba(30, 58, 95, 0.4);
+}
+[data-theme="dark"] .publications ol.bibliography li .author strong {
+  color: #f1f5f9;
+  border-bottom-color: rgba(157, 183, 217, 0.5);
+}
+
+/* Author contribution symbols (dagger, star) */
+.author-symbol {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #0284c7;
+  vertical-align: super;
+  margin-left: 1px;
+}
+[data-theme="dark"] .author-symbol {
+  color: #38bdf8;
+}
+
+.pub-contribution-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.5rem;
+  background: var(--global-code-bg-color, #f8fafc);
+  border: 1px solid var(--global-divider-color, #e2e8f0);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: var(--global-text-color-light, #64748b);
 }
 
 /* ------------------------------------------------------------
