@@ -11,13 +11,22 @@
     {% for item in news_items limit: 5 %}
       {% assign item_time = item.date | date: '%s' %}
       {% assign diff_seconds = current_time | minus: item_time %}
-      <div class="news-feed-card">
+      <div class="news-feed-card{% if item.category %} news-feed-card--{{ item.category }}{% endif %}">
         <div class="news-feed-card__meta">
           <time class="news-feed-card__date" datetime="{{ item.date | date_to_xmlschema }}">
             {{ item.date | date: '%Y.%m.%d' }}
           </time>
           {% if diff_seconds < 2592000 and diff_seconds >= 0 %}
             <span class="news-badge-new">NEW</span>
+          {% endif %}
+          {% if item.category == 'award' %}
+            <span class="news-cat-badge news-cat-badge--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> Award</span>
+          {% elsif item.category == 'member' %}
+            <span class="news-cat-badge news-cat-badge--member"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> Member</span>
+          {% elsif item.category == 'honor' %}
+            <span class="news-cat-badge news-cat-badge--honor"><i class="fa-solid fa-star" aria-hidden="true"></i> Honor</span>
+          {% elsif item.category == 'milestone' %}
+            <span class="news-cat-badge news-cat-badge--milestone"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> Milestone</span>
           {% endif %}
         </div>
         <div class="news-feed-card__body">

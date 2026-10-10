@@ -266,4 +266,5 @@ For detailed project descriptions and laboratory facilities, please visit our [R
   </div>
 </div>
 
+<script src="{{ '/assets/js/author_enrichment.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 <script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

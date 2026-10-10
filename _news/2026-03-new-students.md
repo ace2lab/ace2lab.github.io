@@ -3,6 +3,7 @@ layout: post
 date: 2026-03-01
 inline: true
 related_posts: false
+category: member
 ---
 
-이재호(박사과정), 안재빈(석사과정), 강명서(석사과정)이 ACE² Lab에 진학했습니다.
+<strong>이재호</strong><span class="news-degree">(박사과정)</span>, <strong>안재빈</strong><span class="news-degree">(석사과정)</span>, <strong>강명서</strong><span class="news-degree">(석사과정)</span>이 <strong>ACE² Lab에 진학</strong>했습니다.

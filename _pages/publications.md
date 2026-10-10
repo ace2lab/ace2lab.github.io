@@ -275,6 +275,8 @@ nav_order: 5
 
 <script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
+<script src="{{ '/assets/js/author_enrichment.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+
 <script>
   (function () {
     function enhancePublications() {
@@ -287,58 +289,7 @@ nav_order: 5
         }
       });
 
-      // 2. List of all 26 ACE² Lab members for exact full-name bolding
-      var labMembers = [
-        'Changyong Yim', 'Taewook Kim',
-        'Dawin Kim', 'Dongho Lee', 'Jaebeen Ahn', 'Gyeongjin Kim', 'Jongmin Lee', 'Donggun Lee', 'Minsu Kim', 'Myeong Seo Kang', 'Arunkumar Shanmugasundaram',
-        'Changung Paeng', 'Donghyun Lee', 'Huijin Lee', 'Jaeho Lee', 'Junhyuck Ahn', 'Junhyeok Ahn', 'Kyuhyun Park', 'Ninad Velhal', 'Ninad B. Velhal', 'Seong Gwang Lee', 'Seonggwang Lee', 'Subin Yang', 'Tae Ho Yun', 'Taeho Yoon',
-        'Seokhyun Oh', 'Sungwoo Kim', 'Sumin Woo', 'Gunwoo Wi', 'Goeun Cha', 'Yuri Kim', 'Hamin Kim', 'Jongtaek Hong', 'Huisu Kim', 'Saeyeon Baek', 'Soyeon Park'
-      ];
-
-      var items = document.querySelectorAll('.publications ol.bibliography > li');
-      items.forEach(function (li) {
-        var entryDiv = li.querySelector('div[id]');
-        var entryId = entryDiv ? entryDiv.id : '';
-        var titleDiv = li.querySelector('.title');
-        var authorDiv = li.querySelector('.author');
-
-        // 2A. Author enhancement: bold lab members & style contribution symbols
-        if (authorDiv && !authorDiv.getAttribute('data-enhanced')) {
-          authorDiv.setAttribute('data-enhanced', 'true');
-          var html = authorDiv.innerHTML;
-
-          // Style contribution symbols: † (co-first) and * (corresponding)
-          html = html.replace(/†/g, '<span class="author-symbol">†</span>');
-          html = html.replace(/\*/g, '<span class="author-symbol">*</span>');
-
-          // Bold lab members with exact name matching
-          labMembers.forEach(function (member) {
-            var escaped = member.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-            var regex = new RegExp('\\b(' + escaped + ')\\b', 'g');
-            html = html.replace(regex, '<strong>$1</strong>');
-          });
-
-          authorDiv.innerHTML = html;
-        }
-
-        // 2B. Check for Cover note
-        var periodicals = li.querySelectorAll('.periodical');
-        var isCover = false;
-        periodicals.forEach(function (p) {
-          var text = p.textContent.trim();
-          if (/cover/i.test(text)) {
-            isCover = true;
-            p.innerHTML =
-              '<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> ' +
-              text +
-              '</span>';
-          }
-        });
-
-        if (isCover) {
-          li.classList.add('is-cover-paper');
-        }
-      });
+      // 2. Author bolding and cover badges are handled by assets/js/author_enrichment.js
 
       // 3. Year chips: smooth scroll without polluting URL hash or triggering bibsearch
       var chips = document.querySelectorAll('.pub-year-chip');
