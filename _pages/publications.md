@@ -274,6 +274,8 @@ nav_order: 5
   <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </div>
 
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+
 <script>
   (function () {
     function enhancePublications() {

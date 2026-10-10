@@ -74,3 +74,5 @@ nav_order: 7
   </div>
 
 </div>
+
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
