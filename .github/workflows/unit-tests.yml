@@ -69,6 +69,9 @@ jobs:
       - name: Run style contract lint 🧷
         run: npm run lint:style-contract
 
+      - name: Run asset reference lint 🖼️
+        run: npm run lint:asset-refs
+
       - name: Install build prerequisites 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
