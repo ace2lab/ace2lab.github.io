@@ -339,8 +339,24 @@ nav_order: 5
         }
       });
 
-      // 3. Highlight active year chip on scroll
+      // 3. Year chips: smooth scroll without polluting URL hash or triggering bibsearch
       var chips = document.querySelectorAll('.pub-year-chip');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function (e) {
+          e.preventDefault();
+          var year = this.getAttribute('data-year');
+          var target = document.getElementById('y' + year);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          chips.forEach(function (c) {
+            c.classList.remove('active');
+          });
+          this.classList.add('active');
+        });
+      });
+
+      // 4. Highlight active year chip on scroll
       if ('IntersectionObserver' in window && headings.length > 0) {
         var observer = new IntersectionObserver(
           function (entries) {
@@ -366,6 +382,19 @@ nav_order: 5
         headings.forEach(function (h2) {
           observer.observe(h2);
         });
+      }
+
+      // 5. Enhance bibsearch input placeholder and prevent collision with tab/year hashes
+      var bibSearchInput = document.getElementById('bibsearch');
+      if (bibSearchInput) {
+        bibSearchInput.setAttribute(
+          'placeholder',
+          'Search international journals by title, author, or keyword...'
+        );
+        // Clear if accidentally populated with navigation anchor
+        if (/^y\d{4}$/.test(bibSearchInput.value) || ['journals', 'domestic', 'patents', 'talks'].includes(bibSearchInput.value)) {
+          bibSearchInput.value = '';
+        }
       }
     }
 
