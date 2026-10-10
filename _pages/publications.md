@@ -172,8 +172,16 @@ nav_order: 5
           {% assign state_patents = site.data.patents | where: "status", state %}
           {% if state_patents.size > 0 %}
             {% assign patents_by_year = state_patents | group_by: "year" | sort: "name" | reverse %}
+            {% if state == "등록" %}
+              {% assign status_key = "registered" %}
+              {% assign status_icon = "fa-circle-check" %}
+            {% else %}
+              {% assign status_key = "filed" %}
+              {% assign status_icon = "fa-file-pen" %}
+            {% endif %}
+            {% assign status_label = patent_labels[forloop.index0] %}
             <h3 class="ed-subhead">
-              {{ patent_labels[forloop.index0] }}
+              {{ status_label }}
               <span class="ed-subhead__count">{{ state_patents.size }}</span>
             </h3>
 
@@ -188,6 +196,9 @@ nav_order: 5
                         <span class="ed-entry__num" aria-hidden="true">{{ p.no }}</span>
                         <div class="ed-entry__body">
                           <div class="ed-entry__title">{{ p.title | escape }}</div>
+                          <div class="ed-entry__line">
+                            <span class="ed-status-pill ed-status-pill--{{ status_key }}" title="{{ state }}"><i class="fa-solid {{ status_icon }}" aria-hidden="true"></i> {{ status_label }}</span>
+                          </div>
                           {% if p.inventors and p.inventors != "" %}
                             <div class="ed-entry__line"><span class="ed-label">Inventors</span>{{ p.inventors | escape }}</div>
                           {% endif %}

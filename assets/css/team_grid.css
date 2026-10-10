@@ -268,6 +268,99 @@ html[data-theme="dark"] .team-container {
   color: var(--tm-muted);
 }
 
+/* ------------------------------------------------------------
+   3b. Degree-program role colour (data-role from member_card.liquid)
+   Same semantic grammar as the facilities room legend:
+   phd navy · ms teal · researcher burgundy · undergrad cobalt.
+   --tm-role-accent: border / glow. --tm-role-text on --tm-role-bg: badge
+   (>= 4.5:1 AA in both themes). Unknown roles fall back to the page accent.
+   ------------------------------------------------------------ */
+.member-card {
+  --tm-role-accent: var(--tm-accent);
+  --tm-role-text: var(--tm-accent);
+  --tm-role-bg: var(--tm-accent-soft);
+  --tm-role-glow: rgba(15, 23, 42, 0.14);
+}
+
+.member-card[data-role="phd"] {
+  --tm-role-accent: #1e3a5f;
+  --tm-role-text: #1e3a5f;
+  --tm-role-bg: rgba(30, 58, 95, 0.09);
+  --tm-role-glow: rgba(30, 58, 95, 0.28);
+}
+
+.member-card[data-role="ms"] {
+  --tm-role-accent: #0f766e;
+  --tm-role-text: #0f766e;
+  --tm-role-bg: rgba(15, 118, 110, 0.09);
+  --tm-role-glow: rgba(15, 118, 110, 0.28);
+}
+
+.member-card[data-role="researcher"] {
+  --tm-role-accent: #a3123a;
+  --tm-role-text: #a3123a;
+  --tm-role-bg: rgba(163, 18, 58, 0.08);
+  --tm-role-glow: rgba(163, 18, 58, 0.26);
+}
+
+.member-card[data-role="undergrad"] {
+  --tm-role-accent: #2563eb;
+  --tm-role-text: #1d4ed8; /* darker than the accent: 5.17:1 would be marginal on the tint */
+  --tm-role-bg: rgba(37, 99, 235, 0.09);
+  --tm-role-glow: rgba(37, 99, 235, 0.28);
+}
+
+html[data-theme="dark"] .member-card[data-role="phd"] {
+  --tm-role-accent: #6b9bea;
+  --tm-role-text: #a9c6f5;
+  --tm-role-bg: rgba(107, 155, 234, 0.16);
+  --tm-role-glow: rgba(107, 155, 234, 0.28);
+}
+
+html[data-theme="dark"] .member-card[data-role="ms"] {
+  --tm-role-accent: #2dd4bf;
+  --tm-role-text: #5eead4;
+  --tm-role-bg: rgba(45, 212, 191, 0.14);
+  --tm-role-glow: rgba(45, 212, 191, 0.25);
+}
+
+html[data-theme="dark"] .member-card[data-role="researcher"] {
+  --tm-role-accent: #f0708f;
+  --tm-role-text: #f8b4c6;
+  --tm-role-bg: rgba(240, 112, 143, 0.16);
+  --tm-role-glow: rgba(240, 112, 143, 0.28);
+}
+
+html[data-theme="dark"] .member-card[data-role="undergrad"] {
+  --tm-role-accent: #60a5fa;
+  --tm-role-text: #93c5fd;
+  --tm-role-bg: rgba(96, 165, 250, 0.16);
+  --tm-role-glow: rgba(96, 165, 250, 0.28);
+}
+
+.member-card[data-role] {
+  border-left: 3px solid var(--tm-role-accent);
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.member-card[data-role]:hover {
+  border-color: var(--tm-line-strong);
+  border-left-color: var(--tm-role-accent);
+  box-shadow: 0 8px 20px -10px var(--tm-role-glow);
+  transform: translateY(-2px);
+}
+
+.member-badge--phd,
+.member-badge--ms,
+.member-badge--researcher,
+.member-badge--undergrad {
+  color: var(--tm-role-text);
+  background: var(--tm-role-bg);
+}
+
 /* Meta + awards: icon column aligned, text hangs cleanly when it wraps */
 .member-meta,
 .member-awards {
@@ -1276,6 +1369,11 @@ html[data-theme="dark"] .pi-action:focus-visible {
    7. Motion & print
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
+  .member-card[data-role]:hover {
+    transform: none;
+  }
+
+  .member-card[data-role],
   .member-card,
   .intern-card,
   .link-icon,

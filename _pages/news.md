@@ -34,12 +34,65 @@ nav_order: 6
     <a href="#press">In the press<span class="ed-index__count">{{ site.data.press.size }}</span></a>
   </nav>
 
+  <!-- Category legend (semantic color grammar shared with the cards below) -->
+
+{% assign news_items = site.news | sort: 'date' | reverse %}
+{% assign current_time = 'now' | date: '%s' %}
+{% assign n_award = site.news | where: 'category', 'award' %}
+{% assign n_member = site.news | where: 'category', 'member' %}
+{% assign n_milestone = site.news | where: 'category', 'milestone' %}
+{% assign n_honor = site.news | where: 'category', 'honor' %}
+
+  <div class="news-cat-legend" role="group" aria-label="News category color legend">
+    <span class="news-cat-legend__title"><i class="fa-solid fa-tags" aria-hidden="true"></i> Category</span>
+    <span class="news-cat-legend__item" data-cat="award"><span class="news-cat-legend__dot" aria-hidden="true"></span>Award<span class="news-cat-legend__count">{{ n_award.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="member"><span class="news-cat-legend__dot" aria-hidden="true"></span>Member<span class="news-cat-legend__count">{{ n_member.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="milestone"><span class="news-cat-legend__dot" aria-hidden="true"></span>Milestone<span class="news-cat-legend__count">{{ n_milestone.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="honor"><span class="news-cat-legend__dot" aria-hidden="true"></span>Honor<span class="news-cat-legend__count">{{ n_honor.size }}</span></span>
+  </div>
+
   <!-- 1. Lab announcements (_news collection) -->
 
   <section class="ed-section" id="latest">
-    <h2 class="ed-section__title">Latest</h2>
+    <h2 class="ed-section__title">
+      Latest
+      <span class="ed-section__count">{{ news_items.size }}</span>
+    </h2>
 
-{% include news.liquid %}
+    <div class="news-feed__list">
+      {% for item in news_items %}
+        {% assign item_time = item.date | date: '%s' %}
+        {% assign diff_seconds = current_time | minus: item_time %}
+        <div class="news-feed-card{% if item.category %} news-feed-card--{{ item.category }}{% endif %}">
+          <div class="news-feed-card__meta">
+            <time class="news-feed-card__date" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%Y.%m.%d' }}</time>
+            {% if diff_seconds < 2592000 and diff_seconds >= 0 %}
+              <span class="news-badge-new">NEW</span>
+            {% endif %}
+            {% if item.category == 'award' %}
+              <span class="news-cat-badge news-cat-badge--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> Award</span>
+            {% elsif item.category == 'member' %}
+              <span class="news-cat-badge news-cat-badge--member"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> Member</span>
+            {% elsif item.category == 'honor' %}
+              <span class="news-cat-badge news-cat-badge--honor"><i class="fa-solid fa-star" aria-hidden="true"></i> Honor</span>
+            {% elsif item.category == 'milestone' %}
+              <span class="news-cat-badge news-cat-badge--milestone"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> Milestone</span>
+            {% endif %}
+          </div>
+          <div class="news-feed-card__body">
+            {% if item.inline %}
+              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+            {% else %}
+              <a class="news-feed-card__link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% endif %}
+          </div>
+        </div>
+      {% else %}
+        <div class="news-feed-card">
+          <div class="news-feed-card__body">No announcements yet.</div>
+        </div>
+      {% endfor %}
+    </div>
 
   </section>
 
