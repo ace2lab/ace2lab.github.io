@@ -48,14 +48,9 @@ nav_order: 6
               {% assign dp = a.date | remove: " " | split: "." %}
               <li class="ed-entry ed-entry--plain{% if a.img and a.img != '' %} ed-entry--with-thumb{% endif %}">
                 {% if a.img and a.img != "" %}
-                  <div class="ed-entry__thumb">
-                    <img
-                      src="{{ a.img | relative_url }}"
-                      alt="{{ a.title | escape }}"
-                      loading="lazy"
-                      data-zoomable
-                    >
-                  </div>
+                  <button type="button" class="ed-entry__thumb" data-award-zoom aria-label="{{ a.title | escape }} - view full size">
+                    <img src="{{ a.img | relative_url }}" alt="{{ a.title | escape }}" loading="lazy">
+                  </button>
                 {% endif %}
                 <div class="ed-entry__body">
                   <div class="ed-entry__title">{{ a.title | escape }}</div>
@@ -115,5 +110,11 @@ nav_order: 6
 
   </section>
   {% endif %}
+
+  <dialog class="ed-lightbox" id="award-lightbox" aria-label="Award certificate">
+    <button type="button" class="ed-lightbox__close" aria-label="Close">&times;</button>
+    <img class="ed-lightbox__img" alt="">
+  </dialog>
+  <script src="{{ '/assets/js/award_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 </div>
