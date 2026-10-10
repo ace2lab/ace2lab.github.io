@@ -38,6 +38,38 @@
   --font-serif-editorial: "Newsreader", "Noto Serif KR", Georgia, serif;
   --font-sans-body: "Pretendard Variable", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
   --font-mono-meta: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  /* ------------------------------------------------------------
+     Type Scale SSOT (13px floor for any readable text)
+     ------------------------------------------------------------ */
+  --fs-label: 0.8125rem; /* 13px — badges, chips, tags, counts */
+  --fs-meta: 0.875rem; /* 14px — dates, bylines, secondary meta */
+  --fs-body-sm: 0.9375rem; /* 15px — dense body copy */
+  --fs-body: 1rem; /* 16px — body copy, form inputs (no iOS zoom) */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-xl: 1.375rem; /* 22px — section titles */
+  --fs-2xl: 1.75rem; /* 28px */
+
+  /* ------------------------------------------------------------
+     High-Contrast Text Tokens (WCAG ratios vs #ffffff)
+     ------------------------------------------------------------ */
+  --c-ink: #0f172a; /* titles          17.9:1 */
+  --c-text: #334155; /* body            10.4:1 */
+  --c-muted: #4b5a70; /* meta, labels     7.0:1 (6.4:1 on --c-surface-alt) */
+  --c-subtle: #64748b; /* non-essential    4.8:1 */
+  --c-accent: #1e3a5f; /* links, accents   11.6:1 */
+  --c-accent-fill: #a3123a; /* filled crimson chip: white text 7.8:1 */
+  --c-surface-alt: #f1f5f9;
+
+  /* Bridge aliases: legacy page-scoped names resolve to the SSOT above */
+  --ed-muted: var(--c-muted);
+  --tm-muted: var(--c-muted);
+  --ed-surface-alt: var(--c-surface-alt);
+  --ed-crimson: var(--color-knu-crimson);
+
+  /* Sticky stack: fixed al-folio navbar + in-page tab bar */
+  --sticky-navbar: 3.5rem;
+  --sticky-tabnav: 3.0625rem; /* 48px tab + 1px hairline */
 }
 
 /* ------------------------------------------------------------
@@ -64,4 +96,14 @@ html[data-theme="dark"] {
   --banner-gradient: radial-gradient(1100px 300px at 12% 130%, rgba(240, 112, 143, 0.28), transparent 70%);
   --banner-text: #f1f5f9;
   --banner-text-muted: rgba(241, 245, 249, 0.76);
+
+  /* Text tokens vs #1c1c1d page / #2a2e35 sunken surface.
+     --c-accent-fill stays crimson: the light #f0708f fails with white text (2.8:1). */
+  --c-ink: #f1f5f9;
+  --c-text: #cbd5e1;
+  --c-muted: #94a3b8; /* 6.6:1 page · 5.3:1 sunken */
+  --c-subtle: #7c8aa0; /* 4.9:1 page */
+  --c-accent: #9db7d9;
+  --c-accent-fill: #a3123a;
+  --c-surface-alt: #2a2e35;
 }
