@@ -4,6 +4,14 @@
   Falls back to the long-form `bio` only when no `summary` is set.
 {% endcomment %}
 {% assign m = include.member %}
+{% comment %}
+  Summary keyword anchors: each term is wrapped as <span class="pi-kw pi-kw--{group}">.
+  process = how it is made, material = what it is made of, device = what it is used for.
+{% endcomment %}
+{% assign kw_process = 'IPL|LIG|적층제조' | split: '|' %}
+{% assign kw_material = '맥신|MOF|전극 소재|촉매' | split: '|' %}
+{% assign kw_device = '슈퍼캐패시터|리튬이온전지|배터리|센서' | split: '|' %}
+{% assign kw_groups = 'process|material|device' | split: '|' %}
 {% assign member_email = m.links.email | default: m.email %}
 
 <article class="pi-profile" id="member-{{ m.id }}" aria-labelledby="member-{{ m.id }}-name">
@@ -30,7 +38,9 @@
       {% if m.office and m.office != '' %}
         {% assign office_parts = m.office | split: ' (' %}
         <div class="pi-contact__row">
-          <dt><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="tm-sr-only">Office</span></dt>
+          <dt class="pi-contact__icon pi-contact__icon--office">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="tm-sr-only">Office</span>
+          </dt>
           <dd>
             {{ office_parts[0] }}
             {% if office_parts.size > 1 %}
@@ -41,7 +51,9 @@
       {% endif %}
       {% if m.phone and m.phone != '' %}
         <div class="pi-contact__row">
-          <dt><i class="fa-solid fa-phone" aria-hidden="true"></i><span class="tm-sr-only">Phone</span></dt>
+          <dt class="pi-contact__icon pi-contact__icon--phone">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i><span class="tm-sr-only">Phone</span>
+          </dt>
           <dd>
             <a href="tel:{{ m.phone | remove: '-' }}">{{ m.phone }}</a>
           </dd>
@@ -49,7 +61,9 @@
       {% endif %}
       {% if member_email and member_email != '' %}
         <div class="pi-contact__row">
-          <dt><i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="tm-sr-only">Email</span></dt>
+          <dt class="pi-contact__icon pi-contact__icon--email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i><span class="tm-sr-only">Email</span>
+          </dt>
           <dd>
             <a href="mailto:{{ member_email }}">{{ member_email }}</a>
           </dd>
@@ -61,7 +75,7 @@
   <div class="pi-profile__main">
     <header class="pi-profile__header">
       {% if m.role_en %}
-        <p class="pi-profile__eyebrow">{{ m.role_en }}</p>
+        <p class="pi-profile__eyebrow"><i class="fa-solid fa-user-tie" aria-hidden="true"></i>{{ m.role_en }}</p>
       {% endif %}
       <h3 class="pi-profile__name" id="member-{{ m.id }}-name">
         {{ m.name_ko }}
@@ -76,10 +90,24 @@
       {% endif %}
     </header>
 
-    {% if m.summary and m.summary != '' %}
-      <p class="pi-profile__summary">{{ m.summary }}</p>
-    {% elsif m.bio and m.bio != '' %}
-      <p class="pi-profile__summary">{{ m.bio }}</p>
+    {% assign summary_text = m.summary | default: m.bio %}
+    {% if summary_text and summary_text != '' %}
+      {% assign summary_html = summary_text | escape %}
+      {% for group in kw_groups %}
+        {% case group %}
+          {% when 'process' -%}
+            {%- assign kws = kw_process %}
+          {% when 'material' -%}
+            {%- assign kws = kw_material %}
+          {% else -%}
+            {%- assign kws = kw_device %}
+        {% endcase %}
+        {% for kw in kws %}
+          {% capture wrapped %}<span class="pi-kw pi-kw--{{ group }}">{{ kw }}</span>{% endcapture %}
+          {% assign summary_html = summary_html | replace: kw, wrapped %}
+        {% endfor %}
+      {% endfor %}
+      <p class="pi-profile__summary">{{ summary_html }}</p>
     {% endif %}
 
     {% if m.career or m.degrees %}
@@ -89,12 +117,33 @@
             <h4 class="pi-profile__label">Career</h4>
             <ol class="pi-timeline">
               {% for c in m.career %}
-                <li class="pi-timeline__item{% if forloop.first %} is-current{% endif %}">
-                  <span class="pi-timeline__period">{{ c.period }}</span>
+                {% assign org_key = 'default' %}
+                {% assign is_current = false -%}
+                {%- if c.period contains '현재' %}{% assign is_current = true %}{% endif %}
+                {% if c.org contains '경북대' -%}
+                  {%- assign org_key = 'knu' %}
+                {% elsif c.org contains 'POSTECH' -%}
+                  {%- assign org_key = 'postech' %}
+                {% elsif c.org contains '삼성' -%}
+                  {%- assign org_key = 'samsung' %}
+                {% elsif c.org contains 'RIST' -%}
+                  {%- assign org_key = 'rist' %}
+                {% elsif c.org contains 'KITECH' -%}
+                  {%- assign org_key = 'kitech' %}
+                {% elsif c.org contains 'Calgary' -%}
+                  {%- assign org_key = 'calgary' %}
+                {% endif %}
+                <li class="pi-timeline__item pi-timeline__item--{{ org_key }}{% if is_current %} is-current{% endif %}">
+                  <span class="pi-timeline__period">
+                    {{- c.period -}}
+                    {%- if is_current -%}
+                      <span class="pi-timeline__badge">현재 재직 · Current</span>
+                    {%- endif -%}
+                  </span>
                   <span class="pi-timeline__role">{{ c.role }}</span>
                   <span class="pi-timeline__org">{{ c.org }}</span>
                   {% if c.note -%}
-                    <span class="pi-timeline__note">{{ c.note }}</span>
+                    <span class="pi-timeline__note"><i class="fa-solid fa-tag" aria-hidden="true"></i>{{ c.note }}</span>
                   {%- endif %}
                 </li>
               {% endfor %}
@@ -106,12 +155,26 @@
             <h4 class="pi-profile__label">Education</h4>
             <ol class="pi-timeline">
               {% for d in m.degrees %}
-                <li class="pi-timeline__item">
+                {% assign org_key = 'default' %}
+                {% if d.org contains '경북대' -%}
+                  {%- assign org_key = 'knu' %}
+                {% elsif d.org contains 'POSTECH' -%}
+                  {%- assign org_key = 'postech' %}
+                {% elsif d.org contains '삼성' -%}
+                  {%- assign org_key = 'samsung' %}
+                {% elsif d.org contains 'RIST' -%}
+                  {%- assign org_key = 'rist' %}
+                {% elsif d.org contains 'KITECH' -%}
+                  {%- assign org_key = 'kitech' %}
+                {% elsif d.org contains 'Calgary' -%}
+                  {%- assign org_key = 'calgary' %}
+                {% endif %}
+                <li class="pi-timeline__item pi-timeline__item--{{ org_key }}">
                   <span class="pi-timeline__period">{{ d.period }}</span>
                   <span class="pi-timeline__role">{{ d.role }}</span>
                   <span class="pi-timeline__org">{{ d.org }}</span>
                   {% if d.note -%}
-                    <span class="pi-timeline__note">{{ d.note }}</span>
+                    <span class="pi-timeline__note"><i class="fa-solid fa-tag" aria-hidden="true"></i>{{ d.note }}</span>
                   {%- endif %}
                 </li>
               {% endfor %}

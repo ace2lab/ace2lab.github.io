@@ -106,43 +106,55 @@ nav_order: 6
       <span class="ed-section__count">{{ site.data.awards.size }}</span>
     </h2>
 
-    <div class="ed-rail">
-      {% for group in awards_by_year %}
-        <div class="ed-rail__row">
-          <div class="ed-rail__year">{{ group.name }}</div>
-          <ul class="ed-entries" role="list">
-            {% for a in group.items %}
-              {% assign dp = a.date | remove: " " | split: "." %}
-              <li class="ed-entry ed-entry--plain{% if a.img and a.img != '' %} ed-entry--with-thumb{% endif %}">
-                {% if a.img and a.img != "" %}
-                  <button type="button" class="ed-entry__thumb" data-award-zoom aria-label="{{ a.title | escape }} - view full size">
-                    <img src="{{ a.img | relative_url }}" alt="{{ a.title | escape }}" loading="lazy">
-                  </button>
+    {% for group in awards_by_year %}
+      <div class="ed-yeargroup">
+        <h3 class="ed-yeargroup__year">{{ group.name }}<span class="ed-yeargroup__count">{{ group.items.size }}</span></h3>
+        <ul class="ed-cardgrid" role="list">
+          {% for a in group.items %}
+            {% assign dp = a.date | remove: " " | split: "." %}
+            {% if a.type == '장관상' or a.type == '대상' %}
+              {% assign tier = 'crimson' %}
+            {% elsif a.type == '우수상' or a.type == '최우수상' %}
+              {% assign tier = 'amber' %}
+            {% elsif a.type == '우수연구교수' %}
+              {% assign tier = 'navy' %}
+            {% elsif a.type contains 'Recognition' %}
+              {% assign tier = 'purple' %}
+            {% else %}
+              {% assign tier = 'teal' %}
+            {% endif %}
+            <li class="ed-award-card ed-award-card--{{ tier }}">
+              {% if a.img and a.img != "" %}
+                <button type="button" class="ed-award-card__thumb" data-award-zoom aria-label="{{ a.title | escape }} - view full size">
+                  <img src="{{ a.img | relative_url }}" alt="{{ a.title | escape }}" loading="lazy">
+                  <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                </button>
+              {% endif %}
+              <div class="ed-award-card__body">
+                {% if a.type and a.type != "" %}
+                  <span class="ed-tier ed-tier--{{ tier }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ a.type | escape }}</span>
                 {% endif %}
-                <div class="ed-entry__body">
-                  <div class="ed-entry__title">{{ a.title | escape }}</div>
-                  <div class="ed-entry__line">
-                    {% if a.type and a.type != "" %}<span class="ed-tag">{{ a.type | escape }}</span>{% endif %}
-                    {{ a.recipient | escape -}}
-                    {%- if a.issuer and a.issuer != "" %}<span class="ed-sep" aria-hidden="true">·</span>{{ a.issuer | escape }}{% endif -%}
-                    {%- if a.date and a.date != "" %}
-                      <span class="ed-sep" aria-hidden="true">·</span>{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}
-                    {%- endif %}
-                  </div>
-                  {% if a.press and a.press != "" %}
-                    <div class="ed-entry__line">
-                      <a href="{{ a.press }}" target="_blank" rel="noopener" class="ed-pill ed-pill--press">
-                        <i class="fa-solid fa-newspaper" aria-hidden="true"></i> 언론보도 ({{ a.press_media | default: '기사' | escape }}) <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i>
-                      </a>
-                    </div>
+                <h4 class="ed-award-card__title">{{ a.title | escape }}</h4>
+                <dl class="ed-award-card__meta">
+                  <div><dt><i class="fa-solid fa-user" aria-hidden="true"></i><span class="ed-sr">Recipient</span></dt><dd>{{ a.recipient | escape }}</dd></div>
+                  {% if a.issuer and a.issuer != "" %}
+                    <div><dt><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span class="ed-sr">Issuer</span></dt><dd>{{ a.issuer | escape }}</dd></div>
                   {% endif %}
-                </div>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endfor %}
-    </div>
+                  {% if a.date and a.date != "" %}
+                    <div><dt><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date</span></dt><dd><time>{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}</time></dd></div>
+                  {% endif %}
+                </dl>
+                {% if a.press and a.press != "" %}
+                  <a href="{{ a.press }}" target="_blank" rel="noopener" class="ed-pill ed-pill--press ed-award-card__press">
+                    <i class="fa-solid fa-newspaper" aria-hidden="true"></i> 언론보도 ({{ a.press_media | default: '기사' | escape }}) <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span>
+                  </a>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
 
   </section>
   {% endif %}
@@ -157,30 +169,30 @@ nav_order: 6
       <span class="ed-section__count">{{ site.data.press.size }}</span>
     </h2>
 
-    <div class="ed-rail">
-      {% for group in press_by_year %}
-        <div class="ed-rail__row">
-          <div class="ed-rail__year">{{ group.name }}</div>
-          <ul class="ed-entries" role="list">
-            {% for p in group.items %}
-              {% assign dp = p.date | remove: " " | split: "." %}
-              {% assign url_parts = p.url | split: "/" %}
-              <li class="ed-entry ed-entry--plain">
-                <div class="ed-entry__body">
-                  <div class="ed-entry__title">
-                    <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }}<span class="ed-sr"> (opens in a new tab)</span></a>
-                  </div>
-                  <div class="ed-entry__line">
-                    {{ url_parts[2] | remove_first: "www." -}}
-                    <span class="ed-sep" aria-hidden="true">·</span>{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}
-                  </div>
-                </div>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endfor %}
-    </div>
+    {% for group in press_by_year %}
+      <div class="ed-yeargroup">
+        <h3 class="ed-yeargroup__year">{{ group.name }}<span class="ed-yeargroup__count">{{ group.items.size }}</span></h3>
+        <ul class="ed-cardgrid ed-cardgrid--press" role="list">
+          {% for p in group.items %}
+            {% assign dp = p.date | remove: " " | split: "." %}
+            {% assign url_parts = p.url | split: "/" %}
+            {% if p.media == '뉴시스' or p.media == '경북매일' %}{% assign media_tone = 'crimson' %}{% else %}{% assign media_tone = 'navy' %}{% endif %}
+            <li class="ed-press-card">
+              <div class="ed-press-card__top">
+                <span class="ed-media ed-media--{{ media_tone }}"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> {{ p.media | default: url_parts[2] | remove_first: "www." | escape }}</span>
+                <time class="ed-datepill">{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}</time>
+              </div>
+              <h4 class="ed-press-card__title">
+                <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }} <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span></a>
+              </h4>
+              {% if p.paper and p.paper != "" %}
+                <a class="ed-pill ed-pill--paper" href="{{ p.paper }}"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 관련 논문</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
 
   </section>
   {% endif %}
