@@ -194,10 +194,10 @@ html[data-theme="dark"] .team-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--tm-s2);
+  gap: 6px;
   width: 100%;
   margin-bottom: var(--tm-s3);
-  padding: 6px 12px;
+  padding: 6px 10px;
   background: var(--tm-role-bg);
   border: 1px solid var(--tm-line-strong);
   border-radius: var(--tm-r-sm);
@@ -206,9 +206,9 @@ html[data-theme="dark"] .team-container {
 .member-card__role-title {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--tm-font);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--tm-role-text);
   letter-spacing: -0.01em;
@@ -216,9 +216,9 @@ html[data-theme="dark"] .team-container {
 }
 
 .member-card__role-en {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--tm-role-text);
   opacity: 0.8;

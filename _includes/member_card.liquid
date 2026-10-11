@@ -32,7 +32,9 @@
         {% assign en_role_short = 'Undergrad' %}
     {% endcase %}
     <div class="member-card__role-banner">
-      <span class="member-card__role-title"> <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{ m.role_ko }} </span>
+      <span class="member-card__role-title">
+        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{ m.role_ko | replace: '(학연)', '' }}
+      </span>
       <span class="member-card__role-en">{{ en_role_short }}</span>
     </div>
   {% endif %}
