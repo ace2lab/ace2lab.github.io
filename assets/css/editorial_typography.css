@@ -2357,13 +2357,57 @@ html[data-theme="dark"] .pi-showcase-card:hover {
   color: var(--global-theme-color, #1e3a5f);
 }
 
+.pi-topic-pill--more {
+  background: color-mix(in srgb, var(--color-ace2-navy, #1e3a5f) 8%, transparent);
+  border-color: var(--color-ace2-navy, #1e3a5f);
+  color: var(--color-ace2-navy, #1e3a5f);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pi-topic-pill--more:hover {
+  background: var(--color-ace2-navy, #1e3a5f);
+  color: #ffffff;
+  border-color: var(--color-ace2-navy, #1e3a5f);
+}
+
 .pi-showcase-card__actions {
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
   gap: 8px;
+  margin-top: auto;
   padding-top: 0.85rem;
   border-top: 1px solid var(--ed-line, #e2e8f0);
+}
+
+.pi-showcase-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.pi-action-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--color-knu-crimson, #a3123a) 10%, transparent);
+  border: 1px solid var(--color-knu-crimson, #a3123a);
+  color: var(--color-knu-crimson, #a3123a);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.pi-action-profile:hover {
+  background: var(--color-knu-crimson, #a3123a);
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 .pi-action-btn {

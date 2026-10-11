@@ -160,37 +160,46 @@ latest_posts:
         </ol>
 
         <div class="pi-showcase-card__topics">
-          {% for t in pi.topics %}
+          {% for t in pi.topics limit: 4 %}
             <span class="pi-topic-pill">{{ t }}</span>
           {% endfor %}
+          {% if pi.topics.size > 4 %}
+            {% assign extra_count = pi.topics.size | minus: 4 %}
+            <a href="{{ '/members/' | relative_url }}#pi-{{ pi.id }}" class="pi-topic-pill pi-topic-pill--more">+{{ extra_count }} more</a>
+          {% endif %}
         </div>
 
         <div class="pi-showcase-card__actions">
-          {% if pi.email and pi.email != "" %}
-            <a href="mailto:{{ pi.email }}" class="pi-action-btn" title="Email" aria-label="Email">
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i> <span>Email</span>
-            </a>
-          {% endif %}
-          {% if pi.links.scholar and pi.links.scholar != "" %}
-            <a href="{{ pi.links.scholar }}" target="_blank" rel="noopener" class="pi-action-btn" title="Google Scholar" aria-label="Google Scholar">
-              <i class="ai ai-google-scholar" aria-hidden="true"></i> <span>Scholar</span>
-            </a>
-          {% endif %}
-          {% if pi.links.orcid and pi.links.orcid != "" %}
-            <a href="{{ pi.links.orcid }}" target="_blank" rel="noopener" class="pi-action-btn" title="ORCID" aria-label="ORCID">
-              <i class="ai ai-orcid" aria-hidden="true"></i> <span>ORCID</span>
-            </a>
-          {% endif %}
-          {% if pi.links.researchgate and pi.links.researchgate != "" %}
-            <a href="{{ pi.links.researchgate }}" target="_blank" rel="noopener" class="pi-action-btn" title="ResearchGate" aria-label="ResearchGate">
-              <i class="ai ai-researchgate" aria-hidden="true"></i> <span>ResearchGate</span>
-            </a>
-          {% endif %}
-          {% if pi.links.github and pi.links.github != "" %}
-            <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-action-btn" title="GitHub" aria-label="GitHub">
-              <i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span>
-            </a>
-          {% endif %}
+          <div class="pi-showcase-card__links">
+            {% if pi.email and pi.email != "" %}
+              <a href="mailto:{{ pi.email }}" class="pi-action-btn" title="Email" aria-label="Email">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i> <span>Email</span>
+              </a>
+            {% endif %}
+            {% if pi.links.scholar and pi.links.scholar != "" %}
+              <a href="{{ pi.links.scholar }}" target="_blank" rel="noopener" class="pi-action-btn" title="Google Scholar" aria-label="Google Scholar">
+                <i class="ai ai-google-scholar" aria-hidden="true"></i> <span>Scholar</span>
+              </a>
+            {% endif %}
+            {% if pi.links.orcid and pi.links.orcid != "" %}
+              <a href="{{ pi.links.orcid }}" target="_blank" rel="noopener" class="pi-action-btn" title="ORCID" aria-label="ORCID">
+                <i class="ai ai-orcid" aria-hidden="true"></i> <span>ORCID</span>
+              </a>
+            {% endif %}
+            {% if pi.links.researchgate and pi.links.researchgate != "" %}
+              <a href="{{ pi.links.researchgate }}" target="_blank" rel="noopener" class="pi-action-btn" title="ResearchGate" aria-label="ResearchGate">
+                <i class="ai ai-researchgate" aria-hidden="true"></i> <span>ResearchGate</span>
+              </a>
+            {% endif %}
+            {% if pi.links.github and pi.links.github != "" %}
+              <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-action-btn" title="GitHub" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span>
+              </a>
+            {% endif %}
+          </div>
+          <a href="{{ '/members/' | relative_url }}#pi-{{ pi.id }}" class="pi-action-profile" title="View full profile">
+            <span>Full Profile</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
         </div>
       </article>
     {% endfor %}
