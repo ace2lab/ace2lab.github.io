@@ -735,11 +735,11 @@ html[data-theme="dark"] .member-awards i {
   margin: var(--tm-s5) 0 0;
   padding-top: var(--tm-s5);
   border-top: 1px solid var(--tm-line);
-  max-width: 44em;
-  font-size: var(--tm-fs-md);
-  line-height: 1.75;
+  font-size: var(--tm-fs-lg);
+  line-height: 1.85;
   letter-spacing: -0.015em;
   color: var(--tm-text);
+  word-break: keep-all;
   text-wrap: pretty;
 }
 
@@ -1139,6 +1139,11 @@ html[data-theme="dark"] .pi-action:focus-visible {
     display: block;
     font-weight: 400;
     color: var(--tm-muted);
+  }
+
+  .pi-profile__summary {
+    font-size: 1rem;
+    line-height: 1.75;
   }
 }
 
