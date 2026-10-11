@@ -35,7 +35,7 @@ nav_order: 2
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Research Team & Members"
   subtitle="차세대 화학 및 에너지 공학 연구실 연구책임자, 대학원생, 학부연구생 및 졸업생"
-  subtitle_en="Principal investigators, graduate students, undergraduate researchers, and alumni of ACE² Lab. KNU: Kyungpook National University (<span lang='ko'>경북대학교</span>)."
+  subtitle_en="Principal investigators, graduate students, undergraduate researchers, and alumni of ACE² Lab."
   badges=hero_badges
 %}
 
