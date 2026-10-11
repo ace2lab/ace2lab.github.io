@@ -8,9 +8,9 @@
 {% case m.role_ko %}
   {% when '박사과정', '석박통합과정' %}
     {% assign role_key = 'phd' %}
-  {% when '석사과정', '석사과정(학연)' %}
+  {% when '석사과정', '학연과정(석사)' %}
     {% assign role_key = 'ms' %}
-  {% when '연구원' %}
+  {% when '연구원', '연구원(석사)' %}
     {% assign role_key = 'researcher' %}
   {% when '학부연구생' %}
     {% assign role_key = 'undergrad' %}
@@ -26,15 +26,19 @@
         {% assign en_role_short = 'Ph.D. Student' %}
       {% when 'ms' %}
         {% assign en_role_short = 'M.S. Student' %}
+        {% if m.role_ko == '학연과정(석사)' %}
+          {% assign en_role_short = 'M.S. Student (Joint)' %}
+        {% endif %}
       {% when 'researcher' %}
         {% assign en_role_short = 'Researcher' %}
+        {% if m.role_ko == '연구원(석사)' %}
+          {% assign en_role_short = 'Researcher (M.S.)' %}
+        {% endif %}
       {% when 'undergrad' %}
         {% assign en_role_short = 'Undergrad' %}
     {% endcase %}
     <div class="member-card__role-banner">
-      <span class="member-card__role-title">
-        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{ m.role_ko | replace: '(학연)', '' }}
-      </span>
+      <span class="member-card__role-title"> <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{ m.role_ko }} </span>
       <span class="member-card__role-en">{{ en_role_short }}</span>
     </div>
   {% endif %}

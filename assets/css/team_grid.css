@@ -152,8 +152,9 @@ html[data-theme="dark"] .team-container {
 /* Acronym definition note (KNU) above the first section of the Current Members tab */
 .team-section__lead-info {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: var(--tm-s2);
+  gap: var(--tm-s1, 4px) var(--tm-s2);
   margin: 0 0 var(--tm-s6);
   padding: var(--tm-s2) var(--tm-s3);
   border: 1px solid var(--tm-line);
@@ -173,6 +174,34 @@ html[data-theme="dark"] .team-container {
 .team-section__lead-info strong {
   font-weight: 600;
   color: var(--tm-ink);
+}
+
+.lead-info__item {
+  min-width: 0;
+}
+
+.lead-info__divider {
+  flex: none;
+  color: var(--tm-faint);
+}
+
+/* Mobile: items stack on their own lines; the inline divider is redundant */
+@media (max-width: 640px) {
+  .team-section__lead-info {
+    align-items: flex-start;
+  }
+
+  .team-section__lead-info > i {
+    margin-top: 2px;
+  }
+
+  .lead-info__item {
+    flex: 1 1 calc(100% - 28px);
+  }
+
+  .lead-info__divider {
+    display: none;
+  }
 }
 
 /* ------------------------------------------------------------

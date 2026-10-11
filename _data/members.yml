@@ -243,8 +243,8 @@
   order: 3
   name_ko: 이희진
   name_en: Huijin Lee
-  role_ko: 연구원
-  role_en: Researcher
+  role_ko: 연구원(석사)
+  role_en: Researcher (M.S.)
   topics:
     - MXene Synthesis
     - Photocatalysts
@@ -330,7 +330,7 @@
   order: 7
   name_ko: 김우영
   name_en: Wooyoung Kim
-  role_ko: 석사과정(학연)
+  role_ko: 학연과정(석사)
   role_en: M.S. Student (Joint)
   topics:
     - Ceramic Materials

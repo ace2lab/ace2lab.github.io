@@ -15,6 +15,10 @@ nav_order: 2
 {% assign grads = site.data.members | where_exp: "item", "item.group == 'phd' or item.group == 'ms'" | sort: "order" %}
 {% assign ugs = site.data.members | where: "group", "ug" | sort: "order" %}
 {% assign current_count = grads.size | plus: ugs.size %}
+{% assign n_phd = grads | where_exp: "item", "item.role_ko == '박사과정' or item.role_ko == '석박통합과정'" | size %}
+{% assign n_ms = grads | where: "role_ko", "석사과정" | size %}
+{% assign n_joint = grads | where: "role_ko", "학연과정(석사)" | size %}
+{% assign n_res = grads | where: "role_ko", "연구원(석사)" | size %}
 {% assign alumni = site.data.members | where: "group", "alumni" | sort: "grad_year" | reverse %}
 {% assign interns = site.data.interns %}
 {% assign intern_affiliations = interns | map: "affiliation" | uniq %}
@@ -103,7 +107,12 @@ nav_order: 2
   <div class="team-tabpanel" role="tabpanel" id="panel-members" aria-labelledby="tab-members" tabindex="0">
     <div class="team-section__lead-info" lang="ko">
       <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-      <span><strong>KNU</strong>: Kyungpook National University (경북대학교)</span>
+      <span class="lead-info__item"><strong>KNU</strong>: Kyungpook National University (경북대학교)</span>
+      <span class="lead-info__divider" aria-hidden="true">·</span>
+      <span class="lead-info__item"
+        ><strong>연구원 구성</strong> (총 {{ current_count }}명): 대학원생 {{ grads.size }} (박사과정 {{ n_phd }}, 석사과정 {{ n_ms }}, 학연과정(석사) {{ n_joint }}, 연구원(석사) {{ n_res }}) ·
+        학부연구생 {{ ugs.size }}</span
+      >
     </div>
     {% if grads.size > 0 %}
     <section class="team-section" id="graduate-students">
