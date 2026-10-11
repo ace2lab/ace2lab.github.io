@@ -227,8 +227,11 @@ nav_order: 2
 <template id="ach-{{ m.id }}" data-total="{{ ach_total }}">
 {%- if ach_papers.size > 0 %}
 <section class="ach-group"><h3 class="ach-group__title">논문 <span class="ach-group__count">{{ ach_papers.size }}</span></h3><ul class="ach-list" role="list">
+{%- assign ach_self = '<strong class="ach-author--self">' | append: m.name_en | append: '</strong>' -%}
 {%- for x in ach_papers %}
-<li class="ach-item"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ x.title | escape }}</a>{% else %}{{ x.title | escape }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.year | escape }}{% if x.authors != blank %} · {{ x.authors | escape }}{% endif %}</p></li>
+{%- assign ach_authors = x.authors | escape -%}
+{%- if m.name_en != blank -%}{%- assign ach_authors = ach_authors | replace: m.name_en, ach_self -%}{%- endif %}
+<li class="ach-item"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ x.title | escape }}</a>{% else %}{{ x.title | escape }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.year | escape }}{% if x.authors != blank %} · {{ ach_authors }}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}

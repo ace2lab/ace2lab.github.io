@@ -1904,6 +1904,14 @@ html.ach-lock {
   color: var(--tm-muted);
 }
 
+.ach-author--self {
+  font-weight: 700;
+  color: var(--tm-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--tm-line-strong);
+  text-underline-offset: 2px;
+}
+
 .ach-item__tag {
   display: inline-block;
   margin-right: var(--tm-s1);
