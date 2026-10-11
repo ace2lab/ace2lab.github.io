@@ -445,20 +445,24 @@ html[data-theme="dark"] .member-card[data-role="undergrad"] {
   text-align: center;
 }
 
+/* Row 1 — current affiliation: the card's anchor line */
+.member-meta .member-meta__affiliation {
+  font-weight: 600;
+  color: var(--tm-ink);
+  word-break: keep-all;
+}
+
+/* Rows 2-3 — education cohort and research field: body weight */
+.member-meta .member-meta__edu,
+.member-meta .member-meta__research {
+  color: var(--tm-text);
+  word-break: keep-all;
+}
+
+/* Row 4 — office: quiet, one size down */
 .member-meta .member-meta__muted {
   font-size: var(--fs-label, 0.8125rem);
   color: var(--tm-muted);
-}
-
-.member-meta .member-meta__edu {
-  font-size: var(--fs-meta, 0.875rem);
-  line-height: 20px;
-  color: var(--tm-text);
-}
-
-.member-meta .member-meta__edu strong {
-  font-weight: 700;
-  color: var(--tm-ink);
 }
 
 .member-awards {
@@ -484,15 +488,7 @@ html[data-theme="dark"] .member-awards i {
   color: #e0b25a;
 }
 
-/* Topics: hairline chips, no fill */
-.member-card__topics {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: var(--tm-s1) var(--tm-s2);
-  margin: var(--tm-s4) 0 0;
-}
-
+/* Topic chips (Co-PI profile only; student cards no longer render them) */
 .topic-tag {
   padding: 2px var(--tm-s2);
   font-size: var(--tm-fs-2xs);

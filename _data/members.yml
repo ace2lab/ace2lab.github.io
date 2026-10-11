@@ -210,8 +210,9 @@
   email: mikybuzz@knu.ac.kr
   photo: assets/img/team/jaeho_lee.jpg
   degree_program: 박사과정 (2026.03 ~ 현재)
-  education: <strong>경북대 대학원</strong> 공학석사 · <strong>경북대</strong> 에너지화학공학과 공학사
-  project: IPL-Assisted Supercapacitor Electrodes
+  affiliation: "경북대학교 대학원 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('18학번) · 대학원 ('24학번)"
+  research_field: "IPL 광열처리 기반 차세대 슈퍼캐패시터 전극 소재"
   office: 7호관 404호
   links:
     email: mikybuzz@knu.ac.kr
@@ -229,8 +230,9 @@
   email: ehdgh61485@gmail.com
   photo: assets/img/team/dongho_lee.jpg
   degree_program: 석박통합과정 (2025.03 ~ 현재)
-  education: <strong>경북대 대학원</strong> 미래과학기술융합학부 · <strong>경북대</strong> 에너지화학공학과 공학사
-  project: SK PICGLOBAL, TEMC 산학과제
+  affiliation: "경북대학교 대학원 미래과학기술융합학부 에너지·신소재화학공학전공"
+  education: "KNU 에너지화학공학과 ('19학번)"
+  research_field: "중수소 치환 에너지 소재 합성 및 나노기술"
   office: 7호관 406호
   awards:
     - 2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)
@@ -250,8 +252,9 @@
   email: dlgmlswls32@naver.com
   photo: assets/img/team/huijin_lee.jpg
   degree_program: 연구원 (2026.02 ~ 현재)
-  education: <strong>경북대 대학원</strong> 에너지화학공학과 공학석사 · <strong>경북대</strong> 공학사
-  project: MXene Synthesis & Applications
+  affiliation: "경북대학교 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('18학번) · 대학원 ('24학번)"
+  research_field: "맥신(MXene) 합성 및 광촉매·에너지 환경 소재"
   office: 7호관 406호
   awards:
     - 2025 첨성인 대학원생 논문경진대회 우수상 (2026.01)
@@ -271,8 +274,9 @@
   email: dawin2660@knu.ac.kr
   photo: assets/img/team/dawin_kim.jpg
   degree_program: 석사과정 (2025.03 ~ 현재)
-  education: <strong>경북대 대학원</strong> 석사과정 · <strong>경북대</strong> 에너지화학공학과 공학사
-  project: VO2 Thermochromics, MXene
+  affiliation: "경북대학교 대학원 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('20학번)"
+  research_field: "VO2 스마트 윈도우 및 전기화학 소자"
   office: 7호관 404호
   awards:
     - 2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)
@@ -292,8 +296,9 @@
   email: coco24245@knu.ac.kr
   photo: assets/img/team/jaebeen_ahn.jpg
   degree_program: 석사과정 (2026.03 ~ 현재)
-  education: <strong>경북대 대학원</strong> 석사과정 · <strong>경북대</strong> 에너지화학공학과 공학사
-  project: MXene, IPL Processing
+  affiliation: "경북대학교 대학원 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('20학번)"
+  research_field: "맥신 나노복합소재 및 유연 촉각 센서"
   office: 7호관 406호
   awards:
     - 2025 화공학회 Chem Frontier 산업통상부 장관상
@@ -314,8 +319,9 @@
   email: audtj707@naver.com
   photo: assets/img/team/myeong_seo_kang.jpg
   degree_program: 석사과정 (2026.01 ~ 현재)
-  education: <strong>경북대 대학원</strong> 석사과정 · <strong>경북대</strong> 에너지화학공학과 공학사
-  project: Flexible Sensors, LIG
+  affiliation: "경북대학교 대학원 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('22학번)"
+  research_field: "레이저 유도 그래핀(LIG) 기반 생체 모니터링 유연 센서"
   office: 7호관 404호
   links:
     email: audtj707@naver.com
@@ -333,8 +339,9 @@
   email: wykim@kicet.re.kr
   photo: ""
   degree_program: 석사과정(학연) (2024.09 ~ 현재)
-  education: <strong>한국세라믹기술연구원(KICET)</strong> 학연과정 · <strong>경북대</strong> 에너지화학공학과 공학사
-  project: Ceramic & Battery Composites
+  affiliation: "한국세라믹기술연구원(KICET) 학연과정"
+  education: "KNU 에너지화학공학과 ('18학번)"
+  research_field: "고체전해질 및 차세대 배터리 복합소재"
   office: 한국세라믹기술연구원 / 7호관
   links:
     email: wykim@kicet.re.kr
@@ -351,7 +358,9 @@
   email: ben4709@naver.com
   photo: assets/img/team/minsu_kim.jpg
   degree_program: 학부연구생 (4학년 / 21학번, 2025.01 ~ 현재)
-  education: <strong>경북대학교</strong> 에너지화학공학과
+  affiliation: "경북대학교 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('21학번)"
+  research_field: "차세대 에너지 변환 및 스마트 디바이스"
   office: 7호관 404호
   awards:
     - 2025 화공학회 Chem Frontier 산업통상자원부 장관상
@@ -371,7 +380,9 @@
   email: ljm0202324@naver.com
   photo: assets/img/team/jongmin_lee.jpg
   degree_program: 학부연구생 (4학년 / 21학번, 2025.05 ~ 현재)
-  education: <strong>경북대학교</strong> 에너지화학공학과
+  affiliation: "경북대학교 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('21학번)"
+  research_field: "광열(IPL) 구동 VO2 스마트 액추에이터"
   office: 7호관 404호
   awards:
     - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
@@ -391,7 +402,9 @@
   email: gyeongjingim8@gmail.com
   photo: assets/img/team/gyeongjin_kim.jpg
   degree_program: 학부연구생 (4학년 / 22학번, 2026.01 ~ 현재)
-  education: <strong>경북대학교</strong> 에너지화학공학과
+  affiliation: "경북대학교 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('22학번)"
+  research_field: "나노 기능성 소재 및 유연 센서"
   office: 7호관 406호
   awards:
     - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
@@ -410,7 +423,9 @@
   email: 2025009732@knu.ac.kr
   photo: ""
   degree_program: 학부연구생 (2학년 / 25학번, 2026.05 ~ 현재)
-  education: <strong>경북대학교</strong> 에너지화학공학과
+  affiliation: "경북대학교 에너지화학공학과"
+  education: "KNU 에너지화학공학과 ('25학번)"
+  research_field: "다기능 소프트 액추에이터 소재"
   office: 7호관 406호
   awards:
     - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
