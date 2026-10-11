@@ -31,7 +31,7 @@ nav_order: 2
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Research Team & Members"
   subtitle="차세대 화학 및 에너지 공학 연구실 연구책임자, 대학원생, 학부연구생 및 졸업생"
-  subtitle_en="Principal investigators, graduate students, undergraduate researchers, and alumni of ACE² Lab."
+  subtitle_en="Principal investigators, graduate students, undergraduate researchers, and alumni of ACE² Lab. KNU: Kyungpook National University (<span lang='ko'>경북대학교</span>)."
   badges=hero_badges
 %}
 
@@ -101,6 +101,10 @@ nav_order: 2
 {% if current_count > 0 %}
 
   <div class="team-tabpanel" role="tabpanel" id="panel-members" aria-labelledby="tab-members" tabindex="0">
+    <div class="team-section__lead-info" lang="ko">
+      <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+      <span><strong>KNU</strong>: Kyungpook National University (경북대학교)</span>
+    </div>
     {% if grads.size > 0 %}
     <section class="team-section" id="graduate-students">
       <h2 class="team-section__title">

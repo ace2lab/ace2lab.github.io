@@ -149,6 +149,32 @@ html[data-theme="dark"] .team-container {
   padding: 0;
 }
 
+/* Acronym definition note (KNU) above the first section of the Current Members tab */
+.team-section__lead-info {
+  display: flex;
+  align-items: center;
+  gap: var(--tm-s2);
+  margin: 0 0 var(--tm-s6);
+  padding: var(--tm-s2) var(--tm-s3);
+  border: 1px solid var(--tm-line);
+  border-radius: var(--tm-r-sm);
+  background: var(--tm-sunken);
+  font-size: var(--tm-fs-xs);
+  line-height: 20px;
+  color: var(--tm-muted);
+}
+
+.team-section__lead-info > i {
+  flex: none;
+  font-size: var(--tm-fs-sm);
+  color: var(--tm-faint);
+}
+
+.team-section__lead-info strong {
+  font-weight: 600;
+  color: var(--tm-ink);
+}
+
 /* ------------------------------------------------------------
    2. Grids
    ------------------------------------------------------------ */
