@@ -202,6 +202,54 @@ nav_order: 2
   </div>
   {% endif %}
 
+  <!-- Research achievements popup: one shared dialog, one <template> per member (cloned by member_achievements.js) -->
+  <dialog id="member-achievements" class="ach-dialog" aria-labelledby="ach-dialog-title">
+    <div class="ach-dialog__panel">
+      <header class="ach-dialog__head">
+        <div>
+          <p class="ach-dialog__eyebrow">Research Achievements · 연구 실적</p>
+          <h2 id="ach-dialog-title" class="ach-dialog__title" data-ach="title"></h2>
+          <p class="ach-dialog__summary" data-ach="summary"></p>
+        </div>
+        <button type="button" class="ach-dialog__close" data-ach-close aria-label="닫기"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </header>
+      <div class="ach-dialog__body" data-ach="body" tabindex="-1"></div>
+    </div>
+  </dialog>
+{%- assign ach_members = grads | concat: ugs -%}
+{%- for m in ach_members -%}
+{%- assign ach_patents = site.data.patents | where_exp: 'x', 'x.inventors contains m.name_ko' -%}
+{%- assign ach_awards = site.data.awards | where_exp: 'x', 'x.recipient contains m.name_ko' -%}
+{%- assign ach_talks = site.data.talks | where_exp: 'x', 'x.presenters contains m.name_ko' -%}
+{%- assign ach_total = ach_patents.size | plus: ach_awards.size | plus: ach_talks.size -%}
+{%- if ach_total > 0 %}
+<template id="ach-{{ m.id }}" data-total="{{ ach_total }}">
+{%- if ach_patents.size > 0 %}
+<section class="ach-group"><h3 class="ach-group__title">특허 <span class="ach-group__count">{{ ach_patents.size }}</span></h3><ul class="ach-list" role="list">
+{%- for x in ach_patents %}
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag">{{ x.status | escape }}</span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · {{ x.country | escape }}{% endif %}</p></li>
+{%- endfor %}
+</ul></section>
+{%- endif %}
+{%- if ach_awards.size > 0 %}
+<section class="ach-group"><h3 class="ach-group__title">수상 <span class="ach-group__count">{{ ach_awards.size }}</span></h3><ul class="ach-list" role="list">
+{%- for x in ach_awards %}
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta"><span class="ach-item__tag">{{ x.type | escape }}</span>{{ x.issuer | escape }} · {{ x.date | escape }}</p></li>
+{%- endfor %}
+</ul></section>
+{%- endif %}
+{%- if ach_talks.size > 0 %}
+<section class="ach-group"><h3 class="ach-group__title">학회 발표 <span class="ach-group__count">{{ ach_talks.size }}</span></h3><ul class="ach-list" role="list">
+{%- for x in ach_talks %}
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}</p></li>
+{%- endfor %}
+</ul></section>
+{%- endif %}
+</template>
+{%- endif -%}
+{%- endfor %}
+
   <!-- Synchronous on purpose: it must run before first paint to avoid a flash of all panels -->
   <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/member_achievements.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </div>

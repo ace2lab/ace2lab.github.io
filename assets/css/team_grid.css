@@ -210,7 +210,7 @@ html[data-theme="dark"] .team-container {
 .team-grid {
   display: grid;
   gap: var(--tm-s6);
-  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 }
 
 /* Co-PIs stack: each profile gets the full measure, never a squeezed half */
@@ -471,9 +471,8 @@ html[data-theme="dark"] .member-card[data-role="undergrad"] {
   background: var(--tm-role-bg);
 }
 
-/* Meta + awards: icon column aligned, text hangs cleanly when it wraps */
-.member-meta,
-.member-awards {
+/* Meta: icon column aligned, text hangs cleanly when it wraps */
+.member-meta {
   display: flex;
   flex-direction: column;
   gap: var(--tm-s1);
@@ -483,8 +482,7 @@ html[data-theme="dark"] .member-card[data-role="undergrad"] {
   list-style: none;
 }
 
-.member-meta li,
-.member-awards li {
+.member-meta li {
   display: grid;
   grid-template-columns: 16px 1fr;
   column-gap: var(--tm-s2);
@@ -514,33 +512,15 @@ html[data-theme="dark"] .member-card[data-role="undergrad"] {
   word-break: keep-all;
 }
 
+/* Cohort tokens like ('18학번) never split between the quote and the digits */
+.tm-nb {
+  white-space: nowrap;
+}
+
 /* Row 4 — office: quiet, one size down */
 .member-meta .member-meta__muted {
   font-size: var(--fs-label, 0.8125rem);
   color: var(--tm-muted);
-}
-
-.member-awards {
-  margin-top: var(--tm-s3);
-  padding-top: var(--tm-s3);
-  border-top: 1px dashed var(--tm-line);
-}
-
-.member-awards li {
-  font-size: var(--fs-meta, 0.875rem);
-  line-height: 20px;
-  font-weight: 500;
-  color: var(--tm-ink);
-}
-
-.member-awards i {
-  font-size: 0.75rem;
-  color: #b7791f; /* muted gold — the single warm accent on the page */
-  text-align: center;
-}
-
-html[data-theme="dark"] .member-awards i {
-  color: #e0b25a;
 }
 
 /* Topic chips (Co-PI profile only; student cards no longer render them) */
@@ -563,6 +543,8 @@ html[data-theme="dark"] .member-awards i {
   align-items: center;
   gap: 0; /* the 44px hit boxes already space the glyphs */
   margin-top: auto;
+  flex-wrap: wrap;
+  max-width: calc(100% + 14px);
   margin-left: -14px; /* first glyph aligns with the text edge */
   padding-top: var(--tm-s3);
 }
@@ -583,6 +565,48 @@ html[data-theme="dark"] .member-awards i {
 .link-icon:focus-visible {
   color: var(--tm-accent);
   text-decoration: none;
+}
+
+/* Research achievements trigger: shown only once member_achievements.js is live */
+.member-card__ach-btn {
+  display: none;
+  align-items: center;
+  gap: var(--tm-s2);
+  min-height: 44px; /* WCAG 2.5.5 touch target */
+  margin: 0 0 0 var(--tm-s2);
+  padding: 0 var(--tm-s3);
+  font-family: var(--tm-font);
+  font-size: var(--tm-fs-xs);
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: var(--tm-role-text);
+  background: transparent;
+  border: 0;
+  border-radius: var(--tm-r-sm);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.team-container.has-ach .member-card__ach-btn {
+  display: inline-flex;
+}
+
+.member-card__ach-btn i {
+  font-size: 0.75rem;
+}
+
+.member-card__ach-btn:hover,
+.member-card__ach-btn:focus-visible {
+  background: var(--tm-role-bg);
+}
+
+.member-card__ach-btn:focus-visible {
+  outline: 2px solid var(--tm-role-accent);
+  outline-offset: 2px;
 }
 
 .link-icon:focus-visible,
@@ -1650,6 +1674,274 @@ html[data-theme="dark"] .pi-action:focus-visible {
 }
 
 /* ------------------------------------------------------------
+   6b. Research achievements dialog (assets/js/member_achievements.js)
+   One shared native <dialog>; per-member <template> content is cloned in.
+   Desktop: centred card. <= 640px: bottom sheet.
+   ------------------------------------------------------------ */
+html.ach-lock {
+  overflow: hidden;
+}
+
+.ach-dialog {
+  width: min(640px, calc(100vw - 2rem));
+  max-height: min(80vh, 760px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  color: var(--tm-text);
+  background: var(--tm-surface);
+  border: 1px solid var(--tm-line-strong);
+  border-radius: var(--tm-r-md);
+  box-shadow: 0 24px 60px -20px rgba(15, 23, 42, 0.45);
+}
+
+.ach-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  animation: ach-pop-in 0.2s ease both;
+}
+
+.ach-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.ach-dialog[open]::backdrop {
+  animation: ach-fade-in 0.2s ease both;
+}
+
+.ach-dialog.is-closing {
+  animation: ach-pop-out 0.18s ease both;
+}
+
+.ach-dialog.is-closing::backdrop {
+  animation: ach-fade-out 0.18s ease both;
+}
+
+.ach-dialog__panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: inherit;
+}
+
+.ach-dialog__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--tm-s4);
+  padding: var(--tm-s5) var(--tm-s6) var(--tm-s4);
+  border-bottom: 1px solid var(--tm-line);
+}
+
+.ach-dialog__eyebrow {
+  margin: 0;
+  font-size: var(--tm-fs-2xs);
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tm-muted);
+}
+
+.ach-dialog__title {
+  margin: var(--tm-s1) 0 0;
+  font-family: var(--tm-font);
+  font-size: var(--tm-fs-xl);
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: var(--tm-ink);
+}
+
+.ach-dialog__summary {
+  margin: var(--tm-s1) 0 0;
+  font-size: var(--tm-fs-xs);
+  line-height: 20px;
+  color: var(--tm-muted);
+}
+
+.ach-dialog__close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin: calc(var(--tm-s2) * -1) calc(var(--tm-s2) * -1) 0 0;
+  font-size: 1.125rem;
+  color: var(--tm-muted);
+  background: transparent;
+  border: 0;
+  border-radius: var(--tm-r-sm);
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.ach-dialog__close:hover,
+.ach-dialog__close:focus-visible {
+  color: var(--tm-ink);
+  background: var(--tm-sunken);
+}
+
+.ach-dialog__close:focus-visible {
+  outline: 2px solid var(--tm-accent);
+  outline-offset: 2px;
+}
+
+.ach-dialog__body {
+  min-height: 0;
+  padding: var(--tm-s2) var(--tm-s6) var(--tm-s6);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.ach-dialog__body:focus {
+  outline: none;
+}
+
+.ach-group {
+  margin-top: var(--tm-s5);
+}
+
+.ach-group__title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--tm-s2);
+  margin: 0 0 var(--tm-s2);
+  padding-bottom: var(--tm-s2);
+  border-bottom: 1px solid var(--tm-line);
+  font-family: var(--tm-font);
+  font-size: var(--tm-fs-sm);
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--tm-ink);
+}
+
+.ach-group__count {
+  font-size: var(--tm-fs-2xs);
+  font-weight: 500;
+  color: var(--tm-muted);
+}
+
+.ach-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ach-item {
+  padding: var(--tm-s3) 0;
+  border-bottom: 1px dashed var(--tm-line);
+}
+
+.ach-item:last-child {
+  border-bottom: 0;
+}
+
+.ach-item__title {
+  margin: 0;
+  font-size: var(--tm-fs-sm);
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--tm-ink);
+}
+
+.ach-item__meta {
+  margin: var(--tm-s1) 0 0;
+  font-size: var(--tm-fs-xs);
+  line-height: 20px;
+  color: var(--tm-muted);
+}
+
+.ach-item__tag {
+  display: inline-block;
+  margin-right: var(--tm-s1);
+  padding: 0 var(--tm-s2);
+  font-size: var(--tm-fs-2xs);
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--tm-amber);
+  background: var(--tm-amber-soft);
+  border-radius: var(--tm-r-sm);
+}
+
+@keyframes ach-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ach-pop-out {
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+@keyframes ach-sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes ach-sheet-out {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes ach-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes ach-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .ach-dialog {
+    width: 100%;
+    max-width: 100%;
+    max-height: 85vh;
+    margin: auto 0 0;
+    border-width: 1px 0 0;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .ach-dialog[open] {
+    animation-name: ach-sheet-in;
+  }
+
+  .ach-dialog.is-closing {
+    animation-name: ach-sheet-out;
+  }
+
+  .ach-dialog__head {
+    padding: var(--tm-s4) var(--tm-s4) var(--tm-s3);
+  }
+
+  .ach-dialog__body {
+    padding: var(--tm-s1) var(--tm-s4) calc(var(--tm-s6) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ------------------------------------------------------------
    7. Motion & print
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
@@ -1666,8 +1958,17 @@ html[data-theme="dark"] .pi-action:focus-visible {
   .pi-contact a,
   .alumni-row__dest a,
   .team-tab,
-  .team-tab::after {
+  .team-tab::after,
+  .member-card__ach-btn,
+  .ach-dialog__close {
     transition: none;
+  }
+
+  .ach-dialog,
+  .ach-dialog::backdrop,
+  .ach-dialog.is-closing,
+  .ach-dialog.is-closing::backdrop {
+    animation: none !important;
   }
 
   .team-container.is-tabbed .team-tabpanel:not([hidden]) {
@@ -1676,6 +1977,10 @@ html[data-theme="dark"] .pi-action:focus-visible {
 }
 
 @media print {
+  .member-card__ach-btn {
+    display: none !important;
+  }
+
   .member-card,
   .pi-profile,
   .intern-card,
