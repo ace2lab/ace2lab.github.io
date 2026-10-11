@@ -78,6 +78,13 @@ jobs:
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+      - name: Install Python deps 🐍
+        run: pip3 install nbconvert
       - name: Setup Node 🧰
         uses: actions/setup-node@v4
         with:
