@@ -67,6 +67,11 @@
   --ed-surface-alt: var(--c-surface-alt);
   --ed-crimson: var(--color-knu-crimson);
 
+  /* Sector highlight tokens (WCAG >= 4.5:1 AA vs #ffffff; vs #f1f5f9 sunken >= 5.0:1) */
+  --sector-current: #a3123a; /* KNU Crimson: 7.8:1 */
+  --sector-industry: #1e3a5f; /* Tech Navy: 11.5:1 */
+  --sector-institute: #0f766e; /* Academic / Institute Teal: 5.5:1 */
+
   /* Sticky stack: fixed al-folio navbar + in-page tab bar */
   --sticky-navbar: 3.5rem;
   --sticky-tabnav: 3.0625rem; /* 48px tab + 1px hairline */
@@ -106,4 +111,9 @@ html[data-theme="dark"] {
   --c-accent: #9db7d9;
   --c-accent-fill: #a3123a;
   --c-surface-alt: #2a2e35;
+
+  /* Sector highlight tokens vs #1c1c1d page / #23262b card surface (>= 4.5:1; 5.4 / 7.4 / 10.3:1 on card) */
+  --sector-current: #f0708f; /* Light Crimson */
+  --sector-industry: #9db7d9; /* Steel Blue */
+  --sector-institute: #5eead4; /* Mint / Teal */
 }

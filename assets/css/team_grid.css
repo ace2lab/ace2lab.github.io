@@ -70,10 +70,6 @@
   --tm-teal-soft: rgba(15, 118, 110, 0.1);
   --tm-amber: #92400e;
   --tm-amber-soft: rgba(180, 83, 9, 0.12);
-  --tm-purple: #6d28d9;
-  --tm-purple-soft: rgba(124, 58, 237, 0.09);
-  --tm-green: #047857;
-  --tm-green-soft: rgba(4, 120, 87, 0.1);
 
   max-width: 1340px;
   margin: 0 auto;
@@ -114,10 +110,6 @@ html[data-theme="dark"] .team-container {
   --tm-teal-soft: rgba(94, 234, 212, 0.12);
   --tm-amber: #fcd34d;
   --tm-amber-soft: rgba(251, 191, 36, 0.14);
-  --tm-purple: #c4b5fd;
-  --tm-purple-soft: rgba(167, 139, 250, 0.16);
-  --tm-green: #6ee7b7;
-  --tm-green-soft: rgba(110, 231, 183, 0.13);
 }
 
 /* ------------------------------------------------------------
@@ -631,23 +623,8 @@ html[data-theme="dark"] .member-awards i {
   border-radius: 8px;
   font-weight: 400;
   font-size: 0.8125rem;
-  color: var(--ic-fg, var(--tm-muted));
-  background: var(--ic-bg, transparent);
-}
-
-.pi-contact__icon--office {
-  --ic-fg: var(--tm-crimson);
-  --ic-bg: var(--tm-crimson-soft);
-}
-
-.pi-contact__icon--phone {
-  --ic-fg: var(--tm-teal);
-  --ic-bg: var(--tm-teal-soft);
-}
-
-.pi-contact__icon--email {
-  --ic-fg: var(--tm-cobalt);
-  --ic-bg: var(--tm-cobalt-soft);
+  color: var(--tm-accent);
+  background: var(--tm-accent-soft);
 }
 
 .pi-contact dd {
@@ -897,18 +874,10 @@ html[data-theme="dark"] .pi-timeline__badge {
   color: #0f172a;
 }
 
-/* Where (institution) and what (title) both matter: the org is the bold
-   anchor, the role is a medium-weight title in full ink beneath the period. */
-.pi-timeline__role {
-  margin-top: 2px;
-  font-size: var(--tm-fs-sm);
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: -0.015em;
-  color: var(--tm-ink);
-}
-
+/* Org-first hierarchy: the institution is the bold, sector-toned anchor
+   (DOM order: period, org, role); the role is a medium-weight muted title. */
 .pi-timeline__org {
+  margin-top: 2px;
   font-size: var(--tm-fs-sm);
   font-weight: 700;
   line-height: 20px;
@@ -916,32 +885,28 @@ html[data-theme="dark"] .pi-timeline__badge {
   color: var(--org-fg, var(--tm-ink));
 }
 
-/* Institution identity: subtle hue per organisation */
-.pi-timeline__item--knu {
-  --org-fg: var(--tm-crimson);
+.pi-timeline__role {
+  font-size: var(--tm-fs-xs);
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--tm-muted);
 }
 
-.pi-timeline__item--postech {
-  --org-fg: var(--tm-purple);
+/* Sector identity: current post (crimson), industry (navy), institute / other academia (teal) */
+.pi-timeline__item--current {
+  --org-fg: var(--sector-current);
 }
 
-.pi-timeline__item--samsung {
-  --org-fg: var(--tm-cobalt);
+.pi-timeline__item--industry {
+  --org-fg: var(--sector-industry);
 }
 
-.pi-timeline__item--rist {
-  --org-fg: var(--tm-green);
+.pi-timeline__item--institute,
+.pi-timeline__item--academia {
+  --org-fg: var(--sector-institute);
 }
 
-.pi-timeline__item--kitech {
-  --org-fg: var(--tm-teal);
-}
-
-.pi-timeline__item--calgary {
-  --org-fg: var(--tm-amber);
-}
-
-/* Sub-note: refined tinted badge */
+/* Sub-note: calm sunken badge */
 .pi-timeline__note {
   display: inline-flex;
   align-items: center;
@@ -950,10 +915,11 @@ html[data-theme="dark"] .pi-timeline__badge {
   margin-top: var(--tm-s1);
   padding: 1px var(--tm-s2);
   border-radius: var(--tm-r-sm);
-  background: var(--tm-amber-soft);
+  border: 1px solid var(--tm-line);
+  background: var(--tm-sunken);
   font-size: var(--tm-fs-2xs);
   line-height: 16px;
-  color: var(--tm-amber);
+  color: var(--tm-muted);
 }
 
 .pi-timeline__note i {
@@ -981,50 +947,20 @@ html[data-theme="dark"] .pi-timeline__badge {
   font-size: var(--tm-fs-xs);
   font-weight: 500;
   line-height: 20px;
-  color: var(--tk-fg, var(--tm-text));
-  background: var(--tk-bg, var(--tm-sunken));
-  border-color: var(--tk-fg, transparent);
+  color: var(--tm-text);
+  background: var(--tm-sunken);
+  border: 1px solid var(--tm-line);
   border-radius: 999px;
 }
 
-/* Coloured dot marker + rotating lab palette */
+/* Unified calm tone: sunken chip with a single navy dot marker */
 .pi-topics .topic-tag::before {
   content: "";
   flex: 0 0 auto;
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--tk-fg, var(--tm-faint));
-}
-
-.pi-topics .topic-tag:nth-child(6n + 1) {
-  --tk-fg: var(--tm-crimson);
-  --tk-bg: var(--tm-crimson-soft);
-}
-
-.pi-topics .topic-tag:nth-child(6n + 2) {
-  --tk-fg: var(--tm-cobalt);
-  --tk-bg: var(--tm-cobalt-soft);
-}
-
-.pi-topics .topic-tag:nth-child(6n + 3) {
-  --tk-fg: var(--tm-teal);
-  --tk-bg: var(--tm-teal-soft);
-}
-
-.pi-topics .topic-tag:nth-child(6n + 4) {
-  --tk-fg: var(--tm-purple);
-  --tk-bg: var(--tm-purple-soft);
-}
-
-.pi-topics .topic-tag:nth-child(6n + 5) {
-  --tk-fg: var(--tm-amber);
-  --tk-bg: var(--tm-amber-soft);
-}
-
-.pi-topics .topic-tag:nth-child(6n) {
-  --tk-fg: var(--tm-green);
-  --tk-bg: var(--tm-green-soft);
+  background: var(--tm-accent);
 }
 
 /* Profile links: labelled outline buttons */

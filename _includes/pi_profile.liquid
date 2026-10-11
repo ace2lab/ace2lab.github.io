@@ -117,31 +117,19 @@
             <h4 class="pi-profile__label">Career</h4>
             <ol class="pi-timeline">
               {% for c in m.career %}
-                {% assign org_key = 'default' %}
                 {% assign is_current = false -%}
                 {%- if c.period contains '현재' %}{% assign is_current = true %}{% endif %}
-                {% if c.org contains '경북대' -%}
-                  {%- assign org_key = 'knu' %}
-                {% elsif c.org contains 'POSTECH' -%}
-                  {%- assign org_key = 'postech' %}
-                {% elsif c.org contains '삼성' -%}
-                  {%- assign org_key = 'samsung' %}
-                {% elsif c.org contains 'RIST' -%}
-                  {%- assign org_key = 'rist' %}
-                {% elsif c.org contains 'KITECH' -%}
-                  {%- assign org_key = 'kitech' %}
-                {% elsif c.org contains 'Calgary' -%}
-                  {%- assign org_key = 'calgary' %}
-                {% endif %}
-                <li class="pi-timeline__item pi-timeline__item--{{ org_key }}{% if is_current %} is-current{% endif %}">
+                {% assign sector_key = c.kind | default: 'academia' %}
+                {% if is_current %}{% assign sector_key = 'current' %}{% endif %}
+                <li class="pi-timeline__item pi-timeline__item--{{ sector_key }}{% if is_current %} is-current{% endif %}">
                   <span class="pi-timeline__period">
                     {{- c.period -}}
                     {%- if is_current -%}
                       <span class="pi-timeline__badge">현재 재직 · Current</span>
                     {%- endif -%}
                   </span>
-                  <span class="pi-timeline__role">{{ c.role }}</span>
                   <span class="pi-timeline__org">{{ c.org }}</span>
+                  <span class="pi-timeline__role">{{ c.role }}</span>
                   {% if c.note -%}
                     <span class="pi-timeline__note"><i class="fa-solid fa-tag" aria-hidden="true"></i>{{ c.note }}</span>
                   {%- endif %}
@@ -155,24 +143,10 @@
             <h4 class="pi-profile__label">Education</h4>
             <ol class="pi-timeline">
               {% for d in m.degrees %}
-                {% assign org_key = 'default' %}
-                {% if d.org contains '경북대' -%}
-                  {%- assign org_key = 'knu' %}
-                {% elsif d.org contains 'POSTECH' -%}
-                  {%- assign org_key = 'postech' %}
-                {% elsif d.org contains '삼성' -%}
-                  {%- assign org_key = 'samsung' %}
-                {% elsif d.org contains 'RIST' -%}
-                  {%- assign org_key = 'rist' %}
-                {% elsif d.org contains 'KITECH' -%}
-                  {%- assign org_key = 'kitech' %}
-                {% elsif d.org contains 'Calgary' -%}
-                  {%- assign org_key = 'calgary' %}
-                {% endif %}
-                <li class="pi-timeline__item pi-timeline__item--{{ org_key }}">
+                <li class="pi-timeline__item pi-timeline__item--{{ d.kind | default: 'academia' }}">
                   <span class="pi-timeline__period">{{ d.period }}</span>
-                  <span class="pi-timeline__role">{{ d.role }}</span>
                   <span class="pi-timeline__org">{{ d.org }}</span>
+                  <span class="pi-timeline__role">{{ d.role }}</span>
                   {% if d.note -%}
                     <span class="pi-timeline__note"><i class="fa-solid fa-tag" aria-hidden="true"></i>{{ d.note }}</span>
                   {%- endif %}

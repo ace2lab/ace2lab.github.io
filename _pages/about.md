@@ -152,8 +152,8 @@ latest_posts:
           {% for step in pi.career_highlights %}
             <li class="pi-path__node pi-path__node--{{ step.kind | default: 'academia' }}">
               <span class="pi-path__period">{{ step.period }}</span>
-              <span class="pi-path__role">{{ step.role }}</span>
               <span class="pi-path__org">{{ step.org }}</span>
+              <span class="pi-path__role">{{ step.role }}</span>
               {% if step.note %}<span class="pi-path__note">{{ step.note }}</span>{% endif %}
             </li>
           {% endfor %}

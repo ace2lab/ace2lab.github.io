@@ -2279,7 +2279,7 @@ html[data-theme="dark"] .pi-showcase-card:hover {
 }
 
 .pi-path__node {
-  --pi-node-color: var(--color-ace2-navy, #1e3a5f);
+  --pi-node-color: var(--sector-institute, #0f766e);
   position: relative;
   display: grid;
   grid-template-columns: 8.5rem minmax(0, 1fr);
@@ -2304,12 +2304,22 @@ html[data-theme="dark"] .pi-showcase-card:hover {
   background: var(--pi-node-color);
 }
 
-.pi-path__node--industry {
-  --pi-node-color: var(--color-knu-crimson, #a3123a);
+.pi-path__node--current {
+  --pi-node-color: var(--sector-current);
 }
 
-.pi-path__node--institute {
-  --pi-node-color: var(--c-subtle, #64748b);
+.pi-path__node--industry {
+  --pi-node-color: var(--sector-industry);
+}
+
+.pi-path__node--institute,
+.pi-path__node--academia {
+  --pi-node-color: var(--sector-institute);
+}
+
+/* The newest step is the current post */
+.pi-path__node:first-child {
+  --pi-node-color: var(--sector-current);
 }
 
 .pi-path__period {
@@ -2321,17 +2331,18 @@ html[data-theme="dark"] .pi-showcase-card:hover {
   white-space: nowrap;
 }
 
-.pi-path__role {
-  grid-column: 2;
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  color: var(--ed-ink, #0f172a);
-}
-
 .pi-path__org {
   grid-column: 2;
-  font-size: var(--fs-meta);
-  color: var(--ed-text, #334155);
+  font-size: var(--fs-body-sm);
+  font-weight: 700;
+  color: var(--pi-node-color, var(--ed-ink));
+}
+
+.pi-path__role {
+  grid-column: 2;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  color: var(--ed-muted, #4b5a70);
 }
 
 .pi-path__note {
