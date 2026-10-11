@@ -69,8 +69,16 @@
 
   /* Sector highlight tokens (WCAG >= 4.5:1 AA vs #ffffff; vs #f1f5f9 sunken >= 5.0:1) */
   --sector-current: #a3123a; /* KNU Crimson: 7.8:1 */
-  --sector-industry: #1e3a5f; /* Tech Navy: 11.5:1 */
+  --sector-industry: #0047ab; /* Samsung Corporate Blue: 8.4:1 */
   --sector-institute: #0f766e; /* Academic / Institute Teal: 5.5:1 */
+
+  /* Institutional Brand Tokens (WCAG AA >= 4.5:1 vs #ffffff; vs #f1f5f9 sunken >= 4.5:1) */
+  --brand-knu: #a3123a; /* KNU Crimson: 7.8:1 */
+  --brand-samsung: #0047ab; /* Samsung Corporate Blue: 8.4:1 */
+  --brand-postech: #9b1136; /* POSTECH Burgundy: 7.5:1 */
+  --brand-rist: #0075a8; /* RIST Deep Cerulean Sky: 4.8:1 */
+  --brand-calgary: #b45309; /* Calgary Deep Amber: 5.2:1 */
+  --brand-kitech: #0f766e; /* KITECH Slate Teal: 5.5:1 */
 
   /* Sticky stack: fixed al-folio navbar + in-page tab bar */
   --sticky-navbar: 3.5rem;
@@ -114,6 +122,14 @@ html[data-theme="dark"] {
 
   /* Sector highlight tokens vs #1c1c1d page / #23262b card surface (>= 4.5:1; 5.4 / 7.4 / 10.3:1 on card) */
   --sector-current: #f0708f; /* Light Crimson */
-  --sector-industry: #9db7d9; /* Steel Blue */
+  --sector-industry: #60a5fa; /* Samsung Soft Blue: 6.5:1 */
   --sector-institute: #5eead4; /* Mint / Teal */
+
+  /* Institutional Brand Tokens (WCAG AA >= 4.5:1 vs dark surface) */
+  --brand-knu: #f0708f; /* Light Crimson: 5.4:1 */
+  --brand-samsung: #60a5fa; /* Samsung Soft Blue: 6.5:1 */
+  --brand-postech: #fb7185; /* POSTECH Rose: 5.5:1 */
+  --brand-rist: #38bdf8; /* RIST Sky Cyan: 6.8:1 */
+  --brand-calgary: #fbbf24; /* Calgary Warm Gold/Amber: 8.2:1 */
+  --brand-kitech: #5eead4; /* KITECH Mint Teal: 10.3:1 */
 }

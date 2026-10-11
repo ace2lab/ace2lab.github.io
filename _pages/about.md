@@ -153,7 +153,7 @@ latest_posts:
             <div class="pi-trail__label">Career</div>
             <ol class="pi-path" aria-label="Career path of {{ pi.name_en }}">
               {% for step in pi.career_highlights %}
-                <li class="pi-path__node pi-path__node--{{ step.kind | default: 'academia' }}">
+                <li class="pi-path__node pi-path__node--{{ step.kind | default: 'academia' }}{% if step.brand %} pi-path__node--brand-{{ step.brand }}{% endif %}">
                   <span class="pi-path__period">{{ step.period }}</span>
                   <span class="pi-path__org">{{ step.org }}</span>
                   <span class="pi-path__role">{{ step.role }}</span>
@@ -166,7 +166,7 @@ latest_posts:
             <div class="pi-trail__label">Education</div>
             <ol class="pi-path pi-path--education" aria-label="Education of {{ pi.name_en }}">
               {% for deg in pi.degrees %}
-                <li class="pi-path__node pi-path__node--academia pi-path__node--degree">
+                <li class="pi-path__node pi-path__node--academia pi-path__node--degree{% if deg.brand %} pi-path__node--brand-{{ deg.brand }}{% endif %}">
                   <span class="pi-path__period">{{ deg.period }}</span>
                   <span class="pi-path__org">{{ deg.org }}</span>
                   <span class="pi-path__role">{{ deg.role }}</span>

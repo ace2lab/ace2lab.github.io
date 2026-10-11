@@ -2361,6 +2361,38 @@ html[data-theme="dark"] .pi-showcase-card:hover {
   background: var(--pi-node-color);
 }
 
+/* Institutional Brand Signatures (A-Plan: Direct Brand Ink) */
+.pi-path__node--brand-knu,
+.pi-path--education .pi-path__node--brand-knu {
+  --pi-node-color: var(--brand-knu);
+}
+
+.pi-path__node--brand-samsung,
+.pi-path--education .pi-path__node--brand-samsung {
+  --pi-node-color: var(--brand-samsung);
+}
+
+.pi-path__node--brand-postech,
+.pi-path--education .pi-path__node--brand-postech,
+.pi-path--education .pi-path__node--brand-postech:first-child {
+  --pi-node-color: var(--brand-postech);
+}
+
+.pi-path__node--brand-rist,
+.pi-path--education .pi-path__node--brand-rist {
+  --pi-node-color: var(--brand-rist);
+}
+
+.pi-path__node--brand-calgary,
+.pi-path--education .pi-path__node--brand-calgary {
+  --pi-node-color: var(--brand-calgary);
+}
+
+.pi-path__node--brand-kitech,
+.pi-path--education .pi-path__node--brand-kitech {
+  --pi-node-color: var(--brand-kitech);
+}
+
 .pi-path__period {
   grid-column: 1;
   grid-row: 1 / span 2;

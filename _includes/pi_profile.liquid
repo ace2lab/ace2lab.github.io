@@ -121,7 +121,7 @@
                 {%- if c.period contains '현재' %}{% assign is_current = true %}{% endif %}
                 {% assign sector_key = c.kind | default: 'academia' %}
                 {% if is_current %}{% assign sector_key = 'current' %}{% endif %}
-                <li class="pi-timeline__item pi-timeline__item--{{ sector_key }}{% if is_current %} is-current{% endif %}">
+                <li class="pi-timeline__item pi-timeline__item--{{ sector_key }}{% if is_current %} is-current{% endif %}{% if c.brand %} pi-timeline__item--brand-{{ c.brand }}{% endif %}">
                   <span class="pi-timeline__period">
                     {{- c.period -}}
                     {%- if is_current -%}
@@ -143,7 +143,7 @@
             <h4 class="pi-profile__label">Education</h4>
             <ol class="pi-timeline">
               {% for d in m.degrees %}
-                <li class="pi-timeline__item pi-timeline__item--{{ d.kind | default: 'academia' }}">
+                <li class="pi-timeline__item pi-timeline__item--{{ d.kind | default: 'academia' }}{% if d.brand %} pi-timeline__item--brand-{{ d.brand }}{% endif %}">
                   <span class="pi-timeline__period">{{ d.period }}</span>
                   <span class="pi-timeline__org">{{ d.org }}</span>
                   <span class="pi-timeline__role">{{ d.role }}</span>

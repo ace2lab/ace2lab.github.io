@@ -906,6 +906,49 @@ html[data-theme="dark"] .pi-timeline__badge {
   --org-fg: var(--sector-institute);
 }
 
+/* Institutional Brand Signatures (A-Plan: Direct Brand Ink) */
+.pi-timeline__item--brand-knu {
+  --org-fg: var(--brand-knu);
+}
+.pi-timeline__item--brand-knu::before {
+  border-color: var(--brand-knu);
+}
+
+.pi-timeline__item--brand-samsung {
+  --org-fg: var(--brand-samsung);
+}
+.pi-timeline__item--brand-samsung::before {
+  border-color: var(--brand-samsung);
+}
+
+.pi-timeline__item--brand-postech {
+  --org-fg: var(--brand-postech);
+}
+.pi-timeline__item--brand-postech::before {
+  border-color: var(--brand-postech);
+}
+
+.pi-timeline__item--brand-rist {
+  --org-fg: var(--brand-rist);
+}
+.pi-timeline__item--brand-rist::before {
+  border-color: var(--brand-rist);
+}
+
+.pi-timeline__item--brand-calgary {
+  --org-fg: var(--brand-calgary);
+}
+.pi-timeline__item--brand-calgary::before {
+  border-color: var(--brand-calgary);
+}
+
+.pi-timeline__item--brand-kitech {
+  --org-fg: var(--brand-kitech);
+}
+.pi-timeline__item--brand-kitech::before {
+  border-color: var(--brand-kitech);
+}
+
 /* Sub-note: calm sunken badge */
 .pi-timeline__note {
   display: inline-flex;

@@ -22,49 +22,58 @@
       role: 부교수
       org: 경북대학교 에너지화학공학과
       kind: academia
+      brand: knu
     - period: 2019.02 – 2022.02
       role: 선임연구원
       org: 한국생산기술연구원(KITECH)
       note: 울산본부
       kind: institute
+      brand: kitech
     - period: 2018.03 – 2019.01
       role: Staff Engineer
-      org: 삼성전자 반도체연구소
+      org: Samsung Electronics 반도체연구소
       note: 차세대 메모리 공정
       kind: industry
+      brand: samsung
     - period: 2017.03 – 2018.02
       role: 박사후연구원
-      org: POSTECH (포스텍, 포항공과대학교)
-      note: 화학공학과
+      org: POSTECH (포스텍, 포항공과대학교) 화학공학과
       kind: academia
+      brand: postech
   career:
     - period: 2022.03 – 현재
       role: 부교수
       org: 경북대학교 에너지화학공학과
       kind: academia
+      brand: knu
     - period: 2019.02 – 2022.02
       role: 선임연구원
       org: 한국생산기술연구원(KITECH) 울산본부
       kind: institute
+      brand: kitech
     - period: 2018.03 – 2019.01
       role: Staff Engineer
-      org: 삼성전자 반도체연구소
+      org: Samsung Electronics 반도체연구소
       note: 차세대 메모리 공정
       kind: industry
+      brand: samsung
     - period: 2017.03 – 2018.02
       role: 박사후연구원
       org: POSTECH (포스텍, 포항공과대학교) 화학공학과
       kind: academia
+      brand: postech
   degrees:
     - period: 2009.03 – 2017.02
       role: 공학박사
       org: POSTECH (포스텍, 포항공과대학교) 화학공학과
       note: 지도교수 정종식
       kind: academia
+      brand: postech
     - period: 2003.03 – 2009.02
       role: 공학사
       org: POSTECH (포스텍, 포항공과대학교) 화학공학과
       kind: academia
+      brand: postech
   topics:
     - Energy Storage Materials
     - Supercapacitors & Battery Anodes
@@ -72,7 +81,8 @@
     - Ceramic Additive Manufacturing
   links:
     email: taewook@knu.ac.kr
-  bio: POSTECH (포스텍, 포항공과대학교) 화학공학과에서 학사 및 박사학위를 취득하고, 동 대학 박사후연구원, 삼성전자 반도체연구소 Staff Engineer(차세대
+  bio:
+    POSTECH (포스텍, 포항공과대학교) 화학공학과에서 학사 및 박사학위를 취득하고, 동 대학 박사후연구원, Samsung Electronics 반도체연구소 Staff Engineer(차세대
     메모리 공정), 한국생산기술연구원(KITECH) 울산본부 선임연구원을 거쳐 경북대학교 에너지화학공학과 부교수로 재직 중입니다. 차세대 배터리·슈퍼캐패시터
     전극 소재, 친환경 촉매 기술, 세라믹 및 금속 3D 프린팅 첨단 적층제조 소재 연구를 이끌고 있습니다.
   role_ko: 공동 연구책임자 (Co-PI)
@@ -93,7 +103,7 @@
   photo: assets/img/team/changyong_yim_portrait.jpg
   photo_position: center 30%
   summary: 초고속 제논 플래시광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 공정을 기반으로 2D 맥신·MOF 복합소재를 설계하여, 차세대
-    하이브리드 슈퍼캐패시터, 고성능 리튬이온전지 음극, 고민감도 유연 생체·가스 센서를 연구합니다. POSTECH (포스텍, 포항공과대학교)·캘거리대학교 박사후연구원, 삼성전자
+    하이브리드 슈퍼캐패시터, 고성능 리튬이온전지 음극, 고민감도 유연 생체·가스 센서를 연구합니다. POSTECH (포스텍, 포항공과대학교)·University of Calgary, Canada 박사후연구원, Samsung Electronics
     무선사업부, 포항산업과학연구원(RIST)을 거친 학계·산업계 경험을 바탕으로 ACE² Lab을 공동으로 이끌고 있습니다.
   card_summary: 초고속 제논 플래시광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 공정을 기반으로 2D 맥신·MOF 복합소재를 설계합니다. 이를 통해
     차세대 하이브리드 슈퍼캐패시터와 고성능 리튬이온전지 음극을 구현하고, 고민감도 유연 생체·가스 센서로 응용 영역을 넓힙니다. 소재 합성에서 소자
@@ -103,59 +113,71 @@
       role: 부교수
       org: 경북대학교 에너지화학공학과
       kind: academia
+      brand: knu
     - period: 2019.08 – 2020.02
       role: 수석연구원
       org: 포항산업과학연구원(RIST)
       note: 미세먼지연구센터
       kind: institute
+      brand: rist
     - period: 2017.09 – 2019.07
       role: Staff Engineer
-      org: 삼성전자 무선사업부
+      org: Samsung Electronics 무선사업부
       note: 모바일 헬스케어 센서 H/W 개발
       kind: industry
+      brand: samsung
     - period: 2016.01 – 2017.07
       role: Eyes-High 박사후연구원
       org: University of Calgary, Canada
       note: 기계생산공학과
       kind: academia
+      brand: calgary
     - period: 2015.02 – 2015.12
       role: BK21+ 박사후연구원
-      org: POSTECH (포스텍, 포항공과대학교)
-      note: 화학공학과 (지도교수 전상민)
+      org: POSTECH (포스텍, 포항공과대학교) 화학공학과
+      note: 지도교수 전상민
       kind: academia
+      brand: postech
   career:
     - period: 2020.03 – 현재
       role: 부교수
       org: 경북대학교 에너지화학공학과
       kind: academia
+      brand: knu
     - period: 2019.08 – 2020.02
       role: 수석연구원
       org: 포항산업과학연구원(RIST) 미세먼지연구센터
       kind: institute
+      brand: rist
     - period: 2017.09 – 2019.07
       role: Staff Engineer
-      org: 삼성전자 무선사업부
+      org: Samsung Electronics 무선사업부
       note: 모바일 헬스케어 센서 H/W 개발
       kind: industry
+      brand: samsung
     - period: 2016.01 – 2017.07
       role: Eyes-High 박사후연구원
       org: University of Calgary, Canada 기계생산공학과
       kind: academia
+      brand: calgary
     - period: 2015.02 – 2015.12
       role: BK21+ 박사후연구원
       org: POSTECH (포스텍, 포항공과대학교) 화학공학과
       kind: academia
+      brand: postech
   degrees:
     - period: 2008.09 – 2015.02
       role: 공학박사
       org: POSTECH (포스텍, 포항공과대학교) 화학공학과
       note: 지도교수 전상민
       kind: academia
+      brand: postech
     - period: 2005.03 – 2008.08
       role: 공학사
-      org: POSTECH (포스텍, 포항공과대학교)
-      note: 화학공학과 (3.5년 우등 조기졸업)
+      org: POSTECH (포스텍, 포항공과대학교) 화학공학과
+      note: 3.5년 우등 조기졸업
       kind: academia
+      brand: postech
   topics:
     - Pulsed Light Processing (IPL)
     - Laser-Induced Graphene (LIG)
