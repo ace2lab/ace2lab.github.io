@@ -194,6 +194,7 @@ html[data-theme="dark"] .team-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--tm-s2);
   width: 100%;
   margin-bottom: var(--tm-s3);
   padding: 6px 12px;
@@ -211,6 +212,7 @@ html[data-theme="dark"] .team-container {
   font-weight: 700;
   color: var(--tm-role-text);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .member-card__role-en {
@@ -220,6 +222,7 @@ html[data-theme="dark"] .team-container {
   text-transform: uppercase;
   color: var(--tm-role-text);
   opacity: 0.8;
+  white-space: nowrap;
 }
 
 /* Avatar ------------------------------------------------ */

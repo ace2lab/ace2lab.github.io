@@ -23,13 +23,9 @@
     {% assign en_role_short = 'Member' %}
     {% case role_key %}
       {% when 'phd' %}
-        {% if m.role_ko contains '통합' %}
-          {% assign en_role_short = 'Ph.D. Int.' %}
-        {% else %}
-          {% assign en_role_short = 'Ph.D.' %}
-        {% endif %}
+        {% assign en_role_short = 'Ph.D. Student' %}
       {% when 'ms' %}
-        {% assign en_role_short = 'M.S.' %}
+        {% assign en_role_short = 'M.S. Student' %}
       {% when 'researcher' %}
         {% assign en_role_short = 'Researcher' %}
       {% when 'undergrad' %}
