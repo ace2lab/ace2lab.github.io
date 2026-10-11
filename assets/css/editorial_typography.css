@@ -226,7 +226,7 @@ a:hover {
   color: #f8fafc !important;
   line-height: 1.7;
   margin-bottom: 0;
-  max-width: 72ch;
+  max-width: none;
   word-break: keep-all;
 }
 
@@ -243,7 +243,7 @@ a:hover {
   color: rgba(255, 255, 255, 0.9) !important;
   line-height: 1.7;
   margin: 4px 0 0;
-  max-width: 72ch;
+  max-width: none;
 }
 
 .hero-banner__badges,
