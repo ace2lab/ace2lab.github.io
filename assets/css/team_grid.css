@@ -189,6 +189,39 @@ html[data-theme="dark"] .team-container {
   border-color: var(--tm-line-strong);
 }
 
+/* Role Banner (Option 1 Header Strip) ------------------- */
+.member-card__role-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--tm-s3);
+  padding: 6px 12px;
+  background: var(--tm-role-bg);
+  border: 1px solid var(--tm-line-strong);
+  border-radius: var(--tm-r-sm);
+}
+
+.member-card__role-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--tm-font);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--tm-role-text);
+  letter-spacing: -0.01em;
+}
+
+.member-card__role-en {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tm-role-text);
+  opacity: 0.8;
+}
+
 /* Avatar ------------------------------------------------ */
 .member-card__avatar-wrapper {
   margin-bottom: var(--tm-s4);
@@ -267,7 +300,7 @@ html[data-theme="dark"] .team-container {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--tm-s1) var(--tm-s2);
-  margin: var(--tm-s3) 0 0;
+  margin: 0 0 var(--tm-s2);
 }
 
 .member-badge {
