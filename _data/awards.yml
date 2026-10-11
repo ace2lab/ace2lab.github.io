@@ -5,6 +5,7 @@
   date: 2026.10.06
   year: 2026
   img: assets/img/awards/award_2026_chemfrontier.jpg
+  img_pos: "center bottom"
 - type: 우수상
   title: 2025 첨성인 대학원생 논문 경진대회
   recipient: 이희진
@@ -66,36 +67,38 @@
   issuer: 한국화학공학회
   date: 2023.11.24
   year: 2023
-  img: assets/img/awards/award_8.jpg
 - type: 우수상
   title: 2023년 친환경에너지 페스티벌
-  recipient: 김다윈, 안재빈
+  recipient: 김다윈, 라상현, 안재빈
   issuer: 음성군수
   date: 2023.11.14
   year: 2023
-  img: assets/img/awards/award_9.jpg
+  img: assets/img/awards/award_8.jpg
 - type: 우수상
   title: 2023년 연구실 안전 대국민 공모전
   recipient: 이희진
   issuer: 국가연구안전관리본부장
   date: 2023.10.25
   year: 2023
-  img: assets/img/awards/award_10.jpg
 - type: 표창장
   title: 상주시장
   recipient: 팽창웅
   issuer: 상주시장
   date: 2023.02.17
   year: 2023
+  img: assets/img/awards/award_9.jpg
 - type: 표창장
   title: 경북대학교 학위수여식
   recipient: 팽창웅
   issuer: 경북대학교 과학기술대학장
   date: 2023.02.17
   year: 2023
+  img: assets/img/awards/award_10.jpg
 - type: 장려상
   title: 제 2 회 경북대학교 연구노트 경진대회
   recipient: 안준혁
   issuer: 경북대학교 총장
   date: 2022.12.26
   year: 2022
+  img: assets/img/awards/award_2022_ahn_junhyuck.jpg
+  img_pos: "left top"

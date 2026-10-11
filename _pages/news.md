@@ -123,10 +123,30 @@ nav_order: 6
             {% else %}
               {% assign tier = 'teal' %}
             {% endif %}
+            {% capture award_date %}{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}{% endcapture %}
             <li class="ed-award-card ed-award-card--{{ tier }}">
               {% if a.img and a.img != "" %}
-                <button type="button" class="ed-award-card__thumb" data-award-zoom aria-label="{{ a.title | escape }} - view full size">
-                  <img src="{{ a.img | relative_url }}" alt="{{ a.title | escape }}" loading="lazy">
+                <button
+                  type="button"
+                  class="ed-award-card__thumb"
+                  data-award-zoom
+                  data-full="{{ a.img | relative_url }}"
+                  data-tier="{{ tier }}"
+                  data-type="{{ a.type | escape }}"
+                  data-title="{{ a.title | escape }}"
+                  data-recipient="{{ a.recipient | escape }}"
+                  data-issuer="{{ a.issuer | escape }}"
+                  data-date="{{ award_date }}"
+                  aria-haspopup="dialog"
+                  aria-label="{{ a.title | escape }} - view certificate"
+                >
+                  <img
+                    src="{{ a.img | relative_url }}"
+                    alt="{{ a.title | escape }}"
+                    loading="lazy"
+                    decoding="async"
+                    {% if a.img_pos %}style="object-position: {{ a.img_pos | escape }}"{% endif %}
+                  >
                   <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                 </button>
               {% endif %}
@@ -141,7 +161,7 @@ nav_order: 6
                     <div><dt><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span class="ed-sr">Issuer</span></dt><dd>{{ a.issuer | escape }}</dd></div>
                   {% endif %}
                   {% if a.date and a.date != "" %}
-                    <div><dt><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date</span></dt><dd><time>{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}</time></dd></div>
+                    <div><dt><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date</span></dt><dd><time>{{ award_date }}</time></dd></div>
                   {% endif %}
                 </dl>
                 {% if a.press and a.press != "" %}
@@ -197,9 +217,41 @@ nav_order: 6
   </section>
   {% endif %}
 
-  <dialog class="ed-lightbox" id="award-lightbox" aria-label="Award certificate">
-    <button type="button" class="ed-lightbox__close" aria-label="Close">&times;</button>
-    <img class="ed-lightbox__img" alt="">
+  <dialog class="ed-lightbox" id="award-lightbox" aria-labelledby="award-lightbox-title">
+    <div class="ed-lightbox__panel">
+      <header class="ed-lightbox__head">
+        <div class="ed-lightbox__heading">
+          <span class="ed-tier ed-lightbox__tier"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-lb="type"></span></span>
+          <h2 class="ed-lightbox__title" id="award-lightbox-title" data-lb="title"></h2>
+          <p class="ed-lightbox__meta">
+            <span><i class="fa-solid fa-user" aria-hidden="true"></i><span class="ed-sr">Recipient: </span><span data-lb="recipient"></span></span>
+            <span><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span class="ed-sr">Issuer: </span><span data-lb="issuer"></span></span>
+            <span><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date: </span><time data-lb="date"></time></span>
+          </p>
+        </div>
+        <div class="ed-lightbox__tools">
+          <span class="ed-lightbox__count" data-lb="count" aria-live="polite"></span>
+          <button type="button" class="ed-lightbox__btn" data-lb-zoom aria-pressed="false">
+            <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> <span data-lb="zoomlabel">Actual size</span>
+          </button>
+          <button type="button" class="ed-lightbox__btn ed-lightbox__btn--icon" data-lb-close aria-label="Close">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+      </header>
+      <div class="ed-lightbox__stage" data-lb="stage">
+        <button type="button" class="ed-lightbox__nav ed-lightbox__nav--prev" data-lb-prev aria-label="Previous certificate">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="ed-lightbox__viewport" data-lb="viewport">
+          <img class="ed-lightbox__img" alt="" decoding="async">
+        </div>
+        <button type="button" class="ed-lightbox__nav ed-lightbox__nav--next" data-lb-next aria-label="Next certificate">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p class="ed-lightbox__hint" aria-hidden="true">← → 이전 / 다음 · Esc 닫기 · 이미지 클릭으로 확대 / 축소</p>
+    </div>
   </dialog>
   <script src="{{ '/assets/js/award_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
