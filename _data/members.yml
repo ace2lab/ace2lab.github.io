@@ -14,8 +14,9 @@
   summary: 차세대 배터리·슈퍼캐패시터 전극 소재, 지구 풍부 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 연구합니다.
     삼성전자 반도체연구소와 한국생산기술연구원(KITECH)에서 쌓은 공정 개발 경험을 바탕으로 청정 에너지 변환, 환경 정화, 지속가능한
     제조를 위한 확장 가능한 소재 기술을 개발하고 있습니다.
-  card_summary: 배터리·슈퍼캐패시터 전극 소재, 지구 풍부 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 개발하며 청정
-    에너지 변환과 지속가능한 제조 기술로 확장합니다.
+  card_summary: 차세대 배터리·슈퍼캐패시터 전극 소재, 지구 풍부 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 연구합니다.
+    전기화학 및 SCR 촉매 설계로 청정 에너지 변환과 환경 정화를 구현하고, 적층제조 기반 형상 설계로 지속가능한 제조 기술까지 확장합니다. 실험실
+    성과가 실제 공정으로 이어지도록 확장 가능한 소재 기술을 지향합니다.
   career_highlights:
     - period: 2022.03 – 현재
       role: 부교수
@@ -94,8 +95,9 @@
   summary: 초고속 제논 플래시광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 공정을 기반으로 2D 맥신·MOF 복합소재를 설계하여, 차세대
     하이브리드 슈퍼캐패시터, 고성능 리튬이온전지 음극, 고민감도 유연 생체·가스 센서를 연구합니다. POSTECH (포스텍, 포항공과대학교)·캘거리대학교 박사후연구원, 삼성전자
     무선사업부, 포항산업과학연구원(RIST)을 거친 학계·산업계 경험을 바탕으로 ACE² Lab을 공동으로 이끌고 있습니다.
-  card_summary: 초고속 제논 플래시광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 공정으로 맥신·MOF 복합소재를 설계하고, 하이브리드
-    슈퍼캐패시터·전지 음극·유연 생체/가스 센서로 확장합니다.
+  card_summary: 초고속 제논 플래시광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 공정을 기반으로 2D 맥신·MOF 복합소재를 설계합니다. 이를 통해
+    차세대 하이브리드 슈퍼캐패시터와 고성능 리튬이온전지 음극을 구현하고, 고민감도 유연 생체·가스 센서로 응용 영역을 넓힙니다. 소재 합성에서 소자
+    집적까지 이어지는 연구로 에너지 저장과 헬스케어 센싱을 연결합니다.
   career_highlights:
     - period: 2020.03 – 현재
       role: 부교수
@@ -113,7 +115,7 @@
       kind: industry
     - period: 2016.01 – 2017.07
       role: Eyes-High 박사후연구원
-      org: University of Calgary
+      org: University of Calgary, Canada
       note: 기계생산공학과
       kind: academia
     - period: 2015.02 – 2015.12
@@ -137,7 +139,7 @@
       kind: industry
     - period: 2016.01 – 2017.07
       role: Eyes-High 박사후연구원
-      org: University of Calgary 기계생산공학과
+      org: University of Calgary, Canada 기계생산공학과
       kind: academia
     - period: 2015.02 – 2015.12
       role: BK21+ 박사후연구원
@@ -151,7 +153,8 @@
       kind: academia
     - period: 2005.03 – 2008.08
       role: 공학사
-      org: POSTECH (포스텍, 포항공과대학교) 화학공학과
+      org: POSTECH (포스텍, 포항공과대학교)
+      note: 화학공학과 (3.5년 우등 조기졸업)
       kind: academia
   topics:
     - Pulsed Light Processing (IPL)
@@ -167,7 +170,7 @@
     github: https://github.com/Cdragon-github
     researchgate: https://www.researchgate.net/profile/Changyong_Yim2
   bio: POSTECH (포스텍, 포항공과대학교) 화학공학과에서 학사 및 박사학위를 취득하고, 동 대학 BK21+ 박사후연구원, 캐나다
-    캘거리대학교(University of Calgary) 기계생산공학과 Eyes-High 박사후연구원, 삼성전자 무선사업부 Staff Engineer(모바일 헬스케어 센서 H/W 개발), 포항산업과학연구원(RIST)
+    캘거리대학교(University of Calgary, Canada) 기계생산공학과 Eyes-High 박사후연구원, 삼성전자 무선사업부 Staff Engineer(모바일 헬스케어 센서 H/W 개발), 포항산업과학연구원(RIST)
     미세먼지연구센터 수석연구원을 거쳐 경북대학교 에너지화학공학과 부교수로 재직 중입니다. 초고속 제논 플래시광(IPL) 기반 광열처리 나노공정,
     레이저 유도 그래핀(LIG), 2D 맥신 및 MOF 복합소재 설계를 바탕으로 차세대 하이브리드 슈퍼캐패시터, 고성능 리튬이온전지 음극, 고민감도
     유연 생체·가스 센서를 집중 연구하고 있습니다.

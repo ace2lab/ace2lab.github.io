@@ -148,16 +148,34 @@ latest_posts:
 
         <p class="pi-showcase-card__bio">{{ pi.card_summary | default: pi.summary }}</p>
 
-        <ol class="pi-path" aria-label="Career path of {{ pi.name_en }}">
-          {% for step in pi.career_highlights %}
-            <li class="pi-path__node pi-path__node--{{ step.kind | default: 'academia' }}">
-              <span class="pi-path__period">{{ step.period }}</span>
-              <span class="pi-path__org">{{ step.org }}</span>
-              <span class="pi-path__role">{{ step.role }}</span>
-              {% if step.note %}<span class="pi-path__note">{{ step.note }}</span>{% endif %}
-            </li>
-          {% endfor %}
-        </ol>
+        <div class="pi-trail">
+          <div class="pi-trail__section">
+            <div class="pi-trail__label">Career</div>
+            <ol class="pi-path" aria-label="Career path of {{ pi.name_en }}">
+              {% for step in pi.career_highlights %}
+                <li class="pi-path__node pi-path__node--{{ step.kind | default: 'academia' }}">
+                  <span class="pi-path__period">{{ step.period }}</span>
+                  <span class="pi-path__org">{{ step.org }}</span>
+                  <span class="pi-path__role">{{ step.role }}</span>
+                  {% if step.note %}<span class="pi-path__note">{{ step.note }}</span>{% endif %}
+                </li>
+              {% endfor %}
+            </ol>
+          </div>
+          <div class="pi-trail__section pi-trail__section--education">
+            <div class="pi-trail__label">Education</div>
+            <ol class="pi-path pi-path--education" aria-label="Education of {{ pi.name_en }}">
+              {% for deg in pi.degrees %}
+                <li class="pi-path__node pi-path__node--academia pi-path__node--degree">
+                  <span class="pi-path__period">{{ deg.period }}</span>
+                  <span class="pi-path__org">{{ deg.org }}</span>
+                  <span class="pi-path__role">{{ deg.role }}</span>
+                  {% if deg.note %}<span class="pi-path__note">{{ deg.note }}</span>{% endif %}
+                </li>
+              {% endfor %}
+            </ol>
+          </div>
+        </div>
 
         <div class="pi-showcase-card__topics">
           {% for t in pi.topics limit: 4 %}

@@ -2260,11 +2260,39 @@ html[data-theme="dark"] .pi-showcase-card:hover {
 }
 
 .pi-showcase-card__bio {
-  font-size: var(--fs-body-sm);
-  line-height: 1.6;
-  color: var(--ed-text, #334155);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--c-ink);
   margin: 0;
+  letter-spacing: -0.01em;
   word-break: keep-all;
+  text-wrap: pretty;
+}
+
+/* Career + Education live in one .pi-trail so the card keeps exactly 5 subgrid rows */
+.pi-trail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ed-s4, 1rem);
+}
+
+.pi-trail__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ed-s2, 0.5rem);
+}
+
+.pi-trail__section--education {
+  margin-top: auto;
+}
+
+.pi-trail__label {
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ed-muted, #4b5a70);
 }
 
 /* Career path: vertical rail with one node per step; node tone encodes sector */
@@ -2320,6 +2348,17 @@ html[data-theme="dark"] .pi-showcase-card:hover {
 /* The newest step is the current post */
 .pi-path__node:first-child {
   --pi-node-color: var(--sector-current);
+}
+
+/* Education: degrees are never "current"; square dot marks a degree node */
+.pi-path--education .pi-path__node:first-child {
+  --pi-node-color: var(--sector-institute);
+}
+
+.pi-path--education .pi-path__node::before,
+.pi-path--education .pi-path__node:first-child::before {
+  border-radius: 2px;
+  background: var(--pi-node-color);
 }
 
 .pi-path__period {
