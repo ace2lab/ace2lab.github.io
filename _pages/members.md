@@ -218,12 +218,20 @@ nav_order: 2
   </dialog>
 {%- assign ach_members = grads | concat: ugs -%}
 {%- for m in ach_members -%}
+{%- assign ach_papers = site.data.student_papers | where_exp: 'x', 'x.members contains m.name_ko' -%}
 {%- assign ach_patents = site.data.patents | where_exp: 'x', 'x.inventors contains m.name_ko' -%}
 {%- assign ach_awards = site.data.awards | where_exp: 'x', 'x.recipient contains m.name_ko' -%}
 {%- assign ach_talks = site.data.talks | where_exp: 'x', 'x.presenters contains m.name_ko' -%}
-{%- assign ach_total = ach_patents.size | plus: ach_awards.size | plus: ach_talks.size -%}
+{%- assign ach_total = ach_papers.size | plus: ach_patents.size | plus: ach_awards.size | plus: ach_talks.size -%}
 {%- if ach_total > 0 %}
 <template id="ach-{{ m.id }}" data-total="{{ ach_total }}">
+{%- if ach_papers.size > 0 %}
+<section class="ach-group"><h3 class="ach-group__title">논문 <span class="ach-group__count">{{ ach_papers.size }}</span></h3><ul class="ach-list" role="list">
+{%- for x in ach_papers %}
+<li class="ach-item"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ x.title | escape }}</a>{% else %}{{ x.title | escape }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.year | escape }}{% if x.authors != blank %} · {{ x.authors | escape }}{% endif %}</p></li>
+{%- endfor %}
+</ul></section>
+{%- endif %}
 {%- if ach_patents.size > 0 %}
 <section class="ach-group"><h3 class="ach-group__title">특허 <span class="ach-group__count">{{ ach_patents.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_patents %}

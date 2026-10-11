@@ -1,0 +1,170 @@
+# Student & Lab Member Papers (International Journals & Domestic Publications)
+# Linked to members via 'members' containing member's Korean name (m.name_ko).
+
+- title: "InGaN-GaN-MQW-ZnO based e-nose sensors for nitrogen dioxide detection using advanced machine learning approaches"
+  journal: "Sensors and Actuators B: Chemical"
+  year: 2026
+  doi: "10.1016/j.snb.2025.138982"
+  type: "국제 SCI"
+  members: ["이희진", "팽창웅"]
+  authors: "Shanmugasundaram, K., Lee, H., Velhal, N. B., Paeng, C., In, I., Yim, C., & Jo, C."
+
+- title: "MXene‐Coated, Multi‐Layered Mulberry Paper‐Based Flexible Tactile Sensor With High Sensitivity Over a Wide Pressure Range"
+  journal: "Small"
+  year: 2026
+  doi: "10.1002/smll.202511413"
+  type: "국제 SCI"
+  members: ["안재빈"]
+  authors: "Lee, G., Ahn, J., Kim, T., & Yim, C."
+
+- title: "Nanostructured composite E-nose for selective exhaled nitric oxide detection and machine learning-assisted respiratory disease diagnosis"
+  journal: "Chemical Engineering Journal"
+  year: 2026
+  doi: "10.1016/j.cej.2025.161109"
+  type: "국제 SCI"
+  members: ["이희진", "팽창웅"]
+  authors: "Shanmugasundaram, K., Velhal, N. B., Lee, H., Paeng, C., In, I., Yim, C., & Jo, C."
+
+- title: "Dual-sensitized hollow SnO2 nanospheres with rGO and Pd for highly sensitive detection of acetone in exhaled breath"
+  journal: "Applied Surface Science"
+  year: 2025
+  doi: "10.1016/j.apsusc.2024.161877"
+  type: "국제 SCI"
+  members: ["팽창웅"]
+  authors: "Paeng, C., Shanmugasundaram, K., In, I., Jo, C., & Yim, C."
+
+- title: "UV-Enhanced Room-Temperature Ammonia Detection Using a Ga₂O₃/Ti₃C₂Tx MXene Gas Sensor"
+  journal: "IEEE Sensors Journal"
+  year: 2025
+  doi: "10.1109/JSEN.2024.3486333"
+  type: "국제 SCI"
+  members: ["팽창웅"]
+  authors: "Paeng, C., Lee, S., Kim, T., & Yim, C."
+
+- title: "Cobalt-Based Metal-Organic Framework/Nickel-Cobalt Sulphide Composite Nanopetal Arrays for High-Performance Hybrid Coin Cell Supercapacitor"
+  journal: "Journal of Energy Storage"
+  year: 2024
+  doi: "10.1016/j.est.2024.111764"
+  type: "국제 SCI"
+  members: ["이희진", "팽창웅", "니나드 벨할 박사"]
+  authors: "Velhal, N. B., Maile, N. C., Paeng, C., Lee, H., Kim, T., Kim, J., & Yim, C."
+
+- title: "Suppression of Thermally Induced Surface Traps in Colloidal Quantum Dot Solids via Ultrafast Pulsed Light"
+  journal: "Small"
+  year: 2024
+  doi: "10.1002/smll.202400380"
+  type: "국제 SCI"
+  members: ["윤태호 박사"]
+  authors: "Lee, E. J., Lee, W., Yun, T. H., You, H. R., Kim, H. J., Yu, H. N., Kim, S.-K., Kim, Y., Ahn, H., Lim, J., Yim, C., & Choi, J."
+
+- title: "Flashlight Treatment for Instantaneous Structuring of Dense MXene Film into Porous MXene/TiO2 Nanocomposite for Lithium-Ion Battery Anodes"
+  journal: "Chemical Engineering Journal"
+  year: 2024
+  doi: "10.1016/j.cej.2024.149598"
+  type: "국제 SCI"
+  members: ["이희진", "팽창웅", "윤태호 박사", "니나드 벨할 박사"]
+  authors: "Hong, J., Paeng, C., Park, S., In, I., Lee, H., Velhal, N. B., Yun, T. H., Jo, C., & Yim, C."
+
+- title: "Rapid and Flexible Humidity Sensor Based on Laser-Induced Graphene for Monitoring Human Respiration"
+  journal: "ACS Applied Nano Materials"
+  year: 2024
+  doi: "10.1021/acsanm.4c00321"
+  type: "국제 SCI"
+  members: ["팽창웅"]
+  authors: "Paeng, C., Kim, T., & Yim, C."
+
+- title: "Laser-Assisted Rapid Fabrication of Cobalt Hydroxide@Carbon Fiber Composites for High-Performance, Robust Structural Supercapacitors"
+  journal: "ACS Applied Energy Materials"
+  year: 2024
+  doi: "10.1021/acsaem.3c02742"
+  type: "국제 SCI"
+  members: ["윤태호 박사", "니나드 벨할 박사"]
+  authors: "Velhal, N. B., Yun, T. H., Kim, T., & Yim, C."
+
+- title: "Controlling pore size and photothermal layer to improve solar-porous evaporation performance"
+  journal: "Journal of Mechanical Science and Technology"
+  year: 2024
+  doi: "10.1007/s12206-024-0331-5"
+  type: "국제 SCI"
+  members: ["팽창웅"]
+  authors: "Paeng, C., & Yim, C."
+
+- title: "InGaN/GaN multi-quantum well nanowires: Enhanced trace-level NO2 detection for environmental and breath analysis"
+  journal: "Chemical Engineering Journal"
+  year: 2024
+  doi: "10.1016/j.cej.2024.150764"
+  type: "국제 SCI"
+  members: ["팽창웅"]
+  authors: "Shanmugasundaram, K., Paeng, C., In, I., Jo, C., & Yim, C."
+
+- title: "Exploring the Effect of Ultrafast Intensive Pulsed Light (IPL) Annealing on the Structure and Performance of Cobalt Oxide Electrodes for Supercapacitors"
+  journal: "ACS Applied Energy Materials"
+  year: 2023
+  doi: "10.1021/acsaem.3c01550"
+  type: "국제 SCI"
+  members: ["안준혁", "윤태호 박사", "니나드 벨할 박사"]
+  authors: "Velhal, N. B., Yun, T. H., Ahn, J., Kim, T., & Yim, C."
+
+- title: "Highly Efficient Moisture-Induced Power Generators through Flashlight-Induced Graphitization of FeCl3-Impregnated Cellulose Papers"
+  journal: "ACS Applied Electronic Materials"
+  year: 2023
+  doi: "10.1021/acsaelm.3c00823"
+  type: "국제 SCI"
+  members: ["안준혁"]
+  authors: "Ahn, J., Kim, T., & Yim, C."
+
+- title: "Regeneration of sodium bicarbonate from industrial Na-based desulfurization waste using ammonium hydroxide"
+  journal: "Journal of Industrial and Engineering Chemistry"
+  year: 2023
+  doi: "10.1016/j.jiec.2023.03.018"
+  type: "국제 SCI"
+  members: ["윤태호 박사", "이동현"]
+  authors: "Yun, T. H., Lee, D., Kim, T., & Yim, C."
+
+- title: "Flashlight-Induced Explosive Chemical Reaction for Fabrication of Flameproof Nickel Electrode"
+  journal: "International Journal of Precision Engineering and Manufacturing-Green Technology"
+  year: 2023
+  doi: "10.1007/s40684-023-00512-y"
+  type: "국제 SCI"
+  members: ["안준혁", "윤태호 박사", "니나드 벨할 박사", "이동현"]
+  authors: "Velhal, N. B., Yun, T. H., Ahn, J., Lee, D., Kim, T., & Yim, C."
+
+- title: "Tailoring cobalt oxide nanostructures for stable and high-performance energy storage applications"
+  journal: "Ceramics International"
+  year: 2023
+  doi: "10.1016/j.ceramint.2023.01.074"
+  type: "국제 SCI"
+  members: ["안준혁", "윤태호 박사", "니나드 벨할 박사"]
+  authors: "Velhal, N. B., Yun, T. H., Ahn, J., Kim, T., & Yim, C."
+
+- title: "Fabrication of Short Circuit-Preventing Electrodes with a Self-assembled Monolayer on Flashlight-Sintered Porous Copper Nanofilms"
+  journal: "International Journal of Precision Engineering and Manufacturing"
+  year: 2022
+  doi: "10.1007/s12541-022-00684-w"
+  type: "국제 SCI"
+  members: ["윤태호 박사"]
+  authors: "Yun, T. H., Kim, T., & Yim, C."
+
+- title: "Uniform Fabrication of Hollow Titania Using Anionic Modified Acrylated Polymer Template for Phase Composition Effect as Photocatalyst and Infrared Reflective Coating"
+  journal: "Nanomaterials"
+  year: 2021
+  doi: "10.3390/nano11051234"
+  type: "국제 SCI"
+  members: ["윤태호 박사"]
+  authors: "Yun, T. H., Kim, T., & Yim, C."
+
+- title: "Titanium Isopropoxide (TTIP) Treatment Strategy for V2O5-WO3/TiO2 SCR Catalysts with a Wide Operating Temperature"
+  journal: "Applied Chemistry for Engineering"
+  year: 2023
+  doi: "10.14478/ace.2023.1048"
+  type: "국내 학술지"
+  members: ["이재호"]
+  authors: "Jaeho Lee‡, Gwang-hun Cho‡, Geumyeon Lee, Changyong Yim, Young-Sei Lee*, Taewook Kim*"
+
+- title: "Quantitative Analysis of SO2 and NO2 Adsorption and Desorption on Quartz Crystal Microbalance Coated with Cobalt Gallate Metal-Organic Framework"
+  journal: "Journal of Sensor Science and Technology"
+  year: 2023
+  doi: "10.46670/JSST.2023.32.3.147"
+  type: "국내 학술지"
+  members: ["안준혁"]
+  authors: "Junhyuck Ahn‡, Taewook Kim, Sunghwan Park, Young-Sei Lee*, Changyong Yim*"

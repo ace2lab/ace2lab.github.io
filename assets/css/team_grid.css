@@ -493,9 +493,43 @@ html[data-theme="dark"] .member-card[data-role="undergrad"] {
 }
 
 .member-meta i {
-  font-size: 0.75rem;
+  font-size: 0.8125rem; /* 13px optical size, matches the 20px line box */
+  line-height: 1;
   color: var(--tm-faint);
   text-align: center;
+}
+
+/* Semantic icon colours: each row's glyph carries its own hue (light / dark pairs) */
+.member-meta .member-meta__affiliation i {
+  color: #00508c; /* KNU Cobalt Blue */
+}
+
+.member-meta .member-meta__edu i {
+  color: #6366f1; /* Academic Indigo */
+}
+
+.member-meta .member-meta__research i {
+  color: #059669; /* Science Emerald */
+}
+
+.member-meta .member-meta__muted i {
+  color: #e11d48; /* Coral Red */
+}
+
+html[data-theme="dark"] .member-meta .member-meta__affiliation i {
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .member-meta .member-meta__edu i {
+  color: #a5b4fc;
+}
+
+html[data-theme="dark"] .member-meta .member-meta__research i {
+  color: #34d399;
+}
+
+html[data-theme="dark"] .member-meta .member-meta__muted i {
+  color: #fb7185;
 }
 
 /* Row 1 — current affiliation: the card's anchor line */
@@ -1848,6 +1882,19 @@ html.ach-lock {
   font-weight: 500;
   line-height: 20px;
   color: var(--tm-ink);
+}
+
+.ach-item__title a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--tm-line-strong);
+  text-underline-offset: 3px;
+}
+
+.ach-item__title a:hover,
+.ach-item__title a:focus-visible {
+  color: var(--tm-accent);
+  text-decoration-color: currentColor;
 }
 
 .ach-item__meta {

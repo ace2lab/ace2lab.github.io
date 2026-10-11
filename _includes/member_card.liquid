@@ -4,11 +4,12 @@
 {% assign m = include.member %}
 {% assign variant = include.variant | default: 'regular' %}
 
-{% comment %} Achievement total (patents + awards + talks matched by Korean name); the popup content is rendered in members.md. {% endcomment %}
+{% comment %} Achievement total (papers + patents + awards + talks matched by Korean name); the popup content is rendered in members.md. {% endcomment %}
+{% assign ach_papers = site.data.student_papers | where_exp: 'x', 'x.members contains m.name_ko' %}
 {% assign ach_patents = site.data.patents | where_exp: 'x', 'x.inventors contains m.name_ko' %}
 {% assign ach_awards = site.data.awards | where_exp: 'x', 'x.recipient contains m.name_ko' %}
 {% assign ach_talks = site.data.talks | where_exp: 'x', 'x.presenters contains m.name_ko' %}
-{% assign ach_total = ach_patents.size | plus: ach_awards.size | plus: ach_talks.size %}
+{% assign ach_total = ach_papers.size | plus: ach_patents.size | plus: ach_awards.size | plus: ach_talks.size %}
 
 {% comment %} Degree-program role key drives the semantic colour (see team_grid.css §3b). {% endcomment %}
 {% case m.role_ko %}
