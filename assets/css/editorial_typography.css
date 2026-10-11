@@ -1598,6 +1598,14 @@ html[data-theme="dark"] .news-degree {
   max-width: 100%;
   margin-bottom: var(--ed-s3);
 }
+/* Suppress redundant journal abbr badge above graphical abstracts (journal name is in the citation line & JCR badge) */
+.publications ol.bibliography li .row .abbr abbr,
+.publications ol.bibliography li .row .abbr abbr.badge {
+  display: none !important;
+}
+.publications ol.bibliography li .row .abbr:empty {
+  display: none !important;
+}
 .publications ol.bibliography li .row .col-sm-8 {
   flex: 0 0 100%;
   max-width: 100%;
