@@ -14,6 +14,28 @@
   summary: 차세대 배터리·슈퍼캐패시터 전극 소재, 지구 풍부 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 연구합니다.
     삼성전자 반도체연구소와 한국생산기술연구원(KITECH)에서 쌓은 공정 개발 경험을 바탕으로 청정 에너지 변환, 환경 정화, 지속가능한
     제조를 위한 확장 가능한 소재 기술을 개발하고 있습니다.
+  card_summary: 배터리·슈퍼캐패시터 전극 소재, 지구 풍부 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 개발하며 청정
+    에너지 변환과 지속가능한 제조 기술로 확장합니다.
+  career_highlights:
+    - period: 2022.03 – 현재
+      role: 부교수
+      org: 경북대학교 에너지화학공학과
+      kind: academia
+    - period: 2019.02 – 2022.02
+      role: 선임연구원
+      org: 한국생산기술연구원(KITECH)
+      note: 울산본부
+      kind: institute
+    - period: 2018.03 – 2019.01
+      role: Staff Engineer
+      org: 삼성전자 반도체연구소
+      note: 차세대 메모리 공정
+      kind: industry
+    - period: 2017.03 – 2018.02
+      role: 박사후연구원
+      org: 포항공과대학교(POSTECH)
+      note: 화학공학과
+      kind: academia
   career:
     - period: 2022.03 – 현재
       role: 부교수
@@ -66,6 +88,28 @@
   summary: 초고속 제논 플래시광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 공정을 기반으로 2D 맥신·MOF 복합소재를 설계하여, 차세대
     하이브리드 슈퍼캐패시터, 고성능 리튬이온전지 음극, 고민감도 유연 생체·가스 센서를 연구합니다. 캘거리대학교 박사후연구원, 삼성전자
     무선사업부, 포항산업과학연구원(RIST)을 거친 학계·산업계 경험을 바탕으로 ACE² Lab을 공동으로 이끌고 있습니다.
+  card_summary: 초고속 제논 플래시광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 공정으로 맥신·MOF 복합소재를 설계하고, 하이브리드
+    슈퍼캐패시터·전지 음극·유연 생체/가스 센서로 확장합니다.
+  career_highlights:
+    - period: 2020.03 – 현재
+      role: 부교수
+      org: 경북대학교 에너지화학공학과
+      kind: academia
+    - period: 2019.08 – 2020.02
+      role: 수석연구원
+      org: 포항산업과학연구원(RIST)
+      note: 미세먼지연구센터
+      kind: institute
+    - period: 2017.09 – 2019.07
+      role: Staff Engineer
+      org: 삼성전자 무선사업부
+      note: 모바일 헬스케어 센서 H/W 개발
+      kind: industry
+    - period: 2016.01 – 2017.07
+      role: Eyes-High 박사후연구원
+      org: University of Calgary
+      note: 기계생산공학과
+      kind: academia
   career:
     - period: 2020.03 – 현재
       role: 부교수

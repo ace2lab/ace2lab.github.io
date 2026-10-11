@@ -91,80 +91,112 @@ latest_posts:
   </div>
 </div>
 
-## About the Laboratory
+<section class="lab-about" aria-labelledby="about-lab-title">
+  <h2 id="about-lab-title" class="lab-about__title">About the Laboratory</h2>
+  <p class="lab-about__lead">
+    ACE² Lab은 경북대학교 과학기술대학 에너지화학공학과에서 '김태욱 부교수'와 '임창용 부교수'가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지
+    공학 연구실입니다.
+  </p>
 
-ACE² Lab은 경북대학교 과학기술대학 에너지화학공학과에서 '김태욱 부교수'와 '임창용 부교수'가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지 공학 연구실입니다.
+  <div class="lab-about__pillars">
+    <div class="lab-about__pillar">
+      <div class="lab-about__pillar-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+      <h3 class="lab-about__pillar-title">Energy Storage</h3>
+      <p class="lab-about__pillar-desc">MXene·MOF 복합소재 기반 하이브리드 슈퍼캐패시터와 고성능 리튬이온전지 음극</p>
+    </div>
+    <div class="lab-about__pillar">
+      <div class="lab-about__pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+      <h3 class="lab-about__pillar-title">Photonic Processing</h3>
+      <p class="lab-about__pillar-desc">초고속 펄스광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 나노공정, 콜로이드 양자점 광전소자</p>
+    </div>
+    <div class="lab-about__pillar">
+      <div class="lab-about__pillar-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+      <h3 class="lab-about__pillar-title">Sensors &amp; Devices</h3>
+      <p class="lab-about__pillar-desc">고민감도 유연 생체·환경 센서와 실시간 모니터링 소자</p>
+    </div>
+  </div>
 
-초고속 펄스광(Intense Pulsed Light, IPL) 기반 광열처리 나노공정, 레이저 유도 그래핀(Laser-Induced Graphene, LIG), 2D 맥신(MXene) 및 금속유기골격체(MOF) 기반 복합소재 설계를 바탕으로 차세대 하이브리드 슈퍼캐패시터, 고성능 리튬이온전지 음극, 고민감도 유연 생체·환경 센서 및 고품질 양자점 광전소자를 집중적으로 연구하고 있습니다.
-
-The laboratory is jointly directed by two Principal Investigators:
+  <p class="lab-about__pis-intro">The laboratory is jointly directed by two Principal Investigators:</p>
 
 {% assign pis = site.data.members | where: "group", "pi" | sort: "order" %}
 
-<div class="pi-showcase">
-  {% for pi in pis %}
-    <div class="pi-showcase-card" id="pi-{{ pi.id }}">
-      <div class="pi-showcase-card__portrait">
-        <img
-          src="{{ pi.photo | relative_url }}"
-          alt="{{ pi.name_en }}"
-          class="pi-showcase-card__img"
-          loading="lazy"
-        >
-      </div>
-      <div class="pi-showcase-card__content">
-        <div>
-          <div class="pi-showcase-card__role">
-            <span class="pi-role-tag">Co-Principal Investigator</span>
-            <span class="pi-rank-tag">{{ pi.title_en }} ({{ pi.title_ko }})</span>
+  <div class="pi-showcase">
+    {% for pi in pis %}
+      <article class="pi-showcase-card" id="pi-{{ pi.id }}">
+        <header class="pi-showcase-card__head">
+          <div class="pi-showcase-card__portrait">
+            <img
+              src="{{ pi.photo | relative_url }}"
+              alt="{{ pi.name_en }}"
+              class="pi-showcase-card__img"
+              style="object-position: {{ pi.photo_position | default: 'center top' }};"
+              loading="lazy"
+            >
           </div>
-          <h3 class="pi-showcase-card__name">
-            {{ pi.name_en }}
-            <span class="pi-showcase-card__name-ko">{{ pi.name_ko }} 교수</span>
-          </h3>
-          <div class="pi-showcase-card__affil">
-            {{ pi.affiliation_en }} ({{ pi.affiliation_ko }})
+          <div class="pi-showcase-card__id">
+            <div class="pi-showcase-card__role">
+              <span class="pi-role-tag">Co-Principal Investigator</span>
+              <span class="pi-rank-tag">{{ pi.title_en }} ({{ pi.title_ko }})</span>
+            </div>
+            <h3 class="pi-showcase-card__name">
+              {{ pi.name_en }}
+              <span class="pi-showcase-card__name-ko">{{ pi.name_ko }} 교수</span>
+            </h3>
+            <div class="pi-showcase-card__affil">{{ pi.affiliation_en }} ({{ pi.affiliation_ko }})</div>
           </div>
-          <p class="pi-showcase-card__bio">{{ pi.bio }}</p>
+        </header>
+
+        <p class="pi-showcase-card__bio">{{ pi.card_summary | default: pi.summary }}</p>
+
+        <ol class="pi-path" aria-label="Career path of {{ pi.name_en }}">
+          {% for step in pi.career_highlights %}
+            <li class="pi-path__node pi-path__node--{{ step.kind | default: 'academia' }}">
+              <span class="pi-path__period">{{ step.period }}</span>
+              <span class="pi-path__role">{{ step.role }}</span>
+              <span class="pi-path__org">{{ step.org }}</span>
+              {% if step.note %}<span class="pi-path__note">{{ step.note }}</span>{% endif %}
+            </li>
+          {% endfor %}
+        </ol>
+
+        <div class="pi-showcase-card__topics">
+          {% for t in pi.topics %}
+            <span class="pi-topic-pill">{{ t }}</span>
+          {% endfor %}
         </div>
-        <div>
-          <div class="pi-showcase-card__topics">
-            {% for t in pi.topics %}
-              <span class="pi-topic-pill">{{ t }}</span>
-            {% endfor %}
-          </div>
-          <div class="pi-showcase-card__actions">
-            {% if pi.email and pi.email != "" %}
-              <a href="mailto:{{ pi.email }}" class="pi-action-btn" title="Email" aria-label="Email">
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i> <span>Email</span>
-              </a>
-            {% endif %}
-            {% if pi.links.scholar and pi.links.scholar != "" %}
-              <a href="{{ pi.links.scholar }}" target="_blank" rel="noopener" class="pi-action-btn" title="Google Scholar" aria-label="Google Scholar">
-                <i class="ai ai-google-scholar" aria-hidden="true"></i> <span>Scholar</span>
-              </a>
-            {% endif %}
-            {% if pi.links.orcid and pi.links.orcid != "" %}
-              <a href="{{ pi.links.orcid }}" target="_blank" rel="noopener" class="pi-action-btn" title="ORCID" aria-label="ORCID">
-                <i class="ai ai-orcid" aria-hidden="true"></i> <span>ORCID</span>
-              </a>
-            {% endif %}
-            {% if pi.links.researchgate and pi.links.researchgate != "" %}
-              <a href="{{ pi.links.researchgate }}" target="_blank" rel="noopener" class="pi-action-btn" title="ResearchGate" aria-label="ResearchGate">
-                <i class="ai ai-researchgate" aria-hidden="true"></i> <span>ResearchGate</span>
-              </a>
-            {% endif %}
-            {% if pi.links.github and pi.links.github != "" %}
-              <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-action-btn" title="GitHub" aria-label="GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span>
-              </a>
-            {% endif %}
-          </div>
+
+        <div class="pi-showcase-card__actions">
+          {% if pi.email and pi.email != "" %}
+            <a href="mailto:{{ pi.email }}" class="pi-action-btn" title="Email" aria-label="Email">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i> <span>Email</span>
+            </a>
+          {% endif %}
+          {% if pi.links.scholar and pi.links.scholar != "" %}
+            <a href="{{ pi.links.scholar }}" target="_blank" rel="noopener" class="pi-action-btn" title="Google Scholar" aria-label="Google Scholar">
+              <i class="ai ai-google-scholar" aria-hidden="true"></i> <span>Scholar</span>
+            </a>
+          {% endif %}
+          {% if pi.links.orcid and pi.links.orcid != "" %}
+            <a href="{{ pi.links.orcid }}" target="_blank" rel="noopener" class="pi-action-btn" title="ORCID" aria-label="ORCID">
+              <i class="ai ai-orcid" aria-hidden="true"></i> <span>ORCID</span>
+            </a>
+          {% endif %}
+          {% if pi.links.researchgate and pi.links.researchgate != "" %}
+            <a href="{{ pi.links.researchgate }}" target="_blank" rel="noopener" class="pi-action-btn" title="ResearchGate" aria-label="ResearchGate">
+              <i class="ai ai-researchgate" aria-hidden="true"></i> <span>ResearchGate</span>
+            </a>
+          {% endif %}
+          {% if pi.links.github and pi.links.github != "" %}
+            <a href="{{ pi.links.github }}" target="_blank" rel="noopener" class="pi-action-btn" title="GitHub" aria-label="GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> <span>GitHub</span>
+            </a>
+          {% endif %}
         </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
+      </article>
+    {% endfor %}
+
+  </div>
+</section>
 
 ---
 

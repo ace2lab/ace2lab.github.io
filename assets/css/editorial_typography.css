@@ -2046,29 +2046,94 @@ html[data-theme="dark"] .news-degree {
 }
 
 /* ------------------------------------------------------------
-   Co-PI Executive Showcase (Landing Page)
+   About the Laboratory (Landing Page): 3 pillars + Co-PI cards
+   ------------------------------------------------------------ */
+.lab-about {
+  margin: var(--ed-s8, 2rem) 0;
+}
+
+.lab-about__title {
+  margin-top: 0;
+}
+
+.lab-about__lead {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--global-text-color);
+  max-width: 68ch;
+}
+
+.lab-about__pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--ed-s4, 1rem);
+  margin: var(--ed-s6, 1.5rem) 0;
+}
+
+.lab-about__pillar {
+  padding: var(--ed-s4, 1rem) var(--ed-s5, 1.25rem);
+  background: var(--global-code-bg-color, #f8fafc);
+  border: 1px solid var(--ed-line, #e2e8f0);
+  border-top: 3px solid var(--color-ace2-navy, #1e3a5f);
+  border-radius: 8px;
+}
+
+html[data-theme="dark"] .lab-about__pillar {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  border-top-color: var(--color-ace2-navy, #9db7d9);
+}
+
+.lab-about__pillar-icon {
+  font-size: 1.15rem;
+  color: var(--color-knu-crimson, #a3123a);
+  margin-bottom: var(--ed-s2, 0.5rem);
+}
+
+.lab-about__pillar-title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin: 0 0 var(--ed-s1, 0.25rem);
+  color: var(--ed-ink, #0f172a);
+}
+
+.lab-about__pillar-desc {
+  font-size: var(--fs-meta);
+  line-height: 1.55;
+  margin: 0;
+  color: var(--ed-text, #334155);
+}
+
+.lab-about__pis-intro {
+  margin: var(--ed-s6, 1.5rem) 0 0;
+  color: var(--ed-muted, #4b5a70);
+}
+
+/* ------------------------------------------------------------
+   Co-PI Executive Showcase: cards share rows via subgrid so the
+   summary, career path, topics and actions align across both PIs
    ------------------------------------------------------------ */
 .pi-showcase {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--ed-s6, 1.5rem);
-  margin: var(--ed-s8, 2rem) 0;
+  margin: var(--ed-s6, 1.5rem) 0 var(--ed-s8, 2rem);
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 900px) {
   .pi-showcase {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 .pi-showcase-card {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: var(--ed-s6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ed-s4, 1rem);
   background: var(--global-card-bg-color, #ffffff);
   border: 1px solid var(--ed-line, #e2e8f0);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.25rem 1.75rem;
   box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
   transition:
     transform 0.25s ease,
@@ -2076,6 +2141,15 @@ html[data-theme="dark"] .news-degree {
     border-color 0.2s ease;
   position: relative;
   overflow: hidden;
+}
+
+@supports (grid-template-rows: subgrid) {
+  .pi-showcase-card {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    row-gap: var(--ed-s4, 1rem);
+  }
 }
 
 .pi-showcase-card::before {
@@ -2092,25 +2166,39 @@ html[data-theme="dark"] .news-degree {
 .pi-showcase-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.1);
-  border-color: rgba(163, 18, 58, 0.35);
+  border-color: var(--color-knu-crimson-soft, rgba(163, 18, 58, 0.35));
+}
+
+html[data-theme="dark"] .pi-showcase-card {
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .pi-showcase-card:hover {
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.5);
+  border-color: rgba(240, 112, 143, 0.4);
+}
+
+.pi-showcase-card__head {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: var(--ed-s4, 1rem);
+  align-items: start;
 }
 
 .pi-showcase-card__portrait {
-  width: 160px;
-  height: 200px;
+  width: 104px;
+  height: 130px;
   border-radius: 8px;
   overflow: hidden;
   background: var(--global-code-bg-color, #f1f5f9);
   border: 1px solid var(--ed-line, #e2e8f0);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  flex-shrink: 0;
 }
 
 .pi-showcase-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
   transition: transform 0.3s ease;
 }
 
@@ -2118,10 +2206,7 @@ html[data-theme="dark"] .news-degree {
   transform: scale(1.04);
 }
 
-.pi-showcase-card__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.pi-showcase-card__id {
   min-width: 0;
 }
 
@@ -2140,7 +2225,7 @@ html[data-theme="dark"] .news-degree {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-knu-crimson, #a3123a);
-  background: rgba(163, 18, 58, 0.08);
+  background: var(--color-knu-crimson-soft, rgba(163, 18, 58, 0.08));
   padding: 2px 7px;
   border-radius: 4px;
 }
@@ -2169,25 +2254,97 @@ html[data-theme="dark"] .news-degree {
 }
 
 .pi-showcase-card__affil {
-  font-size: 0.82rem;
+  font-size: var(--fs-label);
   color: var(--ed-muted, #64748b);
-  margin-bottom: 0.65rem;
   line-height: 1.4;
 }
 
 .pi-showcase-card__bio {
-  font-size: 0.88rem;
+  font-size: var(--fs-body-sm);
   line-height: 1.6;
   color: var(--ed-text, #334155);
-  margin-bottom: 0.75rem;
+  margin: 0;
   word-break: keep-all;
+}
+
+/* Career path: vertical rail with one node per step; node tone encodes sector */
+.pi-path {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 var(--ed-s5, 1.25rem);
+  border-left: 2px solid var(--ed-line, #e2e8f0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ed-s3, 0.75rem);
+}
+
+.pi-path__node {
+  --pi-node-color: var(--color-ace2-navy, #1e3a5f);
+  position: relative;
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  column-gap: var(--ed-s3, 0.75rem);
+  align-items: baseline;
+  line-height: 1.45;
+}
+
+.pi-path__node::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--ed-s5, 1.25rem) - 6px);
+  top: 0.45em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--global-card-bg-color, #ffffff);
+  border: 2px solid var(--pi-node-color);
+}
+
+.pi-path__node:first-child::before {
+  background: var(--pi-node-color);
+}
+
+.pi-path__node--industry {
+  --pi-node-color: var(--color-knu-crimson, #a3123a);
+}
+
+.pi-path__node--institute {
+  --pi-node-color: var(--c-subtle, #64748b);
+}
+
+.pi-path__period {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  color: var(--ed-muted, #4b5a70);
+  white-space: nowrap;
+}
+
+.pi-path__role {
+  grid-column: 2;
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  color: var(--ed-ink, #0f172a);
+}
+
+.pi-path__org {
+  grid-column: 2;
+  font-size: var(--fs-meta);
+  color: var(--ed-text, #334155);
+}
+
+.pi-path__note {
+  grid-column: 2;
+  font-size: var(--fs-label);
+  color: var(--ed-muted, #4b5a70);
 }
 
 .pi-showcase-card__topics {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 5px;
-  margin-bottom: 0.85rem;
 }
 
 .pi-topic-pill {
@@ -2203,8 +2360,9 @@ html[data-theme="dark"] .news-degree {
 .pi-showcase-card__actions {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   gap: 8px;
-  padding-top: 0.65rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--ed-line, #e2e8f0);
 }
 
@@ -2232,13 +2390,24 @@ html[data-theme="dark"] .news-degree {
 
 @media (max-width: 640px) {
   .pi-showcase-card {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    padding: 1.25rem 1rem 1rem 1.25rem;
+  }
+  .pi-showcase-card__head {
+    grid-template-columns: 88px minmax(0, 1fr);
   }
   .pi-showcase-card__portrait {
-    width: 140px;
-    height: 175px;
-    margin: 0 auto;
+    width: 88px;
+    height: 110px;
+  }
+  .pi-path__node {
+    grid-template-columns: 1fr;
+  }
+  .pi-path__period,
+  .pi-path__role,
+  .pi-path__org,
+  .pi-path__note {
+    grid-column: 1;
+    grid-row: auto;
   }
 }
 
