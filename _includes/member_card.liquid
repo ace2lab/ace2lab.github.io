@@ -97,28 +97,20 @@
               {%- if m.education.first -%}
                 {%- for item in m.education -%}
                   <span class="member-meta__edu-line">
-                    {%- assign edu_words = item | split: ' ' -%}
-                    {%- for w in edu_words -%}
-                      {%- if w contains '학번)' -%}
-                        <span class="tm-nb">{{ w | escape }}</span>
-                      {%- else -%}
-                        {{ w | escape }}
-                      {%- endif -%}
-                      {%- unless forloop.last %} {% endunless -%}
-                    {%- endfor -%}
+                    {%- if item contains " ('" -%}
+                      {{ item | replace: " ('", "&nbsp;<span class=\"tm-nb\">('" | append: "</span>" }}
+                    {%- else -%}
+                      {{ item | escape }}
+                    {%- endif -%}
                   </span>
                 {%- endfor -%}
               {%- else -%}
                 <span class="member-meta__edu-line">
-                  {%- assign edu_words = m.education | split: ' ' -%}
-                  {%- for w in edu_words -%}
-                    {%- if w contains '학번)' -%}
-                      <span class="tm-nb">{{ w | escape }}</span>
-                    {%- else -%}
-                      {{ w | escape }}
-                    {%- endif -%}
-                    {%- unless forloop.last %} {% endunless -%}
-                  {%- endfor -%}
+                  {%- if m.education contains " ('" -%}
+                    {{ m.education | replace: " ('", "&nbsp;<span class=\"tm-nb\">('" | append: "</span>" }}
+                  {%- else -%}
+                    {{ m.education | escape }}
+                  {%- endif -%}
                 </span>
               {%- endif -%}
             </span>
