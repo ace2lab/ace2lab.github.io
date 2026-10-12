@@ -556,6 +556,7 @@ html[data-theme="dark"] .member-meta .member-meta__muted i {
 .member-meta__edu-line {
   display: block;
   word-break: keep-all;
+  white-space: pre-wrap;
 }
 
 /* Cohort tokens like ('18학번) never split between the quote and the digits */
