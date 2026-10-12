@@ -43,11 +43,6 @@ nav_order: 2
 
   <!-- Tab bar: hidden until ace2_tabs.js marks the container .is-tabbed (no JS / print = all panels in sequence) -->
   <nav class="team-tabnav" role="tablist" aria-label="Members tabs">
-    {% if current_count > 0 %}
-      <button type="button" role="tab" class="team-tab" id="tab-members" aria-controls="panel-members" aria-selected="false" tabindex="-1" data-hash="members" data-default="true">
-        Current Members<span class="team-tab__count">{{ current_count }}</span>
-      </button>
-    {% endif %}
     {% if yim %}
       <button type="button" role="tab" class="team-tab" id="tab-yim" aria-controls="panel-yim" aria-selected="false" tabindex="-1" data-hash="yim">
         Prof. {{ yim.name_en }}
@@ -56,6 +51,11 @@ nav_order: 2
     {% if kim %}
       <button type="button" role="tab" class="team-tab" id="tab-kim" aria-controls="panel-kim" aria-selected="false" tabindex="-1" data-hash="kim">
         Prof. {{ kim.name_en }}
+      </button>
+    {% endif %}
+    {% if current_count > 0 %}
+      <button type="button" role="tab" class="team-tab" id="tab-members" aria-controls="panel-members" aria-selected="false" tabindex="-1" data-hash="members" data-default="true">
+        Current Members<span class="team-tab__count">{{ current_count }}</span>
       </button>
     {% endif %}
     {% if alumni.size > 0 %}
