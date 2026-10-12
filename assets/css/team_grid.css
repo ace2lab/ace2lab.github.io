@@ -546,6 +546,18 @@ html[data-theme="dark"] .member-meta .member-meta__muted i {
   word-break: keep-all;
 }
 
+.member-meta__edu-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.member-meta__edu-line {
+  display: block;
+  word-break: keep-all;
+}
+
 /* Cohort tokens like ('18학번) never split between the quote and the digits */
 .tm-nb {
   white-space: nowrap;
