@@ -1,11 +1,19 @@
 # ACE² Lab Conference Presentations & Talks
 
-- no: 19
+- no: 20
   year: 2026
   title: "Ultra-Fast Photothermal Phase Engineering of VO₂(B) to VO₂(M) via Intense Pulsed Light"
   presenters: "김다윈, 임창용, 김태욱"
   conference: "한국화학공학회 2026년도 추계학술대회"
   date: "2026.10.08"
+  location: "부산 BEXCO"
+
+- no: 19
+  year: 2026
+  title: "IPL 초고속 광열 공정 기반 W-doped VO₂ 합성 및 다기능 어플리케이션"
+  presenters: "이종민, 김경진, 이동건"
+  conference: "2026 Chem Frontier 화학공학 대학생 창의설계 경진대회"
+  date: "2026.10.06"
   location: "부산 BEXCO"
 
 - no: 18
@@ -75,7 +83,7 @@
 - no: 10
   year: 2025
   title: "프린트 토너 기반 플래시 유도 그래핀(FIG) 패터닝 및 마이크로 슈퍼커패시터 전극 응용"
-  presenters: "안재빈, 김민수, 김성우, 김태욱, 임창용"
+  presenters: "안재빈, 김민수, 김성우"
   conference: "2025 Chem Frontier 화학공학 대학생 창의설계 경진대회"
   date: "2025.09.26"
   location: "수원 컨벤션센터"
@@ -115,7 +123,7 @@
 - no: 5
   year: 2024
   title: "대량생산 가능한 Electrospun MXene/Carbon 나노섬유 웨어러블 스트레인 센서의 제조 기술 개발"
-  presenters: "김다윈, 안재빈, 이동호, 김태욱, 임창용"
+  presenters: "김다윈, 안재빈, 이동호"
   conference: "2024 Chem Frontier 화학공학 대학생 창의설계 경진대회"
   date: "2024.10.16"
   location: "부산 BEXCO"
