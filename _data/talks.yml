@@ -1,12 +1,28 @@
 # ACE² Lab Conference Presentations & Talks
 
-- no: 17
+- no: 19
   year: 2026
   title: "Ultra-Fast Photothermal Phase Engineering of VO₂(B) to VO₂(M) via Intense Pulsed Light"
   presenters: "김다윈, 임창용, 김태욱"
   conference: "한국화학공학회 2026년도 추계학술대회"
   date: "2026.10.08"
   location: "부산 BEXCO"
+
+- no: 18
+  year: 2026
+  title: "Synergistic Structural and Chemical Design of Vertically Aligned MXenes for Enhanced Pseudocapacitance"
+  presenters: "이동호, 김태욱, 임창용"
+  conference: "한국화학공학회 2026년도 추계학술대회"
+  date: "2026.10.06"
+  location: "부산 BEXCO"
+
+- no: 17
+  year: 2026
+  title: "Thermal Annealing-Induced Surface Modification of Vertically Aligned MXene/TiO₂ Hybrid Films for High-Performance Supercapacitors"
+  presenters: "이동호, 김태욱, 임창용"
+  conference: "한국화학공학회 2026년도 춘계학술대회"
+  date: "2026.04.24"
+  location: "제주 ICC"
 
 - no: 16
   year: 2026
