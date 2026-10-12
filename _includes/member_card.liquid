@@ -96,22 +96,10 @@
               <span class="tm-sr-only">학력: </span>
               {%- if m.education.first -%}
                 {%- for item in m.education -%}
-                  <span class="member-meta__edu-line">
-                    {%- if item contains " ('" -%}
-                      {{ item | replace: " ('", "&nbsp;<span class=\"tm-nb\">('" | append: "</span>" }}
-                    {%- else -%}
-                      {{ item | escape }}
-                    {%- endif -%}
-                  </span>
+                  <span class="member-meta__edu-line">{{ item }}</span>
                 {%- endfor -%}
               {%- else -%}
-                <span class="member-meta__edu-line">
-                  {%- if m.education contains " ('" -%}
-                    {{ m.education | replace: " ('", "&nbsp;<span class=\"tm-nb\">('" | append: "</span>" }}
-                  {%- else -%}
-                    {{ m.education | escape }}
-                  {%- endif -%}
-                </span>
+                <span class="member-meta__edu-line">{{ m.education }}</span>
               {%- endif -%}
             </span>
           </li>
