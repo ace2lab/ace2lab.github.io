@@ -1,6 +1,14 @@
 # ACE² Lab Conference Presentations & Talks
 
-- no: 20
+- no: 22
+  year: 2026
+  title: "Ultrafast Photothermal Synthesis of Co₃O₄ Nanoparticles on Carbon Nanofibers for Supercapacitor Electrodes"
+  presenters: "이재호, 김태욱, 임창용"
+  conference: "한국화학공학회 2026년도 추계학술대회"
+  date: "2026.10.08"
+  location: "부산 BEXCO"
+
+- no: 21
   year: 2026
   title: "Ultra-Fast Photothermal Phase Engineering of VO₂(B) to VO₂(M) via Intense Pulsed Light"
   presenters: "김다윈, 임창용, 김태욱"
@@ -8,7 +16,7 @@
   date: "2026.10.08"
   location: "부산 BEXCO"
 
-- no: 19
+- no: 20
   year: 2026
   title: "IPL 초고속 광열 공정 기반 W-doped VO₂ 합성 및 다기능 어플리케이션"
   presenters: "이종민, 김경진, 이동건"
@@ -16,13 +24,21 @@
   date: "2026.10.06"
   location: "부산 BEXCO"
 
-- no: 18
+- no: 19
   year: 2026
   title: "Synergistic Structural and Chemical Design of Vertically Aligned MXenes for Enhanced Pseudocapacitance"
   presenters: "이동호, 김태욱, 임창용"
   conference: "한국화학공학회 2026년도 추계학술대회"
   date: "2026.10.06"
   location: "부산 BEXCO"
+
+- no: 18
+  year: 2026
+  title: "Intense Pulsed Light-Assisted Fabrication of Cobalt Oxides on Porous Carbon Nanofibers for Supercapacitor Electrodes"
+  presenters: "이재호, 김태욱, 임창용"
+  conference: "한국화학공학회 2026년도 춘계학술대회"
+  date: "2026.04.24"
+  location: "제주 ICC"
 
 - no: 17
   year: 2026
