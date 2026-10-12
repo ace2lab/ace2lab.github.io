@@ -1,5 +1,21 @@
 # ACE² Lab Conference Presentations & Talks
 
+- no: 17
+  year: 2026
+  title: "Ultra-Fast Photothermal Phase Engineering of VO₂(B) to VO₂(M) via Intense Pulsed Light"
+  presenters: "김다윈, 임창용, 김태욱"
+  conference: "한국화학공학회 2026년도 추계학술대회"
+  date: "2026.10.08"
+  location: "부산 BEXCO"
+
+- no: 16
+  year: 2026
+  title: "Ultrafast Synthesis of Monoclinic Vanadium Dioxide VO₂(M) via Intense Pulsed Light Sintering"
+  presenters: "김다윈, 김태욱, 임창용"
+  conference: "한국화학공학회 2026년도 춘계학술대회"
+  date: "2026.04.23"
+  location: "제주 ICC"
+
 - no: 15
   year: 2025
   title: "Fabrication of TiO₂/MXene Composite Photocatalysts via Intense Pulsed Light Processing for Organic Pollutant Removal"
