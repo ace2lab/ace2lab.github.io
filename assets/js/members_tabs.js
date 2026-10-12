@@ -111,7 +111,7 @@
       if (hit.target) scrollToTarget(hit.target);
       else if (!isInitial) realignIfStuck();
     } else if (isInitial) {
-      activate(byHash.yim || tabs[0]);
+      activate(byHash.members || byHash.yim || tabs[0]);
     }
   }
 
