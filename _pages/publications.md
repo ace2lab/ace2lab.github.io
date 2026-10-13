@@ -67,44 +67,46 @@ nav_order: 5
         International Journals
         <span class="ed-section__count">{{ intl_count }}</span>
       </h2>
+      <p class="pub-pi-filter__note" id="pubPiFilterNote">※ Includes publications prior to the PI's appointment at Kyungpook National University.</p>
 
-      <fieldset class="pub-pi-filter" id="pubPiFilter" role="radiogroup" aria-labelledby="pubPiFilterLegend" aria-describedby="pubPiFilterNote" hidden>
-        <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> PI</legend>
-        <div class="pub-pi-filter__options">
-          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiAll" value="all" autocomplete="off" checked>
-          <label class="pub-pi-filter__pill" for="pubPiAll">All <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
-          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiYim" value="yim" autocomplete="off">
-          <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">56</span></label>
-          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiKim" value="kim" autocomplete="off">
-          <label class="pub-pi-filter__pill" for="pubPiKim"><span class="pub-pi-filter__honorific">Prof. </span>Taewook Kim <span class="pub-pi-filter__count" data-pi-count="kim">31</span></label>
-        </div>
-        <p class="pub-pi-filter__note" id="pubPiFilterNote">※ Includes publications prior to the PI's appointment at Kyungpook National University.</p>
-      </fieldset>
-      <p class="pub-pi-filter__status" id="pubPiStatus" role="status" aria-live="polite"></p>
-
-      <nav class="pub-year-jump" aria-label="Jump to publication year">
-        <div class="pub-year-jump__inner">
-          <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Year</span>
-          <div class="pub-year-jump__chips" id="pubYearChips">
-            <a href="#y2026" class="pub-year-chip" data-year="2026">2026<span class="pub-year-chip__count">5</span></a>
-            <a href="#y2025" class="pub-year-chip" data-year="2025">2025<span class="pub-year-chip__count">2</span></a>
-            <a href="#y2024" class="pub-year-chip" data-year="2024">2024<span class="pub-year-chip__count">7</span></a>
-            <a href="#y2023" class="pub-year-chip" data-year="2023">2023<span class="pub-year-chip__count">8</span></a>
-            <a href="#y2022" class="pub-year-chip" data-year="2022">2022<span class="pub-year-chip__count">5</span></a>
-            <a href="#y2021" class="pub-year-chip" data-year="2021">2021<span class="pub-year-chip__count">7</span></a>
-            <a href="#y2020" class="pub-year-chip" data-year="2020">2020<span class="pub-year-chip__count">6</span></a>
-            <a href="#y2019" class="pub-year-chip" data-year="2019">2019<span class="pub-year-chip__count">3</span></a>
-            <a href="#y2018" class="pub-year-chip" data-year="2018">2018<span class="pub-year-chip__count">3</span></a>
-            <a href="#y2017" class="pub-year-chip" data-year="2017">2017<span class="pub-year-chip__count">11</span></a>
-            <a href="#y2016" class="pub-year-chip" data-year="2016">2016<span class="pub-year-chip__count">3</span></a>
-            <a href="#y2015" class="pub-year-chip" data-year="2015">2015<span class="pub-year-chip__count">10</span></a>
-            <a href="#y2014" class="pub-year-chip" data-year="2014">2014<span class="pub-year-chip__count">1</span></a>
-            <a href="#y2013" class="pub-year-chip" data-year="2013">2013<span class="pub-year-chip__count">2</span></a>
-            <a href="#y2012" class="pub-year-chip" data-year="2012">2012<span class="pub-year-chip__count">5</span></a>
-            <a href="#y2011" class="pub-year-chip" data-year="2011">2011<span class="pub-year-chip__count">4</span></a>
+      <div class="pub-sticky-toolbar">
+        <fieldset class="pub-pi-filter" id="pubPiFilter" role="radiogroup" aria-labelledby="pubPiFilterLegend" aria-describedby="pubPiFilterNote" hidden>
+          <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> PI</legend>
+          <div class="pub-pi-filter__options">
+            <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiAll" value="all" autocomplete="off" checked>
+            <label class="pub-pi-filter__pill" for="pubPiAll">All <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
+            <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiYim" value="yim" autocomplete="off">
+            <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">56</span></label>
+            <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiKim" value="kim" autocomplete="off">
+            <label class="pub-pi-filter__pill" for="pubPiKim"><span class="pub-pi-filter__honorific">Prof. </span>Taewook Kim <span class="pub-pi-filter__count" data-pi-count="kim">31</span></label>
           </div>
-        </div>
-      </nav>
+        </fieldset>
+        <p class="pub-pi-filter__status" id="pubPiStatus" role="status" aria-live="polite"></p>
+
+        <nav class="pub-year-jump" aria-label="Jump to publication year">
+          <div class="pub-year-jump__inner">
+            <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Year</span>
+            <div class="pub-year-jump__chips" id="pubYearChips">
+              <a href="#y2026" class="pub-year-chip" data-year="2026">2026<span class="pub-year-chip__count">5</span></a>
+              <a href="#y2025" class="pub-year-chip" data-year="2025">2025<span class="pub-year-chip__count">2</span></a>
+              <a href="#y2024" class="pub-year-chip" data-year="2024">2024<span class="pub-year-chip__count">7</span></a>
+              <a href="#y2023" class="pub-year-chip" data-year="2023">2023<span class="pub-year-chip__count">8</span></a>
+              <a href="#y2022" class="pub-year-chip" data-year="2022">2022<span class="pub-year-chip__count">5</span></a>
+              <a href="#y2021" class="pub-year-chip" data-year="2021">2021<span class="pub-year-chip__count">7</span></a>
+              <a href="#y2020" class="pub-year-chip" data-year="2020">2020<span class="pub-year-chip__count">6</span></a>
+              <a href="#y2019" class="pub-year-chip" data-year="2019">2019<span class="pub-year-chip__count">3</span></a>
+              <a href="#y2018" class="pub-year-chip" data-year="2018">2018<span class="pub-year-chip__count">3</span></a>
+              <a href="#y2017" class="pub-year-chip" data-year="2017">2017<span class="pub-year-chip__count">11</span></a>
+              <a href="#y2016" class="pub-year-chip" data-year="2016">2016<span class="pub-year-chip__count">3</span></a>
+              <a href="#y2015" class="pub-year-chip" data-year="2015">2015<span class="pub-year-chip__count">10</span></a>
+              <a href="#y2014" class="pub-year-chip" data-year="2014">2014<span class="pub-year-chip__count">1</span></a>
+              <a href="#y2013" class="pub-year-chip" data-year="2013">2013<span class="pub-year-chip__count">2</span></a>
+              <a href="#y2012" class="pub-year-chip" data-year="2012">2012<span class="pub-year-chip__count">5</span></a>
+              <a href="#y2011" class="pub-year-chip" data-year="2011">2011<span class="pub-year-chip__count">4</span></a>
+            </div>
+          </div>
+        </nav>
+      </div>
 
       {% include bib_search.liquid %}
 

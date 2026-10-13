@@ -1417,7 +1417,53 @@ html[data-theme="dark"] .news-degree {
    Publications — restyle jekyll-scholar output inside the page
    ------------------------------------------------------------ */
 
-/* Sticky Year Jump Bar */
+/* Unified Sticky Toolbar (combines PI filter & Year jump bar) */
+.pub-sticky-toolbar {
+  position: sticky;
+  top: calc(var(--sticky-navbar) + var(--sticky-tabnav)); /* clears navbar + sticky tab bar */
+  z-index: 9;
+  margin: var(--ed-s3) 0 var(--ed-s6);
+  padding: var(--ed-s2) var(--ed-s3);
+  background: var(--ed-surface);
+  border: 1px solid var(--ed-line);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(8px);
+}
+
+.pub-sticky-toolbar .pub-pi-filter {
+  margin: 0 0 var(--ed-s2);
+  padding: 0 0 var(--ed-s2);
+  border: 0;
+  border-bottom: 1px solid var(--ed-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.pub-sticky-toolbar .pub-pi-filter[hidden] {
+  display: none;
+}
+
+.pub-sticky-toolbar .pub-year-jump {
+  position: static;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+@media (min-width: 576px) {
+  .pub-sticky-toolbar .pub-pi-filter__legend,
+  .pub-sticky-toolbar .pub-year-jump__title {
+    min-width: 4.6rem;
+    box-sizing: border-box;
+  }
+}
+
+/* Fallback Sticky Year Jump Bar (when outside .pub-sticky-toolbar) */
 .pub-year-jump {
   position: sticky;
   top: calc(var(--sticky-navbar) + var(--sticky-tabnav)); /* clears navbar + sticky tab bar */
@@ -1461,8 +1507,9 @@ html[data-theme="dark"] .news-degree {
   scrollbar-width: thin;
 }
 
-/* Phones: a second sticky bar would eat a third of the viewport, so it scrolls away */
+/* Phones: a sticky bar would eat a large portion of the viewport, so it scrolls away */
 @media (max-width: 767.98px) {
+  .pub-sticky-toolbar,
   .pub-year-jump,
   .ace2-tab-container.is-tabbed .pub-year-jump {
     position: static;
@@ -1569,7 +1616,7 @@ html[data-theme="dark"] .news-degree {
   line-height: 32px;
   letter-spacing: -0.02em;
   color: var(--ed-ink);
-  scroll-margin-top: calc(var(--sticky-navbar) + var(--sticky-tabnav) + 4.5rem); /* + sticky year jump bar */
+  scroll-margin-top: calc(var(--sticky-navbar) + var(--sticky-tabnav) + 6.8rem); /* + sticky toolbar (PI + Year jump) */
 }
 
 .ed-section .publications h2.bibliography::after {
@@ -4609,7 +4656,7 @@ html[data-theme="dark"] .ed-pill--paper:hover {
 
 .pub-pi-filter__note {
   clear: both;
-  margin: var(--ed-s2) 0 0;
+  margin: calc(-1 * var(--ed-s2)) 0 var(--ed-s4);
   font-size: var(--fs-label);
   line-height: 1.5;
   color: var(--c-muted);
