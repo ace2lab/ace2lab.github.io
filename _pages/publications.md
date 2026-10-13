@@ -68,6 +68,20 @@ nav_order: 5
         <span class="ed-section__count">{{ intl_count }}</span>
       </h2>
 
+      <fieldset class="pub-pi-filter" id="pubPiFilter" role="radiogroup" aria-labelledby="pubPiFilterLegend" aria-describedby="pubPiFilterNote" hidden>
+        <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> PI</legend>
+        <div class="pub-pi-filter__options">
+          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiAll" value="all" autocomplete="off" checked>
+          <label class="pub-pi-filter__pill" for="pubPiAll">All <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
+          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiYim" value="yim" autocomplete="off">
+          <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">56</span></label>
+          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiKim" value="kim" autocomplete="off">
+          <label class="pub-pi-filter__pill" for="pubPiKim"><span class="pub-pi-filter__honorific">Prof. </span>Taewook Kim <span class="pub-pi-filter__count" data-pi-count="kim">31</span></label>
+        </div>
+        <p class="pub-pi-filter__note" id="pubPiFilterNote">※ Includes publications prior to the PI's appointment at Kyungpook National University.</p>
+      </fieldset>
+      <p class="pub-pi-filter__status" id="pubPiStatus" role="status" aria-live="polite"></p>
+
       <nav class="pub-year-jump" aria-label="Jump to publication year">
         <div class="pub-year-jump__inner">
           <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Year</span>
@@ -287,6 +301,7 @@ nav_order: 5
 <script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 <script src="{{ '/assets/js/author_enrichment.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/pub_pi_filter.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 <script>
   (function () {

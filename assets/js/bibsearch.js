@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!searchInput) return;
 
   // actual bibsearch logic
-  const filterItems = (searchTerm) => {
+  const applySearch = (searchTerm) => {
     searchTerm = (searchTerm || "").trim().toLowerCase();
     document.querySelectorAll(".bibliography, .unloaded").forEach((element) => element.classList.remove("unloaded"));
 
@@ -59,6 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
         element.classList.add("unloaded");
       }
     });
+  };
+
+  // Run the search, then notify composable filters (pub_pi_filter.js) on every exit path, including early returns
+  const filterItems = (searchTerm) => {
+    applySearch(searchTerm);
+    document.dispatchEvent(new CustomEvent("bibsearch:filtered", { detail: { searchTerm: (searchTerm || "").trim().toLowerCase() } }));
   };
 
   const updateInputField = () => {
