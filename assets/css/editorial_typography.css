@@ -867,10 +867,10 @@ html[data-theme="dark"] .news-cat-legend__count {
   color: #0f172a;
 }
 
-/* Patent status pills (Publications > Patents): emerald = registered, amber = filed */
+/* Patent status pills (Publications > Patents): amber = registered, emerald = filed */
 .ed-status-pill {
-  --pill-fg: #064e3b;
-  --pill-bg: #d1fae5;
+  --pill-fg: #78350f;
+  --pill-bg: #fef3c7;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -895,18 +895,18 @@ html[data-theme="dark"] .news-cat-legend__count {
 }
 
 .ed-status-pill--filed {
-  --pill-fg: #78350f;
-  --pill-bg: #fef3c7;
+  --pill-fg: #064e3b;
+  --pill-bg: #d1fae5;
 }
 
 html[data-theme="dark"] .ed-status-pill--registered {
-  --pill-fg: #a7f3d0;
-  --pill-bg: rgba(110, 231, 183, 0.16);
+  --pill-fg: #fde68a;
+  --pill-bg: rgba(251, 191, 36, 0.16);
 }
 
 html[data-theme="dark"] .ed-status-pill--filed {
-  --pill-fg: #fde68a;
-  --pill-bg: rgba(251, 191, 36, 0.16);
+  --pill-fg: #a7f3d0;
+  --pill-bg: rgba(110, 231, 183, 0.16);
 }
 
 /* Conference presentation & Patent title-left pills (Publications > Patents / Conference Presentations):
@@ -928,8 +928,8 @@ html[data-theme="dark"] .ed-status-pill--filed {
 }
 
 .ed-talk-pill {
-  --pill-fg: #1e3a8a;
-  --pill-bg: #dbeafe;
+  --pill-fg: #78350f;
+  --pill-bg: #fef3c7;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -956,8 +956,8 @@ html[data-theme="dark"] .ed-status-pill--filed {
 }
 
 .ed-talk-pill--poster {
-  --pill-fg: #5b21b6;
-  --pill-bg: #ede9fe;
+  --pill-fg: #064e3b;
+  --pill-bg: #d1fae5;
 }
 
 .ed-talk-pill--invited {
@@ -966,13 +966,13 @@ html[data-theme="dark"] .ed-status-pill--filed {
 }
 
 html[data-theme="dark"] .ed-talk-pill--oral {
-  --pill-fg: #93c5fd;
-  --pill-bg: rgba(96, 165, 250, 0.18);
+  --pill-fg: #fde68a;
+  --pill-bg: rgba(251, 191, 36, 0.16);
 }
 
 html[data-theme="dark"] .ed-talk-pill--poster {
-  --pill-fg: #c4b5fd;
-  --pill-bg: rgba(167, 139, 250, 0.18);
+  --pill-fg: #a7f3d0;
+  --pill-bg: rgba(110, 231, 183, 0.16);
 }
 
 html[data-theme="dark"] .ed-talk-pill--invited {
