@@ -238,7 +238,7 @@ nav_order: 2
 {%- if ach_patents.size > 0 %}
 <section class="ach-group"><h3 class="ach-group__title">특허 <span class="ach-group__count">{{ ach_patents.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_patents %}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag">{{ x.status | escape }}</span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · {{ x.country | escape }}{% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag">{{ x.status | escape }}</span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · {{ x.country | escape }}{% endif %}{% if x.app_number and x.app_number != blank %} (출원 {{ x.app_number | escape }}{% if x.app_date and x.app_date != blank %} · {{ x.app_date | escape }}{% endif %}){% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}

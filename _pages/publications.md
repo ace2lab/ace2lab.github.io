@@ -251,6 +251,10 @@ nav_order: 5
                             {%- if has_prev %}<span class="ed-sep" aria-hidden="true">·</span>{% endif -%}
                             {{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}
                           {%- endif -%}
+                          {%- if p.app_number and p.app_number != "" -%}
+                            {%- assign adp = p.app_date | remove: " " | split: "." -%}
+                            <span class="ed-sep" aria-hidden="true">·</span>출원 {{ p.app_number | escape }}{% if p.app_date and p.app_date != "" %} ({{ adp[0] }}.{{ adp[1] | prepend: "0" | slice: -2, 2 }}.{{ adp[2] | prepend: "0" | slice: -2, 2 }}){% endif %}
+                          {%- endif -%}
                         </div>
                       {% endif %}
                       {% if p.grant and p.grant != "" %}

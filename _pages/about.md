@@ -59,6 +59,8 @@ latest_posts:
 
 {% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni'" %}
 {% assign total_patents = site.data.patents.size %}
+{% assign reg_patents = site.data.patents | where: "status", "등록" %}
+{% assign filed_patents = site.data.patents | where: "status", "출원" %}
 {% assign total_domestic = site.data.domestic.size %}
 {% assign total_intl = 82 %}
 {% assign total_pubs_and_ip = total_intl | plus: total_domestic | plus: total_patents %}
@@ -74,7 +76,7 @@ latest_posts:
       <div class="lab-stat-card__icon"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i></div>
       <div class="lab-stat-card__number">{{ total_pubs_and_ip }}</div>
       <div class="lab-stat-card__label">Publications & IP</div>
-      <div class="lab-stat-card__desc">{{ total_intl }} Int'l Journal · {{ total_domestic }} Domestic · 14 IP (11 Filed · 3 Reg.)</div>
+      <div class="lab-stat-card__desc">{{ total_intl }} Int'l Journal · {{ total_domestic }} Domestic · {{ total_patents }} IP ({{ filed_patents.size }} Filed · {{ reg_patents.size }} Reg.)</div>
     </div>
     <div class="lab-stat-card">
       <div class="lab-stat-card__icon"><i class="fa-solid fa-atom" aria-hidden="true"></i></div>
