@@ -874,8 +874,8 @@ html[data-theme="dark"] .news-cat-legend__count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  padding: 1px 9px;
+  gap: 4px;
+  padding: 1px 8px;
   border: 1px solid currentColor;
   border-radius: 999px;
   background: var(--pill-bg);
@@ -910,11 +910,11 @@ html[data-theme="dark"] .ed-status-pill--filed {
 }
 
 /* Conference presentation & Patent title-left pills (Publications > Patents / Conference Presentations):
-   Fixed min-width on >=576px keeps every entry title's left edge aligned on a single vertical axis. */
+   Content-hugging pills (fit-content) with flex layout so wrapped titles never tuck under the badge. */
 .ed-entry__title--talk {
   display: flex;
   align-items: flex-start;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .ed-entry__title-text {
@@ -923,7 +923,6 @@ html[data-theme="dark"] .ed-status-pill--filed {
 }
 
 .ed-entry__title--talk .ed-status-pill {
-  min-width: 6.6rem;
   margin-top: 1px;
 }
 
@@ -933,10 +932,9 @@ html[data-theme="dark"] .ed-status-pill--filed {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  min-width: 5.4rem;
+  gap: 4px;
   margin-top: 1px;
-  padding: 1px 9px;
+  padding: 1px 8px;
   border: 1px solid currentColor;
   border-radius: 999px;
   background: var(--pill-bg);
@@ -999,7 +997,6 @@ html[data-theme="dark"] .ed-talk-pill--invited {
 
   .ed-entry__title--talk .ed-status-pill,
   .ed-talk-pill {
-    min-width: 0;
     margin-top: 0;
   }
 }
