@@ -112,7 +112,7 @@ nav_order: 6
         <ul class="ed-cardgrid" role="list">
           {% for a in group.items %}
             {% assign dp = a.date | remove: " " | split: "." %}
-            {% if a.type == '장관상' or a.type == '대상' %}
+            {% if a.type contains '장관상' or a.type contains '대상' %}
               {% assign tier = 'crimson' %}
             {% elsif a.type == '우수상' or a.type == '최우수상' %}
               {% assign tier = 'amber' %}

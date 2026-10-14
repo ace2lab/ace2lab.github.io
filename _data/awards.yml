@@ -1,5 +1,5 @@
-- type: 장관상
-  title: 2026 한국화학공학회 Chem Frontier 화학공학 대학생 창의설계 경진대회
+- type: 산업통상자원부장관상
+  title: 한국화학공학회 2026 Chem Frontier 화학공학 대학생 창의설계 경진대회
   recipient: 김경진, 이종민, 이동건
   issuer: 산업통상자원부 장관
   date: 2026.10.06
@@ -13,10 +13,10 @@
   date: 2026.01.27
   year: 2026
   img: assets/img/awards/award_1.jpg
-- type: 장관상
-  title: 2025 한국화학공학회 Chem frontier 포스터 심화 부문
+- type: 산업통상자원부장관상
+  title: 한국화학공학회 2025 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)
   recipient: 안재빈, 김민수, 김성우
-  issuer: 산업통상부 장관
+  issuer: 산업통상자원부 장관
   date: 2025.11.07
   year: 2025
   img: assets/img/awards/award_2.jpg
@@ -37,8 +37,8 @@
   date: 2024.12.20
   year: 2024
   img: assets/img/awards/award_4.jpg
-- type: 대상
-  title: 2024 한국화학공학회 Chem frontier 포스터 심화 부문
+- type: 대상 (롯데케미칼 대표이사상)
+  title: 한국화학공학회 2024 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)
   recipient: 김다윈, 안재빈, 이동호
   issuer: 롯데케미칼(주) 대표이사
   date: 2024.10.31

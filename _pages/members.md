@@ -245,7 +245,9 @@ nav_order: 2
 {%- if ach_awards.size > 0 %}
 <section class="ach-group"><h3 class="ach-group__title">수상 <span class="ach-group__count">{{ ach_awards.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_awards %}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta"><span class="ach-item__tag">{{ x.type | escape }}</span>{{ x.issuer | escape }} · {{ x.date | escape }}</p></li>
+{%- assign is_top_award = false -%}
+{%- if x.type contains '장관상' or x.type contains '대상' -%}{%- assign is_top_award = true -%}{%- endif -%}
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if is_top_award %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ x.type | escape }}</span>{{ x.date | escape }}{% else %}<span class="ach-item__tag">{{ x.type | escape }}</span>{{ x.issuer | escape }} · {{ x.date | escape }}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
