@@ -4804,3 +4804,8 @@ html[data-theme="dark"] .ed-pill--paper:hover {
     transition: none;
   }
 }
+
+.ed-presenter--lead {
+  font-weight: 700;
+  color: var(--c-ink);
+}

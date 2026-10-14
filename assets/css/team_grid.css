@@ -1925,6 +1925,11 @@ html.ach-lock {
   text-underline-offset: 2px;
 }
 
+.ach-presenter--lead {
+  font-weight: 700;
+  color: var(--tm-ink);
+}
+
 .ach-item__tag {
   display: inline-block;
   margin-right: var(--tm-s1);

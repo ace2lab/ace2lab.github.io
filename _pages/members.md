@@ -221,7 +221,7 @@ nav_order: 2
 {%- assign ach_papers = site.data.student_papers | where_exp: 'x', 'x.members contains m.name_ko' -%}
 {%- assign ach_patents = site.data.patents | where_exp: 'x', 'x.inventors contains m.name_ko' -%}
 {%- assign ach_awards = site.data.awards | where_exp: 'x', 'x.recipient contains m.name_ko' -%}
-{%- assign ach_talks = site.data.talks | where_exp: 'x', 'x.presenters contains m.name_ko' -%}
+{%- assign ach_talks = site.data.talks | where_exp: 'x', 'x.members contains m.name_ko' -%}
 {%- assign ach_total = ach_papers.size | plus: ach_patents.size | plus: ach_awards.size | plus: ach_talks.size -%}
 {%- if ach_total > 0 %}
 <template id="ach-{{ m.id }}" data-total="{{ ach_total }}">
@@ -252,7 +252,10 @@ nav_order: 2
 {%- if ach_talks.size > 0 %}
 <section class="ach-group"><h3 class="ach-group__title">학회 발표 <span class="ach-group__count">{{ ach_talks.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_talks %}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}</p></li>
+{%- assign p_list = x.presenters | split: "," -%}
+{%- assign p_lead = p_list | first | strip -%}
+{%- assign p_rest = p_list | slice: 1, p_list.size -%}
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if x.presenters != blank %} · <span class="ach-presenter--lead">{{ p_lead | escape }}</span>{%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}

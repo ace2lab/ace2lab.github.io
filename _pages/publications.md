@@ -320,7 +320,13 @@ nav_order: 5
                         </span>
                         <span class="ed-entry__title-text">{{ t.title | escape }}</span>
                       </div>
-                      <div class="ed-entry__line">{{ t.presenters | escape }}</div>
+                      {% assign p_list = t.presenters | split: "," %}
+                      {% assign p_lead = p_list | first | strip %}
+                      {% assign p_rest = p_list | slice: 1, p_list.size %}
+                      <div class="ed-entry__line">
+                        <span class="ed-presenter--lead">{{ p_lead | escape }}</span>
+                        {%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}
+                      </div>
                       <div class="ed-entry__line">
                         {{ t.conference | escape -}}
                         {%- if t.location and t.location != "" %}<span class="ed-sep" aria-hidden="true">·</span>{{ t.location | escape }}{% endif -%}
