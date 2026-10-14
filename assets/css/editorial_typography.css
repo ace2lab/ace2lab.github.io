@@ -905,6 +905,91 @@ html[data-theme="dark"] .ed-status-pill--filed {
   --pill-bg: rgba(251, 191, 36, 0.16);
 }
 
+/* Conference presentation type pills (Publications > Conference Presentations):
+   Fixed min-width on >=576px keeps every talk title's left edge aligned on a single vertical axis. */
+.ed-entry__title--talk {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.ed-entry__title-text {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.ed-talk-pill {
+  --pill-fg: #1e3a5f;
+  --pill-bg: #eef2f7;
+  --pill-border: rgba(30, 58, 95, 0.28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 5.4rem;
+  margin-top: 1px;
+  padding: 1px 9px;
+  border: 1px solid var(--pill-border);
+  border-radius: 999px;
+  background: var(--pill-bg);
+  color: var(--pill-fg);
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.ed-talk-pill i {
+  font-size: 0.82em;
+}
+
+.ed-talk-pill--poster {
+  --pill-fg: #334155;
+  --pill-bg: #f1f5f9;
+  --pill-border: #cbd5e1;
+}
+
+.ed-talk-pill--invited {
+  --pill-fg: #a3123a;
+  --pill-bg: #fdf2f4;
+  --pill-border: rgba(163, 18, 58, 0.32);
+}
+
+html[data-theme="dark"] .ed-talk-pill--oral {
+  --pill-fg: #b8cde4;
+  --pill-bg: rgba(157, 183, 217, 0.14);
+  --pill-border: rgba(184, 205, 228, 0.32);
+}
+
+html[data-theme="dark"] .ed-talk-pill--poster {
+  --pill-fg: #cbd5e1;
+  --pill-bg: rgba(148, 163, 184, 0.14);
+  --pill-border: rgba(203, 213, 225, 0.28);
+}
+
+html[data-theme="dark"] .ed-talk-pill--invited {
+  --pill-fg: #f7a0b5;
+  --pill-bg: rgba(240, 112, 143, 0.16);
+  --pill-border: rgba(247, 160, 181, 0.35);
+}
+
+@media (max-width: 575.98px) {
+  .ed-entry__title--talk {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .ed-talk-pill {
+    min-width: 0;
+    margin-top: 0;
+  }
+}
+
 .news-feed-card__body strong {
   font-weight: 700;
   color: var(--color-ink, #0f172a);

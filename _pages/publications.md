@@ -272,10 +272,25 @@ nav_order: 5
               <ul class="ed-entries" role="list">
                 {% for t in group.items %}
                   {% assign dp = t.date | remove: " " | split: "." %}
+                  {% assign talk_type = t.type | default: "Oral" %}
+                  {% assign talk_type_key = talk_type | downcase %}
+                  {% if talk_type_key == "invited" %}
+                    {% assign talk_icon = "fa-microphone-lines" %}
+                  {% elsif talk_type_key == "poster" %}
+                    {% assign talk_icon = "fa-chalkboard-user" %}
+                  {% else %}
+                    {% assign talk_icon = "fa-microphone" %}
+                  {% endif %}
                   <li class="ed-entry">
                     <span class="ed-entry__num" aria-hidden="true">{{ t.no }}</span>
                     <div class="ed-entry__body">
-                      <div class="ed-entry__title">{{ t.title | escape }}</div>
+                      <div class="ed-entry__title ed-entry__title--talk">
+                        <span class="ed-talk-pill ed-talk-pill--{{ talk_type_key }}">
+                          <i class="fa-solid {{ talk_icon }}" aria-hidden="true"></i>
+                          <span>{{ talk_type | escape }}</span>
+                        </span>
+                        <span class="ed-entry__title-text">{{ t.title | escape }}</span>
+                      </div>
                       <div class="ed-entry__line">{{ t.presenters | escape }}</div>
                       <div class="ed-entry__line">
                         {{ t.conference | escape -}}
