@@ -10,8 +10,8 @@ nav_order: 4
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% assign all_facilities = site.data.facilities %}
-{% assign synthesis_items = all_facilities | where: "category", "Material Synthesis" %}
-{% assign thermal_items = all_facilities | where: "category", "Sample Preparation & Thermal Processing" %}
+{% assign synthesis_items = all_facilities | where: "category", "Synthesis & Thermal/Photonic Processing" %}
+{% assign thermal_items = all_facilities | where: "category", "Sample Preparation & Drying" %}
 {% assign char_items = all_facilities | where: "category", "Characterization & Measurement" %}
 {% assign utility_items = all_facilities | where: "category", "Infrastructure & Utility" %}
 {% assign r403_items = all_facilities | where: "location", "7호관 403호" %}
@@ -22,8 +22,8 @@ nav_order: 4
 {% capture hero_subtitle %}{{ all_facilities.size }}대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템{% endcapture %}
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i> Material Synthesis ({{ synthesis_items.size }})</span>
-<span class="hero-badge"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i> Sample Prep & Thermal ({{ thermal_items.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i> Synthesis & Processing ({{ synthesis_items.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i> Sample Prep & Drying ({{ thermal_items.size }})</span>
 <span class="hero-badge"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Characterization ({{ char_items.size }})</span>
 <span class="hero-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Utility & Infrastructure ({{ utility_items.size }})</span>
 {% endcapture %}
@@ -52,11 +52,11 @@ nav_order: 4
     <button type="button" role="tab" class="ace2-tab" id="tab-all" aria-controls="panel-all" aria-selected="false" tabindex="-1" data-hash="all" data-default="true">
       All Instruments<span class="ace2-tab__count">{{ all_facilities.size }}</span>
     </button>
-    <button type="button" role="tab" class="ace2-tab" id="tab-synthesis" aria-controls="panel-synthesis" aria-selected="false" tabindex="-1" data-hash="synthesis" data-aliases="material-synthesis">
-      Material Synthesis<span class="ace2-tab__count">{{ synthesis_items.size }}</span>
+    <button type="button" role="tab" class="ace2-tab" id="tab-synthesis" aria-controls="panel-synthesis" aria-selected="false" tabindex="-1" data-hash="synthesis" data-aliases="material-synthesis,thermal-processing,processing">
+      Synthesis & Processing<span class="ace2-tab__count">{{ synthesis_items.size }}</span>
     </button>
-    <button type="button" role="tab" class="ace2-tab" id="tab-thermal" aria-controls="panel-thermal" aria-selected="false" tabindex="-1" data-hash="thermal" data-aliases="sample-prep,thermal-processing,prep">
-      Sample Prep & Thermal<span class="ace2-tab__count">{{ thermal_items.size }}</span>
+    <button type="button" role="tab" class="ace2-tab" id="tab-thermal" aria-controls="panel-thermal" aria-selected="false" tabindex="-1" data-hash="sample-prep" data-aliases="thermal,prep,drying">
+      Sample Prep & Drying<span class="ace2-tab__count">{{ thermal_items.size }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-characterization" aria-controls="panel-characterization" aria-selected="false" tabindex="-1" data-hash="characterization" data-aliases="measurement,analysis">
       Characterization & Measurement<span class="ace2-tab__count">{{ char_items.size }}</span>
@@ -79,31 +79,31 @@ nav_order: 4
     {% endfor %}
   </div>
 
-  <!-- Panel 1: Material Synthesis -->
+  <!-- Panel 1: Synthesis & Thermal/Photonic Processing -->
   <div class="ace2-tabpanel fac-panel-cat" role="tabpanel" id="panel-synthesis" aria-labelledby="tab-synthesis" tabindex="0" hidden>
     <section class="ed-section">
       <h2 class="ed-section__title">
-        Material Synthesis
+        Synthesis & Thermal/Photonic Processing
         <span class="ed-section__count">{{ synthesis_items.size }}</span>
       </h2>
       <p class="ed-lede">
-        Advanced electrospinning, intense pulsed light flash photothermal processing, spin coating, and precision sputtering for nanomaterials.
+        Intense pulsed light (IPL) photonic sintering, electrospinning, microwave hydrothermal synthesis, muffle and tube furnaces, inert atmosphere glove box, spin coating, corona surface treatment, and hydraulic electrode pressing.
       </p>
-      {% include facility_table.liquid items=synthesis_items caption="Material Synthesis" %}
+      {% include facility_table.liquid items=synthesis_items caption="Synthesis & Thermal/Photonic Processing" %}
     </section>
   </div>
 
-  <!-- Panel 2: Sample Prep & Thermal Processing -->
+  <!-- Panel 2: Sample Preparation & Drying -->
   <div class="ace2-tabpanel fac-panel-cat" role="tabpanel" id="panel-thermal" aria-labelledby="tab-thermal" tabindex="0" hidden>
     <section class="ed-section">
       <h2 class="ed-section__title">
-        Sample Preparation & Thermal Processing
+        Sample Preparation & Drying
         <span class="ed-section__count">{{ thermal_items.size }}</span>
       </h2>
       <p class="ed-lede">
-        Corona surface treatment, ultrasonic probe cell disruptors, freeze dryers, high-temperature muffle furnaces, and vacuum curing ovens.
+        High-power ultrasonic probe dispersion, refrigerated centrifugation, lyophilization (freeze drying), forced convection and vacuum drying ovens, and conductive sputter coating for electron microscopy.
       </p>
-      {% include facility_table.liquid items=thermal_items caption="Sample Preparation & Thermal Processing" %}
+      {% include facility_table.liquid items=thermal_items caption="Sample Preparation & Drying" %}
     </section>
   </div>
 
@@ -115,7 +115,7 @@ nav_order: 4
         <span class="ed-section__count">{{ char_items.size }}</span>
       </h2>
       <p class="ed-lede">
-        Multi-channel electrochemical potentiostats, Mini-SEM, FTIR/UV-Vis spectroscopy, BET surface area analyzers, GC/HPLC chromatography, and 4-point probe sheet resistance meters.
+        Electrochemical potentiostats, source measure units (SMU), 4-point probe sheet resistance meters, hot-chuck gas sensor probe station, Mini-SEM, FT-IR and UV-Vis spectroscopy, BET surface area and zeta potential analyzers, and GC/HPLC chromatography.
       </p>
       {% include facility_table.liquid items=char_items caption="Characterization & Measurement" %}
     </section>
@@ -129,7 +129,7 @@ nav_order: 4
         <span class="ed-section__count">{{ utility_items.size }}</span>
       </h2>
       <p class="ed-lede">
-        High-purity inert atmosphere glove boxes, deionized (DI) water purification systems, certified gas cabinets, dry toxic gas scrubbers, and mass flow controller (MFC) delivery lines.
+        Ultrapure deionized (DI) water purification systems, multi-channel mass flow and pressure controllers (MFC), certified gas cylinder cabinets, and dry toxic gas scrubbers.
       </p>
       {% include facility_table.liquid items=utility_items caption="Infrastructure & Utility" %}
     </section>
