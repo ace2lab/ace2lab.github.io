@@ -27,6 +27,7 @@
 - no: 21
   year: 2026
   type: "Poster"
+  award: "산업통상자원부장관상"
   title: "IPL 초고속 광열 공정 기반 W-doped VO₂ 합성 및 다기능 어플리케이션"
   presenters: "김경진, 이종민, 이동건"
   members:
@@ -150,6 +151,7 @@
 - no: 10
   year: 2025
   type: "Poster"
+  award: "산업통상자원부장관상"
   title: "프린트 토너 기반 플래시 유도 그래핀(FIG) 패터닝 및 마이크로 슈퍼커패시터 전극 응용"
   presenters: "안재빈, 김민수, 김성우"
   members:
@@ -207,6 +209,7 @@
 - no: 5
   year: 2024
   type: "Poster"
+  award: "대상"
   title: "대량생산 가능한 Electrospun MXene/Carbon 나노섬유 웨어러블 스트레인 센서의 제조 기술 개발"
   presenters: "김다윈, 안재빈, 이동호"
   members:

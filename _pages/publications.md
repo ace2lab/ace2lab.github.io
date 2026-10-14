@@ -318,6 +318,12 @@ nav_order: 5
                           <i class="fa-solid {{ talk_icon }}" aria-hidden="true"></i>
                           <span>{{ talk_type | escape }}</span>
                         </span>
+                        {% if t.award and t.award != "" %}
+                          <span class="ed-talk-pill ed-talk-pill--award">
+                            <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                            <span>{{ t.award | escape }}</span>
+                          </span>
+                        {% endif %}
                         <span class="ed-entry__title-text">{{ t.title | escape }}</span>
                       </div>
                       {% assign p_list = t.presenters | split: "," %}

@@ -1942,6 +1942,11 @@ html.ach-lock {
   border-radius: var(--tm-r-sm);
 }
 
+.ach-item__tag--award {
+  color: var(--tm-crimson);
+  background: var(--tm-crimson-soft);
+}
+
 @keyframes ach-pop-in {
   from {
     opacity: 0;
