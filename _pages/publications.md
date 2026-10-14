@@ -37,9 +37,13 @@ nav_order: 5
 %}
 
 {% assign domestic_by_year = site.data.domestic | group_by: "year" | sort: "name" | reverse %}
+{% assign patents_by_year = site.data.patents | group_by: "year" | sort: "name" | reverse %}
 {% assign talks_by_year = site.data.talks | group_by: "year" | sort: "name" | reverse %}
-{% assign patent_states = "등록|출원" | split: "|" %}
-{% assign patent_labels = "Registered|Filed" | split: "|" %}
+{% assign registered_patents = site.data.patents | where: "status", "등록" %}
+{% assign filed_patents = site.data.patents | where: "status", "출원" %}
+{% assign invited_talks = site.data.talks | where: "type", "Invited" %}
+{% assign oral_talks = site.data.talks | where: "type", "Oral" %}
+{% assign poster_talks = site.data.talks | where: "type", "Poster" %}
 {% assign domestic_left = site.data.domestic.size %}
 
 <div class="ed-page ace2-tab-container">
@@ -184,73 +188,81 @@ nav_order: 5
           <span class="ed-section__count">{{ site.data.patents.size }}</span>
         </h2>
 
-        {% for state in patent_states %}
-          {% assign state_patents = site.data.patents | where: "status", state %}
-          {% if state_patents.size > 0 %}
-            {% assign patents_by_year = state_patents | group_by: "year" | sort: "name" | reverse %}
-            {% if state == "등록" %}
-              {% assign status_key = "registered" %}
-              {% assign status_icon = "fa-circle-check" %}
-            {% else %}
-              {% assign status_key = "filed" %}
-              {% assign status_icon = "fa-file-pen" %}
-            {% endif %}
-            {% assign status_label = patent_labels[forloop.index0] %}
-            <h3 class="ed-subhead">
-              {{ status_label }}
-              <span class="ed-subhead__count">{{ state_patents.size }}</span>
-            </h3>
-
-            <div class="ed-rail">
-              {% for group in patents_by_year %}
-                <div class="ed-rail__row">
-                  <div class="ed-rail__year">{{ group.name }}</div>
-                  <ul class="ed-entries" role="list">
-                    {% for p in group.items %}
-                      {% assign dp = p.date | remove: " " | split: "." %}
-                      <li class="ed-entry">
-                        <span class="ed-entry__num" aria-hidden="true">{{ p.no }}</span>
-                        <div class="ed-entry__body">
-                          <div class="ed-entry__title">{{ p.title | escape }}</div>
-                          <div class="ed-entry__line">
-                            <span class="ed-status-pill ed-status-pill--{{ status_key }}" title="{{ state }}"><i class="fa-solid {{ status_icon }}" aria-hidden="true"></i> {{ status_label }}</span>
-                          </div>
-                          {% if p.inventors and p.inventors != "" %}
-                            <div class="ed-entry__line"><span class="ed-label">Inventors</span>{{ p.inventors | escape }}</div>
-                          {% endif %}
-                          {% if p.assignee and p.assignee != "" %}
-                            <div class="ed-entry__line"><span class="ed-label">Assignee</span>{{ p.assignee | escape }}</div>
-                          {% endif %}
-                          {% if p.number != "" or p.date != "" or p.country != "" %}
-                            <div class="ed-entry__line">
-                              {%- assign has_prev = false -%}
-                              {%- if p.number and p.number != "" -%}
-                                {{ p.number | escape }}
-                                {%- assign has_prev = true -%}
-                              {%- endif -%}
-                              {%- if p.country and p.country != "" -%}
-                                {%- if has_prev %}<span class="ed-sep" aria-hidden="true">·</span>{% endif -%}
-                                {{ p.country | escape }}
-                                {%- assign has_prev = true -%}
-                              {%- endif -%}
-                              {%- if p.date and p.date != "" -%}
-                                {%- if has_prev %}<span class="ed-sep" aria-hidden="true">·</span>{% endif -%}
-                                {{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}
-                              {%- endif -%}
-                            </div>
-                          {% endif %}
-                          {% if p.grant and p.grant != "" %}
-                            <div class="ed-entry__line"><span class="ed-label">Funding</span>{{ p.grant | escape }}</div>
-                          {% endif %}
-                        </div>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              {% endfor %}
+        <div class="pub-sticky-toolbar">
+          <fieldset class="pub-pi-filter" id="pubPatentFilter" role="radiogroup" aria-labelledby="pubPatentFilterLegend">
+            <legend class="pub-pi-filter__legend" id="pubPatentFilterLegend"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Status</legend>
+            <div class="pub-pi-filter__options">
+              <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentAll" value="all" autocomplete="off" checked>
+              <label class="pub-pi-filter__pill" for="pubPatentAll">All <span class="pub-pi-filter__count" data-patent-count="all">{{ site.data.patents.size }}</span></label>
+              <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentRegistered" value="registered" autocomplete="off">
+              <label class="pub-pi-filter__pill" for="pubPatentRegistered">Registered <span class="pub-pi-filter__count" data-patent-count="registered">{{ registered_patents.size }}</span></label>
+              <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentFiled" value="filed" autocomplete="off">
+              <label class="pub-pi-filter__pill" for="pubPatentFiled">Filed <span class="pub-pi-filter__count" data-patent-count="filed">{{ filed_patents.size }}</span></label>
             </div>
-          {% endif %}
-        {% endfor %}
+          </fieldset>
+        </div>
+        <p class="pub-pi-filter__status" id="pubPatentStatus" role="status" aria-live="polite"></p>
+
+        <div class="ed-rail">
+          {% for group in patents_by_year %}
+            <div class="ed-rail__row">
+              <div class="ed-rail__year">{{ group.name }}</div>
+              <ul class="ed-entries" role="list">
+                {% for p in group.items %}
+                  {% assign dp = p.date | remove: " " | split: "." %}
+                  {% if p.status == "등록" %}
+                    {% assign status_key = "registered" %}
+                    {% assign status_label = "Registered" %}
+                    {% assign status_icon = "fa-circle-check" %}
+                  {% else %}
+                    {% assign status_key = "filed" %}
+                    {% assign status_label = "Filed" %}
+                    {% assign status_icon = "fa-file-pen" %}
+                  {% endif %}
+                  <li class="ed-entry" data-patent-status="{{ status_key }}">
+                    <span class="ed-entry__num" aria-hidden="true">{{ p.no }}</span>
+                    <div class="ed-entry__body">
+                      <div class="ed-entry__title ed-entry__title--talk">
+                        <span class="ed-status-pill ed-status-pill--{{ status_key }}" title="{{ p.status }}">
+                          <i class="fa-solid {{ status_icon }}" aria-hidden="true"></i>
+                          <span>{{ status_label }}</span>
+                        </span>
+                        <span class="ed-entry__title-text">{{ p.title | escape }}</span>
+                      </div>
+                      {% if p.inventors and p.inventors != "" %}
+                        <div class="ed-entry__line"><span class="ed-label">Inventors</span>{{ p.inventors | escape }}</div>
+                      {% endif %}
+                      {% if p.assignee and p.assignee != "" %}
+                        <div class="ed-entry__line"><span class="ed-label">Assignee</span>{{ p.assignee | escape }}</div>
+                      {% endif %}
+                      {% if p.number != "" or p.date != "" or p.country != "" %}
+                        <div class="ed-entry__line">
+                          {%- assign has_prev = false -%}
+                          {%- if p.number and p.number != "" -%}
+                            {{ p.number | escape }}
+                            {%- assign has_prev = true -%}
+                          {%- endif -%}
+                          {%- if p.country and p.country != "" -%}
+                            {%- if has_prev %}<span class="ed-sep" aria-hidden="true">·</span>{% endif -%}
+                            {{ p.country | escape }}
+                            {%- assign has_prev = true -%}
+                          {%- endif -%}
+                          {%- if p.date and p.date != "" -%}
+                            {%- if has_prev %}<span class="ed-sep" aria-hidden="true">·</span>{% endif -%}
+                            {{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}
+                          {%- endif -%}
+                        </div>
+                      {% endif %}
+                      {% if p.grant and p.grant != "" %}
+                        <div class="ed-entry__line"><span class="ed-label">Funding</span>{{ p.grant | escape }}</div>
+                      {% endif %}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
       </section>
     {% endif %}
 
@@ -265,6 +277,23 @@ nav_order: 5
           <span class="ed-section__count">{{ site.data.talks.size }}</span>
         </h2>
 
+        <div class="pub-sticky-toolbar">
+          <fieldset class="pub-pi-filter" id="pubTalkFilter" role="radiogroup" aria-labelledby="pubTalkFilterLegend">
+            <legend class="pub-pi-filter__legend" id="pubTalkFilterLegend"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Type</legend>
+            <div class="pub-pi-filter__options">
+              <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkAll" value="all" autocomplete="off" checked>
+              <label class="pub-pi-filter__pill" for="pubTalkAll">All <span class="pub-pi-filter__count" data-talk-count="all">{{ site.data.talks.size }}</span></label>
+              <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkInvited" value="invited" autocomplete="off">
+              <label class="pub-pi-filter__pill" for="pubTalkInvited">Invited <span class="pub-pi-filter__count" data-talk-count="invited">{{ invited_talks.size }}</span></label>
+              <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkOral" value="oral" autocomplete="off">
+              <label class="pub-pi-filter__pill" for="pubTalkOral">Oral <span class="pub-pi-filter__count" data-talk-count="oral">{{ oral_talks.size }}</span></label>
+              <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkPoster" value="poster" autocomplete="off">
+              <label class="pub-pi-filter__pill" for="pubTalkPoster">Poster <span class="pub-pi-filter__count" data-talk-count="poster">{{ poster_talks.size }}</span></label>
+            </div>
+          </fieldset>
+        </div>
+        <p class="pub-pi-filter__status" id="pubTalkStatus" role="status" aria-live="polite"></p>
+
         <div class="ed-rail">
           {% for group in talks_by_year %}
             <div class="ed-rail__row">
@@ -275,13 +304,13 @@ nav_order: 5
                   {% assign talk_type = t.type | default: "Oral" %}
                   {% assign talk_type_key = talk_type | downcase %}
                   {% if talk_type_key == "invited" %}
-                    {% assign talk_icon = "fa-microphone-lines" %}
+                    {% assign talk_icon = "fa-star" %}
                   {% elsif talk_type_key == "poster" %}
-                    {% assign talk_icon = "fa-chalkboard-user" %}
+                    {% assign talk_icon = "fa-clipboard-list" %}
                   {% else %}
                     {% assign talk_icon = "fa-microphone" %}
                   {% endif %}
-                  <li class="ed-entry">
+                  <li class="ed-entry" data-talk-type="{{ talk_type_key }}">
                     <span class="ed-entry__num" aria-hidden="true">{{ t.no }}</span>
                     <div class="ed-entry__body">
                       <div class="ed-entry__title ed-entry__title--talk">

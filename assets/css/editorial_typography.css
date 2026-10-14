@@ -873,8 +873,9 @@ html[data-theme="dark"] .news-cat-legend__count {
   --pill-bg: #d1fae5;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 1px 8px;
+  justify-content: center;
+  gap: 5px;
+  padding: 1px 9px;
   border: 1px solid currentColor;
   border-radius: 999px;
   background: var(--pill-bg);
@@ -884,6 +885,9 @@ html[data-theme="dark"] .news-cat-legend__count {
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 1.4;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .ed-status-pill i {
@@ -905,8 +909,8 @@ html[data-theme="dark"] .ed-status-pill--filed {
   --pill-bg: rgba(251, 191, 36, 0.16);
 }
 
-/* Conference presentation type pills (Publications > Conference Presentations):
-   Fixed min-width on >=576px keeps every talk title's left edge aligned on a single vertical axis. */
+/* Conference presentation & Patent title-left pills (Publications > Patents / Conference Presentations):
+   Fixed min-width on >=576px keeps every entry title's left edge aligned on a single vertical axis. */
 .ed-entry__title--talk {
   display: flex;
   align-items: flex-start;
@@ -918,10 +922,14 @@ html[data-theme="dark"] .ed-status-pill--filed {
   min-width: 0;
 }
 
+.ed-entry__title--talk .ed-status-pill {
+  min-width: 6.6rem;
+  margin-top: 1px;
+}
+
 .ed-talk-pill {
-  --pill-fg: #1e3a5f;
-  --pill-bg: #eef2f7;
-  --pill-border: rgba(30, 58, 95, 0.28);
+  --pill-fg: #1e3a8a;
+  --pill-bg: #dbeafe;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -929,52 +937,57 @@ html[data-theme="dark"] .ed-status-pill--filed {
   min-width: 5.4rem;
   margin-top: 1px;
   padding: 1px 9px;
-  border: 1px solid var(--pill-border);
+  border: 1px solid currentColor;
   border-radius: 999px;
   background: var(--pill-bg);
   color: var(--pill-fg);
   font-family: var(--font-mono-meta);
   font-size: var(--fs-label);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1.45;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
   white-space: nowrap;
   flex-shrink: 0;
   box-sizing: border-box;
 }
 
 .ed-talk-pill i {
-  font-size: 0.82em;
+  font-size: 0.85em;
 }
 
 .ed-talk-pill--poster {
-  --pill-fg: #334155;
-  --pill-bg: #f1f5f9;
-  --pill-border: #cbd5e1;
+  --pill-fg: #5b21b6;
+  --pill-bg: #ede9fe;
 }
 
 .ed-talk-pill--invited {
-  --pill-fg: #a3123a;
-  --pill-bg: #fdf2f4;
-  --pill-border: rgba(163, 18, 58, 0.32);
+  --pill-fg: #9f1239;
+  --pill-bg: #ffe4e6;
 }
 
 html[data-theme="dark"] .ed-talk-pill--oral {
-  --pill-fg: #b8cde4;
-  --pill-bg: rgba(157, 183, 217, 0.14);
-  --pill-border: rgba(184, 205, 228, 0.32);
+  --pill-fg: #93c5fd;
+  --pill-bg: rgba(96, 165, 250, 0.18);
 }
 
 html[data-theme="dark"] .ed-talk-pill--poster {
-  --pill-fg: #cbd5e1;
-  --pill-bg: rgba(148, 163, 184, 0.14);
-  --pill-border: rgba(203, 213, 225, 0.28);
+  --pill-fg: #c4b5fd;
+  --pill-bg: rgba(167, 139, 250, 0.18);
 }
 
 html[data-theme="dark"] .ed-talk-pill--invited {
-  --pill-fg: #f7a0b5;
-  --pill-bg: rgba(240, 112, 143, 0.16);
-  --pill-border: rgba(247, 160, 181, 0.35);
+  --pill-fg: #fda4af;
+  --pill-bg: rgba(251, 113, 133, 0.18);
+}
+
+.ed-entry.is-filter-hidden,
+.ed-rail__row.is-filter-empty {
+  display: none !important;
+}
+
+.ed-rail__row.is-first-visible {
+  border-top: 0;
+  padding-top: var(--ed-s2);
 }
 
 @media (max-width: 575.98px) {
@@ -984,6 +997,7 @@ html[data-theme="dark"] .ed-talk-pill--invited {
     gap: 0.3rem;
   }
 
+  .ed-entry__title--talk .ed-status-pill,
   .ed-talk-pill {
     min-width: 0;
     margin-top: 0;
@@ -1523,6 +1537,12 @@ html[data-theme="dark"] .news-degree {
   border-bottom: 1px solid var(--ed-line);
   border-radius: 0;
   background: transparent;
+}
+
+.pub-sticky-toolbar .pub-pi-filter:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .pub-sticky-toolbar .pub-pi-filter[hidden] {

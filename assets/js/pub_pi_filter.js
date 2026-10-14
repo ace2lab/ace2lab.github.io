@@ -153,12 +153,77 @@
     });
   }
 
+  function initRailFilter(cfg) {
+    var railPanel = document.getElementById(cfg.panelId);
+    var railFieldset = document.getElementById(cfg.fieldsetId);
+    if (!railPanel || !railFieldset) return;
+
+    var railStatus = document.getElementById(cfg.statusId);
+    var rows = Array.prototype.slice.call(railPanel.querySelectorAll(".ed-rail__row"));
+    var entries = Array.prototype.slice.call(railPanel.querySelectorAll(".ed-entry[" + cfg.attr + "]"));
+    var sectionCount = railPanel.querySelector(".ed-section__count");
+
+    function applyRail(val) {
+      var shown = 0;
+      entries.forEach(function (li) {
+        var match = val === "all" || li.getAttribute(cfg.attr) === val;
+        li.classList.toggle("is-filter-hidden", !match);
+        if (match) shown += 1;
+      });
+
+      var firstVisibleAssigned = false;
+      rows.forEach(function (row) {
+        var visibleInRow = 0;
+        row.querySelectorAll(".ed-entry[" + cfg.attr + "]").forEach(function (li) {
+          if (!li.classList.contains("is-filter-hidden")) visibleInRow += 1;
+        });
+        var empty = visibleInRow === 0;
+        row.classList.toggle("is-filter-empty", empty);
+        row.classList.toggle("is-first-visible", !empty && !firstVisibleAssigned);
+        if (!empty) firstVisibleAssigned = true;
+      });
+
+      if (sectionCount) {
+        sectionCount.textContent = shown;
+      }
+      if (railStatus) {
+        railStatus.textContent = "Showing " + shown + " of " + entries.length + " " + cfg.noun + ".";
+      }
+    }
+
+    railFieldset.addEventListener("change", function (e) {
+      var input = e.target;
+      if (!input || input.name !== cfg.radioName || !input.checked) return;
+      applyRail(input.value || "all");
+    });
+  }
+
+  function boot() {
+    init();
+    initRailFilter({
+      panelId: "panel-patents",
+      fieldsetId: "pubPatentFilter",
+      statusId: "pubPatentStatus",
+      radioName: "pub-patent",
+      attr: "data-patent-status",
+      noun: "patents",
+    });
+    initRailFilter({
+      panelId: "panel-talks",
+      fieldsetId: "pubTalkFilter",
+      statusId: "pubTalkStatus",
+      radioName: "pub-talk",
+      attr: "data-talk-type",
+      noun: "conference presentations",
+    });
+  }
+
   // Registered at parse time so a hash-driven search fired on load is never missed
   document.addEventListener("bibsearch:filtered", sync);
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", boot);
   } else {
-    init();
+    boot();
   }
 })();
