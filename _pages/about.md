@@ -287,14 +287,14 @@ latest_posts:
       <span class="research-card__badge">Area 03</span>
     </div>
     <div class="research-card__content">
-      <h3 class="research-card__title">Sensors & Devices</h3>
+      <h3 class="research-card__title">Sensors &amp; Devices</h3>
       <div class="research-card__desc">
-        레이저 유도 그래핀(LIG) 기반 고감도 유연 호흡/습도 센서 및 마이크로레조네이터 화학 센서 어레이를 통한 실시간 환경·생체 모니터링.
+        MXene·레이저 유도 그래핀(LIG) 기반 고감도 유연 촉각·호흡 센서 및 머신러닝 결합 나노 전자코(E-nose) 호기·환경 가스 모니터링 소자.
       </div>
       <div class="research-card__topics">
-        <span class="research-topic-chip">LIG Sensors</span>
-        <span class="research-topic-chip">Respiration</span>
-        <span class="research-topic-chip">Environmental</span>
+        <span class="research-topic-chip">Tactile &amp; LIG Sensors</span>
+        <span class="research-topic-chip">AI E-Nose</span>
+        <span class="research-topic-chip">Bio-Environmental</span>
       </div>
     </div>
   </div>
