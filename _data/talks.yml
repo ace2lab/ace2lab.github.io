@@ -2,7 +2,7 @@
 # "presenters" always lists the actual presenter first (styled in bold dark ink).
 # "members" lists students credited in /members/ (only the actual presenter for regular talks; all participating students for Chem Frontier competitions).
 
-- no: 23
+- no: 24
   year: 2026
   type: "Oral"
   title: "Ultrafast Photothermal Synthesis of Co₃O₄ Nanoparticles on Carbon Nanofibers for Supercapacitor Electrodes"
@@ -13,13 +13,24 @@
   date: "2026.10.08"
   location: "부산 BEXCO"
 
-- no: 22
+- no: 23
   year: 2026
   type: "Oral"
   title: "Ultra-Fast Photothermal Phase Engineering of VO₂(B) to VO₂(M) via Intense Pulsed Light"
   presenters: "김다윈, 임창용, 김태욱"
   members:
     - 김다윈
+  conference: "한국화학공학회 2026년도 추계학술대회"
+  date: "2026.10.08"
+  location: "부산 BEXCO"
+
+- no: 22
+  year: 2026
+  type: "Poster"
+  title: "Ultra-fast IPL-driven Synthesis of Binder-Free Co₃O₄ Electrodes on Nickel Foam for Supercapacitors"
+  presenters: "강명서, 김태욱, 임창용"
+  members:
+    - 강명서
   conference: "한국화학공학회 2026년도 추계학술대회"
   date: "2026.10.08"
   location: "부산 BEXCO"
