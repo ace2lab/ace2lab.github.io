@@ -1080,6 +1080,9 @@ html[data-theme="dark"] .news-degree {
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
+  text-decoration: none !important;
+  color: inherit;
+  scroll-margin-top: 90px;
   transition:
     transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.2s ease,
@@ -1087,10 +1090,12 @@ html[data-theme="dark"] .news-degree {
   position: relative;
 }
 
-.research-card:hover {
+.research-card:hover,
+.research-card:focus-visible {
   transform: translateY(-4px);
   border-color: rgba(30, 58, 95, 0.35);
   box-shadow: 0 14px 32px -8px rgba(15, 23, 42, 0.12);
+  text-decoration: none !important;
 }
 
 .research-card__media {
@@ -2225,9 +2230,9 @@ html[data-theme="dark"] .news-degree {
 
 .lab-about__lead {
   font-size: var(--fs-body);
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--global-text-color);
-  max-width: 68ch;
+  word-break: keep-all;
 }
 
 .lab-about__pillars {
@@ -2238,17 +2243,40 @@ html[data-theme="dark"] .news-degree {
 }
 
 .lab-about__pillar {
+  display: block;
   padding: var(--ed-s4, 1rem) var(--ed-s5, 1.25rem);
   background: var(--global-code-bg-color, #f8fafc);
   border: 1px solid var(--ed-line, #e2e8f0);
   border-top: 3px solid var(--color-ace2-navy, #1e3a5f);
   border-radius: 8px;
+  text-decoration: none !important;
+  color: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lab-about__pillar:hover,
+.lab-about__pillar:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(30, 58, 95, 0.35);
+  border-top-color: var(--color-knu-crimson, #a3123a);
+  box-shadow: 0 8px 20px -6px rgba(15, 23, 42, 0.1);
+  text-decoration: none !important;
 }
 
 html[data-theme="dark"] .lab-about__pillar {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.08);
   border-top-color: var(--color-ace2-navy, #9db7d9);
+}
+
+html[data-theme="dark"] .lab-about__pillar:hover,
+html[data-theme="dark"] .lab-about__pillar:focus-visible {
+  border-color: rgba(157, 183, 217, 0.35);
+  border-top-color: #fb7185;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.45);
 }
 
 .lab-about__pillar-icon {
@@ -2258,10 +2286,31 @@ html[data-theme="dark"] .lab-about__pillar {
 }
 
 .lab-about__pillar-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
   font-size: var(--fs-lg);
   font-weight: 600;
   margin: 0 0 var(--ed-s1, 0.25rem);
   color: var(--ed-ink, #0f172a);
+}
+
+.lab-about__pillar-arrow {
+  font-size: 0.85rem;
+  color: var(--ed-muted, #64748b);
+  opacity: 0.65;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+
+.lab-about__pillar:hover .lab-about__pillar-arrow,
+.lab-about__pillar:focus-visible .lab-about__pillar-arrow {
+  transform: translateY(2px);
+  opacity: 1;
+  color: var(--color-knu-crimson, #a3123a);
 }
 
 .lab-about__pillar-desc {
@@ -2269,6 +2318,7 @@ html[data-theme="dark"] .lab-about__pillar {
   line-height: 1.55;
   margin: 0;
   color: var(--ed-text, #334155);
+  word-break: keep-all;
 }
 
 .lab-about__pis-intro {

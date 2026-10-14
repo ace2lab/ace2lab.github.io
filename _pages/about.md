@@ -96,26 +96,25 @@ latest_posts:
 <section class="lab-about" aria-labelledby="about-lab-title">
   <h2 id="about-lab-title" class="lab-about__title">About the Laboratory</h2>
   <p class="lab-about__lead">
-    ACE² Lab은 경북대학교 과학기술대학 에너지화학공학과에서 '김태욱 부교수'와 '임창용 부교수'가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지
-    공학 연구실입니다.
+    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지 공학 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·MOF·콜로이드 양자점(CQD) 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하고 있습니다.
   </p>
 
   <div class="lab-about__pillars">
-    <div class="lab-about__pillar">
+    <a href="#area-01" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title">Energy Storage</h3>
-      <p class="lab-about__pillar-desc">MXene·MOF 복합소재 기반 하이브리드 슈퍼캐패시터와 고성능 리튬이온전지 음극</p>
-    </div>
-    <div class="lab-about__pillar">
+      <h3 class="lab-about__pillar-title">Energy Storage &amp; Materials <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <p class="lab-about__pillar-desc">MXene·MOF 복합소재 기반 하이브리드 슈퍼커패시터, 차세대 이차전지 음극 및 환경 촉매 소재</p>
+    </a>
+    <a href="#area-02" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title">Photonic Processing</h3>
+      <h3 class="lab-about__pillar-title">Photonic Nanomanufacturing <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
       <p class="lab-about__pillar-desc">초고속 펄스광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 나노공정, 콜로이드 양자점 광전소자</p>
-    </div>
-    <div class="lab-about__pillar">
+    </a>
+    <a href="#area-03" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title">Sensors &amp; Devices</h3>
-      <p class="lab-about__pillar-desc">고민감도 유연 생체·환경 센서와 실시간 모니터링 소자</p>
-    </div>
+      <h3 class="lab-about__pillar-title">Sensors &amp; Devices <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <p class="lab-about__pillar-desc">고감도 유연 촉각·호흡 센서와 머신러닝 결합 나노 전자코(E-nose) 실시간 모니터링 소자</p>
+    </a>
   </div>
 
   <p class="lab-about__pis-intro">The laboratory is jointly directed by two Principal Investigators:</p>
@@ -232,20 +231,19 @@ latest_posts:
 <h2 id="research-areas">Core Research Areas</h2>
 
 <div class="research-grid">
-  <div class="research-card">
+  <a href="{{ '/research/' | relative_url }}#energy-storage" class="research-card" id="area-01">
     <div class="research-card__media">
       <img
         src="{{ '/assets/img/research/area1_energy_storage.jpg' | relative_url }}"
         alt="Energy Storage & Materials"
         loading="lazy"
-        data-zoomable
       >
       <span class="research-card__badge">Area 01</span>
     </div>
     <div class="research-card__content">
-      <h3 class="research-card__title">Energy Storage & Materials</h3>
+      <h3 class="research-card__title">Energy Storage &amp; Materials</h3>
       <div class="research-card__desc">
-        차세대 하이브리드 코인셀 슈퍼캐패시터 및 다공성 MXene/TiO₂ 복합소재 리튬이온전지 음극 설계. 고출력·고에너지밀도 전기화학 소자 구현.
+        차세대 하이브리드 코인셀 슈퍼커패시터 및 다공성 MXene/TiO₂ 복합소재 리튬이온전지 음극 설계. 고출력·고에너지밀도 전기화학 소자 구현.
       </div>
       <div class="research-card__topics">
         <span class="research-topic-chip">Supercapacitors</span>
@@ -253,15 +251,14 @@ latest_posts:
         <span class="research-topic-chip">MOF / MXene</span>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="research-card">
+  <a href="{{ '/research/' | relative_url }}#photonic" class="research-card" id="area-02">
     <div class="research-card__media">
       <img
         src="{{ '/assets/img/research/area2_photonic_ipl.jpg' | relative_url }}"
         alt="Photonic Nanomanufacturing"
         loading="lazy"
-        data-zoomable
       >
       <span class="research-card__badge">Area 02</span>
     </div>
@@ -276,15 +273,14 @@ latest_posts:
         <span class="research-topic-chip">Roll-to-Roll</span>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="research-card">
+  <a href="{{ '/research/' | relative_url }}#sensors" class="research-card" id="area-03">
     <div class="research-card__media">
       <img
         src="{{ '/assets/img/research/area3_flexible_sensors.jpg' | relative_url }}"
         alt="Sensors & Devices"
         loading="lazy"
-        data-zoomable
       >
       <span class="research-card__badge">Area 03</span>
     </div>
@@ -299,7 +295,7 @@ latest_posts:
         <span class="research-topic-chip">Bio-Environmental</span>
       </div>
     </div>
-  </div>
+  </a>
 </div>
 
 For detailed project descriptions and laboratory facilities, please visit our [Research]({{ '/research/' | relative_url }}) page. Meet our team members on the [Members]({{ '/members/' | relative_url }}) page.
