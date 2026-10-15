@@ -169,6 +169,76 @@
       </div>
     {% endif %}
 
+    {% if m.teaching and m.teaching.size > 0 %}
+      <section class="pi-profile__block pi-teaching" aria-label="Teaching">
+        <div class="pi-teaching__head">
+          <h4 class="pi-profile__label">Teaching</h4>
+          <p class="pi-teaching__legend" aria-hidden="true">
+            <span>(학점) · 시수</span>
+            <span class="pi-teaching__legend-sep">/</span>
+            <span>강의평가 (5.0 만점)</span>
+          </p>
+        </div>
+        <div class="pi-teaching__list">
+          {% for y in m.teaching %}
+            <div class="pi-teaching__year">
+              <div class="pi-teaching__year-label">{{ y.year }}</div>
+              {% if y.note %}
+                <div class="pi-teaching__sabbatical">
+                  <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                  <span>{{ y.note }}</span>
+                </div>
+              {% elsif y.semesters %}
+                <div class="pi-teaching__semesters">
+                  {% for s in y.semesters %}
+                    <div class="pi-teaching__sem">
+                      <div class="pi-teaching__sem-head">
+                        <span class="pi-teaching__term">
+                          {{- y.year }}
+                          {{ s.term -}}
+                        </span>
+                        {% if s.credits %}
+                          <span class="pi-teaching__credits">{{ s.credits }}</span>
+                        {% endif %}
+                      </div>
+                      <ul class="pi-course-list" role="list">
+                        {% for c in s.courses %}
+                          {% assign is_grad = false %}
+                          {% if c.level contains '대학원' %}{% assign is_grad = true %}{% endif %}
+                          <li class="pi-course">
+                            <span class="pi-course__level{% if is_grad %} pi-course__level--grad{% endif %}">{{ c.level }}</span>
+                            <span class="pi-course__title">
+                              {{- c.title -}}
+                              {%- if c.advisees %}
+                                <span class="pi-course__advisees">({{ c.advisees }})</span>
+                              {%- endif -%}
+                              {%- if c.credits %}
+                                <span class="pi-course__unit">({{ c.credits }})</span>
+                              {%- endif -%}
+                            </span>
+                            {% if c.lang or c.eval %}
+                              <span class="pi-course__meta">
+                                {%- if c.lang -%}
+                                  <span class="pi-course__lang">{{ c.lang }}</span>
+                                {%- endif -%}
+                                {%- if c.eval -%}
+                                  <span class="pi-course__eval{% if c.eval == 'N.A.' %} pi-course__eval--na{% endif %}">{{ c.eval }}</span>
+                                {%- endif -%}
+                              </span>
+                            {% endif %}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
     {% if m.links.scholar or m.links.orcid or m.links.researchgate or m.links.github %}
       <nav class="pi-actions" aria-label="{{ m.name_en }} academic profiles">
         {% if m.links.scholar and m.links.scholar != '' %}

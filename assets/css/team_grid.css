@@ -1164,6 +1164,210 @@ html[data-theme="dark"] .pi-timeline__badge {
   background: var(--tm-accent);
 }
 
+/* Teaching ledger (Co-PI profile opt-in) ---------------- */
+.pi-teaching__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--tm-s2);
+  margin-bottom: var(--tm-s3);
+}
+
+.pi-teaching__head .pi-profile__label {
+  margin-bottom: 0;
+}
+
+.pi-teaching__legend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tm-s2);
+  margin: 0;
+  font-size: var(--tm-fs-2xs);
+  line-height: 16px;
+  color: var(--tm-muted);
+}
+
+.pi-teaching__legend-sep {
+  color: var(--tm-line-strong);
+}
+
+.pi-teaching__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--tm-line);
+}
+
+.pi-teaching__year {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  column-gap: var(--tm-s4);
+  padding: var(--tm-s4) 0;
+  border-bottom: 1px solid var(--tm-line);
+}
+
+.pi-teaching__year-label {
+  padding-top: 2px;
+  font-family: var(--font-mono-meta, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+  font-size: var(--tm-fs-sm);
+  font-weight: 700;
+  line-height: 20px;
+  color: var(--tm-ink);
+}
+
+.pi-teaching__sabbatical {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tm-s2);
+  padding: var(--tm-s2) var(--tm-s3);
+  border: 1px dashed var(--tm-line-strong);
+  border-radius: var(--tm-r-sm);
+  background: var(--tm-sunken);
+  font-size: var(--tm-fs-xs);
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--tm-muted);
+}
+
+.pi-teaching__sabbatical i {
+  font-size: 0.75rem;
+  color: var(--tm-accent);
+}
+
+.pi-teaching__semesters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--tm-s4);
+}
+
+.pi-teaching__sem {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--tm-s3);
+  background: var(--tm-sunken);
+  border: 1px solid var(--tm-line);
+  border-radius: var(--tm-r-sm);
+}
+
+.pi-teaching__sem-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tm-s2);
+  margin-bottom: var(--tm-s2);
+  padding-bottom: var(--tm-s2);
+  border-bottom: 1px solid var(--tm-line);
+}
+
+.pi-teaching__term {
+  font-family: var(--font-mono-meta, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+  font-size: var(--tm-fs-xs);
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--tm-ink);
+}
+
+.pi-teaching__credits {
+  padding: 1px var(--tm-s2);
+  border-radius: 999px;
+  background: var(--tm-accent-soft);
+  border: 1px solid var(--tm-line-strong);
+  font-size: var(--tm-fs-2xs);
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--tm-accent);
+}
+
+.pi-course-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tm-s2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pi-course {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: var(--tm-s2);
+  font-size: var(--tm-fs-xs);
+  line-height: 20px;
+}
+
+.pi-course__level {
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--tm-surface);
+  border: 1px solid var(--tm-line);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+  color: var(--tm-muted);
+}
+
+.pi-course__level--grad {
+  color: var(--tm-cobalt);
+  background: var(--tm-cobalt-soft);
+  border-color: transparent;
+}
+
+.pi-course__title {
+  min-width: 0;
+  font-weight: 500;
+  color: var(--tm-ink);
+}
+
+.pi-course__advisees {
+  font-weight: 600;
+  color: var(--tm-teal);
+}
+
+.pi-course__unit {
+  font-weight: 400;
+  color: var(--tm-muted);
+  white-space: nowrap;
+}
+
+.pi-course__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tm-s1);
+  white-space: nowrap;
+}
+
+.pi-course__lang {
+  padding: 0 5px;
+  border-radius: 4px;
+  background: var(--tm-amber-soft);
+  font-family: var(--font-mono-meta, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--tm-amber);
+}
+
+.pi-course__eval {
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--tm-teal-soft);
+  font-family: var(--font-mono-meta, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--tm-teal);
+}
+
+.pi-course__eval--na {
+  background: var(--tm-surface);
+  border: 1px solid var(--tm-line);
+  font-weight: 500;
+  color: var(--tm-muted);
+}
+
 /* Profile links: labelled outline buttons */
 .pi-actions {
   display: flex;
@@ -1302,6 +1506,16 @@ html[data-theme="dark"] .pi-action:focus-visible {
   .pi-profile__summary {
     font-size: 1rem;
     line-height: 1.75;
+  }
+
+  .pi-teaching__year {
+    grid-template-columns: 1fr;
+    row-gap: var(--tm-s2);
+  }
+
+  .pi-teaching__semesters {
+    grid-template-columns: 1fr;
+    gap: var(--tm-s3);
   }
 }
 
