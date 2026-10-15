@@ -469,12 +469,22 @@ html[data-theme="dark"] .lab-stat-card {
 }
 
 .lab-stat-card__icon {
-  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(217, 83, 15, 0.1);
+  border: 1px solid rgba(217, 83, 15, 0.2);
+  font-size: 1.38rem;
   color: #d9530f;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 html[data-theme="dark"] .lab-stat-card__icon {
+  background: rgba(243, 112, 33, 0.14);
+  border-color: rgba(243, 112, 33, 0.28);
   color: #ff9248;
 }
 

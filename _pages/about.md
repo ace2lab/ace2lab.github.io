@@ -85,10 +85,10 @@ latest_posts:
       <div class="lab-stat-card__desc">Energy · Photonics · Sensors</div>
     </div>
     <div class="lab-stat-card">
-      <div class="lab-stat-card__icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></div>
-      <div class="lab-stat-card__number">16 Yrs</div>
-      <div class="lab-stat-card__label">Research Track Record</div>
-      <div class="lab-stat-card__desc">2011 – 2026 · Est. 2020 at KNU</div>
+      <div class="lab-stat-card__icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></div>
+      <div class="lab-stat-card__number">2020</div>
+      <div class="lab-stat-card__label">Established at KNU</div>
+      <div class="lab-stat-card__desc">Since 2020 · Dept. of Energy Chemical Eng.</div>
     </div>
   </div>
 </div>
