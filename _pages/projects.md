@@ -161,7 +161,7 @@ nav_order: 3
             >
           </div>
           <figcaption class="ed-pillar__figure-caption">
-            <span class="ed-pillar__fig-label">Figure 2(a).</span> Millisecond flashlight annealing (FLA) of PbS colloidal quantum dot (CQD) films for surface trap suppression and enhanced photovoltaic efficiency (<em>Small</em>, 2024, Front Cover).
+            <span class="ed-pillar__fig-label">Figure 2(a).</span> Millisecond flashlight annealing (FLA) photothermal surface treatment of PbS colloidal quantum dot (CQD) films for surface trap suppression (<em>Small</em>, 2024, Front Cover).
           </figcaption>
         </figure>
 
@@ -188,9 +188,9 @@ nav_order: 3
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Colloidal Quantum Dot (CQD) Optoelectronics</h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Photothermal Surface &amp; Defect Engineering</h3>
           <p class="ed-pillar__topic-body">
-            Suppression and healing of thermally induced surface trap states in PbS quantum dot solids via ultrafast pulsed light annealing, significantly improving carrier mobility, charge extraction efficiency, and solar cell power conversion efficiency.
+            Millisecond pulsed-light surface treatment and interface engineering to heal thermally induced surface trap states, control oxygen vacancies, and structure porous 2D MXene/oxide nanocomposites without damaging underlying functional layers.
           </p>
         </div>
         <div class="ed-pillar__topic-card">

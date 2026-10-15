@@ -28,7 +28,7 @@ latest_posts:
 <span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Energy Storage</span>
 <span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Intense Pulsed Light (IPL)</span>
 <span class="hero-badge"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Flexible Sensors</span>
-<span class="hero-badge"><i class="fa-solid fa-atom" aria-hidden="true"></i> Colloidal Quantum Dots</span>
+<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> 2D MXene &amp; MOFs</span>
 {% endcapture %}
 
 {% capture hero_actions %}
@@ -96,7 +96,7 @@ latest_posts:
 <section class="lab-about" aria-labelledby="about-lab-title">
   <h2 id="about-lab-title" class="lab-about__title">About the Laboratory</h2>
   <p class="lab-about__lead">
-    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지 공학 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·MOF·콜로이드 양자점(CQD) 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하고 있습니다.
+    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지 공학 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·다공성 MOF·금속 산화물 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하고 있습니다.
   </p>
 
   <div class="lab-about__pillars">
@@ -108,7 +108,7 @@ latest_posts:
     <a href="#area-02" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
       <h3 class="lab-about__pillar-title">Photonic Nanomanufacturing <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
-      <p class="lab-about__pillar-desc">초고속 펄스광(IPL) 광열처리와 레이저 유도 그래핀(LIG) 나노공정, 콜로이드 양자점 광전소자</p>
+      <p class="lab-about__pillar-desc">초고속 펄스광(IPL) 광열 소결·표면 개질과 레이저 유도 그래핀(LIG) 나노패터닝 및 유연 전극 공정</p>
     </a>
     <a href="#area-03" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
@@ -265,11 +265,11 @@ latest_posts:
     <div class="research-card__content">
       <h3 class="research-card__title">Photonic Nanomanufacturing</h3>
       <div class="research-card__desc">
-        초고속 제논 플래시 펄스광(IPL) 열처리를 활용한 저온·밀리초 급 나노소재 소결, 콜로이드 양자점 표면 결함 치유 및 유연 기판 상 직접 공정.
+        초고속 제논 플래시 펄스광(IPL) 열처리를 활용한 저온·밀리초 급 나노소재 소결·표면 결함 제어 및 레이저 유도 그래핀(LIG) 유연 전극 직접 공정.
       </div>
       <div class="research-card__topics">
         <span class="research-topic-chip">IPL Processing</span>
-        <span class="research-topic-chip">Quantum Dots</span>
+        <span class="research-topic-chip">Laser-Induced Graphene</span>
         <span class="research-topic-chip">Roll-to-Roll</span>
       </div>
     </div>
