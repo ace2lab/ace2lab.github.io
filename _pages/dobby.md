@@ -4,7 +4,7 @@ title: DOBBY
 permalink: /dobby/
 description: ACE² Lab Intranet
 nav: true
-nav_order: 8
+nav_order: 9
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
