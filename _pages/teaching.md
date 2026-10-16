@@ -9,6 +9,267 @@ nav_order: 8
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
+<style>
+  .teaching-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .teaching-section-title {
+    font-family: var(--font-serif-editorial, "Playfair Display", serif);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--global-text-color);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .teaching-section-desc {
+    font-size: 0.92rem;
+    color: var(--global-text-color);
+    opacity: 0.78;
+    margin-bottom: 24px;
+    line-height: 1.55;
+  }
+
+  /* Flagship Interactive Simulation Card */
+  .sim-card {
+    background: var(--global-card-bg-color, #ffffff);
+    border: 1px solid var(--global-divider-color, #e2e8f0);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: grid;
+    grid-template-columns: 4.5fr 7.5fr;
+    margin-bottom: 48px;
+  }
+  .sim-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: var(--global-theme-color, #0284c7);
+  }
+  @media (max-width: 860px) {
+    .sim-card {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .sim-card__media {
+    position: relative;
+    background: #020617;
+    min-height: 240px;
+    overflow: hidden;
+  }
+  .sim-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .sim-card:hover .sim-card__media img {
+    transform: scale(1.04);
+  }
+  .sim-card__media-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-family: monospace;
+    font-size: 0.72rem;
+    color: #fde047;
+  }
+  .sim-card__media-badge span {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(253, 224, 71, 0.4);
+  }
+
+  .sim-card__body {
+    padding: 28px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sim-card__tag-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .sim-pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(2, 132, 199, 0.1);
+    color: var(--global-theme-color, #0284c7);
+    border: 1px solid rgba(2, 132, 199, 0.25);
+  }
+  .sim-pill--amber {
+    background: rgba(245, 158, 11, 0.12);
+    color: #d97706;
+    border-color: rgba(245, 158, 11, 0.3);
+  }
+  html[data-theme="dark"] .sim-pill--amber {
+    color: #fbbf24;
+  }
+
+  .sim-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--global-text-color);
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+  }
+  .sim-card__sub {
+    font-family: monospace;
+    font-size: 0.78rem;
+    color: var(--global-theme-color, #0284c7);
+    margin-bottom: 12px;
+  }
+  .sim-card__desc {
+    font-size: 0.88rem;
+    color: var(--global-text-color);
+    opacity: 0.88;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .sim-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+    font-size: 0.78rem;
+    color: var(--global-text-color);
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 520px) {
+    .sim-features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .sim-features-grid div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sim-features-grid i {
+    color: #10b981;
+    font-size: 0.75rem;
+  }
+
+  .sim-card__action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--global-divider-color, #e2e8f0);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .sim-btn-launch {
+    background: var(--global-theme-color, #0284c7);
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .sim-btn-launch:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
+  /* Academic Course Cards Grid */
+  .course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .course-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .course-card {
+    background: var(--global-card-bg-color, #ffffff);
+    border: 1px solid var(--global-divider-color, #e2e8f0);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s, border-color 0.15s;
+  }
+  .course-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--global-theme-color, #0284c7);
+  }
+  .course-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .course-card__level {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(2, 132, 199, 0.1);
+    color: var(--global-theme-color, #0284c7);
+  }
+  .course-card__code {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--global-text-color);
+    opacity: 0.6;
+  }
+  .course-card__title {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--global-text-color);
+    margin: 0 0 2px 0;
+  }
+  .course-card__en {
+    font-size: 0.75rem;
+    font-family: monospace;
+    color: var(--global-text-color);
+    opacity: 0.65;
+    margin-bottom: 10px;
+  }
+  .course-card__desc {
+    font-size: 0.85rem;
+    color: var(--global-text-color);
+    opacity: 0.85;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .course-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid var(--global-divider-color, #e2e8f0);
+    font-size: 0.75rem;
+    color: var(--global-text-color);
+    opacity: 0.65;
+  }
+</style>
+
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Interactive WebApp</span>
 <span class="hero-badge"><i class="fa-solid fa-water" aria-hidden="true"></i> Transport Phenomena</span>
@@ -24,223 +285,162 @@ nav_order: 8
   badges=hero_badges
 %}
 
-<div class="mt-8 space-y-12">
+<div class="teaching-container mt-4">
 
   <!-- ==================== SECTION 1: INTERACTIVE SIMULATIONS ==================== -->
-  <section aria-labelledby="heading-simulations">
-    <div class="border-b border-slate-200 dark:border-slate-800 pb-3 mb-6 flex flex-wrap items-center justify-between gap-2">
-      <div>
-        <h2 id="heading-simulations" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
-          <i class="fa-solid fa-flask-vial text-sky-600 dark:text-sky-400" aria-hidden="true"></i>
-          <span>Interactive Lecture Notes &amp; Simulations</span>
-        </h2>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
-          복잡한 수학적 전달방정식과 경계조건을 직접 조작하며 직관적으로 이해할 수 있는 실시간 웹 시뮬레이션 모듈입니다.
-        </p>
+  <section aria-labelledby="heading-simulations" class="mb-5">
+    <h2 id="heading-simulations" class="teaching-section-title">
+      <i class="fa-solid fa-flask-vial text-primary" aria-hidden="true"></i>
+      <span>Interactive Lecture Notes &amp; Simulations</span>
+    </h2>
+    <p class="teaching-section-desc">
+      복잡한 수학적 전달방정식과 경계조건을 직접 조작하며 직관적으로 이해할 수 있는 실시간 웹 시뮬레이션 모듈입니다.
+    </p>
+
+    <!-- Flagship Simulation Card: Falling Film Flow -->
+    <article class="sim-card">
+      <div class="sim-card__media">
+        <img src="{{ '/assets/mario_falling_film_bg.jpg' | relative_url }}"
+             alt="Super Transport Bros Falling Film Simulation Thumbnail"
+             loading="lazy" />
+        <div class="sim-card__media-badge">
+          <span>🕹️ 8-BIT NES THEME</span>
+          <span>BSL CH. 2.2</span>
+        </div>
       </div>
-      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-sky-100 text-sky-800 dark:bg-sky-950/60 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
-        Active Prototype
-      </span>
-    </div>
 
-    <!-- Featured Simulation Card: Falling Film Flow -->
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+      <div class="sim-card__body">
+        <div>
+          <div class="sim-card__tag-bar">
+            <span class="sim-pill sim-pill--amber">전달현상 2 (Transport Phenomena II)</span>
+            <span class="sim-pill">Manim Video 연동</span>
+            <span class="sim-pill">Web Audio 3채널 합성</span>
+          </div>
 
-        <!-- Thumbnail / Graphic Zone -->
-        <div class="lg:col-span-5 relative bg-slate-950 min-h-[220px] lg:min-h-[280px] flex items-center justify-center overflow-hidden group">
-          <img src="{{ '/assets/mario_falling_film_bg.jpg' | relative_url }}"
-               alt="Super Transport Bros Falling Film Simulation Thumbnail"
-               class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
-          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-amber-300 font-mono">
-            <span class="bg-black/70 px-2 py-0.5 rounded border border-amber-500/40">🕹️ 8-BIT NES THEME</span>
-            <span class="bg-black/70 px-2 py-0.5 rounded border border-sky-500/40 text-sky-300">BSL CH. 2.2</span>
+          <h3 class="sim-card__title">
+            Stage 2-2: Laminar Falling Film Flow (강하 액막 유동)
+          </h3>
+          <div class="sim-card__sub">
+            v<sub>z</sub>(x) = v<sub>z,max</sub> [ 1 − (x / δ)² ]
+          </div>
+
+          <p class="sim-card__desc">
+            경사 평면을 따라 중력에 의해 흘러내리는 뉴턴 유체의 층류 강하 액막 유동을 해석합니다.
+            Bird-Stewart-Lightfoot (BSL) 표준 좌표계에 따른 6단계 수식 유도 Manim 애니메이션,
+            점도·밀도·경사각·유량 조절에 따른 실시간 포물선 유속 및 선형 전단응력 분포를 인터랙티브하게 체험할 수 있습니다.
+          </p>
+
+          <div class="sim-features-grid">
+            <div><i class="fa-solid fa-circle-check"></i><span>실시간 미시/거시 듀얼 캔버스</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span>레이놀즈 수 (Re &lt; 20) 층류 판정</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span>HTML5 비디오 구간 탐색 제어</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span>다크모드 &amp; 슈퍼마리오 레트로 랜딩</span></div>
           </div>
         </div>
 
-        <!-- Details & Metadata Zone -->
-        <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
-          <div>
-            <div class="flex flex-wrap items-center gap-2 mb-2">
-              <span class="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-amber-100 text-amber-900 dark:bg-amber-950/70 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
-                전달현상 2 (Transport Phenomena II)
-              </span>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                Manim Video 연동
-              </span>
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
-                Web Audio 3채널 합성
-              </span>
-            </div>
-
-            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mt-1">
-              Stage 2-2: Laminar Falling Film Flow (강하 액막 유동)
-            </h3>
-            <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">
-              Momentum Shell Balance &amp; Parabolic Velocity Distribution: v<sub>z</sub>(x) = v<sub>z,max</sub> [ 1 − (x / δ)² ]
-            </p>
-
-            <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
-              경사 평면을 따라 중력에 의해 흘러내리는 뉴턴 유체의 층류 강하 액막 유동을 해석합니다.
-              Bird-Stewart-Lightfoot (BSL) 표준 좌표계에 따른 6단계 수식 유도 Manim 애니메이션,
-              점도·밀도·경사각·유량 조절에 따른 실시간 포물선 유속 및 선형 전단응력 분포를 인터랙티브하게 체험할 수 있습니다.
-            </p>
-
-            <!-- Feature Bullet Chips -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4 text-xs text-slate-600 dark:text-slate-400">
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                <span>실시간 미시/거시 듀얼 캔버스</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                <span>레이놀즈 수 (Re &lt; 20) 층류 체제 판정</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                <span>HTML5 비디오 구간 탐색 &amp; 재생 제어</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                <span>다크모드 &amp; 슈퍼마리오 레트로 랜딩</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Action Button Bar -->
-          <div class="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
-            <span class="text-xs text-slate-500 dark:text-slate-400">
-              <i class="fa-solid fa-code text-slate-400 mr-1"></i> 순수 클라이언트 사이드 (무설치 구동)
-            </span>
-            <a href="{{ '/simulations/falling-film/' | relative_url }}"
-               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm shadow-sm hover:shadow transition-all group">
-              <span>시뮬레이션 실행하기</span>
-              <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-            </a>
-          </div>
-
+        <div class="sim-card__action">
+          <span style="font-size: 0.78rem; opacity: 0.65;">
+            <i class="fa-solid fa-code mr-1"></i> 순수 클라이언트 사이드 (무설치 구동)
+          </span>
+          <a href="{{ '/simulations/falling-film/' | relative_url }}" class="sim-btn-launch">
+            <span>시뮬레이션 실행하기</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
       </div>
-    </div>
+    </article>
 
   </section>
 
   <!-- ==================== SECTION 2: ACADEMIC CURRICULUM ==================== -->
-  <section aria-labelledby="heading-courses">
-    <div class="border-b border-slate-200 dark:border-slate-800 pb-3 mb-6">
-      <h2 id="heading-courses" class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
-        <i class="fa-solid fa-book-open-reader text-sky-600 dark:text-sky-400" aria-hidden="true"></i>
-        <span>Academic Courses &amp; Curriculum</span>
-      </h2>
-      <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
-        경북대학교 과학기술대학 에너지화학공학과 및 대학원에서 개설 및 운영 중인 교과목입니다.
-      </p>
-    </div>
+  <section aria-labelledby="heading-courses" class="mb-5">
+    <h2 id="heading-courses" class="teaching-section-title">
+      <i class="fa-solid fa-book-open-reader text-primary" aria-hidden="true"></i>
+      <span>Academic Courses &amp; Curriculum</span>
+    </h2>
+    <p class="teaching-section-desc">
+      경북대학교 과학기술대학 에너지화학공학과 및 대학원에서 개설 및 운영 중인 교과목입니다.
+    </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div class="course-grid">
 
       <!-- Course 1: 전달현상 2 -->
-      <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs flex flex-col justify-between">
+      <div class="course-card">
         <div>
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-50 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
-              학부 전공필수 · 3학년
-            </span>
-            <span class="text-xs text-slate-400 font-mono">ENCH302</span>
+          <div class="course-card__header">
+            <span class="course-card__level">학부 전공필수 · 3학년</span>
+            <span class="course-card__code">ENCH302</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-            전달현상 2 (Transport Phenomena II)
-          </h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-mono">
-            Momentum, Heat &amp; Mass Transfer Operations
-          </p>
-          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+          <h3 class="course-card__title">전달현상 2 (Transport Phenomena II)</h3>
+          <div class="course-card__en">Momentum, Heat &amp; Mass Transfer Operations</div>
+          <p class="course-card__desc">
             유체 유동, 열전도 및 대류 열전달, 확산 물질전달의 기본 연속 방정식 및 미분 모멘텀 수지를 학습합니다.
             층류 경계층, 마찰 계수 및 파이프 유동 해석을 다루며, 본 페이지의 시뮬레이션을 통하여 이론적 해법을 가시화합니다.
           </p>
         </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 flex items-center justify-between">
+        <div class="course-card__footer">
           <span>주요 교재: BSL Transport Phenomena</span>
-          <span class="text-sky-600 dark:text-sky-400 font-medium">강의노트 연계</span>
+          <span style="color: var(--global-theme-color); font-weight: 600;">강의노트 연계</span>
         </div>
       </div>
 
       <!-- Course 2: 고급나노화학공학 -->
-      <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs flex flex-col justify-between">
+      <div class="course-card">
         <div>
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-purple-50 text-purple-700 dark:bg-purple-950/60 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
-              대학원 전공 · 석박사
-            </span>
-            <span class="text-xs text-slate-400 font-mono">ENCH601</span>
+          <div class="course-card__header">
+            <span class="course-card__level" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;">대학원 전공 · 석박사</span>
+            <span class="course-card__code">ENCH601</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-            고급나노화학공학 (Adv. Nano Chemical Engineering)
-          </h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-mono">
-            Nanoscale Transport &amp; Energy Materials
-          </p>
-          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+          <h3 class="course-card__title">고급나노화학공학 (Adv. Nano Chemical Engineering)</h3>
+          <div class="course-card__en">Nanoscale Transport &amp; Energy Materials</div>
+          <p class="course-card__desc">
             나노 스케일에서의 이온 전달 특성, 서브나노미터 제한 공간에서의 이상 유전 거동,
             초고속 광열 제어(IPL) 소결 메커니즘 및 2차전지·슈퍼커패시터 전극 반응 속도론을 최신 학술 논문 기반으로 탐구합니다.
           </p>
         </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 flex items-center justify-between">
+        <div class="course-card__footer">
           <span>최신 연구 동향 및 세미나 연계</span>
-          <span class="text-purple-600 dark:text-purple-400 font-medium">대학원 코어</span>
+          <span style="color: #9333ea; font-weight: 600;">대학원 코어</span>
         </div>
       </div>
 
       <!-- Course 3: 고분자 합성 및 물성 -->
-      <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs flex flex-col justify-between">
+      <div class="course-card">
         <div>
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-              학부 전공선택 · 3·4학년
-            </span>
-            <span class="text-xs text-slate-400 font-mono">ENCH315</span>
+          <div class="course-card__header">
+            <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;">학부 전공선택 · 3·4학년</span>
+            <span class="course-card__code">ENCH315</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-            고분자 합성 및 물성 (Polymer Synthesis &amp; Properties)
-          </h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-mono">
-            Macromolecular Engineering &amp; Rheology
-          </p>
-          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+          <h3 class="course-card__title">고분자 합성 및 물성 (Polymer Synthesis &amp; Properties)</h3>
+          <div class="course-card__en">Macromolecular Engineering &amp; Rheology</div>
+          <p class="course-card__desc">
             라디칼, 음이온, 배위 중합 등 다양한 중합 반응 메커니즘과 반응기 설계,
             고분자 용액 및 용융체의 점탄성 유변학적 거동, 고분자 복합소재의 기계적·열적 물성 제어 기법을 다룹니다.
           </p>
         </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 flex items-center justify-between">
+        <div class="course-card__footer">
           <span>고분자 유변학 및 합성 실무</span>
-          <span class="text-emerald-600 dark:text-emerald-400 font-medium">재료화학 연계</span>
+          <span style="color: #059669; font-weight: 600;">재료화학 연계</span>
         </div>
       </div>
 
       <!-- Course 4: 화학공학열역학 -->
-      <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs flex flex-col justify-between">
+      <div class="course-card">
         <div>
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
-              학부 전공필수 · 2학년
-            </span>
-            <span class="text-xs text-slate-400 font-mono">ENCH201</span>
+          <div class="course-card__header">
+            <span class="course-card__level" style="background: rgba(217, 119, 6, 0.1); color: #d97706;">학부 전공필수 · 2학년</span>
+            <span class="course-card__code">ENCH201</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">
-            화학공학열역학 (Chemical Engineering Thermodynamics)
-          </h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-mono">
-            Classical &amp; Molecular Thermodynamics
-          </p>
-          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+          <h3 class="course-card__title">화학공학열역학 (Chemical Engineering Thermodynamics)</h3>
+          <div class="course-card__en">Classical &amp; Molecular Thermodynamics</div>
+          <p class="course-card__desc">
             열역학 제1법칙 및 제2법칙, 순수 물질의 상태방정식(EOS), 기액 평형(VLE) 및 액액 평형(LLE),
             화학 반응 평형 및 에너지 효율 최적화를 엔지니어링 관점에서 체계적으로 학습합니다.
           </p>
         </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 flex items-center justify-between">
+        <div class="course-card__footer">
           <span>주요 교재: Smith, Van Ness &amp; Abbott</span>
-          <span class="text-amber-600 dark:text-amber-400 font-medium">기초 전공 코어</span>
+          <span style="color: #d97706; font-weight: 600;">기초 전공 코어</span>
         </div>
       </div>
 
