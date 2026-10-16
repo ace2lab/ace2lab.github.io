@@ -11,8 +11,14 @@ nav_order: 8
 
 <style>
   .teaching-container {
-    max-width: 1000px;
+    max-width: 1310px;
     margin: 0 auto;
+    padding: 0;
+  }
+  @media (max-width: 1340px) {
+    .teaching-container {
+      padding: 0 15px;
+    }
   }
   .teaching-section-title {
     font-family: var(--font-serif-editorial, "Playfair Display", serif);
@@ -204,8 +210,14 @@ nav_order: 8
   /* Academic Course Cards Grid */
   .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 992px) {
+    .course-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
   }
 
   .course-card {
@@ -377,7 +389,6 @@ nav_order: 8
         </div>
         <div class="course-card__footer">
           <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)</span>
-          <span style="color: #059669; font-weight: 600;">전공선택</span>
         </div>
       </div>
 
@@ -397,7 +408,6 @@ nav_order: 8
         </div>
         <div class="course-card__footer">
           <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)</span>
-          <span style="color: var(--global-theme-color); font-weight: 600;">강의노트 연계</span>
         </div>
       </div>
 
@@ -418,7 +428,6 @@ nav_order: 8
         </div>
         <div class="course-card__footer">
           <span><i class="fa-solid fa-book-open mr-1"></i> 교재: 최신 학술지 논문 강독 (Science, Nature 등)</span>
-          <span style="color: #9333ea; font-weight: 600;">석박사 세미나</span>
         </div>
       </div>
 
