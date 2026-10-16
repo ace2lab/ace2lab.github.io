@@ -58,12 +58,7 @@ latest_posts:
   </div>
 
 {% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni'" %}
-{% assign total_patents = site.data.patents.size %}
-{% assign reg_patents = site.data.patents | where: "status", "등록" %}
-{% assign filed_patents = site.data.patents | where: "status", "출원" %}
-{% assign total_domestic = site.data.domestic.size %}
 {% assign total_intl = 82 %}
-{% assign total_pubs_and_ip = total_intl | plus: total_domestic | plus: total_patents %}
 
   <div class="lab-stats-grid">
     <div class="lab-stat-card">
@@ -74,9 +69,9 @@ latest_posts:
     </div>
     <div class="lab-stat-card">
       <div class="lab-stat-card__icon"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i></div>
-      <div class="lab-stat-card__number">{{ total_pubs_and_ip }}</div>
-      <div class="lab-stat-card__label">Publications & IP</div>
-      <div class="lab-stat-card__desc">{{ total_intl }} Int'l Journal · {{ total_domestic }} Domestic · {{ total_patents }} IP ({{ filed_patents.size }} Filed · {{ reg_patents.size }} Reg.)</div>
+      <div class="lab-stat-card__number">{{ total_intl }}</div>
+      <div class="lab-stat-card__label">SCI(E) Journal Papers</div>
+      <div class="lab-stat-card__desc">Peer-Reviewed International Journals</div>
     </div>
     <div class="lab-stat-card">
       <div class="lab-stat-card__icon"><i class="fa-solid fa-atom" aria-hidden="true"></i></div>
