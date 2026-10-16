@@ -689,7 +689,7 @@
           <span class="blink-arrow">▶</span>PRESS START TO ENTER LAB
         </button>
       </div>
-      <div class="retro-sub-prompt">PRESS [ENTER] OR [SPACE] TO BYPASS &amp; ENTER LAB DIRECTLY</div>
+      <div class="retro-sub-prompt">PRESS [ENTER] OR [ESC] TO BYPASS &amp; ENTER LAB DIRECTLY</div>
     </div>
 
     <!-- RETRO BRICK FLOOR -->
@@ -2454,6 +2454,22 @@
         }
       }
 
+      function stopBGMOnly() {
+        isDismissed = true;
+        isPlaying = false;
+        if (schedulerTimer) {
+          clearInterval(schedulerTimer);
+          schedulerTimer = null;
+        }
+        const ctx = ensureContext();
+        if (ctx && masterGain) {
+          const now = ctx.currentTime;
+          masterGain.gain.cancelScheduledValues(now);
+          masterGain.gain.setValueAtTime(masterGain.gain.value, now);
+          masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.08);
+        }
+      }
+
       function updateMuteButtonUI() {
         const btns = document.querySelectorAll('[data-bgm-toggle], #retro-mute-toggle');
         const blocked = isAudioBlocked();
@@ -2476,6 +2492,7 @@
         playCoinAndBumpSound,
         playJump,
         playPipeWarp,
+        stopBGMOnly,
         triggerStartFanfareAndStop,
         updateMuteButtonUI,
         isMuted: () => isMuted,
@@ -3156,9 +3173,17 @@
         ctx.restore();
       }
 
-      // Main Loop
-      function gameLoop() {
-        updatePhysics();
+      // Main Loop with Fixed 60Hz Physics Accumulator (120Hz ProMotion Parity)
+      const STEP_MS = 1000 / 60;
+      let lastGameTime = performance.now();
+      let accumulator = 0;
+      function gameLoop(now = performance.now()) {
+        accumulator += Math.min(now - lastGameTime, 100);
+        lastGameTime = now;
+        while (accumulator >= STEP_MS) {
+          updatePhysics();
+          accumulator -= STEP_MS;
+        }
         renderStage();
         if (isOverlayActive) {
           rafId = requestAnimationFrame(gameLoop);
@@ -3179,9 +3204,12 @@
         // Unbind keyboard listeners so scrolling in lecture note is isolated
         window.removeEventListener('keydown', handleKeyDown);
         window.removeEventListener('keyup', handleKeyUp);
+        input.left = input.right = input.down = input.jump = false;
 
         if (!viaPipe) {
           MarioChiptuneEngine.triggerStartFanfareAndStop();
+        } else {
+          MarioChiptuneEngine.stopBGMOnly();
         }
 
         try {
@@ -3210,6 +3238,8 @@
         player.isGrounded = true;
         player.state = 'NORMAL';
         player.warpTimer = 0;
+        lastGameTime = performance.now();
+        accumulator = 0;
 
         window.addEventListener('keydown', handleKeyDown);
         window.addEventListener('keyup', handleKeyUp);
@@ -3242,6 +3272,7 @@
 
       // Direct Canvas Pointer/Touch Interactivity
       canvas.addEventListener('pointerdown', (e) => {
+        if (player.state === 'WARPING') return;
         const rect = canvas.getBoundingClientRect();
         const scaleX = CW / rect.width;
         const scaleY = CH / rect.height;
@@ -3262,7 +3293,9 @@
           player.state = 'WARPING';
           player.warpTimer = 34;
           player.vx = 0;
+          player.vy = 0;
           player.x = pipe.x + (pipe.w - player.w) / 2;
+          player.y = pipe.topY - player.h;
           MarioChiptuneEngine.playPipeWarp();
           return;
         }
