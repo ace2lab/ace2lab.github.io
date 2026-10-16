@@ -220,7 +220,7 @@
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: radial-gradient(circle at 50% 35%, #1e293b 0%, #090d16 75%, #020617 100%);
+      background: #020617 url('assets/mario_falling_film_bg.jpg') center/cover no-repeat;
       color: #f8fafc;
       font-family: 'Press Start 2P', 'JetBrains Mono', monospace;
       display: flex;
@@ -238,16 +238,18 @@
                   visibility 0.5s;
     }
 
-    /* CRT scanline effect */
+    /* CRT scanline effect + subtle vignette over the pixel art */
     .retro-overlay::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        rgba(18, 16, 16, 0) 50%,
-        rgba(0, 0, 0, 0.32) 50%
-      );
-      background-size: 100% 4px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.65) 100%),
+        linear-gradient(
+          rgba(18, 16, 16, 0) 50%,
+          rgba(0, 0, 0, 0.28) 50%
+        );
+      background-size: 100% 100%, 100% 4px;
       pointer-events: none;
       z-index: 1;
     }
@@ -270,9 +272,10 @@
       gap: 16px;
       align-items: center;
       padding: 12px 18px;
-      background: rgba(15, 23, 42, 0.88);
+      background: rgba(15, 23, 42, 0.92);
       border: 3px solid #334155;
-      box-shadow: 0 4px 0 #020617;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
       border-radius: 8px;
     }
     .retro-hud-col {
@@ -346,11 +349,12 @@
     }
 
     .retro-title-box {
-      background: #b45309;
+      background: rgba(180, 83, 9, 0.94);
       border: 4px solid #fde68a;
       box-shadow:
         inset 0 0 0 4px #78350f,
-        0 8px 0 #020617;
+        0 8px 20px rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
       padding: 20px 24px;
       margin-bottom: 20px;
       width: 100%;
@@ -419,13 +423,19 @@
     .retro-q-hint {
       margin-top: 12px;
       font-size: 9px;
-      color: #94a3b8;
+      color: #f8fafc;
+      text-shadow: 2px 2px 0 #020617;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 10px;
+      border-radius: 4px;
       letter-spacing: 0.05em;
       min-height: 18px;
-      transition: color 0.15s;
+      transition: color 0.15s, border-color 0.15s;
     }
     .retro-q-hint.easter-egg {
       color: #38bdf8;
+      border-color: #38bdf8;
     }
 
     /* Floating Coin Particle */
@@ -486,8 +496,14 @@
     .retro-sub-prompt {
       margin-top: 12px;
       font-size: 8px;
-      color: #64748b;
+      color: #cbd5e1;
+      text-shadow: 2px 2px 0 #020617;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
       letter-spacing: 0.06em;
+      display: inline-block;
     }
 
     /* Bottom Brick Floor */
@@ -545,8 +561,8 @@
         <span class="retro-hud-label">REGIME</span>
         <span class="retro-hud-val">Re &lt; 20</span>
       </div>
-      <button id="retro-mute-toggle" class="retro-mute-btn" type="button" aria-pressed="false">
-        🔊 SFX: ON
+      <button id="retro-mute-toggle" class="retro-mute-btn" type="button" aria-pressed="true" data-bgm-toggle>
+        [ 🔊 BGM: ON ]
       </button>
     </div>
 
@@ -1803,7 +1819,484 @@
       requestAnimationFrame(renderLoop);
     });
 
-    // --- Retro 8-Bit Web Audio Synthesizer & Overlay Controller ---
+    // ==========================================================================
+    // NES 2A03 8-BIT CHIPTUNE SYNTHESIZER & RETRO OVERLAY CONTROLLER
+    // Theme: Super Mario Bros. Overworld (Koji Kondo)
+    // Pure Web Audio API — 0 KB external assets, lookahead-scheduled
+    // ==========================================================================
+    const MarioChiptuneEngine = (() => {
+      const BPM = 150;
+      const BEAT_SEC = 60 / BPM; // 0.4s per quarter note
+      const MASTER_VOLUME = 0.07; // Balanced gain (charming, never piercing)
+      const LOOKAHEAD_MS = 25; // Scheduler tick interval (ms)
+      const SCHEDULE_AHEAD_SEC = 0.12; // Audio lookahead window (s)
+
+      // Equal-temperament frequency table (A4 = 440 Hz)
+      const NOTE_FREQ = {
+        R: 0,
+        G2: 97.999,
+        C3: 130.813, D3: 146.832, E3: 164.814, F3: 174.614,
+        Gb3: 184.997, G3: 195.998, Ab3: 207.652, A3: 220.000, Bb3: 233.082, B3: 246.942,
+        C4: 261.626, Db4: 277.183, D4: 293.665, Eb4: 311.127, E4: 329.628, F4: 349.228,
+        'F#4': 369.994, G4: 391.995, 'G#4': 415.305, Ab4: 415.305, A4: 440.000, Bb4: 466.164, B4: 493.883,
+        C5: 523.251, D5: 587.330, 'D#5': 622.254, Eb5: 622.254, E5: 659.255, F5: 698.456,
+        'F#5': 739.989, G5: 783.991, A5: 880.000, B5: 987.767,
+        C6: 1046.502, D6: 1174.659, E6: 1318.510, G6: 1567.982
+      };
+
+      const T = 2 / 3; // Quarter-note triplet duration (2/3 of a beat)
+
+      // --- SCORE DEFINITIONS: [NoteName, DurationInBeats] ---
+      // Intro (8 beats)
+      const INTRO_LEAD = [
+        ['E5', 0.5], ['E5', 0.5], ['R', 0.5], ['E5', 0.5],
+        ['R', 0.5], ['C5', 0.5], ['E5', 1.0],
+        ['G5', 1.0], ['R', 1.0], ['G4', 1.0], ['R', 1.0]
+      ];
+      const INTRO_HARM = [
+        ['F#4', 0.5], ['F#4', 0.5], ['R', 0.5], ['F#4', 0.5],
+        ['R', 0.5], ['F#4', 0.5], ['F#4', 1.0],
+        ['B4', 1.0], ['R', 1.0], ['G4', 1.0], ['R', 1.0]
+      ];
+      const INTRO_BASS = [
+        ['D3', 0.5], ['D3', 0.5], ['R', 0.5], ['D3', 0.5],
+        ['R', 0.5], ['D3', 0.5], ['D3', 1.0],
+        ['G3', 1.0], ['R', 1.0], ['G2', 1.0], ['R', 1.0]
+      ];
+
+      // Main Phrase A (16 beats)
+      const PHRASE_A_LEAD = [
+        ['C5', 1.5], ['G4', 0.5], ['R', 1.0], ['E4', 1.0],
+        ['R', 0.5], ['A4', 1.0], ['B4', 1.0], ['Bb4', 0.5], ['A4', 1.0],
+        ['G4', T], ['E5', T], ['G5', T], ['A5', 1.0], ['F5', 0.5], ['G5', 0.5],
+        ['R', 0.5], ['E5', 1.0], ['C5', 0.5], ['D5', 0.5], ['B4', 1.5]
+      ];
+      const PHRASE_A_HARM = [
+        ['E4', 1.5], ['C4', 0.5], ['R', 1.0], ['G3', 1.0],
+        ['R', 0.5], ['C4', 1.0], ['D4', 1.0], ['Db4', 0.5], ['C4', 1.0],
+        ['C4', T], ['G4', T], ['B4', T], ['C5', 1.0], ['A4', 0.5], ['B4', 0.5],
+        ['R', 0.5], ['G4', 1.0], ['E4', 0.5], ['F4', 0.5], ['D4', 1.5]
+      ];
+      const PHRASE_A_BASS = [
+        ['G2', 1.5], ['E3', 0.5], ['R', 1.0], ['C3', 1.0],
+        ['R', 0.5], ['F3', 1.0], ['G3', 1.0], ['Gb3', 0.5], ['F3', 1.0],
+        ['E3', T], ['C4', T], ['E4', T], ['F4', 1.0], ['D4', 0.5], ['E4', 0.5],
+        ['R', 0.5], ['C4', 1.0], ['A3', 0.5], ['B3', 0.5], ['G3', 1.5]
+      ];
+
+      // Phrase B (32 beats)
+      const PHRASE_B_LEAD = [
+        ['R', 1.0], ['G5', 0.5], ['F#5', 0.5], ['F5', 0.5], ['D#5', 1.0], ['E5', 0.5],
+        ['R', 0.5], ['G#4', 0.5], ['A4', 0.5], ['C5', 0.5], ['R', 0.5], ['A4', 0.5], ['C5', 0.5], ['D5', 0.5],
+        ['R', 1.0], ['G5', 0.5], ['F#5', 0.5], ['F5', 0.5], ['D#5', 1.0], ['E5', 0.5],
+        ['R', 0.5], ['C6', 1.0], ['C6', 0.5], ['C6', 1.0], ['R', 1.0],
+        ['R', 1.0], ['G5', 0.5], ['F#5', 0.5], ['F5', 0.5], ['D#5', 1.0], ['E5', 0.5],
+        ['R', 0.5], ['G#4', 0.5], ['A4', 0.5], ['C5', 0.5], ['R', 0.5], ['A4', 0.5], ['C5', 0.5], ['D5', 0.5],
+        ['R', 1.0], ['Eb5', 1.0], ['R', 0.5], ['D5', 1.0], ['R', 0.5],
+        ['C5', 1.0], ['R', 3.0]
+      ];
+      const PHRASE_B_HARM = [
+        ['R', 1.0], ['E5', 0.5], ['Eb5', 0.5], ['D5', 0.5], ['B4', 1.0], ['C5', 0.5],
+        ['R', 0.5], ['E4', 0.5], ['F4', 0.5], ['G4', 0.5], ['R', 0.5], ['C4', 0.5], ['E4', 0.5], ['F4', 0.5],
+        ['R', 1.0], ['E5', 0.5], ['Eb5', 0.5], ['D5', 0.5], ['B4', 1.0], ['C5', 0.5],
+        ['R', 0.5], ['G5', 1.0], ['G5', 0.5], ['G5', 1.0], ['R', 1.0],
+        ['R', 1.0], ['E5', 0.5], ['Eb5', 0.5], ['D5', 0.5], ['B4', 1.0], ['C5', 0.5],
+        ['R', 0.5], ['E4', 0.5], ['F4', 0.5], ['G4', 0.5], ['R', 0.5], ['C4', 0.5], ['E4', 0.5], ['F4', 0.5],
+        ['R', 1.0], ['Ab4', 1.0], ['R', 0.5], ['F4', 1.0], ['R', 0.5],
+        ['E4', 1.0], ['R', 3.0]
+      ];
+      const PHRASE_B_BASS = [
+        ['C3', 1.5], ['G3', 1.5], ['C4', 1.0],
+        ['F3', 1.5], ['C4', 0.5], ['C4', 1.0], ['F3', 1.0],
+        ['C3', 1.5], ['G3', 1.5], ['C4', 1.0],
+        ['R', 0.5], ['F4', 1.0], ['F4', 0.5], ['F4', 1.0], ['G3', 1.0],
+        ['C3', 1.5], ['G3', 1.5], ['C4', 1.0],
+        ['F3', 1.5], ['C4', 0.5], ['C4', 1.0], ['F3', 1.0],
+        ['C3', 1.0], ['Ab3', 1.5], ['Bb3', 1.5],
+        ['C4', 1.0], ['R', 0.5], ['G3', 0.5], ['G2', 1.0], ['R', 1.0]
+      ];
+
+      // Flatten multi-channel tracks
+      function buildTimeline() {
+        const leadSeq = [...INTRO_LEAD, ...PHRASE_A_LEAD, ...PHRASE_A_LEAD, ...PHRASE_B_LEAD];
+        const harmSeq = [...INTRO_HARM, ...PHRASE_A_HARM, ...PHRASE_A_HARM, ...PHRASE_B_HARM];
+        const bassSeq = [...INTRO_BASS, ...PHRASE_A_BASS, ...PHRASE_A_BASS, ...PHRASE_B_BASS];
+
+        const events = [];
+        const appendTrack = (seq, channel) => {
+          let beatCursor = 0;
+          for (const [note, beats] of seq) {
+            if (note !== 'R' && NOTE_FREQ[note]) {
+              events.push({
+                beat: beatCursor,
+                durationBeats: beats,
+                freq: NOTE_FREQ[note],
+                channel
+              });
+            }
+            beatCursor += beats;
+          }
+          return beatCursor;
+        };
+
+        const totalBeats = appendTrack(leadSeq, 'lead');
+        appendTrack(harmSeq, 'harm');
+        appendTrack(bassSeq, 'bass');
+
+        events.sort((a, b) => a.beat - b.beat);
+        return { events, totalBeats, loopStartBeat: 8.0 };
+      }
+
+      const SCORE = buildTimeline();
+
+      // State
+      let audioCtx = null;
+      let masterGain = null;
+      let pulse25Wave = null;
+      let schedulerTimer = null;
+      let isPlaying = false;
+      let isMuted = false;
+      let isDismissed = false;
+      let currentEventIndex = 0;
+      let cycleOriginTime = 0;
+      let unlockListenersAttached = false;
+
+      // 25% duty cycle pulse wave for NES Lead
+      function createNES25PulseWave(ctx) {
+        const harmonics = 32;
+        const real = new Float32Array(harmonics + 1);
+        const imag = new Float32Array(harmonics + 1);
+        const duty = 0.25;
+        for (let n = 1; n <= harmonics; n++) {
+          real[n] = (2 / (n * Math.PI)) * Math.sin(n * Math.PI * duty);
+          imag[n] = (2 / (n * Math.PI)) * (1 - Math.cos(n * Math.PI * duty));
+        }
+        return ctx.createPeriodicWave(real, imag, { disableNormalization: false });
+      }
+
+      function ensureContext() {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContextClass) return null;
+          audioCtx = new AudioContextClass();
+          masterGain = audioCtx.createGain();
+          masterGain.gain.setValueAtTime(isMuted ? 0 : MASTER_VOLUME, audioCtx.currentTime);
+          masterGain.connect(audioCtx.destination);
+          pulse25Wave = createNES25PulseWave(audioCtx);
+        }
+        return audioCtx;
+      }
+
+      function scheduleNote(event, startTime) {
+        if (!audioCtx || !masterGain) return;
+
+        const noteDuration = event.durationBeats * BEAT_SEC;
+        const gateDuration = Math.max(0.035, noteDuration * 0.82);
+
+        const osc = audioCtx.createOscillator();
+        const noteGain = audioCtx.createGain();
+
+        let peakGain = 0.55;
+        if (event.channel === 'lead') {
+          if (pulse25Wave) {
+            osc.setPeriodicWave(pulse25Wave);
+          } else {
+            osc.type = 'square';
+          }
+          peakGain = 0.58;
+        } else if (event.channel === 'harm') {
+          osc.type = 'square';
+          peakGain = 0.28;
+        } else if (event.channel === 'bass') {
+          osc.type = 'triangle';
+          peakGain = 0.65;
+        }
+
+        osc.frequency.setValueAtTime(event.freq, startTime);
+
+        noteGain.gain.setValueAtTime(0.0001, startTime);
+        noteGain.gain.linearRampToValueAtTime(peakGain, startTime + 0.004);
+        noteGain.gain.exponentialRampToValueAtTime(
+          Math.max(0.001, peakGain * 0.65),
+          startTime + gateDuration * 0.85
+        );
+        noteGain.gain.linearRampToValueAtTime(0.0001, startTime + gateDuration);
+
+        osc.connect(noteGain);
+        noteGain.connect(masterGain);
+
+        osc.start(startTime);
+        osc.stop(startTime + gateDuration + 0.01);
+      }
+
+      function schedulerTick() {
+        if (!isPlaying || !audioCtx || audioCtx.state !== 'running') return;
+
+        const now = audioCtx.currentTime;
+        while (currentEventIndex < SCORE.events.length) {
+          const ev = SCORE.events[currentEventIndex];
+          const eventTime = cycleOriginTime + ev.beat * BEAT_SEC;
+
+          if (eventTime <= now + SCHEDULE_AHEAD_SEC) {
+            if (eventTime >= now - 0.05) {
+              scheduleNote(ev, Math.max(now, eventTime));
+            }
+            currentEventIndex++;
+
+            if (currentEventIndex >= SCORE.events.length) {
+              cycleOriginTime += SCORE.totalBeats * BEAT_SEC;
+              currentEventIndex = 0;
+            }
+          } else {
+            break;
+          }
+        }
+      }
+
+      function startSchedulerFromBeginning() {
+        if (!audioCtx) return;
+        currentEventIndex = 0;
+        cycleOriginTime = audioCtx.currentTime + 0.03;
+        isPlaying = true;
+        if (schedulerTimer) clearInterval(schedulerTimer);
+        schedulerTick();
+        schedulerTimer = setInterval(schedulerTick, LOOKAHEAD_MS);
+        updateMuteButtonUI();
+      }
+
+      function attachGestureUnlock() {
+        if (unlockListenersAttached) return;
+        unlockListenersAttached = true;
+
+        const unlockHandler = (e) => {
+          if (isDismissed) {
+            detachGestureUnlock();
+            return;
+          }
+          if (e.target && e.target.closest && e.target.closest('[data-bgm-toggle]')) {
+            detachGestureUnlock();
+            return;
+          }
+          const ctx = ensureContext();
+          if (!ctx) return;
+
+          ctx.resume().then(() => {
+            if (!isDismissed && !isMuted && !isPlaying) {
+              startSchedulerFromBeginning();
+            }
+            updateMuteButtonUI();
+          }).catch(() => {});
+
+          detachGestureUnlock();
+        };
+
+        const detachGestureUnlock = () => {
+          window.removeEventListener('pointerdown', unlockHandler, true);
+          window.removeEventListener('keydown', unlockHandler, true);
+          window.removeEventListener('touchstart', unlockHandler, true);
+          unlockListenersAttached = false;
+        };
+
+        window.addEventListener('pointerdown', unlockHandler, { capture: true, passive: true });
+        window.addEventListener('keydown', unlockHandler, { capture: true, passive: true });
+        window.addEventListener('touchstart', unlockHandler, { capture: true, passive: true });
+      }
+
+      function initAutoplay() {
+        if (isDismissed) return;
+        const ctx = ensureContext();
+        if (!ctx) return;
+
+        const tryPlay = () => {
+          if (ctx.state === 'running') {
+            if (!isPlaying && !isMuted) {
+              startSchedulerFromBeginning();
+            }
+          } else {
+            attachGestureUnlock();
+          }
+          updateMuteButtonUI();
+        };
+
+        if (ctx.state === 'suspended') {
+          ctx.resume().then(tryPlay).catch(() => {
+            attachGestureUnlock();
+            updateMuteButtonUI();
+          });
+        } else {
+          tryPlay();
+        }
+      }
+
+      function toggleMute(forceState) {
+        const ctx = ensureContext();
+        isMuted = typeof forceState === 'boolean' ? forceState : !isMuted;
+
+        if (ctx && masterGain) {
+          const now = ctx.currentTime;
+          masterGain.gain.cancelScheduledValues(now);
+          masterGain.gain.setValueAtTime(masterGain.gain.value, now);
+
+          if (isMuted) {
+            masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.04);
+          } else {
+            if (ctx.state === 'suspended') {
+              ctx.resume().then(() => {
+                if (!isPlaying && !isDismissed) startSchedulerFromBeginning();
+              });
+            } else if (!isPlaying && !isDismissed) {
+              startSchedulerFromBeginning();
+            }
+            masterGain.gain.linearRampToValueAtTime(MASTER_VOLUME, now + 0.04);
+          }
+        }
+
+        updateMuteButtonUI();
+        return !isMuted;
+      }
+
+      function restartBGM() {
+        isDismissed = false;
+        const ctx = ensureContext();
+        if (!ctx) return;
+
+        if (masterGain && !isMuted) {
+          masterGain.gain.cancelScheduledValues(ctx.currentTime);
+          masterGain.gain.setValueAtTime(MASTER_VOLUME, ctx.currentTime);
+        }
+
+        if (ctx.state === 'suspended') {
+          ctx.resume().then(() => {
+            if (!isMuted) startSchedulerFromBeginning();
+          }).catch(() => {});
+        } else if (!isMuted) {
+          startSchedulerFromBeginning();
+        }
+      }
+
+      function playCoinAndBumpSound() {
+        const ctx = ensureContext();
+        if (!ctx || isMuted) return;
+
+        const now = ctx.currentTime;
+
+        // Block bump (150 Hz -> 85 Hz square pulse)
+        const bumpOsc = ctx.createOscillator();
+        const bumpGain = ctx.createGain();
+        bumpOsc.type = 'square';
+        bumpOsc.frequency.setValueAtTime(150, now);
+        bumpOsc.frequency.exponentialRampToValueAtTime(85, now + 0.055);
+        bumpGain.gain.setValueAtTime(0.14, now);
+        bumpGain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+
+        bumpOsc.connect(bumpGain);
+        bumpGain.connect(ctx.destination);
+        bumpOsc.start(now);
+        bumpOsc.stop(now + 0.065);
+
+        // Coin chime (B5 -> E6)
+        const coinOsc = ctx.createOscillator();
+        const coinGain = ctx.createGain();
+        coinOsc.type = 'square';
+        const coinStart = now + 0.03;
+        coinOsc.frequency.setValueAtTime(NOTE_FREQ.B5, coinStart);
+        coinOsc.frequency.setValueAtTime(NOTE_FREQ.E6, coinStart + 0.07);
+
+        coinGain.gain.setValueAtTime(0.16, coinStart);
+        coinGain.gain.setValueAtTime(0.16, coinStart + 0.07);
+        coinGain.gain.exponentialRampToValueAtTime(0.001, coinStart + 0.42);
+
+        coinOsc.connect(coinGain);
+        coinGain.connect(ctx.destination);
+        coinOsc.start(coinStart);
+        coinOsc.stop(coinStart + 0.43);
+      }
+
+      function triggerStartFanfareAndStop() {
+        isDismissed = true;
+        isPlaying = false;
+        if (schedulerTimer) {
+          clearInterval(schedulerTimer);
+          schedulerTimer = null;
+        }
+
+        const ctx = ensureContext();
+        if (!ctx) return;
+
+        const playFanfare = () => {
+          const now = ctx.currentTime;
+
+          // Smoothly cut ongoing BGM notes
+          if (masterGain) {
+            masterGain.gain.cancelScheduledValues(now);
+            masterGain.gain.setValueAtTime(masterGain.gain.value, now);
+            masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.05);
+          }
+
+          if (isMuted) return;
+
+          // Dedicated fanfare bus (1-UP / Stage Start arpeggio: E5 - G5 - E6 - C6 - D6 - G6)
+          const fanfareGain = ctx.createGain();
+          fanfareGain.gain.setValueAtTime(MASTER_VOLUME * 1.1, now);
+          fanfareGain.connect(ctx.destination);
+
+          const fanfareNotes = [
+            { freq: NOTE_FREQ.E5, offset: 0.00, dur: 0.09 },
+            { freq: NOTE_FREQ.G5, offset: 0.09, dur: 0.09 },
+            { freq: NOTE_FREQ.E6, offset: 0.18, dur: 0.09 },
+            { freq: NOTE_FREQ.C6, offset: 0.27, dur: 0.09 },
+            { freq: NOTE_FREQ.D6, offset: 0.36, dur: 0.09 },
+            { freq: NOTE_FREQ.G6, offset: 0.45, dur: 0.28 }
+          ];
+
+          for (const n of fanfareNotes) {
+            const osc = ctx.createOscillator();
+            const env = ctx.createGain();
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(n.freq, now + n.offset);
+
+            env.gain.setValueAtTime(0.0001, now + n.offset);
+            env.gain.linearRampToValueAtTime(0.6, now + n.offset + 0.005);
+            env.gain.exponentialRampToValueAtTime(0.001, now + n.offset + n.dur);
+
+            osc.connect(env);
+            env.connect(fanfareGain);
+            osc.start(now + n.offset);
+            osc.stop(now + n.offset + n.dur + 0.01);
+          }
+        };
+
+        if (ctx.state === 'suspended') {
+          ctx.resume().then(playFanfare).catch(() => {});
+        } else {
+          playFanfare();
+        }
+      }
+
+      function updateMuteButtonUI() {
+        const btns = document.querySelectorAll('[data-bgm-toggle], #retro-mute-toggle');
+        btns.forEach((btn) => {
+          const active = !isMuted;
+          btn.setAttribute('aria-pressed', String(active));
+          btn.classList.toggle('is-muted', isMuted);
+          btn.textContent = active ? '[ 🔊 BGM: ON ]' : '[ 🔇 BGM: OFF ]';
+        });
+      }
+
+      return {
+        ensureContext,
+        initAutoplay,
+        toggleMute,
+        restartBGM,
+        playCoinAndBumpSound,
+        triggerStartFanfareAndStop,
+        updateMuteButtonUI,
+        isMuted: () => isMuted,
+        isPlaying: () => isPlaying && !isMuted
+      };
+    })();
+
+    // Overlay Controller & Interactive Gamification Logic
     (() => {
       const overlay = document.getElementById('retro-arcade-overlay');
       const startBtn = document.getElementById('retro-start-btn');
@@ -1817,8 +2310,6 @@
 
       if (!overlay || !startBtn) return;
 
-      let audioCtx = null;
-      let isMuted = false;
       let isOverlayActive = true;
       let score = 100;
       let coins = 1;
@@ -1831,94 +2322,6 @@
         "🪙 +100 PTS: FREE SURFACE AT x = 0 → τ_xz = 0",
         "🍄 1-UP! REYNOLDS NUMBER Re = 4 Γ / μ < 20"
       ];
-
-      function getAudioContext() {
-        if (isMuted) return null;
-        if (!audioCtx) {
-          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-          if (AudioContextClass) {
-            audioCtx = new AudioContextClass();
-          }
-        }
-        if (audioCtx && audioCtx.state === 'suspended') {
-          audioCtx.resume().catch(() => {});
-        }
-        return audioCtx;
-      }
-
-      /* 150 Hz low-pitch square pulse + B5 (987.77 Hz) -> E6 (1318.51 Hz) coin chime */
-      function playCoinAndBumpSound() {
-        const ctx = getAudioContext();
-        if (!ctx) return;
-
-        const now = ctx.currentTime;
-
-        // 1. Block Bump (150 Hz square pulse)
-        const bumpOsc = ctx.createOscillator();
-        const bumpGain = ctx.createGain();
-        bumpOsc.type = 'square';
-        bumpOsc.frequency.setValueAtTime(150, now);
-        bumpOsc.frequency.exponentialRampToValueAtTime(85, now + 0.055);
-
-        bumpGain.gain.setValueAtTime(0.14, now);
-        bumpGain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
-
-        bumpOsc.connect(bumpGain);
-        bumpGain.connect(ctx.destination);
-        bumpOsc.start(now);
-        bumpOsc.stop(now + 0.065);
-
-        // 2. Super Mario Coin Chime: B5 (987.77 Hz, 0.07s) -> E6 (1318.51 Hz, 0.35s)
-        const coinOsc = ctx.createOscillator();
-        const coinGain = ctx.createGain();
-        coinOsc.type = 'square';
-
-        const coinStart = now + 0.03;
-        coinOsc.frequency.setValueAtTime(987.77, coinStart);
-        coinOsc.frequency.setValueAtTime(1318.51, coinStart + 0.07);
-
-        coinGain.gain.setValueAtTime(0.16, coinStart);
-        coinGain.gain.setValueAtTime(0.16, coinStart + 0.07);
-        coinGain.gain.exponentialRampToValueAtTime(0.001, coinStart + 0.42);
-
-        coinOsc.connect(coinGain);
-        coinGain.connect(ctx.destination);
-        coinOsc.start(coinStart);
-        coinOsc.stop(coinStart + 0.43);
-      }
-
-      /* Stage Start Arpeggio Fanfare: C5, E5, G5, C6, G5, C6 */
-      function playStartFanfare() {
-        const ctx = getAudioContext();
-        if (!ctx) return;
-
-        const notes = [
-          { freq: 523.25, dur: 0.075 }, // C5
-          { freq: 659.25, dur: 0.075 }, // E5
-          { freq: 783.99, dur: 0.075 }, // G5
-          { freq: 1046.50, dur: 0.14 }, // C6
-          { freq: 783.99, dur: 0.075 }, // G5
-          { freq: 1046.50, dur: 0.26 }  // C6
-        ];
-
-        let cursor = ctx.currentTime;
-        notes.forEach((n) => {
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.type = 'square';
-          osc.frequency.setValueAtTime(n.freq, cursor);
-
-          gain.gain.setValueAtTime(0.15, cursor);
-          gain.gain.exponentialRampToValueAtTime(0.001, cursor + n.dur - 0.008);
-
-          osc.connect(gain);
-          gain.connect(ctx.destination);
-          osc.start(cursor);
-          osc.stop(cursor + n.dur);
-
-          cursor += n.dur;
-        });
-      }
 
       function updateHudCounters() {
         if (scoreEl) scoreEl.textContent = String(score).padStart(6, '0');
@@ -1937,7 +2340,7 @@
       }
 
       function triggerQuestionBlock() {
-        playCoinAndBumpSound();
+        MarioChiptuneEngine.playCoinAndBumpSound();
         score += 100;
         coins = (coins + 1) % 100;
         updateHudCounters();
@@ -1945,7 +2348,7 @@
 
         if (qBlock) {
           qBlock.classList.remove('is-bumping');
-          void qBlock.offsetWidth; // Force reflow
+          void qBlock.offsetWidth;
           qBlock.classList.add('is-bumping');
         }
 
@@ -1959,7 +2362,7 @@
       function dismissArcadeOverlay() {
         if (!isOverlayActive) return;
         isOverlayActive = false;
-        playStartFanfare();
+        MarioChiptuneEngine.triggerStartFanfareAndStop();
         overlay.classList.add('is-closing');
         overlay.setAttribute('aria-hidden', 'true');
       }
@@ -1968,7 +2371,8 @@
         isOverlayActive = true;
         overlay.classList.remove('is-closing');
         overlay.setAttribute('aria-hidden', 'false');
-        playCoinAndBumpSound();
+        MarioChiptuneEngine.restartBGM();
+        MarioChiptuneEngine.playCoinAndBumpSound();
       }
 
       // Event Listeners
@@ -1990,11 +2394,9 @@
       }
 
       if (muteBtn) {
-        muteBtn.addEventListener('click', () => {
-          isMuted = !isMuted;
-          muteBtn.classList.toggle('is-muted', isMuted);
-          muteBtn.setAttribute('aria-pressed', String(isMuted));
-          muteBtn.textContent = isMuted ? '🔇 SFX: OFF' : '🔊 SFX: ON';
+        muteBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          MarioChiptuneEngine.toggleMute();
         });
       }
 
@@ -2008,6 +2410,9 @@
           dismissArcadeOverlay();
         }
       });
+
+      // Start autoplay / gesture unlock immediately
+      MarioChiptuneEngine.initAutoplay();
     })();
 
     window.addEventListener('resize', resizeCanvas);
