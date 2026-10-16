@@ -321,6 +321,34 @@
       border-color: #ef4444;
       color: #f87171;
     }
+    .retro-mute-btn.is-blocked {
+      border-color: #fbbf24;
+      color: #fbbf24;
+      animation: retroSoundPulse 0.9s steps(2, start) infinite;
+    }
+
+    /* Autoplay-blocked prompt: visible only until the AudioContext is running */
+    .retro-audio-prompt {
+      background: #dc2626;
+      color: #fef08a;
+      font-size: 9px;
+      padding: 7px 12px;
+      border: 2px solid #fef08a;
+      box-shadow: 0 4px 0 #7f1d1d;
+      border-radius: 4px;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+      cursor: pointer;
+      animation: retroSoundPulse 0.9s steps(2, start) infinite;
+    }
+    .retro-audio-prompt[hidden] {
+      display: block;
+      visibility: hidden;
+      animation: none;
+    }
+    @keyframes retroSoundPulse {
+      to { opacity: 0.55; }
+    }
 
     /* Center Stage */
     .retro-stage {
@@ -568,6 +596,9 @@
 
     <!-- CENTER STAGE -->
     <div class="retro-stage">
+      <div id="retro-audio-prompt" class="retro-audio-prompt" role="status" aria-live="polite" hidden>
+        🔊 TAP · CLICK · PRESS ANY KEY FOR SOUND
+      </div>
       <div class="retro-badge">★ ACE² LAB ARCHIVE — EDITION 1985 ★</div>
 
       <div class="retro-title-box">
@@ -1960,6 +1991,13 @@
       let currentEventIndex = 0;
       let cycleOriginTime = 0;
       let unlockListenersAttached = false;
+      let lastWeakAttemptMs = 0;
+
+      // Events that carry (or may carry) browser user activation: always retried until the context runs.
+      const STRONG_UNLOCK_EVENTS = ['pointerdown', 'pointerup', 'mousedown', 'mouseup', 'click', 'touchend', 'keydown', 'keyup'];
+      // Passive signals: retried (throttled) only once the page already has sticky activation / engagement.
+      const WEAK_UNLOCK_EVENTS = ['pointermove', 'mousemove', 'touchstart', 'touchmove', 'wheel', 'scroll', 'focus', 'visibilitychange'];
+      const WEAK_ATTEMPT_INTERVAL_MS = 250;
 
       // 25% duty cycle pulse wave for NES Lead
       function createNES25PulseWave(ctx) {
@@ -1983,6 +2021,8 @@
           masterGain.gain.setValueAtTime(isMuted ? 0 : MASTER_VOLUME, audioCtx.currentTime);
           masterGain.connect(audioCtx.destination);
           pulse25Wave = createNES25PulseWave(audioCtx);
+          // Covers late grants (e.g. a pending resume() fulfilled by a later gesture)
+          audioCtx.addEventListener('statechange', syncPlayback);
         }
         return audioCtx;
       }
@@ -2064,71 +2104,101 @@
         updateMuteButtonUI();
       }
 
+      // Reconcile playback with the context state: start the score once autoplay is granted and drop the
+      // unlock listeners; (re)arm them while the context is blocked or interrupted.
+      function syncPlayback() {
+        const running = !!audioCtx && audioCtx.state === 'running';
+        if (running && !isDismissed && !isMuted && !isPlaying) {
+          startSchedulerFromBeginning();
+        }
+        if (running || isDismissed) {
+          detachGestureUnlock();
+        } else {
+          attachGestureUnlock();
+        }
+        updateMuteButtonUI();
+      }
+
+      // Unmuted start attempt: create/resume the context, then start the scheduler if the browser allowed it.
+      function attemptStart() {
+        if (isDismissed) return;
+        const ctx = ensureContext();
+        if (!ctx) return;
+        if (ctx.state === 'running') {
+          syncPlayback();
+        } else {
+          ctx.resume().then(syncPlayback).catch(() => {});
+        }
+      }
+
+      function onUnlockSignal(e) {
+        if (isDismissed) {
+          detachGestureUnlock();
+          return;
+        }
+        if (e.type === 'visibilitychange' && document.hidden) return;
+
+        if (STRONG_UNLOCK_EVENTS.includes(e.type)) {
+          // The BGM toggle owns its own click: it starts audio itself while blocked (see toggleMute)
+          if (e.target && e.target.closest && e.target.closest('[data-bgm-toggle]')) return;
+        } else {
+          // Passive signals cannot grant activation; retry only if the page already has it
+          const now = performance.now();
+          if (now - lastWeakAttemptMs < WEAK_ATTEMPT_INTERVAL_MS) return;
+          lastWeakAttemptMs = now;
+          if (navigator.userActivation && !navigator.userActivation.hasBeenActive) return;
+        }
+        attemptStart();
+      }
+
       function attachGestureUnlock() {
         if (unlockListenersAttached) return;
         unlockListenersAttached = true;
-
-        const unlockHandler = (e) => {
-          if (isDismissed) {
-            detachGestureUnlock();
-            return;
+        const opts = { capture: true, passive: true };
+        [...STRONG_UNLOCK_EVENTS, ...WEAK_UNLOCK_EVENTS].forEach((type) => {
+          if (type === 'visibilitychange') {
+            document.addEventListener(type, onUnlockSignal, opts);
+          } else {
+            window.addEventListener(type, onUnlockSignal, opts);
           }
-          if (e.target && e.target.closest && e.target.closest('[data-bgm-toggle]')) {
-            detachGestureUnlock();
-            return;
+        });
+      }
+
+      function detachGestureUnlock() {
+        if (!unlockListenersAttached) return;
+        unlockListenersAttached = false;
+        [...STRONG_UNLOCK_EVENTS, ...WEAK_UNLOCK_EVENTS].forEach((type) => {
+          if (type === 'visibilitychange') {
+            document.removeEventListener(type, onUnlockSignal, true);
+          } else {
+            window.removeEventListener(type, onUnlockSignal, true);
           }
-          const ctx = ensureContext();
-          if (!ctx) return;
-
-          ctx.resume().then(() => {
-            if (!isDismissed && !isMuted && !isPlaying) {
-              startSchedulerFromBeginning();
-            }
-            updateMuteButtonUI();
-          }).catch(() => {});
-
-          detachGestureUnlock();
-        };
-
-        const detachGestureUnlock = () => {
-          window.removeEventListener('pointerdown', unlockHandler, true);
-          window.removeEventListener('keydown', unlockHandler, true);
-          window.removeEventListener('touchstart', unlockHandler, true);
-          unlockListenersAttached = false;
-        };
-
-        window.addEventListener('pointerdown', unlockHandler, { capture: true, passive: true });
-        window.addEventListener('keydown', unlockHandler, { capture: true, passive: true });
-        window.addEventListener('touchstart', unlockHandler, { capture: true, passive: true });
+        });
       }
 
       function initAutoplay() {
         if (isDismissed) return;
-        const ctx = ensureContext();
-        if (!ctx) return;
+        // Any signal, from now on, unlocks audio; listeners drop themselves once the context is running
+        attachGestureUnlock();
+        attemptStart();
+        // Re-attempt at each lifecycle stage (cheap; honoured if Media Engagement grants autoplay)
+        document.addEventListener('DOMContentLoaded', attemptStart, { once: true });
+        window.addEventListener('load', attemptStart, { once: true });
+        window.addEventListener('pageshow', attemptStart);
+        updateMuteButtonUI();
+      }
 
-        const tryPlay = () => {
-          if (ctx.state === 'running') {
-            if (!isPlaying && !isMuted) {
-              startSchedulerFromBeginning();
-            }
-          } else {
-            attachGestureUnlock();
-          }
-          updateMuteButtonUI();
-        };
-
-        if (ctx.state === 'suspended') {
-          ctx.resume().then(tryPlay).catch(() => {
-            attachGestureUnlock();
-            updateMuteButtonUI();
-          });
-        } else {
-          tryPlay();
-        }
+      // Sound wanted but not audible yet (autoplay blocked / interrupted)
+      function isAudioBlocked() {
+        return !isMuted && !isDismissed && !(audioCtx && audioCtx.state === 'running' && isPlaying);
       }
 
       function toggleMute(forceState) {
+        // While autoplay is blocked the toggle acts as 'start sound', not 'mute'
+        if (typeof forceState !== 'boolean' && isAudioBlocked()) {
+          attemptStart();
+          return true;
+        }
         const ctx = ensureContext();
         isMuted = typeof forceState === 'boolean' ? forceState : !isMuted;
 
@@ -2275,12 +2345,16 @@
 
       function updateMuteButtonUI() {
         const btns = document.querySelectorAll('[data-bgm-toggle], #retro-mute-toggle');
+        const blocked = isAudioBlocked();
         btns.forEach((btn) => {
-          const active = !isMuted;
+          const active = !isMuted && !blocked;
           btn.setAttribute('aria-pressed', String(active));
           btn.classList.toggle('is-muted', isMuted);
-          btn.textContent = active ? '[ 🔊 BGM: ON ]' : '[ 🔇 BGM: OFF ]';
+          btn.classList.toggle('is-blocked', blocked);
+          btn.textContent = isMuted ? '[ 🔇 BGM: OFF ]' : blocked ? '[ 🔈 TAP FOR SOUND ]' : '[ 🔊 BGM: ON ]';
         });
+        const prompt = document.getElementById('retro-audio-prompt');
+        if (prompt) prompt.hidden = !blocked;
       }
 
       return {
