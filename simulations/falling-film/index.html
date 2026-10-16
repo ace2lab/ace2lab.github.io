@@ -294,7 +294,7 @@
                 물 (1.0 cP)
               </button>
               <button class="preset-btn p-2 rounded-lg border-2 border-sky-600 bg-sky-50 text-left font-bold text-sky-900 transition cursor-pointer whitespace-nowrap" data-preset="glycerol">
-                글리세롤 (6.0 cP)
+                글리세롤 50% (6.0 cP)
               </button>
               <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer whitespace-nowrap" data-preset="oil">
                 엔진오일 (200 cP)
@@ -486,7 +486,6 @@
       outDelta: document.getElementById('out-delta'),
       outVzmax: document.getElementById('out-vzmax'),
       outVzavg: document.getElementById('out-vzavg'),
-      outRe: document.getElementById('out-re'),
       outReBadge: document.getElementById('out-re-badge'),
 
       canvas: document.getElementById('dual-canvas'),
@@ -559,7 +558,6 @@
       el.outDelta.textContent = delta_mm < 0.1 ? (delta_mm * 1000).toFixed(1) + ' µm' : delta_mm.toFixed(2) + ' mm';
       el.outVzmax.textContent = (state.vz_max * 100).toFixed(2) + ' cm/s';
       el.outVzavg.textContent = (state.vz_avg * 100).toFixed(2) + ' cm/s';
-      el.outRe.textContent = state.reynolds < 100 ? state.reynolds.toFixed(1) : Math.round(state.reynolds);
 
       // Flow Regime Badge (single line, zero line-wrap)
       const reValStr = state.reynolds < 10 ? state.reynolds.toFixed(1) : Math.round(state.reynolds);
@@ -1064,7 +1062,11 @@
       ctx.fillStyle = '#34d399';
       ctx.fillText(avgLabel, avgVecX - avgTw / 2, yTop + 19);
 
-      // (6) Virtual Dye Timeline: z(x, t) = z0 + vz(x) * (t - t_inj)
+      // (6) Integrated Shear Stress Profile Reference Coordinates
+      const tauAxisX = x1 - 45;
+      const maxTauW = 32;
+
+      // Virtual Dye Timeline: z(x, t) = z0 + vz(x) * (t - t_inj)
       dyes.forEach(dye => {
         const elapsed = state.tSim - dye.tInj;
         const injX = x0 + dye.z0Frac * flowW;
@@ -1122,9 +1124,6 @@
       dyes = dyes.filter(d => (state.tSim - d.tInj) * basePxSpeed < flowW * 1.4);
 
       // (7) Integrated Shear Stress Profile at Right Edge
-      const tauAxisX = x1 - 45;
-      const maxTauW = 32;
-
       ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
       ctx.lineWidth = 1;
       ctx.beginPath();
@@ -1202,9 +1201,9 @@
     document.querySelectorAll('.preset-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.preset-btn').forEach(b => {
-          b.className = 'preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer';
+          b.className = 'preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer whitespace-nowrap';
         });
-        btn.className = 'preset-btn p-2 rounded-lg border-2 border-sky-600 bg-sky-50 text-left font-bold text-sky-900 transition cursor-pointer';
+        btn.className = 'preset-btn p-2 rounded-lg border-2 border-sky-600 bg-sky-50 text-left font-bold text-sky-900 transition cursor-pointer whitespace-nowrap';
 
         const p = presets[btn.getAttribute('data-preset')];
         if (p) {
