@@ -368,7 +368,27 @@ nav_order: 8
 
     <div class="course-grid">
 
-      <!-- Course 1: 전달현상 2 -->
+      <!-- Course 1: 고분자 합성 및 물성 (2학년) -->
+      <div class="course-card">
+        <div>
+          <div class="course-card__header">
+            <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;">학부 전공선택 · 2학년</span>
+            <span class="course-card__term">2026년 2학기</span>
+          </div>
+          <h3 class="course-card__title">고분자 합성 및 물성 (Polymer Synthesis &amp; Properties)</h3>
+          <div class="course-card__en">Macromolecular Engineering &amp; Properties</div>
+          <p class="course-card__desc">
+            단계중합 및 사슬중합 등 고분자 합성 메커니즘과 반응 속도론을 다루며,
+            분자량 분포, 열적·기계적 물성, 용액 및 용융체의 점탄성 유변학적 거동과 구조-물성 상관관계를 체계적으로 학습합니다.
+          </p>
+        </div>
+        <div class="course-card__footer">
+          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 전용 강의교재 (ACE² Lab Lecture Notes)</span>
+          <span style="color: #059669; font-weight: 600;">전공선택</span>
+        </div>
+      </div>
+
+      <!-- Course 2: 전달현상 2 (3학년) -->
       <div class="course-card">
         <div>
           <div class="course-card__header">
@@ -389,27 +409,7 @@ nav_order: 8
         </div>
       </div>
 
-      <!-- Course 2: 고분자 합성 및 물성 -->
-      <div class="course-card">
-        <div>
-          <div class="course-card__header">
-            <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;">학부 전공선택 · 2학년</span>
-            <span class="course-card__term">2026년 2학기</span>
-          </div>
-          <h3 class="course-card__title">고분자 합성 및 물성 (Polymer Synthesis &amp; Properties)</h3>
-          <div class="course-card__en">Macromolecular Engineering &amp; Properties</div>
-          <p class="course-card__desc">
-            단계중합 및 사슬중합 등 고분자 합성 메커니즘과 반응 속도론을 다루며,
-            분자량 분포, 열적·기계적 물성, 용액 및 용융체의 점탄성 유변학적 거동과 구조-물성 상관관계를 체계적으로 학습합니다.
-          </p>
-        </div>
-        <div class="course-card__footer">
-          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 전용 강의교재 (ACE² Lab Lecture Notes)</span>
-          <span style="color: #059669; font-weight: 600;">전공선택</span>
-        </div>
-      </div>
-
-      <!-- Course 3: 고급나노화학공학 -->
+      <!-- Course 3: 고급나노화학공학 (대학원) -->
       <div class="course-card">
         <div>
           <div class="course-card__header">
