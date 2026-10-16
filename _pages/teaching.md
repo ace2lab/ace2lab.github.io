@@ -246,14 +246,7 @@ nav_order: 8
     font-size: 1.08rem;
     font-weight: 700;
     color: var(--global-text-color);
-    margin: 0 0 2px 0;
-  }
-  .course-card__en {
-    font-size: 0.75rem;
-    font-family: monospace;
-    color: var(--global-text-color);
-    opacity: 0.65;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
   }
   .course-card__desc {
     font-size: 0.85rem;
@@ -375,15 +368,15 @@ nav_order: 8
             <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;">학부 전공선택 · 2학년</span>
             <span class="course-card__term">2026년 2학기</span>
           </div>
-          <h3 class="course-card__title">고분자 합성 및 물성 (Polymer Synthesis &amp; Properties)</h3>
-          <div class="course-card__en">Macromolecular Engineering &amp; Properties</div>
+          <h3 class="course-card__title">고분자 합성 및 물성</h3>
           <p class="course-card__desc">
-            단계중합 및 사슬중합 등 고분자 합성 메커니즘과 반응 속도론을 다루며,
-            분자량 분포, 열적·기계적 물성, 용액 및 용융체의 점탄성 유변학적 거동과 구조-물성 상관관계를 체계적으로 학습합니다.
+            단계성장 및 사슬성장 중합의 반응 속도론과 열역학적 메커니즘을 규명하고,
+            분자량 분포, 사슬 형태, 유리전이 및 결정화 거동, 점탄성 등 고분자 사슬의 미시적 구조와
+            거시적 물리·기계적 물성 간의 구조-물성 상관관계를 체계적으로 다룹니다.
           </p>
         </div>
         <div class="course-card__footer">
-          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 전용 강의교재 (ACE² Lab Lecture Notes)</span>
+          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)</span>
           <span style="color: #059669; font-weight: 600;">전공선택</span>
         </div>
       </div>
@@ -395,16 +388,15 @@ nav_order: 8
             <span class="course-card__level">학부 전공필수 · 3학년</span>
             <span class="course-card__term">2026년 2학기</span>
           </div>
-          <h3 class="course-card__title">전달현상 2 (Transport Phenomena II)</h3>
-          <div class="course-card__en">Heat &amp; Mass Transfer Operations</div>
+          <h3 class="course-card__title">전달현상 2</h3>
           <p class="course-card__desc">
-            화학공학의 핵심 기초인 열전달과 물질전달의 물리적 메커니즘 및 지배방정식을 다룹니다.
-            전도·대류·복사에 의한 열에너지 수지와 다성분계 분자 확산 및 대류 물질전달 현상을 해석하며,
-            본 페이지의 시뮬레이션을 통해 이론적 해법을 가시화합니다.
+            연속체 역학 및 미시적 보존 법칙을 기반으로 열전달과 물질전달의 지배방정식을 유도하고,
+            다상·다성분 화학공정 시스템에서의 전도·대류·복사 열전달과 분자 확산, 계면 수송 및
+            반응-확산 결합 현상을 통합적으로 해석하며 본 시뮬레이션을 통해 이론적 해법을 가시화합니다.
           </p>
         </div>
         <div class="course-card__footer">
-          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 전용 강의교재 (ACE² Lab Lecture Notes)</span>
+          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)</span>
           <span style="color: var(--global-theme-color); font-weight: 600;">강의노트 연계</span>
         </div>
       </div>
@@ -413,20 +405,20 @@ nav_order: 8
       <div class="course-card">
         <div>
           <div class="course-card__header">
-            <span class="course-card__level" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;">대학원 전공 · 석박사</span>
+            <span class="course-card__level" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;">대학원 전공 · 석박사과정</span>
             <span class="course-card__term">2026년 2학기</span>
           </div>
-          <h3 class="course-card__title">고급나노화학공학 (Adv. Nano Chemical Engineering)</h3>
-          <div class="course-card__en">Cutting-Edge Nanomaterials &amp; Journal Seminar</div>
+          <h3 class="course-card__title">고급나노화학공학</h3>
           <p class="course-card__desc">
-            나노소재의 합성, 표면 개질 및 나노스케일 에너지 계면 현상을 다룹니다.
-            Science, Nature 등 세계 최고 권위 학술지에 게재된 최신 논문을 심층 강독하고 토론하여
-            첨단 나노화학공학 분야의 연구 기획 및 비판적 분석 역량을 함양합니다.
+            나노스케일에서의 열역학, 계면 동역학 및 표면·양자 구속 효과를 바탕으로
+            기능성 유·무기 나노소재의 정밀 합성 원리를 다룹니다.
+            Science, Nature 등 세계 최고 권위 학술지에 게재된 최신 나노·에너지 논문을
+            심층 강독하고 토론하여 첨단 연구 기획 및 비판적 분석 역량을 함양합니다.
           </p>
         </div>
         <div class="course-card__footer">
           <span><i class="fa-solid fa-book-open mr-1"></i> 교재: 최신 학술지 논문 강독 (Science, Nature 등)</span>
-          <span style="color: #9333ea; font-weight: 600;">대학원 세미나</span>
+          <span style="color: #9333ea; font-weight: 600;">석박사 세미나</span>
         </div>
       </div>
 
