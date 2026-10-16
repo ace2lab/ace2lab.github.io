@@ -59,7 +59,16 @@
 <body class="py-6 px-4 md:px-8">
 
   <!-- ==================== MAIN PAPER CONTAINER ==================== -->
-  <article class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-12 flex flex-col gap-10">
+  <article class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-12 flex flex-col gap-8">
+
+    <!-- ==================== PROTOTYPE BADGE BANNER ==================== -->
+    <div class="flex flex-wrap items-center justify-between gap-2 bg-amber-50/90 border border-amber-200/90 rounded-xl px-4 py-2.5 text-xs text-amber-900 shadow-xs">
+      <div class="flex items-center gap-2 font-semibold">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+        <span>Prototype Interactive Lecture Note (현재 개발 및 최적화 진행 중)</span>
+      </div>
+      <span class="text-amber-700/80 font-mono text-[11px] hidden sm:inline">ACE² Lab &bull; Educational WebApp</span>
+    </div>
 
     <!-- ==================== LECTURE NOTE HEADER ==================== -->
     <header class="border-b border-slate-200 pb-6 flex flex-col gap-2">
@@ -84,12 +93,12 @@
           <span class="w-2.5 h-2.5 rounded-full bg-sky-600"></span>
           1. Falling Film Animation (물리적 상황 세팅)
         </h2>
-        <span class="text-xs font-mono text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">자동 반복 재생 중</span>
+        <span class="text-xs font-mono text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">재생 제어 가능 (자동 루프)</span>
       </div>
 
       <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-800 shadow-md">
-        <!-- Autoplay, loop, muted, playsinline for instant continuous looping -->
-        <video class="w-full h-full object-contain" autoplay loop muted playsinline preload="auto">
+        <!-- Full controls for pause/seek/replay, with autoplay loop muted playsinline -->
+        <video class="w-full h-full object-contain" controls autoplay loop muted playsinline preload="auto">
           <source src="assets/falling_film_demo.mp4" type="video/mp4">
           브라우저가 비디오 태그를 지원하지 않습니다.
         </video>
@@ -281,16 +290,16 @@
           <div class="flex flex-col gap-1.5">
             <span class="text-xs font-bold text-slate-700">원클릭 유체 프리셋 (점도 &mu; 비교):</span>
             <div class="grid grid-cols-2 gap-1.5 text-xs">
-              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer" data-preset="water">
+              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer whitespace-nowrap" data-preset="water">
                 물 (1.0 cP)
               </button>
-              <button class="preset-btn p-2 rounded-lg border-2 border-sky-600 bg-sky-50 text-left font-bold text-sky-900 transition cursor-pointer" data-preset="glycerol">
-                글리세롤 50% (6.0 cP)
+              <button class="preset-btn p-2 rounded-lg border-2 border-sky-600 bg-sky-50 text-left font-bold text-sky-900 transition cursor-pointer whitespace-nowrap" data-preset="glycerol">
+                글리세롤 (6.0 cP)
               </button>
-              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer" data-preset="oil">
+              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer whitespace-nowrap" data-preset="oil">
                 엔진오일 (200 cP)
               </button>
-              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer" data-preset="syrup">
+              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer whitespace-nowrap" data-preset="syrup">
                 고점도 시럽 (450 cP)
               </button>
             </div>
@@ -356,9 +365,10 @@
                 <span id="insp-tau" class="font-bold text-amber-700">0.00 Pa</span>
               </div>
             </div>
-            <p class="text-[11px] text-slate-500 leading-tight">
-              &bull; $x=0$은 표면($v$ 최대, $\tau=0$), $x=\delta$는 벽면($v=0$ 점착, $\tau$ 최대).
-            </p>
+            <div class="text-[11px] text-slate-500 leading-tight space-y-0.5 pt-1">
+              <div>&bull; $x = 0$ (표면): 유속 $v$ 최대, 전단응력 $\tau = 0$</div>
+              <div>&bull; $x = \delta$ (벽면): 유속 $v = 0$ (점착), 전단응력 $\tau$ 최대</div>
+            </div>
           </div>
         </div>
 
@@ -369,20 +379,20 @@
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono bg-white p-2.5 rounded-xl border border-slate-200">
             <div>
               <span class="text-slate-400">액막 두께 $\delta$:</span><br/>
-              <span id="out-delta" class="font-bold text-slate-800 text-sm">0.36 mm</span>
+              <span id="out-delta" class="font-bold text-slate-800 text-sm whitespace-nowrap">0.36 mm</span>
             </div>
             <div>
               <span class="text-slate-400">표면 유속 $v_{z,\max}$:</span><br/>
-              <span id="out-vzmax" class="font-bold text-sky-600 text-sm">10.55 cm/s</span>
+              <span id="out-vzmax" class="font-bold text-sky-600 text-sm whitespace-nowrap">10.55 cm/s</span>
             </div>
             <div>
               <span class="text-slate-400">평균 유속 $\langle v_z \rangle$:</span><br/>
-              <span id="out-vzavg" class="font-bold text-slate-700 text-sm">7.03 cm/s</span>
+              <span id="out-vzavg" class="font-bold text-slate-700 text-sm whitespace-nowrap">7.03 cm/s</span>
             </div>
             <div>
               <span class="text-slate-400">흐름 영역 ($\text{Re}$):</span><br/>
-              <span id="out-re-badge" class="font-bold text-emerald-600 text-xs inline-flex items-center gap-1">
-                <span>🟢 층류</span> (<span id="out-re">18.8</span>)
+              <span id="out-re-badge" class="font-bold text-emerald-600 text-xs inline-flex items-center justify-center gap-1 whitespace-nowrap">
+                <span>🟢 층류 (Re 18.8)</span>
               </span>
             </div>
           </div>
@@ -551,16 +561,17 @@
       el.outVzavg.textContent = (state.vz_avg * 100).toFixed(2) + ' cm/s';
       el.outRe.textContent = state.reynolds < 100 ? state.reynolds.toFixed(1) : Math.round(state.reynolds);
 
-      // Flow Regime Badge
+      // Flow Regime Badge (single line, zero line-wrap)
+      const reValStr = state.reynolds < 10 ? state.reynolds.toFixed(1) : Math.round(state.reynolds);
       if (state.reynolds < 20) {
-        el.outReBadge.innerHTML = '<span>🟢 층류 (매끈함)</span> (<span id="out-re">' + (state.reynolds < 10 ? state.reynolds.toFixed(1) : Math.round(state.reynolds)) + '</span>)';
-        el.outReBadge.className = 'font-bold text-emerald-600 text-xs inline-flex items-center gap-1';
+        el.outReBadge.innerHTML = '<span>🟢 층류 (Re ' + reValStr + ')</span>';
+        el.outReBadge.className = 'font-bold text-emerald-600 text-xs inline-flex items-center justify-center whitespace-nowrap';
       } else if (state.reynolds < 1500) {
-        el.outReBadge.innerHTML = '<span>🟡 층류 (파형)</span> (<span id="out-re">' + Math.round(state.reynolds) + '</span>)';
-        el.outReBadge.className = 'font-bold text-amber-600 text-xs inline-flex items-center gap-1';
+        el.outReBadge.innerHTML = '<span>🟡 파형 층류 (Re ' + reValStr + ')</span>';
+        el.outReBadge.className = 'font-bold text-amber-600 text-xs inline-flex items-center justify-center whitespace-nowrap';
       } else {
-        el.outReBadge.innerHTML = '<span>🔴 난류 영역</span> (<span id="out-re">' + Math.round(state.reynolds) + '</span>)';
-        el.outReBadge.className = 'font-bold text-rose-600 text-xs inline-flex items-center gap-1';
+        el.outReBadge.innerHTML = '<span>🔴 난류 (Re ' + reValStr + ')</span>';
+        el.outReBadge.className = 'font-bold text-rose-600 text-xs inline-flex items-center justify-center whitespace-nowrap';
       }
 
       updateInspector();
@@ -844,9 +855,7 @@
 
       if (state.betaDeg > 8) {
         ctx.fillStyle = '#fbbf24';
-        const gPerpMidX = (cx + gPerp_x) / 2;
-        const gPerpMidY = (cy + gPerp_y) / 2;
-        ctx.fillText('g sinβ', gPerpMidX - 35 * ez_x - 10, gPerpMidY - 6);
+        ctx.fillText('g sinβ', gPerp_x - 14, gPerp_y + 14);
       }
 
       // (6) Magnifier Indicator / Callout to Micro View
@@ -951,7 +960,7 @@
       // Surface Label
       ctx.fillStyle = '#38bdf8';
       ctx.font = '10px "JetBrains Mono", monospace';
-      ctx.fillText('자유 표면 [x = 0] (공기 접촉: τxz = 0, vz = vz,max)', x0 + 10, yTop - 12);
+      ctx.fillText('x = 0 자유 표면 (τ=0, vz,max)', x0 + 8, yTop - 12);
 
       // (4) Particle Advection (Strict Physical Speed: No offset at wall!)
       particles.forEach(p => {
@@ -1043,9 +1052,17 @@
       ctx.stroke();
       ctx.setLineDash([]);
 
-      ctx.fillStyle = '#34d399';
+      // Mean Velocity Line pill badge
+      const avgLabel = '⟨vz⟩ = ⅔ vz,max';
       ctx.font = '9px "JetBrains Mono", monospace';
-      ctx.fillText('⟨vz⟩ = ⅔ vz,max', avgVecX - 32, yTop + filmH * 0.45);
+      const avgTw = ctx.measureText(avgLabel).width;
+      ctx.fillStyle = 'rgba(9, 13, 22, 0.88)';
+      ctx.fillRect(avgVecX - avgTw / 2 - 4, yTop + 8, avgTw + 8, 15);
+      ctx.strokeStyle = '#34d399';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(avgVecX - avgTw / 2 - 4, yTop + 8, avgTw + 8, 15);
+      ctx.fillStyle = '#34d399';
+      ctx.fillText(avgLabel, avgVecX - avgTw / 2, yTop + 19);
 
       // (6) Virtual Dye Timeline: z(x, t) = z0 + vz(x) * (t - t_inj)
       dyes.forEach(dye => {
@@ -1090,12 +1107,14 @@
         ctx.arc(injX, yBottom, 3.5, 0, Math.PI * 2);
         ctx.fill();
 
-        // Leading tip label
+        // Leading tip label with pill background (hidden near right edge to prevent collision)
         const tipX = injX + basePxSpeed * elapsed;
-        if (tipX < x1 - 10) {
+        if (tipX < tauAxisX - 45) {
+          ctx.fillStyle = 'rgba(9, 13, 22, 0.85)';
+          ctx.fillRect(tipX + 3, yTop + 6, 78, 14);
           ctx.fillStyle = '#fb7185';
           ctx.font = '9px "JetBrains Mono", monospace';
-          ctx.fillText('z = vz(x)·t', tipX + 4, yTop + 14);
+          ctx.fillText('z = vz(x)·t', tipX + 6, yTop + 16);
         }
       });
 
@@ -1127,7 +1146,7 @@
 
       ctx.fillStyle = '#fbbf24';
       ctx.font = '9px "JetBrains Mono", monospace';
-      ctx.fillText('τxz(x) 선형', tauAxisX - 10, yTop - 12);
+      ctx.fillText('전단응력 τ(x)', tauAxisX - 8, yTop - 12);
       ctx.fillText('τwall', tauAxisX + maxTauW - 12, yBottom + 12);
 
       // (8) Interactive Depth Inspector Guide Line
@@ -1157,11 +1176,18 @@
       ctx.arc(inspTauX, inspY, 3.5, 0, Math.PI * 2);
       ctx.fill();
 
-      // Inspector readout label (attached beside the amber dot)
-      ctx.fillStyle = '#fbbf24';
+      // Inspector readout label (pill background attached beside the amber dot)
+      const inspLabel = `x/δ = ${state.inspNormX.toFixed(2)}`;
       ctx.font = '10px "JetBrains Mono", monospace';
-      const labelY = inspY < yTop + 14 ? inspY + 14 : (inspY > yBottom - 14 ? inspY - 6 : inspY + 4);
-      ctx.fillText(`x/δ = ${state.inspNormX.toFixed(2)}`, inspParX + 8, labelY);
+      const inspTw = ctx.measureText(inspLabel).width;
+      const labelY = inspY < yTop + 16 ? inspY + 16 : (inspY > yBottom - 16 ? inspY - 8 : inspY + 4);
+      ctx.fillStyle = 'rgba(9, 13, 22, 0.88)';
+      ctx.fillRect(inspParX + 6, labelY - 11, inspTw + 6, 15);
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(inspParX + 6, labelY - 11, inspTw + 6, 15);
+      ctx.fillStyle = '#fbbf24';
+      ctx.fillText(inspLabel, inspParX + 9, labelY);
 
       ctx.restore();
     }
