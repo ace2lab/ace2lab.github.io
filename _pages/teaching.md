@@ -367,10 +367,11 @@ nav_order: 8
             <span class="course-card__term">2026년 2학기</span>
           </div>
           <h3 class="course-card__title">전달현상 2 (Transport Phenomena II)</h3>
-          <div class="course-card__en">Momentum, Heat &amp; Mass Transfer Operations</div>
+          <div class="course-card__en">Heat &amp; Mass Transfer Operations</div>
           <p class="course-card__desc">
-            유체 유동, 열전도 및 대류 열전달, 확산 물질전달의 기본 연속 방정식 및 미분 모멘텀 수지를 학습합니다.
-            층류 경계층, 마찰 계수 및 파이프 유동 해석을 다루며, 본 페이지의 시뮬레이션을 통하여 이론적 해법을 가시화합니다.
+            화학공학의 핵심 기초인 열전달과 물질전달의 물리적 메커니즘 및 지배방정식을 다룹니다.
+            전도·대류·복사에 의한 열에너지 수지와 다성분계 분자 확산 및 대류 물질전달 현상을 해석하며,
+            본 페이지의 시뮬레이션을 통해 이론적 해법을 가시화합니다.
           </p>
         </div>
         <div class="course-card__footer">
@@ -379,7 +380,27 @@ nav_order: 8
         </div>
       </div>
 
-      <!-- Course 2: 고급나노화학공학 -->
+      <!-- Course 2: 고분자 합성 및 물성 -->
+      <div class="course-card">
+        <div>
+          <div class="course-card__header">
+            <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;">학부 전공선택 · 2학년</span>
+            <span class="course-card__term">2026년 2학기</span>
+          </div>
+          <h3 class="course-card__title">고분자 합성 및 물성 (Polymer Synthesis &amp; Properties)</h3>
+          <div class="course-card__en">Macromolecular Engineering &amp; Properties</div>
+          <p class="course-card__desc">
+            단계중합 및 사슬중합 등 고분자 합성 메커니즘과 반응 속도론을 다루며,
+            분자량 분포, 열적·기계적 물성, 용액 및 용융체의 점탄성 유변학적 거동과 구조-물성 상관관계를 체계적으로 학습합니다.
+          </p>
+        </div>
+        <div class="course-card__footer">
+          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 전용 강의교재 (ACE² Lab Lecture Notes)</span>
+          <span style="color: #059669; font-weight: 600;">전공선택</span>
+        </div>
+      </div>
+
+      <!-- Course 3: 고급나노화학공학 -->
       <div class="course-card">
         <div>
           <div class="course-card__header">
@@ -387,35 +408,16 @@ nav_order: 8
             <span class="course-card__term">2026년 2학기</span>
           </div>
           <h3 class="course-card__title">고급나노화학공학 (Adv. Nano Chemical Engineering)</h3>
-          <div class="course-card__en">Nanoscale Transport &amp; Energy Materials</div>
+          <div class="course-card__en">Cutting-Edge Nanomaterials &amp; Journal Seminar</div>
           <p class="course-card__desc">
-            나노 스케일에서의 이온 전달 특성, 서브나노미터 제한 공간에서의 이상 유전 거동,
-            초고속 광열 제어(IPL) 소결 메커니즘 및 2차전지·슈퍼커패시터 전극 반응 속도론을 최신 학술 연구를 바탕으로 심층 탐구합니다.
+            나노소재의 합성, 표면 개질 및 나노스케일 에너지 계면 현상을 다룹니다.
+            Science, Nature 등 세계 최고 권위 학술지에 게재된 최신 논문을 심층 강독하고 토론하여
+            첨단 나노화학공학 분야의 연구 기획 및 비판적 분석 역량을 함양합니다.
           </p>
         </div>
         <div class="course-card__footer">
-          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 최신 학술 세미나 교재</span>
-          <span style="color: #9333ea; font-weight: 600;">대학원 코어</span>
-        </div>
-      </div>
-
-      <!-- Course 3: 고분자 합성 및 물성 -->
-      <div class="course-card">
-        <div>
-          <div class="course-card__header">
-            <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;">학부 전공선택 · 3·4학년</span>
-            <span class="course-card__term">2026년 2학기</span>
-          </div>
-          <h3 class="course-card__title">고분자 합성 및 물성 (Polymer Synthesis &amp; Properties)</h3>
-          <div class="course-card__en">Macromolecular Engineering &amp; Rheology</div>
-          <p class="course-card__desc">
-            라디칼, 음이온, 배위 중합 등 다양한 중합 반응 메커니즘과 반응기 설계,
-            고분자 용액 및 용융체의 점탄성 유변학적 거동, 고분자 복합소재의 기계적·열적 물성 제어 기법을 다룹니다.
-          </p>
-        </div>
-        <div class="course-card__footer">
-          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 전용 강의교재 (ACE² Lab Lecture Notes)</span>
-          <span style="color: #059669; font-weight: 600;">재료화학 연계</span>
+          <span><i class="fa-solid fa-book-open mr-1"></i> 교재: 최신 학술지 논문 강독 (Science, Nature 등)</span>
+          <span style="color: #9333ea; font-weight: 600;">대학원 세미나</span>
         </div>
       </div>
 
