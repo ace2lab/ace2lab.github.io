@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>전달현상1 | 강하 액막 유동 (Flow of a Falling Film)</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- KaTeX for Mathematics -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Google Fonts: Noto Serif KR, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+    .serif-title {
+      font-family: 'Noto Serif KR', Georgia, serif;
+    }
+    .katex {
+      font-size: 1.05em;
+    }
+    /* Clean Range Slider */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: #cbd5e1;
+      height: 7px;
+      border-radius: 9999px;
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #0284c7;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: all 0.15s ease;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+      background: #0369a1;
+    }
+  </style>
+</head>
+<body class="py-6 px-4 md:px-8">
+
+  <!-- ==================== MAIN PAPER CONTAINER ==================== -->
+  <article class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-12 flex flex-col gap-10">
+
+    <!-- ==================== LECTURE NOTE HEADER ==================== -->
+    <header class="border-b border-slate-200 pb-6 flex flex-col gap-2">
+      <div class="flex items-center justify-between text-xs font-mono text-slate-500">
+        <span class="font-bold text-sky-700 bg-sky-50 px-2.5 py-1 rounded border border-sky-200">
+          과목명: 전달현상1 (Transport Phenomena 1)
+        </span>
+        <span class="text-slate-600 font-semibold">경북대학교 에너지화학공학과 임창용 교수</span>
+      </div>
+      <h1 class="serif-title text-2xl md:text-3xl font-bold text-slate-900 tracking-tight mt-2">
+        강하 액막 유동 (Flow of a Falling Film)
+      </h1>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        경사 평판 위를 중력에 의해 흘러내리는 층류 액막의 <b>쉘 운동량 수지(Shell Momentum Balance)</b> 및 <b>포물선 속도 분포 $v_z(x)$</b> 유도 강의노트와 직관적 대화형 시뮬레이터입니다.
+      </p>
+    </header>
+
+    <!-- ==================== 1. FALLING FILM ANIMATION VIDEO (맨 앞 자동반복) ==================== -->
+    <section class="flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <h2 class="serif-title text-lg font-bold text-slate-900 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-sky-600"></span>
+          1. Falling Film Animation (물리적 상황 세팅)
+        </h2>
+        <span class="text-xs font-mono text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">자동 반복 재생 중</span>
+      </div>
+
+      <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-800 shadow-md">
+        <!-- Autoplay, loop, muted, playsinline for instant continuous looping -->
+        <video class="w-full h-full object-contain" autoplay loop muted playsinline preload="auto">
+          <source src="assets/falling_film_demo.mp4" type="video/mp4">
+          브라우저가 비디오 태그를 지원하지 않습니다.
+        </video>
+      </div>
+      <p class="text-xs text-slate-500 font-mono text-center">
+        ▲ 유체 유입 및 좌표계 ($x$: 계면에서 벽면 방향 깊이, $z$: 흐름 방향, $\delta$: 액막 두께)
+      </p>
+    </section>
+
+    <!-- ==================== 2. STEP-BY-STEP DERIVATION LECTURE NOTE ==================== -->
+    <section class="flex flex-col gap-6 pt-4 border-t border-slate-100">
+      <h2 class="serif-title text-xl font-bold text-slate-900 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-sky-600"></span>
+        2. 수식 유도 강의노트 (Step-by-Step)
+      </h2>
+
+      <!-- (1) 물리적 상황 및 좌표계 -->
+      <div class="flex flex-col gap-2">
+        <h3 class="text-base font-bold text-slate-800">
+          (1) 물리적 상황 및 좌표계 설정
+        </h3>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          수직선과 각도 $\beta$를 이루는 경사 평판(폭 $W$, 길이 $L$) 위로 두께 $\delta$인 유체가 층류(Laminar)로 정상상태 흘러내립니다.
+        </p>
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-sm">
+          <ul class="list-disc list-inside space-y-1 text-slate-700">
+            <li><b>$x = 0$ (자유 계면, Free Surface)</b>: 공기와 접촉하여 마찰이 없음 &rarr; <b>$\tau_{xz} = 0$</b></li>
+            <li><b>$x = \delta$ (고체 벽면, Solid Wall)</b>: 유체가 벽에 달라붙어 움직이지 않음 &rarr; 점착 조건 (No-slip), <b>$v_z = 0$</b></li>
+            <li><b>$z$축</b>: 유체가 흘러내리는 주 흐름 방향 (흐름을 추진하는 중력 가속도 성분: $g \cos\beta$)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- (2) 미소 쉘 모멘텀 밸런스 -->
+      <div class="flex flex-col gap-2">
+        <h3 class="text-base font-bold text-slate-800">
+          (2) 미소 쉘 운동량 수지식 (Shell Momentum Balance)
+        </h3>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          두께 $\Delta x$, 폭 $W$, 길이 $L$인 얇은 유체 쉘에 대해 $z$ 방향 운동량 수지를 세우면 다음과 같습니다.
+        </p>
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-center my-1 overflow-x-auto text-sm">
+          $$\underbrace{(LW \cdot \tau_{xz})|_{x}}_{\text{전단응력 유입}} - \underbrace{(LW \cdot \tau_{xz})|_{x+\Delta x}}_{\text{전단응력 유출}} + \underbrace{(L W \Delta x \cdot \rho g \cos\beta)}_{\text{중력에 의한 운동량 생성}} = 0$$
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          양변을 $LW \Delta x$로 나누고 $\Delta x \to 0$ 극한을 취하면 다음 미분방정식을 얻습니다.
+        </p>
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center font-mono text-sm">
+          $$\frac{d\tau_{xz}}{dx} = \rho g \cos\beta$$
+        </div>
+      </div>
+
+      <!-- (3) 전단응력 분포 -->
+      <div class="flex flex-col gap-2">
+        <h3 class="text-base font-bold text-slate-800">
+          (3) 전단응력 분포 $\tau_{xz}(x)$ 도출
+        </h3>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          자유 계면(공기와의 마찰 무시) 경계조건 <b>[BC 1: $x = 0$에서 $\tau_{xz} = 0$]</b>을 대입하여 적분합니다.
+        </p>
+        <div class="p-3.5 bg-amber-50/70 border border-amber-200 rounded-xl text-center text-amber-900 font-mono text-sm my-1">
+          $$\tau_{xz}(x) = \rho g \cos\beta \cdot x$$
+        </div>
+        <p class="text-xs text-slate-600">
+          &bull; 전단응력은 표면($x=0$)에서 0이고, 아래로 갈수록 위에 누적된 유체 무게로 선형 증가하여 벽면($x=\delta$)에서 최대치 $\tau_{\text{wall}} = \rho g \cos\beta \cdot \delta$에 도달합니다.
+        </p>
+      </div>
+
+      <!-- (4) 속도 분포 유도 -->
+      <div class="flex flex-col gap-2">
+        <h3 class="text-base font-bold text-slate-800">
+          (4) 뉴턴 점성법칙 대입 및 포물선 속도 분포 $v_z(x)$ 완성
+        </h3>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          뉴턴의 점성법칙 $\tau_{xz} = -\mu \frac{dv_z}{dx}$를 대입합니다.
+        </p>
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center font-mono text-sm my-1">
+          $$-\mu \frac{dv_z}{dx} = \rho g \cos\beta \cdot x \implies \frac{dv_z}{dx} = -\frac{\rho g \cos\beta}{\mu} x$$
+        </div>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          벽면 점착 경계조건 <b>[BC 2: $x = \delta$에서 $v_z = 0$ (No-slip)]</b>을 사용하여 적분하면, 최종 포물선 속도 분포가 도출됩니다!
+        </p>
+        <div class="p-4 bg-sky-50 border-2 border-sky-300 rounded-xl text-center text-sky-950 font-mono my-2 shadow-sm">
+          $$v_z(x) = \frac{\rho g \cos\beta \, \delta^2}{2\mu} \left[ 1 - \left(\frac{x}{\delta}\right)^2 \right]$$
+        </div>
+      </div>
+
+      <!-- (5) 액막 두께 및 평균 유속 -->
+      <div class="flex flex-col gap-2">
+        <h3 class="text-base font-bold text-slate-800">
+          (5) 평균 유속 $\langle v_z \rangle$, 부피 유량 $q$, 액막 두께 $\delta$
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-center text-sm my-1">
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <span class="text-xs text-slate-500 font-mono">평균 유속 (Average Velocity):</span>
+            <div class="mt-1 font-bold">$$\langle v_z \rangle = \frac{1}{\delta}\int_0^\delta v_z(x)\,dx = \frac{2}{3} v_{z,\max}$$</div>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <span class="text-xs text-slate-500 font-mono">Nusselt 액막 두께 (Film Thickness):</span>
+            <div class="mt-1 font-bold">$$\delta = \left( \frac{3 \mu q}{\rho g \cos\beta} \right)^{1/3}$$</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. WHAT TO OBSERVE GUIDE (물리적 현상 관찰 가이드) ==================== -->
+    <section class="flex flex-col gap-4 pt-6 border-t-2 border-slate-200">
+      <div class="flex items-center gap-2">
+        <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-900 text-xs font-bold font-mono">필독 관찰 가이드</span>
+        <h2 class="serif-title text-xl font-bold text-slate-900">
+          3. 물리적 현상을 이해하기 위해 무엇을 봐야 하는가?
+        </h2>
+      </div>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        시뮬레이터를 조작할 때 아래 <b>3가지 핵심 관찰 포인트</b>를 확인하면 수식이 의미하는 물리 현상을 직관적으로 체득할 수 있습니다.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs leading-relaxed">
+        <!-- Point 1 -->
+        <div class="p-4 rounded-xl bg-sky-50 border border-sky-200 flex flex-col gap-2">
+          <div class="font-bold text-sky-900 text-sm flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-full bg-sky-600 text-white flex items-center justify-center text-xs">1</span>
+            포물선 형성 (벽면 No-slip 점착)
+          </div>
+          <p class="text-slate-700">
+            <b>[가상 염료 주입]</b> 버튼을 누르면 수직 일직선 염료가 흘러갑니다. <b>벽면($x=\delta$)에서는 유속이 0이라 염료가 벽에 고정</b>되고, 표면($x=0$)만 최대 속도로 치고 나가며 자연스럽게 수식 (4)의 포물선 곡선으로 변형됩니다.
+          </p>
+        </div>
+
+        <!-- Point 2 -->
+        <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 flex flex-col gap-2">
+          <div class="font-bold text-amber-900 text-sm flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs">2</span>
+            경사각 &beta;에 따른 중력 분해와 감속
+          </div>
+          <p class="text-slate-700">
+            경사각 &beta;를 0&deg;에서 75&deg;로 눕혀보세요. 좌측 거시 장치에서 판이 실제로 기울어지며 <b>흐름 추진력 $g\cos\beta$가 약해집니다</b>. 유량이 일정할 때 유속은 감소하고, 액막 두께 $\delta \propto (\cos\beta)^{-1/3}$는 50% 이상 두꺼워집니다.
+          </p>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex flex-col gap-2">
+          <div class="font-bold text-emerald-900 text-sm flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">3</span>
+            점도 &mu;에 따른 액막 팽창 &amp; 전단응력
+          </div>
+          <p class="text-slate-700">
+            물(1 cP)에서 엔진오일(200 cP)로 프리셋을 바꾸면 점성 저항으로 유속은 1/6로 급감하지만, 유체가 빠져나가지 못해 <b>액막 두께 $\delta$가 6배 이상 팽창</b>하며 벽면 전단응력 $\tau_{\text{wall}}$도 크게 상승합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. INTERACTIVE SIMULATOR (이중 화면: 거시 장치 + 미시 단면 유속) ==================== -->
+    <section class="flex flex-col gap-6 pt-2">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
+        <h3 class="serif-title text-lg font-bold text-slate-900 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+          대화형 시뮬레이터 (거시 장치 경사 &times; 미시 단면 유동)
+        </h3>
+
+        <!-- Control Buttons -->
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Speed Buttons -->
+          <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg border border-slate-200 text-xs">
+            <span class="text-slate-500 px-1 font-semibold">속도:</span>
+            <button class="spd-btn px-2 py-0.5 rounded text-slate-600 hover:text-slate-900 transition" data-speed="0.2">0.2x (초슬로우)</button>
+            <button class="spd-btn active-spd px-2 py-0.5 rounded bg-sky-600 text-white font-bold shadow-xs transition" data-speed="0.5">0.5x (차분함)</button>
+            <button class="spd-btn px-2 py-0.5 rounded text-slate-600 hover:text-slate-900 transition" data-speed="1.0">1.0x</button>
+            <button id="btn-pause" class="px-2.5 py-0.5 rounded bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold ml-1 cursor-pointer transition">일시정지</button>
+          </div>
+
+          <!-- Dye Injection Buttons -->
+          <button id="btn-inject-dye" class="px-3 py-1.5 rounded-lg bg-rose-500 hover:bg-rose-600 text-white text-xs font-bold shadow-sm transition flex items-center gap-1 cursor-pointer">
+            <span>💧</span> 가상 염료 주입 (Dye)
+          </button>
+          <button id="btn-clear-dye" class="px-2.5 py-1.5 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold shadow-xs transition cursor-pointer" title="염료 초기화">
+            염료 초기화
+          </button>
+        </div>
+      </div>
+
+      <!-- Workbench 2 Columns Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-50 p-5 md:p-6 rounded-2xl border border-slate-200">
+
+        <!-- Controls Column (4 cols on lg) -->
+        <div class="lg:col-span-4 flex flex-col gap-4">
+          <!-- Fluid Presets -->
+          <div class="flex flex-col gap-1.5">
+            <span class="text-xs font-bold text-slate-700">원클릭 유체 프리셋 (점도 &mu; 비교):</span>
+            <div class="grid grid-cols-2 gap-1.5 text-xs">
+              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer" data-preset="water">
+                물 (1.0 cP)
+              </button>
+              <button class="preset-btn p-2 rounded-lg border-2 border-sky-600 bg-sky-50 text-left font-bold text-sky-900 transition cursor-pointer" data-preset="glycerol">
+                글리세롤 50% (6.0 cP)
+              </button>
+              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer" data-preset="oil">
+                엔진오일 (200 cP)
+              </button>
+              <button class="preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer" data-preset="syrup">
+                고점도 시럽 (450 cP)
+              </button>
+            </div>
+          </div>
+
+          <!-- Parameter Sliders -->
+          <div class="flex flex-col gap-3 pt-2 border-t border-slate-200/80">
+            <!-- Beta Slider (Inclination) -->
+            <div class="flex flex-col gap-0.5">
+              <div class="flex justify-between text-xs font-semibold text-slate-700">
+                <span>경사각 $\beta$ (0&deg; 수직 &rarr; 75&deg; 완만):</span>
+                <span class="font-mono text-sky-700 font-bold"><span id="val-beta">25</span>&deg;</span>
+              </div>
+              <input type="range" id="slider-beta" min="0" max="75" step="1" value="25">
+            </div>
+
+            <!-- Flow Rate q Slider -->
+            <div class="flex flex-col gap-0.5">
+              <div class="flex justify-between text-xs font-semibold text-slate-700">
+                <span>단위 폭당 유량 $q$ ($=Q/W$):</span>
+                <span class="font-mono text-sky-700 font-bold"><span id="val-q">0.25</span> cm&sup2;/s</span>
+              </div>
+              <input type="range" id="slider-q" min="0.05" max="1.50" step="0.01" value="0.25">
+            </div>
+
+            <!-- Viscosity mu Slider -->
+            <div class="flex flex-col gap-0.5">
+              <div class="flex justify-between text-xs font-semibold text-slate-700">
+                <span>점도 $\mu$ (Viscosity):</span>
+                <span class="font-mono text-amber-700 font-bold"><span id="val-mu">6.0</span> cP</span>
+              </div>
+              <input type="range" id="slider-mu" min="0.8" max="450" step="0.5" value="6.0">
+            </div>
+
+            <!-- Density rho Slider -->
+            <div class="flex flex-col gap-0.5">
+              <div class="flex justify-between text-xs font-semibold text-slate-700">
+                <span>밀도 $\rho$ (Density):</span>
+                <span class="font-mono text-slate-700 font-bold"><span id="val-rho">1126</span> kg/m&sup3;</span>
+              </div>
+              <input type="range" id="slider-rho" min="700" max="1400" step="10" value="1126">
+            </div>
+          </div>
+
+          <!-- Interactive Depth Inspector Slider -->
+          <div class="p-3.5 bg-white rounded-xl border border-sky-200 flex flex-col gap-2 mt-1 shadow-xs">
+            <div class="flex justify-between items-center text-xs font-bold text-sky-900">
+              <span>깊이 인스펙터 ($x/\delta$ 위치):</span>
+              <span class="font-mono text-sky-700">$x/\delta = $ <span id="insp-xnorm">0.00</span></span>
+            </div>
+            <input type="range" id="slider-insp" min="0" max="1" step="0.02" value="0.0">
+            <div class="flex flex-col gap-1 text-xs font-mono pt-1 text-slate-700">
+              <div class="flex justify-between">
+                <span class="text-slate-500">실제 위치 $x$:</span>
+                <span id="insp-xreal" class="font-bold text-slate-800">0.00 mm</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">국소 속도 $v_z(x)$:</span>
+                <span id="insp-vz" class="font-bold text-sky-700">10.55 cm/s</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500">전단응력 $\tau_{xz}(x)$:</span>
+                <span id="insp-tau" class="font-bold text-amber-700">0.00 Pa</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-500 leading-tight">
+              &bull; $x=0$은 표면($v$ 최대, $\tau=0$), $x=\delta$는 벽면($v=0$ 점착, $\tau$ 최대).
+            </p>
+          </div>
+        </div>
+
+        <!-- Visualizer Area (8 cols on lg) -->
+        <div class="lg:col-span-8 flex flex-col gap-3">
+
+          <!-- Telemetry Badges Row -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono bg-white p-2.5 rounded-xl border border-slate-200">
+            <div>
+              <span class="text-slate-400">액막 두께 $\delta$:</span><br/>
+              <span id="out-delta" class="font-bold text-slate-800 text-sm">0.36 mm</span>
+            </div>
+            <div>
+              <span class="text-slate-400">표면 유속 $v_{z,\max}$:</span><br/>
+              <span id="out-vzmax" class="font-bold text-sky-600 text-sm">10.55 cm/s</span>
+            </div>
+            <div>
+              <span class="text-slate-400">평균 유속 $\langle v_z \rangle$:</span><br/>
+              <span id="out-vzavg" class="font-bold text-slate-700 text-sm">7.03 cm/s</span>
+            </div>
+            <div>
+              <span class="text-slate-400">흐름 영역 ($\text{Re}$):</span><br/>
+              <span id="out-re-badge" class="font-bold text-emerald-600 text-xs inline-flex items-center gap-1">
+                <span>🟢 층류</span> (<span id="out-re">18.8</span>)
+              </span>
+            </div>
+          </div>
+
+          <!-- Dual Viewport Canvas Container -->
+          <div class="relative w-full bg-slate-950 rounded-xl overflow-hidden border border-slate-800 shadow-md">
+            <!-- Canvas Labels Bar -->
+            <div class="flex items-center justify-between px-3 py-1.5 bg-slate-900/90 border-b border-slate-800 text-[11px] font-mono">
+              <span class="text-amber-300 font-semibold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                거시 장치 뷰 (경사각 &beta; &amp; 중력 분해)
+              </span>
+              <span class="text-sky-300 font-semibold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                미시 단면 유속 뷰 (속도 포물선 &amp; 염료 타임라인)
+              </span>
+            </div>
+
+            <!-- The Unified Dual-View Canvas -->
+            <canvas id="dual-canvas" class="w-full h-88 sm:h-[400px] block"></canvas>
+          </div>
+
+          <!-- Bottom Visualizer Guidance -->
+          <div class="flex flex-wrap items-center justify-between gap-2 px-1 text-[11px] text-slate-500 font-mono">
+            <span>&bull; 좌측: 실험 장치 전체 기울기 ($g\cos\beta$ 추진 성분 vs $g\sin\beta$ 정수압 성분)</span>
+            <span>&bull; 우측: 염료선 $z = v_z(x) \cdot t$가 수식 (4) 포물선을 직접 시각화</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </article>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="max-w-5xl mx-auto w-full text-center text-xs text-slate-500 font-mono py-8">
+    과목명: 전달현상1 &bull; 경북대학교 에너지화학공학과 임창용 교수
+  </footer>
+
+  <!-- ==================== LOGIC & SIMULATION SCRIPT ==================== -->
+  <script>
+    // State
+    const state = {
+      betaDeg: 25,
+      q_cm2: 0.25,
+      mu_cp: 6.0,
+      rho: 1126,
+      g: 9.80665,
+      inspNormX: 0.0,
+
+      // Calculated physical values
+      mu_pas: 0.0060,
+      delta_m: 0,
+      vz_max: 0,
+      vz_avg: 0,
+      tau_wall: 0,
+      reynolds: 0,
+      cosBeta: 1.0,
+
+      // Simulation clock & controls
+      speedFactor: 0.5,
+      isPaused: false,
+      tSim: 0,
+    };
+
+    const presets = {
+      water: { mu: 1.0, rho: 998 },
+      glycerol: { mu: 6.0, rho: 1126 },
+      oil: { mu: 200.0, rho: 890 },
+      syrup: { mu: 450.0, rho: 1350 },
+    };
+
+    // Elements
+    const el = {
+      sliderBeta: document.getElementById('slider-beta'),
+      valBeta: document.getElementById('val-beta'),
+      sliderQ: document.getElementById('slider-q'),
+      valQ: document.getElementById('val-q'),
+      sliderMu: document.getElementById('slider-mu'),
+      valMu: document.getElementById('val-mu'),
+      sliderRho: document.getElementById('slider-rho'),
+      valRho: document.getElementById('val-rho'),
+
+      sliderInsp: document.getElementById('slider-insp'),
+      inspXnorm: document.getElementById('insp-xnorm'),
+      inspXreal: document.getElementById('insp-xreal'),
+      inspVz: document.getElementById('insp-vz'),
+      inspTau: document.getElementById('insp-tau'),
+
+      outDelta: document.getElementById('out-delta'),
+      outVzmax: document.getElementById('out-vzmax'),
+      outVzavg: document.getElementById('out-vzavg'),
+      outRe: document.getElementById('out-re'),
+      outReBadge: document.getElementById('out-re-badge'),
+
+      canvas: document.getElementById('dual-canvas'),
+      btnInjectDye: document.getElementById('btn-inject-dye'),
+      btnClearDye: document.getElementById('btn-clear-dye'),
+      btnPause: document.getElementById('btn-pause'),
+    };
+
+    const ctx = el.canvas.getContext('2d');
+
+    // Particles array (stable random positions)
+    const NUM_PARTICLES = 48;
+    const particles = [];
+    for (let i = 0; i < NUM_PARTICLES; i++) {
+      particles.push({
+        eta: (i + 0.5) / NUM_PARTICLES, // normalized depth [0, 1]
+        zFrac: Math.random(), // initial z position [0, 1]
+        seed: Math.random() * 100,
+      });
+    }
+
+    // Injected virtual dye timelines
+    let dyes = [];
+
+    function injectDye() {
+      dyes.push({
+        tInj: state.tSim,
+        z0Frac: 0.15, // injected at 15% station from left
+      });
+    }
+
+    function clearDyes() {
+      dyes = [];
+    }
+
+    // Physics Engine
+    function updatePhysics() {
+      state.betaDeg = parseFloat(el.sliderBeta.value);
+      state.q_cm2 = parseFloat(el.sliderQ.value);
+      state.mu_cp = parseFloat(el.sliderMu.value);
+      state.rho = parseFloat(el.sliderRho.value);
+
+      state.mu_pas = state.mu_cp * 1e-3;
+      const q_m2 = state.q_cm2 * 1e-4;
+
+      const betaRad = (state.betaDeg * Math.PI) / 180;
+      state.cosBeta = Math.max(Math.cos(betaRad), 0.02);
+
+      // Nusselt Film Thickness: delta = (3 * mu * q / (rho * g * cosBeta))^(1/3)
+      state.delta_m = Math.cbrt((3 * state.mu_pas * q_m2) / (state.rho * state.g * state.cosBeta));
+
+      // Maximum & Average Velocity
+      state.vz_max = (state.rho * state.g * state.cosBeta * Math.pow(state.delta_m, 2)) / (2 * state.mu_pas);
+      state.vz_avg = (2 / 3) * state.vz_max;
+
+      // Wall Shear Stress: tau_wall = rho * g * cosBeta * delta
+      state.tau_wall = state.rho * state.g * state.cosBeta * state.delta_m;
+
+      // Reynolds Number: Re = 4 * rho * q / mu
+      state.reynolds = (4 * state.rho * q_m2) / state.mu_pas;
+
+      // Update Slider value displays
+      el.valBeta.textContent = state.betaDeg;
+      el.valQ.textContent = state.q_cm2.toFixed(2);
+      el.valMu.textContent = state.mu_cp.toFixed(1);
+      el.valRho.textContent = state.rho;
+
+      // Update Telemetry Badges
+      const delta_mm = state.delta_m * 1000;
+      el.outDelta.textContent = delta_mm < 0.1 ? (delta_mm * 1000).toFixed(1) + ' µm' : delta_mm.toFixed(2) + ' mm';
+      el.outVzmax.textContent = (state.vz_max * 100).toFixed(2) + ' cm/s';
+      el.outVzavg.textContent = (state.vz_avg * 100).toFixed(2) + ' cm/s';
+      el.outRe.textContent = state.reynolds < 100 ? state.reynolds.toFixed(1) : Math.round(state.reynolds);
+
+      // Flow Regime Badge
+      if (state.reynolds < 20) {
+        el.outReBadge.innerHTML = '<span>🟢 층류 (매끈함)</span> (<span id="out-re">' + (state.reynolds < 10 ? state.reynolds.toFixed(1) : Math.round(state.reynolds)) + '</span>)';
+        el.outReBadge.className = 'font-bold text-emerald-600 text-xs inline-flex items-center gap-1';
+      } else if (state.reynolds < 1500) {
+        el.outReBadge.innerHTML = '<span>🟡 층류 (파형)</span> (<span id="out-re">' + Math.round(state.reynolds) + '</span>)';
+        el.outReBadge.className = 'font-bold text-amber-600 text-xs inline-flex items-center gap-1';
+      } else {
+        el.outReBadge.innerHTML = '<span>🔴 난류 영역</span> (<span id="out-re">' + Math.round(state.reynolds) + '</span>)';
+        el.outReBadge.className = 'font-bold text-rose-600 text-xs inline-flex items-center gap-1';
+      }
+
+      updateInspector();
+    }
+
+    function vzAtNormX(normX) {
+      return state.vz_max * (1 - Math.pow(normX, 2));
+    }
+
+    function tauAtNormX(normX) {
+      return state.tau_wall * normX;
+    }
+
+    function updateInspector() {
+      state.inspNormX = parseFloat(el.sliderInsp.value);
+      el.inspXnorm.textContent = state.inspNormX.toFixed(2);
+
+      const realX_mm = state.inspNormX * state.delta_m * 1000;
+      el.inspXreal.textContent = realX_mm < 0.1 ? (realX_mm * 1000).toFixed(1) + ' µm' : realX_mm.toFixed(2) + ' mm';
+
+      const vz = vzAtNormX(state.inspNormX);
+      const tau = tauAtNormX(state.inspNormX);
+
+      el.inspVz.textContent = (vz * 100).toFixed(2) + ' cm/s';
+      el.inspTau.textContent = tau.toFixed(2) + ' Pa';
+    }
+
+    // --- High-DPI Canvas Resizing ---
+    let lastDisplayW = 0;
+    let lastDisplayH = 0;
+
+    function resizeCanvas() {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = el.canvas.getBoundingClientRect();
+      const displayW = Math.round(rect.width);
+      const displayH = Math.round(rect.height);
+
+      if (displayW === 0 || displayH === 0) return;
+
+      if (el.canvas.width !== displayW * dpr || el.canvas.height !== displayH * dpr) {
+        el.canvas.width = displayW * dpr;
+        el.canvas.height = displayH * dpr;
+        lastDisplayW = displayW;
+        lastDisplayH = displayH;
+      }
+    }
+
+    // --- Helper Drawing Functions ---
+    function drawArrow(c, x1, y1, x2, y2, headLen, color, width) {
+      const dx = x2 - x1;
+      const dy = y2 - y1;
+      const angle = Math.atan2(dy, dx);
+      c.strokeStyle = color;
+      c.fillStyle = color;
+      c.lineWidth = width;
+      c.beginPath();
+      c.moveTo(x1, y1);
+      c.lineTo(x2, y2);
+      c.stroke();
+
+      c.beginPath();
+      c.moveTo(x2, y2);
+      c.lineTo(x2 - headLen * Math.cos(angle - Math.PI / 6), y2 - headLen * Math.sin(angle - Math.PI / 6));
+      c.lineTo(x2 - headLen * Math.cos(angle + Math.PI / 6), y2 - headLen * Math.sin(angle + Math.PI / 6));
+      c.closePath();
+      c.fill();
+    }
+
+    // --- Unified Dual-View Rendering Loop ---
+    let lastTime = performance.now();
+
+    function renderLoop(now) {
+      const dt = Math.min((now - lastTime) / 1000, 0.05);
+      lastTime = now;
+
+      if (!state.isPaused) {
+        state.tSim += dt * state.speedFactor;
+      }
+
+      resizeCanvas();
+
+      const dpr = window.devicePixelRatio || 1;
+      const w = el.canvas.width / dpr;
+      const h = el.canvas.height / dpr;
+
+      if (w > 0 && h > 0) {
+        ctx.save();
+        ctx.scale(dpr, dpr);
+
+        // Clear Background
+        ctx.fillStyle = '#090d16';
+        ctx.fillRect(0, 0, w, h);
+
+        // Split Layout: Macro Viewport (Left ~38%) vs Micro Viewport (Right ~62%)
+        const splitX = Math.floor(w * 0.38);
+
+        // Viewport Divider
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(splitX, 0);
+        ctx.lineTo(splitX, h);
+        ctx.stroke();
+
+        // 1. RENDER MACRO VIEWPORT (Left)
+        renderMacroView(0, 0, splitX, h);
+
+        // 2. RENDER MICRO VIEWPORT (Right)
+        renderMicroView(splitX, 0, w - splitX, h, dt);
+
+        ctx.restore();
+      }
+
+      requestAnimationFrame(renderLoop);
+    }
+
+    // ========================================================
+    // 1. MACRO VIEWPORT: Bounding-box Scaled Apparatus View
+    // ========================================================
+    function renderMacroView(x, y, w, h) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(x, y, w, h);
+      ctx.clip();
+
+      const betaRad = (state.betaDeg * Math.PI) / 180;
+      const sinB = Math.sin(betaRad);
+      const cosB = Math.cos(betaRad);
+
+      // Plate pivot origin (top-left offset)
+      const ox = x + 38;
+      const oy = y + 36;
+
+      // Safe bounding box plate length (never clips for beta = 0 to 75 deg)
+      const maxPlateW = w - 65;
+      const maxPlateH = h - 75;
+      const Lp = Math.min(maxPlateW / Math.sin((75 * Math.PI) / 180), maxPlateH / 1.0);
+
+      // Unit vectors: e_z (along plate downward), e_n (normal to plate towards fluid)
+      const ez_x = sinB, ez_y = cosB;
+      const en_x = cosB, en_y = -sinB;
+
+      const plateThickness = 12; // Solid plate thickness
+      // Visual film thickness proportional to delta (exaggerated for macroscopic visibility)
+      const filmThickness = Math.min(Math.max((state.delta_m * 1000) * 12, 7), 16);
+
+      // Plate Corners
+      // P0: Top surface pivot
+      const p0x = ox, p0y = oy;
+      // P1: Bottom surface
+      const p1x = ox + Lp * ez_x, p1y = oy + Lp * ez_y;
+      // Back of plate
+      const pb0x = p0x - plateThickness * en_x, pb0y = p0y - plateThickness * en_y;
+      const pb1x = p1x - plateThickness * en_x, pb1y = p1y - plateThickness * en_y;
+
+      // Fluid Free Surface
+      const pf0x = p0x + filmThickness * en_x, pf0y = p0y + filmThickness * en_y;
+      const pf1x = p1x + filmThickness * en_x, pf1y = p1y + filmThickness * en_y;
+
+      // (1) Vertical Plumb Reference Line (Dashed)
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(ox, oy);
+      ctx.lineTo(ox, oy + Lp * 0.85);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // (2) Inclination Angle Arc (beta)
+      const arcR = 34;
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      // from vertical down (Math.PI / 2) to plate angle (Math.PI / 2 - betaRad)
+      ctx.arc(ox, oy, arcR, Math.PI / 2 - betaRad, Math.PI / 2, false);
+      ctx.stroke();
+
+      // Beta Text
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = '11px "JetBrains Mono", monospace';
+      ctx.fillText(`β = ${state.betaDeg}°`, ox + 10, oy + arcR + 14);
+
+      // (3) Solid Plate Body & Hatching
+      ctx.fillStyle = '#1e293b';
+      ctx.beginPath();
+      ctx.moveTo(p0x, p0y);
+      ctx.lineTo(p1x, p1y);
+      ctx.lineTo(pb1x, pb1y);
+      ctx.lineTo(pb0x, pb0y);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(p0x, p0y);
+      ctx.lineTo(p1x, p1y);
+      ctx.stroke();
+
+      // Hatching on plate back
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 1;
+      for (let s = 10; s < Lp - 5; s += 16) {
+        const sx = p0x + s * ez_x;
+        const sy = p0y + s * ez_y;
+        ctx.beginPath();
+        ctx.moveTo(sx, sy);
+        ctx.lineTo(sx - plateThickness * en_x - 6 * ez_x, sy - plateThickness * en_y - 6 * ez_y);
+        ctx.stroke();
+      }
+
+      // (4) Liquid Film Layer on Plate
+      const filmGrad = ctx.createLinearGradient(p0x, p0y, pf0x, pf0y);
+      filmGrad.addColorStop(0, 'rgba(14, 165, 233, 0.45)');
+      filmGrad.addColorStop(1, 'rgba(56, 189, 248, 0.25)');
+      ctx.fillStyle = filmGrad;
+      ctx.beginPath();
+      ctx.moveTo(p0x, p0y);
+      ctx.lineTo(p1x, p1y);
+      ctx.lineTo(pf1x, pf1y);
+      ctx.lineTo(pf0x, pf0y);
+      ctx.closePath();
+      ctx.fill();
+
+      // Fluid Free Surface Line
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(pf0x, pf0y);
+      ctx.lineTo(pf1x, pf1y);
+      ctx.stroke();
+
+      // (5) Fluid Centroid & Gravity Decomposition Vectors
+      const midS = Lp * 0.48;
+      const cx = p0x + midS * ez_x + (filmThickness * 0.5) * en_x;
+      const cy = p0y + midS * ez_y + (filmThickness * 0.5) * en_y;
+
+      const Lg = 52; // Total gravity arrow length
+      const gx = cx, gy = cy + Lg; // Points straight DOWN
+
+      // Driving component parallel to plate: g * cosBeta along ez
+      const gParLen = Lg * cosB;
+      const gPar_x = cx + gParLen * ez_x;
+      const gPar_y = cy + gParLen * ez_y;
+
+      // Hydrostatic component normal to plate: g * sinBeta along -en
+      const gPerpLen = Lg * sinB;
+      const gPerp_x = cx - gPerpLen * en_x;
+      const gPerp_y = cy - gPerpLen * en_y;
+
+      // Dashed parallelogram completing vector decomposition
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.4)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([2, 2]);
+      ctx.beginPath();
+      ctx.moveTo(gPar_x, gPar_y);
+      ctx.lineTo(gx, gy);
+      ctx.lineTo(gPerp_x, gPerp_y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Arrow 1: Parallel Component (Driving Flow) - Emerald Green
+      drawArrow(ctx, cx, cy, gPar_x, gPar_y, 7, '#34d399', 2.5);
+
+      // Arrow 2: Normal Component (Hydrostatic Pressure) - Amber
+      drawArrow(ctx, cx, cy, gPerp_x, gPerp_y, 6, '#fbbf24', 1.8);
+
+      // Arrow 3: Total Gravity Vector (Downwards) - White
+      drawArrow(ctx, cx, cy, gx, gy, 7, '#ffffff', 2);
+
+      // Labels on Vectors
+      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText('g', gx + 4, gy + 3);
+
+      ctx.fillStyle = '#34d399';
+      const gParMidX = (cx + gPar_x) / 2;
+      const gParMidY = (cy + gPar_y) / 2;
+      ctx.fillText('g cosβ (추진력)', gParMidX + 6 * en_x, gParMidY + 6 * en_y + 4);
+
+      if (state.betaDeg > 8) {
+        ctx.fillStyle = '#fbbf24';
+        const gPerpMidX = (cx + gPerp_x) / 2;
+        const gPerpMidY = (cy + gPerp_y) / 2;
+        ctx.fillText('g sinβ', gPerpMidX - 35 * ez_x - 10, gPerpMidY - 6);
+      }
+
+      // (6) Magnifier Indicator / Callout to Micro View
+      const calloutS = Lp * 0.48;
+      const calloutCenter_x = p0x + calloutS * ez_x;
+      const calloutCenter_y = p0y + calloutS * ez_y;
+
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.7)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(calloutCenter_x - 14, calloutCenter_y - 14, 28, 28);
+
+      // Dashed beam to right viewport boundary
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(calloutCenter_x + 14, calloutCenter_y - 14);
+      ctx.lineTo(w, 50);
+      ctx.moveTo(calloutCenter_x + 14, calloutCenter_y + 14);
+      ctx.lineTo(w, h - 50);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Macro View Title Badge
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.fillText('기울어진 실험 평판', ox - 18, h - 14);
+
+      ctx.restore();
+    }
+
+    // ========================================================
+    // 2. MICRO VIEWPORT: Microscopic Velocity & Dye View
+    // ========================================================
+    function renderMicroView(vx, vy, vw, vh, dt) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(vx, vy, vw, vh);
+      ctx.clip();
+
+      // Fluid domain layout:
+      // z flows horizontally from left (x0) to right (x1)
+      // x depth runs vertically from free surface yTop (x=0) to wall yBottom (x=delta)
+      const padL = 30;
+      const padR = 25;
+      const x0 = vx + padL;
+      const x1 = vx + vw - padR;
+      const flowW = x1 - x0;
+
+      const yTop = vy + 55; // x = 0 (Free surface)
+      const yBottom = vy + vh - 55; // x = delta (Solid wall)
+      const filmH = yBottom - yTop;
+
+      // Base pixel speed: calibrated so maximum velocity takes 3.5s to cross screen
+      // Scaled by true physical vz_max relative to baseline (0.10 m/s)
+      const physicalSpeedRatio = Math.max(state.vz_max / 0.10, 0.25);
+      const basePxSpeed = (flowW / 3.8) * Math.min(physicalSpeedRatio, 2.2);
+
+      // (1) Fluid Body Fill
+      const fluidGrad = ctx.createLinearGradient(0, yTop, 0, yBottom);
+      fluidGrad.addColorStop(0, 'rgba(56, 189, 248, 0.22)');
+      fluidGrad.addColorStop(1, 'rgba(15, 23, 42, 0.55)');
+      ctx.fillStyle = fluidGrad;
+      ctx.fillRect(x0, yTop, flowW, filmH);
+
+      // (2) Solid Wall at Bottom (y = yBottom)
+      ctx.fillStyle = '#1e293b';
+      ctx.fillRect(x0 - 15, yBottom, flowW + 30, vh - yBottom);
+
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(x0 - 15, yBottom);
+      ctx.lineTo(x1 + 15, yBottom);
+      ctx.stroke();
+
+      // Hatching under solid wall
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 1;
+      for (let hx = x0 - 10; hx < x1 + 20; hx += 16) {
+        ctx.beginPath();
+        ctx.moveTo(hx, yBottom);
+        ctx.lineTo(hx - 12, yBottom + 16);
+        ctx.stroke();
+      }
+
+      // Wall Label
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.fillText('고체 벽면 [x = δ] (No-slip 점착: vz = 0, τxz = τ_max)', x0 + 10, yBottom + 20);
+
+      // (3) Free Surface at Top (y = yTop) with subtle ripple
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      for (let px = x0; px <= x1; px += 4) {
+        const ripple = Math.sin((px - x0) * 0.04 - state.tSim * 4) * 1.0;
+        if (px === x0) ctx.moveTo(px, yTop + ripple);
+        else ctx.lineTo(px, yTop + ripple);
+      }
+      ctx.stroke();
+
+      // Surface Label
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.fillText('자유 표면 [x = 0] (공기 접촉: τxz = 0, vz = vz,max)', x0 + 10, yTop - 12);
+
+      // (4) Particle Advection (Strict Physical Speed: No offset at wall!)
+      particles.forEach(p => {
+        const u = 1 - p.eta * p.eta; // Parabolic velocity factor: 1 at surface, 0 at wall
+        if (!state.isPaused) {
+          p.zFrac += (u * basePxSpeed * state.speedFactor * dt) / flowW;
+          if (p.zFrac > 1) p.zFrac -= 1;
+        }
+
+        const px = x0 + p.zFrac * flowW;
+        const py = yTop + p.eta * filmH;
+
+        // Particle Glow & Tail
+        const tailLen = Math.max(u * 14 * state.speedFactor, 1);
+        ctx.strokeStyle = p.eta < 0.5 ? 'rgba(56, 189, 248, 0.75)' : 'rgba(148, 163, 184, 0.45)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(px - tailLen, py);
+        ctx.lineTo(px, py);
+        ctx.stroke();
+
+        ctx.fillStyle = p.eta < 0.5 ? '#38bdf8' : '#94a3b8';
+        ctx.beginPath();
+        ctx.arc(px, py, 1.8, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // (5) Parabolic Velocity Vectors at Reference Station
+      const profStationX = x0 + Math.min(flowW * 0.28, 110);
+      const maxVecLen = Math.min(flowW * 0.35, 120);
+
+      // Reference Baseline
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.35)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 2]);
+      ctx.beginPath();
+      ctx.moveTo(profStationX, yTop);
+      ctx.lineTo(profStationX, yBottom);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Theoretical Parabolic Envelope Curve
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      for (let i = 0; i <= 30; i++) {
+        const eta = i / 30;
+        const u = 1 - eta * eta;
+        const cx = profStationX + u * maxVecLen;
+        const cy = yTop + eta * filmH;
+        if (i === 0) ctx.moveTo(cx, cy);
+        else ctx.lineTo(cx, cy);
+      }
+      ctx.stroke();
+
+      // Velocity Arrowheads at 9 Depth Stations
+      for (let i = 0; i <= 8; i++) {
+        const eta = i / 8;
+        const u = 1 - eta * eta;
+        const len = u * maxVecLen;
+        const cy = yTop + eta * filmH;
+
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.6)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(profStationX, cy);
+        ctx.lineTo(profStationX + len, cy);
+        ctx.stroke();
+
+        if (len > 8) {
+          ctx.fillStyle = '#38bdf8';
+          ctx.beginPath();
+          ctx.moveTo(profStationX + len, cy);
+          ctx.lineTo(profStationX + len - 5, cy - 3);
+          ctx.lineTo(profStationX + len - 5, cy + 3);
+          ctx.closePath();
+          ctx.fill();
+        }
+      }
+
+      // Mean Velocity Line <vz> = 2/3 vz,max
+      const avgVecX = profStationX + (2 / 3) * maxVecLen;
+      ctx.strokeStyle = '#34d399';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([3, 2]);
+      ctx.beginPath();
+      ctx.moveTo(avgVecX, yTop - 4);
+      ctx.lineTo(avgVecX, yBottom);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = '#34d399';
+      ctx.font = '9px "JetBrains Mono", monospace';
+      ctx.fillText('⟨vz⟩ = ⅔ vz,max', avgVecX - 32, yTop + filmH * 0.45);
+
+      // (6) Virtual Dye Timeline: z(x, t) = z0 + vz(x) * (t - t_inj)
+      dyes.forEach(dye => {
+        const elapsed = state.tSim - dye.tInj;
+        const injX = x0 + dye.z0Frac * flowW;
+
+        ctx.strokeStyle = '#f43f5e';
+        ctx.fillStyle = 'rgba(244, 63, 94, 0.14)';
+        ctx.lineWidth = 3;
+
+        ctx.beginPath();
+        for (let s = 0; s <= 30; s++) {
+          const eta = s / 30;
+          const u = 1 - eta * eta;
+          const px = injX + u * basePxSpeed * elapsed;
+          const py = yTop + eta * filmH;
+          if (s === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+
+        // Fill area under dye curve to prove volume flux q * t
+        ctx.lineTo(injX, yBottom);
+        ctx.lineTo(injX, yTop);
+        ctx.closePath();
+        ctx.fill();
+
+        // Stroke the dye curve
+        ctx.beginPath();
+        for (let s = 0; s <= 30; s++) {
+          const eta = s / 30;
+          const u = 1 - eta * eta;
+          const px = injX + u * basePxSpeed * elapsed;
+          const py = yTop + eta * filmH;
+          if (s === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+        ctx.stroke();
+
+        // Fixed Anchor Marker at Wall
+        ctx.fillStyle = '#f43f5e';
+        ctx.beginPath();
+        ctx.arc(injX, yBottom, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Leading tip label
+        const tipX = injX + basePxSpeed * elapsed;
+        if (tipX < x1 - 10) {
+          ctx.fillStyle = '#fb7185';
+          ctx.font = '9px "JetBrains Mono", monospace';
+          ctx.fillText('z = vz(x)·t', tipX + 4, yTop + 14);
+        }
+      });
+
+      // Filter out dye pulses that have fully exited the right boundary
+      dyes = dyes.filter(d => (state.tSim - d.tInj) * basePxSpeed < flowW * 1.4);
+
+      // (7) Integrated Shear Stress Profile at Right Edge
+      const tauAxisX = x1 - 45;
+      const maxTauW = 32;
+
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(tauAxisX, yTop);
+      ctx.lineTo(tauAxisX, yBottom);
+      ctx.stroke();
+
+      // Linear shear stress triangle
+      ctx.strokeStyle = '#f59e0b';
+      ctx.fillStyle = 'rgba(245, 158, 11, 0.15)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(tauAxisX, yTop); // tau = 0 at surface
+      ctx.lineTo(tauAxisX + maxTauW, yBottom); // tau = tau_max at wall
+      ctx.lineTo(tauAxisX, yBottom);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = '9px "JetBrains Mono", monospace';
+      ctx.fillText('τxz(x) 선형', tauAxisX - 10, yTop - 12);
+      ctx.fillText('τwall', tauAxisX + maxTauW - 12, yBottom + 12);
+
+      // (8) Interactive Depth Inspector Guide Line
+      const inspY = yTop + state.inspNormX * filmH;
+
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([4, 2]);
+      ctx.beginPath();
+      ctx.moveTo(x0, inspY);
+      ctx.lineTo(x1, inspY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Point at velocity parabola intersection
+      const inspU = 1 - Math.pow(state.inspNormX, 2);
+      const inspParX = profStationX + inspU * maxVecLen;
+
+      ctx.fillStyle = '#f59e0b';
+      ctx.beginPath();
+      ctx.arc(inspParX, inspY, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Point at shear stress intersection
+      const inspTauX = tauAxisX + state.inspNormX * maxTauW;
+      ctx.beginPath();
+      ctx.arc(inspTauX, inspY, 3.5, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Inspector readout label (attached beside the amber dot)
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = '10px "JetBrains Mono", monospace';
+      const labelY = inspY < yTop + 14 ? inspY + 14 : (inspY > yBottom - 14 ? inspY - 6 : inspY + 4);
+      ctx.fillText(`x/δ = ${state.inspNormX.toFixed(2)}`, inspParX + 8, labelY);
+
+      ctx.restore();
+    }
+
+    // --- Event Listeners ---
+    [el.sliderBeta, el.sliderQ, el.sliderMu, el.sliderRho].forEach(slider => {
+      slider.addEventListener('input', updatePhysics);
+    });
+
+    el.sliderInsp.addEventListener('input', updateInspector);
+
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.preset-btn').forEach(b => {
+          b.className = 'preset-btn p-2 rounded-lg border border-slate-200 bg-white hover:border-sky-500 text-left font-semibold text-slate-800 transition cursor-pointer';
+        });
+        btn.className = 'preset-btn p-2 rounded-lg border-2 border-sky-600 bg-sky-50 text-left font-bold text-sky-900 transition cursor-pointer';
+
+        const p = presets[btn.getAttribute('data-preset')];
+        if (p) {
+          el.sliderMu.value = p.mu;
+          el.sliderRho.value = p.rho;
+          updatePhysics();
+        }
+      });
+    });
+
+    document.querySelectorAll('.spd-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.spd-btn').forEach(b => {
+          b.className = 'spd-btn px-2 py-0.5 rounded text-slate-600 hover:text-slate-900 transition';
+        });
+        btn.className = 'spd-btn active-spd px-2 py-0.5 rounded bg-sky-600 text-white font-bold shadow-xs transition';
+        state.speedFactor = parseFloat(btn.getAttribute('data-speed'));
+        state.isPaused = false;
+        el.btnPause.textContent = '일시정지';
+      });
+    });
+
+    el.btnPause.addEventListener('click', () => {
+      state.isPaused = !state.isPaused;
+      el.btnPause.textContent = state.isPaused ? '계속재생' : '일시정지';
+    });
+
+    el.btnInjectDye.addEventListener('click', injectDye);
+    el.btnClearDye.addEventListener('click', clearDyes);
+
+    // Initialize KaTeX & Simulation on DOM Ready
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+      updatePhysics();
+      requestAnimationFrame(renderLoop);
+    });
+
+    window.addEventListener('resize', resizeCanvas);
+  </script>
+</body>
+</html>
