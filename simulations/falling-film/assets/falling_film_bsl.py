@@ -157,20 +157,20 @@ class FallingFilmFlowBSL(Scene):
             FadeOut(eq1),
             FadeOut(eq2),
             FadeOut(limit_label),
-            eq3.animate.scale(0.52 / 0.58).to_edge(RIGHT, buff=1.2).shift(UP * 2.2),
+            eq3.animate.scale(0.50 / 0.58).move_to([3.4, 2.2, 0]).align_to(RIGHT * 1.8, LEFT),
             run_time=0.8
         )
         
         # Step 3: Boundary Condition 1 at Free Surface (x = 0)
         bc1_box = VGroup(
             Text("BC 1 (Free Surface):", font_size=18, color=YELLOW_B),
-            MathTex(r"x = 0 \implies \tau_{xz} = 0", color=YELLOW_B).scale(0.50)
+            MathTex(r"x = 0 \implies \tau_{xz} = 0", color=YELLOW_B).scale(0.48)
         ).arrange(RIGHT, buff=0.2).next_to(eq3, DOWN, buff=0.3).align_to(eq3, LEFT)
         
         tau_sol = MathTex(
             r"\tau_{xz}(x) =",
             r"\rho g \cos\beta \cdot x"
-        ).scale(0.55).next_to(bc1_box, DOWN, buff=0.3).align_to(eq3, LEFT)
+        ).scale(0.52).next_to(bc1_box, DOWN, buff=0.3).align_to(eq3, LEFT)
         
         self.play(Write(bc1_box), run_time=1.0)
         self.play(Write(tau_sol), run_time=1.2)
@@ -179,11 +179,11 @@ class FallingFilmFlowBSL(Scene):
         # Step 4: Substitute Newton's Law of Viscosity
         newton_law = MathTex(
             r"\tau_{xz} = -\mu \frac{dv_z}{dx}"
-        ).scale(0.52).next_to(tau_sol, DOWN, buff=0.35).align_to(eq3, LEFT)
+        ).scale(0.50).next_to(tau_sol, DOWN, buff=0.35).align_to(eq3, LEFT)
         
         dv_eq = MathTex(
             r"\frac{dv_z}{dx} = -\frac{\rho g \cos\beta}{\mu} x"
-        ).scale(0.54).next_to(newton_law, DOWN, buff=0.3).align_to(eq3, LEFT)
+        ).scale(0.52).next_to(newton_law, DOWN, buff=0.3).align_to(eq3, LEFT)
         
         self.play(Write(newton_law), run_time=0.9)
         self.play(TransformFromCopy(VGroup(tau_sol, newton_law), dv_eq), run_time=1.2)
@@ -200,7 +200,7 @@ class FallingFilmFlowBSL(Scene):
         
         bc2_box = VGroup(
             Text("BC 2 (Solid Wall - No slip):", font_size=18, color=ORANGE),
-            MathTex(r"x = \delta \implies v_z = 0", color=ORANGE).scale(0.50)
+            MathTex(r"x = \delta \implies v_z = 0", color=ORANGE).scale(0.48)
         ).arrange(RIGHT, buff=0.2).next_to(dv_eq, DOWN, buff=0.35).align_to(eq3, LEFT)
         
         # Final Parabolic Velocity Profile Equation
@@ -208,10 +208,17 @@ class FallingFilmFlowBSL(Scene):
             r"v_z(x) =",
             r"\frac{\rho g \delta^2 \cos\beta}{2\mu}",
             r"\left[ 1 - \left(\frac{x}{\delta}\right)^2 \right]"
-        ).scale(0.58).next_to(bc2_box, DOWN, buff=0.4).align_to(eq3, LEFT)
+        ).scale(0.50).next_to(bc2_box, DOWN, buff=0.4).align_to(eq3, LEFT)
         
         # Golden highlight box around final solution
         box = SurroundingRectangle(vz_final, color=YELLOW, buff=0.15, stroke_width=1.5)
+        
+        # Defensive clamp: guarantee >= 0.5 unit safe margin from right frame edge
+        max_right = config.frame_width / 2.0 - 0.5
+        if box.get_right()[0] > max_right:
+            shift_amt = box.get_right()[0] - max_right
+            vz_final.shift(LEFT * shift_amt)
+            box.shift(LEFT * shift_amt)
         
         self.play(Write(bc2_box), run_time=1.0)
         self.play(Write(vz_final), Create(box), run_time=1.6)

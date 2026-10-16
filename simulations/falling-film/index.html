@@ -54,12 +54,150 @@
       transform: scale(1.2);
       background: #0369a1;
     }
+
+    /* ==================== DARK THEME SYSTEM ==================== */
+    html.dark {
+      background-color: #0b0e14;
+      color: #e6edf3;
+    }
+    html.dark body {
+      background-color: #0b0e14;
+      color: #e6edf3;
+    }
+    html.dark article {
+      background-color: #121722;
+      border-color: #212c3d;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+    }
+    html.dark header {
+      border-color: #212c3d;
+    }
+    html.dark h1, html.dark h2, html.dark h3, html.dark .serif-title {
+      color: #f1f5f9;
+    }
+    html.dark p, html.dark li {
+      color: #94a3b8;
+    }
+    html.dark b, html.dark strong {
+      color: #f1f5f9;
+    }
+    html.dark .bg-amber-50\/90 {
+      background-color: rgba(120, 53, 15, 0.22);
+      border-color: rgba(217, 119, 6, 0.4);
+      color: #fde68a;
+    }
+    html.dark .text-amber-900 {
+      color: #fde68a;
+    }
+    html.dark .text-amber-700\/80 {
+      color: #fcd34d;
+    }
+    html.dark #theme-toggle {
+      background-color: #1e293b;
+      border-color: #334155;
+      color: #f1f5f9;
+    }
+    html.dark #theme-toggle:hover {
+      background-color: #2d3b52;
+      border-color: #475569;
+    }
+    html.dark .bg-sky-50 {
+      background-color: rgba(14, 165, 233, 0.15);
+      border-color: rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+    }
+    html.dark .text-sky-700 {
+      color: #38bdf8;
+    }
+    html.dark .bg-slate-50 {
+      background-color: #161d2b;
+      border-color: #243044;
+    }
+    html.dark .border-slate-200 {
+      border-color: #243044;
+    }
+    html.dark .border-slate-200\/80 {
+      border-color: #243044;
+    }
+    html.dark .border-slate-300 {
+      border-color: #334155;
+    }
+    html.dark .bg-white {
+      background-color: #182030;
+      border-color: #26344a;
+      color: #e2e8f0;
+    }
+    html.dark .text-slate-800 {
+      color: #f1f5f9;
+    }
+    html.dark .text-slate-700 {
+      color: #cbd5e1;
+    }
+    html.dark .text-slate-600 {
+      color: #94a3b8;
+    }
+    html.dark .text-slate-500 {
+      color: #64748b;
+    }
+    html.dark .text-slate-400 {
+      color: #94a3b8;
+    }
+    html.dark .katex {
+      color: #f8fafc;
+    }
+    html.dark .preset-btn {
+      background-color: #182030;
+      border-color: #28364d;
+      color: #e2e8f0;
+    }
+    html.dark .preset-btn:hover {
+      border-color: #38bdf8;
+      background-color: #1f2b3e;
+    }
+    html.dark .preset-btn.border-sky-600 {
+      background-color: rgba(14, 165, 233, 0.22);
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+    html.dark .spd-btn {
+      color: #94a3b8;
+    }
+    html.dark .spd-btn:hover {
+      color: #f1f5f9;
+    }
+    html.dark .spd-btn.active-spd {
+      background-color: #0284c7;
+      color: #ffffff;
+    }
+    html.dark input[type=range] {
+      background: #253347;
+    }
+    html.dark .bg-emerald-50 {
+      background-color: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+    html.dark .bg-amber-50 {
+      background-color: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+    html.dark .bg-rose-50 {
+      background-color: rgba(244, 63, 94, 0.12);
+      border-color: rgba(244, 63, 94, 0.3);
+    }
   </style>
+  <script>
+    if (localStorage.getItem('ace2lab_falling_film_theme') === 'dark' || 
+        (!localStorage.getItem('ace2lab_falling_film_theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
 <body class="py-6 px-4 md:px-8">
 
   <!-- ==================== MAIN PAPER CONTAINER ==================== -->
-  <article class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-12 flex flex-col gap-8">
+  <article class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-12 flex flex-col gap-8 transition-colors">
 
     <!-- ==================== PROTOTYPE BADGE BANNER ==================== -->
     <div class="flex flex-wrap items-center justify-between gap-2 bg-amber-50/90 border border-amber-200/90 rounded-xl px-4 py-2.5 text-xs text-amber-900 shadow-xs">
@@ -67,7 +205,13 @@
         <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
         <span>Prototype Interactive Lecture Note (현재 개발 및 최적화 진행 중)</span>
       </div>
-      <span class="text-amber-700/80 font-mono text-[11px] hidden sm:inline">ACE² Lab &bull; Educational WebApp</span>
+      <div class="flex items-center gap-3">
+        <span class="text-amber-700/80 font-mono text-[11px] hidden sm:inline">ACE² Lab &bull; Educational WebApp</span>
+        <button id="theme-toggle" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-white/80 hover:bg-white text-slate-800 text-[11px] font-bold shadow-2xs transition cursor-pointer" title="다크모드 / 라이트모드 전환">
+          <span id="theme-icon">🌙</span>
+          <span id="theme-text">다크모드</span>
+        </button>
+      </div>
     </div>
 
     <!-- ==================== LECTURE NOTE HEADER ==================== -->
@@ -1233,6 +1377,26 @@
 
     el.btnInjectDye.addEventListener('click', injectDye);
     el.btnClearDye.addEventListener('click', clearDyes);
+
+    // --- Theme Toggle Controller ---
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+
+    function syncThemeUI() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
+      if (themeText) themeText.textContent = isDark ? '라이트모드' : '다크모드';
+    }
+    syncThemeUI();
+
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('ace2lab_falling_film_theme', isDark ? 'dark' : 'light');
+        syncThemeUI();
+      });
+    }
 
     // Initialize KaTeX & Simulation on DOM Ready
     window.addEventListener('DOMContentLoaded', () => {
