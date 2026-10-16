@@ -368,7 +368,7 @@ nav_order: 8
       <span>Academic Courses &amp; Curriculum</span>
     </h2>
     <p class="teaching-section-desc">
-      경북대학교 과학기술대학 에너지화학공학과 및 대학원에서 개설 및 운영 중인 교과목입니다.
+      2026학년도 2학기 경북대학교 과학기술대학 에너지화학공학과 및 대학원에서 임창용 교수가 담당하여 강의하는 교과목입니다.
     </p>
 
     <div class="course-grid">
