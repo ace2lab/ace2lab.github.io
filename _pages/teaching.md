@@ -174,7 +174,9 @@ nav_order: 8
     flex-wrap: wrap;
     gap: 10px;
   }
-  .sim-btn-launch {
+  .sim-btn-launch,
+  .sim-btn-launch:link,
+  .sim-btn-launch:visited {
     background: var(--global-theme-color, #0284c7);
     color: #ffffff !important;
     font-size: 0.85rem;
@@ -187,9 +189,16 @@ nav_order: 8
     gap: 8px;
     transition: opacity 0.15s, transform 0.15s;
   }
+  .sim-btn-launch span,
+  .sim-btn-launch i,
+  .sim-btn-launch:hover span,
+  .sim-btn-launch:hover i {
+    color: #ffffff !important;
+  }
   .sim-btn-launch:hover {
     opacity: 0.92;
     transform: translateY(-1px);
+    color: #ffffff !important;
   }
 
   /* Academic Course Cards Grid */
@@ -337,9 +346,9 @@ nav_order: 8
           <span style="font-size: 0.78rem; opacity: 0.65;">
             <i class="fa-solid fa-code mr-1"></i> 순수 클라이언트 사이드 (무설치 구동)
           </span>
-          <a href="{{ '/simulations/falling-film/' | relative_url }}" class="sim-btn-launch">
-            <span>시뮬레이션 실행하기</span>
-            <i class="fa-solid fa-arrow-right"></i>
+          <a href="{{ '/simulations/falling-film/' | relative_url }}" class="sim-btn-launch" style="color: #ffffff !important;">
+            <span style="color: #ffffff !important;">시뮬레이션 실행하기</span>
+            <i class="fa-solid fa-arrow-right" style="color: #ffffff !important;"></i>
           </a>
         </div>
       </div>
