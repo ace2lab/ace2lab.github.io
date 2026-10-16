@@ -195,13 +195,8 @@ nav_order: 8
   /* Academic Course Cards Grid */
   .course-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-  }
-  @media (max-width: 768px) {
-    .course-grid {
-      grid-template-columns: 1fr;
-    }
   }
 
   .course-card {
@@ -232,11 +227,11 @@ nav_order: 8
     background: rgba(2, 132, 199, 0.1);
     color: var(--global-theme-color, #0284c7);
   }
-  .course-card__code {
-    font-family: monospace;
-    font-size: 0.75rem;
+  .course-card__term {
+    font-size: 0.72rem;
+    font-weight: 500;
     color: var(--global-text-color);
-    opacity: 0.6;
+    opacity: 0.65;
   }
   .course-card__title {
     font-size: 1.08rem;
@@ -273,7 +268,7 @@ nav_order: 8
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Interactive WebApp</span>
 <span class="hero-badge"><i class="fa-solid fa-water" aria-hidden="true"></i> Transport Phenomena</span>
-<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 4 Core Courses</span>
+<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 2026-2 Active Courses</span>
 {% endcapture %}
 
 {% include hero_banner.liquid
@@ -369,7 +364,7 @@ nav_order: 8
         <div>
           <div class="course-card__header">
             <span class="course-card__level">학부 전공필수 · 3학년</span>
-            <span class="course-card__code">ENCH302</span>
+            <span class="course-card__term">2026년 2학기</span>
           </div>
           <h3 class="course-card__title">전달현상 2 (Transport Phenomena II)</h3>
           <div class="course-card__en">Momentum, Heat &amp; Mass Transfer Operations</div>
@@ -379,7 +374,7 @@ nav_order: 8
           </p>
         </div>
         <div class="course-card__footer">
-          <span>주요 교재: BSL Transport Phenomena</span>
+          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 전용 강의교재 (ACE² Lab Lecture Notes)</span>
           <span style="color: var(--global-theme-color); font-weight: 600;">강의노트 연계</span>
         </div>
       </div>
@@ -389,17 +384,17 @@ nav_order: 8
         <div>
           <div class="course-card__header">
             <span class="course-card__level" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;">대학원 전공 · 석박사</span>
-            <span class="course-card__code">ENCH601</span>
+            <span class="course-card__term">2026년 2학기</span>
           </div>
           <h3 class="course-card__title">고급나노화학공학 (Adv. Nano Chemical Engineering)</h3>
           <div class="course-card__en">Nanoscale Transport &amp; Energy Materials</div>
           <p class="course-card__desc">
             나노 스케일에서의 이온 전달 특성, 서브나노미터 제한 공간에서의 이상 유전 거동,
-            초고속 광열 제어(IPL) 소결 메커니즘 및 2차전지·슈퍼커패시터 전극 반응 속도론을 최신 학술 논문 기반으로 탐구합니다.
+            초고속 광열 제어(IPL) 소결 메커니즘 및 2차전지·슈퍼커패시터 전극 반응 속도론을 최신 학술 연구를 바탕으로 심층 탐구합니다.
           </p>
         </div>
         <div class="course-card__footer">
-          <span>최신 연구 동향 및 세미나 연계</span>
+          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 최신 학술 세미나 교재</span>
           <span style="color: #9333ea; font-weight: 600;">대학원 코어</span>
         </div>
       </div>
@@ -409,7 +404,7 @@ nav_order: 8
         <div>
           <div class="course-card__header">
             <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;">학부 전공선택 · 3·4학년</span>
-            <span class="course-card__code">ENCH315</span>
+            <span class="course-card__term">2026년 2학기</span>
           </div>
           <h3 class="course-card__title">고분자 합성 및 물성 (Polymer Synthesis &amp; Properties)</h3>
           <div class="course-card__en">Macromolecular Engineering &amp; Rheology</div>
@@ -419,28 +414,8 @@ nav_order: 8
           </p>
         </div>
         <div class="course-card__footer">
-          <span>고분자 유변학 및 합성 실무</span>
+          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 전용 강의교재 (ACE² Lab Lecture Notes)</span>
           <span style="color: #059669; font-weight: 600;">재료화학 연계</span>
-        </div>
-      </div>
-
-      <!-- Course 4: 화학공학열역학 -->
-      <div class="course-card">
-        <div>
-          <div class="course-card__header">
-            <span class="course-card__level" style="background: rgba(217, 119, 6, 0.1); color: #d97706;">학부 전공필수 · 2학년</span>
-            <span class="course-card__code">ENCH201</span>
-          </div>
-          <h3 class="course-card__title">화학공학열역학 (Chemical Engineering Thermodynamics)</h3>
-          <div class="course-card__en">Classical &amp; Molecular Thermodynamics</div>
-          <p class="course-card__desc">
-            열역학 제1법칙 및 제2법칙, 순수 물질의 상태방정식(EOS), 기액 평형(VLE) 및 액액 평형(LLE),
-            화학 반응 평형 및 에너지 효율 최적화를 엔지니어링 관점에서 체계적으로 학습합니다.
-          </p>
-        </div>
-        <div class="course-card__footer">
-          <span>주요 교재: Smith, Van Ness &amp; Abbott</span>
-          <span style="color: #d97706; font-weight: 600;">기초 전공 코어</span>
         </div>
       </div>
 
