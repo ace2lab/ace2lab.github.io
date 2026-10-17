@@ -215,6 +215,14 @@
       transform: translateY(1px);
       box-shadow: 0 1px 0 #b45309;
     }
+    .retro-retrigger-btn.is-muted {
+      border-color: #ef4444;
+      color: #f87171;
+      box-shadow: 0 2px 0 #7f1d1d;
+    }
+    .retro-retrigger-btn.is-blocked {
+      animation: retroSoundPulse 0.9s steps(2, start) infinite;
+    }
 
     .retro-overlay {
       position: fixed;
@@ -710,6 +718,7 @@
           <span>🕹️</span>
           <span>RETRO INTRO</span>
         </button>
+        <button id="lab-bgm-toggle" class="retro-retrigger-btn" type="button" aria-pressed="true" data-bgm-toggle title="슈퍼마리오 8-Bit BGM 켜기/끄기">[ 🔊 BGM: ON ]</button>
         <button id="theme-toggle" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-white/80 hover:bg-white text-slate-800 text-[11px] font-bold shadow-2xs transition cursor-pointer" title="다크모드 / 라이트모드 전환">
           <span id="theme-icon">🌙</span>
           <span id="theme-text">다크모드</span>
@@ -1924,7 +1933,9 @@
     const MarioChiptuneEngine = (() => {
       const BPM = 150;
       const BEAT_SEC = 60 / BPM; // 0.4s per quarter note
-      const MASTER_VOLUME = 0.07; // Balanced gain (charming, never piercing)
+      const MASTER_VOLUME = 0.055; // Ambient BGM level (continuous across intro and lecture note)
+      const DUCK_VOLUME = 0.006; // BGM level while an SFX (fanfare, pipe warp) plays
+      const MUTE_STORAGE_KEY = 'ace2lab_falling_film_bgm_muted';
       const LOOKAHEAD_MS = 25; // Scheduler tick interval (ms)
       const SCHEDULE_AHEAD_SEC = 0.12; // Audio lookahead window (s)
 
@@ -2041,7 +2052,10 @@
         appendTrack(bassSeq, 'bass');
 
         events.sort((a, b) => a.beat - b.beat);
-        return { events, totalBeats, loopStartBeat: 8.0 };
+        // Repeats skip the 8-beat intro: loop wrap restarts from the first event at/after beat 8.0 (Phrase A)
+        const loopStartBeat = 8.0;
+        const loopStartIndex = Math.max(0, events.findIndex((ev) => ev.beat >= loopStartBeat));
+        return { events, totalBeats, loopStartBeat, loopStartIndex };
       }
 
       const SCORE = buildTimeline();
@@ -2052,17 +2066,31 @@
       let pulse25Wave = null;
       let schedulerTimer = null;
       let isPlaying = false;
-      let isMuted = false;
-      let isDismissed = false;
+      let isMuted = readMutedPref();
       let currentEventIndex = 0;
       let cycleOriginTime = 0;
       let unlockListenersAttached = false;
       let lastWeakAttemptMs = 0;
+      let toggleButtonsBound = false;
+
+      function readMutedPref() {
+        try {
+          return localStorage.getItem(MUTE_STORAGE_KEY) === '1';
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function writeMutedPref(muted) {
+        try {
+          localStorage.setItem(MUTE_STORAGE_KEY, muted ? '1' : '0');
+        } catch (e) {}
+      }
 
       // Events that carry (or may carry) browser user activation: always retried until the context runs.
       const STRONG_UNLOCK_EVENTS = ['pointerdown', 'pointerup', 'mousedown', 'mouseup', 'click', 'touchend', 'keydown', 'keyup'];
       // Passive signals: retried (throttled) only once the page already has sticky activation / engagement.
-      const WEAK_UNLOCK_EVENTS = ['pointermove', 'mousemove', 'touchstart', 'touchmove', 'wheel', 'scroll', 'focus', 'visibilitychange'];
+      const WEAK_UNLOCK_EVENTS = ['pointermove', 'mousemove', 'touchstart', 'touchmove', 'wheel', 'scroll', 'focus'];
       const WEAK_ATTEMPT_INTERVAL_MS = 250;
 
       // 25% duty cycle pulse wave for NES Lead
@@ -2150,8 +2178,9 @@
             currentEventIndex++;
 
             if (currentEventIndex >= SCORE.events.length) {
-              cycleOriginTime += SCORE.totalBeats * BEAT_SEC;
-              currentEventIndex = 0;
+              // Seamless wrap: next cycle's loop-start event lands exactly where this cycle ends (no drift, no intro)
+              cycleOriginTime += (SCORE.totalBeats - SCORE.loopStartBeat) * BEAT_SEC;
+              currentEventIndex = SCORE.loopStartIndex;
             }
           } else {
             break;
@@ -2174,10 +2203,10 @@
       // unlock listeners; (re)arm them while the context is blocked or interrupted.
       function syncPlayback() {
         const running = !!audioCtx && audioCtx.state === 'running';
-        if (running && !isDismissed && !isMuted && !isPlaying) {
+        if (running && !isMuted && !isPlaying) {
           startSchedulerFromBeginning();
         }
-        if (running || isDismissed) {
+        if (running || isMuted) {
           detachGestureUnlock();
         } else {
           attachGestureUnlock();
@@ -2187,7 +2216,7 @@
 
       // Unmuted start attempt: create/resume the context, then start the scheduler if the browser allowed it.
       function attemptStart() {
-        if (isDismissed) return;
+        if (isMuted) return;
         const ctx = ensureContext();
         if (!ctx) return;
         if (ctx.state === 'running') {
@@ -2198,11 +2227,10 @@
       }
 
       function onUnlockSignal(e) {
-        if (isDismissed) {
+        if (isMuted) {
           detachGestureUnlock();
           return;
         }
-        if (e.type === 'visibilitychange' && document.hidden) return;
 
         if (STRONG_UNLOCK_EVENTS.includes(e.type)) {
           // The BGM toggle owns its own click: it starts audio itself while blocked (see toggleMute)
@@ -2222,11 +2250,7 @@
         unlockListenersAttached = true;
         const opts = { capture: true, passive: true };
         [...STRONG_UNLOCK_EVENTS, ...WEAK_UNLOCK_EVENTS].forEach((type) => {
-          if (type === 'visibilitychange') {
-            document.addEventListener(type, onUnlockSignal, opts);
-          } else {
-            window.addEventListener(type, onUnlockSignal, opts);
-          }
+          window.addEventListener(type, onUnlockSignal, opts);
         });
       }
 
@@ -2234,18 +2258,38 @@
         if (!unlockListenersAttached) return;
         unlockListenersAttached = false;
         [...STRONG_UNLOCK_EVENTS, ...WEAK_UNLOCK_EVENTS].forEach((type) => {
-          if (type === 'visibilitychange') {
-            document.removeEventListener(type, onUnlockSignal, true);
-          } else {
-            window.removeEventListener(type, onUnlockSignal, true);
-          }
+          window.removeEventListener(type, onUnlockSignal, true);
+        });
+      }
+
+      // Tab hidden: suspend the context (silences output, freezes the audio clock so the score resumes in place).
+      // Tab visible: resume unless the user muted.
+      function onVisibilityChange() {
+        if (!audioCtx) return;
+        if (document.hidden) {
+          if (audioCtx.state === 'running') audioCtx.suspend().catch(() => {});
+        } else if (!isMuted) {
+          audioCtx.resume().catch(() => {});
+        }
+      }
+
+      // Every [data-bgm-toggle] button (retro overlay + lab header) shares one handler; UI is synced in updateMuteButtonUI
+      function bindToggleButtons() {
+        if (toggleButtonsBound) return;
+        toggleButtonsBound = true;
+        document.querySelectorAll('[data-bgm-toggle]').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMute();
+          });
         });
       }
 
       function initAutoplay() {
-        if (isDismissed) return;
+        bindToggleButtons();
+        document.addEventListener('visibilitychange', onVisibilityChange);
         // Any signal, from now on, unlocks audio; listeners drop themselves once the context is running
-        attachGestureUnlock();
+        if (!isMuted) attachGestureUnlock();
         attemptStart();
         // Re-attempt at each lifecycle stage (cheap; honoured if Media Engagement grants autoplay)
         document.addEventListener('DOMContentLoaded', attemptStart, { once: true });
@@ -2256,7 +2300,7 @@
 
       // Sound wanted but not audible yet (autoplay blocked / interrupted)
       function isAudioBlocked() {
-        return !isMuted && !isDismissed && !(audioCtx && audioCtx.state === 'running' && isPlaying);
+        return !isMuted && !(audioCtx && audioCtx.state === 'running' && isPlaying);
       }
 
       function toggleMute(forceState) {
@@ -2276,38 +2320,36 @@
           if (isMuted) {
             masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.04);
           } else {
-            if (ctx.state === 'suspended') {
-              ctx.resume().then(() => {
-                if (!isPlaying && !isDismissed) startSchedulerFromBeginning();
-              });
-            } else if (!isPlaying && !isDismissed) {
-              startSchedulerFromBeginning();
-            }
             masterGain.gain.linearRampToValueAtTime(MASTER_VOLUME, now + 0.04);
+            if (ctx.state === 'running') {
+              syncPlayback();
+            } else {
+              ctx.resume().then(syncPlayback).catch(() => {});
+            }
           }
         }
 
-        updateMuteButtonUI();
+        writeMutedPref(isMuted);
+        syncPlayback();
         return !isMuted;
       }
 
+      // Re-entering the intro keeps the score running (continuous BGM); only starts it if it is not playing yet
       function restartBGM() {
-        isDismissed = false;
-        const ctx = ensureContext();
-        if (!ctx) return;
+        if (isMuted) return;
+        attemptStart();
+      }
 
-        if (masterGain && !isMuted) {
-          masterGain.gain.cancelScheduledValues(ctx.currentTime);
-          masterGain.gain.setValueAtTime(MASTER_VOLUME, ctx.currentTime);
-        }
-
-        if (ctx.state === 'suspended') {
-          ctx.resume().then(() => {
-            if (!isMuted) startSchedulerFromBeginning();
-          }).catch(() => {});
-        } else if (!isMuted) {
-          startSchedulerFromBeginning();
-        }
+      // Duck the BGM bus under an SFX, then ramp back to MASTER_VOLUME. SFX buses bypass masterGain, so they stay full level.
+      function duckBGM(duckDurationSec) {
+        if (!audioCtx || !masterGain || isMuted) return;
+        const now = audioCtx.currentTime;
+        const holdUntil = now + Math.max(0.05, duckDurationSec);
+        masterGain.gain.cancelScheduledValues(now);
+        masterGain.gain.setValueAtTime(masterGain.gain.value, now);
+        masterGain.gain.linearRampToValueAtTime(DUCK_VOLUME, now + 0.03);
+        masterGain.gain.setValueAtTime(DUCK_VOLUME, holdUntil);
+        masterGain.gain.linearRampToValueAtTime(MASTER_VOLUME, holdUntil + 0.12);
       }
 
       function playCoinAndBumpSound() {
@@ -2370,6 +2412,7 @@
         const ctx = ensureContext();
         if (!ctx || isMuted) return;
         const now = ctx.currentTime;
+        duckBGM(0.45);
         const groups = [
           { start: now, freqs: [784, 659, 523, 392] },
           { start: now + 0.15, freqs: [674, 569, 453, 337] },
@@ -2393,28 +2436,16 @@
         });
       }
 
-      function triggerStartFanfareAndStop() {
-        isDismissed = true;
-        isPlaying = false;
-        if (schedulerTimer) {
-          clearInterval(schedulerTimer);
-          schedulerTimer = null;
-        }
-
+      // Stage-start fanfare over a ducked BGM; the BGM keeps playing into the lecture note
+      function triggerStartFanfareAndContinue() {
+        if (isMuted) return;
         const ctx = ensureContext();
         if (!ctx) return;
 
         const playFanfare = () => {
           const now = ctx.currentTime;
-
-          // Smoothly cut ongoing BGM notes
-          if (masterGain) {
-            masterGain.gain.cancelScheduledValues(now);
-            masterGain.gain.setValueAtTime(masterGain.gain.value, now);
-            masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.05);
-          }
-
-          if (isMuted) return;
+          syncPlayback();
+          duckBGM(0.74);
 
           // Dedicated fanfare bus (1-UP / Stage Start arpeggio: E5 - G5 - E6 - C6 - D6 - G6)
           const fanfareGain = ctx.createGain();
@@ -2454,22 +2485,6 @@
         }
       }
 
-      function stopBGMOnly() {
-        isDismissed = true;
-        isPlaying = false;
-        if (schedulerTimer) {
-          clearInterval(schedulerTimer);
-          schedulerTimer = null;
-        }
-        const ctx = ensureContext();
-        if (ctx && masterGain) {
-          const now = ctx.currentTime;
-          masterGain.gain.cancelScheduledValues(now);
-          masterGain.gain.setValueAtTime(masterGain.gain.value, now);
-          masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.08);
-        }
-      }
-
       function updateMuteButtonUI() {
         const btns = document.querySelectorAll('[data-bgm-toggle], #retro-mute-toggle');
         const blocked = isAudioBlocked();
@@ -2492,8 +2507,8 @@
         playCoinAndBumpSound,
         playJump,
         playPipeWarp,
-        stopBGMOnly,
-        triggerStartFanfareAndStop,
+        duckBGM,
+        triggerStartFanfareAndContinue,
         updateMuteButtonUI,
         isMuted: () => isMuted,
         isPlaying: () => isPlaying && !isMuted
@@ -3206,10 +3221,9 @@
         window.removeEventListener('keyup', handleKeyUp);
         input.left = input.right = input.down = input.jump = false;
 
+        // BGM keeps playing into the lab; the pipe warp SFX already ducked it when the warp began
         if (!viaPipe) {
-          MarioChiptuneEngine.triggerStartFanfareAndStop();
-        } else {
-          MarioChiptuneEngine.stopBGMOnly();
+          MarioChiptuneEngine.triggerStartFanfareAndContinue();
         }
 
         try {
@@ -3260,13 +3274,6 @@
       if (retriggerBtn) {
         retriggerBtn.addEventListener('click', () => {
           reopenArcadeOverlay();
-        });
-      }
-
-      if (muteBtn) {
-        muteBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          MarioChiptuneEngine.toggleMute();
         });
       }
 
