@@ -332,6 +332,7 @@
     .retro-mute-btn.is-blocked {
       border-color: #fbbf24;
       color: #fbbf24;
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
       animation: retroSoundPulse 0.9s steps(2, start) infinite;
     }
 
@@ -718,7 +719,6 @@
           <span>🕹️</span>
           <span>RETRO INTRO</span>
         </button>
-        <button id="lab-bgm-toggle" class="retro-retrigger-btn" type="button" aria-pressed="true" data-bgm-toggle title="슈퍼마리오 8-Bit BGM 켜기/끄기">[ 🔊 BGM: ON ]</button>
         <button id="theme-toggle" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-amber-300 bg-white/80 hover:bg-white text-slate-800 text-[11px] font-bold shadow-2xs transition cursor-pointer" title="다크모드 / 라이트모드 전환">
           <span id="theme-icon">🌙</span>
           <span id="theme-text">다크모드</span>
@@ -2066,25 +2066,16 @@
       let pulse25Wave = null;
       let schedulerTimer = null;
       let isPlaying = false;
-      let isMuted = readMutedPref();
+      let isMuted = false; // Always default to unmuted on cold load
       let currentEventIndex = 0;
       let cycleOriginTime = 0;
       let unlockListenersAttached = false;
       let lastWeakAttemptMs = 0;
       let toggleButtonsBound = false;
 
-      function readMutedPref() {
-        try {
-          return localStorage.getItem(MUTE_STORAGE_KEY) === '1';
-        } catch (e) {
-          return false;
-        }
-      }
-
-      function writeMutedPref(muted) {
-        try {
-          localStorage.setItem(MUTE_STORAGE_KEY, muted ? '1' : '0');
-        } catch (e) {}
+      function isOverlayVisible() {
+        const overlay = document.getElementById('retro-arcade-overlay');
+        return Boolean(overlay && overlay.style.display !== 'none' && !overlay.classList.contains('is-closing'));
       }
 
       // Events that carry (or may carry) browser user activation: always retried until the context runs.
@@ -2112,11 +2103,16 @@
           if (!AudioContextClass) return null;
           audioCtx = new AudioContextClass();
           masterGain = audioCtx.createGain();
-          masterGain.gain.setValueAtTime(isMuted ? 0 : MASTER_VOLUME, audioCtx.currentTime);
+          masterGain.gain.setValueAtTime(isMuted ? 0.0001 : MASTER_VOLUME, audioCtx.currentTime);
           masterGain.connect(audioCtx.destination);
           pulse25Wave = createNES25PulseWave(audioCtx);
           // Covers late grants (e.g. a pending resume() fulfilled by a later gesture)
-          audioCtx.addEventListener('statechange', syncPlayback);
+          audioCtx.addEventListener('statechange', () => {
+            if (audioCtx.state === 'running' && isOverlayVisible() && !isMuted && !isPlaying) {
+              startSchedulerFromBeginning();
+            }
+            updateMuteButtonUI();
+          });
         }
         return audioCtx;
       }
@@ -2164,7 +2160,12 @@
       }
 
       function schedulerTick() {
-        if (!isPlaying || !audioCtx || audioCtx.state !== 'running') return;
+        if (!isPlaying || !audioCtx || audioCtx.state !== 'running' || !isOverlayVisible()) {
+          if (!isOverlayVisible() && isPlaying) {
+            stopBGM();
+          }
+          return;
+        }
 
         const now = audioCtx.currentTime;
         while (currentEventIndex < SCORE.events.length) {
@@ -2189,24 +2190,46 @@
       }
 
       function startSchedulerFromBeginning() {
-        if (!audioCtx) return;
+        if (!audioCtx || !isOverlayVisible() || isMuted) return;
         currentEventIndex = 0;
         cycleOriginTime = audioCtx.currentTime + 0.03;
         isPlaying = true;
+
+        if (masterGain) {
+          const now = audioCtx.currentTime;
+          masterGain.gain.cancelScheduledValues(now);
+          masterGain.gain.setValueAtTime(Math.max(0.0001, masterGain.gain.value), now);
+          masterGain.gain.linearRampToValueAtTime(MASTER_VOLUME, now + 0.04);
+        }
+
         if (schedulerTimer) clearInterval(schedulerTimer);
         schedulerTick();
         schedulerTimer = setInterval(schedulerTick, LOOKAHEAD_MS);
         updateMuteButtonUI();
       }
 
-      // Reconcile playback with the context state: start the score once autoplay is granted and drop the
-      // unlock listeners; (re)arm them while the context is blocked or interrupted.
+      function stopBGM() {
+        isPlaying = false;
+        if (schedulerTimer) {
+          clearInterval(schedulerTimer);
+          schedulerTimer = null;
+        }
+        if (audioCtx && masterGain) {
+          const now = audioCtx.currentTime;
+          masterGain.gain.cancelScheduledValues(now);
+          masterGain.gain.setValueAtTime(Math.max(0.0001, masterGain.gain.value), now);
+          masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.04);
+        }
+        updateMuteButtonUI();
+      }
+
+      // Reconcile playback with context state and overlay visibility
       function syncPlayback() {
         const running = !!audioCtx && audioCtx.state === 'running';
-        if (running && !isMuted && !isPlaying) {
+        if (running && !isMuted && !isPlaying && isOverlayVisible()) {
           startSchedulerFromBeginning();
         }
-        if (running || isMuted) {
+        if (running || isMuted || !isOverlayVisible()) {
           detachGestureUnlock();
         } else {
           attachGestureUnlock();
@@ -2214,9 +2237,9 @@
         updateMuteButtonUI();
       }
 
-      // Unmuted start attempt: create/resume the context, then start the scheduler if the browser allowed it.
+      // Start attempt within intro
       function attemptStart() {
-        if (isMuted) return;
+        if (!isOverlayVisible() || isMuted) return;
         const ctx = ensureContext();
         if (!ctx) return;
         if (ctx.state === 'running') {
@@ -2227,22 +2250,26 @@
       }
 
       function onUnlockSignal(e) {
-        if (isMuted) {
-          detachGestureUnlock();
-          return;
-        }
+        if (!isOverlayVisible() || isMuted) return;
 
-        if (STRONG_UNLOCK_EVENTS.includes(e.type)) {
-          // The BGM toggle owns its own click: it starts audio itself while blocked (see toggleMute)
-          if (e.target && e.target.closest && e.target.closest('[data-bgm-toggle]')) return;
-        } else {
-          // Passive signals cannot grant activation; retry only if the page already has it
-          const now = performance.now();
-          if (now - lastWeakAttemptMs < WEAK_ATTEMPT_INTERVAL_MS) return;
-          lastWeakAttemptMs = now;
-          if (navigator.userActivation && !navigator.userActivation.hasBeenActive) return;
+        // Skip if user clicked the Enter Lab start button (don't start music right as they exit!)
+        if (e.target && e.target.closest && e.target.closest('#retro-start-btn')) return;
+
+        // The BGM toggle owns its own click (toggleMute handles it)
+        if (e.target && e.target.closest && e.target.closest('#retro-mute-toggle')) return;
+
+        const ctx = ensureContext();
+        if (!ctx) return;
+
+        if (ctx.state !== 'running') {
+          ctx.resume().then(() => {
+            if (isOverlayVisible() && !isMuted && !isPlaying) {
+              startSchedulerFromBeginning();
+            }
+          }).catch(() => {});
+        } else if (!isPlaying) {
+          startSchedulerFromBeginning();
         }
-        attemptStart();
       }
 
       function attachGestureUnlock() {
@@ -2262,36 +2289,33 @@
         });
       }
 
-      // Tab hidden: suspend the context (silences output, freezes the audio clock so the score resumes in place).
-      // Tab visible: resume unless the user muted.
+      // Tab hidden: suspend the context; tab visible: resume only if intro overlay is active
       function onVisibilityChange() {
         if (!audioCtx) return;
         if (document.hidden) {
           if (audioCtx.state === 'running') audioCtx.suspend().catch(() => {});
-        } else if (!isMuted) {
+        } else if (!isMuted && isOverlayVisible()) {
           audioCtx.resume().catch(() => {});
         }
       }
 
-      // Every [data-bgm-toggle] button (retro overlay + lab header) shares one handler; UI is synced in updateMuteButtonUI
       function bindToggleButtons() {
         if (toggleButtonsBound) return;
         toggleButtonsBound = true;
-        document.querySelectorAll('[data-bgm-toggle]').forEach((btn) => {
+        const btn = document.getElementById('retro-mute-toggle');
+        if (btn) {
           btn.addEventListener('click', (e) => {
             e.stopPropagation();
             toggleMute();
           });
-        });
+        }
       }
 
       function initAutoplay() {
         bindToggleButtons();
         document.addEventListener('visibilitychange', onVisibilityChange);
-        // Any signal, from now on, unlocks audio; listeners drop themselves once the context is running
-        if (!isMuted) attachGestureUnlock();
+        if (!isMuted && isOverlayVisible()) attachGestureUnlock();
         attemptStart();
-        // Re-attempt at each lifecycle stage (cheap; honoured if Media Engagement grants autoplay)
         document.addEventListener('DOMContentLoaded', attemptStart, { once: true });
         window.addEventListener('load', attemptStart, { once: true });
         window.addEventListener('pageshow', attemptStart);
@@ -2300,49 +2324,62 @@
 
       // Sound wanted but not audible yet (autoplay blocked / interrupted)
       function isAudioBlocked() {
-        return !isMuted && !(audioCtx && audioCtx.state === 'running' && isPlaying);
+        return isOverlayVisible() && !isMuted && !(audioCtx && audioCtx.state === 'running' && isPlaying);
       }
 
       function toggleMute(forceState) {
-        // While autoplay is blocked the toggle acts as 'start sound', not 'mute'
+        if (!isOverlayVisible()) return false;
+        const ctx = ensureContext();
+        if (!ctx) return false;
+
+        // While autoplay is blocked, clicking acts as 'start sound'
         if (typeof forceState !== 'boolean' && isAudioBlocked()) {
-          attemptStart();
+          isMuted = false;
+          if (ctx.state === 'running') {
+            startSchedulerFromBeginning();
+          } else {
+            ctx.resume().then(() => {
+              if (isOverlayVisible() && !isMuted) startSchedulerFromBeginning();
+            }).catch(() => {});
+          }
+          updateMuteButtonUI();
           return true;
         }
-        const ctx = ensureContext();
+
         isMuted = typeof forceState === 'boolean' ? forceState : !isMuted;
-
-        if (ctx && masterGain) {
-          const now = ctx.currentTime;
-          masterGain.gain.cancelScheduledValues(now);
-          masterGain.gain.setValueAtTime(masterGain.gain.value, now);
-
-          if (isMuted) {
-            masterGain.gain.linearRampToValueAtTime(0.0001, now + 0.04);
+        if (isMuted) {
+          stopBGM();
+        } else {
+          if (ctx.state === 'running') {
+            startSchedulerFromBeginning();
           } else {
-            masterGain.gain.linearRampToValueAtTime(MASTER_VOLUME, now + 0.04);
-            if (ctx.state === 'running') {
-              syncPlayback();
-            } else {
-              ctx.resume().then(syncPlayback).catch(() => {});
-            }
+            ctx.resume().then(() => {
+              if (isOverlayVisible() && !isMuted) startSchedulerFromBeginning();
+            }).catch(() => {});
           }
         }
-
-        writeMutedPref(isMuted);
-        syncPlayback();
+        updateMuteButtonUI();
         return !isMuted;
       }
 
-      // Re-entering the intro keeps the score running (continuous BGM); only starts it if it is not playing yet
       function restartBGM() {
-        if (isMuted) return;
-        attemptStart();
+        if (!isOverlayVisible()) return;
+        isMuted = false;
+        const ctx = ensureContext();
+        if (!ctx) return;
+        if (ctx.state === 'running') {
+          startSchedulerFromBeginning();
+        } else {
+          ctx.resume().then(() => {
+            if (isOverlayVisible() && !isMuted) startSchedulerFromBeginning();
+          }).catch(() => {});
+        }
+        updateMuteButtonUI();
       }
 
-      // Duck the BGM bus under an SFX, then ramp back to MASTER_VOLUME. SFX buses bypass masterGain, so they stay full level.
+      // Duck the BGM bus under an SFX, then ramp back to MASTER_VOLUME.
       function duckBGM(duckDurationSec) {
-        if (!audioCtx || !masterGain || isMuted) return;
+        if (!audioCtx || !masterGain || isMuted || !isOverlayVisible()) return;
         const now = audioCtx.currentTime;
         const holdUntil = now + Math.max(0.05, duckDurationSec);
         masterGain.gain.cancelScheduledValues(now);
@@ -2409,16 +2446,16 @@
       }
 
       function playPipeWarp() {
+        stopBGM(); // Immediately halt BGM when warping down the pipe
         const ctx = ensureContext();
         if (!ctx || isMuted) return;
         const now = ctx.currentTime;
-        duckBGM(0.45);
         const groups = [
           { start: now, freqs: [784, 659, 523, 392] },
           { start: now + 0.15, freqs: [674, 569, 453, 337] },
           { start: now + 0.30, freqs: [564, 479, 383, 282] }
         ];
-        groups.forEach(g => {
+        groups.forEach((g) => {
           g.freqs.forEach((freq, idx) => {
             const stepTime = g.start + idx * 0.035;
             const osc = ctx.createOscillator();
@@ -2436,18 +2473,15 @@
         });
       }
 
-      // Stage-start fanfare over a ducked BGM; the BGM keeps playing into the lecture note
-      function triggerStartFanfareAndContinue() {
+      // Stage-start fanfare when starting; stops BGM completely
+      function triggerStartFanfareAndStop() {
+        stopBGM();
         if (isMuted) return;
         const ctx = ensureContext();
         if (!ctx) return;
 
         const playFanfare = () => {
           const now = ctx.currentTime;
-          syncPlayback();
-          duckBGM(0.74);
-
-          // Dedicated fanfare bus (1-UP / Stage Start arpeggio: E5 - G5 - E6 - C6 - D6 - G6)
           const fanfareGain = ctx.createGain();
           fanfareGain.gain.setValueAtTime(MASTER_VOLUME * 1.1, now);
           fanfareGain.connect(ctx.destination);
@@ -2466,11 +2500,9 @@
             const env = ctx.createGain();
             osc.type = 'square';
             osc.frequency.setValueAtTime(n.freq, now + n.offset);
-
             env.gain.setValueAtTime(0.0001, now + n.offset);
             env.gain.linearRampToValueAtTime(0.6, now + n.offset + 0.005);
             env.gain.exponentialRampToValueAtTime(0.001, now + n.offset + n.dur);
-
             osc.connect(env);
             env.connect(fanfareGain);
             osc.start(now + n.offset);
@@ -2486,29 +2518,35 @@
       }
 
       function updateMuteButtonUI() {
-        const btns = document.querySelectorAll('[data-bgm-toggle], #retro-mute-toggle');
+        const btn = document.getElementById('retro-mute-toggle');
         const blocked = isAudioBlocked();
-        btns.forEach((btn) => {
+        if (btn) {
           const active = !isMuted && !blocked;
           btn.setAttribute('aria-pressed', String(active));
           btn.classList.toggle('is-muted', isMuted);
           btn.classList.toggle('is-blocked', blocked);
-          btn.textContent = isMuted ? '[ 🔇 BGM: OFF ]' : blocked ? '[ 🔈 TAP FOR SOUND ]' : '[ 🔊 BGM: ON ]';
-        });
+          btn.textContent = isMuted
+            ? '[ 🔇 BGM: OFF ]'
+            : blocked
+              ? '[ 🔊 TAP FOR BGM ]'
+              : '[ 🔊 BGM: ON ]';
+        }
         const prompt = document.getElementById('retro-audio-prompt');
-        if (prompt) prompt.hidden = !blocked;
+        if (prompt) prompt.hidden = !blocked || isMuted || !isOverlayVisible();
       }
 
       return {
         ensureContext,
         initAutoplay,
         toggleMute,
+        startBGM: startSchedulerFromBeginning,
+        stopBGM,
         restartBGM,
         playCoinAndBumpSound,
         playJump,
         playPipeWarp,
         duckBGM,
-        triggerStartFanfareAndContinue,
+        triggerStartFanfareAndStop,
         updateMuteButtonUI,
         isMuted: () => isMuted,
         isPlaying: () => isPlaying && !isMuted
@@ -3221,9 +3259,10 @@
         window.removeEventListener('keyup', handleKeyUp);
         input.left = input.right = input.down = input.jump = false;
 
-        // BGM keeps playing into the lab; the pipe warp SFX already ducked it when the warp began
+        // Stop BGM completely upon entering the lecture lab
+        MarioChiptuneEngine.stopBGM();
         if (!viaPipe) {
-          MarioChiptuneEngine.triggerStartFanfareAndContinue();
+          MarioChiptuneEngine.triggerStartFanfareAndStop();
         }
 
         try {
