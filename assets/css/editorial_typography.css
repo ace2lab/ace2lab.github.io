@@ -60,6 +60,17 @@ html {
   color: var(--global-text-color);
 }
 
+/* Restore standard CSS color inheritance overridden by al_folio_core main.css
+   (`p, h1..h6, em, div, li, span, strong { color: var(--global-text-color) }`)
+   so nested [data-i18n] spans, strong/em tags, and inline wrappers inherit parent color. */
+em,
+div,
+li,
+span,
+strong {
+  color: inherit;
+}
+
 p {
   line-height: 1.7;
   margin-bottom: 1.25rem;
@@ -269,10 +280,15 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0;
   line-height: 1.3;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.42);
   color: #ffffff !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.hero-badge span,
+.ed-hero-badge span {
+  color: #ffffff !important;
 }
 
 .hero-badge i,
@@ -300,12 +316,18 @@ a:hover {
   font-size: 0.94rem;
   font-weight: 600;
   letter-spacing: -0.005em;
+  color: #ffffff !important;
   text-decoration: none !important;
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease;
+}
+
+.hero-action-btn span,
+.hero-action-btn i {
+  color: #ffffff !important;
 }
 
 .hero-action-btn:focus-visible {
@@ -328,14 +350,14 @@ a:hover {
 }
 
 .hero-action-btn--outline {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.82);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .hero-action-btn--outline:hover {
-  background: rgba(243, 112, 33, 0.2);
+  background: rgba(243, 112, 33, 0.22);
   border-color: #ffa05e;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(243, 112, 33, 0.35);
@@ -4994,14 +5016,15 @@ html[data-theme="dark"] .ace2-lang-switcher {
   border: 0;
   background: transparent;
   color: var(--c-muted, #4b5a70);
-  font-family: var(--font-mono-meta);
-  font-size: var(--fs-label);
+  font-family: var(--font-sans-body);
+  font-size: 0.78rem;
   font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0.03em;
-  padding: 5px 8px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  padding: 5px 9px;
   border-radius: 999px;
   cursor: pointer;
+  white-space: nowrap;
   transition:
     background-color 0.15s ease,
     color 0.15s ease,

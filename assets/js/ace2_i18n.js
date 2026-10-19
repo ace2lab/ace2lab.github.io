@@ -17,10 +17,10 @@
     zh: "zh-CN",
   };
   var LANG_META = [
-    { code: "ko", short: "KO", label: "한국어 (Korean)" },
-    { code: "en", short: "EN", label: "English" },
-    { code: "ja", short: "JA", label: "日本語 (Japanese)" },
-    { code: "zh", short: "ZH", label: "中文 (Chinese)" },
+    { code: "ko", short: "한국어", label: "한국어 (Korean)" },
+    { code: "en", short: "English", label: "English" },
+    { code: "ja", short: "日本語", label: "日本語 (Japanese)" },
+    { code: "zh", short: "中文", label: "中文 (Chinese)" },
   ];
 
   function isValidLang(code) {
