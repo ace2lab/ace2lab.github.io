@@ -1552,18 +1552,31 @@ html[data-theme="dark"] .news-degree {
    Publications — restyle jekyll-scholar output inside the page
    ------------------------------------------------------------ */
 
-/* Unified Sticky Toolbar (combines PI filter & Year jump bar) */
+/* Flush Sticky Sub-Header Dock (locks seamlessly beneath .ace2-tabnav) */
 .pub-sticky-toolbar {
   position: sticky;
-  top: calc(var(--sticky-navbar) + var(--sticky-tabnav)); /* clears navbar + sticky tab bar */
+  top: var(--sticky-navbar); /* fallback when .ace2-tabnav is absent */
   z-index: 9;
-  margin: var(--ed-s3) 0 var(--ed-s6);
-  padding: var(--ed-s2) var(--ed-s3);
-  background: var(--ed-surface);
-  border: 1px solid var(--ed-line);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(8px);
+  margin: 0 0 var(--ed-s6);
+  padding: var(--ed-s2) var(--ed-s1);
+  background: var(--ed-surface, #ffffff);
+  border: 0;
+  border-bottom: 1px solid var(--ed-line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ace2-tab-container.is-tabbed .pub-sticky-toolbar {
+  top: calc(var(--sticky-navbar) + var(--sticky-tabnav)); /* clears navbar + sticky tab bar */
+  margin-top: calc(-1 * var(--ed-s8, 2rem));
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .pub-sticky-toolbar {
+    background: color-mix(in srgb, var(--ed-surface, #ffffff) 98%, transparent);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    backdrop-filter: saturate(160%) blur(12px);
+  }
 }
 
 .pub-sticky-toolbar .pub-pi-filter {
@@ -1597,6 +1610,7 @@ html[data-theme="dark"] .news-degree {
 }
 
 @media (min-width: 576px) {
+  .pub-pi-filter__legend,
   .pub-sticky-toolbar .pub-pi-filter__legend,
   .pub-sticky-toolbar .pub-year-jump__title {
     min-width: 4.6rem;
@@ -1607,15 +1621,19 @@ html[data-theme="dark"] .news-degree {
 /* Fallback Sticky Year Jump Bar (when outside .pub-sticky-toolbar) */
 .pub-year-jump {
   position: sticky;
-  top: calc(var(--sticky-navbar) + var(--sticky-tabnav)); /* clears navbar + sticky tab bar */
+  top: var(--sticky-navbar);
   z-index: 9;
-  margin: var(--ed-s4) 0 var(--ed-s6);
-  padding: var(--ed-s2) var(--ed-s3);
-  background: var(--ed-surface);
-  border: 1px solid var(--ed-line);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(8px);
+  margin: 0 0 var(--ed-s6);
+  padding: var(--ed-s2) var(--ed-s1);
+  background: var(--ed-surface, #ffffff);
+  border: 0;
+  border-bottom: 1px solid var(--ed-line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ace2-tab-container.is-tabbed .pub-year-jump {
+  top: calc(var(--sticky-navbar) + var(--sticky-tabnav)); /* clears navbar + sticky tab bar */
 }
 
 .pub-year-jump__inner {
@@ -1652,8 +1670,10 @@ html[data-theme="dark"] .news-degree {
 @media (max-width: 767.98px) {
   .pub-sticky-toolbar,
   .pub-year-jump,
+  .ace2-tab-container.is-tabbed .pub-sticky-toolbar,
   .ace2-tab-container.is-tabbed .pub-year-jump {
     position: static;
+    margin-top: 0;
   }
 
   .ed-section .publications h2.bibliography {
@@ -1757,7 +1777,7 @@ html[data-theme="dark"] .news-degree {
   line-height: 32px;
   letter-spacing: -0.02em;
   color: var(--ed-ink);
-  scroll-margin-top: calc(var(--sticky-navbar) + var(--sticky-tabnav) + 6.8rem); /* + sticky toolbar (PI + Year jump) */
+  scroll-margin-top: calc(var(--sticky-navbar) + var(--sticky-tabnav) + 3.75rem); /* + slim sticky year dock */
 }
 
 .ed-section .publications h2.bibliography::after {
@@ -3827,12 +3847,12 @@ html:has(dialog.ed-viewer[open]) {
 
 .ace2-tab-container.is-tabbed .ace2-tabnav {
   position: sticky;
-  top: var(--sticky-navbar); /* fixed al-folio navbar */
+  top: calc(var(--sticky-navbar) - 1px); /* overlaps fixed navbar by 1px to seal subpixel seam */
   z-index: 10;
   display: flex;
   gap: var(--ed-s1, 0.25rem);
   margin: 0 0 var(--ed-s8, 2rem);
-  padding: 0 var(--ed-s1, 0.25rem);
+  padding: 1px var(--ed-s1, 0.25rem) 0;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
@@ -3843,7 +3863,7 @@ html:has(dialog.ed-viewer[open]) {
 
 @supports (backdrop-filter: blur(1px)) {
   .ace2-tab-container.is-tabbed .ace2-tabnav {
-    background: color-mix(in srgb, var(--ed-surface, #ffffff) 86%, transparent);
+    background: color-mix(in srgb, var(--ed-surface, #ffffff) 98%, transparent);
     -webkit-backdrop-filter: saturate(160%) blur(12px);
     backdrop-filter: saturate(160%) blur(12px);
   }

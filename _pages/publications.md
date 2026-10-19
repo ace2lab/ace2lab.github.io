@@ -46,11 +46,11 @@ nav_order: 5
 {% assign poster_talks = site.data.talks | where: "type", "Poster" %}
 {% assign domestic_left = site.data.domestic.size %}
 
-<div class="ed-page ace2-tab-container">
+<div class="ed-page ace2-tab-container is-tabbed">
 
   <!-- Accessible Tab Navigation -->
   <div class="ace2-tabnav" role="tablist" aria-label="Publications category tabs">
-    <button type="button" role="tab" class="ace2-tab" id="tab-journals" aria-controls="panel-journals" aria-selected="false" tabindex="-1" data-hash="journals" data-default="true" data-aliases="international,papers,articles">
+    <button type="button" role="tab" class="ace2-tab is-active" id="tab-journals" aria-controls="panel-journals" aria-selected="true" tabindex="0" data-hash="journals" data-default="true" data-aliases="international,papers,articles">
       International Journals<span class="ace2-tab__count">{{ intl_count }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-domestic" aria-controls="panel-domestic" aria-selected="false" tabindex="-1" data-hash="domestic" data-aliases="domestic-journals,korean">
@@ -65,28 +65,9 @@ nav_order: 5
   </div>
 
   <!-- Panel 1: International Journals (jekyll-scholar + bib_search) -->
-  <div class="ace2-tabpanel" role="tabpanel" id="panel-journals" aria-labelledby="tab-journals" tabindex="0">
+  <div class="ace2-tabpanel is-active" role="tabpanel" id="panel-journals" aria-labelledby="tab-journals" tabindex="0">
     <section class="ed-section" id="journals">
-      <h2 class="ed-section__title">
-        International Journals
-        <span class="ed-section__count">{{ intl_count }}</span>
-      </h2>
-      <p class="pub-pi-filter__note" id="pubPiFilterNote">※ Includes publications prior to the PI's appointment at Kyungpook National University.</p>
-
       <div class="pub-sticky-toolbar">
-        <fieldset class="pub-pi-filter" id="pubPiFilter" role="radiogroup" aria-labelledby="pubPiFilterLegend" aria-describedby="pubPiFilterNote" hidden>
-          <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> PI</legend>
-          <div class="pub-pi-filter__options">
-            <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiAll" value="all" autocomplete="off" checked>
-            <label class="pub-pi-filter__pill" for="pubPiAll">All <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
-            <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiYim" value="yim" autocomplete="off">
-            <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">56</span></label>
-            <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiKim" value="kim" autocomplete="off">
-            <label class="pub-pi-filter__pill" for="pubPiKim"><span class="pub-pi-filter__honorific">Prof. </span>Taewook Kim <span class="pub-pi-filter__count" data-pi-count="kim">31</span></label>
-          </div>
-        </fieldset>
-        <p class="pub-pi-filter__status" id="pubPiStatus" role="status" aria-live="polite"></p>
-
         <nav class="pub-year-jump" aria-label="Jump to publication year">
           <div class="pub-year-jump__inner">
             <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Year</span>
@@ -111,6 +92,25 @@ nav_order: 5
           </div>
         </nav>
       </div>
+
+      <h2 class="ed-section__title">
+        International Journals
+        <span class="ed-section__count">{{ intl_count }}</span>
+      </h2>
+      <p class="pub-pi-filter__note" id="pubPiFilterNote">※ Includes publications prior to the PI's appointment at Kyungpook National University.</p>
+
+      <fieldset class="pub-pi-filter" id="pubPiFilter" role="radiogroup" aria-labelledby="pubPiFilterLegend" aria-describedby="pubPiFilterNote">
+        <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> PI</legend>
+        <div class="pub-pi-filter__options">
+          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiAll" value="all" autocomplete="off" checked>
+          <label class="pub-pi-filter__pill" for="pubPiAll">All <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
+          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiYim" value="yim" autocomplete="off">
+          <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">56</span></label>
+          <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiKim" value="kim" autocomplete="off">
+          <label class="pub-pi-filter__pill" for="pubPiKim"><span class="pub-pi-filter__honorific">Prof. </span>Taewook Kim <span class="pub-pi-filter__count" data-pi-count="kim">31</span></label>
+        </div>
+      </fieldset>
+      <p class="pub-pi-filter__status" id="pubPiStatus" role="status" aria-live="polite"></p>
 
       {% include bib_search.liquid %}
 
@@ -183,11 +183,6 @@ nav_order: 5
   <div class="ace2-tabpanel" role="tabpanel" id="panel-patents" aria-labelledby="tab-patents" tabindex="0" hidden>
     {% if site.data.patents.size > 0 %}
       <section class="ed-section" id="patents">
-        <h2 class="ed-section__title">
-          Patents & Intellectual Property
-          <span class="ed-section__count">{{ site.data.patents.size }}</span>
-        </h2>
-
         <div class="pub-sticky-toolbar">
           <fieldset class="pub-pi-filter" id="pubPatentFilter" role="radiogroup" aria-labelledby="pubPatentFilterLegend">
             <legend class="pub-pi-filter__legend" id="pubPatentFilterLegend"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Status</legend>
@@ -202,6 +197,11 @@ nav_order: 5
           </fieldset>
         </div>
         <p class="pub-pi-filter__status" id="pubPatentStatus" role="status" aria-live="polite"></p>
+
+        <h2 class="ed-section__title">
+          Patents & Intellectual Property
+          <span class="ed-section__count">{{ site.data.patents.size }}</span>
+        </h2>
 
         <div class="ed-rail">
           {% for group in patents_by_year %}
@@ -276,11 +276,6 @@ nav_order: 5
   <div class="ace2-tabpanel" role="tabpanel" id="panel-talks" aria-labelledby="tab-talks" tabindex="0" hidden>
     {% if site.data.talks.size > 0 %}
       <section class="ed-section" id="talks">
-        <h2 class="ed-section__title">
-          Conference Presentations
-          <span class="ed-section__count">{{ site.data.talks.size }}</span>
-        </h2>
-
         <div class="pub-sticky-toolbar">
           <fieldset class="pub-pi-filter" id="pubTalkFilter" role="radiogroup" aria-labelledby="pubTalkFilterLegend">
             <legend class="pub-pi-filter__legend" id="pubTalkFilterLegend"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Type</legend>
@@ -297,6 +292,11 @@ nav_order: 5
           </fieldset>
         </div>
         <p class="pub-pi-filter__status" id="pubTalkStatus" role="status" aria-live="polite"></p>
+
+        <h2 class="ed-section__title">
+          Conference Presentations
+          <span class="ed-section__count">{{ site.data.talks.size }}</span>
+        </h2>
 
         <div class="ed-rail">
           {% for group in talks_by_year %}
