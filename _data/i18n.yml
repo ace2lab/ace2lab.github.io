@@ -76,6 +76,30 @@ ui:
     ja: サイトの言語を選択
     zh: 选择网站语言
 
+  footer.lab_name:
+    ko: Advanced Chemical & Energy Engineering Laboratory (ACE² Lab)
+    en: Advanced Chemical & Energy Engineering Laboratory (ACE² Lab)
+    ja: 次世代化学・エネルギー工学研究室 (ACE² Lab)
+    zh: 下一代化学与能源工程实验室 (ACE² Lab)
+
+  footer.affiliation:
+    ko: 경북대학교 과학기술대학 에너지화학공학과 · 차세대 화학 및 에너지 공학 연구실
+    en: Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
+    ja: 慶北大学校 科学技術大学 エネルギー化学工学科
+    zh: 庆北大学 科学技术大学 能源化学工程系
+
+  footer.location:
+    ko: 대구광역시 북구 대학로 80 경북대학교 7호관 403호 · 414호
+    en: Engineering Bldg 7, Rms 403 & 414, 80 Daehak-ro, Buk-gu, Daegu 41566, Republic of Korea
+    ja: 大邱広域市北区大学路80 慶北大学校 7号館 403号 · 414号
+    zh: 韩国大邱广域市北区大学路80号 庆北大学 7号馆 403室 · 414室
+
+  footer.copyright:
+    ko: "© 2026 ACE² Lab. Hosted on GitHub Pages."
+    en: "© 2026 ACE² Lab. Hosted on GitHub Pages."
+    ja: "© 2026 ACE² Lab. Hosted on GitHub Pages."
+    zh: "© 2026 ACE² Lab. Hosted on GitHub Pages."
+
   hero.home.label:
     ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
