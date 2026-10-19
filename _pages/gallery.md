@@ -23,6 +23,7 @@ nav_order: 7
 
 {% include hero_banner.liquid
   variant="page"
+  i18n_prefix="hero.gallery"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Gallery"
   subtitle="학회 발표, 학위 심사 및 연구실 활동 기록"
@@ -66,7 +67,7 @@ nav_order: 7
               {% if a.photos and a.photos.size > 1 %}
                 <details class="ed-album__expansion">
                   <summary class="ed-album__expansion-toggle">
-                    <span>View all {{ a.photos.size }} photos</span>
+                    <span data-i18n-term>View all {{ a.photos.size }} photos</span>
                     <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                   </summary>
                   <div class="ed-album__grid">

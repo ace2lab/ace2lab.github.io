@@ -657,28 +657,594 @@ ui:
     zh: "在研究成果页面查看全部传感器论文 →"
 
   # ----------------------------------------------------------------------------
-  # Secondary Pages Hero Titles & Subtitles (Phase 2 Seamless Coverage)
+  # Secondary Pages Hero Titles & Subtitles + Phase 2 UI Keys
   # ----------------------------------------------------------------------------
+  hero.publications.label:
+    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ja: 慶北大学校 科学技術大学 · ACE² LAB
+    zh: 庆北大学 科学技术大学 · ACE² LAB
   hero.publications.title:
     ko: Publications & Intellectual Property
     en: Publications & Intellectual Property
     ja: 研究業績・知的財産 (Publications & IP)
     zh: 学术论文与知识产权 (Publications & IP)
+  hero.publications.subtitle:
+    ko: "동료심사 국제 SCI 학술지 논문, 국내 학술지, 등록·출원 특허 및 국내외 학술대회 발표 실적"
+    en: "Peer-reviewed international SCI journal articles, domestic publications, registered & filed patents, and conference presentations"
+    ja: "査読付き国際SCI学術誌論文、国内学術誌、登録・出願特許および国内外学術会議発表実績"
+    zh: "同行评审国际 SCI 期刊论文、国内期刊论文、授权与申请专利及国内外学术会议报告"
+  hero.publications.subtitle_en:
+    ko: "Peer-reviewed international journal articles, domestic publications, registered & filed patents, and invited presentations."
+    en: "All international journal titles, journal names, author names, and DOIs are preserved in standard English for global citation indexing."
+    ja: "Peer-reviewed international journal articles, domestic publications, registered & filed patents, and invited presentations."
+    zh: "Peer-reviewed international journal articles, domestic publications, registered & filed patents, and invited presentations."
+
+  publications.badge_intl:
+    ko: 국제 SCI 학술지
+    en: International Journals
+    ja: 国際SCI学術誌
+    zh: 国际 SCI 期刊
+  publications.badge_dom:
+    ko: 국내 학술지
+    en: Domestic Journals
+    ja: 国内学術誌
+    zh: 国内学术期刊
+  publications.badge_patents:
+    ko: 특허 및 지식재산권
+    en: Patents & IP
+    ja: 特許・知的財産
+    zh: 专利与知识产权
+  publications.badge_talks:
+    ko: 학술대회 발표
+    en: Presentations
+    ja: 学会発表
+    zh: 学术会议报告
+
+  publications.tab_journals:
+    ko: 국제 학술지 (International Journals)
+    en: International Journals
+    ja: 国際学術誌 (International Journals)
+    zh: 国际学术期刊 (International Journals)
+  publications.tab_domestic:
+    ko: 국내 학술지 (Domestic Journals)
+    en: Domestic Journals
+    ja: 国内学術誌 (Domestic Journals)
+    zh: 国内学术期刊 (Domestic Journals)
+  publications.tab_patents:
+    ko: 특허 및 지식재산권 (Patents & IP)
+    en: Patents & IP
+    ja: 特許・知的財産 (Patents & IP)
+    zh: 专利与知识产权 (Patents & IP)
+  publications.tab_talks:
+    ko: 학술대회 발표 (Presentations)
+    en: Conference Presentations
+    ja: 学術会議発表 (Presentations)
+    zh: 学术会议报告 (Presentations)
+
+  publications.year_label:
+    ko: 연도
+    en: Year
+    ja: 年度
+    zh: 年份
+  publications.sec_journals:
+    ko: 국제 SCI(E) 학술지 논문 (International Journals)
+    en: International Journals
+    ja: 国際SCI(E)学術誌論文 (International Journals)
+    zh: 国际 SCI(E) 期刊论文 (International Journals)
+  publications.pi_note:
+    ko: "※ 경북대학교 부임 이전 연구책임자(PI)의 주요 학술지 발표 논문을 포함합니다."
+    en: "※ Includes publications prior to the PI's appointment at Kyungpook National University."
+    ja: "※ 慶北大学校着任以前の研究責任者（PI）の主要学術誌発表論文を含みます。"
+    zh: "※ 包含首席研究员（PI）入职庆北大学之前发表的代表性学术期刊论文。"
+  publications.pi_legend:
+    ko: 연구책임자
+    en: PI
+    ja: 研究責任者
+    zh: 首席研究员
+  publications.filter_all:
+    ko: 전체
+    en: All
+    ja: すべて
+    zh: 全部
+  publications.contrib_equal:
+    ko: "공동 제1저자 (Equal contribution)"
+    en: "Equal contribution (Co-first author)"
+    ja: "共同筆頭著者 (Equal contribution)"
+    zh: "共同第一作者 (Equal contribution)"
+  publications.contrib_corr:
+    ko: "교신저자 (Corresponding author)"
+    en: "Corresponding author"
+    ja: "責任著者 (Corresponding author)"
+    zh: "通讯作者 (Corresponding author)"
+  publications.contrib_member:
+    ko: "ACE² Lab 소속 연구원 (굵은 밑줄)"
+    en: "ACE² Lab member (Underlined Bold)"
+    ja: "ACE² Lab 所属研究員 (太字下線)"
+    zh: "ACE² Lab 实验室成员 (粗体下划线)"
+  publications.search_placeholder:
+    ko: "논문 제목, 저자명, 학술지명 또는 키워드로 검색 (영문)..."
+    en: "Search international journals by title, author, or keyword..."
+    ja: "論文タイトル、著者名、ジャーナル名、キーワードで検索 (英語)..."
+    zh: "按论文标题、作者姓名、期刊名称或英文关键词检索..."
+
+  publications.sec_domestic:
+    ko: 국내 학술지 논문 (Domestic Journals)
+    en: Domestic Journals
+    ja: 国内学術誌論文 (Domestic Journals)
+    zh: 国内学术期刊论文 (Domestic Journals)
+  publications.dom_note:
+    ko: "‡ 공동 제1저자 (Equal contribution) · * 교신저자 (Corresponding author)"
+    en: "‡ Equal contribution · * Corresponding author"
+    ja: "‡ 共同筆頭著者 (Equal contribution) · * 責任著者 (Corresponding author)"
+    zh: "‡ 共同第一作者 (Equal contribution) · * 通讯作者 (Corresponding author)"
+
+  publications.sec_patents:
+    ko: 특허 및 지식재산권 (Patents & Intellectual Property)
+    en: Patents & Intellectual Property
+    ja: 特許および知的財産権 (Patents & Intellectual Property)
+    zh: 专利与知识产权 (Patents & Intellectual Property)
+  publications.patent_legend:
+    ko: 상태
+    en: Status
+    ja: 状態
+    zh: 状态
+  publications.status_registered:
+    ko: 등록
+    en: Registered
+    ja: 登録済
+    zh: 已授权
+  publications.status_filed:
+    ko: 출원
+    en: Filed
+    ja: 出願中
+    zh: 已申请
+  publications.label_inventors:
+    ko: 발명자
+    en: Inventors
+    ja: 発明者
+    zh: 发明人
+  publications.label_assignee:
+    ko: 출원인
+    en: Assignee
+    ja: 出願人
+    zh: 申请人
+  publications.label_funding:
+    ko: 지원과제
+    en: Funding
+    ja: 支援課題
+    zh: 资助项目
+
+  publications.sec_talks:
+    ko: 학술대회 발표 (Conference Presentations)
+    en: Conference Presentations
+    ja: 学術会議発表 (Conference Presentations)
+    zh: 学术会议报告 (Conference Presentations)
+  publications.talk_legend:
+    ko: 구분
+    en: Type
+    ja: 区分
+    zh: 类型
+  publications.type_invited:
+    ko: 초청강연 (Invited)
+    en: Invited
+    ja: 招待講演 (Invited)
+    zh: 特邀报告 (Invited)
+  publications.type_oral:
+    ko: 구두발표 (Oral)
+    en: Oral
+    ja: 口頭発表 (Oral)
+    zh: 口头报告 (Oral)
+  publications.type_poster:
+    ko: 포스터 (Poster)
+    en: Poster
+    ja: ポスター (Poster)
+    zh: 墙报展示 (Poster)
+
+  # ----------------------------------------------------------------------------
+  # Facilities Page (_pages/facilities.md & _includes/facility_table.liquid)
+  # ----------------------------------------------------------------------------
+  hero.facilities.label:
+    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ja: 慶北大学校 科学技術大学 · ACE² LAB
+    zh: 庆北大学 科学技术大学 · ACE² LAB
   hero.facilities.title:
     ko: Research Facilities & Instrumentation
     en: Research Facilities & Instrumentation
     ja: 研究設備・分析装置 (Facilities)
     zh: 科研仪器与实验设备 (Facilities)
+  hero.facilities.subtitle:
+    ko: "34대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템"
+    en: "34 state-of-the-art nanomaterials synthesis, ultrafast photonic sintering, and electrochemical characterization systems"
+    ja: "34台の先端研究設備およびナノ材料合成・超高速光熱処理・電気化学分析システム"
+    zh: "34台先进科研仪器及纳米材料合成、超快光热烧结与电化学表征分析系统"
+  hero.facilities.subtitle_en:
+    ko: "State-of-the-art materials synthesis, ultrafast photonic sintering, and electrochemical characterization facilities."
+    en: "Instrument names, manufacturers, and model numbers are preserved in international standard English."
+    ja: "State-of-the-art materials synthesis, ultrafast photonic sintering, and electrochemical characterization facilities."
+    zh: "State-of-the-art materials synthesis, ultrafast photonic sintering, and electrochemical characterization facilities."
+
+  facilities.loc_title:
+    ko: 실험실 위치
+    en: Location
+    ja: 実験室配置
+    zh: 实验室位置
+  facilities.tab_all:
+    ko: 전체 장비 (All Instruments)
+    en: All Instruments
+    ja: 全設備一覧 (All Instruments)
+    zh: 全部仪器设备 (All Instruments)
+  facilities.tab_synthesis:
+    ko: 합성 및 광열 공정
+    en: Synthesis & Processing
+    ja: 合成・光熱プロセス
+    zh: 合成与光热加工
+  facilities.tab_thermal:
+    ko: 시료 전처리 및 건조
+    en: Sample Prep & Drying
+    ja: 試料前処理・乾燥
+    zh: 样品前处理与干燥
+  facilities.tab_char:
+    ko: 물성 분석 및 측정
+    en: Characterization & Measurement
+    ja: 物性分析・測定評価
+    zh: 物性表征与测试分析
+  facilities.tab_utility:
+    ko: 인프라 및 유틸리티
+    en: Infrastructure & Utility
+    ja: インフラ・ユーティリティ
+    zh: 基础设施与安全公用工程
+
+  facilities.sec_synthesis:
+    ko: 나노소재 합성 및 광열 공정 장비 (Synthesis & Thermal/Photonic Processing)
+    en: Synthesis & Thermal/Photonic Processing
+    ja: ナノ材料合成および光熱プロセス装置 (Synthesis & Thermal/Photonic Processing)
+    zh: 纳米材料合成与光热加工设备 (Synthesis & Thermal/Photonic Processing)
+  facilities.lede_synthesis:
+    ko: "초고속 펄스광(IPL) 광소결 시스템, 전기방사기, 마이크로파 수열합성기, 머플/튜브 전기로, 불활성 분위기 글로브박스, 스핀 코터, 코로나 표면처리기 및 전극 압착 프레스."
+    en: "Intense pulsed light (IPL) photonic sintering, electrospinning, microwave hydrothermal synthesis, muffle and tube furnaces, inert atmosphere glove box, spin coating, corona surface treatment, and hydraulic electrode pressing."
+    ja: "超高速フラッシュ光（IPL）焼結システム、エレクトロスピニング装置、マイクロ波水熱合成装置、マッフル・管状電気炉、不活性ガスグローブボックス、スピンコーター、コロナ表面処理装置、および油圧電極プレス。"
+    zh: "强脉冲光（IPL）光子烧结系统、静电纺丝机、微波水热合成仪、马弗炉与管式炉、惰性气氛手套箱、匀胶机、电晕表面处理仪及液压电极压片机。"
+
+  facilities.sec_thermal:
+    ko: 시료 전처리 및 정밀 건조 장비 (Sample Preparation & Drying)
+    en: Sample Preparation & Drying
+    ja: 試料前処理および精密乾燥装置 (Sample Preparation & Drying)
+    zh: 样品前处理与精密干燥设备 (Sample Preparation & Drying)
+  facilities.lede_thermal:
+    ko: "고출력 초음파 프로브 분산기, 냉각 고속 원심분리기, 동결건조기(Lyophilizer), 강제순환 및 진공 건조 오븐, 전자현미경 전처리용 이온 스퍼터 코터."
+    en: "High-power ultrasonic probe dispersion, refrigerated centrifugation, lyophilization (freeze drying), forced convection and vacuum drying ovens, and conductive sputter coating for electron microscopy."
+    ja: "高出力超音波プローブ分散機、冷却高速遠心分離機、凍結乾燥機（フリーズドライヤー）、強制循環および真空乾燥オーブン、電子顕微鏡用導電性スパッタコーター。"
+    zh: "高功率超声波探头分散仪、冷冻高速离心机、冷冻干燥机、鼓风与真空干燥箱，以及用于电子显微镜制样的导电离子溅射仪。"
+
+  facilities.sec_char:
+    ko: 전기화학·광학·물성 분석 및 센서 측정 장비 (Characterization & Measurement)
+    en: Characterization & Measurement
+    ja: 電気化学・光学・物性分析およびセンサー評価装置 (Characterization & Measurement)
+    zh: 电化学、光学、物性表征与传感器测试设备 (Characterization & Measurement)
+  facilities.lede_char:
+    ko: "전기화학 포텐쇼스탯/충방전기, 정밀 소스미터(SMU), 4탐침 면저항 측정기, 핫척 가스 센서 프로브 스테이션, 주사전자현미경(Mini-SEM), FT-IR·UV-Vis 분광기, BET 비표면적 및 제타전위 분석기, GC/HPLC 크로마토그래피."
+    en: "Electrochemical potentiostats, source measure units (SMU), 4-point probe sheet resistance meters, hot-chuck gas sensor probe station, Mini-SEM, FT-IR and UV-Vis spectroscopy, BET surface area and zeta potential analyzers, and GC/HPLC chromatography."
+    ja: "電気化学ポテンショスタット、ソースメジャーユニット（SMU）、4探針シート抵抗計、ホットチャック型ガスセンサープローブステーション、卓上SEM（Mini-SEM）、FT-IR・UV-Vis分光光度計、BET比表面積・ゼータ電位測定装置、GC/HPLCクロマトグラフィー。"
+    zh: "电化学工作站/恒电位仪、精密源表（SMU）、四探针方阻仪、加热卡盘气敏探针台、台式扫描电镜（Mini-SEM）、FT-IR 与 UV-Vis 光谱仪、BET 比表面积与 Zeta 电位分析仪，以及 GC/HPLC 色谱系统。"
+
+  facilities.sec_utility:
+    ko: 실험실 안전 인프라 및 유틸리티 (Infrastructure & Laboratory Utility)
+    en: Infrastructure & Laboratory Utility
+    ja: 実験室安全インフラおよびユーティリティ (Infrastructure & Laboratory Utility)
+    zh: 实验室安全基础设施与公用工程 (Infrastructure & Laboratory Utility)
+  facilities.lede_utility:
+    ko: "초순수(DI Water) 제조 시스템, 다채널 질량유량/압력 제어기(MFC), 고압 독성·특수가스 실린더 캐비닛 및 건식 유해가스 스크러버."
+    en: "Ultrapure deionized (DI) water purification systems, multi-channel mass flow and pressure controllers (MFC), certified gas cylinder cabinets, and dry toxic gas scrubbers."
+    ja: "超純水（DI Water）精製システム、多チャンネル質量流量・圧力コントローラ（MFC）、高圧ガスシリンダーキャビネット、および乾式有害ガススクラバー。"
+    zh: "超纯水（DI Water）纯化系统、多通道质量流量与压力控制器（MFC）、认证特种气瓶柜及干式有毒尾气洗涤塔（Scrubber）。"
+
+  facilities.col_photo:
+    ko: 장비 사진
+    en: Photo
+    ja: 写真
+    zh: 设备照片
+  facilities.col_instrument:
+    ko: 장비명 (영문 표준명)
+    en: Instrument
+    ja: 装置名 (英語標準表記)
+    zh: 仪器名称 (英文标准名)
+  facilities.col_vendor:
+    ko: 제조사 · 모델명
+    en: Manufacturer · Model
+    ja: メーカー · 型番
+    zh: 制造商 · 型号
+  facilities.col_location:
+    ko: 설치 호실
+    en: Location
+    ja: 設置場所
+    zh: 所在房间
+
+  # ----------------------------------------------------------------------------
+  # Teaching Page (_pages/teaching.md)
+  # ----------------------------------------------------------------------------
+  hero.teaching.label:
+    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ja: 慶北大学校 科学技術大学 · ACE² LAB
+    zh: 庆北大学 科学技术大学 · ACE² LAB
+  hero.teaching.title:
+    ko: Teaching & Interactive Simulations
+    en: Teaching & Interactive Simulations
+    ja: 講義・インタラクティブ物理シミュレーション
+    zh: 教学课程与交互式物理仿真
+  hero.teaching.subtitle:
+    ko: "화학공학 전달현상 이론과 프로세스 엔지니어링을 웹 기반 실시간 물리 시뮬레이션 및 강의노트로 구현합니다."
+    en: "Interactive engineering simulations, mathematical Manim animations, and chemical engineering curriculum by ACE² Lab."
+    ja: "化学工学の移動現象論とプロセス工学を、Webベースのリアルタイム物理シミュレーションおよび講義ノートとして実装しています。"
+    zh: "将化学工程传递现象理论与过程工程转化为基于 Web 的实时物理仿真与数字化讲义。"
+  hero.teaching.subtitle_en:
+    ko: "Interactive lecture notes, mathematical Manim animations, and academic courses by Prof. Changyong Yim."
+    en: "Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University."
+    ja: "Interactive lecture notes, mathematical Manim animations, and academic courses by Prof. Changyong Yim."
+    zh: "Interactive lecture notes, mathematical Manim animations, and academic courses by Prof. Changyong Yim."
+
+  teaching.badge_webapp:
+    ko: 인터랙티브 웹앱
+    en: Interactive WebApp
+    ja: インタラクティブWebアプリ
+    zh: 交互式 Web 应用
+  teaching.badge_tp:
+    ko: 전달현상 (Transport Phenomena)
+    en: Transport Phenomena
+    ja: 移動現象論 (Transport Phenomena)
+    zh: 传递现象 (Transport Phenomena)
+  teaching.badge_courses:
+    ko: 2026-2 개설 강좌
+    en: 2026-2 Active Courses
+    ja: 2026-2 開講科目
+    zh: 2026秋季学期开设课程
+
+  teaching.sim_sec_title:
+    ko: "인터랙티브 강의노트 및 물리 시뮬레이션 (Interactive Simulations)"
+    en: "Interactive Lecture Notes & Simulations"
+    ja: "インタラクティブ講義ノート＆物理シミュレーション"
+    zh: "交互式课程讲义与实时物理仿真"
+  teaching.sim_sec_desc:
+    ko: "복잡한 수학적 전달방정식과 경계조건을 직접 조작하며 직관적으로 이해할 수 있는 실시간 웹 시뮬레이션 모듈입니다."
+    en: "Real-time browser-native simulation modules designed to intuitively manipulate governing transport equations and boundary conditions."
+    ja: "複雑な移動現象の支配方程式と境界条件をブラウザ上で直接操作し、直感的に理解できるリアルタイムWebシミュレーションモジュールです。"
+    zh: "可在浏览器中直接调节复杂传递控制方程与边界条件、直观理解物理机制的实时 Web 仿真模块。"
+
+  teaching.sim1_tag1:
+    ko: "전달현상 2 (Transport Phenomena II)"
+    en: "Transport Phenomena II"
+    ja: "移動現象論 2 (Transport Phenomena II)"
+    zh: "传递现象 2 (Transport Phenomena II)"
+  teaching.sim1_tag2:
+    ko: "Manim 수식 애니메이션 연동"
+    en: "Manim Math Animation"
+    ja: "Manim 数式アニメーション連動"
+    zh: "Manim 数学推导动画联动"
+  teaching.sim1_tag3:
+    ko: "Web Audio 3채널 합성"
+    en: "3-Ch Web Audio Synth"
+    ja: "Web Audio 3ch 合成"
+    zh: "Web Audio 三声道合成"
+  teaching.sim1_title:
+    ko: "Stage 2-2: Laminar Falling Film Flow (강하 액막 유동)"
+    en: "Stage 2-2: Laminar Falling Film Flow"
+    ja: "Stage 2-2: Laminar Falling Film Flow (層流流下液膜流動)"
+    zh: "Stage 2-2: Laminar Falling Film Flow (层流降膜流动)"
+  teaching.sim1_desc:
+    ko: "경사 평면을 따라 중력에 의해 흘러내리는 뉴턴 유체의 층류 강하 액막 유동을 해석합니다. Bird-Stewart-Lightfoot (BSL) 표준 좌표계에 따른 6단계 수식 유도 Manim 애니메이션, 점도·밀도·경사각·유량 조절에 따른 실시간 포물선 유속 및 선형 전단응력 분포를 인터랙티브하게 체험할 수 있습니다."
+    en: "Analyzes laminar falling film flow of a Newtonian fluid down an inclined plane under gravity. Features a 6-step Manim mathematical derivation in standard Bird-Stewart-Lightfoot (BSL) coordinates, with interactive controls for viscosity, density, inclination angle, and flow rate to visualize parabolic velocity and linear shear-stress profiles in real time."
+    ja: "傾斜平板に沿って重力により流下するニュートン流体の層流液膜流動を解析します。Bird-Stewart-Lightfoot（BSL）標準座標系に基づく6段階の数式導出Manimアニメーションと、粘度・密度・傾斜角・流量の操作による放物線速度分布および線形せん断応力分布をリアルタイムに体験できます。"
+    zh: "解析牛顿流体在重力作用下沿倾斜平板流动的层流降膜过程。内置基于 Bird-Stewart-Lightfoot (BSL) 标准坐标系的六步 Manim 方程推导动画，支持实时调节粘度、密度、倾角与流量，直观交互演示抛物线速度分布与线性切应力分布。"
+  teaching.sim1_f1:
+    ko: "실시간 미시/거시 듀얼 캔버스"
+    en: "Real-Time Micro/Macro Dual Canvas"
+    ja: "リアルタイム微視・巨視デュアルキャンバス"
+    zh: "实时微观/宏观双画布渲染"
+  teaching.sim1_f2:
+    ko: "레이놀즈 수 (Re < 20) 층류 판정"
+    en: "Reynolds Number (Re < 20) Laminar Regime Check"
+    ja: "レイノルズ数 (Re < 20) 層流判定"
+    zh: "雷诺数 (Re < 20) 层流判据实时校验"
+  teaching.sim1_f3:
+    ko: "HTML5 비디오 구간 탐색 제어"
+    en: "HTML5 Video Step-by-Step Scrubbing"
+    ja: "HTML5 ビデオ区間シーク制御"
+    zh: "HTML5 视频分步推导进度控制"
+  teaching.sim1_f4:
+    ko: "다크모드 & 슈퍼마리오 레트로 랜딩"
+    en: "Dark Mode & 8-Bit Retro Landing"
+    ja: "ダークモード＆8-Bitレトロランディング"
+    zh: "深色模式与 8-Bit 复古交互界面"
+  teaching.sim1_client_note:
+    ko: "순수 클라이언트 사이드 (무설치 구동)"
+    en: "100% Client-Side WebApp (Zero Install)"
+    ja: "完全クライアントサイド動作（インストール不要）"
+    zh: "纯客户端运行（免安装即开即用）"
+  teaching.sim1_btn:
+    ko: "시뮬레이션 실행하기"
+    en: "Launch Simulation"
+    ja: "シミュレーションを起動"
+    zh: "启动交互仿真"
+
+  teaching.course_sec_title:
+    ko: "담당 교과목 및 커리큘럼 (Academic Courses & Curriculum)"
+    en: "Academic Courses & Curriculum"
+    ja: "担当講義・カリキュラム (Academic Courses & Curriculum)"
+    zh: "主讲课程与教学大纲 (Academic Courses & Curriculum)"
+  teaching.course_sec_desc:
+    ko: "2026학년도 2학기 경북대학교 과학기술대학 에너지화학공학과 및 대학원에서 임창용 교수가 담당하여 강의하는 교과목입니다."
+    en: "Undergraduate and graduate courses taught by Prof. Changyong Yim in the Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University (Fall 2026)."
+    ja: "2026年度第2学期に慶北大学校 科学技術大学 エネルギー化学工学科および大学院にて Changyong Yim 教授が担当する講義科目です。"
+    zh: "2026学年秋季学期由 Changyong Yim 教授在庆北大学 科学技术大学 能源化学工程系及研究生院主讲的课程。"
+  teaching.term_2026_2:
+    ko: "2026년 2학기"
+    en: "Fall 2026"
+    ja: "2026年 第2学期"
+    zh: "2026年 秋季学期"
+
+  teaching.c1_level:
+    ko: "학부 전공선택 · 2학년"
+    en: "Undergraduate Elective · Sophomore"
+    ja: "学部 専攻選択 · 2年"
+    zh: "本科专业选修 · 二年级"
+  teaching.c1_title:
+    ko: "고분자 합성 및 물성"
+    en: "Polymer Synthesis & Properties"
+    ja: "高分子合成および物性"
+    zh: "高分子合成与物性"
+  teaching.c1_desc:
+    ko: "단계성장 및 사슬성장 중합의 반응 속도론과 열역학적 메커니즘을 규명하고, 분자량 분포, 사슬 형태, 유리전이 및 결정화 거동, 점탄성 등 고분자 사슬의 미시적 구조와 거시적 물리·기계적 물성 간의 구조-물성 상관관계를 체계적으로 다룹니다."
+    en: "Covers reaction kinetics and thermodynamic mechanisms of step-growth and chain-growth polymerization, systematically linking molecular weight distribution, chain conformation, glass transition, crystallization, and viscoelasticity to macroscopic physical and mechanical properties."
+    ja: "段階成長および連鎖成長重合の反応速度論と熱力学的機構を解明し、分子量分布、鎖コンフォメーション、ガラス転移・結晶化挙動、粘弾性など高分子鎖の微視的構造と巨視的物性の相関を体系的に扱います。"
+    zh: "阐明逐步聚合与链式聚合的反应动力学及热力学机制，系统讲授分子量分布、链构象、玻璃化转变、结晶行为及粘弹性等高分子微观结构与宏观物理机械性能之间的构效关系。"
+  teaching.c1_footer:
+    ko: "교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)"
+    en: "Material: ACE² Lab Custom Lecture Notes"
+    ja: "教材: 研究室独自作成講義ノート (ACE² Lab Lecture Notes)"
+    zh: "教材：实验室自编讲义 (ACE² Lab Lecture Notes)"
+
+  teaching.c2_level:
+    ko: "학부 전공필수 · 3학년"
+    en: "Undergraduate Core · Junior"
+    ja: "学部 専攻必修 · 3年"
+    zh: "本科专业必修 · 三年级"
+  teaching.c2_title:
+    ko: "전달현상 2"
+    en: "Transport Phenomena II"
+    ja: "移動現象論 2"
+    zh: "传递现象 2"
+  teaching.c2_desc:
+    ko: "연속체 역학 및 미시적 보존 법칙을 기반으로 열전달과 물질전달의 지배방정식을 유도하고, 다상·다성분 화학공정 시스템에서의 전도·대류·복사 열전달과 분자 확산, 계면 수송 및 반응-확산 결합 현상을 통합적으로 해석하며 본 시뮬레이션을 통해 이론적 해법을 가시화합니다."
+    en: "Derives governing equations of heat and mass transfer from continuum mechanics and microscopic conservation laws, analyzing conduction, convection, radiation, molecular diffusion, interfacial transport, and coupled reaction-diffusion systems with interactive simulation visualization."
+    ja: "連続体力学と微視的保存則に基づき熱移動および物質移動の支配方程式を導出し、多相・多成分化学プロセスにおける伝導・対流・放射熱伝達と分子拡散、界面輸送、反応-拡散結合現象を統合的に解析します。"
+    zh: "基于连续介质力学与微观守恒定律推导热量传递与质量传递控制方程，综合解析多相多组分化工系统中的导热、对流、辐射换热以及分子扩散、界面输运与反应-扩散耦合现象。"
+
+  teaching.c3_level:
+    ko: "대학원 전공 · 석박사과정"
+    en: "Graduate Course · M.S. & Ph.D."
+    ja: "大学院専攻 · 修士・博士課程"
+    zh: "研究生专业课 · 硕博课程"
+  teaching.c3_title:
+    ko: "고급나노화학공학"
+    en: "Advanced Nano-Chemical Engineering"
+    ja: "上級ナノ化学工学"
+    zh: "高等纳米化学工程"
+  teaching.c3_desc:
+    ko: "나노스케일에서의 열역학, 계면 동역학 및 표면·양자 구속 효과를 바탕으로 기능성 유·무기 나노소재의 정밀 합성 원리를 다룹니다. Science, Nature 등 세계 최고 권위 학술지에 게재된 최신 나노·에너지 논문을 심층 강독하고 토론하여 첨단 연구 기획 및 비판적 분석 역량을 함양합니다."
+    en: "Explores precision synthesis principles of functional organic-inorganic nanomaterials based on nanoscale thermodynamics, interfacial kinetics, and quantum confinement, paired with critical reading and discussion of frontier energy and nanoscience papers in Science and Nature."
+    ja: "ナノスケールにおける熱力学、界面動力学、表面・量子閉じ込め効果に基づき機能性有機・無機ナノ材料の精密合成原理を扱います。ScienceやNature等のトップジャーナルに掲載された最新論文を精読・討論し、先端研究企画力を養います。"
+    zh: "基于纳米尺度热力学、界面动力学及表面与量子限域效应，讲授功能有机/无机纳米材料的精密合成原理；通过深度研读与研讨 Science、Nature 等顶级期刊前沿文献，培养高水平科研规划与批判性分析能力。"
+  teaching.c3_footer:
+    ko: "교재: 최신 학술지 논문 강독 (Science, Nature 등)"
+    en: "Material: Frontier Journal Literature (Science, Nature, etc.)"
+    ja: "教材: 最新学術誌論文講読 (Science, Nature 等)"
+    zh: "教材：前沿顶级期刊文献精读 (Science, Nature 等)"
+
+  # ----------------------------------------------------------------------------
+  # News Page (_pages/news.md)
+  # ----------------------------------------------------------------------------
+  hero.news.label:
+    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ja: 慶北大学校 科学技術大学 · ACE² LAB
+    zh: 庆北大学 科学技术大学 · ACE² LAB
   hero.news.title:
     ko: News, Awards & Press
     en: News, Awards & Press
     ja: ニュース・受賞・メディア報道
     zh: 实验室新闻、获奖与媒体报道
+  hero.news.subtitle:
+    ko: "연구실 소식, 수상 실적 및 언론 보도"
+    en: "Laboratory announcements, academic honors & awards, and media coverage"
+    ja: "研究室の最新ニュース、受賞実績およびメディア報道"
+    zh: "实验室最新动态、学术获奖与媒体报道"
+  hero.news.subtitle_en:
+    ko: "Announcements, awards and media coverage of ACE² Lab."
+    en: "Chronological record of research milestones, student awards, and press releases."
+    ja: "Announcements, awards and media coverage of ACE² Lab."
+    zh: "Announcements, awards and media coverage of ACE² Lab."
+
+  news.idx_latest:
+    ko: 최신 소식 (Latest)
+    en: Latest
+    ja: 最新ニュース
+    zh: 最新动态
+  news.idx_awards:
+    ko: 수상 실적 (Awards)
+    en: Awards
+    ja: 受賞実績
+    zh: 获奖荣誉
+  news.idx_press:
+    ko: 언론 보도 (In the Press)
+    en: In the Press
+    ja: メディア報道
+    zh: 媒体报道
+  news.cat_title:
+    ko: 분류
+    en: Category
+    ja: カテゴリ
+    zh: 分类
+  news.cat_award:
+    ko: 수상 (Award)
+    en: Award
+    ja: 受賞 (Award)
+    zh: 获奖 (Award)
+  news.cat_member:
+    ko: 구성원 (Member)
+    en: Member
+    ja: メンバー (Member)
+    zh: 成员 (Member)
+  news.cat_milestone:
+    ko: 주요 성과 (Milestone)
+    en: Milestone
+    ja: マイルストーン (Milestone)
+    zh: 里程碑 (Milestone)
+  news.cat_honor:
+    ko: 영예·선정 (Honor)
+    en: Honor
+    ja: 栄誉・選出 (Honor)
+    zh: 荣誉入选 (Honor)
+  news.related_paper:
+    ko: 관련 논문
+    en: Related Paper
+    ja: 関連論文
+    zh: 相关论文
+  news.lb_zoom:
+    ko: 원본 크기
+    en: Actual size
+    ja: 原寸表示
+    zh: 实际大小
+  news.lb_hint:
+    ko: "← → 이전 / 다음 · Esc 닫기 · 이미지 클릭으로 확대 / 축소"
+    en: "← → Prev / Next · Esc to close · Click image to zoom"
+    ja: "← → 前へ / 次へ · Esc 閉じる · 画像クリックで拡大 / 縮小"
+    zh: "← → 上一张 / 下一张 · Esc 关闭 · 点击图片放大 / 缩小"
+
+  # ----------------------------------------------------------------------------
+  # Gallery Page (_pages/gallery.md)
+  # ----------------------------------------------------------------------------
+  hero.gallery.label:
+    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ja: 慶北大学校 科学技術大学 · ACE² LAB
+    zh: 庆北大学 科学技术大学 · ACE² LAB
   hero.gallery.title:
     ko: Gallery
     en: Gallery
     ja: ギャラリー (Gallery)
     zh: 影像图集 (Gallery)
+  hero.gallery.subtitle:
+    ko: "학회 발표, 학위 심사 및 연구실 활동 기록"
+    en: "Conferences, thesis defenses, and memorable moments from ACE² Lab"
+    ja: "学会発表、学位審査および研究室の活動記録"
+    zh: "学术会议报告、学位论文答辩与实验室活动掠影"
+  hero.gallery.subtitle_en:
+    ko: "Conferences, defenses and moments from ACE² Lab, newest first."
+    en: "Chronological photo archive of ACE² Lab events, conferences, and celebrations."
+    ja: "Conferences, defenses and moments from ACE² Lab, newest first."
+    zh: "Conferences, defenses and moments from ACE² Lab, newest first."
 
 # ==============================================================================
 # Shared Academic & Institutional Glossary (terms)
@@ -1181,3 +1747,65 @@ terms:
     en: "Environment & Energy"
     ja: "環境とエネルギー"
     zh: "环境与能源"
+
+  # --- Facility Rooms, Categories & Award Tiers ---
+  "7호관 403호":
+    ko: "7호관 403호"
+    en: "Room 403, Bldg. 7"
+    ja: "7号館 403号室"
+    zh: "7号馆 403室"
+  "7호관 414호":
+    ko: "7호관 414호"
+    en: "Room 414, Bldg. 7"
+    ja: "7号館 414号室"
+    zh: "7号馆 414室"
+  "8호관 313호":
+    ko: "8호관 313호"
+    en: "Room 313, Bldg. 8"
+    ja: "8号館 313号室"
+    zh: "8号馆 313室"
+  "Synthesis & Thermal/Photonic Processing":
+    ko: "나노소재 합성 및 광열 공정 장비 (Synthesis & Thermal/Photonic Processing)"
+    en: "Synthesis & Thermal/Photonic Processing"
+    ja: "ナノ材料合成・光熱プロセス装置 (Synthesis & Thermal/Photonic Processing)"
+    zh: "纳米材料合成与光热加工设备 (Synthesis & Thermal/Photonic Processing)"
+  "Sample Preparation & Drying":
+    ko: "시료 전처리 및 정밀 건조 장비 (Sample Preparation & Drying)"
+    en: "Sample Preparation & Drying"
+    ja: "試料前処理・精密乾燥装置 (Sample Preparation & Drying)"
+    zh: "样品前处理与精密干燥设备 (Sample Preparation & Drying)"
+  "Characterization & Measurement":
+    ko: "전기화학·광학·물성 분석 및 센서 측정 장비 (Characterization & Measurement)"
+    en: "Characterization & Measurement"
+    ja: "電気化学・光学・物性分析およびセンサー評価装置 (Characterization & Measurement)"
+    zh: "电化学、光学、物性表征与传感器测试设备 (Characterization & Measurement)"
+  "Infrastructure & Utility":
+    ko: "실험실 안전 인프라 및 유틸리티 (Infrastructure & Utility)"
+    en: "Infrastructure & Utility"
+    ja: "実験室安全インフラ・ユーティリティ (Infrastructure & Utility)"
+    zh: "实验室安全基础设施与公用工程 (Infrastructure & Utility)"
+  "장관상":
+    ko: "장관상"
+    en: "Minister's Award"
+    ja: "長官賞"
+    zh: "部长奖"
+  "대상":
+    ko: "대상"
+    en: "Grand Prize"
+    ja: "大賞 (Grand Prize)"
+    zh: "大奖 (Grand Prize)"
+  "최우수상":
+    ko: "최우수상"
+    en: "Best Paper/Presentation Award"
+    ja: "最優秀賞"
+    zh: "最优秀奖"
+  "우수상":
+    ko: "우수상"
+    en: "Excellence Award"
+    ja: "優秀賞"
+    zh: "优秀奖"
+  "우수연구교수":
+    ko: "우수연구교수"
+    en: "Distinguished Research Faculty Award"
+    ja: "優秀研究教授賞"
+    zh: "优秀研究教授奖"

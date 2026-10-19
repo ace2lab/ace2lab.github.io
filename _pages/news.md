@@ -13,12 +13,13 @@ nav_order: 6
 {% assign press_by_year = site.data.press | group_by: "year" | sort: "name" | reverse %}
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-award" aria-hidden="true"></i> Awards ({{ site.data.awards.size }})</span>
-<span class="hero-badge"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> In the Press ({{ site.data.press.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="news.idx_awards">Awards</span> ({{ site.data.awards.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="news.idx_press">In the Press</span> ({{ site.data.press.size }})</span>
 {% endcapture %}
 
 {% include hero_banner.liquid
   variant="page"
+  i18n_prefix="hero.news"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="News, Awards & Press"
   subtitle="연구실 소식, 수상 실적 및 언론 보도"
@@ -29,9 +30,9 @@ nav_order: 6
 <div class="ed-page">
 
   <nav class="ed-index" aria-label="News sections">
-    <a href="#latest">Latest</a>
-    <a href="#awards">Awards<span class="ed-index__count">{{ site.data.awards.size }}</span></a>
-    <a href="#press">In the press<span class="ed-index__count">{{ site.data.press.size }}</span></a>
+    <a href="#latest"><span data-i18n="news.idx_latest">Latest</span></a>
+    <a href="#awards"><span data-i18n="news.idx_awards">Awards</span><span class="ed-index__count">{{ site.data.awards.size }}</span></a>
+    <a href="#press"><span data-i18n="news.idx_press">In the press</span><span class="ed-index__count">{{ site.data.press.size }}</span></a>
   </nav>
 
   <!-- Category legend (semantic color grammar shared with the cards below) -->
@@ -44,18 +45,18 @@ nav_order: 6
 {% assign n_honor = site.news | where: 'category', 'honor' %}
 
   <div class="news-cat-legend" role="group" aria-label="News category color legend">
-    <span class="news-cat-legend__title"><i class="fa-solid fa-tags" aria-hidden="true"></i> Category</span>
-    <span class="news-cat-legend__item" data-cat="award"><span class="news-cat-legend__dot" aria-hidden="true"></span>Award<span class="news-cat-legend__count">{{ n_award.size }}</span></span>
-    <span class="news-cat-legend__item" data-cat="member"><span class="news-cat-legend__dot" aria-hidden="true"></span>Member<span class="news-cat-legend__count">{{ n_member.size }}</span></span>
-    <span class="news-cat-legend__item" data-cat="milestone"><span class="news-cat-legend__dot" aria-hidden="true"></span>Milestone<span class="news-cat-legend__count">{{ n_milestone.size }}</span></span>
-    <span class="news-cat-legend__item" data-cat="honor"><span class="news-cat-legend__dot" aria-hidden="true"></span>Honor<span class="news-cat-legend__count">{{ n_honor.size }}</span></span>
+    <span class="news-cat-legend__title"><i class="fa-solid fa-tags" aria-hidden="true"></i> <span data-i18n="news.cat_title">Category</span></span>
+    <span class="news-cat-legend__item" data-cat="award"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_award">Award</span><span class="news-cat-legend__count">{{ n_award.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="member"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_member">Member</span><span class="news-cat-legend__count">{{ n_member.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="milestone"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_milestone">Milestone</span><span class="news-cat-legend__count">{{ n_milestone.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="honor"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_honor">Honor</span><span class="news-cat-legend__count">{{ n_honor.size }}</span></span>
   </div>
 
   <!-- 1. Lab announcements (_news collection) -->
 
   <section class="ed-section" id="latest">
     <h2 class="ed-section__title">
-      Latest
+      <span data-i18n="news.idx_latest">Latest</span>
       <span class="ed-section__count">{{ news_items.size }}</span>
     </h2>
 
@@ -70,13 +71,13 @@ nav_order: 6
               <span class="news-badge-new">NEW</span>
             {% endif %}
             {% if item.category == 'award' %}
-              <span class="news-cat-badge news-cat-badge--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> Award</span>
+              <span class="news-cat-badge news-cat-badge--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="news.cat_award">Award</span></span>
             {% elsif item.category == 'member' %}
-              <span class="news-cat-badge news-cat-badge--member"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> Member</span>
+              <span class="news-cat-badge news-cat-badge--member"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> <span data-i18n="news.cat_member">Member</span></span>
             {% elsif item.category == 'honor' %}
-              <span class="news-cat-badge news-cat-badge--honor"><i class="fa-solid fa-star" aria-hidden="true"></i> Honor</span>
+              <span class="news-cat-badge news-cat-badge--honor"><i class="fa-solid fa-star" aria-hidden="true"></i> <span data-i18n="news.cat_honor">Honor</span></span>
             {% elsif item.category == 'milestone' %}
-              <span class="news-cat-badge news-cat-badge--milestone"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> Milestone</span>
+              <span class="news-cat-badge news-cat-badge--milestone"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> <span data-i18n="news.cat_milestone">Milestone</span></span>
             {% endif %}
           </div>
           <div class="news-feed-card__body">
@@ -102,7 +103,7 @@ nav_order: 6
 
   <section class="ed-section" id="awards">
     <h2 class="ed-section__title">
-      Awards
+      <span data-i18n="news.idx_awards">Awards</span>
       <span class="ed-section__count">{{ site.data.awards.size }}</span>
     </h2>
 
@@ -152,7 +153,7 @@ nav_order: 6
               {% endif %}
               <div class="ed-award-card__body">
                 {% if a.type and a.type != "" %}
-                  <span class="ed-tier ed-tier--{{ tier }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ a.type | escape }}</span>
+                  <span class="ed-tier ed-tier--{{ tier }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ a.type | escape }}</span></span>
                 {% endif %}
                 <h4 class="ed-award-card__title">{{ a.title | escape }}</h4>
                 <dl class="ed-award-card__meta">
@@ -185,7 +186,7 @@ nav_order: 6
 
   <section class="ed-section" id="press">
     <h2 class="ed-section__title">
-      In the Press
+      <span data-i18n="news.idx_press">In the Press</span>
       <span class="ed-section__count">{{ site.data.press.size }}</span>
     </h2>
 
@@ -206,7 +207,7 @@ nav_order: 6
                 <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }} <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span></a>
               </h4>
               {% if p.paper and p.paper != "" %}
-                <a class="ed-pill ed-pill--paper" href="{{ p.paper }}"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> 관련 논문</a>
+                <a class="ed-pill ed-pill--paper" href="{{ p.paper }}"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span data-i18n="news.related_paper">관련 논문</span></a>
               {% endif %}
             </li>
           {% endfor %}
@@ -232,7 +233,7 @@ nav_order: 6
         <div class="ed-lightbox__tools">
           <span class="ed-lightbox__count" data-lb="count" aria-live="polite"></span>
           <button type="button" class="ed-lightbox__btn" data-lb-zoom aria-pressed="false">
-            <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> <span data-lb="zoomlabel">Actual size</span>
+            <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> <span data-lb="zoomlabel" data-i18n="news.lb_zoom">Actual size</span>
           </button>
           <button type="button" class="ed-lightbox__btn ed-lightbox__btn--icon" data-lb-close aria-label="Close">
             <i class="fa-solid fa-xmark" aria-hidden="true"></i>
@@ -250,7 +251,7 @@ nav_order: 6
           <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
         </button>
       </div>
-      <p class="ed-lightbox__hint" aria-hidden="true">← → 이전 / 다음 · Esc 닫기 · 이미지 클릭으로 확대 / 축소</p>
+      <p class="ed-lightbox__hint" aria-hidden="true" data-i18n="news.lb_hint">← → 이전 / 다음 · Esc 닫기 · 이미지 클릭으로 확대 / 축소</p>
     </div>
   </dialog>
   <script src="{{ '/assets/js/award_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

@@ -280,13 +280,14 @@ nav_order: 8
 </style>
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Interactive WebApp</span>
-<span class="hero-badge"><i class="fa-solid fa-water" aria-hidden="true"></i> Transport Phenomena</span>
-<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> 2026-2 Active Courses</span>
+<span class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> <span data-i18n="teaching.badge_webapp">Interactive WebApp</span></span>
+<span class="hero-badge"><i class="fa-solid fa-water" aria-hidden="true"></i> <span data-i18n="teaching.badge_tp">Transport Phenomena</span></span>
+<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span data-i18n="teaching.badge_courses">2026-2 Active Courses</span></span>
 {% endcapture %}
 
 {% include hero_banner.liquid
   variant="page"
+  i18n_prefix="hero.teaching"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Teaching & Interactive Simulations"
   subtitle="화학공학 전달현상 이론과 프로세스 엔지니어링을 웹 기반 실시간 물리 시뮬레이션 및 강의노트로 구현합니다."
@@ -300,9 +301,9 @@ nav_order: 8
   <section aria-labelledby="heading-simulations" class="mb-5">
     <h2 id="heading-simulations" class="teaching-section-title">
       <i class="fa-solid fa-flask-vial text-primary" aria-hidden="true"></i>
-      <span>Interactive Lecture Notes &amp; Simulations</span>
+      <span data-i18n="teaching.sim_sec_title">Interactive Lecture Notes &amp; Simulations</span>
     </h2>
-    <p class="teaching-section-desc">
+    <p class="teaching-section-desc" data-i18n="teaching.sim_sec_desc">
       복잡한 수학적 전달방정식과 경계조건을 직접 조작하며 직관적으로 이해할 수 있는 실시간 웹 시뮬레이션 모듈입니다.
     </p>
 
@@ -321,38 +322,38 @@ nav_order: 8
       <div class="sim-card__body">
         <div>
           <div class="sim-card__tag-bar">
-            <span class="sim-pill sim-pill--amber">전달현상 2 (Transport Phenomena II)</span>
-            <span class="sim-pill">Manim Video 연동</span>
-            <span class="sim-pill">Web Audio 3채널 합성</span>
+            <span class="sim-pill sim-pill--amber" data-i18n="teaching.sim1_tag1">전달현상 2 (Transport Phenomena II)</span>
+            <span class="sim-pill" data-i18n="teaching.sim1_tag2">Manim Video 연동</span>
+            <span class="sim-pill" data-i18n="teaching.sim1_tag3">Web Audio 3채널 합성</span>
           </div>
 
-          <h3 class="sim-card__title">
+          <h3 class="sim-card__title" data-i18n="teaching.sim1_title">
             Stage 2-2: Laminar Falling Film Flow (강하 액막 유동)
           </h3>
           <div class="sim-card__sub">
             v<sub>z</sub>(x) = v<sub>z,max</sub> [ 1 − (x / δ)² ]
           </div>
 
-          <p class="sim-card__desc">
+          <p class="sim-card__desc" data-i18n="teaching.sim1_desc">
             경사 평면을 따라 중력에 의해 흘러내리는 뉴턴 유체의 층류 강하 액막 유동을 해석합니다.
             Bird-Stewart-Lightfoot (BSL) 표준 좌표계에 따른 6단계 수식 유도 Manim 애니메이션,
             점도·밀도·경사각·유량 조절에 따른 실시간 포물선 유속 및 선형 전단응력 분포를 인터랙티브하게 체험할 수 있습니다.
           </p>
 
           <div class="sim-features-grid">
-            <div><i class="fa-solid fa-circle-check"></i><span>실시간 미시/거시 듀얼 캔버스</span></div>
-            <div><i class="fa-solid fa-circle-check"></i><span>레이놀즈 수 (Re &lt; 20) 층류 판정</span></div>
-            <div><i class="fa-solid fa-circle-check"></i><span>HTML5 비디오 구간 탐색 제어</span></div>
-            <div><i class="fa-solid fa-circle-check"></i><span>다크모드 &amp; 슈퍼마리오 레트로 랜딩</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f1">실시간 미시/거시 듀얼 캔버스</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f2">레이놀즈 수 (Re &lt; 20) 층류 판정</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f3">HTML5 비디오 구간 탐색 제어</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f4">다크모드 &amp; 슈퍼마리오 레트로 랜딩</span></div>
           </div>
         </div>
 
         <div class="sim-card__action">
           <span style="font-size: 0.78rem; opacity: 0.65;">
-            <i class="fa-solid fa-code mr-1"></i> 순수 클라이언트 사이드 (무설치 구동)
+            <i class="fa-solid fa-code mr-1"></i> <span data-i18n="teaching.sim1_client_note">순수 클라이언트 사이드 (무설치 구동)</span>
           </span>
           <a href="{{ '/simulations/falling-film/' | relative_url }}" class="sim-btn-launch" style="color: #ffffff !important;">
-            <span style="color: #ffffff !important;">시뮬레이션 실행하기</span>
+            <span style="color: #ffffff !important;" data-i18n="teaching.sim1_btn">시뮬레이션 실행하기</span>
             <i class="fa-solid fa-arrow-right" style="color: #ffffff !important;"></i>
           </a>
         </div>
@@ -365,9 +366,9 @@ nav_order: 8
   <section aria-labelledby="heading-courses" class="mb-5">
     <h2 id="heading-courses" class="teaching-section-title">
       <i class="fa-solid fa-book-open-reader text-primary" aria-hidden="true"></i>
-      <span>Academic Courses &amp; Curriculum</span>
+      <span data-i18n="teaching.course_sec_title">Academic Courses &amp; Curriculum</span>
     </h2>
-    <p class="teaching-section-desc">
+    <p class="teaching-section-desc" data-i18n="teaching.course_sec_desc">
       2026학년도 2학기 경북대학교 과학기술대학 에너지화학공학과 및 대학원에서 임창용 교수가 담당하여 강의하는 교과목입니다.
     </p>
 
@@ -377,18 +378,18 @@ nav_order: 8
       <div class="course-card">
         <div>
           <div class="course-card__header">
-            <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;">학부 전공선택 · 2학년</span>
-            <span class="course-card__term">2026년 2학기</span>
+            <span class="course-card__level" style="background: rgba(16, 185, 129, 0.1); color: #059669;" data-i18n="teaching.c1_level">학부 전공선택 · 2학년</span>
+            <span class="course-card__term" data-i18n="teaching.term_2026_2">2026년 2학기</span>
           </div>
-          <h3 class="course-card__title">고분자 합성 및 물성</h3>
-          <p class="course-card__desc">
+          <h3 class="course-card__title" data-i18n="teaching.c1_title">고분자 합성 및 물성</h3>
+          <p class="course-card__desc" data-i18n="teaching.c1_desc">
             단계성장 및 사슬성장 중합의 반응 속도론과 열역학적 메커니즘을 규명하고,
             분자량 분포, 사슬 형태, 유리전이 및 결정화 거동, 점탄성 등 고분자 사슬의 미시적 구조와
             거시적 물리·기계적 물성 간의 구조-물성 상관관계를 체계적으로 다룹니다.
           </p>
         </div>
         <div class="course-card__footer">
-          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)</span>
+          <span><i class="fa-solid fa-book mr-1"></i> <span data-i18n="teaching.c1_footer">교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)</span></span>
         </div>
       </div>
 
@@ -396,18 +397,18 @@ nav_order: 8
       <div class="course-card">
         <div>
           <div class="course-card__header">
-            <span class="course-card__level">학부 전공필수 · 3학년</span>
-            <span class="course-card__term">2026년 2학기</span>
+            <span class="course-card__level" data-i18n="teaching.c2_level">학부 전공필수 · 3학년</span>
+            <span class="course-card__term" data-i18n="teaching.term_2026_2">2026년 2학기</span>
           </div>
-          <h3 class="course-card__title">전달현상 2</h3>
-          <p class="course-card__desc">
+          <h3 class="course-card__title" data-i18n="teaching.c2_title">전달현상 2</h3>
+          <p class="course-card__desc" data-i18n="teaching.c2_desc">
             연속체 역학 및 미시적 보존 법칙을 기반으로 열전달과 물질전달의 지배방정식을 유도하고,
             다상·다성분 화학공정 시스템에서의 전도·대류·복사 열전달과 분자 확산, 계면 수송 및
             반응-확산 결합 현상을 통합적으로 해석하며 본 시뮬레이션을 통해 이론적 해법을 가시화합니다.
           </p>
         </div>
         <div class="course-card__footer">
-          <span><i class="fa-solid fa-book mr-1"></i> 교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)</span>
+          <span><i class="fa-solid fa-book mr-1"></i> <span data-i18n="teaching.c1_footer">교재: 자체 제작 강의노트 (ACE² Lab Lecture Notes)</span></span>
         </div>
       </div>
 
@@ -415,11 +416,11 @@ nav_order: 8
       <div class="course-card">
         <div>
           <div class="course-card__header">
-            <span class="course-card__level" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;">대학원 전공 · 석박사과정</span>
-            <span class="course-card__term">2026년 2학기</span>
+            <span class="course-card__level" style="background: rgba(147, 51, 234, 0.1); color: #9333ea;" data-i18n="teaching.c3_level">대학원 전공 · 석박사과정</span>
+            <span class="course-card__term" data-i18n="teaching.term_2026_2">2026년 2학기</span>
           </div>
-          <h3 class="course-card__title">고급나노화학공학</h3>
-          <p class="course-card__desc">
+          <h3 class="course-card__title" data-i18n="teaching.c3_title">고급나노화학공학</h3>
+          <p class="course-card__desc" data-i18n="teaching.c3_desc">
             나노스케일에서의 열역학, 계면 동역학 및 표면·양자 구속 효과를 바탕으로
             기능성 유·무기 나노소재의 정밀 합성 원리를 다룹니다.
             Science, Nature 등 세계 최고 권위 학술지에 게재된 최신 나노·에너지 논문을
@@ -427,7 +428,7 @@ nav_order: 8
           </p>
         </div>
         <div class="course-card__footer">
-          <span><i class="fa-solid fa-book-open mr-1"></i> 교재: 최신 학술지 논문 강독 (Science, Nature 등)</span>
+          <span><i class="fa-solid fa-book-open mr-1"></i> <span data-i18n="teaching.c3_footer">교재: 최신 학술지 논문 강독 (Science, Nature 등)</span></span>
         </div>
       </div>
 

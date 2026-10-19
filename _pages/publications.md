@@ -21,14 +21,15 @@ nav_order: 5
 {% capture hero_subtitle %}총 {{ total_count }}편 연구 성과 (국제 SCI 학술지 {{ intl_count }}편 · 국내 학술지 {{ site.data.domestic.size }}편 · 특허 {{ site.data.patents.size }}건 · 학회 발표 {{ site.data.talks.size }}편){% endcapture %}
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-earth-americas" aria-hidden="true"></i> International Journals ({{ intl_count }})</span>
-<span class="hero-badge"><i class="fa-solid fa-flag" aria-hidden="true"></i> Domestic Journals ({{ site.data.domestic.size }})</span>
-<span class="hero-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Patents & IP ({{ site.data.patents.size }})</span>
-<span class="hero-badge"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Presentations ({{ site.data.talks.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-earth-americas" aria-hidden="true"></i> <span data-i18n="publications.badge_intl">International Journals</span> ({{ intl_count }})</span>
+<span class="hero-badge"><i class="fa-solid fa-flag" aria-hidden="true"></i> <span data-i18n="publications.badge_dom">Domestic Journals</span> ({{ site.data.domestic.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> <span data-i18n="publications.badge_patents">Patents & IP</span> ({{ site.data.patents.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-microphone" aria-hidden="true"></i> <span data-i18n="publications.badge_talks">Presentations</span> ({{ site.data.talks.size }})</span>
 {% endcapture %}
 
 {% include hero_banner.liquid
   variant="page"
+  i18n_prefix="hero.publications"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Publications & Intellectual Property"
   subtitle=hero_subtitle
@@ -51,16 +52,16 @@ nav_order: 5
   <!-- Accessible Tab Navigation -->
   <div class="ace2-tabnav" role="tablist" aria-label="Publications category tabs">
     <button type="button" role="tab" class="ace2-tab is-active" id="tab-journals" aria-controls="panel-journals" aria-selected="true" tabindex="0" data-hash="journals" data-default="true" data-aliases="international,papers,articles">
-      International Journals<span class="ace2-tab__count">{{ intl_count }}</span>
+      <span data-i18n="publications.tab_journals">International Journals</span><span class="ace2-tab__count">{{ intl_count }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-domestic" aria-controls="panel-domestic" aria-selected="false" tabindex="-1" data-hash="domestic" data-aliases="domestic-journals,korean">
-      Domestic Journals<span class="ace2-tab__count">{{ site.data.domestic.size }}</span>
+      <span data-i18n="publications.tab_domestic">Domestic Journals</span><span class="ace2-tab__count">{{ site.data.domestic.size }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-patents" aria-controls="panel-patents" aria-selected="false" tabindex="-1" data-hash="patents" data-aliases="intellectual-property,ip">
-      Patents & IP<span class="ace2-tab__count">{{ site.data.patents.size }}</span>
+      <span data-i18n="publications.tab_patents">Patents & IP</span><span class="ace2-tab__count">{{ site.data.patents.size }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-talks" aria-controls="panel-talks" aria-selected="false" tabindex="-1" data-hash="talks" data-aliases="conferences,presentations">
-      Conference Presentations<span class="ace2-tab__count">{{ site.data.talks.size }}</span>
+      <span data-i18n="publications.tab_talks">Conference Presentations</span><span class="ace2-tab__count">{{ site.data.talks.size }}</span>
     </button>
   </div>
 
@@ -70,7 +71,7 @@ nav_order: 5
       <div class="pub-sticky-toolbar">
         <nav class="pub-year-jump" aria-label="Jump to publication year">
           <div class="pub-year-jump__inner">
-            <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> Year</span>
+            <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> <span data-i18n="publications.year_label">Year</span></span>
             <div class="pub-year-jump__chips" id="pubYearChips">
               <a href="#y2026" class="pub-year-chip" data-year="2026">2026<span class="pub-year-chip__count">5</span></a>
               <a href="#y2025" class="pub-year-chip" data-year="2025">2025<span class="pub-year-chip__count">2</span></a>
@@ -94,16 +95,16 @@ nav_order: 5
       </div>
 
       <h2 class="ed-section__title">
-        International Journals
+        <span data-i18n="publications.sec_journals">International Journals</span>
         <span class="ed-section__count">{{ intl_count }}</span>
       </h2>
-      <p class="pub-pi-filter__note" id="pubPiFilterNote">※ Includes publications prior to the PI's appointment at Kyungpook National University.</p>
+      <p class="pub-pi-filter__note" id="pubPiFilterNote" data-i18n="publications.pi_note">※ Includes publications prior to the PI's appointment at Kyungpook National University.</p>
 
       <fieldset class="pub-pi-filter" id="pubPiFilter" role="radiogroup" aria-labelledby="pubPiFilterLegend" aria-describedby="pubPiFilterNote">
-        <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> PI</legend>
+        <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> <span data-i18n="publications.pi_legend">PI</span></legend>
         <div class="pub-pi-filter__options">
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiAll" value="all" autocomplete="off" checked>
-          <label class="pub-pi-filter__pill" for="pubPiAll">All <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
+          <label class="pub-pi-filter__pill" for="pubPiAll"><span data-i18n="publications.filter_all">All</span> <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiYim" value="yim" autocomplete="off">
           <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">56</span></label>
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiKim" value="kim" autocomplete="off">
@@ -115,11 +116,11 @@ nav_order: 5
       {% include bib_search.liquid %}
 
       <div class="pub-contribution-legend" role="note" aria-label="Author contribution notation">
-        <span><span class="author-symbol">†</span> Equal contribution (Co-first author)</span>
+        <span><span class="author-symbol">†</span> <span data-i18n="publications.contrib_equal">Equal contribution (Co-first author)</span></span>
         <span>·</span>
-        <span><span class="author-symbol">*</span> Corresponding author</span>
+        <span><span class="author-symbol">*</span> <span data-i18n="publications.contrib_corr">Corresponding author</span></span>
         <span>·</span>
-        <span><strong>Underlined Bold</strong> ACE² Lab member</span>
+        <span><span data-i18n="publications.contrib_member">ACE² Lab member (Underlined Bold)</span></span>
       </div>
 
       <div class="publications">
@@ -134,10 +135,10 @@ nav_order: 5
     {% if site.data.domestic.size > 0 %}
       <section class="ed-section" id="domestic">
         <h2 class="ed-section__title">
-          Domestic Journals
+          <span data-i18n="publications.sec_domestic">Domestic Journals</span>
           <span class="ed-section__count">{{ site.data.domestic.size }}</span>
         </h2>
-        <p class="ed-section__note">‡ Equal contribution · * Corresponding author</p>
+        <p class="ed-section__note" data-i18n="publications.dom_note">‡ Equal contribution · * Corresponding author</p>
 
         <div class="ed-rail">
           {% for group in domestic_by_year %}
@@ -164,7 +165,7 @@ nav_order: 5
                         {%- endif %}
                       </div>
                       {% if p.grant and p.grant != "" %}
-                        <div class="ed-entry__line"><span class="ed-label">Funding</span>{{ p.grant | escape }}</div>
+                        <div class="ed-entry__line"><span class="ed-label" data-i18n="publications.label_funding">Funding</span>{{ p.grant | escape }}</div>
                       {% endif %}
                     </div>
                   </li>
@@ -185,21 +186,21 @@ nav_order: 5
       <section class="ed-section" id="patents">
         <div class="pub-sticky-toolbar">
           <fieldset class="pub-pi-filter" id="pubPatentFilter" role="radiogroup" aria-labelledby="pubPatentFilterLegend">
-            <legend class="pub-pi-filter__legend" id="pubPatentFilterLegend"><i class="fa-solid fa-certificate" aria-hidden="true"></i> Status</legend>
+            <legend class="pub-pi-filter__legend" id="pubPatentFilterLegend"><i class="fa-solid fa-certificate" aria-hidden="true"></i> <span data-i18n="publications.patent_legend">Status</span></legend>
             <div class="pub-pi-filter__options">
               <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentAll" value="all" autocomplete="off" checked>
-              <label class="pub-pi-filter__pill" for="pubPatentAll">All <span class="pub-pi-filter__count" data-patent-count="all">{{ site.data.patents.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubPatentAll"><span data-i18n="publications.filter_all">All</span> <span class="pub-pi-filter__count" data-patent-count="all">{{ site.data.patents.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentRegistered" value="registered" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubPatentRegistered">Registered <span class="pub-pi-filter__count" data-patent-count="registered">{{ registered_patents.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubPatentRegistered"><span data-i18n="publications.status_registered">Registered</span> <span class="pub-pi-filter__count" data-patent-count="registered">{{ registered_patents.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentFiled" value="filed" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubPatentFiled">Filed <span class="pub-pi-filter__count" data-patent-count="filed">{{ filed_patents.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubPatentFiled"><span data-i18n="publications.status_filed">Filed</span> <span class="pub-pi-filter__count" data-patent-count="filed">{{ filed_patents.size }}</span></label>
             </div>
           </fieldset>
         </div>
         <p class="pub-pi-filter__status" id="pubPatentStatus" role="status" aria-live="polite"></p>
 
         <h2 class="ed-section__title">
-          Patents & Intellectual Property
+          <span data-i18n="publications.sec_patents">Patents & Intellectual Property</span>
           <span class="ed-section__count">{{ site.data.patents.size }}</span>
         </h2>
 
@@ -225,15 +226,15 @@ nav_order: 5
                       <div class="ed-entry__title ed-entry__title--talk">
                         <span class="ed-status-pill ed-status-pill--{{ status_key }}" title="{{ p.status }}">
                           <i class="fa-solid {{ status_icon }}" aria-hidden="true"></i>
-                          <span>{{ status_label }}</span>
+                          <span data-i18n="publications.status_{{ status_key }}">{{ status_label }}</span>
                         </span>
                         <span class="ed-entry__title-text">{{ p.title | escape }}</span>
                       </div>
                       {% if p.inventors and p.inventors != "" %}
-                        <div class="ed-entry__line"><span class="ed-label">Inventors</span>{{ p.inventors | escape }}</div>
+                        <div class="ed-entry__line"><span class="ed-label" data-i18n="publications.label_inventors">Inventors</span>{{ p.inventors | escape }}</div>
                       {% endif %}
                       {% if p.assignee and p.assignee != "" %}
-                        <div class="ed-entry__line"><span class="ed-label">Assignee</span>{{ p.assignee | escape }}</div>
+                        <div class="ed-entry__line"><span class="ed-label" data-i18n="publications.label_assignee">Assignee</span>{{ p.assignee | escape }}</div>
                       {% endif %}
                       {% if p.number != "" or p.date != "" or p.country != "" %}
                         <div class="ed-entry__line">
@@ -258,7 +259,7 @@ nav_order: 5
                         </div>
                       {% endif %}
                       {% if p.grant and p.grant != "" %}
-                        <div class="ed-entry__line"><span class="ed-label">Funding</span>{{ p.grant | escape }}</div>
+                        <div class="ed-entry__line"><span class="ed-label" data-i18n="publications.label_funding">Funding</span>{{ p.grant | escape }}</div>
                       {% endif %}
                     </div>
                   </li>
@@ -278,23 +279,23 @@ nav_order: 5
       <section class="ed-section" id="talks">
         <div class="pub-sticky-toolbar">
           <fieldset class="pub-pi-filter" id="pubTalkFilter" role="radiogroup" aria-labelledby="pubTalkFilterLegend">
-            <legend class="pub-pi-filter__legend" id="pubTalkFilterLegend"><i class="fa-solid fa-microphone" aria-hidden="true"></i> Type</legend>
+            <legend class="pub-pi-filter__legend" id="pubTalkFilterLegend"><i class="fa-solid fa-microphone" aria-hidden="true"></i> <span data-i18n="publications.talk_legend">Type</span></legend>
             <div class="pub-pi-filter__options">
               <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkAll" value="all" autocomplete="off" checked>
-              <label class="pub-pi-filter__pill" for="pubTalkAll">All <span class="pub-pi-filter__count" data-talk-count="all">{{ site.data.talks.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubTalkAll"><span data-i18n="publications.filter_all">All</span> <span class="pub-pi-filter__count" data-talk-count="all">{{ site.data.talks.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkInvited" value="invited" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubTalkInvited">Invited <span class="pub-pi-filter__count" data-talk-count="invited">{{ invited_talks.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubTalkInvited"><span data-i18n="publications.type_invited">Invited</span> <span class="pub-pi-filter__count" data-talk-count="invited">{{ invited_talks.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkOral" value="oral" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubTalkOral">Oral <span class="pub-pi-filter__count" data-talk-count="oral">{{ oral_talks.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubTalkOral"><span data-i18n="publications.type_oral">Oral</span> <span class="pub-pi-filter__count" data-talk-count="oral">{{ oral_talks.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkPoster" value="poster" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubTalkPoster">Poster <span class="pub-pi-filter__count" data-talk-count="poster">{{ poster_talks.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubTalkPoster"><span data-i18n="publications.type_poster">Poster</span> <span class="pub-pi-filter__count" data-talk-count="poster">{{ poster_talks.size }}</span></label>
             </div>
           </fieldset>
         </div>
         <p class="pub-pi-filter__status" id="pubTalkStatus" role="status" aria-live="polite"></p>
 
         <h2 class="ed-section__title">
-          Conference Presentations
+          <span data-i18n="publications.sec_talks">Conference Presentations</span>
           <span class="ed-section__count">{{ site.data.talks.size }}</span>
         </h2>
 
@@ -320,7 +321,7 @@ nav_order: 5
                       <div class="ed-entry__title ed-entry__title--talk">
                         <span class="ed-talk-pill ed-talk-pill--{{ talk_type_key }}">
                           <i class="fa-solid {{ talk_icon }}" aria-hidden="true"></i>
-                          <span>{{ talk_type | escape }}</span>
+                          <span data-i18n="publications.type_{{ talk_type_key }}">{{ talk_type | escape }}</span>
                         </span>
                         {% if t.award and t.award != "" %}
                           <span class="ed-talk-pill ed-talk-pill--award">
@@ -427,10 +428,14 @@ nav_order: 5
       // 5. Enhance bibsearch input placeholder and prevent collision with tab/year hashes
       var bibSearchInput = document.getElementById('bibsearch');
       if (bibSearchInput) {
+        bibSearchInput.setAttribute('data-i18n-placeholder', 'publications.search_placeholder');
         bibSearchInput.setAttribute(
           'placeholder',
           'Search international journals by title, author, or keyword...'
         );
+        if (window.ACE2_I18N && typeof window.ACE2_I18N.refresh === 'function') {
+          window.ACE2_I18N.refresh();
+        }
         // Clear if accidentally populated with navigation anchor
         if (/^y\d{4}$/.test(bibSearchInput.value) || ['journals', 'domestic', 'patents', 'talks'].includes(bibSearchInput.value)) {
           bibSearchInput.value = '';

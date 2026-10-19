@@ -1,9 +1,15 @@
 <div class="ed-spec ed-spec--with-thumbs" role="table" aria-label="{{ include.caption | escape }}">
   <div class="ed-spec__head" role="row">
-    <span role="columnheader"><i class="fa-solid fa-camera" aria-hidden="true"></i> Photo</span>
-    <span role="columnheader"><i class="fa-solid fa-microscope" aria-hidden="true"></i> Instrument</span>
-    <span role="columnheader"><i class="fa-solid fa-industry" aria-hidden="true"></i> Manufacturer · Model</span>
-    <span role="columnheader" class="text-end"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location</span>
+    <span role="columnheader"><i class="fa-solid fa-camera" aria-hidden="true"></i> <span data-i18n="facilities.col_photo">Photo</span></span>
+    <span role="columnheader"
+      ><i class="fa-solid fa-microscope" aria-hidden="true"></i> <span data-i18n="facilities.col_instrument">Instrument</span></span
+    >
+    <span role="columnheader"
+      ><i class="fa-solid fa-industry" aria-hidden="true"></i> <span data-i18n="facilities.col_vendor">Manufacturer · Model</span></span
+    >
+    <span role="columnheader" class="text-end"
+      ><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-i18n="facilities.col_location">Location</span></span
+    >
   </div>
   {% for item in include.items %}
     {%- case item.location -%}
@@ -40,7 +46,9 @@
       </div>
       <div class="ed-spec__loc" role="cell">
         {%- if item.location and item.location != '' -%}
-          <span class="ed-spec__loc-pill"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ item.location | escape }}</span>
+          <span class="ed-spec__loc-pill"
+            ><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-i18n-term>{{ item.location | escape }}</span></span
+          >
         {%- endif -%}
       </div>
     </div>

@@ -155,6 +155,15 @@
       if (lang === "zh") return "科研成果 · " + num;
     }
 
+    // 5. Gallery "View all N photos"
+    if (/^View all \d+ photos$/i.test(trimmed)) {
+      var pNum = (trimmed.match(/\d+/) || [""])[0];
+      if (lang === "ko") return "사진 전체 보기 (" + pNum + "장)";
+      if (lang === "en") return "View all " + pNum + " photos";
+      if (lang === "ja") return "全 " + pNum + " 枚の写真を表示";
+      if (lang === "zh") return "查看全部 " + pNum + " 张照片";
+    }
+
     return orig;
   }
 
@@ -213,6 +222,18 @@
       var text = pickFallback(ui[key], lang);
       if (text !== null) {
         el.textContent = text;
+      }
+    }
+
+    // 2b. Keyed input placeholder elements [data-i18n-placeholder]
+    var phNodes = document.querySelectorAll("[data-i18n-placeholder]");
+    for (var p = 0; p < phNodes.length; p++) {
+      var pEl = phNodes[p];
+      var pKey = pEl.getAttribute("data-i18n-placeholder");
+      if (!pKey || !ui[pKey]) continue;
+      var phVal = pickFallback(ui[pKey], lang);
+      if (phVal !== null) {
+        pEl.setAttribute("placeholder", phVal);
       }
     }
 
