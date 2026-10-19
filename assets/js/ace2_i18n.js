@@ -97,23 +97,23 @@
       if (lang === "ja") {
         return out
           .replace(/박사과정/g, "博士課程")
-          .replace(/석박통합과정/g, "修士・博士統合課程")
-          .replace(/석사과정\(학연\)/g, "学研課程（修士）")
+          .replace(/석박통합과정/g, "一貫制博士課程")
+          .replace(/석사과정\(학연\)/g, "連携大学院 修士課程")
           .replace(/석사과정/g, "修士課程")
           .replace(/연구원/g, "研究員")
-          .replace(/학부연구생/g, "学部研究生")
+          .replace(/학부연구생/g, "学部生研究員")
           .replace(/학년/g, "年")
           .replace(/학번/g, "入学")
           .replace(/현재/g, "現在");
       }
       if (lang === "zh") {
         return out
-          .replace(/박사과정/g, "博士生")
-          .replace(/석박통합과정/g, "硕博连读")
-          .replace(/석사과정\(학연\)/g, "联合培养硕士")
-          .replace(/석사과정/g, "硕士生")
-          .replace(/연구원/g, "研究员")
-          .replace(/학부연구생/g, "本科科研生")
+          .replace(/박사과정/g, "博士研究生")
+          .replace(/석박통합과정/g, "硕博连读生")
+          .replace(/석사과정\(학연\)/g, "联合培养硕士生")
+          .replace(/석사과정/g, "硕士研究生")
+          .replace(/연구원/g, "研究人员")
+          .replace(/학부연구생/g, "本科生科研助理")
           .replace(/학년/g, "年级")
           .replace(/학번/g, "级")
           .replace(/현재/g, "至今");
