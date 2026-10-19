@@ -133,3 +133,18 @@ html[data-theme="dark"] {
   --brand-calgary: #fbbf24; /* Calgary Warm Gold/Amber: 8.2:1 */
   --brand-kitech: #5eead4; /* KITECH Mint Teal: 10.3:1 */
 }
+
+/* ------------------------------------------------------------
+   CJK Language-Specific Font Overrides (JA / ZH)
+   Prevents Han-unification glyph mismatch on Shinjitai / Simplified Hanzi
+   ------------------------------------------------------------ */
+html[data-lang="ja"] {
+  --font-sans-body:
+    "Pretendard Variable", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", "Noto Sans JP", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+
+html[data-lang="zh"] {
+  --font-sans-body:
+    "Pretendard Variable", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
+}

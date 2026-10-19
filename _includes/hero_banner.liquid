@@ -8,6 +8,20 @@
   The banner carries the page <h1>, so the layout's duplicate post header is hidden.
 {% endcomment %}
 {% assign hero_variant = include.variant | default: 'page' %}
+{% assign i18n_pfx = include.i18n_prefix | default: '' %}
+
+<script>
+  (function () {
+    try {
+      var p = new URLSearchParams(window.location.search).get('lang');
+      var s = window.localStorage.getItem('ace2_lang');
+      var l = (p || s || 'ko').toLowerCase();
+      if (['ko', 'en', 'ja', 'zh'].indexOf(l) === -1) l = 'ko';
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-CN' : l);
+    } catch (e) {}
+  })();
+</script>
 
 <style>
   .post > header.post-header {
@@ -18,14 +32,43 @@
 <div class="ed-hero-banner ed-hero-banner--{{ hero_variant }}">
   <div class="ed-hero-banner__inner">
     {%- if include.label and include.label != '' %}
-      <div class="ed-hero-banner__label">{{ include.label }}</div>
+      <div
+        class="ed-hero-banner__label"
+        {% if i18n_pfx != '' %}
+          data-i18n="{{ i18n_pfx }}.label"
+        {% endif %}
+      >
+        {{ include.label }}
+      </div>
     {%- endif %}
-    <h1 class="ed-hero-banner__title">{{ include.title }}</h1>
+    <h1
+      class="ed-hero-banner__title"
+      {% if i18n_pfx != '' %}
+        data-i18n="{{ i18n_pfx }}.title"
+      {% endif %}
+    >
+      {{ include.title }}
+    </h1>
     {%- if include.subtitle and include.subtitle != '' %}
-      <p class="ed-hero-banner__subtitle">{{ include.subtitle | strip }}</p>
+      <p
+        class="ed-hero-banner__subtitle"
+        {% if i18n_pfx != '' %}
+          data-i18n="{{ i18n_pfx }}.subtitle"
+        {% endif %}
+      >
+        {{ include.subtitle | strip }}
+      </p>
     {%- endif %}
     {%- if include.subtitle_en and include.subtitle_en != '' %}
-      <p class="ed-hero-banner__subtitle-en" lang="en">{{ include.subtitle_en | strip }}</p>
+      <p
+        class="ed-hero-banner__subtitle-en"
+        lang="en"
+        {% if i18n_pfx != '' %}
+          data-i18n="{{ i18n_pfx }}.subtitle_en"
+        {% endif %}
+      >
+        {{ include.subtitle_en | strip }}
+      </p>
     {%- endif %}
     {%- if include.badges %}
       <div class="ed-hero-banner__badges">
@@ -39,3 +82,11 @@
     {%- endif %}
   </div>
 </div>
+
+{% unless ace2_i18n_bootstrapped %}
+  {% assign ace2_i18n_bootstrapped = true %}
+  <script id="ace2-i18n-data" type="application/json">
+    {{ site.data.i18n | jsonify }}
+  </script>
+  <script src="{{ '/assets/js/ace2_i18n.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+{% endunless %}

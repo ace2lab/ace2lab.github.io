@@ -75,18 +75,20 @@
   <div class="pi-profile__main">
     <header class="pi-profile__header">
       {% if m.role_en %}
-        <p class="pi-profile__eyebrow"><i class="fa-solid fa-user-tie" aria-hidden="true"></i>{{ m.role_en }}</p>
+        <p class="pi-profile__eyebrow">
+          <i class="fa-solid fa-user-tie" aria-hidden="true"></i><span data-i18n="home.copi.role_tag">{{ m.role_en }}</span>
+        </p>
       {% endif %}
       <h3 class="pi-profile__name" id="member-{{ m.id }}-name">
         {{ m.name_ko }}
         <span class="pi-profile__name-en" lang="en">{{ m.name_en }}</span>
       </h3>
       <p class="pi-profile__title">
-        {{ m.title_ko -}}
+        <span data-i18n-term>{{ m.title_ko -}}</span>
         <span class="pi-profile__sep" aria-hidden="true">|</span><span lang="en">{{ m.title_en }}</span>
       </p>
       {% if m.affiliation_ko %}
-        <p class="pi-profile__affil">{{ m.affiliation_ko }}</p>
+        <p class="pi-profile__affil" data-i18n-term>{{ m.affiliation_ko }}</p>
       {% endif %}
     </header>
 
@@ -107,14 +109,23 @@
           {% assign summary_html = summary_html | replace: kw, wrapped %}
         {% endfor %}
       {% endfor %}
-      <p class="pi-profile__summary">{{ summary_html }}</p>
+      <p
+        class="pi-profile__summary"
+        data-i18n-mode="html"
+        data-i18n-ko="{{ summary_html | escape }}"
+        data-i18n-en="{{ m.summary_i18n.en | escape }}"
+        data-i18n-ja="{{ m.summary_i18n.ja | escape }}"
+        data-i18n-zh="{{ m.summary_i18n.zh | escape }}"
+      >
+        {{ summary_html }}
+      </p>
     {% endif %}
 
     {% if m.career or m.degrees %}
       <div class="pi-profile__history">
         {% if m.career %}
           <section class="pi-history" aria-label="Career">
-            <h4 class="pi-profile__label">Career</h4>
+            <h4 class="pi-profile__label" data-i18n="pi.section.career">Career</h4>
             <ol class="pi-timeline">
               {% for c in m.career %}
                 {% assign is_current = false -%}
@@ -123,15 +134,17 @@
                 {% if is_current %}{% assign sector_key = 'current' %}{% endif %}
                 <li class="pi-timeline__item pi-timeline__item--{{ sector_key }}{% if is_current %} is-current{% endif %}{% if c.brand %} pi-timeline__item--brand-{{ c.brand }}{% endif %}">
                   <span class="pi-timeline__period">
-                    {{- c.period -}}
+                    <span data-i18n-term>{{- c.period -}}</span>
                     {%- if is_current -%}
-                      <span class="pi-timeline__badge">현재 재직 · Current</span>
+                      <span class="pi-timeline__badge" data-i18n="pi.current_badge">현재 재직 · Current</span>
                     {%- endif -%}
                   </span>
-                  <span class="pi-timeline__org">{{ c.org }}</span>
-                  <span class="pi-timeline__role">{{ c.role }}</span>
+                  <span class="pi-timeline__org" data-i18n-term>{{ c.org }}</span>
+                  <span class="pi-timeline__role" data-i18n-term>{{ c.role }}</span>
                   {% if c.note -%}
-                    <span class="pi-timeline__note"><i class="fa-solid fa-tag" aria-hidden="true"></i>{{ c.note }}</span>
+                    <span class="pi-timeline__note"
+                      ><i class="fa-solid fa-tag" aria-hidden="true"></i><span data-i18n-term>{{ c.note }}</span></span
+                    >
                   {%- endif %}
                 </li>
               {% endfor %}
@@ -140,15 +153,17 @@
         {% endif %}
         {% if m.degrees %}
           <section class="pi-history" aria-label="Education">
-            <h4 class="pi-profile__label">Education</h4>
+            <h4 class="pi-profile__label" data-i18n="pi.section.education">Education</h4>
             <ol class="pi-timeline">
               {% for d in m.degrees %}
                 <li class="pi-timeline__item pi-timeline__item--{{ d.kind | default: 'academia' }}{% if d.brand %} pi-timeline__item--brand-{{ d.brand }}{% endif %}">
-                  <span class="pi-timeline__period">{{ d.period }}</span>
-                  <span class="pi-timeline__org">{{ d.org }}</span>
-                  <span class="pi-timeline__role">{{ d.role }}</span>
+                  <span class="pi-timeline__period" data-i18n-term>{{ d.period }}</span>
+                  <span class="pi-timeline__org" data-i18n-term>{{ d.org }}</span>
+                  <span class="pi-timeline__role" data-i18n-term>{{ d.role }}</span>
                   {% if d.note -%}
-                    <span class="pi-timeline__note"><i class="fa-solid fa-tag" aria-hidden="true"></i>{{ d.note }}</span>
+                    <span class="pi-timeline__note"
+                      ><i class="fa-solid fa-tag" aria-hidden="true"></i><span data-i18n-term>{{ d.note }}</span></span
+                    >
                   {%- endif %}
                 </li>
               {% endfor %}
@@ -160,7 +175,7 @@
 
     {% if m.topics and m.topics.size > 0 %}
       <div class="pi-profile__block">
-        <h4 class="pi-profile__label">Research Topics</h4>
+        <h4 class="pi-profile__label" data-i18n="pi.section.topics">Research Topics</h4>
         <ul class="pi-topics" role="list">
           {% for t in m.topics %}
             <li class="topic-tag">{{ t }}</li>
@@ -172,11 +187,11 @@
     {% if m.teaching and m.teaching.size > 0 %}
       <section class="pi-profile__block pi-teaching" aria-label="Teaching">
         <div class="pi-teaching__head">
-          <h4 class="pi-profile__label">Teaching</h4>
+          <h4 class="pi-profile__label" data-i18n="pi.section.teaching">Teaching</h4>
           <p class="pi-teaching__legend" aria-hidden="true">
-            <span>(학점) · 시수</span>
+            <span data-i18n="pi.teaching.legend1">(학점) · 시수</span>
             <span class="pi-teaching__legend-sep">/</span>
-            <span>강의평가 (5.0 만점)</span>
+            <span data-i18n="pi.teaching.legend2">강의평가 (5.0 만점)</span>
           </p>
         </div>
         <div class="pi-teaching__list">
@@ -186,7 +201,7 @@
               {% if y.note %}
                 <div class="pi-teaching__sabbatical">
                   <i class="fa-solid fa-compass" aria-hidden="true"></i>
-                  <span>{{ y.note }}</span>
+                  <span data-i18n-term>{{ y.note }}</span>
                 </div>
               {% elsif y.semesters %}
                 <div class="pi-teaching__semesters">
@@ -198,7 +213,7 @@
                           {{ s.term -}}
                         </span>
                         {% if s.credits %}
-                          <span class="pi-teaching__credits">{{ s.credits }}</span>
+                          <span class="pi-teaching__credits" data-i18n-term>{{ s.credits }}</span>
                         {% endif %}
                       </div>
                       <ul class="pi-course-list" role="list">
@@ -206,14 +221,16 @@
                           {% assign is_grad = false %}
                           {% if c.level contains '대학원' %}{% assign is_grad = true %}{% endif %}
                           <li class="pi-course">
-                            <span class="pi-course__level{% if is_grad %} pi-course__level--grad{% endif %}">{{ c.level }}</span>
+                            <span class="pi-course__level{% if is_grad %} pi-course__level--grad{% endif %}" data-i18n-term>{{ c.level }}</span>
                             <span class="pi-course__title">
-                              {{- c.title -}}
+                              <span data-i18n-term>{{- c.title -}}</span>
                               {%- if c.advisees %}
                                 <span class="pi-course__advisees">({{ c.advisees }})</span>
                               {%- endif -%}
                               {%- if c.credits %}
-                                <span class="pi-course__unit">({{ c.credits }})</span>
+                                <span class="pi-course__unit"
+                                  >(<span data-i18n-term>{{ c.credits }}</span>)</span
+                                >
                               {%- endif -%}
                             </span>
                             {% if c.lang or c.eval %}

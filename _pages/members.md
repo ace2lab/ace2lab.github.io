@@ -32,6 +32,7 @@ nav_order: 2
 
 {% include hero_banner.liquid
   variant="page"
+  i18n_prefix="hero.members"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Research Team & Members"
   subtitle="차세대 화학 및 에너지 공학 연구실 연구책임자, 대학원생, 학부연구생 및 졸업생"
@@ -45,27 +46,27 @@ nav_order: 2
   <nav class="team-tabnav" role="tablist" aria-label="Members tabs">
     {% if yim %}
       <button type="button" role="tab" class="team-tab" id="tab-yim" aria-controls="panel-yim" aria-selected="false" tabindex="-1" data-hash="yim">
-        Prof. {{ yim.name_en }}
+        <span data-i18n="members.tab.yim">Prof. {{ yim.name_en }}</span>
       </button>
     {% endif %}
     {% if kim %}
       <button type="button" role="tab" class="team-tab" id="tab-kim" aria-controls="panel-kim" aria-selected="false" tabindex="-1" data-hash="kim">
-        Prof. {{ kim.name_en }}
+        <span data-i18n="members.tab.kim">Prof. {{ kim.name_en }}</span>
       </button>
     {% endif %}
     {% if current_count > 0 %}
       <button type="button" role="tab" class="team-tab" id="tab-members" aria-controls="panel-members" aria-selected="false" tabindex="-1" data-hash="members" data-default="true">
-        Current Members<span class="team-tab__count">{{ current_count }}</span>
+        <span data-i18n="members.tab.current">Current Members</span><span class="team-tab__count">{{ current_count }}</span>
       </button>
     {% endif %}
     {% if alumni.size > 0 %}
       <button type="button" role="tab" class="team-tab" id="tab-alumni" aria-controls="panel-alumni" aria-selected="false" tabindex="-1" data-hash="alumni">
-        Proud Alumni<span class="team-tab__count">{{ alumni.size }}</span>
+        <span data-i18n="members.tab.alumni">Proud Alumni</span><span class="team-tab__count">{{ alumni.size }}</span>
       </button>
     {% endif %}
     {% if interns.size > 0 %}
       <button type="button" role="tab" class="team-tab" id="tab-interns" aria-controls="panel-interns" aria-selected="false" tabindex="-1" data-hash="interns">
-        Former Interns<span class="team-tab__count">{{ interns.size }}</span>
+        <span data-i18n="members.tab.interns">Former Interns</span><span class="team-tab__count">{{ interns.size }}</span>
       </button>
     {% endif %}
   </nav>
@@ -77,7 +78,7 @@ nav_order: 2
   <div class="team-tabpanel" role="tabpanel" id="panel-yim" aria-labelledby="tab-yim" tabindex="0">
     <section class="team-section" id="principal-investigators">
       <h2 class="team-section__title team-section__title--print-only">
-        Principal Investigators
+        <span data-i18n="members.sec.pi">Principal Investigators</span>
         <span class="team-section__count">{{ site.data.members | where: "group", "pi" | size }}</span>
       </h2>
       <div class="team-grid team-grid--pi">
@@ -117,7 +118,7 @@ nav_order: 2
     {% if grads.size > 0 %}
     <section class="team-section" id="graduate-students">
       <h2 class="team-section__title">
-        Graduate Students
+        <span data-i18n="members.sec.students">Graduate Students</span>
         <span class="team-section__count">{{ grads.size }}</span>
       </h2>
       <div class="team-grid">
@@ -130,7 +131,7 @@ nav_order: 2
     {% if ugs.size > 0 %}
     <section class="team-section" id="undergraduate-researchers">
       <h2 class="team-section__title">
-        Undergraduate Researchers
+        <span data-i18n="members.sec.interns">Undergraduate Researchers</span>
         <span class="team-section__count">{{ ugs.size }}</span>
       </h2>
       <div class="team-grid">
@@ -150,7 +151,7 @@ nav_order: 2
   <div class="team-tabpanel" role="tabpanel" id="panel-alumni" aria-labelledby="tab-alumni" tabindex="0">
     <section class="team-section" id="proud-alumni">
       <h2 class="team-section__title">
-        Proud Alumni
+        <span data-i18n="members.sec.alumni">Proud Alumni</span>
         <span class="team-section__count">{{ alumni.size }}</span>
       </h2>
       <div class="alumni-list">
@@ -169,11 +170,11 @@ nav_order: 2
   <div class="team-tabpanel" role="tabpanel" id="panel-interns" aria-labelledby="tab-interns" tabindex="0">
     <section class="team-section" id="former-interns">
       <h2 class="team-section__title">
-        Former Interns
+        <span data-i18n="members.sec.former_interns">Former Interns</span>
         <span class="team-section__count">{{ interns.size }}</span>
       </h2>
       {% if intern_affiliations.size == 1 %}
-        <p class="ed-section__note">{{ intern_affiliations.first | escape }}</p>
+        <p class="ed-section__note" data-i18n-term>{{ intern_affiliations.first | escape }}</p>
       {% endif %}
       <div class="intern-grid">
         {% for i in interns %}

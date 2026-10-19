@@ -25,19 +25,19 @@
     </div>
     <div class="alumni-row__thesis">
       {% if a.thesis and a.thesis != '' -%}
-        <em>{{ a.thesis }}</em>
+        <em data-i18n-term>{{ a.thesis }}</em>
       {%- endif %}
     </div>
     <div class="alumni-row__now">
       <span class="alumni-row__arrow" aria-hidden="true">→</span>
       <span class="alumni-row__dest">
         {% if a.now.url and a.now.url != '' %}
-          <a href="{{ a.now.url }}" target="_blank" rel="noopener">{{ a.now.affiliation }}</a>
+          <a href="{{ a.now.url }}" target="_blank" rel="noopener" data-i18n-term>{{ a.now.affiliation }}</a>
         {% else %}
-          {{ a.now.affiliation }}
+          <span data-i18n-term>{{ a.now.affiliation }}</span>
         {% endif %}
         {% if a.now.position and a.now.position != '' %}
-          <span class="alumni-row__position">{{ a.now.position }}</span>
+          <span class="alumni-row__position" data-i18n-term>{{ a.now.position }}</span>
         {% endif %}
       </span>
     </div>

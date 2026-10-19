@@ -45,7 +45,9 @@
         {% assign en_role_short = 'Undergrad' %}
     {% endcase %}
     <div class="member-card__role-banner">
-      <span class="member-card__role-title"> <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> {{ m.role_ko }} </span>
+      <span class="member-card__role-title">
+        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span data-i18n-term>{{ m.role_ko }}</span>
+      </span>
       <span class="member-card__role-en">{{ en_role_short }}</span>
     </div>
   {% endif %}
@@ -66,11 +68,11 @@
 
   <div class="member-card__content">
     <div class="member-card__role">
-      <span class="member-badge member-badge--{{ role_key }}">{{ m.role_ko }}</span>
+      <span class="member-badge member-badge--{{ role_key }}" data-i18n-term>{{ m.role_ko }}</span>
       {% if m.degree_program %}
         {% assign program_parts = m.degree_program | split: ' (' %}
         {% if program_parts.size > 1 %}
-          <span class="member-card__period">{{ program_parts[1] | replace: ')', '' }}</span>
+          <span class="member-card__period" data-i18n-term>{{ program_parts[1] | replace: ')', '' }}</span>
         {% endif %}
       {% endif %}
     </div>
@@ -86,7 +88,10 @@
       <ul class="member-meta" role="list">
         {% if m.affiliation != blank %}
           <li class="member-meta__affiliation">
-            <i class="fa-solid fa-building-columns" aria-hidden="true"></i><span><span class="tm-sr-only">현재 소속: </span>{{ m.affiliation }}</span>
+            <i class="fa-solid fa-building-columns" aria-hidden="true"></i
+            ><span
+              ><span class="tm-sr-only">현재 소속: </span><span data-i18n-term>{{ m.affiliation }}</span></span
+            >
           </li>
         {% endif %}
         {% if m.education != blank %}
@@ -96,22 +101,28 @@
               <span class="tm-sr-only">학력: </span>
               {%- if m.education.first -%}
                 {%- for item in m.education -%}
-                  <span class="member-meta__edu-line">{{ item }}</span>
+                  <span class="member-meta__edu-line" data-i18n-term>{{ item }}</span>
                 {%- endfor -%}
               {%- else -%}
-                <span class="member-meta__edu-line">{{ m.education }}</span>
+                <span class="member-meta__edu-line" data-i18n-term>{{ m.education }}</span>
               {%- endif -%}
             </span>
           </li>
         {% endif %}
         {% if research_field != blank %}
           <li class="member-meta__research">
-            <i class="fa-solid fa-flask" aria-hidden="true"></i><span><span class="tm-sr-only">연구분야: </span>{{ research_field }}</span>
+            <i class="fa-solid fa-flask" aria-hidden="true"></i
+            ><span
+              ><span class="tm-sr-only">연구분야: </span><span data-i18n-term>{{ research_field }}</span></span
+            >
           </li>
         {% endif %}
         {% if m.office != blank %}
           <li class="member-meta__muted">
-            <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><span class="tm-sr-only">위치: </span>{{ m.office }}</span>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i
+            ><span
+              ><span class="tm-sr-only">위치: </span><span data-i18n-term>{{ m.office }}</span></span
+            >
           </li>
         {% endif %}
       </ul>
@@ -147,7 +158,7 @@
         {% endif %}
         {% if ach_total > 0 %}
           <button type="button" class="member-card__ach-btn" data-ach-target="ach-{{ m.id }}" data-ach-name="{{ m.name_ko }}" aria-haspopup="dialog">
-            <i class="fa-solid fa-award" aria-hidden="true"></i><span>연구 실적 · {{ ach_total }}</span>
+            <i class="fa-solid fa-award" aria-hidden="true"></i><span data-i18n-term>연구 실적 · {{ ach_total }}</span>
           </button>
         {% endif %}
       </div>

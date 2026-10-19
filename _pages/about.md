@@ -25,20 +25,21 @@ latest_posts:
 </style>
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Energy Storage</span>
-<span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Intense Pulsed Light (IPL)</span>
-<span class="hero-badge"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Flexible Sensors</span>
-<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> 2D MXene &amp; MOFs</span>
+<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="hero.home.badge_es">Energy Storage</span></span>
+<span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="hero.home.badge_ipl">Intense Pulsed Light (IPL)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-microchip" aria-hidden="true"></i> <span data-i18n="hero.home.badge_sensors">Flexible Sensors</span></span>
+<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span data-i18n="hero.home.badge_mxene">2D MXene &amp; MOFs</span></span>
 {% endcapture %}
 
 {% capture hero_actions %}
-<a href="#research-areas" class="hero-action-btn hero-action-btn--primary"><i class="fa-solid fa-compass" aria-hidden="true"></i> Research Areas</a>
-<a href="{{ '/members/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-users" aria-hidden="true"></i> Meet Our Team</a>
-<a href="{{ '/publications/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Publications</a>
+<a href="#research-areas" class="hero-action-btn hero-action-btn--primary"><i class="fa-solid fa-compass" aria-hidden="true"></i> <span data-i18n="hero.home.act_research">Research Areas</span></a>
+<a href="{{ '/members/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-users" aria-hidden="true"></i> <span data-i18n="hero.home.act_team">Meet Our Team</span></a>
+<a href="{{ '/publications/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-book-open" aria-hidden="true"></i> <span data-i18n="hero.home.act_pubs">Publications</span></a>
 {% endcapture %}
 
 {% include hero_banner.liquid
   variant="home"
+  i18n_prefix="hero.home"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Advanced Chemical & Energy Engineering Laboratory"
   subtitle="차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과"
@@ -49,10 +50,10 @@ latest_posts:
 
 <div class="lab-mission-section">
   <div class="lab-mission-quote">
-    <p class="lab-mission-quote__en">
+    <p class="lab-mission-quote__en" data-i18n="home.mission.en">
       Pioneering ultrafast photonic nanomanufacturing and functional nanomaterials for high-capacity electrochemical energy storage and wearable bio-environmental devices.
     </p>
-    <p class="lab-mission-quote__ko">
+    <p class="lab-mission-quote__ko" data-i18n="home.mission.ko">
       초고속 광열처리 나노공정과 기능성 나노소재 설계를 융합하여, 차세대 하이브리드 에너지 저장 소자 및 고민감도 유연 센서 기술을 혁신합니다.
     </p>
   </div>
@@ -64,55 +65,55 @@ latest_posts:
     <div class="lab-stat-card">
       <div class="lab-stat-card__icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
       <div class="lab-stat-card__number">{{ active_members.size }}</div>
-      <div class="lab-stat-card__label">Active Researchers</div>
-      <div class="lab-stat-card__desc">2 Co-PIs · Graduate & Undergrad Researchers</div>
+      <div class="lab-stat-card__label" data-i18n="home.stat.researchers">Active Researchers</div>
+      <div class="lab-stat-card__desc" data-i18n="home.stat.researchers_desc">2 Co-PIs · Graduate & Undergrad Researchers</div>
     </div>
     <div class="lab-stat-card">
       <div class="lab-stat-card__icon"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i></div>
       <div class="lab-stat-card__number">{{ total_intl }}</div>
-      <div class="lab-stat-card__label">SCI(E) Journal Papers</div>
-      <div class="lab-stat-card__desc">Peer-Reviewed International Journals</div>
+      <div class="lab-stat-card__label" data-i18n="home.stat.papers">SCI(E) Journal Papers</div>
+      <div class="lab-stat-card__desc" data-i18n="home.stat.papers_desc">Peer-Reviewed International Journals</div>
     </div>
     <div class="lab-stat-card">
       <div class="lab-stat-card__icon"><i class="fa-solid fa-atom" aria-hidden="true"></i></div>
       <div class="lab-stat-card__number">3</div>
-      <div class="lab-stat-card__label">Research Pillars</div>
-      <div class="lab-stat-card__desc">Energy · Photonics · Sensors</div>
+      <div class="lab-stat-card__label" data-i18n="home.stat.pillars">Research Pillars</div>
+      <div class="lab-stat-card__desc" data-i18n="home.stat.pillars_desc">Energy · Photonics · Sensors</div>
     </div>
     <div class="lab-stat-card">
       <div class="lab-stat-card__icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></div>
       <div class="lab-stat-card__number">2020</div>
-      <div class="lab-stat-card__label">Established at KNU</div>
-      <div class="lab-stat-card__desc">Since 2020 · Dept. of Energy Chemical Eng.</div>
+      <div class="lab-stat-card__label" data-i18n="home.stat.established">Established at KNU</div>
+      <div class="lab-stat-card__desc" data-i18n="home.stat.established_desc">Since 2020 · Dept. of Energy Chemical Eng.</div>
     </div>
   </div>
 </div>
 
 <section class="lab-about" aria-labelledby="about-lab-title">
-  <h2 id="about-lab-title" class="lab-about__title">About the Laboratory</h2>
-  <p class="lab-about__lead">
+  <h2 id="about-lab-title" class="lab-about__title" data-i18n="home.about.title">About the Laboratory</h2>
+  <p class="lab-about__lead" data-i18n="home.about.lead">
     ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 융합 나노화학 및 에너지 공학 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·다공성 MOF·금속 산화물 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하고 있습니다.
   </p>
 
   <div class="lab-about__pillars">
     <a href="#area-01" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title">Energy Storage &amp; Materials <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
-      <p class="lab-about__pillar-desc">MXene·MOF 복합소재 기반 하이브리드 슈퍼커패시터, 차세대 이차전지 음극 및 환경 촉매 소재</p>
+      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p1_title">Energy Storage &amp; Materials</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <p class="lab-about__pillar-desc" data-i18n="home.about.p1_desc">MXene·MOF 복합소재 기반 하이브리드 슈퍼커패시터, 차세대 이차전지 음극 및 환경 촉매 소재</p>
     </a>
     <a href="#area-02" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title">Photonic Nanomanufacturing <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
-      <p class="lab-about__pillar-desc">초고속 펄스광(IPL) 광열 소결·표면 개질과 레이저 유도 그래핀(LIG) 나노패터닝 및 유연 전극 공정</p>
+      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p2_title">Photonic Nanomanufacturing</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <p class="lab-about__pillar-desc" data-i18n="home.about.p2_desc">초고속 펄스광(IPL) 광열 소결·표면 개질과 레이저 유도 그래핀(LIG) 나노패터닝 및 유연 전극 공정</p>
     </a>
     <a href="#area-03" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title">Sensors &amp; Devices <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
-      <p class="lab-about__pillar-desc">고감도 유연 촉각·호흡 센서와 머신러닝 결합 나노 전자코(E-nose) 실시간 모니터링 소자</p>
+      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p3_title">Sensors &amp; Devices</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <p class="lab-about__pillar-desc" data-i18n="home.about.p3_desc">고감도 유연 촉각·호흡 센서와 머신러닝 결합 나노 전자코(E-nose) 실시간 모니터링 소자</p>
     </a>
   </div>
 
-  <p class="lab-about__pis-intro">The laboratory is jointly directed by two Principal Investigators:</p>
+  <p class="lab-about__pis-intro" data-i18n="home.copi.intro">The laboratory is jointly directed by two Principal Investigators:</p>
 
 {% assign pis = site.data.members | where: "group", "pi" | sort: "order" %}
 
@@ -131,42 +132,48 @@ latest_posts:
           </div>
           <div class="pi-showcase-card__id">
             <div class="pi-showcase-card__role">
-              <span class="pi-role-tag">Co-Principal Investigator</span>
-              <span class="pi-rank-tag">{{ pi.title_en }} ({{ pi.title_ko }})</span>
+              <span class="pi-role-tag" data-i18n="home.copi.role_tag">Co-Principal Investigator</span>
+              <span class="pi-rank-tag" data-i18n-term>{{ pi.title_ko }}</span>
             </div>
             <h3 class="pi-showcase-card__name">
               {{ pi.name_en }}
-              <span class="pi-showcase-card__name-ko">{{ pi.name_ko }} 교수</span>
+              <span class="pi-showcase-card__name-ko">{{ pi.name_ko }}</span>
             </h3>
-            <div class="pi-showcase-card__affil">{{ pi.affiliation_en }} ({{ pi.affiliation_ko }})</div>
+            <div class="pi-showcase-card__affil" data-i18n-term>{{ pi.affiliation_ko }}</div>
           </div>
         </header>
 
-        <p class="pi-showcase-card__bio">{{ pi.card_summary | default: pi.summary }}</p>
+        <p
+          class="pi-showcase-card__bio"
+          data-i18n-ko="{{ pi.card_summary | default: pi.summary | escape }}"
+          data-i18n-en="{{ pi.card_summary_i18n.en | default: pi.summary_i18n.en | escape }}"
+          data-i18n-ja="{{ pi.card_summary_i18n.ja | default: pi.summary_i18n.ja | escape }}"
+          data-i18n-zh="{{ pi.card_summary_i18n.zh | default: pi.summary_i18n.zh | escape }}"
+        >{{ pi.card_summary | default: pi.summary }}</p>
 
         <div class="pi-trail">
           <div class="pi-trail__section">
-            <div class="pi-trail__label">Career</div>
+            <div class="pi-trail__label" data-i18n="home.copi.career">Career</div>
             <ol class="pi-path" aria-label="Career path of {{ pi.name_en }}">
               {% for step in pi.career_highlights %}
                 <li class="pi-path__node pi-path__node--{{ step.kind | default: 'academia' }}{% if step.brand %} pi-path__node--brand-{{ step.brand }}{% endif %}">
-                  <span class="pi-path__period">{{ step.period }}</span>
-                  <span class="pi-path__org">{{ step.org }}</span>
-                  <span class="pi-path__role">{{ step.role }}</span>
-                  {% if step.note %}<span class="pi-path__note">{{ step.note }}</span>{% endif %}
+                  <span class="pi-path__period" data-i18n-term>{{ step.period }}</span>
+                  <span class="pi-path__org" data-i18n-term>{{ step.org }}</span>
+                  <span class="pi-path__role" data-i18n-term>{{ step.role }}</span>
+                  {% if step.note %}<span class="pi-path__note" data-i18n-term>{{ step.note }}</span>{% endif %}
                 </li>
               {% endfor %}
             </ol>
           </div>
           <div class="pi-trail__section pi-trail__section--education">
-            <div class="pi-trail__label">Education</div>
+            <div class="pi-trail__label" data-i18n="home.copi.education">Education</div>
             <ol class="pi-path pi-path--education" aria-label="Education of {{ pi.name_en }}">
               {% for deg in pi.degrees %}
                 <li class="pi-path__node pi-path__node--academia pi-path__node--degree{% if deg.brand %} pi-path__node--brand-{{ deg.brand }}{% endif %}">
-                  <span class="pi-path__period">{{ deg.period }}</span>
-                  <span class="pi-path__org">{{ deg.org }}</span>
-                  <span class="pi-path__role">{{ deg.role }}</span>
-                  {% if deg.note %}<span class="pi-path__note">{{ deg.note }}</span>{% endif %}
+                  <span class="pi-path__period" data-i18n-term>{{ deg.period }}</span>
+                  <span class="pi-path__org" data-i18n-term>{{ deg.org }}</span>
+                  <span class="pi-path__role" data-i18n-term>{{ deg.role }}</span>
+                  {% if deg.note %}<span class="pi-path__note" data-i18n-term>{{ deg.note }}</span>{% endif %}
                 </li>
               {% endfor %}
             </ol>
@@ -212,7 +219,7 @@ latest_posts:
             {% endif %}
           </div>
           <a href="{{ '/members/' | relative_url }}#pi-{{ pi.id }}" class="pi-action-profile" title="View full profile">
-            <span>Full Profile</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <span data-i18n="home.copi.full_cv">Full Profile</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
       </article>
@@ -223,7 +230,7 @@ latest_posts:
 
 ---
 
-<h2 id="research-areas">Core Research Areas</h2>
+<h2 id="research-areas" data-i18n="home.areas.title">Core Research Areas</h2>
 
 <div class="research-grid">
   <a href="{{ '/research/' | relative_url }}#energy-storage" class="research-card" id="area-01">
@@ -236,8 +243,8 @@ latest_posts:
       <span class="research-card__badge">Area 01</span>
     </div>
     <div class="research-card__content">
-      <h3 class="research-card__title">Energy Storage &amp; Materials</h3>
-      <div class="research-card__desc">
+      <h3 class="research-card__title" data-i18n="home.about.p1_title">Energy Storage &amp; Materials</h3>
+      <div class="research-card__desc" data-i18n="home.areas.c1_desc">
         차세대 하이브리드 코인셀 슈퍼커패시터 및 다공성 MXene/TiO₂ 복합소재 리튬이온전지 음극 설계. 고출력·고에너지밀도 전기화학 소자 구현.
       </div>
       <div class="research-card__topics">
@@ -258,8 +265,8 @@ latest_posts:
       <span class="research-card__badge">Area 02</span>
     </div>
     <div class="research-card__content">
-      <h3 class="research-card__title">Photonic Nanomanufacturing</h3>
-      <div class="research-card__desc">
+      <h3 class="research-card__title" data-i18n="home.about.p2_title">Photonic Nanomanufacturing</h3>
+      <div class="research-card__desc" data-i18n="home.areas.c2_desc">
         초고속 제논 플래시 펄스광(IPL) 열처리를 활용한 저온·밀리초 급 나노소재 소결·표면 결함 제어 및 레이저 유도 그래핀(LIG) 유연 전극 직접 공정.
       </div>
       <div class="research-card__topics">
@@ -280,8 +287,8 @@ latest_posts:
       <span class="research-card__badge">Area 03</span>
     </div>
     <div class="research-card__content">
-      <h3 class="research-card__title">Sensors &amp; Devices</h3>
-      <div class="research-card__desc">
+      <h3 class="research-card__title" data-i18n="home.about.p3_title">Sensors &amp; Devices</h3>
+      <div class="research-card__desc" data-i18n="home.areas.c3_desc">
         MXene·레이저 유도 그래핀(LIG) 기반 고감도 유연 촉각·호흡 센서 및 머신러닝 결합 나노 전자코(E-nose) 호기·환경 가스 모니터링 소자.
       </div>
       <div class="research-card__topics">
@@ -305,10 +312,10 @@ For detailed project descriptions and laboratory facilities, please visit our [R
     <div class="selected-papers-block">
       <div class="selected-papers-block__header">
         <h2 class="selected-papers-block__title">
-          <i class="fa-solid fa-star" aria-hidden="true"></i> Selected Publications
+          <i class="fa-solid fa-star" aria-hidden="true"></i> <span data-i18n="home.pubs.title">Selected Publications</span>
         </h2>
         <a href="{{ '/publications/' | relative_url }}" class="selected-papers-block__all-link">
-          All Publications <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          <span data-i18n="home.pubs.all">All Publications</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
       <div class="publications">

@@ -4955,3 +4955,75 @@ html[data-theme="dark"] .ed-pill--paper:hover {
   font-weight: 700;
   color: var(--c-ink);
 }
+
+/* ============================================================
+   4-Language Navbar Switcher (KO · EN · JA · ZH)
+   ============================================================ */
+.ace2-lang-nav-item {
+  display: flex;
+  align-items: center;
+  margin-left: 0.35rem;
+  margin-right: 0.25rem;
+}
+
+.ace2-lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--c-surface-alt, #f1f5f9);
+  border: 1px solid var(--color-line-strong, #cbd5e1);
+}
+
+html[data-theme="dark"] .ace2-lang-switcher {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.ace2-lang-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--c-muted, #4b5a70);
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  padding: 5px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ace2-lang-btn:hover {
+  color: var(--c-ink, #0f172a);
+  background: rgba(15, 23, 42, 0.06);
+}
+
+html[data-theme="dark"] .ace2-lang-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ace2-lang-btn.is-active,
+.ace2-lang-btn[aria-pressed="true"] {
+  background: var(--c-accent-fill, #a3123a);
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(163, 18, 58, 0.35);
+}
+
+.ace2-lang-btn:focus-visible {
+  outline: 2px solid var(--color-knu-crimson, #a3123a);
+  outline-offset: 2px;
+}
+
+@media (max-width: 991.98px) {
+  .ace2-lang-nav-item {
+    margin: 0.5rem 0;
+  }
+}
