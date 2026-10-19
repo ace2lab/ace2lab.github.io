@@ -5050,7 +5050,9 @@ footer.site-footer {
   padding: 2.75rem 1rem 2.25rem;
   background: var(--global-bg-color, #ffffff);
   border-top: 1px solid var(--global-divider-color, #e2e8f0);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 html[data-theme="dark"] footer.site-footer {
@@ -5137,7 +5139,10 @@ html[data-theme="dark"] .footer-meta {
   height: 42px !important;
   border-radius: 50% !important;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease !important;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease !important;
 }
 
 html[data-theme="dark"] #back-to-top {

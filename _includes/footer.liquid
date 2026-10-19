@@ -1,12 +1,6 @@
-{% if site.footer_fixed %}
-  <footer class="fixed-bottom" role="contentinfo">
-{% else %}
-  <footer class="site-footer" role="contentinfo">
-{% endif %}
+<footer class="{% if site.footer_fixed %}fixed-bottom{% else %}site-footer{% endif %}" role="contentinfo">
   <div class="container text-center">
-    <div class="footer-lab-name" data-i18n="footer.lab_name">
-      Advanced Chemical &amp; Energy Engineering Laboratory (ACE² Lab)
-    </div>
+    <div class="footer-lab-name" data-i18n="footer.lab_name">Advanced Chemical &amp; Energy Engineering Laboratory (ACE² Lab)</div>
     <div class="footer-affiliation" data-i18n="footer.affiliation">
       Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
     </div>
@@ -14,9 +8,7 @@
       Engineering Bldg 7, Rms 403 &amp; 414, 80 Daehak-ro, Buk-gu, Daegu 41566, Republic of Korea
     </div>
     <div class="footer-meta">
-      <span class="footer-copyright" data-i18n="footer.copyright">
-        &copy; {{ 'now' | date: '%Y' }} ACE² Lab. Hosted on GitHub Pages.
-      </span>
+      <span class="footer-copyright" data-i18n="footer.copyright"> &copy; {{ 'now' | date: '%Y' }} ACE² Lab. Hosted on GitHub Pages. </span>
       {% if site.impressum_path %}
         <span class="footer-divider">&middot;</span>
         <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>
