@@ -14,7 +14,7 @@ nav_order: 5
 {% capture intl_count %}{% bibliography_count %}{% endcapture %}
 {% assign intl_count = intl_count | strip | plus: 0 %}
 {% if intl_count == 0 %}
-{% assign intl_count = 82 %}
+{% assign intl_count = 83 %}
 {% endif %}
 {% assign total_count = intl_count | plus: site.data.domestic.size | plus: site.data.patents.size | plus: site.data.talks.size %}
 
@@ -73,7 +73,7 @@ nav_order: 5
           <div class="pub-year-jump__inner">
             <span class="pub-year-jump__title"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> <span data-i18n="publications.year_label">Year</span></span>
             <div class="pub-year-jump__chips" id="pubYearChips">
-              <a href="#y2026" class="pub-year-chip" data-year="2026">2026<span class="pub-year-chip__count">5</span></a>
+              <a href="#y2026" class="pub-year-chip" data-year="2026">2026<span class="pub-year-chip__count">6</span></a>
               <a href="#y2025" class="pub-year-chip" data-year="2025">2025<span class="pub-year-chip__count">2</span></a>
               <a href="#y2024" class="pub-year-chip" data-year="2024">2024<span class="pub-year-chip__count">7</span></a>
               <a href="#y2023" class="pub-year-chip" data-year="2023">2023<span class="pub-year-chip__count">8</span></a>
@@ -106,9 +106,9 @@ nav_order: 5
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiAll" value="all" autocomplete="off" checked>
           <label class="pub-pi-filter__pill" for="pubPiAll"><span data-i18n="publications.filter_all">All</span> <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiYim" value="yim" autocomplete="off">
-          <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">56</span></label>
+          <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">57</span></label>
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiKim" value="kim" autocomplete="off">
-          <label class="pub-pi-filter__pill" for="pubPiKim"><span class="pub-pi-filter__honorific">Prof. </span>Taewook Kim <span class="pub-pi-filter__count" data-pi-count="kim">31</span></label>
+          <label class="pub-pi-filter__pill" for="pubPiKim"><span class="pub-pi-filter__honorific">Prof. </span>Taewook Kim <span class="pub-pi-filter__count" data-pi-count="kim">32</span></label>
         </div>
       </fieldset>
       <p class="pub-pi-filter__status" id="pubPiStatus" role="status" aria-live="polite"></p>

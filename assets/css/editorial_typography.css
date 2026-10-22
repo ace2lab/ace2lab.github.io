@@ -1950,6 +1950,29 @@ html[data-theme="dark"] .news-degree {
   color: #f3d46f;
 }
 
+.pub-badge--accepted {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid #059669;
+  color: #065f46; /* 7.1:1 on light surface */
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+[data-theme="dark"] .pub-badge--accepted {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(52, 211, 153, 0.6);
+  color: #6ee7b7;
+}
+
 /* JCR & Academic Prestige Badges */
 .pub-badge--jcr-top1 {
   display: inline-flex;
@@ -2108,6 +2131,7 @@ html[data-theme="dark"] .news-degree {
 
 /* Card highlights for Cover & Top papers */
 .publications ol.bibliography li.is-cover-paper,
+.publications ol.bibliography li:has(#ahn2026topochemical),
 .publications ol.bibliography li:has(#lee2024suppression) {
   border-left: 3px solid #d4af37;
   padding-left: 1.25rem;

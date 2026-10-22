@@ -18,6 +18,7 @@
     "Donggun Lee",
     "Minsu Kim",
     "Myeong Seo Kang",
+    "Myeongseo Kang",
     "Changung Paeng",
     "Donghyun Lee",
     "Huijin Lee",
@@ -77,11 +78,21 @@
   function flagCover(li) {
     var isCover = false;
     li.querySelectorAll(".periodical").forEach(function (p) {
+      if (p.querySelector(".pub-badge--cover, .pub-badge--accepted, .ed-entry__jcr, .ed-entry__funding, .ed-entry__press")) return;
       var text = p.textContent.trim();
-      if (/cover/i.test(text) && !p.querySelector(".pub-badge--cover")) {
-        isCover = true;
-        p.innerHTML = '<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> ' + text + "</span>";
-      }
+      if (!text || !/(cover|just accepted|in press)/i.test(text)) return;
+      var parts = text.split(/\s*·\s*/);
+      var badges = parts.map(function (part) {
+        if (/cover/i.test(part)) {
+          isCover = true;
+          return '<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> ' + part + "</span>";
+        }
+        if (/(just accepted|in press)/i.test(part)) {
+          return '<span class="pub-badge pub-badge--accepted"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> ' + part + "</span>";
+        }
+        return part;
+      });
+      p.innerHTML = badges.join(" ");
     });
     if (isCover) {
       li.classList.add("is-cover-paper");

@@ -232,7 +232,7 @@ nav_order: 2
 {%- for x in ach_papers %}
 {%- assign ach_authors = x.authors | escape -%}
 {%- if m.name_en != blank -%}{%- assign ach_authors = ach_authors | replace: m.name_en, ach_self -%}{%- endif %}
-<li class="ach-item"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ x.title | escape }}</a>{% else %}{{ x.title | escape }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.year | escape }}{% if x.authors != blank %} · {{ ach_authors }}{% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ x.title | escape }}</a>{% else %}{{ x.title | escape }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}{% if x.note and x.note != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-award" aria-hidden="true"></i> {{ x.note | escape }}</span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.year | escape }}{% if x.authors != blank %} · {{ ach_authors }}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}

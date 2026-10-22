@@ -59,7 +59,7 @@ latest_posts:
   </div>
 
 {% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni'" %}
-{% assign total_intl = 82 %}
+{% assign total_intl = 83 %}
 
   <div class="lab-stats-grid">
     <div class="lab-stat-card">

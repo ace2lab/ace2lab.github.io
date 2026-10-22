@@ -2,6 +2,17 @@
 # Linked to members via "members" containing member's Korean name (m.name_ko).
 # All author strings unified to full-name format (First Last) with student name matching m.name_en.
 
+- title: Topochemical Conversion of Ti3AlC2 to Ti3C2Tx MXene via Kinetically Accelerated Microwave Etching and Targeted Byproduct Purification
+  journal: Inorganic Chemistry
+  year: 2026
+  type: 국제 SCI
+  note: "Just Accepted · Front Cover"
+  members:
+    - 안재빈
+    - 이동호
+    - 강명서
+    - 이종민
+  authors: Jaebeen Ahn, Dongho Lee, Myeong Seo Kang, Jongmin Lee, Simon S. Park, Taewook Kim*, Changyong Yim*
 - title: InGaN-GaN-MQW-ZnO based e-nose sensors for nitrogen dioxide detection using advanced machine learning approaches
   journal: "Sensors and Actuators B: Chemical"
   year: 2026
