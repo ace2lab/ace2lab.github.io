@@ -17,7 +17,6 @@ latest_posts:
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-<meta name="google-site-verification" content="PVA2Mr1UfooS2xF8enDODXQ3V9TtsrPO10Q14WwNGnI">
 
 <style>
   .post > header.post-header {
