@@ -40,31 +40,61 @@
         var gcCode = {{ gc_code | jsonify }};
         var minShow = {{ site.goatcounter.min_display | default: 0 | plus: 0 }};
         var loaded = false;
+
+        function renderCount(num) {
+          if (typeof num !== "number" || isNaN(num) || num <= 0 || num < minShow) return;
+          var numEl = document.getElementById("ace2-visitor-count");
+          var wrapEl = document.getElementById("ace2-visitor-wrap");
+          if (numEl && wrapEl) {
+            numEl.textContent = num.toLocaleString();
+            wrapEl.hidden = false;
+          }
+        }
+
+        function parseCount(d) {
+          if (!d || d.count === undefined || d.count === null) return 0;
+          var raw = String(d.count).replace(/[^0-9]/g, "");
+          var num = raw ? parseInt(raw, 10) : 0;
+          return isNaN(num) ? 0 : num;
+        }
+
         function fetchTotal() {
           if (loaded) return;
           loaded = true;
-          var isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-          fetch("https://" + encodeURIComponent(gcCode) + ".goatcounter.com/counter/TOTAL.json")
+          var base = "https://" + encodeURIComponent(gcCode) + ".goatcounter.com/counter/";
+          fetch(base + "TOTAL.json")
             .then(function (r) {
-              if (r.status === 404) return !isLocal && window.goatcounter ? { count: "1" } : null;
               return r.ok ? r.json() : null;
             })
             .then(function (d) {
-              if (!d || d.count === undefined || d.count === null) return;
-              var raw = String(d.count).replace(/[^0-9]/g, "");
-              var num = raw ? parseInt(raw, 10) : 0;
-              if (isNaN(num)) return;
-              if (num === 0 && !isLocal && window.goatcounter) num = 1;
-              if (num <= 0 || num < minShow) return;
-              var numEl = document.getElementById("ace2-visitor-count");
-              var wrapEl = document.getElementById("ace2-visitor-wrap");
-              if (numEl && wrapEl) {
-                numEl.textContent = num.toLocaleString();
-                wrapEl.hidden = false;
+              var count = parseCount(d);
+              if (count > 0) {
+                renderCount(count);
+                return;
               }
+              fetch(base + "%2F.json")
+                .then(function (r2) {
+                  return r2.ok ? r2.json() : null;
+                })
+                .then(function (d2) {
+                  var count2 = parseCount(d2);
+                  if (count2 > 0) renderCount(count2);
+                })
+                .catch(function () {});
             })
-            .catch(function () {});
+            .catch(function () {
+              fetch(base + "%2F.json")
+                .then(function (r2) {
+                  return r2.ok ? r2.json() : null;
+                })
+                .then(function (d2) {
+                  var count2 = parseCount(d2);
+                  if (count2 > 0) renderCount(count2);
+                })
+                .catch(function () {});
+            });
         }
+
         var s = document.getElementById("ace2-gc-script");
         if (s) s.addEventListener("load", function () { setTimeout(fetchTotal, 150); });
         setTimeout(fetchTotal, 1200);
