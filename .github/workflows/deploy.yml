@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - "assets/**"
+      - "CNAME"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -34,6 +35,7 @@ on:
       - main
     paths:
       - "assets/**"
+      - "CNAME"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -100,7 +102,7 @@ jobs:
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
       - name: Build 🔧
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build && cp CNAME _site/CNAME
         env:
           JEKYLL_ENV: production
       - name: Purge unused CSS 🧹
