@@ -26,6 +26,7 @@ nav_order: 2
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> Principal Investigators ({{ site.data.members | where: "group", "pi" | size }})</span>
 <span class="hero-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i> Current Members ({{ current_count }})</span>
+<span class="hero-badge hero-badge--ai"><i class="fa-solid fa-robot" aria-hidden="true"></i> AI Secretary (1)</span>
 <span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Alumni ({{ alumni.size }})</span>
 <span class="hero-badge"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Former Interns ({{ interns.size }})</span>
 {% endcapture %}
@@ -141,6 +142,51 @@ nav_order: 2
       </div>
     </section>
     {% endif %}
+
+    {% assign ai_staff = site.data.members | where: "group", "ai" %}
+    {% if ai_staff.size > 0 %}
+    <section class="team-section" id="ai-staff">
+      <h2 class="team-section__title">
+        <span data-i18n="members.sec.ai_staff">AI &amp; Digital Staff</span>
+        <span class="team-section__count">{{ ai_staff.size }}</span>
+      </h2>
+      <div class="team-grid team-grid--ai">
+        {% for m in ai_staff %}
+        <article class="member-card member-card--ai" id="member-{{ m.id }}">
+          <div class="member-card__photo-wrap">
+            <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__photo" loading="lazy">
+            <span class="member-card__badge member-card__badge--ai" data-i18n="members.badge.ai">AI Agent</span>
+          </div>
+          <div class="member-card__body">
+            <h3 class="member-card__name">
+              <span class="member-card__name-ko">{{ m.name_ko }}</span>
+              <span class="member-card__name-en">{{ m.name_en }}</span>
+            </h3>
+            <div class="member-card__role-line">
+              <span class="member-card__role" data-i18n="members.role.ai_secretary">{{ m.role_ko }}</span>
+              <span class="member-card__period">Since {{ m.since }}</span>
+            </div>
+            <p class="member-card__affil" data-i18n="members.affil.ai">{{ m.affiliation_ko }}</p>
+            <p class="member-card__summary" data-i18n="members.summary.ai">{{ m.summary }}</p>
+            <div class="member-card__duties">
+              <ul class="member-duties-list" role="list">
+                {% for d in m.duties %}
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span>{{ d.ko }}</span></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="member-card__footer-links">
+              <a href="{{ '/' | relative_url }}#ai-operations" class="member-card__link">
+                <span data-i18n="members.link.how_jian_works">How Jian works</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
   </div>
   {% endif %}
 

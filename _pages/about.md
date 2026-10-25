@@ -58,7 +58,7 @@ latest_posts:
     </p>
   </div>
 
-{% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni'" %}
+{% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni' and m.group != 'ai'" %}
 {% assign total_intl = 83 %}
 
   <div class="lab-stats-grid">
@@ -299,6 +299,43 @@ latest_posts:
     </div>
   </a>
 </div>
+
+<section class="ai-operations-section" id="ai-operations" aria-labelledby="ai-ops-title">
+  <div class="ai-operations-card">
+    <div class="ai-operations-card__avatar-col">
+      <img
+        src="{{ '/assets/img/lee_ji_an_avatar_circle.png' | relative_url }}"
+        alt="Jian Lee (이지안)"
+        class="ai-operations-card__avatar"
+        loading="lazy"
+      >
+      <span class="ai-operations-card__badge" data-i18n="home.ai.badge">AI Executive Assistant</span>
+    </div>
+    <div class="ai-operations-card__content">
+      <div class="ai-operations-card__header">
+        <h2 id="ai-ops-title" class="ai-operations-card__title">
+          <span data-i18n="home.ai.title">AI-Native Lab Operations</span>
+          <span class="ai-operations-card__name">이지안 · Jian Lee</span>
+        </h2>
+        <a href="{{ '/members/' | relative_url }}#ai-staff" class="ai-operations-card__profile-link">
+          <span data-i18n="home.ai.meet_link">Meet Jian on Members</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <p class="ai-operations-card__slogan" data-i18n="home.ai.slogan">
+        퇴근도 커피도 없는 ACE² Lab의 디지털 동료. 초안은 지안이, 결정은 PI가.
+      </p>
+      <p class="ai-operations-card__desc" data-i18n="home.ai.desc">
+        ACE² Lab은 연구 행정과 일상 커뮤니케이션에 인공지능 에이전트를 실전 도입하여, 연구진이 고부가가치 실험과 창의적 연구에 온전히 몰입할 수 있는 환경을 만듭니다.
+      </p>
+      <div class="ai-operations-card__duties">
+        <span class="ai-duty-chip"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i> <span data-i18n="home.ai.duty1">PI 행정 전반 보조 (연구비·출장·정산)</span></span>
+        <span class="ai-duty-chip"><i class="fa-solid fa-globe" aria-hidden="true"></i> <span data-i18n="home.ai.duty2">연구실 공식 웹사이트 및 디지털 콘텐츠 운영</span></span>
+        <span class="ai-duty-chip"><i class="fa-solid fa-flask-vial" aria-hidden="true"></i> <span data-i18n="home.ai.duty3">연구 데이터·학술 문헌 및 연구 진행 보조</span></span>
+        <span class="ai-duty-chip"><i class="fa-brands fa-slack" aria-hidden="true"></i> <span data-i18n="home.ai.duty4">연구실 슬랙 공지 브리핑 및 일정 조율</span></span>
+      </div>
+    </div>
+  </div>
+</section>
 
 For detailed project descriptions and laboratory facilities, please visit our [Research]({{ '/research/' | relative_url }}) page. Meet our team members on the [Members]({{ '/members/' | relative_url }}) page.
 

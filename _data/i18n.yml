@@ -401,6 +401,81 @@ ui:
     en: Former Interns
     ja: 元学部インターン (Former Interns)
     zh: 往届本科科研实习生 (Former Interns)
+  members.sec.ai_staff:
+    ko: AI 및 디지털 연구지원 (AI & Digital Staff)
+    en: AI & Digital Staff
+    ja: AI・デジタル研究支援 (AI & Digital Staff)
+    zh: 人工智能与数字化科研助理 (AI & Digital Staff)
+  members.badge.ai:
+    ko: AI 에이전트
+    en: AI Agent
+    ja: AIエージェント
+    zh: AI 智能体
+  members.role.ai_secretary:
+    ko: AI 연구실 비서
+    en: AI Lab Secretary
+    ja: AI研究室秘書
+    zh: 人工智能实验室秘书
+  members.affil.ai:
+    ko: ACE² Lab 인공지능 연구운영 에이전트
+    en: AI Operations Agent, ACE² Lab
+    ja: ACE² Lab 人工知能研究運営エージェント
+    zh: ACE² Lab 人工智能科研运营智能体
+  members.summary.ai:
+    ko: 퇴근도 커피도 없는 ACE² Lab의 디지털 동료. 초안은 지안이, 결정은 PI가.
+    en: ACE² Lab's digital colleague with no coffee breaks or clock-out times. Drafts by Jian, decisions by the PI.
+    ja: 休憩も退勤もないACE² Labのデジタル同僚。草案はジアンが、決定はPIが。
+    zh: 没有下班与咖啡时间的 ACE² Lab 数字同事。初稿由智安草拟，决策由 PI 把关。
+  members.link.how_jian_works:
+    ko: 지안이의 업무 방식 보기
+    en: How Jian works
+    ja: ジアンの業務フローを見る
+    zh: 查看智安的工作模式
+  home.ai.badge:
+    ko: AI 연구행정 에이전트
+    en: AI Executive Assistant
+    ja: AI研究行政エージェント
+    zh: 人工智能科研行政助理
+  home.ai.title:
+    ko: 스마트 연구실 운영 시스템
+    en: AI-Native Lab Operations
+    ja: スマート研究室運営システム
+    zh: 智能实验室运营系统
+  home.ai.meet_link:
+    ko: 구성원 소개에서 지안이 보기
+    en: Meet Jian on Members
+    ja: メンバー紹介でジアンを見る
+    zh: 在成员页面了解智安
+  home.ai.slogan:
+    ko: 퇴근도 커피도 없는 ACE² Lab의 디지털 동료. 초안은 지안이, 결정은 PI가.
+    en: ACE² Lab's digital colleague with no coffee breaks or clock-out times. Drafts by Jian, decisions by the PI.
+    ja: 休憩も退勤もないACE² Labのデジタル同僚。草案はジアンが、決定はPI가。
+    zh: 没有下班与咖啡时间的 ACE² Lab 数字同事。初稿由智安草拟，决策由 PI 把关。
+  home.ai.desc:
+    ko: ACE² Lab은 연구 행정과 일상 커뮤니케이션에 인공지능 에이전트를 실전 도입하여, 연구진이 고부가가치 실험과 창의적 연구에 온전히 몰입할 수 있는 환경을 만듭니다.
+    en: ACE² Lab deploys an autonomous AI executive agent for research administration and communications, enabling researchers to fully focus on high-value experiments and creative ideas.
+    ja: ACE² Labは研究行政と日常業務にAIエージェントを実戦導入し、研究陣が高付加価値の実験と創造的研究に専念できる環境を構築しています。
+    zh: ACE² Lab 将人工智能智能体引入日常科研行政与协作中，让研究团队能够全身心投入于高价值实验与创新科研。
+  home.ai.duty1:
+    ko: PI 행정 전반 보조 (연구비·출장·정산·학과)
+    en: PI administration (grants, trips, settlements, dept. tasks)
+    ja: PI行政全般補助（研究費・出張・精算・学科）
+    zh: PI 行政全流程协助（经费管理、差旅报销、院系事务）
+  home.ai.duty2:
+    ko: 연구실 공식 웹사이트 및 디지털 콘텐츠 운영 보조
+    en: Lab website architecture and digital content management
+    ja: 研究室公式ウェブサイト及びデジタルコンテンツ運営補助
+    zh: 实验室官方网站与数字化内容运营协助
+  home.ai.duty3:
+    ko: 연구 데이터·학술 문헌 모니터링 및 연구 진행 보조
+    en: Research data support, literature tracking, and meeting minutes
+    ja: 研究データ・学術文献モニタリング及び研究進行補助
+    zh: 科研数据管理、学术文献跟踪与会议纪要整理
+  home.ai.duty4:
+    ko: 연구실 슬랙 공지 브리핑 및 일정 조율
+    en: Slack announcements, task briefings, and calendar scheduling
+    ja: 研究室Slack告知ブリーフィング及び日程調整
+    zh: 实验室 Slack 通知简报与日程协同调度
 
   pi.section.career:
     ko: 경력 (Career)
