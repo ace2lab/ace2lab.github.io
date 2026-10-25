@@ -9,3 +9,4 @@ _data/citations.yml
 migrations/**
 simulations/**
 google*.html
+naver*.html
