@@ -5152,8 +5152,8 @@ html[data-theme="dark"] .footer-location {
 }
 
 .footer-meta {
-  font-size: 0.75rem;
-  color: var(--global-text-color-light, #94a3b8);
+  font-size: var(--fs-label, 0.8125rem);
+  color: #475569;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5161,13 +5161,24 @@ html[data-theme="dark"] .footer-location {
   gap: 0.4rem;
   padding-top: 0.75rem;
   border-top: 1px dashed var(--global-divider-color, #e2e8f0);
-  max-width: 520px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
 html[data-theme="dark"] .footer-meta {
   border-top-color: rgba(148, 163, 184, 0.12);
-  color: #64748b;
+  color: #94a3b8;
+}
+
+.footer-visitors {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer-visitors[hidden] {
+  display: none !important;
 }
 
 .footer-meta a {

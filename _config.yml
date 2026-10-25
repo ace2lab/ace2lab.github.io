@@ -120,7 +120,7 @@ og_image: /assets/img/branding/og_image.png # The site-wide (default for all lin
 analytics:
   # For Google Analytics, see https://support.google.com/analytics/answer/10447272?hl=en&ref_topic=14088998&sjid=5129943941510317771-SA#zippy=%2Cgoogle-sites
   # and follow the instructions for Google Sites. You will need to create a Google Analytics property and copy the Google tag ID.
-  google: # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
+  google: G-MJZYYMW8PH # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
   cronitor: # cronitor RUM analytics site ID (format: XXXXXXXXX)
   pirsch: # your Pirsch analytics site ID (length 32 characters)
   openpanel: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
@@ -128,8 +128,14 @@ analytics:
 enable_simple_analytics: false # Simple Analytics identifies a site by its domain, so it has no ID to set above
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
-google_site_verification: # your google-site-verification ID (Google Search Console)
+google_site_verification: PVA2Mr1UfooS2xF8enDODXQ3V9TtsrPO10Q14WwNGnI # your google-site-verification ID (Google Search Console)
 bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
+
+# GoatCounter privacy-first analytics & footer visitor counter (https://www.goatcounter.com)
+# Prerequisite: enable "Allow adding visitor counts on your website" in GoatCounter -> Settings -> Site
+goatcounter:
+  code: ace2lab # your GoatCounter site code (e.g. ace2lab for https://ace2lab.goatcounter.com)
+  min_display: 0 # display counter from the very first visit (1+)
 
 # -----------------------------------------------------------------------------
 # Blog
@@ -481,7 +487,7 @@ lazy_loading_images: true # enables lazy loading of images (recommended)
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_verification: false # enables google site verification
+enable_google_verification: true # enables google site verification
 enable_bing_verification: false # enables bing site verification
 enable_cookie_consent: false # enables GDPR-compliant cookie consent dialog (https://github.com/orestbida/cookieconsent)
 enable_masonry: true # enables automatic project cards arrangement
