@@ -5419,23 +5419,32 @@ html[data-theme="dark"] .ai-duty-chip i {
 }
 
 /* Members Page AI Staff Card */
-.team-grid--ai {
+.team-grid.team-grid--ai {
   display: grid;
-  grid-template-columns: 1fr;
-  max-width: 640px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  max-width: none;
+  margin: 0;
 }
 
 .member-card--ai {
   display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  padding: 1.75rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
   background: var(--surface-card, #ffffff);
   border: 1px solid var(--border-subtle, #e2e8f0);
   border-left: 4px solid #6366f1;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.member-card--ai:hover {
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.12);
+  border-color: #6366f1;
 }
 
 html[data-theme="dark"] .member-card--ai {
@@ -5444,11 +5453,16 @@ html[data-theme="dark"] .member-card--ai {
   border-left-color: #818cf8;
 }
 
+html[data-theme="dark"] .member-card--ai:hover {
+  border-color: #818cf8;
+}
+
 .member-card--ai .member-card__photo-wrap {
   position: relative;
-  width: 96px;
-  height: 96px;
+  width: 88px;
+  height: 88px;
   flex-shrink: 0;
+  margin-bottom: 0.25rem;
 }
 
 .member-card--ai .member-card__photo {
@@ -5474,7 +5488,7 @@ html[data-theme="dark"] .member-card--ai {
 }
 
 .member-card--ai .member-card__body {
-  flex: 1;
+  width: 100%;
   min-width: 0;
 }
 
@@ -5583,17 +5597,6 @@ html[data-theme="dark"] .member-duties-list li {
     text-align: left;
   }
   .member-card--ai {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .member-card--ai .member-card__role-line {
-    justify-content: center;
-  }
-  .member-duties-list li {
-    text-align: left;
-  }
-  .member-card__footer-links {
-    text-align: center;
+    padding: 1.25rem;
   }
 }
