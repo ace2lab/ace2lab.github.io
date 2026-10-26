@@ -2201,7 +2201,7 @@ html[data-theme="dark"] .news-degree {
 
 .pub-cover-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
   gap: 1rem;
 }
 
@@ -2356,6 +2356,10 @@ html[data-theme="dark"] .news-degree {
   background: #0284c7;
   color: #ffffff;
 }
+[data-theme="dark"] .pub-cover-card__action--detail {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
 .pub-cover-card__action--toc {
   background: rgba(212, 175, 55, 0.1);
   color: #92400e;
@@ -2367,7 +2371,7 @@ html[data-theme="dark"] .news-degree {
 }
 .pub-cover-card__action--toc:hover {
   background: #d4af37;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 /* Lab member bold styling in author list */
