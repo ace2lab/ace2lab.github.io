@@ -1,3 +1,19 @@
+- type: 우수 구두 발표상
+  title: 한국화학공학회 2026년도 가을 총회 및 국제학술대회
+  recipient: 김다윈
+  issuer: 한국화학공학회
+  date: 2026.10.08
+  year: 2026
+  img: assets/img/awards/award_2026_dawin_kim.jpg
+  img_pos: "center top"
+- type: 우수 포스터 발표상
+  title: 한국화학공학회 2026년도 가을 총회 및 국제학술대회
+  recipient: 강명서
+  issuer: 한국화학공학회
+  date: 2026.10.08
+  year: 2026
+  img: assets/img/awards/award_2026_myeongseo_kang.jpg
+  img_pos: "center top"
 - type: 산업통상자원부장관상
   title: 한국화학공학회 2026 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)
   recipient: 김경진, 이종민, 이동건

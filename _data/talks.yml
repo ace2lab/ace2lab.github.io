@@ -16,6 +16,7 @@
 - no: 23
   year: 2026
   type: "Oral"
+  award: "우수 구두 발표상"
   title: "Ultra-Fast Photothermal Phase Engineering of VO₂(B) to VO₂(M) via Intense Pulsed Light"
   presenters: "김다윈, 임창용, 김태욱"
   members:
@@ -27,6 +28,7 @@
 - no: 22
   year: 2026
   type: "Poster"
+  award: "우수 포스터 발표상"
   title: "Ultra-fast IPL-driven Synthesis of Binder-Free Co₃O₄ Electrodes on Nickel Foam for Supercapacitors"
   presenters: "강명서, 김태욱, 임창용"
   members:

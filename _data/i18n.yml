@@ -1924,3 +1924,13 @@ terms:
     en: "Distinguished Research Faculty Award"
     ja: "優秀研究教授賞"
     zh: "优秀研究教授奖"
+  "우수 구두 발표상":
+    ko: "우수 구두 발표상"
+    en: "Best Oral Presentation Award"
+    ja: "優秀口頭発表賞"
+    zh: "优秀口头报告奖"
+  "우수 포스터 발표상":
+    ko: "우수 포스터 발표상"
+    en: "Best Poster Presentation Award"
+    ja: "優秀ポスター発表賞"
+    zh: "优秀海报展示奖"
