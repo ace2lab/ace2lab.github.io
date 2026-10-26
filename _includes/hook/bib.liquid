@@ -2,7 +2,8 @@
   al_folio_core bib.liquid hook: appends funding acknowledgment and press coverage to the periodical block.
   Journal and date are folded into entrytype so the funding/press blocks follow them instead of the date.
 {% endcomment %}
-{% assign journal_meta = site.data.journals[entry.journal] %}
+{% assign clean_journal = entry.journal | replace: '&amp;', '&' %}
+{% assign journal_meta = site.data.journals[clean_journal] %}
 {% comment %}
   Front Cover badge: bound to _data/covers.yml (key = BibTeX key). A `note` containing "Front Cover" also qualifies,
   so an accepted cover whose art is still pending keeps its badge until the image is added to covers.yml.
@@ -13,11 +14,16 @@
   {% assign is_cover = true %}
 {% endif %}
 {% if journal_meta or entry.funding or entry.press or is_cover %}
-  {% capture entrytype %}{{ entrytype }}{{ entrymonth }}{{ entryyear }}{% endcapture %}
+  {% capture date_part %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
+  {% assign date_part_clean = date_part | strip %}
+  {% if date_part_clean != '' %}
+    {% capture entrytype %}{{ entrytype }}, {{ date_part_clean }}{% endcapture %}
+  {% endif %}
   {% assign entrymonth = '' %}
   {% assign entryyear = '' %}
-  {% if journal_meta or is_cover %}
-    {% capture entrytype %}{{ entrytype }}<div class="ed-entry__badges">{% if journal_meta %}<span class="pub-badge {{ journal_meta.badge_class }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ journal_meta.badge_label }}</span>{% endif %}{% if is_cover %}<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">Front Cover</span></span>{% endif %}</div>{% endcapture %}
+  {% if journal_meta.badge_label or is_cover %}
+    {% assign badge_css = journal_meta.badge_class | default: journal_meta.class %}
+    {% capture entrytype %}{{ entrytype }}<div class="ed-entry__badges">{% if journal_meta.badge_label %}<span class="pub-badge {{ badge_css }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ journal_meta.badge_label }}</span>{% endif %}{% if is_cover %}<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">Front Cover</span></span>{% endif %}</div>{% endcapture %}
   {% endif %}
   {% if entry.funding %}
     {% capture entrytype %}{{ entrytype }}<div class="ed-entry__funding"><span class="ed-label">Funding</span>{{ entry.funding | escape }}</div>{% endcapture %}

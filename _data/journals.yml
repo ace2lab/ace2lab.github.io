@@ -1,82 +1,495 @@
-# JCR 2024 (Clarivate Journal Citation Reports) SSOT
+# JCR Official Ground-Truth SSOT (Clarivate Journal Citation Reports via Campus Network IP)
 # Metric benchmarks for ACE² Lab international publications
+# Standardized to 1-decimal-place percentiles across single best WoS subject categories.
 
-"Advanced Energy Materials":
-  abbr: "Adv. Energy Mater."
-  if: 24.4
-  jcr: "Top 1%"
-  badge_label: "JCR Top 1% · IF 24.4"
-  badge_class: "pub-badge--jcr-top1"
-  category: "Energy & Fuels (Top 1.5%)"
-
-"ACS Nano":
-  abbr: "ACS Nano"
-  if: 15.8
-  jcr: "Top 5%"
-  badge_label: "JCR Top 5% · IF 15.8"
-  badge_class: "pub-badge--jcr-top5"
-  category: "Materials Science, Multidisciplinary (Top 4.2%)"
-
-"Chemical Engineering Journal":
-  abbr: "Chem. Eng. J."
-  if: 13.3
-  jcr: "Top 3%"
-  badge_label: "JCR Top 3% · IF 13.3"
-  badge_class: "pub-badge--jcr-top3"
-  category: "Engineering, Chemical (Top 2.2%)"
-
-"Small":
-  abbr: "Small"
-  if: 13.0
-  jcr: "Top 5%"
-  badge_label: "JCR Top 5% · IF 13.0"
-  badge_class: "pub-badge--jcr-top5"
-  category: "Nanoscience & Nanotechnology (Top 4.8%)"
-
-"Journal of Materials Chemistry A":
-  abbr: "J. Mater. Chem. A"
-  if: 10.7
-  jcr: "Top 10%"
-  badge_label: "JCR Top 10% · IF 10.7"
-  badge_class: "pub-badge--if10"
-  category: "Energy & Fuels (Top 9.5%)"
-
-"Carbon":
-  abbr: "Carbon"
-  if: 10.5
-  jcr: "Top 10%"
-  badge_label: "JCR Top 10% · IF 10.5"
-  badge_class: "pub-badge--if10"
-  category: "Materials Science, Multidisciplinary (Top 8.9%)"
-
-"Sensors and Actuators B: Chemical":
-  abbr: "Sens. Actuators B"
-  if: 8.4
-  jcr: "Top 3%"
-  badge_label: "JCR Top 3% · IF 8.4"
-  badge_class: "pub-badge--jcr-top3"
-  category: "Instruments & Instrumentation (Top 2.1%)"
-
-"Applied Surface Science":
-  abbr: "Appl. Surf. Sci."
+ACS Applied Electronic Materials:
+  abbr: ACS Appl. Electron. Mater.
+  if: 4.7
+  jcr_year: 2025
+  best_category: Engineering, Electrical & Electronic
+  rank: 104/370
+  top_pct: 28.0
+  quartile: Q2
+  category: Engineering, Electrical & Electronic (Top 28.0%)
+ACS Applied Energy Materials:
+  abbr: ACS Appl. Energy Mater.
+  if: 5.5
+  jcr_year: 2025
+  best_category: Materials Science, Multidisciplinary
+  rank: 162/473
+  top_pct: 34.1
+  quartile: Q2
+  category: Materials Science, Multidisciplinary (Top 34.1%)
+ACS Applied Materials & Interfaces:
+  abbr: ACS Appl. Mater. Interfaces
+  if: 7.9
+  jcr_year: 2025
+  best_category: Materials Science, Multidisciplinary
+  rank: 104/473
+  top_pct: 21.9
+  quartile: Q1
+  category: Materials Science, Multidisciplinary (Top 21.9%)
+  badge_label: Q1 · IF 7.9
+  badge_class: pub-badge--q1
+ACS Applied Nano Materials:
+  abbr: ACS Appl. Nano Mater.
+  if: 5.8
+  jcr_year: 2025
+  best_category: Materials Science, Multidisciplinary
+  rank: 148/473
+  top_pct: 31.2
+  quartile: Q2
+  category: Materials Science, Multidisciplinary (Top 31.2%)
+ACS Nano:
+  abbr: ACS NANO
+  if: 17.3
+  jcr_year: 2025
+  best_category: Materials Science, Multidisciplinary
+  rank: 30/473
+  top_pct: 6.2
+  quartile: Q1
+  category: Materials Science, Multidisciplinary (Top 6.2%)
+  badge_label: JCR Top 6.2% · IF 17.3
+  badge_class: pub-badge--jcr-top10
+ACS Omega:
+  abbr: ACS OMEGA
+  if: 5.2
+  jcr_year: 2025
+  best_category: Chemistry, Multidisciplinary
+  rank: 83/251
+  top_pct: 32.9
+  quartile: Q2
+  category: Chemistry, Multidisciplinary (Top 32.9%)
+AIChE Journal:
+  abbr: AICHE J
+  if: 4.4
+  jcr_year: 2025
+  best_category: Engineering, Chemical
+  rank: 68/183
+  top_pct: 36.9
+  quartile: Q2
+  category: Engineering, Chemical (Top 36.9%)
+Analytical Chemistry:
+  abbr: ANAL CHEM
+  if: 7.3
+  jcr_year: 2025
+  best_category: Chemistry, Analytical
+  rank: 12/110
+  top_pct: 10.5
+  quartile: Q1
+  category: Chemistry, Analytical (Top 10.5%)
+  badge_label: Q1 · IF 7.3
+  badge_class: pub-badge--q1
+"Applied Catalysis A: General":
+  abbr: APPL CATAL A-GEN
+  if: 4.8
+  jcr_year: 2025
+  best_category: Environmental Sciences
+  rank: 134/395
+  top_pct: 33.8
+  quartile: Q2
+  category: Environmental Sciences (Top 33.8%)
+Applied Physics Letters:
+  abbr: Appl. Phys. Lett.
+  if: 3.8
+  jcr_year: 2025
+  best_category: Physics, Applied
+  rank: 68/191
+  top_pct: 35.3
+  quartile: Q2
+  category: Physics, Applied (Top 35.3%)
+Applied Sciences:
+  abbr: APPL SCI-BASEL
+  if: 2.9
+  jcr_year: 2025
+  best_category: Engineering, Multidisciplinary
+  rank: 55/179
+  top_pct: 30.4
+  quartile: Q2
+  category: Engineering, Multidisciplinary (Top 30.4%)
+Applied Surface Science:
+  abbr: Appl. Surf. Sci.
+  if: 6.6
+  jcr_year: 2025
+  best_category: Physics, Applied
+  rank: 37/191
+  top_pct: 19.1
+  quartile: Q1
+  category: Physics, Applied (Top 19.1%)
+  badge_label: Q1 · IF 6.6
+  badge_class: pub-badge--q1
+Catalysis Today:
+  abbr: CATAL TODAY
+  if: 5.1
+  jcr_year: 2025
+  best_category: Chemistry, Applied
+  rank: 20/77
+  top_pct: 25.3
+  quartile: Q2
+  category: Chemistry, Applied (Top 25.3%)
+Ceramics International:
+  abbr: Ceram. Int.
+  if: 6.0
+  jcr_year: 2025
+  best_category: Materials Science, Ceramics
+  rank: 3/34
+  top_pct: 7.4
+  quartile: Q1
+  category: Materials Science, Ceramics (Top 7.4%)
+  badge_label: JCR Top 7.4% · IF 6.0
+  badge_class: pub-badge--jcr-top10
+Chemical Communications:
+  abbr: Chem. Commun.
+  if: 4.3
+  jcr_year: 2025
+  best_category: Chemistry, Multidisciplinary
+  rank: 98/251
+  top_pct: 38.8
+  quartile: Q2
+  category: Chemistry, Multidisciplinary (Top 38.8%)
+Chemical Engineering Journal:
+  abbr: Chem. Eng. J.
+  if: 12.5
+  jcr_year: 2025
+  best_category: Engineering, Environmental
+  rank: 4/88
+  top_pct: 4.0
+  quartile: Q1
+  category: Engineering, Environmental (Top 4.0%)
+  badge_label: JCR Top 4.0% · IF 12.5
+  badge_class: pub-badge--jcr-top5
+Crystal Growth & Design:
+  abbr: CRYST GROWTH DES
+  if: 3.6
+  jcr_year: 2025
+  best_category: Crystallography
+  rank: 5/31
+  top_pct: 14.5
+  quartile: Q1
+  category: Crystallography (Top 14.5%)
+  badge_label: Q1 · IF 3.6
+  badge_class: pub-badge--q1
+Crystals:
+  abbr: CRYSTALS
+  if: 2.9
+  jcr_year: 2025
+  best_category: Crystallography
+  rank: 9/31
+  top_pct: 27.4
+  quartile: Q2
+  category: Crystallography (Top 27.4%)
+IEEE Sensors Journal:
+  abbr: IEEE Sensors J.
+  if: 4.5
+  jcr_year: 2025
+  best_category: Instruments & Instrumentation
+  rank: 20/81
+  top_pct: 24.1
+  quartile: Q1
+  category: Instruments & Instrumentation (Top 24.1%)
+  badge_label: Q1 · IF 4.5
+  badge_class: pub-badge--q1
+Industrial & Engineering Chemistry Research:
+  abbr: IND ENG CHEM RES
+  if: 3.9
+  jcr_year: 2025
+  best_category: Engineering, Chemical
+  rank: 82/183
+  top_pct: 44.5
+  quartile: Q2
+  category: Engineering, Chemical (Top 44.5%)
+Inorganic Chemistry:
+  abbr: INORG CHEM
+  if: 4.6
+  jcr_year: 2025
+  best_category: Chemistry, Inorganic & Nuclear
+  rank: 8/45
+  top_pct: 16.7
+  quartile: Q1
+  category: Chemistry, Inorganic & Nuclear (Top 16.7%)
+  badge_label: Q1 · IF 4.6
+  badge_class: pub-badge--q1
+International Journal of Hydrogen Energy:
+  abbr: Int. J. Hydrog. Energy
+  if: 9.2
+  jcr_year: 2025
+  best_category: Electrochemistry
+  rank: 6/44
+  top_pct: 12.5
+  quartile: Q1
+  category: Electrochemistry (Top 12.5%)
+  badge_label: Q1 · IF 9.2
+  badge_class: pub-badge--q1
+International Journal of Precision Engineering and Manufacturing:
+  abbr: Int. J. Precis. Eng. Manuf.
+  if: 3.9
+  jcr_year: 2025
+  best_category: Engineering, Mechanical
+  rank: 44/184
+  top_pct: 23.6
+  quartile: Q1
+  category: Engineering, Mechanical (Top 23.6%)
+  badge_label: Q1 · IF 3.9
+  badge_class: pub-badge--q1
+International Journal of Precision Engineering and Manufacturing-Green Technology:
+  abbr: Int. J. Precis. Eng. Manuf.-Green Technol.
+  if: 6.6
+  jcr_year: 2025
+  best_category: Engineering, Mechanical
+  rank: 17/184
+  top_pct: 9.0
+  quartile: Q1
+  category: Engineering, Mechanical (Top 9.0%)
+  badge_label: JCR Top 9.0% · IF 6.6
+  badge_class: pub-badge--jcr-top10
+Japanese Journal of Applied Physics:
+  abbr: JPN J APPL PHYS
+  if: 1.7
+  jcr_year: 2025
+  best_category: Physics, Applied
+  rank: 145/191
+  top_pct: 75.7
+  quartile: Q4
+  category: Physics, Applied (Top 75.7%)
+Journal of Alloys and Compounds:
+  abbr: J. Alloys Compd.
   if: 6.7
-  jcr: "Top 5%"
-  badge_label: "JCR Top 5%"
-  badge_class: "pub-badge--jcr-top5"
-  category: "Chemistry, Physical (Top 4.5%)"
-
-"Journal of Energy Storage":
-  abbr: "J. Energy Storage"
-  if: 8.9
-  jcr: "Top 10%"
-  badge_label: "JCR Top 10%"
-  badge_class: "pub-badge--jcr-top10"
-  category: "Electrochemistry (Top 9.2%)"
-
-"ACS Applied Materials & Interfaces":
-  abbr: "ACS Appl. Mater. Interfaces"
+  jcr_year: 2025
+  best_category: Metallurgy & Metallurgical Engineering
+  rank: 11/97
+  top_pct: 10.8
+  quartile: Q1
+  category: Metallurgy & Metallurgical Engineering (Top 10.8%)
+  badge_label: Q1 · IF 6.7
+  badge_class: pub-badge--q1
+Journal of Asian Ceramic Societies:
+  abbr: J ASIAN CERAM SOC
+  if: 1.8
+  jcr_year: 2025
+  best_category: Materials Science, Ceramics
+  rank: 18/34
+  top_pct: 51.5
+  quartile: Q3
+  category: Materials Science, Ceramics (Top 51.5%)
+Journal of Energy Storage:
+  abbr: J. Energy Storage
+  if: 10.7
+  jcr_year: 2025
+  best_category: Energy & Fuels
+  rank: 29/191
+  top_pct: 14.9
+  quartile: Q1
+  category: Energy & Fuels (Top 14.9%)
+  badge_label: JCR Top 14.9% · IF 10.7
+  badge_class: pub-badge--if10
+Journal of Industrial and Engineering Chemistry:
+  abbr: J. Ind. Eng. Chem.
+  if: 7.1
+  jcr_year: 2025
+  best_category: Engineering, Chemical
+  rank: 36/183
+  top_pct: 19.4
+  quartile: Q1
+  category: Engineering, Chemical (Top 19.4%)
+  badge_label: Q1 · IF 7.1
+  badge_class: pub-badge--q1
+Journal of Materials Chemistry A:
+  abbr: J. Mater. Chem. A
+  if: 9.2
+  jcr_year: 2025
+  best_category: Materials Science, Multidisciplinary
+  rank: 82/473
+  top_pct: 17.2
+  quartile: Q1
+  category: Materials Science, Multidisciplinary (Top 17.2%)
+  badge_label: Q1 · IF 9.2
+  badge_class: pub-badge--q1
+Journal of Materials Research and Technology:
+  abbr: J. Mater. Res. Technol.
+  if: 7.3
+  jcr_year: 2025
+  best_category: Metallurgy & Metallurgical Engineering
+  rank: 10/97
+  top_pct: 9.8
+  quartile: Q1
+  category: Metallurgy & Metallurgical Engineering (Top 9.8%)
+  badge_label: JCR Top 9.8% · IF 7.3
+  badge_class: pub-badge--jcr-top10
+"Journal of Materials Science: Materials in Medicine":
+  abbr: ""
+  if: 4.7
+  jcr_year: 2025
+  best_category: Engineering, Biomedical
+  rank: 43/130
+  top_pct: 32.7
+  quartile: Q2
+  category: Engineering, Biomedical (Top 32.7%)
+Journal of Mechanical Science and Technology:
+  abbr: J MECH SCI TECHNOL
+  if: 2.2
+  jcr_year: 2025
+  best_category: Engineering, Mechanical
+  rank: 95/184
+  top_pct: 51.4
+  quartile: Q3
+  category: Engineering, Mechanical (Top 51.4%)
+Journal of Power Sources:
+  abbr: J. Power Sources
+  if: 8.4
+  jcr_year: 2025
+  best_category: Electrochemistry
+  rank: 7/44
+  top_pct: 14.8
+  quartile: Q1
+  category: Electrochemistry (Top 14.8%)
+  badge_label: Q1 · IF 8.4
+  badge_class: pub-badge--q1
+Journal of The Electrochemical Society:
+  abbr: J ELECTROCHEM SOC
+  if: 3.5
+  jcr_year: 2025
+  best_category: Materials Science, Coatings & Films
+  rank: 10/25
+  top_pct: 38.0
+  quartile: Q2
+  category: Materials Science, Coatings & Films (Top 38.0%)
+Langmuir:
+  abbr: LANGMUIR
+  if: 4.4
+  jcr_year: 2025
+  best_category: Chemistry, Multidisciplinary
+  rank: 97/251
+  top_pct: 38.4
+  quartile: Q2
+  category: Chemistry, Multidisciplinary (Top 38.4%)
+Macromolecules:
+  abbr: MACROMOLECULES
+  if: 5.7
+  jcr_year: 2025
+  best_category: Polymer Science
+  rank: 19/96
+  top_pct: 19.3
+  quartile: Q1
+  category: Polymer Science (Top 19.3%)
+  badge_label: Q1 · IF 5.7
+  badge_class: pub-badge--q1
+Microporous and Mesoporous Materials:
+  abbr: MICROPOR MESOPOR MAT
+  if: 4.5
+  jcr_year: 2025
+  best_category: Chemistry, Applied
+  rank: 21/77
+  top_pct: 26.6
+  quartile: Q2
+  category: Chemistry, Applied (Top 26.6%)
+Nanomaterials:
+  abbr: NANOMATERIALS-BASEL
+  if: 4.8
+  jcr_year: 2025
+  best_category: Physics, Applied
+  rank: 52/191
+  top_pct: 27.0
+  quartile: Q2
+  category: Physics, Applied (Top 27.0%)
+Nanotechnology:
+  abbr: NANOTECHNOLOGY
+  if: 2.9
+  jcr_year: 2025
+  best_category: Physics, Applied
+  rank: 96/191
+  top_pct: 50.0
+  quartile: Q3
+  category: Physics, Applied (Top 50.0%)
+Polymer:
+  abbr: POLYMER
+  if: 5.1
+  jcr_year: 2025
+  best_category: Polymer Science
+  rank: 24/96
+  top_pct: 24.5
+  quartile: Q1
+  category: Polymer Science (Top 24.5%)
+  badge_label: Q1 · IF 5.1
+  badge_class: pub-badge--q1
+RSC Advances:
+  abbr: RSC ADV
+  if: 6.1
+  jcr_year: 2025
+  best_category: Chemistry, Multidisciplinary
+  rank: 71/251
+  top_pct: 28.1
+  quartile: Q2
+  category: Chemistry, Multidisciplinary (Top 28.1%)
+Scientific Reports:
+  abbr: Sci. Rep.
+  if: 4.9
+  jcr_year: 2025
+  best_category: Multidisciplinary Sciences
+  rank: 21/141
+  top_pct: 14.5
+  quartile: Q1
+  category: Multidisciplinary Sciences (Top 14.5%)
+  badge_label: Q1 · IF 4.9
+  badge_class: pub-badge--q1
+"Sensors and Actuators B: Chemical":
+  abbr: Sens. Actuators B Chem.
   if: 8.3
-  jcr: "Q1"
-  badge_label: "Q1 · IF 8.3"
-  badge_class: "pub-badge--q1"
-  category: "Materials Science, Multidisciplinary (Top 12%)"
+  jcr_year: 2025
+  best_category: Instruments & Instrumentation
+  rank: 2/81
+  top_pct: 1.9
+  quartile: Q1
+  category: Instruments & Instrumentation (Top 1.9%)
+  badge_label: JCR Top 1.9% · IF 8.3
+  badge_class: pub-badge--jcr-top3
+Small:
+  abbr: SMALL
+  if: 11.9
+  jcr_year: 2025
+  best_category: Physics, Applied
+  rank: 16/191
+  top_pct: 8.1
+  quartile: Q1
+  category: Physics, Applied (Top 8.1%)
+  badge_label: JCR Top 8.1% · IF 11.9
+  badge_class: pub-badge--jcr-top10
+Solid State Ionics:
+  abbr: SOLID STATE IONICS
+  if: 3.7
+  jcr_year: 2025
+  best_category: Physics, Condensed Matter
+  rank: 30/81
+  top_pct: 36.4
+  quartile: Q2
+  category: Physics, Condensed Matter (Top 36.4%)
+Surface and Coatings Technology:
+  abbr: SURF COAT TECH
+  if: 6.9
+  jcr_year: 2025
+  best_category: Materials Science, Coatings & Films
+  rank: 4/25
+  top_pct: 14.0
+  quartile: Q1
+  category: Materials Science, Coatings & Films (Top 14.0%)
+  badge_label: Q1 · IF 6.9
+  badge_class: pub-badge--q1
+The Analyst:
+  abbr: Analyst
+  if: 3.6
+  jcr_year: 2025
+  best_category: Chemistry, Analytical
+  rank: 42/110
+  top_pct: 37.7
+  quartile: Q2
+  category: Chemistry, Analytical (Top 37.7%)
+The Journal of Chemical Physics:
+  abbr: J. Chem. Phys.
+  if: 3.7
+  jcr_year: 2025
+  best_category: Physics, Atomic, Molecular & Chemical
+  rank: 8/38
+  top_pct: 19.7
+  quartile: Q1
+  category: Physics, Atomic, Molecular & Chemical (Top 19.7%)
+  badge_label: Q1 · IF 3.7
+  badge_class: pub-badge--q1
