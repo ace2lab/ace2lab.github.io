@@ -21,9 +21,13 @@
   {% endif %}
   {% assign entrymonth = '' %}
   {% assign entryyear = '' %}
-  {% if journal_meta.badge_label or is_cover %}
-    {% assign badge_css = journal_meta.badge_class | default: journal_meta.class %}
-    {% capture entrytype %}{{ entrytype }}<div class="ed-entry__badges">{% if journal_meta.badge_label %}<span class="pub-badge {{ badge_css }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ journal_meta.badge_label }}</span>{% endif %}{% if is_cover %}<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">Front Cover</span></span>{% endif %}</div>{% endcapture %}
+  {% assign badge_label = journal_meta.badge_label %}
+  {% if badge_label == null and journal_meta.top_pct and journal_meta.if %}
+    {% capture badge_label %}JCR Top {{ journal_meta.top_pct }}% · IF {{ journal_meta.if }}{% endcapture %}
+  {% endif %}
+  {% if badge_label or is_cover %}
+    {% assign badge_css = journal_meta.badge_class | default: journal_meta.class | default: 'pub-badge--jcr' %}
+    {% capture entrytype %}{{ entrytype }} <div class="ed-entry__badges">{% if badge_label %}<span class="pub-badge {{ badge_css }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ badge_label }}</span>{% endif %}{% if is_cover %}<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">Front Cover</span></span>{% endif %}</div>{% endcapture %}
   {% endif %}
   {% if entry.funding %}
     {% capture entrytype %}{{ entrytype }}<div class="ed-entry__funding"><span class="ed-label">Funding</span>{{ entry.funding | escape }}</div>{% endcapture %}
