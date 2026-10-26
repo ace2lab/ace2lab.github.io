@@ -1,4 +1,5 @@
 - type: 우수 구두 발표상
+  kind: award
   title: 한국화학공학회 2026년도 가을 총회 및 국제학술대회
   recipient: 김다윈
   issuer: 한국화학공학회
@@ -7,6 +8,7 @@
   img: assets/img/awards/award_2026_dawin_kim.jpg
   img_pos: "center top"
 - type: 우수 포스터 발표상
+  kind: award
   title: 한국화학공학회 2026년도 가을 총회 및 국제학술대회
   recipient: 강명서
   issuer: 한국화학공학회
@@ -14,25 +16,28 @@
   year: 2026
   img: assets/img/awards/award_2026_myeongseo_kang.jpg
   img_pos: "center top"
-- type: 산업통상자원부장관상
+- type: 산업통상부장관상
+  kind: award
   title: 한국화학공학회 2026 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)
   recipient: 김경진, 이종민, 이동건
-  issuer: 산업통상자원부 장관
+  issuer: 산업통상부 장관
   date: 2026.10.06
   year: 2026
   img: assets/img/awards/award_2026_chemfrontier.jpg
   img_pos: "center bottom"
 - type: 우수상
+  kind: award
   title: 2025 첨성인 대학원생 논문 경진대회
   recipient: 이희진
   issuer: 경북대학교 총장
   date: 2026.01.27
   year: 2026
   img: assets/img/awards/award_1.jpg
-- type: 산업통상자원부장관상
+- type: 산업통상부장관상
+  kind: award
   title: 한국화학공학회 2025 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)
   recipient: 안재빈, 김민수, 김성우
-  issuer: 산업통상자원부 장관
+  issuer: 산업통상부 장관
   date: 2025.11.07
   year: 2025
   img: assets/img/awards/award_2.jpg
@@ -40,6 +45,7 @@
   press_media: "전자신문"
   press_naver: "https://search.naver.com/search.naver?where=news&query=경북대+안재빈+화학공학회+장관상"
 - type: 우수연구교수
+  kind: award
   title: 질적성과부분(JCR 5%)
   recipient: 임창용
   issuer: 경북대학교 총장
@@ -47,6 +53,7 @@
   year: 2025
   img: assets/img/awards/award_3.jpg
 - type: Impact Recognition Award
+  kind: award
   title: 한국화학공학회
   recipient: 임창용
   issuer: 한국화학공학회
@@ -54,6 +61,7 @@
   year: 2024
   img: assets/img/awards/award_4.jpg
 - type: 대상 (롯데케미칼 대표이사상)
+  kind: award
   title: 한국화학공학회 2024 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)
   recipient: 김다윈, 안재빈, 이동호
   issuer: 롯데케미칼(주) 대표이사
@@ -64,6 +72,7 @@
   press_media: "뉴시스"
   press_naver: "https://search.naver.com/search.naver?where=news&query=경북대+이동호+화학공학회+대상"
 - type: 표창장
+  kind: award
   title: 경북대학교 학위수여식
   recipient: 이재호
   issuer: 경북대학교 과학기술대학장
@@ -71,6 +80,7 @@
   year: 2024
   img: assets/img/awards/award_6.jpg
 - type: 최우수상
+  kind: award
   title: 2024 경북대학교 참여대학원생 성과대회
   recipient: 안준혁
   issuer: 스마트융복합재난관리교육연구단장
@@ -78,12 +88,14 @@
   year: 2024
   img: assets/img/awards/award_7.jpg
 - type: 우수 포스터 발표상
+  kind: award
   title: 2023년 추계 한국화학공학회 학술대회
   recipient: 팽창웅
   issuer: 한국화학공학회
   date: 2023.11.24
   year: 2023
 - type: 우수상
+  kind: award
   title: 2023년 친환경에너지 페스티벌
   recipient: 김다윈, 라상현, 안재빈
   issuer: 음성군수
@@ -91,12 +103,14 @@
   year: 2023
   img: assets/img/awards/award_8.jpg
 - type: 우수상
+  kind: award
   title: 2023년 연구실 안전 대국민 공모전
   recipient: 이희진
   issuer: 국가연구안전관리본부장
   date: 2023.10.25
   year: 2023
 - type: 표창장
+  kind: award
   title: 상주시장
   recipient: 팽창웅
   issuer: 상주시장
@@ -104,6 +118,7 @@
   year: 2023
   img: assets/img/awards/award_9.jpg
 - type: 표창장
+  kind: award
   title: 경북대학교 학위수여식
   recipient: 팽창웅
   issuer: 경북대학교 과학기술대학장
@@ -111,6 +126,7 @@
   year: 2023
   img: assets/img/awards/award_10.jpg
 - type: 장려상
+  kind: award
   title: 제 2 회 경북대학교 연구노트 경진대회
   recipient: 안준혁
   issuer: 경북대학교 총장

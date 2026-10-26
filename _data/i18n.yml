@@ -51,10 +51,10 @@ nav:
     ja: 研究業績
     zh: 研究成果
   news:
-    ko: 소식
-    en: News
-    ja: ニュース
-    zh: 新闻动态
+    ko: 수상/언론보도
+    en: Awards & Press
+    ja: 受賞・報道
+    zh: 获奖与报道
   gallery:
     ko: 갤러리
     en: Gallery
@@ -1256,26 +1256,31 @@ ui:
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.news.title:
-    ko: News, Awards & Press
-    en: News, Awards & Press
-    ja: ニュース・受賞・メディア報道
-    zh: 实验室新闻、获奖与媒体报道
+    ko: Awards & Press
+    en: Awards & Press
+    ja: 受賞・メディア報道
+    zh: 获奖与媒体报道
   hero.news.subtitle:
-    ko: "연구실 소식, 수상 실적 및 언론 보도"
-    en: "Laboratory announcements, academic honors & awards, and media coverage"
-    ja: "研究室の最新ニュース、受賞実績およびメディア報道"
-    zh: "实验室最新动态、学术获奖与媒体报道"
+    ko: "연구실 수상 실적 및 주요 언론 보도"
+    en: "Honors, awards, and media press coverage of ACE² Lab"
+    ja: "研究室の受賞実績および主要メディア報道"
+    zh: "实验室获奖荣誉与重要媒体报道"
   hero.news.subtitle_en:
-    ko: "Announcements, awards and media coverage of ACE² Lab."
-    en: "Chronological record of research milestones, student awards, and press releases."
-    ja: "Announcements, awards and media coverage of ACE² Lab."
-    zh: "Announcements, awards and media coverage of ACE² Lab."
+    ko: "Honors, awards, and media press coverage of ACE² Lab."
+    en: "Chronological record of research honors, student awards, and media press releases."
+    ja: "Honors, awards, and media press coverage of ACE² Lab."
+    zh: "Honors, awards, and media press coverage of ACE² Lab."
 
   news.idx_latest:
     ko: 최신 소식 (Latest)
     en: Latest
     ja: 最新ニュース
     zh: 最新动态
+  news.idx_achievements:
+    ko: 수상 및 언론보도 (Awards & Press)
+    en: Awards & Press
+    ja: 受賞・報道
+    zh: 获奖与报道
   news.idx_awards:
     ko: 수상 실적 (Awards)
     en: Awards
@@ -1283,6 +1288,26 @@ ui:
     zh: 获奖荣誉
   news.idx_press:
     ko: 언론 보도 (In the Press)
+    en: In the Press
+    ja: メディア報道
+    zh: 媒体报道
+  news.filter_legend:
+    ko: 분류 필터
+    en: Filter
+    ja: フィルタ
+    zh: 筛选
+  news.filter_all:
+    ko: 전체 (All)
+    en: All
+    ja: すべて
+    zh: 全部
+  news.filter_awards:
+    ko: 수상 실적 (Awards)
+    en: Awards
+    ja: 受賞実績
+    zh: 获奖荣誉
+  news.filter_press:
+    ko: 언론 보도 (Press)
     en: In the Press
     ja: メディア報道
     zh: 媒体报道
@@ -1934,3 +1959,33 @@ terms:
     en: "Best Poster Presentation Award"
     ja: "優秀ポスター発表賞"
     zh: "优秀海报展示奖"
+  "산업통상부장관상":
+    ko: "산업통상부장관상"
+    en: "Minister's Award (MOTIE)"
+    ja: "産業通商部長官賞"
+    zh: "产业通商部长官奖"
+  "산업통상자원부장관상":
+    ko: "산업통상자원부장관상"
+    en: "Minister's Award (MOTIE)"
+    ja: "産業通商資源部長官賞"
+    zh: "产业通商资源部长官奖"
+  "대상 (롯데케미칼 대표이사상)":
+    ko: "대상 (롯데케미칼 대표이사상)"
+    en: "Grand Prize (LOTTE Chemical CEO Award)"
+    ja: "大賞 (ロッテケミカル代表理事賞)"
+    zh: "大奖 (乐天化学代表理事奖)"
+  "표창장":
+    ko: "표창장"
+    en: "Commendation Award"
+    ja: "表彰状"
+    zh: "表彰状"
+  "장려상":
+    ko: "장려상"
+    en: "Honorable Mention Award"
+    ja: "奨励賞"
+    zh: "鼓励奖"
+  "Impact Recognition Award":
+    ko: "Impact Recognition Award"
+    en: "Impact Recognition Award"
+    ja: "Impact Recognition Award"
+    zh: "Impact Recognition Award"

@@ -1601,6 +1601,10 @@ html[data-theme="dark"] .news-degree {
   margin-top: calc(-1 * var(--ed-s8, 2rem));
 }
 
+#achievements .pub-sticky-toolbar {
+  top: calc(var(--sticky-navbar) + 50px); /* clears navbar + in-page .ed-index */
+}
+
 @supports (backdrop-filter: blur(1px)) {
   .pub-sticky-toolbar {
     background: color-mix(in srgb, var(--ed-surface, #ffffff) 98%, transparent);
@@ -4691,6 +4695,11 @@ html[data-theme="dark"] .ed-press-card:hover {
   justify-content: flex-start;
   align-items: flex-start;
   gap: var(--ed-s3);
+  border-left: 4px solid #0284c7;
+}
+
+html[data-theme="dark"] .ed-press-card {
+  border-left-color: #38bdf8;
 }
 
 .ed-press-card__top {

@@ -9,21 +9,22 @@ nav_order: 6
 
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
-{% assign awards_by_year = site.data.awards | group_by: "year" | sort: "name" | reverse %}
-{% assign press_by_year = site.data.press | group_by: "year" | sort: "name" | reverse %}
+{% assign all_achievements = site.data.awards | concat: site.data.press %}
+{% assign achievements_by_year = all_achievements | group_by: "year" | sort: "name" | reverse %}
 
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="news.idx_awards">Awards</span> ({{ site.data.awards.size }})</span>
 <span class="hero-badge"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="news.idx_press">In the Press</span> ({{ site.data.press.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span data-i18n="news.filter_all">All</span> ({{ all_achievements.size }})</span>
 {% endcapture %}
 
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.news"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="News, Awards & Press"
-  subtitle="연구실 소식, 수상 실적 및 언론 보도"
-  subtitle_en="Announcements, awards and media coverage of ACE² Lab."
+  title="Awards & Press"
+  subtitle="연구실 수상 실적 및 주요 언론 보도"
+  subtitle_en="Honors, awards, and media press coverage of ACE² Lab."
   badges=hero_badges
 %}
 
@@ -31,8 +32,7 @@ nav_order: 6
 
   <nav class="ed-index" aria-label="News sections">
     <a href="#latest"><span data-i18n="news.idx_latest">Latest</span></a>
-    <a href="#awards"><span data-i18n="news.idx_awards">Awards</span><span class="ed-index__count">{{ site.data.awards.size }}</span></a>
-    <a href="#press"><span data-i18n="news.idx_press">In the press</span><span class="ed-index__count">{{ site.data.press.size }}</span></a>
+    <a href="#achievements"><span data-i18n="news.idx_achievements">Awards & Press</span><span class="ed-index__count">{{ all_achievements.size }}</span></a>
   </nav>
 
   <!-- Category legend (semantic color grammar shared with the cards below) -->
@@ -97,119 +97,115 @@ nav_order: 6
 
   </section>
 
-  <!-- 2. Awards -->
+  <!-- 2. Unified Awards & Press Timeline -->
 
-{% if site.data.awards.size > 0 %}
+{% if all_achievements.size > 0 %}
 
-  <section class="ed-section" id="awards">
+  <section class="ed-section" id="achievements">
     <h2 class="ed-section__title">
-      <span data-i18n="news.idx_awards">Awards</span>
-      <span class="ed-section__count">{{ site.data.awards.size }}</span>
+      <span data-i18n="news.idx_achievements">Awards & Press</span>
+      <span class="ed-section__count" id="newsAchTotalCount">{{ all_achievements.size }}</span>
     </h2>
 
-    {% for group in awards_by_year %}
-      <div class="ed-yeargroup">
-        <h3 class="ed-yeargroup__year">{{ group.name }}<span class="ed-yeargroup__count">{{ group.items.size }}</span></h3>
+    <div class="pub-sticky-toolbar">
+      <fieldset class="pub-pi-filter" id="newsAchFilter" role="radiogroup" aria-labelledby="newsAchFilterLegend">
+        <legend class="pub-pi-filter__legend" id="newsAchFilterLegend"><i class="fa-solid fa-filter" aria-hidden="true"></i> <span data-i18n="news.filter_legend">Filter</span></legend>
+        <div class="pub-pi-filter__options">
+          <input type="radio" class="pub-pi-filter__input" name="news-ach" id="newsAchAll" value="all" autocomplete="off" checked>
+          <label class="pub-pi-filter__pill" for="newsAchAll"><span data-i18n="news.filter_all">All</span> <span class="pub-pi-filter__count" data-ach-count="all">{{ all_achievements.size }}</span></label>
+          <input type="radio" class="pub-pi-filter__input" name="news-ach" id="newsAchAward" value="award" autocomplete="off">
+          <label class="pub-pi-filter__pill" for="newsAchAward"><span data-i18n="news.filter_awards">Awards</span> <span class="pub-pi-filter__count" data-ach-count="award">{{ site.data.awards.size }}</span></label>
+          <input type="radio" class="pub-pi-filter__input" name="news-ach" id="newsAchPress" value="press" autocomplete="off">
+          <label class="pub-pi-filter__pill" for="newsAchPress"><span data-i18n="news.filter_press">In the Press</span> <span class="pub-pi-filter__count" data-ach-count="press">{{ site.data.press.size }}</span></label>
+        </div>
+      </fieldset>
+    </div>
+    <p class="pub-pi-filter__status" id="newsAchStatus" role="status" aria-live="polite"></p>
+
+    {% for group in achievements_by_year %}
+      {% assign year_items = group.items | sort: "date" | reverse %}
+      <div class="ed-yeargroup" data-year="{{ group.name }}">
+        <h3 class="ed-yeargroup__year">{{ group.name }}<span class="ed-yeargroup__count" data-year-count>{{ year_items.size }}</span></h3>
         <ul class="ed-cardgrid" role="list">
-          {% for a in group.items %}
-            {% assign dp = a.date | remove: " " | split: "." %}
-            {% if a.type contains '장관상' or a.type contains '대상' %}
-              {% assign tier = 'crimson' %}
-            {% elsif a.type == '우수상' or a.type == '최우수상' %}
-              {% assign tier = 'amber' %}
-            {% elsif a.type == '우수연구교수' %}
-              {% assign tier = 'navy' %}
-            {% elsif a.type contains 'Recognition' %}
-              {% assign tier = 'purple' %}
-            {% else %}
-              {% assign tier = 'teal' %}
-            {% endif %}
-            {% capture award_date %}{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}{% endcapture %}
-            <li class="ed-award-card ed-award-card--{{ tier }}">
-              {% if a.img and a.img != "" %}
-                <button
-                  type="button"
-                  class="ed-award-card__thumb"
-                  data-award-zoom
-                  data-full="{{ a.img | relative_url }}"
-                  data-tier="{{ tier }}"
-                  data-type="{{ a.type | escape }}"
-                  data-title="{{ a.title | escape }}"
-                  data-recipient="{{ a.recipient | escape }}"
-                  data-issuer="{{ a.issuer | escape }}"
-                  data-date="{{ award_date }}"
-                  aria-haspopup="dialog"
-                  aria-label="{{ a.title | escape }} - view certificate"
-                >
-                  <img
-                    src="{{ a.img | relative_url }}"
-                    alt="{{ a.title | escape }}"
-                    loading="lazy"
-                    decoding="async"
-                    {% if a.img_pos %}style="object-position: {{ a.img_pos | escape }}"{% endif %}
+          {% for a in year_items %}
+            {% if a.kind == 'award' or a.type %}
+              {% assign dp = a.date | remove: " " | split: "." %}
+              {% if a.type contains '장관상' or a.type contains '대상' %}
+                {% assign tier = 'crimson' %}
+              {% elsif a.type == '우수상' or a.type == '최우수상' %}
+                {% assign tier = 'amber' %}
+              {% elsif a.type == '우수연구교수' %}
+                {% assign tier = 'navy' %}
+              {% elsif a.type contains 'Recognition' %}
+                {% assign tier = 'purple' %}
+              {% else %}
+                {% assign tier = 'teal' %}
+              {% endif %}
+              {% capture award_date %}{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}{% endcapture %}
+              <li class="ed-award-card ed-award-card--{{ tier }}" data-ach-type="award">
+                {% if a.img and a.img != "" %}
+                  <button
+                    type="button"
+                    class="ed-award-card__thumb"
+                    data-award-zoom
+                    data-full="{{ a.img | relative_url }}"
+                    data-tier="{{ tier }}"
+                    data-type="{{ a.type | escape }}"
+                    data-title="{{ a.title | escape }}"
+                    data-recipient="{{ a.recipient | escape }}"
+                    data-issuer="{{ a.issuer | escape }}"
+                    data-date="{{ award_date }}"
+                    aria-haspopup="dialog"
+                    aria-label="{{ a.title | escape }} - view certificate"
                   >
-                  <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-                </button>
-              {% endif %}
-              <div class="ed-award-card__body">
-                {% if a.type and a.type != "" %}
-                  <span class="ed-tier ed-tier--{{ tier }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ a.type | escape }}</span></span>
+                    <img
+                      src="{{ a.img | relative_url }}"
+                      alt="{{ a.title | escape }}"
+                      loading="lazy"
+                      decoding="async"
+                      {% if a.img_pos %}style="object-position: {{ a.img_pos | escape }}"{% endif %}
+                    >
+                    <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                  </button>
                 {% endif %}
-                <h4 class="ed-award-card__title">{{ a.title | escape }}</h4>
-                <dl class="ed-award-card__meta">
-                  <div><dt><i class="fa-solid fa-user" aria-hidden="true"></i><span class="ed-sr">Recipient</span></dt><dd>{{ a.recipient | escape }}</dd></div>
-                  {% if a.issuer and a.issuer != "" %}
-                    <div><dt><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span class="ed-sr">Issuer</span></dt><dd>{{ a.issuer | escape }}</dd></div>
+                <div class="ed-award-card__body">
+                  {% if a.type and a.type != "" %}
+                    <span class="ed-tier ed-tier--{{ tier }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ a.type | escape }}</span></span>
                   {% endif %}
-                  {% if a.date and a.date != "" %}
-                    <div><dt><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date</span></dt><dd><time>{{ award_date }}</time></dd></div>
+                  <h4 class="ed-award-card__title">{{ a.title | escape }}</h4>
+                  <dl class="ed-award-card__meta">
+                    <div><dt><i class="fa-solid fa-user" aria-hidden="true"></i><span class="ed-sr">Recipient</span></dt><dd>{{ a.recipient | escape }}</dd></div>
+                    {% if a.issuer and a.issuer != "" %}
+                      <div><dt><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span class="ed-sr">Issuer</span></dt><dd>{{ a.issuer | escape }}</dd></div>
+                    {% endif %}
+                    {% if a.date and a.date != "" %}
+                      <div><dt><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date</span></dt><dd><time datetime="{{ award_date | replace: '.', '-' }}">{{ award_date }}</time></dd></div>
+                    {% endif %}
+                  </dl>
+                  {% if a.press and a.press != "" %}
+                    <a href="{{ a.press }}" target="_blank" rel="noopener" class="ed-pill ed-pill--press ed-award-card__press">
+                      <i class="fa-solid fa-newspaper" aria-hidden="true"></i> 언론보도 ({{ a.press_media | default: '기사' | escape }}) <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span>
+                    </a>
                   {% endif %}
-                </dl>
-                {% if a.press and a.press != "" %}
-                  <a href="{{ a.press }}" target="_blank" rel="noopener" class="ed-pill ed-pill--press ed-award-card__press">
-                    <i class="fa-solid fa-newspaper" aria-hidden="true"></i> 언론보도 ({{ a.press_media | default: '기사' | escape }}) <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span>
-                  </a>
+                </div>
+              </li>
+            {% else %}
+              {% assign dp = a.date | remove: " " | split: "." %}
+              {% assign url_parts = a.url | split: "/" %}
+              {% if a.media == '뉴시스' or a.media == '경북매일' %}{% assign media_tone = 'crimson' %}{% else %}{% assign media_tone = 'navy' %}{% endif %}
+              <li class="ed-press-card" data-ach-type="press">
+                <div class="ed-press-card__top">
+                  <span class="ed-media ed-media--{{ media_tone }}"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> {{ a.media | default: url_parts[2] | remove_first: "www." | escape }}</span>
+                  <time class="ed-datepill" datetime="{{ dp[0] }}-{{ dp[1] | prepend: '0' | slice: -2, 2 }}-{{ dp[2] | prepend: '0' | slice: -2, 2 }}">{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}</time>
+                </div>
+                <h4 class="ed-press-card__title">
+                  <a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title | escape }} <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span></a>
+                </h4>
+                {% if a.paper and a.paper != "" %}
+                  <a class="ed-pill ed-pill--paper" href="{{ a.paper }}"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span data-i18n="news.related_paper">관련 논문</span></a>
                 {% endif %}
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endfor %}
-
-  </section>
-  {% endif %}
-
-  <!-- 3. Press -->
-
-{% if site.data.press.size > 0 %}
-
-  <section class="ed-section" id="press">
-    <h2 class="ed-section__title">
-      <span data-i18n="news.idx_press">In the Press</span>
-      <span class="ed-section__count">{{ site.data.press.size }}</span>
-    </h2>
-
-    {% for group in press_by_year %}
-      <div class="ed-yeargroup">
-        <h3 class="ed-yeargroup__year">{{ group.name }}<span class="ed-yeargroup__count">{{ group.items.size }}</span></h3>
-        <ul class="ed-cardgrid ed-cardgrid--press" role="list">
-          {% for p in group.items %}
-            {% assign dp = p.date | remove: " " | split: "." %}
-            {% assign url_parts = p.url | split: "/" %}
-            {% if p.media == '뉴시스' or p.media == '경북매일' %}{% assign media_tone = 'crimson' %}{% else %}{% assign media_tone = 'navy' %}{% endif %}
-            <li class="ed-press-card">
-              <div class="ed-press-card__top">
-                <span class="ed-media ed-media--{{ media_tone }}"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> {{ p.media | default: url_parts[2] | remove_first: "www." | escape }}</span>
-                <time class="ed-datepill">{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}</time>
-              </div>
-              <h4 class="ed-press-card__title">
-                <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title | escape }} <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span></a>
-              </h4>
-              {% if p.paper and p.paper != "" %}
-                <a class="ed-pill ed-pill--paper" href="{{ p.paper }}"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> <span data-i18n="news.related_paper">관련 논문</span></a>
-              {% endif %}
-            </li>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
       </div>
@@ -255,5 +251,6 @@ nav_order: 6
     </div>
   </dialog>
   <script src="{{ '/assets/js/award_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/news_ach_filter.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 </div>
