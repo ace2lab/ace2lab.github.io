@@ -473,10 +473,6 @@
   name_en: Jaeho Lee
   role_ko: 박사과정
   role_en: Ph.D. Student
-  topics:
-    - Supercapacitors
-    - MOF/Sulfide Composites
-    - IPL Processing
   email: mikybuzz@knu.ac.kr
   photo: assets/img/team/jaeho_lee.jpg
   degree_program: 박사과정 (2026.03 – 현재)
@@ -484,7 +480,7 @@
   education:
     - "M.S.  KNU 에너지화학공학과 ('24학번)"
     - "B.S.  KNU 에너지화학공학과 ('18학번)"
-  research_field: "IPL 광열처리 기반 차세대 슈퍼커패시터 전극 소재"
+  research_field: "에너지 저장 전극 소재 및 공정"
   office: 7호관 404호
   links:
     email: mikybuzz@knu.ac.kr
@@ -495,17 +491,13 @@
   name_en: Dongho Lee
   role_ko: 석박통합과정
   role_en: Integrated M.S.-Ph.D. Student
-  topics:
-    - Energy Materials
-    - Deuterated Synthesis
-    - Nanotechnology
   email: ehdgh61485@gmail.com
   photo: assets/img/team/dongho_lee.jpg
   degree_program: 석박통합과정 (2025.03 – 현재)
   affiliation: "KNU 미래과학기술융합학부 석박통합과정"
   education:
     - "B.S.  KNU 에너지화학공학과 ('19학번)"
-  research_field: "중수소 치환 에너지 소재 합성 및 나노기술"
+  research_field: "전기화학 에너지 소재 및 전극 계면 공학"
   office: 7호관 406호
   awards:
     - 2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)
@@ -518,18 +510,14 @@
   name_en: Huijin Lee
   role_ko: 연구원(석사)
   role_en: Researcher (M.S.)
-  topics:
-    - MXene Synthesis
-    - Photocatalysts
-    - Supercapacitors
   email: dlgmlswls32@naver.com
   photo: assets/img/team/huijin_lee.jpg
   degree_program: 연구원 (2026.02 – 현재)
   affiliation: "KNU 에너지화학공학과 연구원"
   education:
-    - "M.S.  KNU 에너지화학공학과 ('24학번)"
+    - "M.S.  KNU 미래과학기술융합학부 ('24학번)"
     - "B.S.  KNU 에너지화학공학과 ('18학번)"
-  research_field: "맥신(MXene) 합성 및 광촉매·에너지 환경 소재"
+  research_field: "2D 나노복합소재 및 광촉매 환경 소재"
   office: 7호관 406호
   awards:
     - 2025 첨성인 대학원생 논문경진대회 우수상 (2026.01)
@@ -542,23 +530,19 @@
   name_en: Dawin Kim
   role_ko: 석사과정
   role_en: M.S. Student
-  topics:
-    - Functional Nanomaterials
-    - VO2 Smart Windows
-    - Electrochemical Devices
-  email: dawin2660@knu.ac.kr
+  email: dawin0530@knu.ac.kr
   photo: assets/img/team/dawin_kim.jpg
   degree_program: 석사과정 (2025.03 – 현재)
   affiliation: "KNU 에너지화학공학과 석사과정"
   education:
     - "B.S.  KNU 에너지화학공학과 ('20학번)"
-  research_field: "VO2 스마트 윈도우 및 전기화학 소자"
+  research_field: "상전이 기능성 소재 및 스마트 디바이스"
   office: 7호관 404호
   awards:
     - 2026 화공학회 추계학술대회 우수 구두 발표상
     - 2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)
   links:
-    email: dawin2660@knu.ac.kr
+    email: dawin0530@knu.ac.kr
 - id: jaebin-an
   group: ms
   order: 5
@@ -566,17 +550,13 @@
   name_en: Jaebeen Ahn
   role_ko: 석사과정
   role_en: M.S. Student
-  topics:
-    - MXene Nanocomposites
-    - Flexible Tactile Sensors
-    - Battery Anodes
   email: coco24245@knu.ac.kr
   photo: assets/img/team/jaebeen_ahn.jpg
   degree_program: 석사과정 (2026.03 – 현재)
   affiliation: "KNU 미래과학기술융합학부 석사과정"
   education:
     - "B.S.  KNU 에너지화학공학과 ('20학번)"
-  research_field: "맥신 나노복합소재 및 유연 촉각 센서"
+  research_field: "2D 나노소재 및 마이크로 에너지 소자"
   office: 7호관 406호
   awards:
     - 2025 화공학회 Chem Frontier 산업통상자원부 장관상
@@ -590,22 +570,18 @@
   name_en: Myeong Seo Kang
   role_ko: 석사과정
   role_en: M.S. Student
-  topics:
-    - Flexible Sensors
-    - Laser-Induced Graphene
-    - Bio-Monitoring
-  email: audtj707@naver.com
+  email: audtj707@knu.ac.kr
   photo: assets/img/team/myeong_seo_kang.jpg
   degree_program: 석사과정 (2026.01 – 현재)
   affiliation: "KNU 에너지화학공학과 석사과정"
   education:
     - "B.S.  KNU 에너지화학공학과 ('22학번)"
-  research_field: "레이저 유도 그래핀(LIG) 기반 생체 모니터링 유연 센서"
+  research_field: "전이금속 산화물 전극 및 의사커패시터"
   office: 7호관 404호
   awards:
     - 2026 화공학회 추계학술대회 우수 포스터 발표상
   links:
-    email: audtj707@naver.com
+    email: audtj707@knu.ac.kr
 - id: wooyoung-kim
   group: ms
   order: 7
@@ -613,17 +589,12 @@
   name_en: Wooyoung Kim
   role_ko: 학연과정(석사)
   role_en: M.S. Student (Joint)
-  topics:
-    - Ceramic Materials
-    - Solid Electrolytes
-    - Battery Composites
   email: wykim@kicet.re.kr
   photo: ""
   degree_program: 석사과정(학연) (2024.09 – 현재)
   affiliation: "KNU 에너지화학공학과 석사과정 (KICET 학연)"
   education:
     - "B.S.  KNU 에너지화학공학과 ('18학번)"
-  research_field: "고체전해질 및 차세대 배터리 복합소재"
   office: 한국세라믹기술연구원 / 7호관
   links:
     email: wykim@kicet.re.kr
@@ -634,19 +605,15 @@
   name_en: Minsu Kim
   role_ko: 학부연구생
   role_en: Undergraduate Researcher
-  topics:
-    - Energy Materials
-    - Smart Devices
-  email: ben4709@naver.com
+  email: ben4709@knu.ac.kr
   photo: assets/img/team/minsu_kim.jpg
   degree_program: 학부연구생 (4학년 / 21학번, 2025.01 – 현재)
   affiliation: "KNU 에너지화학공학과 학부연구생"
-  research_field: "차세대 에너지 변환 및 스마트 디바이스"
   office: 7호관 404호
   awards:
     - 2025 화공학회 Chem Frontier 산업통상자원부 장관상
   links:
-    email: ben4709@naver.com
+    email: ben4709@knu.ac.kr
 - id: jongmin-lee
   group: ug
   order: 2
@@ -654,15 +621,10 @@
   name_en: Jongmin Lee
   role_ko: 학부연구생
   role_en: Undergraduate Researcher
-  topics:
-    - IPL Processing
-    - VO2 Smart Actuators
-    - Physical AI
   email: ljm0202324@naver.com
   photo: assets/img/team/jongmin_lee.jpg
   degree_program: 학부연구생 (4학년 / 21학번, 2025.05 – 현재)
   affiliation: "KNU 에너지화학공학과 학부연구생"
-  research_field: "광열(IPL) 구동 VO2 스마트 액추에이터"
   office: 7호관 404호
   awards:
     - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
@@ -675,15 +637,10 @@
   name_en: Gyeongjin Kim
   role_ko: 학부연구생
   role_en: Undergraduate Researcher
-  topics:
-    - Functional Nanomaterials
-    - VO2 Synthesis
-    - Smart Sensors
   email: gyeongjingim8@gmail.com
   photo: assets/img/team/gyeongjin_kim.jpg
   degree_program: 학부연구생 (4학년 / 22학번, 2026.01 – 현재)
   affiliation: "KNU 에너지화학공학과 학부연구생"
-  research_field: "나노 기능성 소재 및 유연 센서"
   office: 7호관 406호
   awards:
     - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)
@@ -696,14 +653,10 @@
   name_en: Donggeon Lee
   role_ko: 학부연구생
   role_en: Undergraduate Researcher
-  topics:
-    - Chemical Engineering
-    - Multifunctional Actuators
   email: 2025009732@knu.ac.kr
   photo: ""
   degree_program: 학부연구생 (2학년 / 25학번, 2026.05 – 현재)
   affiliation: "KNU 에너지화학공학과 학부연구생"
-  research_field: "다기능 소프트 액추에이터 소재"
   office: 7호관 406호
   awards:
     - 2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)

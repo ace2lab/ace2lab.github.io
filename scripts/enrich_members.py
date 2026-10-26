@@ -80,22 +80,20 @@ student_data = {
         "role_ko": "박사과정",
         "role_en": "Ph.D. Student",
         "education": "경북대 대학원 공학석사 / 경북대 에너지화학공학과 공학사",
-        "project": "IPL-Assisted Supercapacitor Electrodes",
+        "research_field": "에너지 저장 전극 소재 및 공정",
         "office": "7호관 404호",
         "email": "mikybuzz@knu.ac.kr",
         "photo": "assets/img/team/jaeho_lee.jpg",
-        "topics": ["Supercapacitors", "MOF/Sulfide Composites", "IPL Processing"]
     },
     "huijin-lee-res": {
         "degree_program": "연구원 (2026.02 ~ 현재)",
         "role_ko": "연구원",
         "role_en": "Researcher",
         "education": "경북대 에너지화학공학과 공학석사 / 경북대 에너지화학공학과 공학사",
-        "project": "MXene Synthesis & Applications",
+        "research_field": "2D 나노복합소재 및 광촉매 환경 소재",
         "office": "7호관 406호",
         "email": "dlgmlswls32@naver.com",
         "photo": "assets/img/team/huijin_lee.jpg",
-        "topics": ["MXene Synthesis", "Photocatalysts", "Supercapacitors"],
         "awards": ["2025 첨성인 대학원생 논문경진대회 우수상 (2026.01)"]
     },
     "dongho-lee": {
@@ -103,11 +101,10 @@ student_data = {
         "role_ko": "석박통합과정",
         "role_en": "Integrated M.S.-Ph.D. Student",
         "education": "경북대 대학원 미래과학기술융합학부 / 경북대 에너지화학공학과 공학사",
-        "project": "SK PICGLOBAL, TEMC 산학과제",
+        "research_field": "전기화학 에너지 소재 및 전극 계면 공학",
         "office": "7호관 406호",
         "email": "ehdgh61485@gmail.com",
         "photo": "assets/img/team/dongho_lee.jpg",
-        "topics": ["Energy Materials", "Deuterated Synthesis", "Nanotechnology"],
         "awards": ["2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)"]
     },
     "dawin-kim": {
@@ -115,11 +112,10 @@ student_data = {
         "role_ko": "석사과정",
         "role_en": "M.S. Student",
         "education": "경북대 에너지화학공학과 공학사 / 경북대 대학원 석사과정",
-        "project": "VO2 Thermochromics, MXene",
+        "research_field": "상전이 기능성 소재 및 스마트 디바이스",
         "office": "7호관 404호",
         "email": "dawin2660@knu.ac.kr",
         "photo": "assets/img/team/dawin_kim.jpg",
-        "topics": ["Functional Nanomaterials", "VO2 Smart Windows", "Electrochemical Devices"],
         "awards": ["2024 화공학회 Chem Frontier 대상 (롯데케미칼 대표이사상)"]
     },
     "jaebin-an": {
@@ -129,11 +125,10 @@ student_data = {
         "role_ko": "석사과정",
         "role_en": "M.S. Student",
         "education": "경북대 에너지화학공학과 공학사 / 경북대 대학원 석사과정",
-        "project": "MXene, IPL Processing",
+        "research_field": "2D 나노소재 및 마이크로 에너지 소자",
         "office": "7호관 406호",
         "email": "coco24245@knu.ac.kr",
         "photo": "assets/img/team/jaebeen_ahn.jpg",
-        "topics": ["MXene Nanocomposites", "Flexible Tactile Sensors", "Battery Anodes"],
         "awards": ["2025 화공학회 Chem Frontier 산업통상부 장관상", "2024 화공학회 대상"]
     },
     "myeongseo-kang": {
@@ -143,11 +138,11 @@ student_data = {
         "role_ko": "석사과정",
         "role_en": "M.S. Student",
         "education": "경북대 에너지화학공학과 공학사 / 경북대 대학원 석사과정",
-        "project": "Flexible Sensors, LIG",
+        "research_field": "전이금속 산화물 전극 및 의사커패시터",
         "office": "7호관 404호",
         "email": "audtj707@naver.com",
         "photo": "assets/img/team/myeong_seo_kang.jpg",
-        "topics": ["Flexible Sensors", "Laser-Induced Graphene", "Bio-Monitoring"]
+        "awards": ["2026 화공학회 추계학술대회 우수 포스터 발표상"]
     },
     "minsu-kim": {
         "name_ko": "김민수",
@@ -158,7 +153,6 @@ student_data = {
         "office": "7호관 404호",
         "email": "ben4709@naver.com",
         "photo": "assets/img/team/minsu_kim.jpg",
-        "topics": ["Energy Materials", "Smart Devices"],
         "awards": ["2025 화공학회 Chem Frontier 산업통상부 장관상"]
     },
     "jongmin-lee": {
@@ -170,7 +164,6 @@ student_data = {
         "office": "7호관 404호",
         "email": "ljm0202324@naver.com",
         "photo": "assets/img/team/jongmin_lee.jpg",
-        "topics": ["IPL Processing", "VO2 Smart Actuators", "Physical AI"],
         "awards": ["2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)"]
     },
     "gyeongjin-kim": {
@@ -182,7 +175,6 @@ student_data = {
         "office": "7호관 406호",
         "email": "gyeongjingim8@gmail.com",
         "photo": "assets/img/team/gyeongjin_kim.jpg",
-        "topics": ["Functional Nanomaterials", "VO2 Synthesis", "Smart Sensors"],
         "awards": ["2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)"]
     },
     "donggeon-lee": {
@@ -194,7 +186,6 @@ student_data = {
         "office": "7호관 406호",
         "email": "2025009732@knu.ac.kr",
         "photo": "",
-        "topics": ["Chemical Engineering", "Multifunctional Actuators"],
         "awards": ["2026 화공학회 Chem Frontier 산업통상자원부장관상 (대회 종합 최고상)"]
     }
 }
