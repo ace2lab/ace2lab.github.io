@@ -29,6 +29,16 @@
   --font-editorial: var(--font-sans-body);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 html[data-theme="dark"] {
   /* Suppress al-folio core cyan (#2698ba) with Desaturated Steel Blue */
   --global-theme-color: #9db7d9 !important;
@@ -1929,6 +1939,25 @@ html[data-theme="dark"] .news-degree {
   }
 }
 
+/* Single-row publication metadata badge container */
+.ed-entry__badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.25rem;
+  vertical-align: middle;
+}
+
+.ed-entry__badges .pub-badge {
+  margin: 0 !important;
+  height: 24px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
 /* Visual Badges: Cover Papers & Selected Papers */
 .pub-badge--cover {
   display: inline-flex;
@@ -2147,6 +2176,37 @@ html[data-theme="dark"] .news-degree {
 [data-theme="dark"] .publications ol.bibliography li:has(.pub-badge--cover) {
   border-left-color: #f59e0b;
   background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, transparent 100%);
+}
+
+/* Publication Anchor Scroll Margin (clears sticky navbar + tabnav + toolbar) */
+.publications ol.bibliography li .col-sm-8[id],
+.publications ol.bibliography li[id] {
+  scroll-margin-top: calc(var(--sticky-navbar) + var(--sticky-tabnav) + 5.5rem);
+}
+
+@media (max-width: 767.98px) {
+  .publications ol.bibliography li .col-sm-8[id],
+  .publications ol.bibliography li[id] {
+    scroll-margin-top: calc(var(--sticky-navbar) + var(--sticky-tabnav) + 1rem);
+  }
+}
+
+/* Highlight target pulse animation upon anchor navigation */
+.publications ol.bibliography li .col-sm-8:target,
+.publications ol.bibliography li:target {
+  animation: pubTargetPulse 1.8s ease-out;
+}
+
+@keyframes pubTargetPulse {
+  0% {
+    background-color: rgba(212, 175, 55, 0.22);
+    box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.15);
+    border-radius: 6px;
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: 0 0 0 0 transparent;
+  }
 }
 
 /* ============================================================

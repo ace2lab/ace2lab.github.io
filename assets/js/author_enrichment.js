@@ -76,25 +76,58 @@
   }
 
   function flagCover(li) {
-    var isCover = false;
+    var hasCoverBadge = !!li.querySelector(".pub-badge--cover");
+    var badgesRow = li.querySelector(".ed-entry__badges");
+
     li.querySelectorAll(".periodical").forEach(function (p) {
-      if (p.querySelector(".pub-badge--cover, .pub-badge--accepted, .ed-entry__jcr, .ed-entry__funding, .ed-entry__press")) return;
+      if (p.closest(".ed-entry__badges")) return;
+      if (p.querySelector(".pub-badge--cover, .pub-badge--accepted, .ed-entry__badges, .ed-entry__funding, .ed-entry__press")) return;
       var text = p.textContent.trim();
       if (!text || !/(cover|just accepted|in press)/i.test(text)) return;
+
+      // Deduplicate: if a cover badge already exists and this standalone periodical just repeats "Front Cover", remove it
+      if (hasCoverBadge && /^(front\s+cover|cover)$/i.test(text)) {
+        p.remove();
+        return;
+      }
+
       var parts = text.split(/\s*·\s*/);
-      var badges = parts.map(function (part) {
+      var remainingBadges = [];
+      parts.forEach(function (part) {
         if (/cover/i.test(part)) {
-          isCover = true;
-          return '<span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> ' + part + "</span>";
+          if (!hasCoverBadge) {
+            hasCoverBadge = true;
+            var cb = document.createElement("span");
+            cb.className = "pub-badge pub-badge--cover";
+            cb.innerHTML = '<i class="fa-solid fa-award" aria-hidden="true"></i> ' + part;
+            if (badgesRow) {
+              badgesRow.appendChild(cb);
+            } else {
+              remainingBadges.push(cb.outerHTML);
+            }
+          }
+          return;
         }
         if (/(just accepted|in press)/i.test(part)) {
-          return '<span class="pub-badge pub-badge--accepted"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> ' + part + "</span>";
+          var ab = document.createElement("span");
+          ab.className = "pub-badge pub-badge--accepted";
+          ab.innerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i> ' + part;
+          if (badgesRow) {
+            badgesRow.appendChild(ab);
+          } else {
+            remainingBadges.push(ab.outerHTML);
+          }
         }
-        return part;
       });
-      p.innerHTML = badges.join(" ");
+
+      if (badgesRow || remainingBadges.length === 0) {
+        p.remove();
+      } else {
+        p.innerHTML = remainingBadges.join(" ");
+      }
     });
-    if (isCover) {
+
+    if (hasCoverBadge || li.querySelector(".pub-badge--cover")) {
       li.classList.add("is-cover-paper");
     }
   }
