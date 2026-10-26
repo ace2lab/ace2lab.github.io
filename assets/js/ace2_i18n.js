@@ -372,10 +372,23 @@
     }
   }
 
+  function initHeader() {
+    var initialLang = resolveInitialLang();
+    mountNavbarSwitcher(initialLang);
+    if (initialLang !== "ko") {
+      translateNavbar(loadDictionary(), initialLang);
+    }
+  }
+
   function init() {
     var initialLang = resolveInitialLang();
     mountNavbarSwitcher(initialLang);
     setLanguage(initialLang, { updateUrl: false, persist: true });
+  }
+
+  // Pre-paint header pass: mounts switcher and translates navbar immediately if #navbar is parsed
+  if (document.getElementById("navbar")) {
+    initHeader();
   }
 
   if (document.readyState === "loading") {

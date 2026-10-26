@@ -1,6 +1,6 @@
 ---
 layout: page
-title: research
+title: 연구분야
 permalink: /research/
 description: Research pillars, ultrafast photonic nanomanufacturing, energy storage, and flexible sensory electronics at ACE² Lab
 nav: true

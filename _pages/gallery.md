@@ -1,6 +1,6 @@
 ---
 layout: page
-title: gallery
+title: 갤러리
 description: Conferences, defenses and moments from ACE² Lab, newest first.
 permalink: /gallery/
 nav: true

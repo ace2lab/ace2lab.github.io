@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
+title: 강의
 description: Interactive engineering simulations, lecture notes, and curriculum courses by ACE² Lab.
 nav: true
 nav_order: 8

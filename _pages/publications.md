@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
+title: 연구성과
 description: Peer-reviewed articles, patents and conference presentations of ACE² Lab, in reverse chronological order.
 nav: true
 nav_order: 5
@@ -129,15 +129,15 @@ nav_order: 5
                   <a href="{{ cover.image | relative_url }}" class="pub-cover-card__imglink glightbox" data-gallery="covers" data-title="{{ cover.journal }} Vol. {{ cover.volume }}, No. {{ cover.issue }} ({{ cover.date | date: '%Y' }}) · {{ cover.title | escape }}">
                     <img src="{{ cover.image | relative_url }}" alt="{{ cover.journal }} Cover Art: {{ cover.title | escape }}" loading="lazy" class="pub-cover-card__img">
                   </a>
-                  <span class="pub-cover-card__badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">Front Cover</span></span>
                 </div>
                 <div class="pub-cover-card__body">
                   <div class="pub-cover-card__meta">
+                    <span class="pub-cover-card__badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">Front Cover</span></span>
                     <span class="pub-cover-card__journal">{{ cover.journal }}</span>
                     <span class="pub-cover-card__issue">Vol. {{ cover.volume }}, No. {{ cover.issue }} ({{ cover.date | date: "%Y" }})</span>
                   </div>
                   <h4 class="pub-cover-card__title">
-                    <a href="#{{ cover.key }}">{{ cover.title | escape }}</a>
+                    <a href="#{{ cover.key }}" title="{{ cover.title | escape }}">{{ cover.title | escape }}</a>
                   </h4>
                   <div class="pub-cover-card__actions">
                     <a href="#{{ cover.key }}" class="pub-cover-card__action pub-cover-card__action--detail">

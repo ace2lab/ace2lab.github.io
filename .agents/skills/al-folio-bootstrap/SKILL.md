@@ -1,3 +1,8 @@
+---
+name: al-folio-bootstrap
+description: Creates, configures, and personalizes new al-folio v1.x academic websites via _config.yml, _data, content collections, and Jekyll audit checks.
+---
+
 # al-folio Bootstrap
 
 Use this skill when a user asks an agent to create, configure, or personalize a new al-folio v1.x website.

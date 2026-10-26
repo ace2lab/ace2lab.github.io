@@ -1,6 +1,6 @@
 ---
 layout: page
-title: members
+title: 구성원
 permalink: /members/
 description: Research team members of ACE² Lab
 nav: true

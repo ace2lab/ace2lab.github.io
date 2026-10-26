@@ -2150,46 +2150,46 @@ html[data-theme="dark"] .news-degree {
 }
 
 /* ============================================================
-   Featured Journal Cover Art Showcase
+   Featured Journal Cover Art Showcase (Compact Media Cards)
    ============================================================ */
 .pub-cover-showcase {
-  margin: var(--ed-s6, 1.5rem) 0 var(--ed-s8, 2rem) 0;
-  padding: 1.5rem;
-  border-radius: 12px;
+  margin: var(--ed-s4, 1rem) 0 var(--ed-s6, 1.5rem) 0;
+  padding: 1.15rem 1.25rem;
+  border-radius: 10px;
   background: var(--global-card-bg-color, #ffffff);
   border: 1px solid var(--ed-border, rgba(0, 0, 0, 0.08));
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 [data-theme="dark"] .pub-cover-showcase {
   background: var(--color-surface, #1e293b);
   border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 .pub-cover-showcase.is-pi-empty {
   display: none !important;
 }
 
 .pub-cover-showcase__header {
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--ed-border, rgba(0, 0, 0, 0.08));
-  padding-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid var(--ed-border, rgba(0, 0, 0, 0.07));
+  padding-bottom: 0.5rem;
 }
 .pub-cover-showcase__title {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--global-text-color, #1e293b);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   margin: 0;
 }
 .pub-cover-showcase__title i {
   color: #d4af37;
 }
 .pub-cover-showcase__count {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  padding: 0.15rem 0.5rem;
+  padding: 0.1rem 0.45rem;
   border-radius: 999px;
   background: rgba(212, 175, 55, 0.15);
   color: #b45309;
@@ -2201,27 +2201,20 @@ html[data-theme="dark"] .news-degree {
 
 .pub-cover-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-@media (min-width: 768px) {
-  .pub-cover-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 1024px) {
-  .pub-cover-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1rem;
 }
 
 .pub-cover-card {
   display: flex;
-  flex-direction: column;
-  border-radius: 10px;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 8px;
   background: var(--global-bg-color, #f8fafc);
   border: 1px solid var(--ed-border, rgba(0, 0, 0, 0.08));
   overflow: hidden;
+  padding: 0.75rem;
+  gap: 0.85rem;
   transition:
     transform var(--ed-dur-fast) ease,
     box-shadow var(--ed-dur-fast) ease,
@@ -2232,20 +2225,24 @@ html[data-theme="dark"] .news-degree {
   border-color: rgba(255, 255, 255, 0.06);
 }
 .pub-cover-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: rgba(212, 175, 55, 0.5);
 }
 .pub-cover-card.is-pi-hidden {
   display: none !important;
 }
 
 .pub-cover-card__poster {
-  position: relative;
-  width: 100%;
+  flex: 0 0 88px;
+  width: 88px;
+  height: 118px;
   aspect-ratio: 3 / 4;
+  position: relative;
   overflow: hidden;
+  border-radius: 6px;
   background: #000000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 .pub-cover-card__imglink {
   display: block;
@@ -2258,54 +2255,53 @@ html[data-theme="dark"] .news-degree {
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 .pub-cover-card:hover .pub-cover-card__img {
-  transform: scale(1.03);
-}
-
-.pub-cover-card__badge {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: rgba(15, 23, 42, 0.85);
-  color: #f3d46f;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 0.25rem 0.65rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  border: 1px solid rgba(212, 175, 55, 0.6);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-.pub-cover-card__badge i {
-  color: #f59e0b;
+  transform: scale(1.05);
 }
 
 .pub-cover-card__body {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem;
   flex: 1;
+  min-width: 0;
 }
 .pub-cover-card__meta {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
   color: var(--global-text-color-light, #64748b);
+}
+.pub-cover-card__badge {
+  background: linear-gradient(135deg, #fff8e7 0%, #fff1c5 100%);
+  color: #7a5c00;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid #d4af37;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+[data-theme="dark"] .pub-cover-card__badge {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border-color: rgba(212, 175, 55, 0.6);
+  color: #f3d46f;
+}
+.pub-cover-card__badge i {
+  color: #d4af37;
 }
 .pub-cover-card__journal {
   font-weight: 700;
   color: #0284c7;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 [data-theme="dark"] .pub-cover-card__journal {
   color: #38bdf8;
@@ -2315,11 +2311,15 @@ html[data-theme="dark"] .news-degree {
 }
 
 .pub-cover-card__title {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  line-height: 1.45;
-  margin: 0 0 1rem 0;
-  flex: 1;
+  line-height: 1.35;
+  margin: 0 0 0.5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .pub-cover-card__title a {
   color: var(--global-text-color, #1e293b);
@@ -2333,20 +2333,18 @@ html[data-theme="dark"] .news-degree {
 .pub-cover-card__actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin-top: auto;
-  padding-top: 0.75rem;
-  border-top: 1px dashed var(--ed-border, rgba(0, 0, 0, 0.08));
 }
 .pub-cover-card__action {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.35rem 0.65rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.55rem;
+  border-radius: 5px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
   transition: all var(--ed-dur-fast) ease;
 }
 .pub-cover-card__action--detail {

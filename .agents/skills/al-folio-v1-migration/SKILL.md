@@ -1,3 +1,8 @@
+---
+name: al-folio-v1-migration
+description: Migrates customized al-folio forks to v1.x starter architecture while preserving site-owned content, overrides, and upgrade audit checks.
+---
+
 # al-folio v1 Migration
 
 Use this skill when a user asks an agent to migrate an existing customized al-folio fork to v1.x.

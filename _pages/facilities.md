@@ -1,6 +1,6 @@
 ---
 layout: page
-title: facilities
+title: 연구장비
 permalink: /facilities/
 description: Advanced research instrumentation, fabrication tools, and analytical equipment of ACE² Lab
 nav: true

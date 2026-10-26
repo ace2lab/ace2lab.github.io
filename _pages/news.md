@@ -1,6 +1,6 @@
 ---
 layout: page
-title: news
+title: 수상/언론보도
 description: Announcements, awards and media coverage of ACE² Lab.
 permalink: /news/
 nav: true
