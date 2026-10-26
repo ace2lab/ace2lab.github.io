@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>ACE² Lab 새 홈페이지로 이동합니다</title>
+    <link rel="canonical" href="{{ page.redirect_target | split: '#' | first | split: '?' | first | absolute_url }}">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url={{ page.redirect_target | relative_url }}">
+    <script>
+      (function () {
+        var target = {{ page.redirect_target | relative_url | jsonify }};
+        var gcCode = {{ site.goatcounter.code | default: '' | strip | jsonify }};
+        var legacyFrom = {{ page.legacy_from | jsonify }};
+        try {
+          var isLocal =
+            /^(localhost|127\.|10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(location.hostname) ||
+            location.protocol === "file:";
+          var skip = false;
+          try {
+            skip = localStorage && localStorage.getItem("skipgc") === "t";
+          } catch (e) {}
+          if (gcCode && !isLocal && !skip && !navigator.webdriver && navigator.sendBeacon) {
+            var q =
+              "?p=" +
+              encodeURIComponent("/legacy-from" + legacyFrom) +
+              "&t=" +
+              encodeURIComponent("Legacy redirect " + legacyFrom + " -> " + target) +
+              "&r=" +
+              encodeURIComponent(document.referrer || "") +
+              "&rnd=" +
+              Math.random().toString(36).slice(2, 7);
+            navigator.sendBeacon("https://" + encodeURIComponent(gcCode) + ".goatcounter.com/count" + q);
+          }
+        } catch (e) {}
+        location.replace(target);
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="{{ page.redirect_target | relative_url }}">ACE² Lab 새 홈페이지로 이동</a>
+  </body>
+</html>

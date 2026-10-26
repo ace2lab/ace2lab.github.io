@@ -1,0 +1,82 @@
+# Legacy Google Sites URLs (ace2.knu.ac.kr before 2026-10-25) -> new pages
+# Single Source of Truth consumed by _plugins/legacy_redirects.rb
+
+# Home & general
+- from: /home
+  to: /
+- from: /contact
+  to: /
+- from: /links
+  to: /
+
+# Members & Co-PIs
+- from: /professors
+  to: /members/#yim
+- from: /professors/prof-changyong-yim
+  to: /members/#yim
+- from: /members/prof-changyong-yim
+  to: /members/#yim
+- from: /professors/prof-taewook-kim
+  to: /members/#kim
+- from: /members/prof-taewook-kim
+  to: /members/#kim
+- from: /members/current-members
+  to: /members/#members
+- from: /members/proud-alumni
+  to: /members/#alumni
+- from: /members/former-interns
+  to: /members/#interns
+
+# Publications, patents & presentations
+- from: /publications_1
+  to: /publications/
+- from: /publications/prof-changyong-yim
+  to: /publications/?pi=yim
+- from: /publications_1/prof-changyong-yim
+  to: /publications/?pi=yim
+- from: /publications/prof-taewook-kim
+  to: /publications/?pi=kim
+- from: /publications_1/prof-taewook-kim
+  to: /publications/?pi=kim
+- from: /publications/domestic-journal
+  to: /publications/#domestic
+- from: /publications_1/domestic-journal
+  to: /publications/#domestic
+- from: /publications/patents
+  to: /publications/#patents
+- from: /publications_1/patents
+  to: /publications/#patents
+- from: /publications/talks-presentations
+  to: /publications/#talks
+- from: /publications_1/talks-presentations
+  to: /publications/#talks
+
+# Awards & press
+- from: /awards-press
+  to: /news/
+- from: /awards-press/awards-press
+  to: /news/
+- from: /awards-press/press
+  to: /news/
+
+# Research & facilities
+- from: /research-facilities
+  to: /research/
+- from: /research-facilities/research
+  to: /research/
+- from: /research-instrument/energy-storage
+  to: /research/#energy-storage
+- from: /research-instrument
+  to: /facilities/
+- from: /research-instrument/instrument
+  to: /facilities/
+- from: /research-equipment
+  to: /facilities/
+- from: /research-equipment/equipment
+  to: /facilities/
+- from: /research-facilities/instrument
+  to: /facilities/
+
+# Gallery
+- from: /photos
+  to: /gallery/
