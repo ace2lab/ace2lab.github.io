@@ -113,6 +113,49 @@ nav_order: 5
       </fieldset>
       <p class="pub-pi-filter__status" id="pubPiStatus" role="status" aria-live="polite"></p>
 
+      {% if site.data.covers.size > 0 %}
+        <div class="pub-cover-showcase" id="pubCoverShowcase" aria-labelledby="pubCoverTitle">
+          <div class="pub-cover-showcase__header">
+            <h3 class="pub-cover-showcase__title" id="pubCoverTitle">
+              <i class="fa-solid fa-award" aria-hidden="true"></i>
+              <span data-i18n="publications.sec_covers">Featured Journal Covers</span>
+              <span class="pub-cover-showcase__count">{{ site.data.covers.size }}</span>
+            </h3>
+          </div>
+          <div class="pub-cover-grid">
+            {% for cover in site.data.covers %}
+              <article class="pub-cover-card" data-pi="{{ cover.pi | default: 'yim' }}" id="cover-card-{{ cover.key }}">
+                <div class="pub-cover-card__poster">
+                  <a href="{{ cover.image | relative_url }}" class="pub-cover-card__imglink glightbox" data-gallery="covers" data-title="{{ cover.journal }} Vol. {{ cover.volume }}, No. {{ cover.issue }} ({{ cover.date | date: '%Y' }}) · {{ cover.title | escape }}">
+                    <img src="{{ cover.image | relative_url }}" alt="{{ cover.journal }} Cover Art: {{ cover.title | escape }}" loading="lazy" class="pub-cover-card__img">
+                  </a>
+                  <span class="pub-cover-card__badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">Front Cover</span></span>
+                </div>
+                <div class="pub-cover-card__body">
+                  <div class="pub-cover-card__meta">
+                    <span class="pub-cover-card__journal">{{ cover.journal }}</span>
+                    <span class="pub-cover-card__issue">Vol. {{ cover.volume }}, No. {{ cover.issue }} ({{ cover.date | date: "%Y" }})</span>
+                  </div>
+                  <h4 class="pub-cover-card__title">
+                    <a href="#{{ cover.key }}">{{ cover.title | escape }}</a>
+                  </h4>
+                  <div class="pub-cover-card__actions">
+                    <a href="#{{ cover.key }}" class="pub-cover-card__action pub-cover-card__action--detail">
+                      <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> <span data-i18n="publications.cover_view_paper">Paper Details ↓</span>
+                    </a>
+                    {% if cover.toc_url %}
+                      <a href="{{ cover.toc_url }}" target="_blank" rel="noopener" class="pub-cover-card__action pub-cover-card__action--toc">
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> <span data-i18n="publications.cover_view_issue">Issue Cover ↗</span>
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
       {% include bib_search.liquid %}
 
       <div class="pub-contribution-legend" role="note" aria-label="Author contribution notation">

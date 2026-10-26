@@ -2133,14 +2133,243 @@ html[data-theme="dark"] .news-degree {
   color: #0f172a;
 }
 
-/* Card highlights for Cover & Top papers */
+/* Card highlights for Cover & Top papers (Dynamic SSOT via .pub-badge--cover) */
 .publications ol.bibliography li.is-cover-paper,
-.publications ol.bibliography li:has(#ahn2026topochemical),
-.publications ol.bibliography li:has(#lee2024suppression) {
-  border-left: 3px solid #d4af37;
+.publications ol.bibliography li:has(.pub-badge--cover) {
+  border-left: 3.5px solid #d4af37;
   padding-left: 1.25rem;
   background: linear-gradient(90deg, rgba(212, 175, 55, 0.05) 0%, transparent 100%);
   border-radius: 0 8px 8px 0;
+  transition:
+    border-color var(--ed-dur-fast) ease,
+    background var(--ed-dur-fast) ease;
+}
+[data-theme="dark"] .publications ol.bibliography li:has(.pub-badge--cover) {
+  border-left-color: #f59e0b;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, transparent 100%);
+}
+
+/* ============================================================
+   Featured Journal Cover Art Showcase
+   ============================================================ */
+.pub-cover-showcase {
+  margin: var(--ed-s6, 1.5rem) 0 var(--ed-s8, 2rem) 0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--global-card-bg-color, #ffffff);
+  border: 1px solid var(--ed-border, rgba(0, 0, 0, 0.08));
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+[data-theme="dark"] .pub-cover-showcase {
+  background: var(--color-surface, #1e293b);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.pub-cover-showcase.is-pi-empty {
+  display: none !important;
+}
+
+.pub-cover-showcase__header {
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--ed-border, rgba(0, 0, 0, 0.08));
+  padding-bottom: 0.75rem;
+}
+.pub-cover-showcase__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--global-text-color, #1e293b);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+.pub-cover-showcase__title i {
+  color: #d4af37;
+}
+.pub-cover-showcase__count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.15);
+  color: #b45309;
+}
+[data-theme="dark"] .pub-cover-showcase__count {
+  background: rgba(212, 175, 55, 0.25);
+  color: #f3d46f;
+}
+
+.pub-cover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .pub-cover-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .pub-cover-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+.pub-cover-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: var(--global-bg-color, #f8fafc);
+  border: 1px solid var(--ed-border, rgba(0, 0, 0, 0.08));
+  overflow: hidden;
+  transition:
+    transform var(--ed-dur-fast) ease,
+    box-shadow var(--ed-dur-fast) ease,
+    border-color var(--ed-dur-fast) ease;
+}
+[data-theme="dark"] .pub-cover-card {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+.pub-cover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+.pub-cover-card.is-pi-hidden {
+  display: none !important;
+}
+
+.pub-cover-card__poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #000000;
+}
+.pub-cover-card__imglink {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+.pub-cover-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+.pub-cover-card:hover .pub-cover-card__img {
+  transform: scale(1.03);
+}
+
+.pub-cover-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(15, 23, 42, 0.85);
+  color: #f3d46f;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.pub-cover-card__badge i {
+  color: #f59e0b;
+}
+
+.pub-cover-card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  flex: 1;
+}
+.pub-cover-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light, #64748b);
+}
+.pub-cover-card__journal {
+  font-weight: 700;
+  color: #0284c7;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+[data-theme="dark"] .pub-cover-card__journal {
+  color: #38bdf8;
+}
+.pub-cover-card__issue {
+  font-weight: 500;
+}
+
+.pub-cover-card__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 1rem 0;
+  flex: 1;
+}
+.pub-cover-card__title a {
+  color: var(--global-text-color, #1e293b);
+  text-decoration: none;
+  transition: color var(--ed-dur-fast) ease;
+}
+.pub-cover-card__title a:hover {
+  color: #0284c7;
+}
+
+.pub-cover-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--ed-border, rgba(0, 0, 0, 0.08));
+}
+.pub-cover-card__action {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all var(--ed-dur-fast) ease;
+}
+.pub-cover-card__action--detail {
+  background: rgba(2, 132, 199, 0.08);
+  color: #0284c7;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+}
+.pub-cover-card__action--detail:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+.pub-cover-card__action--toc {
+  background: rgba(212, 175, 55, 0.1);
+  color: #92400e;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+[data-theme="dark"] .pub-cover-card__action--toc {
+  color: #f3d46f;
+  border-color: rgba(212, 175, 55, 0.4);
+}
+.pub-cover-card__action--toc:hover {
+  background: #d4af37;
+  color: #ffffff;
 }
 
 /* Lab member bold styling in author list */

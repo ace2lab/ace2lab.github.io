@@ -832,6 +832,26 @@ ui:
     en: Year
     ja: 年度
     zh: 年份
+  publications.sec_covers:
+    ko: "표지 선정 논문 (Featured Journal Covers)"
+    en: "Featured Journal Covers"
+    ja: "表紙選出論文 (Featured Journal Covers)"
+    zh: "期刊封面论文 (Featured Journal Covers)"
+  publications.badge_front_cover:
+    ko: "표지논문 (Front Cover)"
+    en: "Front Cover"
+    ja: "表紙論文 (Front Cover)"
+    zh: "封面论文 (Front Cover)"
+  publications.cover_view_paper:
+    ko: "논문 상세 ↓"
+    en: "Paper Details ↓"
+    ja: "論文詳細 ↓"
+    zh: "论文详情 ↓"
+  publications.cover_view_issue:
+    ko: "학술지 표지 ↗"
+    en: "Issue Cover ↗"
+    ja: "学術誌表紙 ↗"
+    zh: "期刊封面 ↗"
   publications.sec_journals:
     ko: 국제 SCI(E) 학술지 논문 (International Journals)
     en: International Journals

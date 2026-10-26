@@ -3,12 +3,24 @@
   Journal and date are folded into entrytype so the funding/press blocks follow them instead of the date.
 {% endcomment %}
 {% assign journal_meta = site.data.journals[entry.journal] %}
-{% if journal_meta or entry.funding or entry.press %}
+{% comment %}
+  Front Cover badge: bound to _data/covers.yml (key = BibTeX key). A `note` containing "Front Cover" also qualifies,
+  so an accepted cover whose art is still pending keeps its badge until the image is added to covers.yml.
+{% endcomment %}
+{% assign cover_meta = site.data.covers | where: 'key', entry.key | first %}
+{% assign is_cover = false %}
+{% if cover_meta or entry.note contains 'Front Cover' %}
+  {% assign is_cover = true %}
+{% endif %}
+{% if journal_meta or entry.funding or entry.press or is_cover %}
   {% capture entrytype %}{{ entrytype }}{{ entrymonth }}{{ entryyear }}{% endcapture %}
   {% assign entrymonth = '' %}
   {% assign entryyear = '' %}
   {% if journal_meta %}
     {% capture entrytype %}{{ entrytype }}<div class="ed-entry__jcr"><span class="pub-badge {{ journal_meta.badge_class }}"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ journal_meta.badge_label }}</span></div>{% endcapture %}
+  {% endif %}
+  {% if is_cover %}
+    {% capture entrytype %}{{ entrytype }}<div class="ed-entry__cover"><span class="pub-badge pub-badge--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">Front Cover</span></span></div>{% endcapture %}
   {% endif %}
   {% if entry.funding %}
     {% capture entrytype %}{{ entrytype }}<div class="ed-entry__funding"><span class="ed-label">Funding</span>{{ entry.funding | escape }}</div>{% endcapture %}

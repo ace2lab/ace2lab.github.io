@@ -111,6 +111,21 @@
       var tags = (li.getAttribute("data-pi") || "").split(" ");
       li.classList.toggle(HIDDEN, pi !== "all" && tags.indexOf(pi) === -1);
     });
+    // Filter cover showcase cards
+    var coverCards = panel.querySelectorAll(".pub-cover-card");
+    var visibleCovers = 0;
+    coverCards.forEach(function (card) {
+      var tags = (card.getAttribute("data-pi") || "").split(" ");
+      var match = pi === "all" || tags.indexOf(pi) !== -1;
+      card.classList.toggle(HIDDEN, !match);
+      if (match) visibleCovers += 1;
+    });
+    var coverShowcase = panel.querySelector(".pub-cover-showcase");
+    if (coverShowcase) {
+      coverShowcase.classList.toggle(EMPTY, visibleCovers === 0);
+      var coverCount = coverShowcase.querySelector(".pub-cover-showcase__count");
+      if (coverCount) coverCount.textContent = visibleCovers;
+    }
     var sectionCount = panel.querySelector(".ed-section__count");
     if (sectionCount) {
       sectionCount.textContent = pi === "all" ? counts.all : counts[pi] || 0;

@@ -1,0 +1,28 @@
+# SSOT for the Journal Cover Art Showcase (_pages/publications.md) and the Front Cover badge (_includes/hook/bib.liquid).
+# key     = BibTeX key in _bibliography/papers.bib (the badge and the showcase card both bind to it)
+# title   = verbatim copy of the bib title, shown on the card
+# image   = relative path under assets/img/covers/
+# toc_url = publisher official issue TOC URL
+# pi      = PI filter binding (yim, kim, or yim kim)
+# Pending cover art (e.g. ahn2026topochemical) is added here only once the final image is delivered.
+- key: Lee_2026_tactile
+  journal: Small
+  volume: 22
+  issue: 46
+  date: 2026-08-18
+  title: "MXene-Coated, Multi-Layered Mulberry Paper-Based Flexible Tactile Sensor With High Sensitivity Over a Wide Pressure Range"
+  doi: 10.1002/smll.74205
+  toc_url: "https://onlinelibrary.wiley.com/toc/16136829/2026/22/46"
+  image: /assets/img/covers/small_2026_vol22_issue46.jpg
+  pi: "yim kim"
+
+- key: lee2024suppression
+  journal: Small
+  volume: 20
+  issue: 36
+  date: 2024-09-05
+  title: "Suppression of Thermally Induced Surface Traps in Colloidal Quantum Dot Solids via Ultrafast Pulsed Light"
+  doi: 10.1002/smll.202400380
+  toc_url: "https://onlinelibrary.wiley.com/toc/16136829/2024/20/36"
+  image: /assets/img/covers/small_2024_vol20_issue36.jpg
+  pi: "yim"
