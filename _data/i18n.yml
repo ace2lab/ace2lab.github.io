@@ -406,16 +406,21 @@ ui:
     en: AI & Digital Staff
     ja: AI・デジタル研究支援 (AI & Digital Staff)
     zh: 人工智能与数字化科研助理 (AI & Digital Staff)
+  members.eyebrow.ai_concierge:
+    ko: AI EXECUTIVE CONCIERGE · 연구실 AI 비서실
+    en: AI EXECUTIVE CONCIERGE · AI Secretary Desk
+    ja: AI EXECUTIVE CONCIERGE · 研究室AI秘書室
+    zh: AI EXECUTIVE CONCIERGE · 实验室 AI 秘书处
   members.badge.ai:
     ko: AI 에이전트
     en: AI Agent
     ja: AIエージェント
     zh: AI 智能体
   members.role.ai_secretary:
-    ko: AI 연구실 비서
-    en: AI Lab Secretary
-    ja: AI研究室秘書
-    zh: 人工智能实验室秘书
+    ko: 임창용 교수님 직속 AI 비서
+    en: AI Executive Secretary to Prof. Changyong Yim
+    ja: Changyong Yim 教授直属 AI秘書
+    zh: Changyong Yim 教授直属 AI 秘书
   members.affil.ai:
     ko: ACE² Lab 인공지능 연구운영 에이전트
     en: AI Operations Agent, ACE² Lab

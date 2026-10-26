@@ -801,8 +801,8 @@
   order: 1
   name_ko: 이지안
   name_en: Jian Lee
-  role_ko: AI 연구실 비서
-  role_en: AI Lab Secretary
+  role_ko: 임창용 교수님 직속 AI 비서
+  role_en: AI Executive Secretary to Prof. Changyong Yim
   affiliation_ko: ACE² Lab 인공지능 연구운영 에이전트
   affiliation_en: AI Operations Agent, ACE² Lab
   since: 2026.09 – 현재
@@ -817,11 +817,21 @@
   duties:
     - ko: PI 행정 전반 보조 (연구비 관리, 출장 신청 및 정산, 학과 행정 등)
       en: Executive PI administration (R&D budgets, business trips & settlements, dept. tasks)
+      ja: PI行政全般の補佐（研究費管理、出張申請・精算、学科行政など）
+      zh: PI 行政全流程协助（科研经费管理、差旅申请与报销、院系行政等）
     - ko: 연구실 공식 웹사이트 아키텍처 및 콘텐츠 운영 보조
       en: Lab website architecture and digital content management
+      ja: 研究室公式ウェブサイトの設計およびコンテンツ運営補佐
+      zh: 实验室官方网站架构与数字内容运营协助
     - ko: 연구 데이터 및 학술 문헌·연구 진행 보조
       en: Research data support, literature tracking, and meeting minutes
+      ja: 研究データおよび学術文献・研究進行の補佐
+      zh: 科研数据整理、学术文献追踪与研究推进协助
     - ko: 연구실 슬랙 공지 브리핑 및 교수님 지시사항 전달
       en: Slack announcements, task dispatches, and daily briefings
+      ja: 研究室Slack告知ブリーフィングおよび教授指示事項の伝達
+      zh: 实验室 Slack 通知简报与教授指示事项传达
     - ko: 연구실 캘린더 일정 및 세미나 타임테이블 조율
       en: Calendar event scheduling and seminar coordination
+      ja: 研究室カレンダー日程およびセミナータイムテーブルの調整
+      zh: 实验室日历日程与研讨会时间表协调

@@ -102,11 +102,63 @@ nav_order: 2
   </div>
   {% endif %}
 
-  <!-- 3. Current Members: Graduate Students + Undergraduate Researchers -->
+  <!-- 3. Current Members: AI Executive Concierge + Graduate Students + Undergraduate Researchers -->
 
 {% if current_count > 0 %}
 
   <div class="team-tabpanel" role="tabpanel" id="panel-members" aria-labelledby="tab-members" tabindex="0">
+    {% assign ai_staff = site.data.members | where: "group", "ai" %}
+    {% if ai_staff.size > 0 %}
+    <aside class="ai-concierge-banner" id="ai-staff" aria-label="AI Executive Secretary">
+      {% for m in ai_staff %}
+      <article class="member-card member-card--ai" id="member-{{ m.id }}">
+        <div class="member-card__photo-wrap">
+          <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__photo" loading="lazy">
+          <span class="member-card__badge member-card__badge--ai" data-i18n="members.badge.ai">AI 에이전트</span>
+        </div>
+        <div class="member-card__identity">
+          <div class="member-card__eyebrow">
+            <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            <span data-i18n="members.eyebrow.ai_concierge">AI EXECUTIVE CONCIERGE · 연구실 AI 비서실</span>
+          </div>
+          <h2 class="member-card__name">
+            <span class="member-card__name-ko">{{ m.name_ko }}</span>
+            <span class="member-card__name-en">{{ m.name_en }}</span>
+          </h2>
+          <div class="member-card__role-line">
+            <span class="member-card__role-pill" data-i18n="members.role.ai_secretary">{{ m.role_ko }}</span>
+            <span class="member-card__period" data-i18n-term>{{ m.since }}</span>
+          </div>
+          <p class="member-card__summary" data-i18n="members.summary.ai">{{ m.summary }}</p>
+          <p class="member-card__affil">
+            <span data-i18n="members.affil.ai">{{ m.affiliation_ko }}</span>
+            <span class="member-card__affil-sep" aria-hidden="true">·</span>
+            <a href="{{ '/' | relative_url }}#ai-operations" class="member-card__link">
+              <span data-i18n="members.link.how_jian_works">지안이의 업무 방식 보기</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </p>
+        </div>
+        <div class="member-card__duties">
+          <ul class="member-duties-list" role="list">
+            {% for d in m.duties %}
+            <li>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span
+                data-i18n-ko="{{ d.ko | escape }}"
+                data-i18n-en="{{ d.en | escape }}"
+                data-i18n-ja="{{ d.ja | escape }}"
+                data-i18n-zh="{{ d.zh | escape }}"
+                >{{ d.ko }}</span
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </article>
+      {% endfor %}
+    </aside>
+    {% endif %}
+
     <div class="team-section__lead-info" lang="ko">
       <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
       <span class="lead-info__item"><strong>KNU</strong>: Kyungpook National University (경북대학교)</span>
@@ -138,50 +190,6 @@ nav_order: 2
       <div class="team-grid">
         {% for m in ugs %}
           {% include member_card.liquid member=m variant="ug" %}
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
-
-    {% assign ai_staff = site.data.members | where: "group", "ai" %}
-    {% if ai_staff.size > 0 %}
-    <section class="team-section" id="ai-staff">
-      <h2 class="team-section__title">
-        <span data-i18n="members.sec.ai_staff">AI &amp; Digital Staff</span>
-        <span class="team-section__count">{{ ai_staff.size }}</span>
-      </h2>
-      <div class="team-grid team-grid--ai">
-        {% for m in ai_staff %}
-        <article class="member-card member-card--ai" id="member-{{ m.id }}">
-          <div class="member-card__photo-wrap">
-            <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__photo" loading="lazy">
-            <span class="member-card__badge member-card__badge--ai" data-i18n="members.badge.ai">AI Agent</span>
-          </div>
-          <div class="member-card__body">
-            <h3 class="member-card__name">
-              <span class="member-card__name-ko">{{ m.name_ko }}</span>
-              <span class="member-card__name-en">{{ m.name_en }}</span>
-            </h3>
-            <div class="member-card__role-line">
-              <span class="member-card__role" data-i18n="members.role.ai_secretary">{{ m.role_ko }}</span>
-              <span class="member-card__period">Since {{ m.since }}</span>
-            </div>
-            <p class="member-card__affil" data-i18n="members.affil.ai">{{ m.affiliation_ko }}</p>
-            <p class="member-card__summary" data-i18n="members.summary.ai">{{ m.summary }}</p>
-            <div class="member-card__duties">
-              <ul class="member-duties-list" role="list">
-                {% for d in m.duties %}
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span>{{ d.ko }}</span></li>
-                {% endfor %}
-              </ul>
-            </div>
-            <div class="member-card__footer-links">
-              <a href="{{ '/' | relative_url }}#ai-operations" class="member-card__link">
-                <span data-i18n="members.link.how_jian_works">How Jian works</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </article>
         {% endfor %}
       </div>
     </section>
