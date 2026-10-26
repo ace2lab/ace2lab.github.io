@@ -29,6 +29,15 @@
     </div>
   </div>
   {% if gc_code != '' %}
+    {% if page.url == '/404.html' %}
+      <script>
+        // 404 page: record the originally requested URL instead of the canonical /404.html
+        window.goatcounter = window.goatcounter || {};
+        window.goatcounter.path = function () {
+          return '/404-from' + location.pathname + location.search;
+        };
+      </script>
+    {% endif %}
     <script
       id="ace2-gc-script"
       data-goatcounter="https://{{ gc_code | escape }}.goatcounter.com/count"
