@@ -597,15 +597,13 @@
   name_en: Wooyoung Kim
   role_ko: 학연과정(석사)
   role_en: M.S. Student (Joint)
-  email: wykim@kicet.re.kr
+  email: ""
   photo: ""
   degree_program: 석사과정(학연) (2024.09 – 현재)
   affiliation: "KNU 에너지화학공학과 석사과정 (KICET 학연)"
   education:
     - "B.S.  KNU 에너지화학공학과 ('18학번)"
   office: 한국세라믹기술연구원 / 7호관
-  links:
-    email: wykim@kicet.re.kr
 - id: minsu-kim
   group: ug
   order: 1
