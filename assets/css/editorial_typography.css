@@ -4971,6 +4971,54 @@ html[data-theme="dark"] .ed-press-card:hover {
   pointer-events: none;
 }
 
+/* Non-interactive emblem thumb for awards awaiting original scan */
+.ed-award-card__thumb--placeholder {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 6px;
+  border-color: var(--tier-accent);
+  background: var(--tier-bg);
+  box-shadow: none;
+  cursor: default;
+}
+
+.ed-award-card__placeholder-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  border: 1px dashed var(--tier-accent);
+  border-radius: 4px;
+  padding: 6px 4px;
+  text-align: center;
+  color: var(--tier-fg);
+}
+
+.ed-award-card__placeholder-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--tier-fg);
+}
+
+.ed-award-card__placeholder-label {
+  font-family: var(--font-editorial);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--tier-fg);
+}
+
+.ed-award-card__placeholder-year {
+  font-family: var(--font-mono-meta);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--tier-fg);
+}
+
 .ed-award-card__body {
   display: flex;
   flex-direction: column;

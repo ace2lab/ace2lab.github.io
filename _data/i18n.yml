@@ -1466,6 +1466,11 @@ ui:
     en: Actual size
     ja: 原寸表示
     zh: 实际大小
+  news.cert_placeholder:
+    ko: 수상 증서
+    en: Certificate
+    ja: 表彰状
+    zh: 获奖证书
   news.lb_fit:
     ko: 화면 맞춤
     en: Fit to window

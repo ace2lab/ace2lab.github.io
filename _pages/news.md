@@ -173,6 +173,14 @@ ace2_editorial: true
                     </picture>
                     <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                   </button>
+                {% else %}
+                  <div class="ed-award-card__thumb ed-award-card__thumb--placeholder" aria-hidden="true">
+                    <span class="ed-award-card__placeholder-frame">
+                      <i class="fa-solid fa-award ed-award-card__placeholder-icon"></i>
+                      <span class="ed-award-card__placeholder-label" data-i18n="news.cert_placeholder">수상 증서</span>
+                      <span class="ed-award-card__placeholder-year">{{ a.year | escape }}</span>
+                    </span>
+                  </div>
                 {% endif %}
                 <div class="ed-award-card__body">
                   {% if a.type and a.type != "" %}

@@ -170,7 +170,8 @@ for (const relData of ["_data/domestic.yml", "_data/patents.yml", "_data/members
 }
 
 if (exists("_bibliography/papers.bib")) {
-  const bibLines = read("_bibliography/papers.bib").split("\n");
+  const bibRaw = read("_bibliography/papers.bib");
+  const bibLines = bibRaw.split("\n");
   bibLines.forEach((line, idx) => {
     if (!/^\s*title\s*=/i.test(line)) return;
     const hit = line.match(plainChemRe);
@@ -178,6 +179,16 @@ if (exists("_bibliography/papers.bib")) {
       failures.push(`\`_bibliography/papers.bib:${idx + 1}\` title contains unformatted chemical formula \`${hit[1]}\` (use \`<sub>\`).`);
     }
   });
+
+  // 5. Publication month invariant: every @article in papers.bib must specify `month`
+  const articleBlocks = bibRaw.split(/(?=^@article\s*\{)/im).filter((chunk) => /^@article\s*\{/i.test(chunk.trim()));
+  for (const block of articleBlocks) {
+    const keyMatch = block.match(/^@article\s*\{\s*([^,\s]+)\s*,/i);
+    const key = keyMatch ? keyMatch[1] : "<unknown>";
+    if (!/\bmonth\s*=/i.test(block)) {
+      failures.push(`\`_bibliography/papers.bib\` entry \`${key}\` is missing required \`month\` field.`);
+    }
+  }
 }
 
 if (failures.length > 0) {
