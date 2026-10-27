@@ -1,14 +1,14 @@
 <div class="ed-spec ed-spec--with-thumbs" role="table" aria-label="{{ include.caption | escape }}">
   <div class="ed-spec__head" role="row">
-    <span role="columnheader"><i class="fa-solid fa-camera" aria-hidden="true"></i> <span data-i18n="facilities.col_photo">Photo</span></span>
+    <span role="columnheader"><i class="fa-solid fa-camera" aria-hidden="true"></i> <span data-i18n="facilities.col_photo">장비 사진</span></span>
     <span role="columnheader"
-      ><i class="fa-solid fa-microscope" aria-hidden="true"></i> <span data-i18n="facilities.col_instrument">Instrument</span></span
+      ><i class="fa-solid fa-microscope" aria-hidden="true"></i> <span data-i18n="facilities.col_instrument">장비명 (영문 표준명)</span></span
     >
     <span role="columnheader"
-      ><i class="fa-solid fa-industry" aria-hidden="true"></i> <span data-i18n="facilities.col_vendor">Manufacturer · Model</span></span
+      ><i class="fa-solid fa-industry" aria-hidden="true"></i> <span data-i18n="facilities.col_vendor">제조사 · 모델명</span></span
     >
     <span role="columnheader" class="text-end"
-      ><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-i18n="facilities.col_location">Location</span></span
+      ><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-i18n="facilities.col_location">설치 호실</span></span
     >
   </div>
   {% for item in include.items %}

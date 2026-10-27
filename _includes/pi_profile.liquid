@@ -76,7 +76,7 @@
     <header class="pi-profile__header">
       {% if m.role_en %}
         <p class="pi-profile__eyebrow">
-          <i class="fa-solid fa-user-tie" aria-hidden="true"></i><span data-i18n="home.copi.role_tag">{{ m.role_en }}</span>
+          <i class="fa-solid fa-user-tie" aria-hidden="true"></i><span data-i18n="home.copi.role_tag">공동 연구책임자 (Co-PI)</span>
         </p>
       {% endif %}
       <h3 class="pi-profile__name" id="member-{{ m.id }}-name">
@@ -125,7 +125,7 @@
       <div class="pi-profile__history">
         {% if m.career %}
           <section class="pi-history" aria-label="Career">
-            <h4 class="pi-profile__label" data-i18n="pi.section.career">Career</h4>
+            <h4 class="pi-profile__label" data-i18n="pi.section.career">경력 (Career)</h4>
             <ol class="pi-timeline">
               {% for c in m.career %}
                 {% assign is_current = false -%}
@@ -136,14 +136,18 @@
                   <span class="pi-timeline__period">
                     <span data-i18n-term>{{- c.period -}}</span>
                     {%- if is_current -%}
-                      <span class="pi-timeline__badge" data-i18n="pi.current_badge">현재 재직 · Current</span>
+                      <span class="pi-timeline__badge" data-i18n="pi.current_badge">현재 재직</span>
                     {%- endif -%}
                   </span>
-                  <span class="pi-timeline__org" data-i18n-term>{{ c.org }}</span>
-                  <span class="pi-timeline__role" data-i18n-term>{{ c.role }}</span>
+                  {% assign c_org_term = site.data.i18n.terms[c.org] -%}
+                  {%- assign c_role_term = site.data.i18n.terms[c.role] -%}
+                  <span class="pi-timeline__org" data-i18n-term data-orig-term="{{ c.org | escape }}">{{ c_org_term.ko | default: c.org }}</span>
+                  <span class="pi-timeline__role" data-i18n-term data-orig-term="{{ c.role | escape }}">{{ c_role_term.ko | default: c.role }}</span>
                   {% if c.note -%}
+                    {%- assign c_note_term = site.data.i18n.terms[c.note] -%}
                     <span class="pi-timeline__note"
-                      ><i class="fa-solid fa-tag" aria-hidden="true"></i><span data-i18n-term>{{ c.note }}</span></span
+                      ><i class="fa-solid fa-tag" aria-hidden="true"></i
+                      ><span data-i18n-term data-orig-term="{{ c.note | escape }}">{{ c_note_term.ko | default: c.note }}</span></span
                     >
                   {%- endif %}
                 </li>
@@ -153,16 +157,20 @@
         {% endif %}
         {% if m.degrees %}
           <section class="pi-history" aria-label="Education">
-            <h4 class="pi-profile__label" data-i18n="pi.section.education">Education</h4>
+            <h4 class="pi-profile__label" data-i18n="pi.section.education">학력 (Education)</h4>
             <ol class="pi-timeline">
               {% for d in m.degrees %}
                 <li class="pi-timeline__item pi-timeline__item--{{ d.kind | default: 'academia' }}{% if d.brand %} pi-timeline__item--brand-{{ d.brand }}{% endif %}">
+                  {% assign d_org_term = site.data.i18n.terms[d.org] -%}
+                  {%- assign d_role_term = site.data.i18n.terms[d.role] -%}
                   <span class="pi-timeline__period" data-i18n-term>{{ d.period }}</span>
-                  <span class="pi-timeline__org" data-i18n-term>{{ d.org }}</span>
-                  <span class="pi-timeline__role" data-i18n-term>{{ d.role }}</span>
+                  <span class="pi-timeline__org" data-i18n-term data-orig-term="{{ d.org | escape }}">{{ d_org_term.ko | default: d.org }}</span>
+                  <span class="pi-timeline__role" data-i18n-term data-orig-term="{{ d.role | escape }}">{{ d_role_term.ko | default: d.role }}</span>
                   {% if d.note -%}
+                    {%- assign d_note_term = site.data.i18n.terms[d.note] -%}
                     <span class="pi-timeline__note"
-                      ><i class="fa-solid fa-tag" aria-hidden="true"></i><span data-i18n-term>{{ d.note }}</span></span
+                      ><i class="fa-solid fa-tag" aria-hidden="true"></i
+                      ><span data-i18n-term data-orig-term="{{ d.note | escape }}">{{ d_note_term.ko | default: d.note }}</span></span
                     >
                   {%- endif %}
                 </li>
@@ -175,7 +183,7 @@
 
     {% if m.topics and m.topics.size > 0 %}
       <div class="pi-profile__block">
-        <h4 class="pi-profile__label" data-i18n="pi.section.topics">Research Topics</h4>
+        <h4 class="pi-profile__label" data-i18n="pi.section.topics">주요 연구 분야 (Research Topics)</h4>
         <ul class="pi-topics" role="list">
           {% for t in m.topics %}
             <li class="topic-tag">{{ t }}</li>
@@ -187,7 +195,7 @@
     {% if m.teaching and m.teaching.size > 0 %}
       <section class="pi-profile__block pi-teaching" aria-label="Teaching">
         <div class="pi-teaching__head">
-          <h4 class="pi-profile__label" data-i18n="pi.section.teaching">Teaching</h4>
+          <h4 class="pi-profile__label" data-i18n="pi.section.teaching">개설 교과목 (Teaching)</h4>
           <p class="pi-teaching__legend" aria-hidden="true">
             <span data-i18n="pi.teaching.legend1">(학점) · 시수</span>
             <span class="pi-teaching__legend-sep">/</span>

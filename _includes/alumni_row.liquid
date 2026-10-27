@@ -31,13 +31,19 @@
     <div class="alumni-row__now">
       <span class="alumni-row__arrow" aria-hidden="true">→</span>
       <span class="alumni-row__dest">
+        {% assign aff_term = site.data.i18n.terms[a.now.affiliation] %}
         {% if a.now.url and a.now.url != '' %}
-          <a href="{{ a.now.url }}" target="_blank" rel="noopener" data-i18n-term>{{ a.now.affiliation }}</a>
+          <a href="{{ a.now.url }}" target="_blank" rel="noopener" data-i18n-term data-orig-term="{{ a.now.affiliation | escape }}">
+            {{- aff_term.ko | default: a.now.affiliation -}}
+          </a>
         {% else %}
-          <span data-i18n-term>{{ a.now.affiliation }}</span>
+          <span data-i18n-term data-orig-term="{{ a.now.affiliation | escape }}">{{ aff_term.ko | default: a.now.affiliation }}</span>
         {% endif %}
         {% if a.now.position and a.now.position != '' %}
-          <span class="alumni-row__position" data-i18n-term>{{ a.now.position }}</span>
+          {% assign pos_term = site.data.i18n.terms[a.now.position] %}
+          <span class="alumni-row__position" data-i18n-term data-orig-term="{{ a.now.position | escape }}">
+            {{- pos_term.ko | default: a.now.position -}}
+          </span>
         {% endif %}
       </span>
     </div>

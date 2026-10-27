@@ -30,11 +30,11 @@
     {% assign en_role_short = 'Member' %}
     {% case role_key %}
       {% when 'phd' %}
-        {% assign en_role_short = 'Ph.D. Student' %}
+        {% assign en_role_short = 'Ph.D.' %}
       {% when 'ms' %}
-        {% assign en_role_short = 'M.S. Student' %}
+        {% assign en_role_short = 'M.S.' %}
         {% if m.role_ko == '학연과정(석사)' %}
-          {% assign en_role_short = 'M.S. Student (Joint)' %}
+          {% assign en_role_short = 'M.S. (Joint)' %}
         {% endif %}
       {% when 'researcher' %}
         {% assign en_role_short = 'Researcher' %}
@@ -157,7 +157,14 @@
           ></a>
         {% endif %}
         {% if ach_total > 0 %}
-          <button type="button" class="member-card__ach-btn" data-ach-target="ach-{{ m.id }}" data-ach-name="{{ m.name_ko }}" aria-haspopup="dialog">
+          <button
+            type="button"
+            class="member-card__ach-btn"
+            data-ach-target="ach-{{ m.id }}"
+            data-ach-name="{{ m.name_ko | escape }}"
+            data-ach-name-en="{{ m.name_en | escape }}"
+            aria-haspopup="dialog"
+          >
             <i class="fa-solid fa-award" aria-hidden="true"></i><span data-i18n-term>연구 실적 · {{ ach_total }}</span>
           </button>
         {% endif %}

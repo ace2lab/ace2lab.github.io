@@ -24,11 +24,11 @@ nav_order: 2
 {% assign intern_affiliations = interns | map: "affiliation" | uniq %}
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> Principal Investigators ({{ site.data.members | where: "group", "pi" | size }})</span>
-<span class="hero-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i> Current Members ({{ current_count }})</span>
-<span class="hero-badge hero-badge--ai"><i class="fa-solid fa-robot" aria-hidden="true"></i> AI Secretary (1)</span>
-<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Alumni ({{ alumni.size }})</span>
-<span class="hero-badge"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Former Interns ({{ interns.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> <span data-i18n="members.badge_pi">공동 연구책임자</span> ({{ site.data.members | where: "group", "pi" | size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-flask" aria-hidden="true"></i> <span data-i18n="members.badge_current">재적 연구원</span> ({{ current_count }})</span>
+<span class="hero-badge hero-badge--ai"><i class="fa-solid fa-robot" aria-hidden="true"></i> <span data-i18n="members.badge_ai">AI 비서</span> (1)</span>
+<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span data-i18n="members.badge_alumni">졸업생</span> ({{ alumni.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-seedling" aria-hidden="true"></i> <span data-i18n="members.badge_interns">역대 학부인턴</span> ({{ interns.size }})</span>
 {% endcapture %}
 
 {% include hero_banner.liquid
@@ -41,33 +41,33 @@ nav_order: 2
   badges=hero_badges
 %}
 
-<div class="team-container">
+<div class="team-container is-tabbed">
 
-  <!-- Tab bar: hidden until ace2_tabs.js marks the container .is-tabbed (no JS / print = all panels in sequence) -->
+  <!-- Tab bar: rendered pre-collapsed statically with active tab default -->
   <nav class="team-tabnav" role="tablist" aria-label="Members tabs">
     {% if yim %}
-      <button type="button" role="tab" class="team-tab" id="tab-yim" aria-controls="panel-yim" aria-selected="false" tabindex="-1" data-hash="yim">
-        <span data-i18n="members.tab.yim">Prof. {{ yim.name_en }}</span>
+      <button type="button" role="tab" class="team-tab" id="tab-yim" aria-controls="panel-yim" aria-selected="false" tabindex="-1" data-hash="yim" data-aliases="yim,changyong-yim">
+        <span data-i18n="members.tab.yim">임창용 교수 (Prof. Yim)</span>
       </button>
     {% endif %}
     {% if kim %}
-      <button type="button" role="tab" class="team-tab" id="tab-kim" aria-controls="panel-kim" aria-selected="false" tabindex="-1" data-hash="kim">
-        <span data-i18n="members.tab.kim">Prof. {{ kim.name_en }}</span>
+      <button type="button" role="tab" class="team-tab" id="tab-kim" aria-controls="panel-kim" aria-selected="false" tabindex="-1" data-hash="kim" data-aliases="kim,taewook-kim">
+        <span data-i18n="members.tab.kim">김태욱 교수 (Prof. Kim)</span>
       </button>
     {% endif %}
     {% if current_count > 0 %}
-      <button type="button" role="tab" class="team-tab" id="tab-members" aria-controls="panel-members" aria-selected="false" tabindex="-1" data-hash="members" data-default="true">
-        <span data-i18n="members.tab.current">Current Members</span><span class="team-tab__count">{{ current_count }}</span>
+      <button type="button" role="tab" class="team-tab is-active" id="tab-members" aria-controls="panel-members" aria-selected="true" tabindex="0" data-hash="members" data-default="true" data-aliases="students,current,current-members">
+        <span data-i18n="members.tab.current">재적 연구원</span><span class="team-tab__count">{{ current_count }}</span>
       </button>
     {% endif %}
     {% if alumni.size > 0 %}
-      <button type="button" role="tab" class="team-tab" id="tab-alumni" aria-controls="panel-alumni" aria-selected="false" tabindex="-1" data-hash="alumni">
-        <span data-i18n="members.tab.alumni">Proud Alumni</span><span class="team-tab__count">{{ alumni.size }}</span>
+      <button type="button" role="tab" class="team-tab" id="tab-alumni" aria-controls="panel-alumni" aria-selected="false" tabindex="-1" data-hash="alumni" data-aliases="alumni,proud-alumni">
+        <span data-i18n="members.tab.alumni">졸업생 (Alumni)</span><span class="team-tab__count">{{ alumni.size }}</span>
       </button>
     {% endif %}
     {% if interns.size > 0 %}
-      <button type="button" role="tab" class="team-tab" id="tab-interns" aria-controls="panel-interns" aria-selected="false" tabindex="-1" data-hash="interns">
-        <span data-i18n="members.tab.interns">Former Interns</span><span class="team-tab__count">{{ interns.size }}</span>
+      <button type="button" role="tab" class="team-tab" id="tab-interns" aria-controls="panel-interns" aria-selected="false" tabindex="-1" data-hash="interns" data-aliases="interns,former-interns">
+        <span data-i18n="members.tab.interns">역대 학부인턴</span><span class="team-tab__count">{{ interns.size }}</span>
       </button>
     {% endif %}
   </nav>
@@ -76,10 +76,10 @@ nav_order: 2
 
 {% if yim %}
 
-  <div class="team-tabpanel" role="tabpanel" id="panel-yim" aria-labelledby="tab-yim" tabindex="0">
+  <div class="team-tabpanel" role="tabpanel" id="panel-yim" aria-labelledby="tab-yim" tabindex="0" hidden>
     <section class="team-section" id="principal-investigators">
       <h2 class="team-section__title team-section__title--print-only">
-        <span data-i18n="members.sec.pi">Principal Investigators</span>
+        <span data-i18n="members.sec.pi">공동 연구책임자 (Principal Investigators)</span>
         <span class="team-section__count">{{ site.data.members | where: "group", "pi" | size }}</span>
       </h2>
       <div class="team-grid team-grid--pi">
@@ -93,7 +93,7 @@ nav_order: 2
 
 {% if kim %}
 
-  <div class="team-tabpanel" role="tabpanel" id="panel-kim" aria-labelledby="tab-kim" tabindex="0">
+  <div class="team-tabpanel" role="tabpanel" id="panel-kim" aria-labelledby="tab-kim" tabindex="0" hidden>
     <section class="team-section">
       <div class="team-grid team-grid--pi">
         {% include pi_profile.liquid member=kim %}
@@ -106,7 +106,7 @@ nav_order: 2
 
 {% if current_count > 0 %}
 
-  <div class="team-tabpanel" role="tabpanel" id="panel-members" aria-labelledby="tab-members" tabindex="0">
+  <div class="team-tabpanel is-active" role="tabpanel" id="panel-members" aria-labelledby="tab-members" tabindex="0">
     {% assign ai_staff = site.data.members | where: "group", "ai" %}
     {% if ai_staff.size > 0 %}
     <aside class="ai-concierge-banner" id="ai-staff" aria-label="AI Executive Secretary">
@@ -161,17 +161,17 @@ nav_order: 2
 
     <div class="team-section__lead-info" lang="ko">
       <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-      <span class="lead-info__item"><strong>KNU</strong>: Kyungpook National University (경북대학교)</span>
+      <span class="lead-info__item"><span class="lead-info__label">KNU</span>: Kyungpook National University (경북대학교)</span>
       <span class="lead-info__divider" aria-hidden="true">·</span>
       <span class="lead-info__item"
-        ><strong>연구원 구성</strong> (총 {{ current_count }}명): 대학원생 {{ grads.size }} (박사과정 {{ n_phd }}, 석사과정 {{ n_ms }}, 학연과정(석사) {{ n_joint }}, 연구원(석사) {{ n_res }}) ·
+        ><span class="lead-info__label">연구원 구성</span> (총 {{ current_count }}명): 대학원생 {{ grads.size }} (박사과정 {{ n_phd }}, 석사과정 {{ n_ms }}, 학연과정(석사) {{ n_joint }}, 연구원(석사) {{ n_res }}) ·
         학부연구생 {{ ugs.size }}</span
       >
     </div>
     {% if grads.size > 0 %}
     <section class="team-section" id="graduate-students">
       <h2 class="team-section__title">
-        <span data-i18n="members.sec.students">Graduate Students</span>
+        <span data-i18n="members.sec.students">대학원생 및 연구원 (Graduate Students)</span>
         <span class="team-section__count">{{ grads.size }}</span>
       </h2>
       <div class="team-grid">
@@ -184,7 +184,7 @@ nav_order: 2
     {% if ugs.size > 0 %}
     <section class="team-section" id="undergraduate-researchers">
       <h2 class="team-section__title">
-        <span data-i18n="members.sec.interns">Undergraduate Researchers</span>
+        <span data-i18n="members.sec.interns">학부연구생 (Undergraduate Researchers)</span>
         <span class="team-section__count">{{ ugs.size }}</span>
       </h2>
       <div class="team-grid">
@@ -202,10 +202,10 @@ nav_order: 2
 
 {% if alumni.size > 0 %}
 
-  <div class="team-tabpanel" role="tabpanel" id="panel-alumni" aria-labelledby="tab-alumni" tabindex="0">
+  <div class="team-tabpanel" role="tabpanel" id="panel-alumni" aria-labelledby="tab-alumni" tabindex="0" hidden>
     <section class="team-section" id="proud-alumni">
       <h2 class="team-section__title">
-        <span data-i18n="members.sec.alumni">Proud Alumni</span>
+        <span data-i18n="members.sec.alumni">졸업생 및 역대 연구원 (Proud Alumni)</span>
         <span class="team-section__count">{{ alumni.size }}</span>
       </h2>
       <div class="alumni-list">
@@ -221,10 +221,10 @@ nav_order: 2
 
 {% if interns.size > 0 %}
 
-  <div class="team-tabpanel" role="tabpanel" id="panel-interns" aria-labelledby="tab-interns" tabindex="0">
+  <div class="team-tabpanel" role="tabpanel" id="panel-interns" aria-labelledby="tab-interns" tabindex="0" hidden>
     <section class="team-section" id="former-interns">
       <h2 class="team-section__title">
-        <span data-i18n="members.sec.former_interns">Former Interns</span>
+        <span data-i18n="members.sec.former_interns">역대 학부연구생 인턴 (Former Interns)</span>
         <span class="team-section__count">{{ interns.size }}</span>
       </h2>
       {% if intern_affiliations.size == 1 %}
@@ -262,7 +262,7 @@ nav_order: 2
     <div class="ach-dialog__panel">
       <header class="ach-dialog__head">
         <div>
-          <p class="ach-dialog__eyebrow">Research Achievements · 연구 실적</p>
+          <p class="ach-dialog__eyebrow" data-i18n="ach.eyebrow">연구 실적 · Research Achievements</p>
           <h2 id="ach-dialog-title" class="ach-dialog__title" data-ach="title"></h2>
           <p class="ach-dialog__summary" data-ach="summary"></p>
         </div>
@@ -281,24 +281,23 @@ nav_order: 2
 {%- if ach_total > 0 %}
 <template id="ach-{{ m.id }}" data-total="{{ ach_total }}">
 {%- if ach_papers.size > 0 %}
-<section class="ach-group"><h3 class="ach-group__title">논문 <span class="ach-group__count">{{ ach_papers.size }}</span></h3><ul class="ach-list" role="list">
-{%- assign ach_self = '<strong class="ach-author--self">' | append: m.name_en | append: '</strong>' -%}
+<section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_papers">논문</span> <span class="ach-group__count">{{ ach_papers.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_papers %}
-{%- assign ach_authors = x.authors | escape -%}
-{%- if m.name_en != blank -%}{%- assign ach_authors = ach_authors | replace: m.name_en, ach_self -%}{%- endif %}
-<li class="ach-item"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ x.title | escape }}</a>{% else %}{{ x.title | escape }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}{% if x.note and x.note != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-award" aria-hidden="true"></i> {{ x.note | escape }}</span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.year | escape }}{% if x.authors != blank %} · {{ ach_authors }}{% endif %}</p></li>
+{%- capture p_title_html -%}{%- if x.title_html and x.title_html != '' -%}{{ x.title_html }}{%- else -%}{{ x.title | escape }}{%- endif -%}{%- endcapture -%}
+{%- capture ach_authors -%}{%- if x.author_items and x.author_items.size > 0 -%}{%- for a in x.author_items -%}{%- unless forloop.first -%}, {% endunless -%}{%- if a.ko == m.name_ko -%}<span class="ach-author--self">{{ a.name | escape }}</span>{{ a.syms | escape }}{%- else -%}{{ a.name | escape }}{{ a.syms | escape }}{%- endif -%}{%- endfor -%}{%- else -%}{{ x.authors | escape }}{%- endif -%}{%- endcapture -%}
+<li class="ach-item{% if x.is_cover %} ach-item--cover{% endif %}"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ p_title_html }}</a>{% else %}{{ p_title_html }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag{% if x.type_class != blank %} {{ x.type_class }}{% endif %}"{% if x.type_i18n_key %} data-i18n="{{ x.type_i18n_key }}"{% endif %}>{{ x.type | escape }}</span>{% endif %}{% if x.is_cover %}<span class="ach-item__tag ach-item__tag--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">표지논문 (Front Cover)</span></span>{% endif %}{% if x.is_accepted %}<span class="ach-item__tag ach-item__tag--accepted"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span data-i18n="ach.badge_accepted">게재 확정 (Just Accepted)</span></span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.year | escape }}{% if ach_authors != blank %} · {{ ach_authors }}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
 {%- if ach_patents.size > 0 %}
-<section class="ach-group"><h3 class="ach-group__title">특허 <span class="ach-group__count">{{ ach_patents.size }}</span></h3><ul class="ach-list" role="list">
+<section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_patents">특허</span> <span class="ach-group__count">{{ ach_patents.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_patents %}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag">{{ x.status | escape }}</span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · {{ x.country | escape }}{% endif %}{% if x.app_number and x.app_number != blank %} (출원 {{ x.app_number | escape }}{% if x.app_date and x.app_date != blank %} · {{ x.app_date | escape }}{% endif %}){% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag" data-i18n-term>{{ x.status | escape }}</span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · {{ x.country | escape }}{% endif %}{% if x.app_number and x.app_number != blank %} (출원 {{ x.app_number | escape }}{% if x.app_date and x.app_date != blank %} · {{ x.app_date | escape }}{% endif %}){% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
 {%- if ach_awards.size > 0 %}
-<section class="ach-group"><h3 class="ach-group__title">수상 <span class="ach-group__count">{{ ach_awards.size }}</span></h3><ul class="ach-list" role="list">
+<section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_awards">수상</span> <span class="ach-group__count">{{ ach_awards.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_awards %}
 {%- assign is_top_award = false -%}
 {%- if x.type contains '장관상' or x.type contains '대상' -%}{%- assign is_top_award = true -%}{%- endif -%}
@@ -307,12 +306,12 @@ nav_order: 2
 </ul></section>
 {%- endif %}
 {%- if ach_talks.size > 0 %}
-<section class="ach-group"><h3 class="ach-group__title">학회 발표 <span class="ach-group__count">{{ ach_talks.size }}</span></h3><ul class="ach-list" role="list">
+<section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_talks">학회 발표</span> <span class="ach-group__count">{{ ach_talks.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_talks %}
 {%- assign p_list = x.presenters | split: "," -%}
 {%- assign p_lead = p_list | first | strip -%}
 {%- assign p_rest = p_list | slice: 1, p_list.size -%}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag">{{ x.type | escape }}</span>{% endif %}{% if x.award and x.award != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ x.award | escape }}</span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if x.presenters != blank %} · <span class="ach-presenter--lead">{{ p_lead | escape }}</span>{%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}{% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag" data-i18n-term>{{ x.type | escape }}</span>{% endif %}{% if x.award and x.award != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ x.award | escape }}</span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if x.presenters != blank %} · <span class="ach-presenter--lead">{{ p_lead | escape }}</span>{%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}

@@ -12,24 +12,52 @@
   var titleEl = dialog.querySelector('[data-ach="title"]');
   var summaryEl = dialog.querySelector('[data-ach="summary"]');
   var bodyEl = dialog.querySelector('[data-ach="body"]');
+  var closeBtn = dialog.querySelector("[data-ach-close]");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   var opener = null;
   var closing = false;
+
+  function formatHeader(btn, total) {
+    var lang = document.documentElement.getAttribute("data-lang") || "ko";
+    var nameKo = btn.getAttribute("data-ach-name") || "";
+    var nameEn = btn.getAttribute("data-ach-name-en") || nameKo;
+    var parts = Array.prototype.map.call(bodyEl.querySelectorAll(".ach-group__title"), function (h) {
+      return h.textContent.replace(/\s+/g, " ").trim();
+    });
+
+    if (lang === "en") {
+      titleEl.textContent = nameEn + " — Research Achievements";
+      summaryEl.textContent = "Total " + total + " · " + parts.join(" · ");
+      if (closeBtn) closeBtn.setAttribute("aria-label", "Close");
+    } else if (lang === "ja") {
+      titleEl.textContent = nameEn + " (" + nameKo + ") 研究業績";
+      summaryEl.textContent = "計 " + total + "件 · " + parts.join(" · ");
+      if (closeBtn) closeBtn.setAttribute("aria-label", "閉じる");
+    } else if (lang === "zh") {
+      titleEl.textContent = nameEn + " (" + nameKo + ") 科研成果";
+      summaryEl.textContent = "共 " + total + "项 · " + parts.join(" · ");
+      if (closeBtn) closeBtn.setAttribute("aria-label", "关闭");
+    } else {
+      titleEl.textContent = nameKo + " 연구 실적";
+      summaryEl.textContent = "총 " + total + "건 · " + parts.join(" · ");
+      if (closeBtn) closeBtn.setAttribute("aria-label", "닫기");
+    }
+  }
 
   function open(btn) {
     var tpl = document.getElementById(btn.getAttribute("data-ach-target"));
     if (!tpl) return;
 
     var frag = tpl.content.cloneNode(true);
-    var parts = Array.prototype.map.call(frag.querySelectorAll(".ach-group__title"), function (h) {
-      return h.textContent.replace(/\s+/g, " ").trim();
-    });
-
-    titleEl.textContent = (btn.getAttribute("data-ach-name") || "") + " 연구 실적";
-    summaryEl.textContent = "총 " + (tpl.getAttribute("data-total") || "") + "건 · " + parts.join(" · ");
     bodyEl.textContent = "";
     bodyEl.appendChild(frag);
     bodyEl.scrollTop = 0;
+
+    var lang = document.documentElement.getAttribute("data-lang") || "ko";
+    if (lang !== "ko" && window.ACE2_I18N && typeof window.ACE2_I18N.refresh === "function") {
+      window.ACE2_I18N.refresh();
+    }
+    formatHeader(btn, tpl.getAttribute("data-total") || "");
 
     opener = btn;
     closing = false;

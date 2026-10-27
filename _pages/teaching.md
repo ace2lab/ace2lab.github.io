@@ -280,9 +280,9 @@ nav_order: 8
 </style>
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> <span data-i18n="teaching.badge_webapp">Interactive WebApp</span></span>
-<span class="hero-badge"><i class="fa-solid fa-water" aria-hidden="true"></i> <span data-i18n="teaching.badge_tp">Transport Phenomena</span></span>
-<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span data-i18n="teaching.badge_courses">2026-2 Active Courses</span></span>
+<span class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> <span data-i18n="teaching.badge_webapp">인터랙티브 웹앱</span></span>
+<span class="hero-badge"><i class="fa-solid fa-water" aria-hidden="true"></i> <span data-i18n="teaching.badge_tp">전달현상 (Transport Phenomena)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span data-i18n="teaching.badge_courses">2026-2 개설 강좌</span></span>
 {% endcapture %}
 
 {% include hero_banner.liquid
@@ -301,7 +301,7 @@ nav_order: 8
   <section aria-labelledby="heading-simulations" class="mb-5">
     <h2 id="heading-simulations" class="teaching-section-title">
       <i class="fa-solid fa-flask-vial text-primary" aria-hidden="true"></i>
-      <span data-i18n="teaching.sim_sec_title">Interactive Lecture Notes &amp; Simulations</span>
+      <span data-i18n="teaching.sim_sec_title">인터랙티브 강의노트 및 물리 시뮬레이션 (Interactive Simulations)</span>
     </h2>
     <p class="teaching-section-desc" data-i18n="teaching.sim_sec_desc">
       복잡한 수학적 전달방정식과 경계조건을 직접 조작하며 직관적으로 이해할 수 있는 실시간 웹 시뮬레이션 모듈입니다.
@@ -323,7 +323,7 @@ nav_order: 8
         <div>
           <div class="sim-card__tag-bar">
             <span class="sim-pill sim-pill--amber" data-i18n="teaching.sim1_tag1">전달현상 2 (Transport Phenomena II)</span>
-            <span class="sim-pill" data-i18n="teaching.sim1_tag2">Manim Video 연동</span>
+            <span class="sim-pill" data-i18n="teaching.sim1_tag2">Manim 수식 애니메이션 연동</span>
             <span class="sim-pill" data-i18n="teaching.sim1_tag3">Web Audio 3채널 합성</span>
           </div>
 
@@ -342,9 +342,9 @@ nav_order: 8
 
           <div class="sim-features-grid">
             <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f1">실시간 미시/거시 듀얼 캔버스</span></div>
-            <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f2">레이놀즈 수 (Re &lt; 20) 층류 판정</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f2">레이놀즈 수 (Re &lt; 20) 무파동 층류 판정</span></div>
             <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f3">HTML5 비디오 구간 탐색 제어</span></div>
-            <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f4">다크모드 &amp; 슈퍼마리오 레트로 랜딩</span></div>
+            <div><i class="fa-solid fa-circle-check"></i><span data-i18n="teaching.sim1_f4">다크 모드 및 8비트 레트로 랜딩 화면</span></div>
           </div>
         </div>
 
@@ -366,7 +366,7 @@ nav_order: 8
   <section aria-labelledby="heading-courses" class="mb-5">
     <h2 id="heading-courses" class="teaching-section-title">
       <i class="fa-solid fa-book-open-reader text-primary" aria-hidden="true"></i>
-      <span data-i18n="teaching.course_sec_title">Academic Courses &amp; Curriculum</span>
+      <span data-i18n="teaching.course_sec_title">담당 교과목 및 커리큘럼 (Academic Courses &amp; Curriculum)</span>
     </h2>
     <p class="teaching-section-desc" data-i18n="teaching.course_sec_desc">
       2026학년도 2학기 경북대학교 과학기술대학 에너지화학공학과 및 대학원에서 임창용 교수가 담당하여 강의하는 교과목입니다.

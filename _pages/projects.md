@@ -10,10 +10,10 @@ nav_order: 3
 <link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> Energy Materials (Pillar 01)</span>
-<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Photonic Sintering (Pillar 02)</span>
-<span class="hero-badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i> Flexible Sensors (Pillar 03)</span>
-<a href="{{ '/facilities/' | relative_url }}" class="hero-badge"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> View {{ site.data.facilities.size }} Lab Facilities <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<span class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> <span data-i18n="research.badge_p1">에너지 저장 소재 (Pillar 01)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.badge_p2">광열 소결 공정 (Pillar 02)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.badge_p3">유연 센서 소자 (Pillar 03)</span></span>
+<a href="{{ '/facilities/' | relative_url }}" class="hero-badge"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> <span data-i18n="research.badge_facilities">연구장비 바로가기</span> ({{ site.data.facilities.size }}대) <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 {% endcapture %}
 
 {% include hero_banner.liquid
@@ -26,29 +26,29 @@ nav_order: 3
   badges=hero_badges
 %}
 
-<div class="ed-page ace2-tab-container">
+<div class="ed-page ace2-tab-container is-tabbed">
 
   <!-- Accessible Tab Navigation -->
   <div class="ace2-tabnav" role="tablist" aria-label="Research pillar tabs">
-    <button type="button" role="tab" class="ace2-tab" id="tab-energy-storage" aria-controls="panel-energy-storage" aria-selected="false" tabindex="-1" data-hash="energy-storage" data-default="true" data-aliases="energy,battery,supercapacitor">
-      <i class="fa-solid fa-battery-three-quarters" aria-hidden="true"></i> <span data-i18n="research.tab.p1">Energy Storage & Materials</span>
+    <button type="button" role="tab" class="ace2-tab is-active" id="tab-energy-storage" aria-controls="panel-energy-storage" aria-selected="true" tabindex="0" data-hash="energy-storage" data-default="true" data-aliases="energy,battery,supercapacitor">
+      <i class="fa-solid fa-battery-three-quarters" aria-hidden="true"></i> <span data-i18n="research.tab.p1">에너지 저장 및 기능성 소재</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-photonic" aria-controls="panel-photonic" aria-selected="false" tabindex="-1" data-hash="photonic" data-aliases="photonic-processing,ipl,laser">
-      <i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.tab.p2">Photonic Nanomanufacturing</span>
+      <i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.tab.p2">초고속 광열 나노공정</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-sensors" aria-controls="panel-sensors" aria-selected="false" tabindex="-1" data-hash="sensors" data-aliases="flexible-sensors,devices">
-      <i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.tab.p3">Flexible Sensors & Devices</span>
+      <i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.tab.p3">유연 센서 및 스마트 소자</span>
     </button>
   </div>
 
   <!-- Panel 1: Energy Storage & Materials -->
-  <div class="ace2-tabpanel" role="tabpanel" id="panel-energy-storage" aria-labelledby="tab-energy-storage" tabindex="0">
+  <div class="ace2-tabpanel is-active" role="tabpanel" id="panel-energy-storage" aria-labelledby="tab-energy-storage" tabindex="0">
     <article class="ed-pillar">
       <header class="ed-pillar__header">
         <span class="ed-pillar__tag" data-i18n="research.p1.kicker">Pillar 01 · Energy Systems</span>
-        <h2 class="ed-pillar__title" data-i18n="research.p1.title">Advanced Energy Storage &amp; Nanomaterials</h2>
+        <h2 class="ed-pillar__title" data-i18n="research.p1.title">차세대 에너지 저장 및 기능성 나노소재 (Advanced Energy Storage & Nanomaterials)</h2>
         <p class="ed-pillar__desc" data-i18n="research.p1.lead">
-          Our laboratory focuses on rational architecture design and interface engineering of low-dimensional nanomaterials for next-generation electrochemical energy storage and catalytic systems. We develop hybrid supercapacitors, porous 2D MXene battery anodes, and durable energy-conversion catalysts with rapid ion-transport kinetics and long-term cyclic stability.
+          본 연구실은 차세대 전기화학 에너지 저장 및 환경 촉매 시스템을 위한 저차원 나노소재의 합리적 구조 설계와 계면 공학에 집중하고 있습니다. 빠른 이온 전달 동역학과 장기 충·방전 안정성을 갖춘 하이브리드 슈퍼커패시터, 다공성 2D MXene 이차전지 음극재, 그리고 고내구성 환경·에너지 변환 촉매를 개발합니다.
         </p>
       </header>
 
@@ -63,7 +63,7 @@ nav_order: 3
             >
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p1.fig1_cap">
-            <span class="ed-pillar__fig-label">Figure 1(a).</span> Room-temperature sequential synthesis of Co-MOF/Ni–Co sulfide (NCS) composite nanopetal arrays on 3D Ni foam for hybrid coin-cell supercapacitors (<em>J. Energy Storage</em>, 2024).
+            <span class="ed-pillar__fig-label">Figure 1(a).</span> 하이브리드 코인셀 슈퍼커패시터 응용을 위한 3D 니켈 폼 위 Co-MOF/Ni–Co 황화물(NCS) 복합 나노페탈 어레이의 상온 연속 합성 (<em>J. Energy Storage</em>, 2024).
           </figcaption>
         </figure>
 
@@ -77,33 +77,33 @@ nav_order: 3
             >
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p1.fig2_cap">
-            <span class="ed-pillar__fig-label">Figure 1(b).</span> Instantaneous flashlight-induced structuring of restacked Ti₃C₂Tₓ MXene into a 3D porous MXene/TiO₂ nanocomposite anode for Li-ion batteries (<em>Chem. Eng. J.</em>, 2024).
+            <span class="ed-pillar__fig-label">Figure 1(b).</span> 리튬이온전지 음극 응용을 위해 재적층된 Ti₃C₂Tₓ MXene 필름을 3차원 다공성 MXene/TiO₂ 나노복합체로 순간 전환하는 제논 플래시광(IPL) 구조화 공정 (<em>Chem. Eng. J.</em>, 2024).
           </figcaption>
         </figure>
       </div>
 
       <div class="ed-pillar__grid">
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p1.t1.title">Hybrid Supercapacitors &amp; Structural Electrodes</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p1.t1.title">하이브리드 슈퍼커패시터 및 구조형 전극</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p1.t1.body">
-            Synthesis of metal-organic framework (Co-MOF) and transition metal sulfide (Ni–Co sulfide) composite nanopetal arrays, alongside laser- and IPL-engineered Co₃O₄ and Co(OH)₂ carbon nanofiber electrodes delivering high energy density without sacrificing power capability.
+            금속-유기 골격체(Co-MOF) 및 전이금속 황화물(Ni–Co sulfide) 복합 나노페탈 어레이 합성과 더불어, 레이저 및 초고속 펄스광(IPL)으로 설계된 Co₃O₄·Co(OH)₂ 탄소나노섬유 전극을 통해 출력 특성 저하 없이 높은 에너지 밀도를 구현합니다.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p1.t2.title">2D MXene &amp; Next-Generation Battery Anodes</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p1.t2.title">2D MXene 및 차세대 이차전지 음극재</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p1.t2.body">
-            Topochemical conversion, vertical alignment, and photothermal structuring of 2D Ti₃C₂Tₓ and vanadium-based MXenes into porous MXene/TiO₂ architectures to prevent sheet restacking and buffer volumetric expansion in Li-ion and solid-state batteries.
+            2차원 Ti₃C₂Tₓ 및 바나듐계 MXene의 토포케미컬 전환, 수직 배향 및 광열 다공성 구조화를 통해 나노시트 재적층(restacking)을 방지하고 리튬이온 및 전고체전지의 충·방전 부피 팽창을 완충합니다.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p1.t3.title">Environmental Catalysis &amp; Structural Durability</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p1.t3.title">환경 촉매(De-NOx SCR) 및 적층제조 소재 내구성</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p1.t3.body">
-            Rational design of V₂O₅–WO₃/TiO₂ catalysts for selective catalytic reduction (SCR) of NOₓ, regeneration of industrial Na-based desulfurization sorbents, and in-situ hydrogen embrittlement diagnostics of additively manufactured alloys.
+            질소산화물(NOₓ)의 선택적 촉매 환원(SCR)을 위한 V₂O₅–WO₃/TiO₂ 촉매 설계, 산업용 나트륨계 탈황 흡착제 재생 공정, 그리고 3D 적층제조 합금의 in-situ 수소취화 저항성 진단 기술을 연구합니다.
           </p>
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">Representative Publications</span></h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문 (Representative Publications)</span></h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Journal of Energy Storage (2024)</span>
@@ -130,10 +130,10 @@ nav_order: 3
 
       <footer class="ed-pillar__footer-action">
         <a href="{{ '/facilities/#characterization' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-microscope" aria-hidden="true"></i> <span data-i18n="research.p1.cross_inst">Core Instruments: Potentiostats, Glove Box &amp; BET Analyzer →</span>
+          <i class="fa-solid fa-microscope" aria-hidden="true"></i> <span data-i18n="research.p1.cross_inst">핵심 장비: 충방전기·포텐쇼스탯, 글로브박스 및 BET 비표면적 분석기 →</span>
         </a>
         <a href="{{ '/publications/#journals' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="research.p1.cross_pubs">View all energy publications in Publications →</span>
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="research.p1.cross_pubs">연구성과 페이지에서 에너지 분야 논문 전체 보기 →</span>
         </a>
       </footer>
     </article>
@@ -145,9 +145,9 @@ nav_order: 3
     <article class="ed-pillar">
       <header class="ed-pillar__header">
         <span class="ed-pillar__tag" data-i18n="research.p2.kicker">Pillar 02 · Photonic Processing</span>
-        <h2 class="ed-pillar__title" data-i18n="research.p2.title">Ultrafast Photonic Nanomanufacturing</h2>
+        <h2 class="ed-pillar__title" data-i18n="research.p2.title">초고속 광열 나노공정 (Ultrafast Photonic Nanomanufacturing)</h2>
         <p class="ed-pillar__desc" data-i18n="research.p2.lead">
-          Conventional thermal annealing requires hours in high-temperature furnaces, damaging flexible polymer substrates and inducing unwanted phase segregation. ACE² Lab pioneers Intense Pulsed Light (IPL) flash sintering and laser-assisted photothermal processing as a room-temperature, millisecond-scale nanomanufacturing platform.
+          기존의 고온 전기로 열처리 공정은 수 시간이 소요되며 열에 취약한 유연 고분자 기판을 손상시키고 원치 않는 상분리를 유발합니다. ACE² Lab은 상온·밀리초(ms) 단위의 나노제조 플랫폼으로서 초고속 제논 펄스광(IPL) 광열 소결과 레이저 유도 그래핀(LIG) 공정을 선도하고 있습니다.
         </p>
       </header>
 
@@ -162,7 +162,7 @@ nav_order: 3
             >
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p2.fig1_cap">
-            <span class="ed-pillar__fig-label">Figure 2(a).</span> Millisecond flashlight annealing (FLA) photothermal surface treatment of PbS colloidal quantum dot (CQD) films for surface trap suppression (<em>Small</em>, 2024, Front Cover).
+            <span class="ed-pillar__fig-label">Figure 2(a).</span> 콜로이드 양자점(PbS CQD) 박막의 열유도 표면 트랩 억제를 위한 밀리초 플래시광 어닐링(FLA) 광열 표면 처리 (<em>Small</em>, 2024, 표지논문(Front Cover) 선정).
           </figcaption>
         </figure>
 
@@ -176,33 +176,33 @@ nav_order: 3
             >
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p2.fig2_cap">
-            <span class="ed-pillar__fig-label">Figure 2(b).</span> Xenon flash lamp photothermal reduction and sintering of copper formate / Cu–Ag hybrid nanoparticles into oxidation-resistant conductive electrodes (<em>ACS Appl. Mater. Interfaces</em>).
+            <span class="ed-pillar__fig-label">Figure 2(b).</span> 포름산구리 및 Cu–Ag 하이브리드 나노입자의 제논 플래시 램프 광열 환원·소결을 통한 내산화성 고전도성 전극 형성 (<em>ACS Appl. Mater. Interfaces</em>).
           </figcaption>
         </figure>
       </div>
 
       <div class="ed-pillar__grid">
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p2.t1.title">Intense Pulsed Light (IPL) Sintering &amp; Phase Engineering</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p2.t1.title">초고속 펄스광(IPL) 소결 및 상전이 제어</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p2.t1.body">
-            Broad-spectrum xenon flash lamp irradiation delivering high-energy millisecond optical pulses for selective photothermal conversion, enabling ultrafast VO₂(B) → VO₂(M) phase engineering for thermochromic smart windows and oxidation-resistant metallic tracks on flexible substrates.
+            광대역 제논 플래시 램프에서 방출되는 고에너지 밀리초 광학 펄스를 통해 선택적 광열 전환을 유도하며, 열변색 스마트 윈도우용 VO₂(B) → VO₂(M) 초고속 상전이 제어 및 유연 기판 위 내산화성 금속 배선 소결을 달성합니다.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p2.t2.title">Photothermal Surface &amp; Defect Engineering</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p2.t2.title">광열 표면 개질 및 결함 제어 공학</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p2.t2.body">
-            Millisecond pulsed-light surface treatment and interface engineering to heal thermally induced surface trap states, control oxygen vacancies, and structure porous 2D MXene/oxide nanocomposites without damaging underlying functional layers.
+            밀리초 펄스광 표면 처리와 계면 공학을 통해 하부 기능성 박막 손상 없이 열유도 표면 트랩 준위를 치유하고 산소 공공(Oxygen vacancy) 농도를 제어하며 다공성 2D MXene/산화물 나노복합체를 구조화합니다.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p2.t3.title">Flash- &amp; Laser-Induced Graphene (FIG / LIG)</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p2.t3.title">플래시 및 레이저 유도 그래핀 (FIG / LIG)</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p2.t3.body">
-            Maskless, ambient-air photothermal graphitization of polyimide films, cellulose papers, and printed toner into 3D porous graphene electrodes for micro-supercapacitors, moisture-driven power generators, and wearable electronics.
+            폴리이미드 필름, 셀룰로오스 종이 및 인쇄 토너를 대기 중에서 마스크 없이 광열 흑연화하여 마이크로 슈퍼커패시터, 수분 유도 발전 소자 및 웨어러블 전자소자용 3차원 다공성 그래핀 전극을 직접 제작합니다.
           </p>
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">Representative Publications</span></h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문 (Representative Publications)</span></h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Small (2024, Front Cover)</span>
@@ -229,10 +229,10 @@ nav_order: 3
 
       <footer class="ed-pillar__footer-action">
         <a href="{{ '/facilities/#synthesis' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.p2.cross_inst">Core Instruments: PSTEK Flashlight, Sputter Coater &amp; Spin Coater →</span>
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.p2.cross_inst">핵심 장비: PSTEK 제논 플래시광(IPL) 시스템, 스퍼터 코터 및 스핀 코터 →</span>
         </a>
         <a href="{{ '/publications/#journals' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="research.p2.cross_pubs">View all photonic publications in Publications →</span>
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="research.p2.cross_pubs">연구성과 페이지에서 광열 나노공정 논문 전체 보기 →</span>
         </a>
       </footer>
     </article>
@@ -244,9 +244,9 @@ nav_order: 3
     <article class="ed-pillar">
       <header class="ed-pillar__header">
         <span class="ed-pillar__tag" data-i18n="research.p3.kicker">Pillar 03 · Sensor Technologies</span>
-        <h2 class="ed-pillar__title" data-i18n="research.p3.title">Flexible Sensors &amp; Bio-Environmental Devices</h2>
+        <h2 class="ed-pillar__title" data-i18n="research.p3.title">유연 센서 및 생체·환경 모니터링 소자 (Flexible Sensors & Bio-Environmental Devices)</h2>
         <p class="ed-pillar__desc" data-i18n="research.p3.lead">
-          ACE² Lab designs flexible, wearable, and environmental sensing systems for real-time healthcare biomonitoring, exhaled breath diagnosis, and toxic gas detection. By combining 2D MXenes, laser-induced graphene, semiconductor nanostructures, and machine-learning analytics, we achieve high sensitivity, selectivity, and mechanical reliability.
+          ACE² Lab은 실시간 헬스케어 생체신호 모니터링, 호기(날숨) 기반 질병 진단, 유해 환경가스 감지를 위한 유연 웨어러블 센싱 시스템을 설계합니다. 2D MXene, 레이저 유도 그래핀(LIG), 반도체 나노구조체와 머신러닝 데이터 분석을 결합하여 높은 민감도·선택성·기계적 신뢰성을 달성합니다.
         </p>
       </header>
 
@@ -261,7 +261,7 @@ nav_order: 3
             >
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p3.fig1_cap">
-            <span class="ed-pillar__fig-label">Figure 3(a).</span> Multi-layered MXene/mulberry-paper flexible tactile sensor integrated with wireless mobile telemetry for real-time CPR compression depth and rate feedback (<em>Small</em>, 2026).
+            <span class="ed-pillar__fig-label">Figure 3(a).</span> 실시간 심폐소생술(CPR) 압박 깊이·속도 피드백을 위해 무선 모바일 텔레메트리와 결합된 다층 MXene/한지(닥종이) 기반 유연 촉각 센서 (<em>Small</em>, 2026).
           </figcaption>
         </figure>
 
@@ -275,33 +275,33 @@ nav_order: 3
             >
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p3.fig2_cap">
-            <span class="ed-pillar__fig-label">Figure 3(b).</span> Nanostructured composite electronic-nose (E-nose) array coupled with machine-learning feature extraction for exhaled nitric oxide (NO) breathomics and respiratory diagnosis (<em>Chem. Eng. J.</em>, 2026).
+            <span class="ed-pillar__fig-label">Figure 3(b).</span> 호기 일산화질소(NO) 분석 및 호흡기 질환 진단을 위한 나노구조 복합 전자코(E-nose) 어레이 및 머신러닝 특징 추출 파이프라인 (<em>Chem. Eng. J.</em>, 2026).
           </figcaption>
         </figure>
       </div>
 
       <div class="ed-pillar__grid">
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p3.t1.title">Flexible Tactile &amp; Respiration Healthcare Sensors</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p3.t1.title">유연 촉각 및 호흡 헬스케어 센서</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p3.t1.body">
-            Multi-layered MXene-coated mulberry paper tactile sensors for wide-pressure-range wearable monitoring (such as real-time CPR feedback) and direct-laser-written 3D porous graphene (LIG) humidity sensors for continuous human respiration tracking.
+            실시간 심폐소생술(CPR) 피드백 등 광대역 압력 감지가 가능한 다층 MXene 코팅 한지 촉각 센서와, 인체 호흡을 연속 추적하는 레이저 직접 패터닝 3D 다공성 그래핀(LIG) 습도 센서를 개발합니다.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p3.t2.title">AI-Assisted Electronic Nose &amp; Breathomics</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p3.t2.title">인공지능(AI) 결합 나노 전자코 및 호기 진단</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p3.t2.body">
-            Integration of InGaN/GaN multi-quantum-well (MQW) nanowires, Ga₂O₃/Ti₃C₂Tₓ MXene heterostructures, and Pd/rGO-sensitized hollow SnO₂ nanospheres with machine-learning algorithms for selective sub-ppm NO, NO₂, NH₃, and acetone biomarker detection.
+            InGaN/GaN 다중양자우물(MQW) 나노와이어, Ga₂O₃/Ti₃C₂Tₓ MXene 이종접합, Pd/rGO 기능화 중공 SnO₂ 나노구체를 머신러닝 알고리즘과 결합하여 sub-ppm급 NO, NO₂, NH₃ 및 아세톤 바이오마커를 고선택성으로 판별합니다.
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p3.t3.title">Microresonator &amp; Nanoporous Sorbent Platforms</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p3.t3.title">마이크로 공진기 및 나노다공성 흡착 플랫폼</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p3.t3.body">
-            Direct functionalization of quartz crystal microbalances (QCM) and microcantilever arrays with nanoporous metal-organic frameworks (ZIF-8, MIL-53, Cu-BDC) for gravimetric VOC, CO₂, and pathogen immunoassay sensing.
+            수정진동자 미세저울(QCM) 및 마이크로캔틸레버 어레이 표면에 나노다공성 금속-유기 골격체(ZIF-8, MIL-53, Cu-BDC)를 직접 기능화하여 휘발성 유기화합물(VOC), CO₂ 및 병원체 면역반응을 초고감도로 정량 감지합니다.
           </p>
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">Representative Publications</span></h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문 (Representative Publications)</span></h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Small (2026)</span>
@@ -335,10 +335,10 @@ nav_order: 3
 
       <footer class="ed-pillar__footer-action">
         <a href="{{ '/facilities/#characterization' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i> <span data-i18n="research.p3.cross_inst">Core Instruments: Gas Sensor System, Mini-SEM &amp; Keysight DMM →</span>
+          <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i> <span data-i18n="research.p3.cross_inst">핵심 장비: 가스 센서 측정 시스템, Mini-SEM 및 Keysight 정밀 멀티미터 →</span>
         </a>
         <a href="{{ '/publications/#journals' | relative_url }}" class="ed-pillar__crosslink">
-          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="research.p3.cross_pubs">View all sensor publications in Publications →</span>
+          <i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="research.p3.cross_pubs">연구성과 페이지에서 센서 분야 논문 전체 보기 →</span>
         </a>
       </footer>
     </article>

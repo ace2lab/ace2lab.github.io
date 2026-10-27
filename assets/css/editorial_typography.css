@@ -56,6 +56,10 @@ html[data-theme="dark"] {
 /* ------------------------------------------------------------
    Global Reset & Typography
    ------------------------------------------------------------ */
+body.fixed-top-nav {
+  padding-top: 55px;
+}
+
 body,
 html {
   font-family: var(--font-editorial);
@@ -4327,7 +4331,7 @@ html:has(dialog.ed-viewer[open]) {
   border-radius: 6px;
 }
 
-.ace2-tab-container.is-tabbed .ace2-tabpanel:not([hidden]) {
+.ace2-tab-container.is-tabbed .ace2-tabpanel.is-animating {
   animation: ace2-panel-in 0.24s ease both;
 }
 
@@ -4365,7 +4369,7 @@ html:has(dialog.ed-viewer[open]) {
     transition: none;
   }
 
-  .ace2-tab-container.is-tabbed .ace2-tabpanel:not([hidden]) {
+  .ace2-tab-container.is-tabbed .ace2-tabpanel.is-animating {
     animation: none;
   }
 }

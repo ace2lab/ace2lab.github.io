@@ -28,10 +28,24 @@
     return dialog.querySelector('[data-lb="' + name + '"]');
   }
 
+  function getZoomText(on) {
+    var lang = document.documentElement.getAttribute("data-lang") || "ko";
+    var dict = window.__ACE2_I18N_DATA__ && window.__ACE2_I18N_DATA__.ui;
+    if (dict) {
+      var key = on ? "news.lb_fit" : "news.lb_zoom";
+      if (dict[key] && dict[key][lang]) return dict[key][lang];
+    }
+    if (lang === "ko") return on ? "화면 맞춤" : "원본 크기";
+    if (lang === "ja") return on ? "画面に合わせる" : "原寸表示";
+    if (lang === "zh") return on ? "适应窗口" : "实际大小";
+    return on ? "Fit to window" : "Actual size";
+  }
+
   function setZoom(on) {
     stage.classList.toggle("is-zoomed", on);
     zoomBtn.setAttribute("aria-pressed", on ? "true" : "false");
-    zoomLabel.textContent = on ? "Fit to window" : "Actual size";
+    zoomLabel.textContent = getZoomText(on);
+    zoomLabel.setAttribute("data-i18n", on ? "news.lb_fit" : "news.lb_zoom");
     zoomIcon.className = on ? "fa-solid fa-magnifying-glass-minus" : "fa-solid fa-magnifying-glass-plus";
     viewport.scrollTop = 0;
     viewport.scrollLeft = 0;

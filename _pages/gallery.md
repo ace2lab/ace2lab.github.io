@@ -16,9 +16,9 @@ nav_order: 7
 {% endfor %}
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-images" aria-hidden="true"></i> {{ site.data.gallery.size }} Albums</span>
-<span class="hero-badge"><i class="fa-solid fa-camera" aria-hidden="true"></i> {{ photo_total }} Photos</span>
-<span class="hero-badge"><i class="fa-solid fa-calendar" aria-hidden="true"></i> Since {{ albums_by_year.last.name }}</span>
+<span class="hero-badge"><i class="fa-solid fa-images" aria-hidden="true"></i> <span data-i18n-ko="{{ site.data.gallery.size }}개 앨범" data-i18n-en="{{ site.data.gallery.size }} Albums" data-i18n-ja="{{ site.data.gallery.size }}件のアルバム" data-i18n-zh="{{ site.data.gallery.size }}个相册">{{ site.data.gallery.size }}개 앨범</span></span>
+<span class="hero-badge"><i class="fa-solid fa-camera" aria-hidden="true"></i> <span data-i18n-ko="사진 {{ photo_total }}장" data-i18n-en="{{ photo_total }} Photos" data-i18n-ja="{{ photo_total }}枚の写真" data-i18n-zh="{{ photo_total }}张照片">사진 {{ photo_total }}장</span></span>
+<span class="hero-badge"><i class="fa-solid fa-calendar" aria-hidden="true"></i> <span data-i18n-ko="{{ albums_by_year.last.name }}년부터" data-i18n-en="Since {{ albums_by_year.last.name }}" data-i18n-ja="{{ albums_by_year.last.name }}年から" data-i18n-zh="{{ albums_by_year.last.name }}年至今">{{ albums_by_year.last.name }}년부터</span></span>
 {% endcapture %}
 
 {% include hero_banner.liquid
@@ -67,7 +67,7 @@ nav_order: 7
               {% if a.photos and a.photos.size > 1 %}
                 <details class="ed-album__expansion">
                   <summary class="ed-album__expansion-toggle">
-                    <span data-i18n-term>View all {{ a.photos.size }} photos</span>
+                    <span data-i18n-term>사진 전체 보기 ({{ a.photos.size }}장)</span>
                     <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                   </summary>
                   <div class="ed-album__grid">

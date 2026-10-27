@@ -155,8 +155,8 @@
       if (lang === "zh") return "科研成果 · " + num;
     }
 
-    // 5. Gallery "View all N photos"
-    if (/^View all \d+ photos$/i.test(trimmed)) {
+    // 5. Gallery "View all N photos" / "사진 전체 보기 (N장)"
+    if (/^(?:View all \d+ photos|사진 전체 보기 \(\d+장\))$/i.test(trimmed)) {
       var pNum = (trimmed.match(/\d+/) || [""])[0];
       if (lang === "ko") return "사진 전체 보기 (" + pNum + "장)";
       if (lang === "en") return "View all " + pNum + " photos";
@@ -198,7 +198,9 @@
       for (var c = 0; c < a.childNodes.length; c++) {
         var node = a.childNodes[c];
         if (node.nodeType === 3 && node.nodeValue.trim().length > 0) {
-          node.nodeValue = targetLabel;
+          if (node.nodeValue !== targetLabel + " ") {
+            node.nodeValue = targetLabel + " ";
+          }
           break;
         }
       }
@@ -217,10 +219,11 @@
     var keyedNodes = document.querySelectorAll("[data-i18n]");
     for (var i = 0; i < keyedNodes.length; i++) {
       var el = keyedNodes[i];
+      if (el.querySelector("[data-i18n-ko]") || el.hasAttribute("data-i18n-ko")) continue;
       var key = el.getAttribute("data-i18n");
       if (!key || !ui[key]) continue;
       var text = pickFallback(ui[key], lang);
-      if (text !== null) {
+      if (text !== null && el.textContent !== text) {
         el.textContent = text;
       }
     }
@@ -232,7 +235,7 @@
       var pKey = pEl.getAttribute("data-i18n-placeholder");
       if (!pKey || !ui[pKey]) continue;
       var phVal = pickFallback(ui[pKey], lang);
-      if (phVal !== null) {
+      if (phVal !== null && pEl.getAttribute("placeholder") !== phVal) {
         pEl.setAttribute("placeholder", phVal);
       }
     }
@@ -244,7 +247,7 @@
       var hKey = hEl.getAttribute("data-i18n-html");
       if (!hKey || !ui[hKey]) continue;
       var htmlVal = pickFallback(ui[hKey], lang);
-      if (htmlVal !== null) {
+      if (htmlVal !== null && hEl.innerHTML !== htmlVal) {
         hEl.innerHTML = htmlVal;
       }
     }
@@ -262,9 +265,13 @@
       var val = pickFallback(inlineEntry, lang);
       if (val !== null) {
         if (iEl.getAttribute("data-i18n-mode") === "html") {
-          iEl.innerHTML = val;
+          if (iEl.innerHTML !== val) {
+            iEl.innerHTML = val;
+          }
         } else {
-          iEl.textContent = val;
+          if (iEl.textContent !== val) {
+            iEl.textContent = val;
+          }
         }
       }
     }
@@ -278,7 +285,7 @@
       }
       var origText = tEl.getAttribute("data-orig-term") || "";
       var translated = translatePattern(origText, lang, terms);
-      if (translated !== null) {
+      if (translated !== null && tEl.textContent !== translated) {
         tEl.textContent = translated;
       }
     }
@@ -288,7 +295,9 @@
     if (switcher) {
       if (ui["lang_switcher.aria_label"]) {
         var ariaLbl = pickFallback(ui["lang_switcher.aria_label"], lang);
-        if (ariaLbl) switcher.setAttribute("aria-label", ariaLbl);
+        if (ariaLbl && switcher.getAttribute("aria-label") !== ariaLbl) {
+          switcher.setAttribute("aria-label", ariaLbl);
+        }
       }
       var btns = switcher.querySelectorAll(".ace2-lang-btn");
       for (var b = 0; b < btns.length; b++) {
@@ -383,7 +392,22 @@
   function init() {
     var initialLang = resolveInitialLang();
     mountNavbarSwitcher(initialLang);
-    setLanguage(initialLang, { updateUrl: false, persist: true });
+    if (initialLang === "ko") {
+      document.documentElement.setAttribute("data-lang", "ko");
+      document.documentElement.setAttribute("lang", "ko");
+      var switcher = document.querySelector(".ace2-lang-switcher");
+      if (switcher) {
+        var btns = switcher.querySelectorAll(".ace2-lang-btn");
+        for (var b = 0; b < btns.length; b++) {
+          var btn = btns[b];
+          var isCurrent = btn.getAttribute("data-lang-choice") === "ko";
+          btn.classList.toggle("is-active", isCurrent);
+          btn.setAttribute("aria-pressed", isCurrent ? "true" : "false");
+        }
+      }
+    } else {
+      setLanguage(initialLang, { updateUrl: false, persist: true });
+    }
   }
 
   // Pre-paint header pass: mounts switcher and translates navbar immediately if #navbar is parsed

@@ -23,8 +23,8 @@
     "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
     system-ui, sans-serif;
 
-  /* Type scale — minor third (1.2) from 15px, rounded to 4px line grid */
-  --tm-fs-2xs: 0.75rem; /* 12 / 16 */
+  /* Type scale — minor third (1.2) from 15px, clamped at 13px readable floor */
+  --tm-fs-2xs: 0.8125rem; /* 13 / 16 — 13px type floor */
   --tm-fs-xs: 0.8125rem; /* 13 / 20 */
   --tm-fs-sm: 0.875rem; /* 14 / 24 */
   --tm-fs-md: 0.9375rem; /* 15 / 24 */
@@ -271,13 +271,15 @@ html[data-theme="dark"] .team-container {
 }
 
 .member-card__role-en {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-size: var(--tm-fs-xs);
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--tm-role-text);
-  opacity: 0.8;
   white-space: nowrap;
+}
+
+html[data-lang="en"] .member-card__role-en {
+  display: none;
 }
 
 /* Avatar ------------------------------------------------ */
@@ -1889,7 +1891,7 @@ html[data-theme="dark"] .pi-action:focus-visible {
   border-radius: var(--tm-r-sm);
 }
 
-.team-container.is-tabbed .team-tabpanel:not([hidden]) {
+.team-container.is-tabbed .team-tabpanel.is-animating {
   animation: team-panel-in 0.24s ease both;
 }
 
@@ -2145,15 +2147,47 @@ html.ach-lock {
 }
 
 .ach-item__tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
   margin-right: var(--tm-s1);
-  padding: 0 var(--tm-s2);
-  font-size: var(--tm-fs-2xs);
+  padding: 1px var(--tm-s2);
+  font-size: var(--tm-fs-xs);
   font-weight: 600;
   line-height: 18px;
   color: var(--tm-amber);
   background: var(--tm-amber-soft);
   border-radius: var(--tm-r-sm);
+  vertical-align: baseline;
+}
+
+.ach-item__tag--sci {
+  color: var(--tm-cobalt);
+  background: var(--tm-cobalt-soft);
+}
+
+.ach-item__tag--cover {
+  color: #7a5c00;
+  background: linear-gradient(135deg, #fff8e7 0%, #fff1c5 100%);
+  border: 1px solid #d4af37;
+}
+
+html[data-theme="dark"] .ach-item__tag--cover {
+  color: #f3d46f;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(212, 175, 55, 0.1) 100%);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+.ach-item__tag--accepted {
+  color: #065f46;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(5, 150, 105, 0.45);
+}
+
+html[data-theme="dark"] .ach-item__tag--accepted {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.16);
+  border-color: rgba(52, 211, 153, 0.5);
 }
 
 .ach-item__tag--award {
@@ -2263,7 +2297,7 @@ html.ach-lock {
     animation: none !important;
   }
 
-  .team-container.is-tabbed .team-tabpanel:not([hidden]) {
+  .team-container.is-tabbed .team-tabpanel.is-animating {
     animation: none;
   }
 }

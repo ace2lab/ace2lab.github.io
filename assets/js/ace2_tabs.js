@@ -59,14 +59,15 @@
       return null;
     }
 
-    function centerTabInBar(tab) {
+    function centerTabInBar(tab, smooth) {
       var overflow = nav.scrollWidth - nav.clientWidth;
       if (overflow <= 0) return;
       var left = tab.offsetLeft - (nav.clientWidth - tab.offsetWidth) / 2;
-      nav.scrollTo({ left: Math.max(0, Math.min(overflow, left)), behavior: reduceMotion.matches ? "auto" : "smooth" });
+      var behavior = smooth && !reduceMotion.matches ? "smooth" : "auto";
+      nav.scrollTo({ left: Math.max(0, Math.min(overflow, left)), behavior: behavior });
     }
 
-    function activate(tab) {
+    function activate(tab, animate) {
       tabs.forEach(function (t) {
         var on = t === tab;
         var panel = panelOf(t);
@@ -76,9 +77,19 @@
         if (panel) {
           panel.hidden = !on;
           panel.classList.toggle("is-active", on);
+          if (on && animate && !reduceMotion.matches) {
+            panel.classList.add("is-animating");
+            var onAnimEnd = function () {
+              panel.classList.remove("is-animating");
+              panel.removeEventListener("animationend", onAnimEnd);
+            };
+            panel.addEventListener("animationend", onAnimEnd);
+          } else {
+            panel.classList.remove("is-animating");
+          }
         }
       });
-      centerTabInBar(tab);
+      centerTabInBar(tab, !!animate);
     }
 
     function scrollBehavior() {
@@ -102,7 +113,7 @@
     function syncFromHash(isInitial) {
       var hit = resolve(readHash());
       if (hit) {
-        activate(hit.tab);
+        activate(hit.tab, !isInitial);
         if (hit.target) scrollToTarget(hit.target);
         else if (!isInitial) realignIfStuck();
       } else if (isInitial) {
@@ -110,12 +121,12 @@
           tabs.filter(function (t) {
             return t.hasAttribute("data-default");
           })[0] || tabs[0];
-        activate(defaultTab);
+        activate(defaultTab, false);
       }
     }
 
     function select(tab, focus) {
-      activate(tab);
+      activate(tab, true);
       if (focus) tab.focus();
       var hash = tab.getAttribute("data-hash");
       if (hash) {

@@ -29,6 +29,19 @@
   }
 </style>
 
+<noscript>
+  <style>
+    .team-tabpanel[hidden],
+    .ace2-tabpanel[hidden] {
+      display: block !important;
+      animation: none !important;
+    }
+    .team-container.is-tabbed .team-section__title--print-only {
+      display: flex !important;
+    }
+  </style>
+</noscript>
+
 <div class="ed-hero-banner ed-hero-banner--{{ hero_variant }}">
   <div class="ed-hero-banner__inner">
     {%- if include.label and include.label != '' %}

@@ -375,6 +375,31 @@ ui:
     en: Former Interns
     ja: 元学部インターン
     zh: 往届本科实习生
+  members.badge_pi:
+    ko: 공동 연구책임자
+    en: Principal Investigators
+    ja: 共同研究責任者
+    zh: 共同课题组长
+  members.badge_current:
+    ko: 재적 연구원
+    en: Current Members
+    ja: 在籍メンバー
+    zh: 现有成员
+  members.badge_ai:
+    ko: AI 비서
+    en: AI Secretary
+    ja: AI秘書
+    zh: AI秘书
+  members.badge_alumni:
+    ko: 졸업생
+    en: Alumni
+    ja: 卒業生
+    zh: 毕业校友
+  members.badge_interns:
+    ko: 역대 학부인턴
+    en: Former Interns
+    ja: 歴代学部インターン
+    zh: 往届本科实习生
 
   members.sec.pi:
     ko: 공동 연구책임자 (Principal Investigators)
@@ -426,6 +451,46 @@ ui:
     en: AI Operations Agent, ACE² Lab
     ja: ACE² Lab 人工知能研究運営エージェント
     zh: ACE² Lab 人工智能科研运营智能体
+  ach.eyebrow:
+    ko: 연구 실적 · Research Achievements
+    en: Research Achievements
+    ja: 研究業績 · Research Achievements
+    zh: 科研成果 · Research Achievements
+  ach.group_papers:
+    ko: 논문
+    en: Papers
+    ja: 論文
+    zh: 论文
+  ach.group_patents:
+    ko: 특허
+    en: Patents
+    ja: 特許
+    zh: 专利
+  ach.group_awards:
+    ko: 수상
+    en: Awards
+    ja: 受賞
+    zh: 获奖
+  ach.group_talks:
+    ko: 학회 발표
+    en: Presentations
+    ja: 学会発表
+    zh: 学术报告
+  ach.type_sci:
+    ko: 국제 SCI
+    en: Int'l SCI
+    ja: 国際 SCI
+    zh: 国际 SCI
+  ach.type_domestic:
+    ko: 국내 학술지
+    en: Domestic Journal
+    ja: 国内学術誌
+    zh: 韩国期刊
+  ach.badge_accepted:
+    ko: 게재 확정 (Just Accepted)
+    en: Just Accepted
+    ja: 掲載決定 (Just Accepted)
+    zh: 已录用 (Just Accepted)
   members.summary.ai:
     ko: 퇴근도 커피도 없는 ACE² Lab의 디지털 동료. 초안은 지안이, 결정은 PI가.
     en: ACE² Lab's digital colleague with no coffee breaks or clock-out times. Drafts by Jian, decisions by the PI.
@@ -503,7 +568,7 @@ ui:
     ja: 担当講義 (Teaching)
     zh: 授课课程 (Teaching)
   pi.current_badge:
-    ko: 현재 재직 · Current
+    ko: 현재 재직
     en: Current Position
     ja: 現職 · Current
     zh: 现任 · Current
@@ -557,6 +622,26 @@ ui:
     en: Flexible Sensors & Devices
     ja: フレキシブルセンサー・スマート素子
     zh: 柔性传感器与智能器件
+  research.badge_p1:
+    ko: 에너지 저장 소재 (Pillar 01)
+    en: Energy Materials (Pillar 01)
+    ja: エネルギー材料 (Pillar 01)
+    zh: 能源材料 (Pillar 01)
+  research.badge_p2:
+    ko: 광열 소결 공정 (Pillar 02)
+    en: Photonic Sintering (Pillar 02)
+    ja: 光熱焼結プロセス (Pillar 02)
+    zh: 光热烧结工艺 (Pillar 02)
+  research.badge_p3:
+    ko: 유연 센서 소자 (Pillar 03)
+    en: Flexible Sensors (Pillar 03)
+    ja: フレキシブルセンサー (Pillar 03)
+    zh: 柔性传感芯片 (Pillar 03)
+  research.badge_facilities:
+    ko: 연구장비 바로가기
+    en: View Lab Facilities
+    ja: 研究設備を見る
+    zh: 查看实验仪器
 
   research.rep_pubs:
     ko: 대표 발표 논문 (Representative Publications)
@@ -873,7 +958,7 @@ ui:
     ja: 研究責任者
     zh: 课题组负责人
   publications.filter_all:
-    ko: 전체
+    ko: 전체 (All)
     en: All
     ja: すべて
     zh: 全部
@@ -920,12 +1005,12 @@ ui:
     ja: 状態
     zh: 状态
   publications.status_registered:
-    ko: 등록
+    ko: 등록 (Registered)
     en: Granted
     ja: 登録済
     zh: 已授权
   publications.status_filed:
-    ko: 출원
+    ko: 출원 (Filed)
     en: Filed
     ja: 出願中
     zh: 已申请
@@ -940,7 +1025,7 @@ ui:
     ja: 出願人
     zh: 申请人
   publications.label_funding:
-    ko: 지원과제
+    ko: 연구 지원
     en: Funding
     ja: 支援課題
     zh: 资助项目
@@ -985,10 +1070,10 @@ ui:
     ja: 研究設備・分析装置 (Facilities)
     zh: 科研仪器与实验设备 (Facilities)
   hero.facilities.subtitle:
-    ko: "34대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템"
-    en: "34 state-of-the-art nanomaterials synthesis, ultrafast photonic sintering, and electrochemical characterization systems"
-    ja: "34台の先端研究設備およびナノ材料合成・超高速光熱処理・電気化学分析システム"
-    zh: "34台先进科研仪器及纳米材料合成、超快光热烧结与电化学表征分析系统"
+    ko: "35대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템"
+    en: "35 state-of-the-art nanomaterials synthesis, ultrafast photonic sintering, and electrochemical characterization systems"
+    ja: "35台の先端研究設備およびナノ材料合成・超高速光熱処理・電気化学分析システム"
+    zh: "35台先进科研仪器及纳米材料合成、超快光热烧结与电化学表征分析系统"
   hero.facilities.subtitle_en:
     ko: "State-of-the-art materials synthesis, ultrafast photonic sintering, and electrochemical characterization facilities."
     en: "Instrument names, manufacturers, and model numbers are preserved in international standard English."
@@ -1371,6 +1456,11 @@ ui:
     en: Actual size
     ja: 原寸表示
     zh: 实际大小
+  news.lb_fit:
+    ko: 화면 맞춤
+    en: Fit to window
+    ja: 画面に合わせる
+    zh: 适应窗口
   news.lb_hint:
     ko: "← → 이전 / 다음 · Esc 닫기 · 이미지 클릭으로 확대 / 축소"
     en: "← → Prev / Next · Esc to close · Click image to zoom"
@@ -1400,6 +1490,21 @@ ui:
     en: "Chronological photo archive of ACE² Lab events, conferences, and celebrations."
     ja: "Conferences, defenses and moments from ACE² Lab, newest first."
     zh: "Conferences, defenses and moments from ACE² Lab, newest first."
+  gallery.badge_albums:
+    ko: 개 앨범
+    en: Albums
+    ja: 件のアルバム
+    zh: 个相册
+  gallery.badge_photos:
+    ko: 사진
+    en: Photos
+    ja: 写真
+    zh: 照片
+  gallery.badge_since:
+    ko: 년부터
+    en: Since
+    ja: 年から
+    zh: 年至今
 
 # ==============================================================================
 # Shared Academic & Institutional Glossary (terms)
