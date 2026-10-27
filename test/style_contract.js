@@ -180,13 +180,55 @@ if (exists("_bibliography/papers.bib")) {
     }
   });
 
-  // 5. Publication month invariant: every @article in papers.bib must specify `month`
+  // 5. Publication month, reverse-chronological order & #pubYearChips parity invariant
+  const MONTH_ORDER = { Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12 };
   const articleBlocks = bibRaw.split(/(?=^@article\s*\{)/im).filter((chunk) => /^@article\s*\{/i.test(chunk.trim()));
+  const bibYearCounts = {};
+  let prevTuple = null;
   for (const block of articleBlocks) {
     const keyMatch = block.match(/^@article\s*\{\s*([^,\s]+)\s*,/i);
     const key = keyMatch ? keyMatch[1] : "<unknown>";
-    if (!/\bmonth\s*=/i.test(block)) {
-      failures.push(`\`_bibliography/papers.bib\` entry \`${key}\` is missing required \`month\` field.`);
+    const yearMatch = block.match(/\byear\s*=\s*\{(\d{4})\}/);
+    const monthMatch = block.match(/\bmonth\s*=\s*\{([A-Za-z]{3})\}/);
+    if (!yearMatch) {
+      failures.push(`\`_bibliography/papers.bib\` entry \`${key}\` is missing braced 4-digit \`year = {YYYY}\`.`);
+      continue;
+    }
+    if (!monthMatch || !MONTH_ORDER[monthMatch[1]]) {
+      failures.push(`\`_bibliography/papers.bib\` entry \`${key}\` must specify braced 3-letter \`month = {Jan..Dec}\`.`);
+      continue;
+    }
+    const yr = parseInt(yearMatch[1], 10);
+    const mo = MONTH_ORDER[monthMatch[1]];
+    const isAccepted = /\bnote\s*=\s*\{[^}]*\bjust\s+accepted\b/i.test(block) ? 1 : 0;
+    bibYearCounts[yr] = (bibYearCounts[yr] || 0) + 1;
+    if (prevTuple) {
+      const outOfOrder =
+        yr > prevTuple.yr ||
+        (yr === prevTuple.yr && isAccepted > prevTuple.isAccepted) ||
+        (yr === prevTuple.yr && isAccepted === prevTuple.isAccepted && mo > prevTuple.mo);
+      if (outOfOrder) {
+        failures.push(
+          `\`_bibliography/papers.bib\` entry \`${key}\` (${yr} ${monthMatch[1]}) violates reverse-chronological order after \`${prevTuple.key}\` (${prevTuple.yr} ${prevTuple.monthStr}).`
+        );
+      }
+    }
+    prevTuple = { key, yr, mo, monthStr: monthMatch[1], isAccepted };
+  }
+
+  if (exists("_pages/publications.md")) {
+    const pubMd = read("_pages/publications.md");
+    const chipCounts = {};
+    for (const m of pubMd.matchAll(/class="pub-year-chip"\s+data-year="(\d{4})"[^>]*>\d{4}<span class="pub-year-chip__count">(\d+)<\/span>/g)) {
+      chipCounts[parseInt(m[1], 10)] = parseInt(m[2], 10);
+    }
+    const allYears = new Set([...Object.keys(bibYearCounts).map(Number), ...Object.keys(chipCounts).map(Number)]);
+    for (const yr of [...allYears].sort((a, b) => b - a)) {
+      if ((bibYearCounts[yr] || 0) !== (chipCounts[yr] || 0)) {
+        failures.push(
+          `\`_pages/publications.md\` #pubYearChips count for ${yr} (${chipCounts[yr] || 0}) does not match \`_bibliography/papers.bib\` (${bibYearCounts[yr] || 0}).`
+        );
+      }
     }
   }
 }

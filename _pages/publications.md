@@ -74,18 +74,18 @@ ace2_editorial: true
             <div class="pub-year-jump__chips" id="pubYearChips">
               <a href="#y2026" class="pub-year-chip" data-year="2026">2026<span class="pub-year-chip__count">6</span></a>
               <a href="#y2025" class="pub-year-chip" data-year="2025">2025<span class="pub-year-chip__count">2</span></a>
-              <a href="#y2024" class="pub-year-chip" data-year="2024">2024<span class="pub-year-chip__count">7</span></a>
+              <a href="#y2024" class="pub-year-chip" data-year="2024">2024<span class="pub-year-chip__count">8</span></a>
               <a href="#y2023" class="pub-year-chip" data-year="2023">2023<span class="pub-year-chip__count">8</span></a>
               <a href="#y2022" class="pub-year-chip" data-year="2022">2022<span class="pub-year-chip__count">5</span></a>
-              <a href="#y2021" class="pub-year-chip" data-year="2021">2021<span class="pub-year-chip__count">7</span></a>
-              <a href="#y2020" class="pub-year-chip" data-year="2020">2020<span class="pub-year-chip__count">6</span></a>
-              <a href="#y2019" class="pub-year-chip" data-year="2019">2019<span class="pub-year-chip__count">3</span></a>
-              <a href="#y2018" class="pub-year-chip" data-year="2018">2018<span class="pub-year-chip__count">3</span></a>
-              <a href="#y2017" class="pub-year-chip" data-year="2017">2017<span class="pub-year-chip__count">11</span></a>
+              <a href="#y2021" class="pub-year-chip" data-year="2021">2021<span class="pub-year-chip__count">6</span></a>
+              <a href="#y2020" class="pub-year-chip" data-year="2020">2020<span class="pub-year-chip__count">7</span></a>
+              <a href="#y2019" class="pub-year-chip" data-year="2019">2019<span class="pub-year-chip__count">2</span></a>
+              <a href="#y2018" class="pub-year-chip" data-year="2018">2018<span class="pub-year-chip__count">4</span></a>
+              <a href="#y2017" class="pub-year-chip" data-year="2017">2017<span class="pub-year-chip__count">10</span></a>
               <a href="#y2016" class="pub-year-chip" data-year="2016">2016<span class="pub-year-chip__count">3</span></a>
               <a href="#y2015" class="pub-year-chip" data-year="2015">2015<span class="pub-year-chip__count">10</span></a>
-              <a href="#y2014" class="pub-year-chip" data-year="2014">2014<span class="pub-year-chip__count">1</span></a>
-              <a href="#y2013" class="pub-year-chip" data-year="2013">2013<span class="pub-year-chip__count">2</span></a>
+              <a href="#y2014" class="pub-year-chip" data-year="2014">2014<span class="pub-year-chip__count">2</span></a>
+              <a href="#y2013" class="pub-year-chip" data-year="2013">2013<span class="pub-year-chip__count">1</span></a>
               <a href="#y2012" class="pub-year-chip" data-year="2012">2012<span class="pub-year-chip__count">5</span></a>
               <a href="#y2011" class="pub-year-chip" data-year="2011">2011<span class="pub-year-chip__count">4</span></a>
             </div>
