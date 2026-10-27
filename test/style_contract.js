@@ -233,6 +233,34 @@ if (exists("_bibliography/papers.bib")) {
   }
 }
 
+// 6. Award certificate title provenance invariant (_data/awards.yml)
+if (exists("_data/awards.yml")) {
+  const awardsRaw = read("_data/awards.yml");
+  const awardBlocks = awardsRaw.split(/(?=^-\s+type:)/m).filter((chunk) => /^-\s+type:/.test(chunk.trim()));
+  for (const block of awardBlocks) {
+    const titleMatch = block.match(/^\s*title:\s*(.+)$/m);
+    const issuerMatch = block.match(/^\s*issuer:\s*(.+)$/m);
+    const recipientMatch = block.match(/^\s*recipient:\s*(.+)$/m);
+    const dateMatch = block.match(/^\s*date:\s*(.+)$/m);
+    const unquote = (val) => (val ? val.trim().replace(/^["']|["']$/g, "") : "");
+    const title = unquote(titleMatch && titleMatch[1]);
+    const issuer = unquote(issuerMatch && issuerMatch[1]);
+    const label = `${unquote(recipientMatch && recipientMatch[1])} (${unquote(dateMatch && dateMatch[1])})`;
+    if (!title) {
+      failures.push(`\`_data/awards.yml\` entry for ${label} is missing \`title\`.`);
+      continue;
+    }
+    if (issuer && title === issuer) {
+      failures.push(`\`_data/awards.yml\` entry for ${label} sets \`title\` identical to \`issuer\` (\`${title}\`).`);
+    }
+    if (/학위수여식/.test(title)) {
+      failures.push(
+        `\`_data/awards.yml\` entry for ${label} uses unverified ceremony placeholder \`학위수여식\` in \`title\` (\`${title}\`); use actual certificate commendation text.`
+      );
+    }
+  }
+}
+
 if (failures.length > 0) {
   console.error("Starter style contract check failed:");
   failures.forEach((message) => console.error(`- ${message}`));

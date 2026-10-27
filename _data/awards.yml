@@ -73,7 +73,7 @@
   press_naver: "https://search.naver.com/search.naver?where=news&query=경북대+이동호+화학공학회+대상"
 - type: 표창장
   kind: award
-  title: 경북대학교 학위수여식
+  title: 경북대학교 과학기술대학장 표창 (학업성적 우수)
   recipient: 이재호
   issuer: 경북대학교 과학기술대학장
   date: 2024.02.23
@@ -111,7 +111,7 @@
   year: 2023
 - type: 표창장
   kind: award
-  title: 경북대학교 학위수여식
+  title: 상주시장 표창 (학업우수 및 모범학생)
   recipient: 팽창웅
   issuer: 상주시장
   date: 2023.02.17
@@ -119,7 +119,7 @@
   img: assets/img/awards/award_9.jpg
 - type: 표창장
   kind: award
-  title: 경북대학교 학위수여식
+  title: 경북대학교 과학기술대학장 표창 (학업성적 우수)
   recipient: 팽창웅
   issuer: 경북대학교 과학기술대학장
   date: 2023.02.17
