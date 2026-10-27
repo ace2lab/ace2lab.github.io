@@ -17,11 +17,9 @@
    (core sets that to magenta in light mode, cyan in dark).
    ------------------------------------------------------------ */
 .team-container {
-  /* Typeface: Pretendard's Latin is Inter-derived, so one family
-     gives metric-matched Hangul + Latin. Fallbacks keep the same feel. */
-  --tm-font:
-    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
-    system-ui, sans-serif;
+  /* Typeface: inherits --font-sans-body (ace2_tokens.css) so Pretendard's metric-matched
+     Hangul + Latin leads, and the JA / ZH CJK stacks apply under html[data-lang]. */
+  --tm-font: var(--font-sans-body);
 
   /* Type scale — minor third (1.2) from 15px, clamped at 13px readable floor */
   --tm-fs-2xs: 0.8125rem; /* 13 / 16 — 13px type floor */
@@ -278,7 +276,7 @@ html[data-theme="dark"] .team-container {
   white-space: nowrap;
 }
 
-html[data-lang="en"] .member-card__role-en {
+html:not([data-lang="ko"]) .member-card__role-en {
   display: none;
 }
 
@@ -616,6 +614,31 @@ html[data-theme="dark"] .member-meta .member-meta__muted i {
   text-decoration: none;
 }
 
+/* Mail pills: institutional (KNU / KICET) and personal Gmail side by side */
+.link-icon--mail {
+  gap: 6px;
+  padding: 0 var(--tm-s2);
+  min-height: 38px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.link-icon--mail i {
+  font-size: 0.9375rem;
+}
+
+.link-pill__label {
+  font-size: 0.8125rem;
+  line-height: 1;
+}
+
+@media (pointer: coarse) {
+  .link-icon--mail {
+    min-height: 44px;
+  }
+}
+
 /* Research achievements trigger: shown only once member_achievements.js is live */
 .member-card__ach-btn {
   display: none;
@@ -645,7 +668,7 @@ html[data-theme="dark"] .member-meta .member-meta__muted i {
 }
 
 .member-card__ach-btn i {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
 }
 
 .member-card__ach-btn:hover,
@@ -848,7 +871,7 @@ html[data-theme="dark"] .member-meta .member-meta__muted i {
 }
 
 .pi-profile__eyebrow i {
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   color: var(--tm-crimson);
 }
 
@@ -1023,7 +1046,7 @@ html[data-theme="dark"] .member-meta .member-meta__muted i {
   border-radius: 999px;
   background: var(--tm-accent);
   font-family: var(--tm-font);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   line-height: 14px;
   letter-spacing: 0.02em;
@@ -1126,7 +1149,7 @@ html[data-theme="dark"] .pi-timeline__badge {
 }
 
 .pi-timeline__note i {
-  font-size: 0.65rem;
+  font-size: 0.8125rem;
 }
 
 .pi-profile__block {
@@ -1232,7 +1255,7 @@ html[data-theme="dark"] .pi-timeline__badge {
 }
 
 .pi-teaching__sabbatical i {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--tm-accent);
 }
 
@@ -1304,7 +1327,7 @@ html[data-theme="dark"] .pi-timeline__badge {
   border-radius: 4px;
   background: var(--tm-surface);
   border: 1px solid var(--tm-line);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: 18px;
   white-space: nowrap;
@@ -1346,7 +1369,7 @@ html[data-theme="dark"] .pi-timeline__badge {
   border-radius: 4px;
   background: var(--tm-amber-soft);
   font-family: var(--font-mono-meta, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: 16px;
   color: var(--tm-amber);
@@ -1357,7 +1380,7 @@ html[data-theme="dark"] .pi-timeline__badge {
   border-radius: 4px;
   background: var(--tm-teal-soft);
   font-family: var(--font-mono-meta, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   line-height: 18px;
   color: var(--tm-teal);
@@ -1764,7 +1787,7 @@ html[data-theme="dark"] .pi-action:focus-visible {
 }
 
 /* ------------------------------------------------------------
-   6. Tabs — hash-synced WAI-ARIA tablist (assets/js/members_tabs.js)
+   6. Tabs — hash-synced WAI-ARIA tablist (assets/js/ace2_tabs.js)
    Progressive enhancement: the bar stays hidden and every panel is
    visible until the script adds .is-tabbed to the container.
    ------------------------------------------------------------ */
@@ -2270,6 +2293,16 @@ html[data-theme="dark"] .ach-item__tag--accepted {
 /* ------------------------------------------------------------
    7. Motion & print
    ------------------------------------------------------------ */
+/* Hide redundant English subtitles on PI profile when non-KO locale is active */
+html[data-lang="en"] .pi-profile__en-sub,
+html[data-lang="ja"] .pi-profile__en-sub,
+html[data-lang="zh"] .pi-profile__en-sub,
+html[data-lang="en"] .pi-contact__sub--en,
+html[data-lang="ja"] .pi-contact__sub--en,
+html[data-lang="zh"] .pi-contact__sub--en {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .member-card[data-role]:hover {
     transform: none;

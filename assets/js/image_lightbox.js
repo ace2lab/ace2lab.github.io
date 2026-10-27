@@ -1,6 +1,7 @@
 /* image_lightbox.js — Natural-aspect, full-resolution image viewer for Publications, Gallery, Facilities, Research and Home figures.
    medium-zoom scales the on-page <img> box, which is a cropped square on the Gallery (object-fit: cover) and a 140-280px strip on
    Publications. Here the original file is loaded into a native <dialog> with object-fit: contain, so nothing is cropped or stretched.
+   Home research-card images are deliberately excluded: they sit inside links to /research/ and must navigate.
    Albums (.ed-album) are navigable with arrow keys, on-screen buttons or swipe; publication figures open as a single image. */
 (function () {
   "use strict";
@@ -11,8 +12,8 @@
     ".publications img.preview",
     ".ed-album img[data-zoomable]",
     ".ed-spec__thumb img",
-    ".research-card__media img",
     ".ed-pillar__figure img",
+    ".pub-cover-card__img",
   ].join(", ");
 
   var dialog = null;

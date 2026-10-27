@@ -18,7 +18,7 @@ ace2_editorial: true
 {% assign r313_items = all_facilities | where: "location", "8호관 313호" %}
 {% assign facility_groups = all_facilities | group_by: "category" %}
 
-{% capture hero_subtitle %}<span data-i18n-ko="{{ all_facilities.size }}대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템" data-i18n-en="{{ all_facilities.size }} state-of-the-art nanomaterials synthesis, ultrafast photonic sintering, and electrochemical characterization systems" data-i18n-ja="{{ all_facilities.size }}台の先端研究設備およびナ노材料合成・超高速光熱処理・電気化学分析システム" data-i18n-zh="{{ all_facilities.size }}台先进科研仪器及纳米材料合成、超快光热烧结与电化学表征分析系统">{{ all_facilities.size }}대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템</span>{% endcapture %}
+{% capture hero_subtitle %}<span data-i18n-ko="{{ all_facilities.size }}대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템" data-i18n-en="{{ all_facilities.size }} state-of-the-art nanomaterials synthesis, ultrafast photonic sintering, and electrochemical characterization systems" data-i18n-ja="{{ all_facilities.size }}台の先端研究設備およびナノ材料合成・超高速光熱処理・電気化学分析システム" data-i18n-zh="{{ all_facilities.size }}台先进科研仪器及纳米材料合成、超快光热烧结与电化学表征分析系统">{{ all_facilities.size }}대 첨단 연구 장비 및 나노소재 합성·초고속 광열처리·전기화학 분석 시스템</span>{% endcapture %}
 
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i> <span data-i18n="facilities.tab_synthesis">합성 및 광열 공정</span> ({{ synthesis_items.size }})</span>

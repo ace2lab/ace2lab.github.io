@@ -46,7 +46,7 @@
   press_naver: "https://search.naver.com/search.naver?where=news&query=경북대+안재빈+화학공학회+장관상"
 - type: 우수연구교수
   kind: award
-  title: 질적성과부분(JCR 5%)
+  title: 질적성과부문(JCR 5%)
   recipient: 임창용
   issuer: 경북대학교 총장
   date: 2025.03.14
@@ -54,7 +54,7 @@
   img: assets/img/awards/award_3.jpg
 - type: Impact Recognition Award
   kind: award
-  title: 한국화학공학회
+  title: Korean Journal of Chemical Engineering
   recipient: 임창용
   issuer: 한국화학공학회
   date: 2024.12.20
@@ -111,7 +111,7 @@
   year: 2023
 - type: 표창장
   kind: award
-  title: 상주시장
+  title: 경북대학교 학위수여식
   recipient: 팽창웅
   issuer: 상주시장
   date: 2023.02.17
@@ -127,7 +127,7 @@
   img: assets/img/awards/award_10.jpg
 - type: 장려상
   kind: award
-  title: 제 2 회 경북대학교 연구노트 경진대회
+  title: 제2회 경북대학교 연구노트 경진대회
   recipient: 안준혁
   issuer: 경북대학교 총장
   date: 2022.12.26

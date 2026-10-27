@@ -9,7 +9,7 @@
   presenters: "이재호, 김태욱, 임창용"
   members:
     - 이재호
-  conference: "한국화학공학회 2026년도 추계학술대회"
+  conference: "한국화학공학회 2026년도 가을 총회 및 국제학술대회"
   date: "2026.10.08"
   location: "부산 BEXCO"
 
@@ -21,7 +21,7 @@
   presenters: "김다윈, 임창용, 김태욱"
   members:
     - 김다윈
-  conference: "한국화학공학회 2026년도 추계학술대회"
+  conference: "한국화학공학회 2026년도 가을 총회 및 국제학술대회"
   date: "2026.10.08"
   location: "부산 BEXCO"
 
@@ -33,21 +33,21 @@
   presenters: "강명서, 김태욱, 임창용"
   members:
     - 강명서
-  conference: "한국화학공학회 2026년도 추계학술대회"
+  conference: "한국화학공학회 2026년도 가을 총회 및 국제학술대회"
   date: "2026.10.08"
   location: "부산 BEXCO"
 
 - no: 21
   year: 2026
   type: "Poster"
-  award: "산업통상자원부장관상"
+  award: "산업통상부장관상"
   title: "IPL 초고속 광열 공정 기반 W-doped VO₂ 합성 및 다기능 어플리케이션"
   presenters: "김경진, 이종민, 이동건"
   members:
     - 김경진
     - 이종민
     - 이동건
-  conference: "한국화학공학회 2026 Chem Frontier 화학공학 대학생 창의설계 경진대회"
+  conference: "한국화학공학회 2026 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)"
   date: "2026.10.06"
   location: "부산 BEXCO"
 
@@ -58,7 +58,7 @@
   presenters: "안재빈, 김태욱, 임창용"
   members:
     - 안재빈
-  conference: "한국화학공학회 2026년도 추계학술대회"
+  conference: "한국화학공학회 2026년도 가을 총회 및 국제학술대회"
   date: "2026.10.06"
   location: "부산 BEXCO"
 
@@ -69,7 +69,7 @@
   presenters: "이동호, 김태욱, 임창용"
   members:
     - 이동호
-  conference: "한국화학공학회 2026년도 추계학술대회"
+  conference: "한국화학공학회 2026년도 가을 총회 및 국제학술대회"
   date: "2026.10.06"
   location: "부산 BEXCO"
 
@@ -115,7 +115,7 @@
     - 이희진
   conference: "한국화학공학회 2025년도 추계학술대회"
   date: "2025.10.18"
-  location: "제주ICC"
+  location: "제주 ICC"
 
 - no: 14
   year: 2025
@@ -126,18 +126,18 @@
     - 이재호
   conference: "한국화학공학회 2025년도 추계학술대회"
   date: "2025.10.18"
-  location: "제주ICC"
+  location: "제주 ICC"
 
 - no: 13
   year: 2025
   type: "Oral"
-  title: "Freeze-Dried Vertically Aligned Mxene Films with Improved Stability under High Scan Rates for Super Capacitor Applications"
+  title: "Freeze-Dried Vertically Aligned MXene Films with Improved Stability under High Scan Rates for Supercapacitor Applications"
   presenters: "이동호, 김태욱, 임창용"
   members:
     - 이동호
   conference: "한국화학공학회 2025년도 추계학술대회"
   date: "2025.10.17"
-  location: "제주ICC"
+  location: "제주 ICC"
 
 - no: 12
   year: 2025
@@ -148,7 +148,7 @@
     - 안재빈
   conference: "한국화학공학회 2025년도 추계학술대회"
   date: "2025.10.17"
-  location: "제주ICC"
+  location: "제주 ICC"
 
 - no: 11
   year: 2025
@@ -159,19 +159,19 @@
     - 김다윈
   conference: "한국화학공학회 2025년도 추계학술대회"
   date: "2025.10.17"
-  location: "제주ICC"
+  location: "제주 ICC"
 
 - no: 10
   year: 2025
   type: "Poster"
-  award: "산업통상자원부장관상"
+  award: "산업통상부장관상"
   title: "프린트 토너 기반 플래시 유도 그래핀(FIG) 패터닝 및 마이크로 슈퍼커패시터 전극 응용"
   presenters: "안재빈, 김민수, 김성우"
   members:
     - 안재빈
     - 김민수
     - 김성우
-  conference: "한국화학공학회 2025 Chem Frontier 화학공학 대학생 창의설계 경진대회"
+  conference: "한국화학공학회 2025 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)"
   date: "2025.09.26"
   location: "수원 컨벤션센터"
 
@@ -229,7 +229,7 @@
     - 김다윈
     - 안재빈
     - 이동호
-  conference: "한국화학공학회 2024 Chem Frontier 화학공학 대학생 창의설계 경진대회"
+  conference: "한국화학공학회 2024 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)"
   date: "2024.10.16"
   location: "부산 BEXCO"
 
@@ -241,7 +241,7 @@
   members:
     - 이희진
   conference: "한국화학공학회 2024년도 봄 총회 및 학술대회"
-  date: "2024.4.26"
+  date: "2024.04.26"
   location: "제주 ICC"
 
 - no: 3
@@ -252,7 +252,7 @@
   members:
     - 이재호
   conference: "한국화학공학회 2024년도 봄 총회 및 학술대회"
-  date: "2024.4.26"
+  date: "2024.04.26"
   location: "제주 ICC"
 
 - no: 2
@@ -261,8 +261,8 @@
   title: "Gas Sorption Analysis Using Micro-resonators and Flashlight based Material Synthesis"
   presenters: "임창용"
   members: []
-  conference: "한국화학공학회 신진연구자 심포지움"
-  date: "2021.4.11"
+  conference: "한국화학공학회 신진연구자 심포지엄"
+  date: "2021.04.11"
   location: "부산 BEXCO"
 
 - no: 1

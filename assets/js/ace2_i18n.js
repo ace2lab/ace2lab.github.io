@@ -120,17 +120,34 @@
       }
     }
 
-    // 2. Education lines (e.g. "M.S.  KNU 에너지화학공학과 ('24학번)")
-    if (trimmed.indexOf("KNU 에너지화학공학과") !== -1 && trimmed.indexOf("학번") !== -1) {
+    // 2. Education lines (e.g. "M.S.  KNU 에너지화학공학과 ('24학번)", "M.S.  KNU 미래과학기술융합학부 ('24학번)")
+    if ((trimmed.indexOf("KNU 에너지화학공학과") !== -1 || trimmed.indexOf("KNU 미래과학기술융합학부") !== -1) && trimmed.indexOf("학번") !== -1) {
       if (lang === "en") {
-        return trimmed.replace("KNU 에너지화학공학과", "KNU Energy Chem. Eng.").replace(/\('(\d+)학번\)/g, "(Class of '$1)");
+        return trimmed
+          .replace("KNU 에너지화학공학과", "KNU Energy Chem. Eng.")
+          .replace("KNU 미래과학기술융합학부", "KNU Future Sci. & Tech. Convergence")
+          .replace(/\('(\d+)학번\)/g, "(Class of '$1)");
       }
       if (lang === "ja") {
-        return trimmed.replace("KNU 에너지화학공학과", "慶北大学校 エネルギー化学工学科").replace(/\('(\d+)학번\)/g, "('$1入学)");
+        return trimmed
+          .replace("KNU 에너지화학공학과", "慶北大学校 エネルギー化学工学科")
+          .replace("KNU 미래과학기술융합학부", "慶北大学校 未来科学技術融合学部")
+          .replace(/\('(\d+)학번\)/g, "('$1入学)");
       }
       if (lang === "zh") {
-        return trimmed.replace("KNU 에너지화학공학과", "庆北大学 能源化学工程系").replace(/\('(\d+)학번\)/g, "('$1级)");
+        return trimmed
+          .replace("KNU 에너지화학공학과", "庆北大学 能源化学工程系")
+          .replace("KNU 미래과학기술융합학부", "庆北大学 未来科学技术融合学部")
+          .replace(/\('(\d+)학번\)/g, "('$1级)");
       }
+    }
+
+    // 2b. Standalone student cohort badge (e.g. "21학번")
+    var cohortMatch = trimmed.match(/^(\d{2})학번$/);
+    if (cohortMatch) {
+      if (lang === "en") return "Class of '" + cohortMatch[1];
+      if (lang === "ja") return "'" + cohortMatch[1] + "入学";
+      if (lang === "zh") return "'" + cohortMatch[1] + "级";
     }
 
     // 3. Teaching credits (e.g. "9+3 학점", "9학점", "3, 2분반")

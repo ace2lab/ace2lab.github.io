@@ -32,8 +32,11 @@
   --banner-text-muted: rgba(255, 255, 255, 0.78);
 
   /* Typography Font Families */
-  --font-serif-editorial: "Newsreader", "Noto Serif KR", Georgia, serif;
-  --font-sans-body: "Pretendard Variable", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --font-serif-editorial:
+    "Newsreader", "Pretendard Variable", Pretendard, "Hiragino Mincho ProN", "Noto Serif JP", "Songti SC", "Noto Serif SC", Georgia, serif;
+  --font-sans-body:
+    "Pretendard Variable", Pretendard, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Hiragino Sans",
+    "Noto Sans JP", "PingFang SC", "Noto Sans SC", "Malgun Gothic", "Microsoft YaHei", system-ui, sans-serif;
   --font-mono-meta: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
 
   /* ------------------------------------------------------------
@@ -76,6 +79,9 @@
   --brand-rist: #0075a8; /* RIST Deep Cerulean Sky: 4.8:1 */
   --brand-calgary: #b45309; /* Calgary Deep Amber: 5.2:1 */
   --brand-kitech: #0f766e; /* KITECH Slate Teal: 5.5:1 */
+
+  /* Motion */
+  --ed-dur-fast: 150ms;
 
   /* Sticky stack: fixed al-folio navbar + in-page tab bar */
   --sticky-navbar: 3.5rem;

@@ -25,13 +25,17 @@
     <div class="ed-spec__row" role="row" id="fac-{{ item.id }}" data-room="{{ room_key }}">
       <div class="ed-spec__thumb" role="cell">
         {% if item.img and item.img != '' %}
-          <img
-            src="{{ item.img | relative_url }}"
-            alt="{{ item.name | escape }}"
-            loading="lazy"
-            decoding="async"
-            data-zoomable
-          >
+          {% assign fac_thumb = item.img | ace2_thumb_webp %}
+          <picture class="ace2-pic">
+            {% if fac_thumb != '' %}<source srcset="{{ fac_thumb | relative_url }}" type="image/webp">{% endif %}
+            <img
+              src="{{ item.img | relative_url }}"
+              alt="{{ item.name | escape }}"
+              loading="lazy"
+              decoding="async"
+              data-zoomable
+            >
+          </picture>
         {% else %}
           <div class="ed-spec__thumb--placeholder"><i class="fa-solid fa-microscope" aria-hidden="true"></i></div>
         {% endif %}

@@ -88,6 +88,98 @@ for (const requiredPath of ["test/visual", "test/integration_plugin_toggles.sh",
   }
 }
 
+// -----------------------------------------------------------------------------
+// ACE² Lab Editorial Styling, Typography & Chemical Notation Contracts
+// -----------------------------------------------------------------------------
+function collectFiles(relDir, extPattern) {
+  const absDir = path.join(root, relDir);
+  if (!fs.existsSync(absDir)) return [];
+  const out = [];
+  for (const entry of fs.readdirSync(absDir, { withFileTypes: true })) {
+    const childRel = path.join(relDir, entry.name);
+    if (entry.isDirectory()) {
+      out.push(...collectFiles(childRel, extPattern));
+    } else if (extPattern.test(entry.name)) {
+      out.push(childRel);
+    }
+  }
+  return out;
+}
+
+// 1. Forbid page-local <style> blocks inside _pages/*.md (all styling belongs in assets/css/)
+for (const relPage of collectFiles("_pages", /\.md$/)) {
+  const content = read(relPage);
+  if (/<style\b/i.test(content)) {
+    failures.push(`\`${relPage}\` must not contain inline \`<style>\` blocks; move rules to \`assets/css/editorial_typography.css\`.`);
+  }
+}
+
+// 2. Zero inline bolding contract: forbid <strong>, <b>, and markdown ** in ACE² templates, news, and JS
+const ace2ScanFiles = [
+  ...collectFiles("_pages", /\.(md|html|liquid)$/),
+  ...collectFiles("_includes", /\.(liquid|html)$/),
+  ...collectFiles("_news", /\.md$/),
+  ...collectFiles("assets/js", /\.js$/),
+];
+for (const relFile of ace2ScanFiles) {
+  // Exclude upstream al-folio demo pages stripped in production if any
+  if (/_pages\/(cv|dropdown|profiles|repositories|books|blog)\.md$/.test(relFile)) continue;
+  const lines = read(relFile).split("\n");
+  lines.forEach((line, idx) => {
+    if (/<(strong|b)(?:\s|>)/i.test(line)) {
+      failures.push(`\`${relFile}:${idx + 1}\` contains forbidden inline bold tag (\`<strong>\` / \`<b>\`); use semantic span classes.`);
+    }
+  });
+}
+
+// 3. 13px (0.8125rem) readable type floor across ACE² custom stylesheets
+for (const relCss of collectFiles("assets/css", /\.css$/)) {
+  const lines = read(relCss).split("\n");
+  lines.forEach((line, idx) => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("/*") || trimmed.startsWith("*")) return;
+    for (const m of line.matchAll(/font-size:\s*([0-9]*\.?[0-9]+)(rem|px)\b/gi)) {
+      const val = parseFloat(m[1]);
+      const unit = m[2].toLowerCase();
+      if (val === 0) continue;
+      if ((unit === "rem" && val < 0.8125) || (unit === "px" && val < 13)) {
+        failures.push(`\`${relCss}:${idx + 1}\` violates 13px (0.8125rem) type floor: \`${m[0]}\`.`);
+      }
+    }
+  });
+}
+
+// 4. Chemical formula subscript invariant on ACE² display data & pages
+const plainChemRe = /\b(TiO2|SnO2|NO2|SO2|CO2|NH3|ND3|C6D6|V2O5|WO3|Al2O3|ZrO2|KNbO3|K2Ti2O5)\b/;
+for (const relData of ["_data/domestic.yml", "_data/patents.yml", "_data/members.yml", "_pages/projects.md"]) {
+  if (!exists(relData)) continue;
+  const lines = read(relData).split("\n");
+  lines.forEach((line, idx) => {
+    const t = line.trim();
+    if (!t || t.startsWith("#")) return;
+    // Strip URLs, file paths, and HTML tag attributes before checking display text
+    const stripped = line
+      .replace(/https?:\/\/\S+/g, "")
+      .replace(/assets\/\S+/g, "")
+      .replace(/\b(?:alt|id|href|src|data-[a-z0-9_-]+)=["'][^"']*["']/gi, "");
+    const hit = stripped.match(plainChemRe);
+    if (hit) {
+      failures.push(`\`${relData}:${idx + 1}\` contains unformatted chemical formula \`${hit[1]}\` (use Unicode subscripts or \`<sub>\`).`);
+    }
+  });
+}
+
+if (exists("_bibliography/papers.bib")) {
+  const bibLines = read("_bibliography/papers.bib").split("\n");
+  bibLines.forEach((line, idx) => {
+    if (!/^\s*title\s*=/i.test(line)) return;
+    const hit = line.match(plainChemRe);
+    if (hit) {
+      failures.push(`\`_bibliography/papers.bib:${idx + 1}\` title contains unformatted chemical formula \`${hit[1]}\` (use \`<sub>\`).`);
+    }
+  });
+}
+
 if (failures.length > 0) {
   console.error("Starter style contract check failed:");
   failures.forEach((message) => console.error(`- ${message}`));

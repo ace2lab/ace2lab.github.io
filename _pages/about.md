@@ -17,12 +17,6 @@ latest_posts:
 ace2_editorial: true
 ---
 
-<style>
-  .post > header.post-header {
-    display: none;
-  }
-</style>
-
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="hero.home.badge_es">에너지 저장 소재</span></span>
 <span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="hero.home.badge_ipl">고강도 펄스광 (IPL)</span></span>
@@ -58,7 +52,8 @@ ace2_editorial: true
   </div>
 
 {% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni' and m.group != 'ai'" %}
-{% assign total_intl = 83 %}
+{% capture intl_raw %}{% bibliography_count -f papers %}{% endcapture %}
+{% assign total_intl = intl_raw | strip | plus: 0 %}
 
   <div class="lab-stats-grid">
     <div class="lab-stat-card">
@@ -189,7 +184,7 @@ ace2_editorial: true
           {% endfor %}
           {% if pi.topics.size > 4 %}
             {% assign extra_count = pi.topics.size | minus: 4 %}
-            <a href="{{ '/members/' | relative_url }}#pi-{{ pi.id }}" class="pi-topic-pill pi-topic-pill--more">+{{ extra_count }} more</a>
+            <a href="{{ '/members/' | relative_url }}#{{ pi.id | split: '-' | last }}" class="pi-topic-pill pi-topic-pill--more">+{{ extra_count }} more</a>
           {% endif %}
         </div>
 
@@ -221,7 +216,7 @@ ace2_editorial: true
               </a>
             {% endif %}
           </div>
-          <a href="{{ '/members/' | relative_url }}#pi-{{ pi.id }}" class="pi-action-profile" title="View full profile">
+          <a href="{{ '/members/' | relative_url }}#{{ pi.id | split: '-' | last }}" class="pi-action-profile" title="View full profile">
             <span data-i18n="home.copi.full_cv">상세 프로필</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
@@ -321,12 +316,17 @@ ace2_editorial: true
 <section class="ai-operations-section" id="ai-operations" aria-labelledby="ai-ops-title">
   <div class="ai-operations-card">
     <div class="ai-operations-card__avatar-col">
-      <img
-        src="{{ '/assets/img/lee_ji_an_avatar_circle.png' | relative_url }}"
-        alt="Jian Lee (이지안)"
-        class="ai-operations-card__avatar"
-        loading="lazy"
-      >
+      {% assign jian_thumb = '/assets/img/lee_ji_an_avatar_circle.png' | ace2_thumb_webp %}
+      <picture class="ace2-pic">
+        {% if jian_thumb != '' %}<source srcset="{{ jian_thumb | relative_url }}" type="image/webp">{% endif %}
+        <img
+          src="{{ '/assets/img/lee_ji_an_avatar_circle.png' | relative_url }}"
+          alt="Jian Lee (이지안)"
+          class="ai-operations-card__avatar"
+          loading="lazy"
+          decoding="async"
+        >
+      </picture>
       <span class="ai-operations-card__badge" data-i18n="home.ai.badge">AI 연구행정 에이전트</span>
     </div>
     <div class="ai-operations-card__content">
@@ -355,7 +355,12 @@ ace2_editorial: true
   </div>
 </section>
 
-연구 프로젝트에 대한 상세 설명과 보유 연구 장비는 [연구분야]({{ '/research/' | relative_url }}) 페이지에서 확인하실 수 있으며, 연구실 연구진 정보는 [구성원]({{ '/members/' | relative_url }}) 페이지에서 만나보실 수 있습니다.
+{% capture closing_ko %}연구 프로젝트에 대한 상세 설명은 <a href="{{ '/research/' | relative_url }}">연구분야</a> 페이지, 보유 연구 장비는 <a href="{{ '/facilities/' | relative_url }}">연구시설</a> 페이지, 연구진 정보는 <a href="{{ '/members/' | relative_url }}">구성원</a> 페이지에서 확인하실 수 있습니다.{% endcapture %}
+{% capture closing_en %}Project details are on the <a href="{{ '/research/' | relative_url }}">Research</a> page, our instruments on the <a href="{{ '/facilities/' | relative_url }}">Facilities</a> page, and the team on the <a href="{{ '/members/' | relative_url }}">Members</a> page.{% endcapture %}
+{% capture closing_ja %}研究プロジェクトの詳細は<a href="{{ '/research/' | relative_url }}">研究分野</a>ページ、保有する研究設備は<a href="{{ '/facilities/' | relative_url }}">研究設備</a>ページ、研究メンバーは<a href="{{ '/members/' | relative_url }}">メンバー</a>ページでご覧いただけます。{% endcapture %}
+{% capture closing_zh %}研究项目详情请见<a href="{{ '/research/' | relative_url }}">研究领域</a>页面，研究设备请见<a href="{{ '/facilities/' | relative_url }}">研究设施</a>页面，团队成员请见<a href="{{ '/members/' | relative_url }}">成员</a>页面。{% endcapture %}
+
+<p class="lab-about__closing" data-i18n-mode="html" data-i18n-ko="{{ closing_ko | escape }}" data-i18n-en="{{ closing_en | escape }}" data-i18n-ja="{{ closing_ja | escape }}" data-i18n-zh="{{ closing_zh | escape }}">{{ closing_ko }}</p>
 
 ---
 

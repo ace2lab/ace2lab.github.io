@@ -14,6 +14,32 @@
   var HIDDEN = "is-pi-hidden"; // entry excluded by the PI filter
   var EMPTY = "is-pi-empty"; // year heading / list / chip with no visible entry
 
+  // aria-live status strings follow html[data-lang] (ace2_i18n.js) and are re-rendered when it changes
+  var NOUNS = {
+    journals: { ko: "국제 학술지 논문", en: "international journal articles", ja: "国際学術誌論文", zh: "国际期刊论文" },
+    patents: { ko: "특허", en: "patents", ja: "特許", zh: "专利" },
+    talks: { ko: "학술대회 발표", en: "conference presentations", ja: "学会発表", zh: "会议报告" },
+  };
+  var refreshers = [];
+
+  function statusText(kind, shown, total, scopeName) {
+    var lang = document.documentElement.getAttribute("data-lang");
+    var noun = (NOUNS[kind] || NOUNS.journals)[lang] ? lang : "ko";
+    var label = NOUNS[kind][noun];
+    if (noun === "en") return "Showing " + shown + " of " + total + " " + label + (scopeName ? " by " + scopeName : "") + ".";
+    if (noun === "ja") return label + " " + total + " 件中 " + shown + " 件を表示" + (scopeName ? "（" + scopeName + "）" : "") + "。";
+    if (noun === "zh") return "显示" + label + " " + total + " 项中的 " + shown + " 项" + (scopeName ? "（" + scopeName + "）" : "") + "。";
+    return label + " " + total + "건 중 " + shown + "건 표시" + (scopeName ? " (" + scopeName + ")" : "") + ".";
+  }
+
+  if (window.MutationObserver) {
+    new MutationObserver(function () {
+      refreshers.forEach(function (fn) {
+        fn();
+      });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang"] });
+  }
+
   var panel, fieldset, status, items;
   var current = "all";
   var ready = false;
@@ -99,11 +125,16 @@
       chip.classList.toggle(EMPTY, n === 0);
     });
 
-    if (status) {
-      var scope = current === "all" ? "" : " by " + PIS[current].label;
-      status.textContent = "Showing " + shown + " of " + items.length + " international journal articles" + scope + ".";
-    }
+    lastShown = shown;
+    renderStatus();
   }
+
+  var lastShown = 0;
+  function renderStatus() {
+    if (!status || !ready) return;
+    status.textContent = statusText("journals", lastShown, items.length, current === "all" ? "" : PIS[current].label);
+  }
+  refreshers.push(renderStatus);
 
   function apply(pi) {
     current = pi;
@@ -133,13 +164,43 @@
     sync();
   }
 
+  // Year ids normally exist already (publications.md assigns them before ace2_tabs.js runs); this is the safety net.
+  function ensureYearIds() {
+    panel.querySelectorAll(".publications h2.bibliography").forEach(function (h2) {
+      var year = h2.textContent.trim();
+      if (/^\d{4}$/.test(year) && !h2.id) h2.id = "y" + year;
+    });
+  }
+
+  // Chip counts are derived from the rendered bibliography so the static HTML can never drift
+  function syncYearChipCounts() {
+    var perYear = {};
+    panel.querySelectorAll(".publications h2.bibliography").forEach(function (h2) {
+      var node = h2.nextElementSibling;
+      var year = h2.textContent.trim();
+      while (node && node.tagName !== "H2") {
+        if (node.tagName === "OL") perYear[year] = (perYear[year] || 0) + node.querySelectorAll(":scope > li").length;
+        node = node.nextElementSibling;
+      }
+    });
+    document.querySelectorAll("#pubYearChips .pub-year-chip").forEach(function (chip) {
+      var badge = chip.querySelector(".pub-year-chip__count");
+      if (badge) badge.textContent = perYear[chip.getAttribute("data-year")] || 0;
+    });
+  }
+
   function init() {
     panel = document.getElementById("panel-journals");
     fieldset = document.getElementById("pubPiFilter");
     if (!panel || !fieldset) return;
 
     items = Array.prototype.slice.call(panel.querySelectorAll(".publications ol.bibliography > li"));
-    var c = items.length ? classify() : { yim: 0, kim: 0 };
+    ensureYearIds();
+    syncYearChipCounts();
+    var c = items.length ? classify() : { all: 0, yim: 0, kim: 0 };
+    fieldset.querySelectorAll('[data-pi-count="all"]').forEach(function (el) {
+      el.textContent = items.length;
+    });
     // Fail safe: if author markup changed and nothing matches, never strand the user on an empty list
     if (c.yim + c.kim === 0) {
       fieldset.hidden = true;
@@ -201,10 +262,15 @@
       if (sectionCount) {
         sectionCount.textContent = shown;
       }
-      if (railStatus) {
-        railStatus.textContent = "Showing " + shown + " of " + entries.length + " " + cfg.noun + ".";
-      }
+      lastRailShown = shown;
+      renderRailStatus();
     }
+
+    var lastRailShown = null;
+    function renderRailStatus() {
+      if (railStatus && lastRailShown !== null) railStatus.textContent = statusText(cfg.noun, lastRailShown, entries.length, "");
+    }
+    refreshers.push(renderRailStatus);
 
     railFieldset.addEventListener("change", function (e) {
       var input = e.target;
@@ -229,7 +295,7 @@
       statusId: "pubTalkStatus",
       radioName: "pub-talk",
       attr: "data-talk-type",
-      noun: "conference presentations",
+      noun: "talks",
     });
   }
 

@@ -46,9 +46,33 @@
         totalBadge.textContent = visibleCount;
       }
 
-      if (status) {
-        status.textContent = visibleCount + " items visible";
-      }
+      lastVisible = visibleCount;
+      renderStatus();
+    }
+
+    // aria-live status follows html[data-lang] (ace2_i18n.js) and is re-rendered when it changes
+    var STATUS = {
+      ko: function (n) {
+        return n + "건 표시 중";
+      },
+      en: function (n) {
+        return n + " items visible";
+      },
+      ja: function (n) {
+        return n + " 件を表示中";
+      },
+      zh: function (n) {
+        return "正在显示 " + n + " 项";
+      },
+    };
+    var lastVisible = null;
+    function renderStatus() {
+      if (!status || lastVisible === null) return;
+      var lang = document.documentElement.getAttribute("data-lang");
+      status.textContent = (STATUS[lang] || STATUS.ko)(lastVisible);
+    }
+    if (window.MutationObserver) {
+      new MutationObserver(renderStatus).observe(document.documentElement, { attributes: true, attributeFilter: ["data-lang"] });
     }
 
     inputs.forEach(function (input) {

@@ -12,7 +12,7 @@ ace2_editorial: true
 <span class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> <span data-i18n="research.badge_p1">에너지 저장 소재 (Pillar 01)</span></span>
 <span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.badge_p2">광열 소결 공정 (Pillar 02)</span></span>
 <span class="hero-badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.badge_p3">유연 센서 소자 (Pillar 03)</span></span>
-<a href="{{ '/facilities/' | relative_url }}" class="hero-badge"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> <span data-i18n="research.badge_facilities">연구장비 바로가기</span> ({{ site.data.facilities.size }}대) <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<a href="{{ '/facilities/' | relative_url }}" class="hero-badge"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> <span data-i18n-ko="연구장비 바로가기 ({{ site.data.facilities.size }}대)" data-i18n-en="View Lab Facilities ({{ site.data.facilities.size }})" data-i18n-ja="研究設備を見る ({{ site.data.facilities.size }}台)" data-i18n-zh="查看实验仪器 ({{ site.data.facilities.size }}台)">연구장비 바로가기 ({{ site.data.facilities.size }}대)</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 {% endcapture %}
 
 {% include hero_banner.liquid
@@ -67,7 +67,7 @@ ace2_editorial: true
             </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p1.fig1_cap">
-            <span class="ed-pillar__fig-label">Figure 1(a).</span> 하이브리드 코인셀 슈퍼커패시터 응용을 위한 3D 니켈 폼 위 Co-MOF/Ni–Co 황화물(NCS) 복합 나노페탈 어레이의 상온 연속 합성 (<em>J. Energy Storage</em>, 2024).
+            <span class="ed-pillar__fig-label">Figure 1(a).</span> 하이브리드 코인셀 슈퍼커패시터 응용을 위한 3D 니켈 폼 위 Co-MOF/Ni–Co 황화물(NCS) 복합 나노페탈 어레이의 상온 연속 합성 <a href="https://doi.org/10.1016/j.est.2024.111764" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>J. Energy Storage</em>, 2024)</a>.
           </figcaption>
         </figure>
 
@@ -78,7 +78,7 @@ ace2_editorial: true
               {% if p1_f2_thumb != "" %}<source srcset="{{ p1_f2_thumb | relative_url }}" type="image/webp">{% endif %}
               <img
                 src="{{ '/assets/img/publication_preview/hong2024flashlight.jpg' | relative_url }}"
-                alt="Flashlight-induced structuring of dense Ti3C2Tx MXene film into porous MXene/TiO2 nanocomposite for Li-ion battery anodes"
+                alt="Flashlight-induced structuring of dense Ti₃C₂Tₓ MXene film into porous MXene/TiO₂ nanocomposite for Li-ion battery anodes"
                 loading="lazy"
                 decoding="async"
                 data-zoomable
@@ -86,7 +86,7 @@ ace2_editorial: true
             </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p1.fig2_cap">
-            <span class="ed-pillar__fig-label">Figure 1(b).</span> 리튬이온전지 음극 응용을 위해 재적층된 Ti₃C₂Tₓ MXene 필름을 3차원 다공성 MXene/TiO₂ 나노복합체로 순간 전환하는 제논 플래시광(IPL) 구조화 공정 (<em>Chem. Eng. J.</em>, 2024).
+            <span class="ed-pillar__fig-label">Figure 1(b).</span> 리튬이온전지 음극 응용을 위해 재적층된 Ti₃C₂Tₓ MXene 필름을 3차원 다공성 MXene/TiO₂ 나노복합체로 순간 전환하는 제논 플래시광(IPL) 구조화 공정 <a href="https://doi.org/10.1016/j.cej.2024.149598" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2024)</a>.
           </figcaption>
         </figure>
       </div>
@@ -105,7 +105,7 @@ ace2_editorial: true
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p1.t3.title">환경 촉매(De-NOx SCR) 및 적층제조 소재 내구성</span></h3>
+          <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> <span data-i18n="research.p1.t3.title">환경 촉매(De-NOₓ SCR) 및 적층제조 소재 내구성</span></h3>
           <p class="ed-pillar__topic-body" data-i18n="research.p1.t3.body">
             질소산화물(NOₓ)의 선택적 촉매 환원(SCR)을 위한 V₂O₅–WO₃/TiO₂ 촉매 설계, 산업용 나트륨계 탈황 흡착제 재생 공정, 그리고 3D 적층제조 합금의 in-situ 수소취화 저항성 진단 기술을 연구합니다.
           </p>
@@ -123,7 +123,7 @@ ace2_editorial: true
         </li>
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Chemical Engineering Journal (2024)</span>
-          <span class="ed-pillar__pub-title">Flashlight Treatment for Instantaneous Structuring of Dense MXene Film into Porous MXene/TiO2 Nanocomposite for Lithium-Ion Battery Anodes</span>
+          <span class="ed-pillar__pub-title">Flashlight Treatment for Instantaneous Structuring of Dense MXene Film into Porous MXene/TiO<sub>2</sub> Nanocomposite for Lithium-Ion Battery Anodes</span>
           <a href="https://doi.org/10.1016/j.cej.2024.149598" target="_blank" rel="noopener" class="ed-pillar__pub-link">
             DOI: 10.1016/j.cej.2024.149598 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
@@ -176,7 +176,7 @@ ace2_editorial: true
             </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p2.fig1_cap">
-            <span class="ed-pillar__fig-label">Figure 2(a).</span> 콜로이드 양자점(PbS CQD) 박막의 열유도 표면 트랩 억제를 위한 밀리초 플래시광 어닐링(FLA) 광열 표면 처리 (<em>Small</em>, 2024, 표지논문(Front Cover) 선정).
+            <span class="ed-pillar__fig-label">Figure 2(a).</span> 콜로이드 양자점(PbS CQD) 박막의 열유도 표면 트랩 억제를 위한 밀리초 플래시광 어닐링(FLA) 광열 표면 처리 <a href="https://doi.org/10.1002/smll.202400380" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2024, 표지논문 선정)</a>.
           </figcaption>
         </figure>
 
@@ -195,7 +195,7 @@ ace2_editorial: true
             </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p2.fig2_cap">
-            <span class="ed-pillar__fig-label">Figure 2(b).</span> 포름산구리 및 Cu–Ag 하이브리드 나노입자의 제논 플래시 램프 광열 환원·소결을 통한 내산화성 고전도성 전극 형성 (<em>ACS Appl. Mater. Interfaces</em>).
+            <span class="ed-pillar__fig-label">Figure 2(b).</span> 포름산구리 및 Cu–Ag 하이브리드 나노입자의 제논 플래시 램프 광열 환원·소결을 통한 내산화성 고전도성 전극 형성 <a href="https://doi.org/10.1021/acsami.6b07826" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>ACS Appl. Mater. Interfaces</em>, 2016)</a>.
           </figcaption>
         </figure>
       </div>
@@ -285,7 +285,7 @@ ace2_editorial: true
             </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p3.fig1_cap">
-            <span class="ed-pillar__fig-label">Figure 3(a).</span> 실시간 심폐소생술(CPR) 압박 깊이·속도 피드백을 위해 무선 모바일 텔레메트리와 결합된 다층 MXene/한지(닥종이) 기반 유연 촉각 센서 (<em>Small</em>, 2026).
+            <span class="ed-pillar__fig-label">Figure 3(a).</span> 실시간 심폐소생술(CPR) 압박 깊이·속도 피드백을 위해 무선 모바일 텔레메트리와 결합된 다층 MXene/한지(닥종이) 기반 유연 촉각 센서 <a href="https://doi.org/10.1002/smll.74205" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2026)</a>.
           </figcaption>
         </figure>
 
@@ -304,7 +304,7 @@ ace2_editorial: true
             </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p3.fig2_cap">
-            <span class="ed-pillar__fig-label">Figure 3(b).</span> 호기 일산화질소(NO) 분석 및 호흡기 질환 진단을 위한 나노구조 복합 전자코(E-nose) 어레이 및 머신러닝 특징 추출 파이프라인 (<em>Chem. Eng. J.</em>, 2026).
+            <span class="ed-pillar__fig-label">Figure 3(b).</span> 호기 일산화질소(NO) 분석 및 호흡기 질환 진단을 위한 나노구조 복합 전자코(E-nose) 어레이 및 머신러닝 특징 추출 파이프라인 <a href="https://doi.org/10.1016/j.cej.2026.176545" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2026)</a>.
           </figcaption>
         </figure>
       </div>

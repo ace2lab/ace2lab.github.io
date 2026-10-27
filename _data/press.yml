@@ -1,9 +1,9 @@
 # ACE² Lab Media Press Coverage
 
-- no: 1
+- no: 4
   kind: press
   year: 2025
-  title: "안재빈(20학번, 4학년), 김성우(20학번, 4학년), 김민수(21학번, 3학년) 학생 “2025 한국화학공학회 Chem Frontier” 에서 장관상 (산업통상부) 수상"
+  title: "안재빈(20학번, 4학년), 김성우(19학번, 4학년), 김민수(21학번, 3학년) 학생 “2025 한국화학공학회 Chem Frontier” 에서 장관상 (산업통상부) 수상"
   url: "https://www.etnews.com/20251118000380"
   media: "전자신문"
   date: "2025.11.18"
@@ -11,7 +11,7 @@
 - no: 3
   kind: press
   year: 2024
-  title: "이동호(19학번, 4학년), 김다윈(20학번, 4학년), 안재빈(20학번, 3학년) 학생 “2024 한국화학공학회 Chem Frontier” 에서 대상 (롯데케미컬 사장) 수상"
+  title: "이동호(19학번, 4학년), 김다윈(20학번, 4학년), 안재빈(20학번, 3학년) 학생 “2024 한국화학공학회 Chem Frontier” 에서 대상 (롯데케미칼 대표이사) 수상"
   url: "https://www.newsis.com/view/NISX20241105_0002947119"
   media: "뉴시스"
   date: "2024.11.05"
@@ -23,6 +23,7 @@
   url: "https://www.newsfreezone.co.kr/news/articleView.html?idxno=568510"
   media: "뉴스프리존"
   date: "2024.05.14"
+  paper: "/publications/#lee2024suppression"
 
 - no: 1
   kind: press
@@ -31,3 +32,4 @@
   url: "https://www.etnews.com/20240402000138"
   media: "전자신문"
   date: "2024.04.02"
+  paper: "/publications/#hong2024flashlight"

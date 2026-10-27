@@ -43,7 +43,16 @@
         </div>
         <div class="news-feed-card__body">
           {% if item.inline %}
-            {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+            <span data-news-lang="ko">{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
+            {% if item.summary_en -%}
+              <span data-news-lang="en">{{ item.summary_en }}</span>
+            {%- endif %}
+            {% if item.summary_ja -%}
+              <span data-news-lang="ja">{{ item.summary_ja }}</span>
+            {%- endif %}
+            {% if item.summary_zh -%}
+              <span data-news-lang="zh">{{ item.summary_zh }}</span>
+            {%- endif %}
           {% else %}
             <a class="news-feed-card__link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
           {% endif %}

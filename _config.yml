@@ -9,12 +9,9 @@ last_name: Lab
 contact_note: >
   Please contact the principal investigators by email for inquiries about research collaboration and student recruitment.
 description: Official Website of ACE² Lab, Kyungpook National University
-footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+footer_text: ""
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
+lang: ko # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: knu_favicon.png # Kyungpook National University official emblem favicon
 apple_touch_icon: knu_apple_touch_icon.png # iOS Retina home-screen bookmark 180x180 PNG
 

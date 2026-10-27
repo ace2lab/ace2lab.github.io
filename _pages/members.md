@@ -45,12 +45,12 @@ ace2_team_grid: true
   <!-- Tab bar: rendered pre-collapsed statically with active tab default -->
   <nav class="team-tabnav" role="tablist" aria-label="Members tabs">
     {% if yim %}
-      <button type="button" role="tab" class="team-tab" id="tab-yim" aria-controls="panel-yim" aria-selected="false" tabindex="-1" data-hash="yim" data-aliases="yim,changyong-yim">
+      <button type="button" role="tab" class="team-tab" id="tab-yim" aria-controls="panel-yim" aria-selected="false" tabindex="-1" data-hash="yim" data-aliases="yim,changyong-yim,pi-changyong-yim,member-changyong-yim">
         <span data-i18n="members.tab.yim">임창용 교수 (Prof. Yim)</span>
       </button>
     {% endif %}
     {% if kim %}
-      <button type="button" role="tab" class="team-tab" id="tab-kim" aria-controls="panel-kim" aria-selected="false" tabindex="-1" data-hash="kim" data-aliases="kim,taewook-kim">
+      <button type="button" role="tab" class="team-tab" id="tab-kim" aria-controls="panel-kim" aria-selected="false" tabindex="-1" data-hash="kim" data-aliases="kim,taewook-kim,pi-taewook-kim,member-taewook-kim">
         <span data-i18n="members.tab.kim">김태욱 교수 (Prof. Kim)</span>
       </button>
     {% endif %}
@@ -112,7 +112,11 @@ ace2_team_grid: true
       {% for m in ai_staff %}
       <article class="member-card member-card--ai" id="member-{{ m.id }}">
         <div class="member-card__photo-wrap">
-          <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__photo" loading="lazy">
+          {% assign ai_thumb = m.photo | ace2_thumb_webp %}
+          <picture class="ace2-pic">
+            {% if ai_thumb != "" %}<source srcset="{{ ai_thumb | relative_url }}" type="image/webp">{% endif %}
+            <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__photo" loading="lazy" decoding="async">
+          </picture>
           <span class="member-card__badge member-card__badge--ai" data-i18n="members.badge.ai">AI 에이전트</span>
         </div>
         <div class="member-card__identity">
@@ -158,14 +162,19 @@ ace2_team_grid: true
     </aside>
     {% endif %}
 
-    <div class="team-section__lead-info" lang="ko">
+    {% capture lead_org_ko %}<span class="lead-info__label">KNU</span>: Kyungpook National University (경북대학교){% endcapture %}
+    {% capture lead_org_en %}<span class="lead-info__label">KNU</span>: Kyungpook National University{% endcapture %}
+    {% capture lead_org_ja %}<span class="lead-info__label">KNU</span>: Kyungpook National University（慶北大学校）{% endcapture %}
+    {% capture lead_org_zh %}<span class="lead-info__label">KNU</span>: Kyungpook National University（庆北大学）{% endcapture %}
+    {% capture lead_cnt_ko %}<span class="lead-info__label">연구원 구성</span> (총 {{ current_count }}명): 대학원생 {{ grads.size }} (박사·석박통합 {{ n_phd }}, 석사과정 {{ n_ms }}, 학연과정(석사) {{ n_joint }}, 연구원(석사) {{ n_res }}) · 학부연구생 {{ ugs.size }}{% endcapture %}
+    {% capture lead_cnt_en %}<span class="lead-info__label">Team</span> ({{ current_count }} total): {{ grads.size }} graduate students (Ph.D. &amp; integrated M.S.-Ph.D. {{ n_phd }}, M.S. {{ n_ms }}, joint-institute M.S. {{ n_joint }}, researchers {{ n_res }}) · {{ ugs.size }} undergraduate researchers{% endcapture %}
+    {% capture lead_cnt_ja %}<span class="lead-info__label">研究員構成</span>（計 {{ current_count }} 名）: 大学院生 {{ grads.size }}（博士・一貫制博士 {{ n_phd }}、修士 {{ n_ms }}、連携大学院修士 {{ n_joint }}、研究員 {{ n_res }}）· 学部生研究員 {{ ugs.size }}{% endcapture %}
+    {% capture lead_cnt_zh %}<span class="lead-info__label">成员构成</span>（共 {{ current_count }} 人）: 研究生 {{ grads.size }}（博士·硕博连读 {{ n_phd }}、硕士 {{ n_ms }}、联合培养硕士 {{ n_joint }}、研究人员 {{ n_res }}）· 本科生科研助理 {{ ugs.size }}{% endcapture %}
+    <div class="team-section__lead-info">
       <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-      <span class="lead-info__item"><span class="lead-info__label">KNU</span>: Kyungpook National University (경북대학교)</span>
+      <span class="lead-info__item" data-i18n-mode="html" data-i18n-ko="{{ lead_org_ko | escape }}" data-i18n-en="{{ lead_org_en | escape }}" data-i18n-ja="{{ lead_org_ja | escape }}" data-i18n-zh="{{ lead_org_zh | escape }}">{{ lead_org_ko }}</span>
       <span class="lead-info__divider" aria-hidden="true">·</span>
-      <span class="lead-info__item"
-        ><span class="lead-info__label">연구원 구성</span> (총 {{ current_count }}명): 대학원생 {{ grads.size }} (박사과정 {{ n_phd }}, 석사과정 {{ n_ms }}, 학연과정(석사) {{ n_joint }}, 연구원(석사) {{ n_res }}) ·
-        학부연구생 {{ ugs.size }}</span
-      >
+      <span class="lead-info__item" data-i18n-mode="html" data-i18n-ko="{{ lead_cnt_ko | escape }}" data-i18n-en="{{ lead_cnt_en | escape }}" data-i18n-ja="{{ lead_cnt_ja | escape }}" data-i18n-zh="{{ lead_cnt_zh | escape }}">{{ lead_cnt_ko }}</span>
     </div>
     {% if grads.size > 0 %}
     <section class="team-section" id="graduate-students">
@@ -242,11 +251,11 @@ ace2_team_grid: true
             <div class="intern-card__content">
               <h3 class="intern-card__name">
                 {{ i.name_ko | escape }}
-                <span class="member-badge">{{ i.cohort | escape }}</span>
+                <span class="member-badge" data-i18n-term>{{ i.cohort | escape }}</span>
               </h3>
               <p class="intern-card__period">{{ i.period | replace: '. ', '.' | escape }}</p>
               {% if intern_affiliations.size > 1 %}
-                <p class="intern-card__aff">{{ i.affiliation | escape }}</p>
+                <p class="intern-card__aff" data-i18n-term>{{ i.affiliation | escape }}</p>
               {% endif %}
             </div>
           </article>
@@ -291,7 +300,7 @@ ace2_team_grid: true
 {%- if ach_patents.size > 0 %}
 <section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_patents">특허</span> <span class="ach-group__count">{{ ach_patents.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_patents %}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag" data-i18n-term>{{ x.status | escape }}</span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · {{ x.country | escape }}{% endif %}{% if x.app_number and x.app_number != blank %} (출원 {{ x.app_number | escape }}{% if x.app_date and x.app_date != blank %} · {{ x.app_date | escape }}{% endif %}){% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag" data-i18n-term>{{ x.status | escape }}</span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · <span data-i18n-term>{{ x.country | escape }}</span>{% endif %}{% if x.app_number and x.app_number != blank %} (<span data-i18n-term>출원</span> {{ x.app_number | escape }}{% if x.app_date and x.app_date != blank %} · {{ x.app_date | escape }}{% endif %}){% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
@@ -300,7 +309,7 @@ ace2_team_grid: true
 {%- for x in ach_awards %}
 {%- assign is_top_award = false -%}
 {%- if x.type contains '장관상' or x.type contains '대상' -%}{%- assign is_top_award = true -%}{%- endif -%}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if is_top_award %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ x.type | escape }}</span>{{ x.date | escape }}{% else %}<span class="ach-item__tag">{{ x.type | escape }}</span>{{ x.issuer | escape }} · {{ x.date | escape }}{% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if is_top_award %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.type | escape }}</span></span>{{ x.date | escape }}{% else %}<span class="ach-item__tag" data-i18n-term>{{ x.type | escape }}</span><span data-i18n-term>{{ x.issuer | escape }}</span> · {{ x.date | escape }}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
@@ -310,7 +319,8 @@ ace2_team_grid: true
 {%- assign p_list = x.presenters | split: "," -%}
 {%- assign p_lead = p_list | first | strip -%}
 {%- assign p_rest = p_list | slice: 1, p_list.size -%}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag" data-i18n-term>{{ x.type | escape }}</span>{% endif %}{% if x.award and x.award != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> {{ x.award | escape }}</span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if x.presenters != blank %} · <span class="ach-presenter--lead">{{ p_lead | escape }}</span>{%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}{% endif %}</p></li>
+{%- assign x_type_ko = site.data.i18n.terms[x.type].ko | default: x.type -%}
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag" data-i18n-term data-orig-term="{{ x.type | escape }}">{{ x_type_ko | escape }}</span>{% endif %}{% if x.award and x.award != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.award | escape }}</span></span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if x.presenters != blank %} · <span class="ach-presenter--lead">{{ p_lead | escape }}</span>{%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}

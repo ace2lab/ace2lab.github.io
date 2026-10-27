@@ -60,11 +60,17 @@
     index = (i + triggers.length) % triggers.length;
     var d = triggers[index].dataset;
 
-    field("type").textContent = d.type || "";
+    // Type and issuer are glossary terms: re-arm [data-i18n-term] (drop the cached original) so ace2_i18n.js re-translates them per slide
+    ["type", "issuer"].forEach(function (name) {
+      var termEl = field(name);
+      termEl.textContent = d[name] || "";
+      termEl.setAttribute("data-i18n-term", "");
+      delete termEl.dataset.origTerm;
+    });
     field("title").textContent = d.title || "";
     field("recipient").textContent = d.recipient || "";
-    field("issuer").textContent = d.issuer || "";
     field("date").textContent = d.date || "";
+    if (window.ACE2_I18N && window.ACE2_I18N.refresh) window.ACE2_I18N.refresh();
     field("count").textContent = index + 1 + " / " + triggers.length;
     tiers.forEach(function (t) {
       tierBadge.classList.remove("ed-tier--" + t);

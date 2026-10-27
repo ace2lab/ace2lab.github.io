@@ -67,15 +67,41 @@ document.addEventListener("DOMContentLoaded", function () {
     document.dispatchEvent(new CustomEvent("bibsearch:filtered", { detail: { searchTerm: (searchTerm || "").trim().toLowerCase() } }));
   };
 
+  // In-page navigational anchors that must never be treated as search terms:
+  // tab hashes + aliases (ace2_tabs.js), year headings (#y2022) and journal cover cards (#cover-card-*)
+  const NAV_HASHES = new Set([
+    "journals",
+    "international",
+    "papers",
+    "articles",
+    "domestic",
+    "domestic-journals",
+    "korean",
+    "patents",
+    "intellectual-property",
+    "ip",
+    "talks",
+    "conferences",
+    "presentations",
+  ]);
+  document.querySelectorAll('[role="tab"]').forEach((tab) => {
+    [tab.getAttribute("data-hash"), tab.getAttribute("data-tab")].forEach((value) => {
+      if (value) NAV_HASHES.add(value.trim());
+    });
+    (tab.getAttribute("data-aliases") || "").split(",").forEach((alias) => {
+      if (alias.trim()) NAV_HASHES.add(alias.trim());
+    });
+  });
+  const isNavigationalHash = (value) =>
+    NAV_HASHES.has(value) || /^y\d{4}$/.test(value) || /^cover-card-/.test(value) || !!document.getElementById(value);
+
   const updateInputField = () => {
     const rawHash = window.location.hash.substring(1);
     if (!rawHash) return;
     const hashValue = decodeURIComponent(rawHash);
 
-    // Guard: ignore in-page navigational anchors (year headings #y2022, tabs, section IDs)
-    if (/^y\d{4}$/.test(hashValue) || ["journals", "domestic", "patents", "talks"].includes(hashValue) || document.getElementById(hashValue)) {
-      return;
-    }
+    // Guard: ignore in-page navigational anchors (year headings, tab hashes/aliases, cover cards, section IDs)
+    if (isNavigationalHash(hashValue)) return;
 
     searchInput.value = hashValue;
     filterItems(hashValue);

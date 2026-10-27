@@ -42,9 +42,9 @@
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="tm-sr-only">Office</span>
           </dt>
           <dd>
-            {{ office_parts[0] }}
+            <span data-i18n-term>{{ office_parts[0] | strip }}</span>
             {% if office_parts.size > 1 %}
-              <span class="pi-contact__sub">{{ office_parts[1] | replace: ')', '' }}</span>
+              <span class="pi-contact__sub pi-contact__sub--en">{{ office_parts[1] | replace: ')', '' }}</span>
             {% endif %}
           </dd>
         </div>
@@ -85,7 +85,9 @@
       </h3>
       <p class="pi-profile__title">
         <span data-i18n-term>{{ m.title_ko -}}</span>
-        <span class="pi-profile__sep" aria-hidden="true">|</span><span lang="en">{{ m.title_en }}</span>
+        <span class="pi-profile__en-sub"
+          ><span class="pi-profile__sep" aria-hidden="true">|</span><span lang="en">{{ m.title_en }}</span></span
+        >
       </p>
       {% if m.affiliation_ko %}
         <p class="pi-profile__affil" data-i18n-term>{{ m.affiliation_ko }}</p>
@@ -218,7 +220,7 @@
                       <div class="pi-teaching__sem-head">
                         <span class="pi-teaching__term">
                           {{- y.year }}
-                          {{ s.term -}}
+                          <span data-i18n-term data-orig-term="{{ s.term | escape }}">{{ site.data.i18n.terms[s.term].ko | default: s.term -}}</span>
                         </span>
                         {% if s.credits %}
                           <span class="pi-teaching__credits" data-i18n-term>{{ s.credits }}</span>

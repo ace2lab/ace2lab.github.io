@@ -81,7 +81,10 @@ ace2_editorial: true
           </div>
           <div class="news-feed-card__body">
             {% if item.inline %}
-              {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              <span data-news-lang="ko">{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</span>
+              {% if item.summary_en %}<span data-news-lang="en">{{ item.summary_en }}</span>{% endif %}
+              {% if item.summary_ja %}<span data-news-lang="ja">{{ item.summary_ja }}</span>{% endif %}
+              {% if item.summary_zh %}<span data-news-lang="zh">{{ item.summary_zh }}</span>{% endif %}
             {% else %}
               <a class="news-feed-card__link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
             {% endif %}
@@ -179,7 +182,7 @@ ace2_editorial: true
                   <dl class="ed-award-card__meta">
                     <div><dt><i class="fa-solid fa-user" aria-hidden="true"></i><span class="ed-sr">Recipient</span></dt><dd>{{ a.recipient | escape }}</dd></div>
                     {% if a.issuer and a.issuer != "" %}
-                      <div><dt><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span class="ed-sr">Issuer</span></dt><dd>{{ a.issuer | escape }}</dd></div>
+                      <div><dt><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span class="ed-sr">Issuer</span></dt><dd data-i18n-term>{{ a.issuer | escape }}</dd></div>
                     {% endif %}
                     {% if a.date and a.date != "" %}
                       <div><dt><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date</span></dt><dd><time datetime="{{ award_date | replace: '.', '-' }}">{{ award_date }}</time></dd></div>
@@ -187,7 +190,7 @@ ace2_editorial: true
                   </dl>
                   {% if a.press and a.press != "" %}
                     <a href="{{ a.press }}" target="_blank" rel="noopener" class="ed-pill ed-pill--press ed-award-card__press">
-                      <i class="fa-solid fa-newspaper" aria-hidden="true"></i> 언론보도 ({{ a.press_media | default: '기사' | escape }}) <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span>
+                      <i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="news.press_badge">언론보도</span> (<span data-i18n-term>{{ a.press_media | default: '기사' | escape }}</span>) <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span>
                     </a>
                   {% endif %}
                 </div>
@@ -198,7 +201,7 @@ ace2_editorial: true
               {% if a.media == '뉴시스' or a.media == '경북매일' %}{% assign media_tone = 'crimson' %}{% else %}{% assign media_tone = 'navy' %}{% endif %}
               <li class="ed-press-card" data-ach-type="press">
                 <div class="ed-press-card__top">
-                  <span class="ed-media ed-media--{{ media_tone }}"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> {{ a.media | default: url_parts[2] | remove_first: "www." | escape }}</span>
+                  <span class="ed-media ed-media--{{ media_tone }}"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> <span data-i18n-term>{{ a.media | default: url_parts[2] | remove_first: "www." | escape }}</span></span>
                   <time class="ed-datepill" datetime="{{ dp[0] }}-{{ dp[1] | prepend: '0' | slice: -2, 2 }}-{{ dp[2] | prepend: '0' | slice: -2, 2 }}">{{ dp[0] }}.{{ dp[1] | prepend: "0" | slice: -2, 2 }}.{{ dp[2] | prepend: "0" | slice: -2, 2 }}</time>
                 </div>
                 <h4 class="ed-press-card__title">

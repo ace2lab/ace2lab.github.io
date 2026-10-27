@@ -1,12 +1,12 @@
 /*
  * Author enrichment for jekyll-scholar bibliographies.
  * Shared by the Home page (Selected Publications) and the Publications page.
- *  1. Bold ACE² Lab members (exact full-name match) and style contribution symbols († *)
+ *  1. Mark ACE² Lab members (.ed-author-self, weight/underline in editorial_typography.css) (exact full-name match) and style contribution symbols († *)
  *  2. Flag journal-cover entries with a badge and highlight class
  * Idempotent: authors are marked with data-enhanced, covers with .is-cover-paper.
  */
 (function () {
-  // All 26 ACE² Lab members (including spelling variants used in papers.bib)
+  // ACE² Lab members (including spelling variants used in papers.bib)
   var labMembers = [
     "Changyong Yim",
     "Taewook Kim",
@@ -37,6 +37,8 @@
     "Sungwoo Kim",
     "Sumin Woo",
     "Gunwoo Wi",
+    "Gunwoo We",
+    "Taeyong Kim",
     "Yuri Kim",
     "Hamin Kim",
     "Jongtaek Hong",
@@ -45,7 +47,7 @@
     "Soyeon Park",
   ];
 
-  // Single alternation, longest name first, so variants never produce nested <strong>
+  // Single alternation, longest name first, so variants never produce nested .ed-author-self spans
   var memberRegex = new RegExp(
     "\\b(" +
       labMembers
@@ -71,7 +73,7 @@
     html = html.replace(/†/g, '<span class="author-symbol">†</span>');
     html = html.replace(/\*/g, '<span class="author-symbol">*</span>');
     // Lab member names
-    html = html.replace(memberRegex, "<strong>$1</strong>");
+    html = html.replace(memberRegex, '<span class="ed-author-self">$1</span>');
     authorDiv.innerHTML = html;
   }
 

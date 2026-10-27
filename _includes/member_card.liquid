@@ -54,7 +54,11 @@
 
   <div class="member-card__avatar-wrapper">
     {% if m.photo and m.photo != '' %}
-      <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__avatar" loading="lazy" decoding="async">
+      {% assign photo_thumb = m.photo | ace2_thumb_webp %}
+      <picture class="ace2-pic">
+        {% if photo_thumb != '' %}<source srcset="{{ photo_thumb | relative_url }}" type="image/webp">{% endif %}
+        <img src="{{ m.photo | relative_url }}" alt="{{ m.name_en }}" class="member-card__avatar" loading="lazy" decoding="async">
+      </picture>
     {% else %}
       {% assign name_parts = m.name_en | split: ' ' %}
       <div class="member-card__avatar member-card__avatar--placeholder" aria-hidden="true">
@@ -67,15 +71,15 @@
   </div>
 
   <div class="member-card__content">
-    <div class="member-card__role">
-      <span class="member-badge member-badge--{{ role_key }}" data-i18n-term>{{ m.role_ko }}</span>
-      {% if m.degree_program %}
-        {% assign program_parts = m.degree_program | split: ' (' %}
-        {% if program_parts.size > 1 %}
+    {% comment %} The role itself is shown once, in the top role banner; only the enrolment period is repeated here. {% endcomment %}
+    {% if m.degree_program %}
+      {% assign program_parts = m.degree_program | split: ' (' %}
+      {% if program_parts.size > 1 %}
+        <div class="member-card__role">
           <span class="member-card__period" data-i18n-term>{{ program_parts[1] | replace: ')', '' }}</span>
-        {% endif %}
+        </div>
       {% endif %}
-    </div>
+    {% endif %}
 
     <h3 class="member-card__name">
       {{ m.name_ko }}
@@ -132,9 +136,29 @@
     {% if m.links or member_email != '' or ach_total > 0 %}
       <div class="member-card__links">
         {% if member_email and member_email != '' %}
-          <a href="mailto:{{ member_email }}" title="Email ({{ member_email }})" aria-label="Email" class="link-icon"
-            ><i class="fa-solid fa-envelope" aria-hidden="true"></i
-          ></a>
+          {% if member_email contains 'kicet.re.kr' %}
+            {% assign email_label = 'KICET' %}
+          {% elsif member_email contains 'knu.ac.kr' %}
+            {% assign email_label = 'KNU' %}
+          {% else %}
+            {% assign email_label = 'Email' %}
+          {% endif %}
+          <a
+            href="mailto:{{ member_email }}"
+            title="{{ member_email }}"
+            aria-label="{{ email_label }} Email ({{ member_email }})"
+            class="link-icon link-icon--mail"
+            ><i class="fa-solid fa-envelope" aria-hidden="true"></i> <span class="link-pill__label">{{ email_label }}</span></a
+          >
+        {% endif %}
+        {% if m.links.gmail and m.links.gmail != '' and m.links.gmail != member_email %}
+          <a
+            href="mailto:{{ m.links.gmail }}"
+            title="Gmail ({{ m.links.gmail }})"
+            aria-label="Gmail ({{ m.links.gmail }})"
+            class="link-icon link-icon--mail"
+            ><i class="fa-regular fa-envelope" aria-hidden="true"></i> <span class="link-pill__label">Gmail</span></a
+          >
         {% endif %}
         {% if m.links.scholar and m.links.scholar != '' %}
           <a href="{{ m.links.scholar }}" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar" class="link-icon"

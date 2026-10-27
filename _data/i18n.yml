@@ -168,13 +168,13 @@ ui:
   home.mission.en:
     ko: Pioneering ultrafast photonic nanomanufacturing and functional nanomaterials for high-capacity electrochemical energy storage and wearable bio-environmental devices.
     en: Pioneering ultrafast photonic nanomanufacturing and functional nanomaterials for high-capacity electrochemical energy storage and wearable bio-environmental devices.
-    ja: 超高速光熱ナノ製造プロセスと機能性ナノ材料設計を融合し、次世代ハイブリッドエネルギー貯蔵素子および高感度ウェアラブル生体・環境センサー技術を革新します。
-    zh: 融合超快光热纳米制造工艺与功能纳米材料设计，革新高容量电化学储能器件与可穿戴生物环境传感器技术。
+    ja: Pioneering ultrafast photonic nanomanufacturing and functional nanomaterials for high-capacity electrochemical energy storage and wearable bio-environmental devices.
+    zh: Pioneering ultrafast photonic nanomanufacturing and functional nanomaterials for high-capacity electrochemical energy storage and wearable bio-environmental devices.
   home.mission.ko:
     ko: 초고속 광열처리 나노공정과 기능성 나노소재 설계를 융합하여, 차세대 하이브리드 에너지 저장 소자 및 고민감도 유연 센서 기술을 혁신합니다.
     en: Advancing end-to-end chemical and energy engineering from millisecond photonic synthesis to practical electrochemical and sensing systems.
-    ja: Pioneering ultrafast photonic nanomanufacturing and functional nanomaterials for high-capacity electrochemical energy storage and wearable bio-environmental devices.
-    zh: Pioneering ultrafast photonic nanomanufacturing and functional nanomaterials for high-capacity electrochemical energy storage and wearable bio-environmental devices.
+    ja: 超高速光熱ナノ製造プロセスと機能性ナノ材料設計を融合し、次世代ハイブリッドエネルギー貯蔵素子および高感度ウェアラブル生体・環境センサー技術を革新します。
+    zh: 融合超快光热纳米制造工艺与功能纳米材料设计，革新高容量电化学储能器件与可穿戴生物环境传感器技术。
 
   home.stat.researchers:
     ko: 연구실 구성원
@@ -519,7 +519,7 @@ ui:
   home.ai.slogan:
     ko: 퇴근도 커피도 없는 ACE² Lab의 디지털 동료. 초안은 지안이, 결정은 PI가.
     en: ACE² Lab's digital colleague with no coffee breaks or clock-out times. Drafts by Jian, decisions by the PI.
-    ja: 休憩も退勤もないACE² Labのデジタル同僚。草案はジアンが、決定はPI가。
+    ja: 休憩も退勤もないACE² Labのデジタル同僚。草案はジアンが、決定はPIが。
     zh: 没有下班与咖啡时间的 ACE² Lab 数字同事。初稿由智安草拟，决策由 PI 把关。
   home.ai.desc:
     ko: ACE² Lab은 연구 행정과 일상 커뮤니케이션에 인공지능 에이전트를 실전 도입하여, 연구진이 고부가가치 실험과 창의적 연구에 온전히 몰입할 수 있는 환경을 만듭니다.
@@ -665,15 +665,15 @@ ui:
     ja: "当研究室は、次世代の電気化学エネルギー貯蔵および触媒システムに向けた低次元ナノ材料の合理的構造設計と界面工学に注力しています。高速なイオン輸送カイネティクスと長期サイクル安定性を兼ね備えたハイブリッドスーパーキャパシタ、多孔質2D MXene二次電池負極、および高耐久エネルギー変換・環境触媒を開発しています。"
     zh: "本实验室专注于面向下一代电化学能量存储与催化系统的低维纳米材料合理结构设计与界面工程。我们致力于开发兼具快速离子传输动力学与长循环稳定性的混合超级电容器、多孔二维 MXene 二次电池负极，以及高耐久性环境与能量转换催化剂。"
   research.p1.fig1_cap:
-    ko: '<span class="ed-pillar__fig-label">Figure 1(a).</span> 하이브리드 코인셀 슈퍼커패시터 응용을 위한 3D 니켈 폼 위 Co-MOF/Ni–Co 황화물(NCS) 복합 나노페탈 어레이의 상온 연속 합성 (<em>J. Energy Storage</em>, 2024).'
-    en: '<span class="ed-pillar__fig-label">Figure 1(a).</span> Room-temperature sequential synthesis of Co-MOF/Ni–Co sulfide (NCS) composite nanopetal arrays on 3D Ni foam for hybrid coin-cell supercapacitors (<em>J. Energy Storage</em>, 2024).'
-    ja: '<span class="ed-pillar__fig-label">Figure 1(a).</span> ハイブリッドコインセル型スーパーキャパシタに向けた3Dニッケルフォーム上へのCo-MOF/Ni–Co硫化物（NCS）複合ナノ花弁状アレイの常温逐次合成 (<em>J. Energy Storage</em>, 2024).'
-    zh: '<span class="ed-pillar__fig-label">Figure 1(a).</span> 面向混合纽扣超级电容器的三维泡沫镍基底 Co-MOF/镍钴硫化物（NCS）复合纳米花瓣阵列室温连续合成 (<em>J. Energy Storage</em>, 2024).'
+    ko: '<span class="ed-pillar__fig-label">Figure 1(a).</span> 하이브리드 코인셀 슈퍼커패시터 응용을 위한 3D 니켈 폼 위 Co-MOF/Ni–Co 황화물(NCS) 복합 나노페탈 어레이의 상온 연속 합성 <a href="https://doi.org/10.1016/j.est.2024.111764" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>J. Energy Storage</em>, 2024)</a>.'
+    en: '<span class="ed-pillar__fig-label">Figure 1(a).</span> Room-temperature sequential synthesis of Co-MOF/Ni–Co sulfide (NCS) composite nanopetal arrays on 3D Ni foam for hybrid coin-cell supercapacitors <a href="https://doi.org/10.1016/j.est.2024.111764" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>J. Energy Storage</em>, 2024)</a>.'
+    ja: '<span class="ed-pillar__fig-label">Figure 1(a).</span> ハイブリッドコインセル型スーパーキャパシタに向けた3Dニッケルフォーム上へのCo-MOF/Ni–Co硫化物（NCS）複合ナノ花弁状アレイの常温逐次合成 <a href="https://doi.org/10.1016/j.est.2024.111764" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>J. Energy Storage</em>, 2024)</a>.'
+    zh: '<span class="ed-pillar__fig-label">Figure 1(a).</span> 面向混合纽扣超级电容器的三维泡沫镍基底 Co-MOF/镍钴硫化物（NCS）复合纳米花瓣阵列室温连续合成 <a href="https://doi.org/10.1016/j.est.2024.111764" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>J. Energy Storage</em>, 2024)</a>.'
   research.p1.fig2_cap:
-    ko: '<span class="ed-pillar__fig-label">Figure 1(b).</span> 리튬이온전지 음극 응용을 위해 재적층된 Ti₃C₂Tₓ MXene 필름을 3차원 다공성 MXene/TiO₂ 나노복합체로 순간 전환하는 제논 플래시광(IPL) 구조화 공정 (<em>Chem. Eng. J.</em>, 2024).'
-    en: '<span class="ed-pillar__fig-label">Figure 1(b).</span> Instantaneous flashlight-induced structuring of restacked Ti₃C₂Tₓ MXene into a 3D porous MXene/TiO₂ nanocomposite anode for Li-ion batteries (<em>Chem. Eng. J.</em>, 2024).'
-    ja: '<span class="ed-pillar__fig-label">Figure 1(b).</span> リチウムイオン電池負極に向け、再積層したTi₃C₂Tₓ MXeneフィルムを3次元多孔質MXene/TiO₂ナノ複合体へと瞬時に構造化するフラッシュ光（IPL）処理 (<em>Chem. Eng. J.</em>, 2024).'
-    zh: '<span class="ed-pillar__fig-label">Figure 1(b).</span> 利用强脉冲闪光（IPL）将重堆叠 Ti₃C₂Tₓ MXene 薄膜瞬态构建为用于锂离子电池负极的三维多孔 MXene/TiO₂ 纳米复合材料 (<em>Chem. Eng. J.</em>, 2024).'
+    ko: '<span class="ed-pillar__fig-label">Figure 1(b).</span> 리튬이온전지 음극 응용을 위해 재적층된 Ti₃C₂Tₓ MXene 필름을 3차원 다공성 MXene/TiO₂ 나노복합체로 순간 전환하는 제논 플래시광(IPL) 구조화 공정 <a href="https://doi.org/10.1016/j.cej.2024.149598" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2024)</a>.'
+    en: '<span class="ed-pillar__fig-label">Figure 1(b).</span> Instantaneous flashlight-induced structuring of restacked Ti₃C₂Tₓ MXene into a 3D porous MXene/TiO₂ nanocomposite anode for Li-ion batteries <a href="https://doi.org/10.1016/j.cej.2024.149598" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2024)</a>.'
+    ja: '<span class="ed-pillar__fig-label">Figure 1(b).</span> リチウムイオン電池負極に向け、再積層したTi₃C₂Tₓ MXeneフィルムを3次元多孔質MXene/TiO₂ナノ複合体へと瞬時に構造化するフラッシュ光（IPL）処理 <a href="https://doi.org/10.1016/j.cej.2024.149598" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2024)</a>.'
+    zh: '<span class="ed-pillar__fig-label">Figure 1(b).</span> 利用强脉冲闪光（IPL）将重堆叠 Ti₃C₂Tₓ MXene 薄膜瞬态构建为用于锂离子电池负极的三维多孔 MXene/TiO₂ 纳米复合材料 <a href="https://doi.org/10.1016/j.cej.2024.149598" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2024)</a>.'
 
   research.p1.t1.title:
     ko: 하이브리드 슈퍼커패시터 및 구조형 전극
@@ -696,10 +696,10 @@ ui:
     ja: "2次元Ti₃C₂Tₓおよびバナジウム系MXeneのトポケミカル変換、垂直配向、および光熱多孔質構造化により、ナノシートの再積層を抑制し、リチウムイオン電池や全固体電池における体積膨張を緩衝します。"
     zh: "通过对二维 Ti₃C₂Tₓ 与钒基 MXene 进行拓扑化学转化、垂直取向调控及光热多孔构筑，形成多孔 MXene/TiO₂ 复合结构，有效抑制纳米片重堆叠并缓冲锂离子电池与全固态电池中的体积膨胀。"
   research.p1.t3.title:
-    ko: 환경 촉매(De-NOx SCR) 및 적층제조 소재 내구성
+    ko: 환경 촉매(De-NOₓ SCR) 및 적층제조 소재 내구성
     en: Environmental Catalysis (De-NOₓ SCR) & Durability of Additively Manufactured Alloys
-    ja: 環境触媒（De-NOx SCR）および積層造形材料の耐久性
-    zh: 环境催化（De-NOx SCR）与增材制造材料结构耐久性
+    ja: 環境触媒（De-NOₓ SCR）および積層造形材料の耐久性
+    zh: 环境催化（De-NOₓ SCR）与增材制造材料结构耐久性
   research.p1.t3.body:
     ko: "질소산화물(NOₓ)의 선택적 촉매 환원(SCR)을 위한 V₂O₅–WO₃/TiO₂ 촉매 설계, 산업용 나트륨계 탈황 흡착제 재생 공정, 그리고 3D 적층제조 합금의 in-situ 수소취화 저항성 진단 기술을 연구합니다."
     en: "Rational design of V₂O₅–WO₃/TiO₂ catalysts for selective catalytic reduction (SCR) of NOₓ, regeneration of industrial Na-based desulfurization sorbents, and in-situ hydrogen embrittlement diagnostics of additively manufactured alloys."
@@ -722,15 +722,15 @@ ui:
     ja: "従来の高温電気炉による熱処理は数時間を要し、熱に弱い柔軟高分子基板の損傷や望ましくない相分離を引き起こします。ACE² Labは、常温・ミリ秒単位のナノ製造プラットフォームとして、フラッシュランプ光焼結（IPL）およびレーザー支援光熱プロセスを先導しています。"
     zh: "传统高温管式炉退火耗时数小时，易损伤热敏柔性高分子基底并引发非预期的相分离。ACE² Lab 开拓了以强脉冲光（IPL）闪光烧结与激光辅助光热加工为核心的室温、毫秒级超快纳米制造平台。"
   research.p2.fig1_cap:
-    ko: '<span class="ed-pillar__fig-label">Figure 2(a).</span> 콜로이드 양자점(PbS CQD) 박막의 열유도 표면 트랩 억제를 위한 밀리초 플래시광 어닐링(FLA) 광열 표면 처리 (<em>Small</em>, 2024, 표지논문(Front Cover) 선정).'
-    en: '<span class="ed-pillar__fig-label">Figure 2(a).</span> Millisecond flashlight annealing (FLA) photothermal surface treatment of PbS colloidal quantum dot (CQD) films for surface trap suppression (<em>Small</em>, 2024, Front Cover).'
-    ja: '<span class="ed-pillar__fig-label">Figure 2(a).</span> PbSコロイド量子ドット（CQD）薄膜の表面トラップ準位を抑制するミリ秒フラッシュ光アニーリング（FLA）光熱表面処理 (<em>Small</em>, 2024, Front Cover).'
-    zh: '<span class="ed-pillar__fig-label">Figure 2(a).</span> 抑制 PbS 胶体量子点（CQD）薄膜热诱导表面缺陷态的毫秒级闪光退火（FLA）光热表面处理技术 (<em>Small</em>, 2024, 封面论文).'
+    ko: '<span class="ed-pillar__fig-label">Figure 2(a).</span> 콜로이드 양자점(PbS CQD) 박막의 열유도 표면 트랩 억제를 위한 밀리초 플래시광 어닐링(FLA) 광열 표면 처리 <a href="https://doi.org/10.1002/smll.202400380" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2024, 표지논문 선정)</a>.'
+    en: '<span class="ed-pillar__fig-label">Figure 2(a).</span> Millisecond flashlight annealing (FLA) photothermal surface treatment of PbS colloidal quantum dot (CQD) films for surface trap suppression <a href="https://doi.org/10.1002/smll.202400380" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2024, Front Cover)</a>.'
+    ja: '<span class="ed-pillar__fig-label">Figure 2(a).</span> PbSコロイド量子ドット（CQD）薄膜の表面トラップ準位を抑制するミリ秒フラッシュ光アニーリング（FLA）光熱表面処理 <a href="https://doi.org/10.1002/smll.202400380" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2024, Front Cover)</a>.'
+    zh: '<span class="ed-pillar__fig-label">Figure 2(a).</span> 抑制 PbS 胶体量子点（CQD）薄膜热诱导表面缺陷态的毫秒级闪光退火（FLA）光热表面处理技术 <a href="https://doi.org/10.1002/smll.202400380" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2024, 封面论文)</a>.'
   research.p2.fig2_cap:
-    ko: '<span class="ed-pillar__fig-label">Figure 2(b).</span> 포름산구리 및 Cu–Ag 하이브리드 나노입자의 제논 플래시 램프 광열 환원·소결을 통한 내산화성 고전도성 전극 형성 (<em>ACS Appl. Mater. Interfaces</em>).'
-    en: '<span class="ed-pillar__fig-label">Figure 2(b).</span> Xenon flash lamp photothermal reduction and sintering of copper formate / Cu–Ag hybrid nanoparticles into oxidation-resistant conductive electrodes (<em>ACS Appl. Mater. Interfaces</em>).'
-    ja: '<span class="ed-pillar__fig-label">Figure 2(b).</span> ギ酸銅およびCu–Agハイブリッドナノ粒子のキセノンフラッシュランプ光熱還元・焼結による耐酸化性導電電極の形成 (<em>ACS Appl. Mater. Interfaces</em>).'
-    zh: '<span class="ed-pillar__fig-label">Figure 2(b).</span> 利用氙灯闪光灯对甲酸铜及 Cu–Ag 复合纳米颗粒进行光热还原与烧结，制备抗氧化高导电电极走线 (<em>ACS Appl. Mater. Interfaces</em>).'
+    ko: '<span class="ed-pillar__fig-label">Figure 2(b).</span> 포름산구리 및 Cu–Ag 하이브리드 나노입자의 제논 플래시 램프 광열 환원·소결을 통한 내산화성 고전도성 전극 형성 <a href="https://doi.org/10.1021/acsami.6b07826" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>ACS Appl. Mater. Interfaces</em>, 2016)</a>.'
+    en: '<span class="ed-pillar__fig-label">Figure 2(b).</span> Xenon flash lamp photothermal reduction and sintering of copper formate / Cu–Ag hybrid nanoparticles into oxidation-resistant conductive electrodes <a href="https://doi.org/10.1021/acsami.6b07826" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>ACS Appl. Mater. Interfaces</em>, 2016)</a>.'
+    ja: '<span class="ed-pillar__fig-label">Figure 2(b).</span> ギ酸銅およびCu–Agハイブリッドナノ粒子のキセノンフラッシュランプ光熱還元・焼結による耐酸化性導電電極の形成 <a href="https://doi.org/10.1021/acsami.6b07826" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>ACS Appl. Mater. Interfaces</em>, 2016)</a>.'
+    zh: '<span class="ed-pillar__fig-label">Figure 2(b).</span> 利用氙灯闪光灯对甲酸铜及 Cu–Ag 复合纳米颗粒进行光热还原与烧结，制备抗氧化高导电电极走线 <a href="https://doi.org/10.1021/acsami.6b07826" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>ACS Appl. Mater. Interfaces</em>, 2016)</a>.'
 
   research.p2.t1.title:
     ko: 초고속 펄스광(IPL) 소결 및 상전이 제어
@@ -779,15 +779,15 @@ ui:
     ja: "ACE² Labは、リアルタイムのヘルスケア生体モニタリング、呼気診断、および有害ガス検知に向けたフレキシブル・ウェアラブルセンシングシステムを設計しています。2D MXene、レーザー誘起グラフェン（LIG）、半導体ナノ構造と機械学習解析を融合し、高い感度・選択性・機械的信頼性を実現します。"
     zh: "ACE² Lab 设计面向实时医疗健康生理监测、呼气疾病诊断及有毒有害气体检测的柔性与可穿戴传感系统。通过结合二维 MXene、激光诱导石墨烯（LIG）、半导体纳米结构与机器学习算法，实现高灵敏度、高选择性与优异的机械可靠性。"
   research.p3.fig1_cap:
-    ko: '<span class="ed-pillar__fig-label">Figure 3(a).</span> 실시간 심폐소생술(CPR) 압박 깊이·속도 피드백을 위해 무선 모바일 텔레메트리와 결합된 다층 MXene/한지(닥종이) 기반 유연 촉각 센서 (<em>Small</em>, 2026).'
-    en: '<span class="ed-pillar__fig-label">Figure 3(a).</span> Multi-layered MXene/Hanji (mulberry paper) flexible tactile sensor integrated with wireless mobile telemetry for real-time CPR compression depth and rate feedback (<em>Small</em>, 2026).'
-    ja: '<span class="ed-pillar__fig-label">Figure 3(a).</span> リアルタイム心肺蘇生（CPR）圧迫深度・速度フィードバックに向け、無線モバイルテレメトリと統合した多層MXene／韓紙（コウゾ紙）フレキシブル触覚センサー (<em>Small</em>, 2026).'
-    zh: '<span class="ed-pillar__fig-label">Figure 3(a).</span> 集成无线移动遥测功能的多层 MXene/桑皮纸柔性触觉传感器，用于心肺复苏（CPR）按压深度与频率的实时反馈 (<em>Small</em>, 2026).'
+    ko: '<span class="ed-pillar__fig-label">Figure 3(a).</span> 실시간 심폐소생술(CPR) 압박 깊이·속도 피드백을 위해 무선 모바일 텔레메트리와 결합된 다층 MXene/한지(닥종이) 기반 유연 촉각 센서 <a href="https://doi.org/10.1002/smll.74205" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2026)</a>.'
+    en: '<span class="ed-pillar__fig-label">Figure 3(a).</span> Multi-layered MXene/Hanji (mulberry paper) flexible tactile sensor integrated with wireless mobile telemetry for real-time CPR compression depth and rate feedback <a href="https://doi.org/10.1002/smll.74205" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2026)</a>.'
+    ja: '<span class="ed-pillar__fig-label">Figure 3(a).</span> リアルタイム心肺蘇生（CPR）圧迫深度・速度フィードバックに向け、無線モバイルテレメトリと統合した多層MXene／韓紙（コウゾ紙）フレキシブル触覚センサー <a href="https://doi.org/10.1002/smll.74205" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2026)</a>.'
+    zh: '<span class="ed-pillar__fig-label">Figure 3(a).</span> 集成无线移动遥测功能的多层 MXene/桑皮纸柔性触觉传感器，用于心肺复苏（CPR）按压深度与频率的实时反馈 <a href="https://doi.org/10.1002/smll.74205" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Small</em>, 2026)</a>.'
   research.p3.fig2_cap:
-    ko: '<span class="ed-pillar__fig-label">Figure 3(b).</span> 호기 일산화질소(NO) 분석 및 호흡기 질환 진단을 위한 나노구조 복합 전자코(E-nose) 어레이 및 머신러닝 특징 추출 파이프라인 (<em>Chem. Eng. J.</em>, 2026).'
-    en: '<span class="ed-pillar__fig-label">Figure 3(b).</span> Nanostructured composite electronic-nose (E-nose) array coupled with machine-learning feature extraction for exhaled nitric oxide (NO) breathomics and respiratory diagnosis (<em>Chem. Eng. J.</em>, 2026).'
-    ja: '<span class="ed-pillar__fig-label">Figure 3(b).</span> 呼気一酸化窒素（NO）解析および呼吸器疾患診断のためのナノ構造複合電子鼻（E-nose）アレイと機械学習特徴抽出パイプライン (<em>Chem. Eng. J.</em>, 2026).'
-    zh: '<span class="ed-pillar__fig-label">Figure 3(b).</span> 结合机器学习特征提取的纳米复合电子鼻（E-nose）传感器阵列，用于呼出气一氧化氮（NO）分析与呼吸系统疾病辅助诊断 (<em>Chem. Eng. J.</em>, 2026).'
+    ko: '<span class="ed-pillar__fig-label">Figure 3(b).</span> 호기 일산화질소(NO) 분석 및 호흡기 질환 진단을 위한 나노구조 복합 전자코(E-nose) 어레이 및 머신러닝 특징 추출 파이프라인 <a href="https://doi.org/10.1016/j.cej.2026.176545" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2026)</a>.'
+    en: '<span class="ed-pillar__fig-label">Figure 3(b).</span> Nanostructured composite electronic-nose (E-nose) array coupled with machine-learning feature extraction for exhaled nitric oxide (NO) breathomics and respiratory diagnosis <a href="https://doi.org/10.1016/j.cej.2026.176545" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2026)</a>.'
+    ja: '<span class="ed-pillar__fig-label">Figure 3(b).</span> 呼気一酸化窒素（NO）解析および呼吸器疾患診断のためのナノ構造複合電子鼻（E-nose）アレイと機械学習特徴抽出パイプライン <a href="https://doi.org/10.1016/j.cej.2026.176545" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2026)</a>.'
+    zh: '<span class="ed-pillar__fig-label">Figure 3(b).</span> 结合机器学习特征提取的纳米复合电子鼻（E-nose）传感器阵列，用于呼出气一氧化氮（NO）分析与呼吸系统疾病辅助诊断 <a href="https://doi.org/10.1016/j.cej.2026.176545" target="_blank" rel="noopener" class="ed-pillar__fig-doi">(<em>Chem. Eng. J.</em>, 2026)</a>.'
 
   research.p3.t1.title:
     ko: 유연 촉각 및 호흡 헬스케어 센서
@@ -1451,6 +1451,16 @@ ui:
     en: Related Paper
     ja: 関連論文
     zh: 相关论文
+  news.press_badge:
+    ko: 언론보도
+    en: In the Press
+    ja: メディア報道
+    zh: 媒体报道
+  news.naver_news:
+    ko: 네이버 뉴스
+    en: Naver News
+    ja: Naver ニュース
+    zh: Naver 新闻
   news.lb_zoom:
     ko: 원본 크기
     en: Actual size
@@ -1466,6 +1476,50 @@ ui:
     en: "← → Prev / Next · Esc to close · Click image to zoom"
     ja: "← → 前へ / 次へ · Esc 閉じる · 画像クリックで拡大 / 縮小"
     zh: "← → 上一张 / 下一张 · Esc 关闭 · 点击图片放大 / 缩小"
+
+  # ----------------------------------------------------------------------------
+  # 404 & Intranet (DOBBY) Pages (_pages/404.md, _pages/dobby.md)
+  # ----------------------------------------------------------------------------
+  hero.notfound.label:
+    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ja: 慶北大学校 科学技術学部 · ACE² LAB
+    zh: 庆北大学 科学技术学院 · ACE² LAB
+  hero.notfound.title:
+    ko: 404 — Page Not Found
+    en: 404 — Page Not Found
+    ja: 404 — ページが見つかりません (Page Not Found)
+    zh: 404 — 未找到页面 (Page Not Found)
+  hero.notfound.subtitle:
+    ko: "요청하신 페이지의 주소가 변경되었거나 존재하지 않습니다."
+    en: "The requested page could not be found or has been moved."
+    ja: "お探しのページは移動または削除された可能性があります。"
+    zh: "您访问的页面地址已变更或不存在。"
+  hero.notfound.subtitle_en:
+    ko: "The requested page could not be found or has been moved."
+    en: "Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University."
+    ja: "The requested page could not be found or has been moved."
+    zh: "The requested page could not be found or has been moved."
+  hero.dobby.label:
+    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ja: 慶北大学校 科学技術学部 · ACE² LAB
+    zh: 庆北大学 科学技术学院 · ACE² LAB
+  hero.dobby.title:
+    ko: ACE² Lab Intranet (DOBBY)
+    en: ACE² Lab Intranet (DOBBY)
+    ja: ACE² Lab イントラネット (DOBBY)
+    zh: ACE² Lab 内部门户 (DOBBY)
+  hero.dobby.subtitle:
+    ko: "차세대 화학 및 에너지 공학 연구실 구성원 전용 인트라넷 포털"
+    en: "Internal portal and operational workspace exclusively for ACE² Lab members."
+    ja: "次世代化学・エネルギー工学研究室（ACE² Lab）所属メンバー専用イントラネット"
+    zh: "先进化学与能源工程实验室（ACE² Lab）成员专用内部门户"
+  hero.dobby.subtitle_en:
+    ko: "Internal portal and operational workspace exclusively for ACE² Lab members."
+    en: "Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University."
+    ja: "Internal portal and operational workspace exclusively for ACE² Lab members."
+    zh: "Internal portal and operational workspace exclusively for ACE² Lab members."
 
   # ----------------------------------------------------------------------------
   # Gallery Page (_pages/gallery.md)
@@ -1547,6 +1601,31 @@ terms:
     en: "Staff Engineer"
     ja: "主任エンジニア (Staff Engineer)"
     zh: "资深工程师 (Staff Engineer)"
+  "책임연구원 (Staff Engineer)":
+    ko: "책임연구원 (Staff Engineer)"
+    en: "Staff Engineer"
+    ja: "主任エンジニア (Staff Engineer)"
+    zh: "资深工程师 (Staff Engineer)"
+  "임창용 교수님 직속 AI 비서":
+    ko: "임창용 교수님 직속 AI 비서"
+    en: "AI Executive Secretary to Prof. Changyong Yim"
+    ja: "Changyong Yim 教授直属 AI秘書"
+    zh: "Changyong Yim 教授直属 AI 秘书"
+  "M.S.":
+    ko: "M.S."
+    en: "M.S."
+    ja: "修士 (M.S.)"
+    zh: "硕士 (M.S.)"
+  "B.S.":
+    ko: "B.S."
+    en: "B.S."
+    ja: "学士 (B.S.)"
+    zh: "学士 (B.S.)"
+  "Postdoc":
+    ko: "Postdoc"
+    en: "Postdoc"
+    ja: "博士研究員 (Postdoc)"
+    zh: "博士后 (Postdoc)"
   "Eyes-High 박사후연구원":
     ko: "Eyes-High 박사후연구원"
     en: "Eyes-High Postdoctoral Fellow"
@@ -1644,6 +1723,11 @@ terms:
     en: "Mobile Communications Business, IT & Mobile (IM) Division, Samsung Electronics"
     ja: "サムスン電子 IM（IT・モバイル）部門 無線事業部"
     zh: "三星电子 IM（IT与移动通信）部门 无线事业部"
+  "Samsung Electronics IM(IT·모바일)부문 무선사업부":
+    ko: "Samsung Electronics IM(IT·모바일)부문 무선사업부"
+    en: "Mobile Communications Business, IT & Mobile (IM) Division, Samsung Electronics"
+    ja: "Samsung Electronics IM（IT・モバイル）部門 無線事業部"
+    zh: "Samsung Electronics IM（IT与移动通信）部门 无线事业部"
   "모바일 헬스케어 센서 H/W 개발":
     ko: "모바일 헬스케어 센서 H/W 개발"
     en: "Mobile Healthcare Sensor H/W R&D"
@@ -1654,6 +1738,11 @@ terms:
     en: "Semiconductor R&D Center (CTO), Device Solutions (DS) Division, Samsung Electronics"
     ja: "サムスン電子 DS（デバイスソリューション）部門 CTO 半導体研究所"
     zh: "三星电子 DS（设备解决方案）部门 CTO 半导体研究所"
+  "Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소":
+    ko: "Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소"
+    en: "Semiconductor R&D Center (CTO), Device Solutions (DS) Division, Samsung Electronics"
+    ja: "Samsung Electronics DS（デバイスソリューション）部門 CTO 半導体研究所"
+    zh: "Samsung Electronics DS（设备解决方案）部门 CTO 半导体研究所"
   "차세대 메모리 공정":
     ko: "차세대 메모리 공정"
     en: "Next-Generation Memory Process R&D"
@@ -1676,12 +1765,22 @@ terms:
     zh: "蔚山分院"
   "University of Calgary(Canada)":
     ko: "University of Calgary(Canada)"
-    en: "University of Calgary (Canada)"
+    en: "University of Calgary, Canada"
+    ja: "カルガリー大学 (University of Calgary, カナダ)"
+    zh: "卡尔加里大学 (University of Calgary, 加拿大)"
+  "University of Calgary, Canada":
+    ko: "University of Calgary, Canada"
+    en: "University of Calgary, Canada"
     ja: "カルガリー大学 (University of Calgary, カナダ)"
     zh: "卡尔加里大学 (University of Calgary, 加拿大)"
   "University of Calgary(Canada) 기계생산공학과":
     ko: "University of Calgary(Canada) 기계생산공학과"
-    en: "Dept. of Mechanical & Manufacturing Engineering, University of Calgary (Canada)"
+    en: "Dept. of Mechanical & Manufacturing Engineering, University of Calgary, Canada"
+    ja: "カルガリー大学 機械・製造工学科 (カナダ)"
+    zh: "卡尔加里大学 机械与制造工程系 (加拿大)"
+  "University of Calgary, Canada 기계생산공학과":
+    ko: "University of Calgary, Canada 기계생산공학과"
+    en: "Dept. of Mechanical & Manufacturing Engineering, University of Calgary, Canada"
     ja: "カルガリー大学 機械・製造工学科 (カナダ)"
     zh: "卡尔加里大学 机械与制造工程系 (加拿大)"
   "기계생산공학과":
@@ -1691,6 +1790,11 @@ terms:
     zh: "机械与制造工程系"
   "POSTECH 화학공학과":
     ko: "POSTECH 화학공학과"
+    en: "Dept. of Chemical Engineering, POSTECH"
+    ja: "POSTECH（浦項工科大学校）化学工学科"
+    zh: "浦项科技大学 (POSTECH) 化学工程系"
+  "POSTECH (포스텍, 포항공과대학교) 화학공학과":
+    ko: "POSTECH (포스텍, 포항공과대학교) 화학공학과"
     en: "Dept. of Chemical Engineering, POSTECH"
     ja: "POSTECH（浦項工科大学校）化学工学科"
     zh: "浦项科技大学 (POSTECH) 化学工程系"
@@ -1751,11 +1855,21 @@ terms:
     en: "Room 411, Building 7"
     ja: "7号館 411号室 (Room 411, Bldg. 7)"
     zh: "7号馆 411室 (Room 411, Bldg. 7)"
+  "7호관 411호":
+    ko: "7호관 411호"
+    en: "Room 411, Bldg. 7"
+    ja: "7号館 411号室"
+    zh: "7号馆 411室"
   "7호관 413호 (Room 413, Bldg. 7)":
     ko: "7호관 413호 (Room 413, Bldg. 7)"
     en: "Room 413, Building 7"
     ja: "7号館 413号室 (Room 413, Bldg. 7)"
     zh: "7号馆 413室 (Room 413, Bldg. 7)"
+  "7호관 413호":
+    ko: "7호관 413호"
+    en: "Room 413, Bldg. 7"
+    ja: "7号館 413号室"
+    zh: "7号馆 413室"
   "7호관 404호":
     ko: "7호관 404호"
     en: "Room 404, Bldg. 7"
@@ -1772,64 +1886,59 @@ terms:
     ja: "韓国セラミック技術研究院 (KICET) / 7号館"
     zh: "韩国陶瓷技术研究院 (KICET) / 7号馆"
 
-  # --- Student Research Fields ---
-  "IPL 광열처리 기반 차세대 슈퍼커패시터 전극 소재":
-    ko: "IPL 광열처리 기반 차세대 슈퍼커패시터 전극 소재"
-    en: "Next-Generation Supercapacitor Electrodes via IPL Photothermal Processing"
-    ja: "IPL光熱処理に基づく次世代スーパーキャパシタ電極材料"
-    zh: "基于 IPL 光热处理的下一代超级电容器电极材料"
-  "중수소 치환 에너지 소재 합성 및 나노기술":
-    ko: "중수소 치환 에너지 소재 합성 및 나노기술"
-    en: "Deuterated Energy Material Synthesis & Nanotechnology"
-    ja: "重水素置換エネルギー材料の合成およびナノテクノロジー"
-    zh: "氘代能源材料合成与纳米技术"
-  "맥신(MXene) 합성 및 광촉매·에너지 환경 소재":
-    ko: "맥신(MXene) 합성 및 광촉매·에너지 환경 소재"
-    en: "MXene Synthesis & Photocatalytic / Energy-Environmental Materials"
-    ja: "MXene合成および光触媒・エネルギー環境材料"
-    zh: "MXene 合成及光催化与能源环境材料"
-  "VO2 스마트 윈도우 및 전기화학 소자":
-    ko: "VO2 스마트 윈도우 및 전기화학 소자"
-    en: "VO₂ Thermochromic Smart Windows & Electrochemical Devices"
-    ja: "VO₂スマートウィンドウおよび電気化学素子"
-    zh: "VO₂ 智能窗与电化学器件"
-  "맥신 나노복합소재 및 유연 촉각 센서":
-    ko: "맥신 나노복합소재 및 유연 촉각 센서"
-    en: "MXene Nanocomposites & Flexible Tactile Sensors"
-    ja: "MXeneナノ複合材料およびフレキシブル触覚センサー"
-    zh: "MXene 纳米复合材料与柔性触觉传感器"
-  "레이저 유도 그래핀(LIG) 기반 생체 모니터링 유연 센서":
-    ko: "레이저 유도 그래핀(LIG) 기반 생체 모니터링 유연 센서"
-    en: "Laser-Induced Graphene (LIG) Flexible Sensors for Bio-Monitoring"
-    ja: "レーザー誘起グラフェン（LIG）生体モニタリングフレキシブルセンサー"
-    zh: "基于激光诱导石墨烯（LIG）的生物监测柔性传感器"
-  "고체전해질 및 차세대 배터리 복합소재":
-    ko: "고체전해질 및 차세대 배터리 복합소재"
-    en: "Solid Electrolytes & Next-Generation Battery Composites"
-    ja: "固体電解質および次世代バッテリー複合材料"
-    zh: "固态电解质与下一代电池复合材料"
-  "차세대 에너지 변환 및 스마트 디바이스":
-    ko: "차세대 에너지 변환 및 스마트 디바이스"
-    en: "Next-Generation Energy Conversion & Smart Devices"
-    ja: "次世代エネルギー変換およびスマートデバイス"
-    zh: "下一代能量转换与智能器件"
-  "광열(IPL) 구동 VO2 스마트 액추에이터":
-    ko: "광열(IPL) 구동 VO2 스마트 액추에이터"
-    en: "Photothermally (IPL) Driven VO₂ Smart Actuators"
-    ja: "光熱（IPL）駆動VO₂スマートアクチュエータ"
-    zh: "光热（IPL）驱动 VO₂ 智能致动器"
-  "나노 기능성 소재 및 유연 센서":
-    ko: "나노 기능성 소재 및 유연 센서"
-    en: "Functional Nanomaterials & Flexible Sensors"
-    ja: "ナノ機能性材料およびフレキシブルセンサー"
-    zh: "纳米功能材料与柔性传感器"
-  "다기능 소프트 액추에이터 소재":
-    ko: "다기능 소프트 액추에이터 소재"
-    en: "Multifunctional Soft Actuator Materials"
-    ja: "多機能ソフトアクチュエータ材料"
-    zh: "多功能软体致动器材料"
+  # --- Student Research Fields (Active 6 Graduate Umbrella Scopes) ---
+  "에너지 저장 전극 소재 및 공정":
+    ko: "에너지 저장 전극 소재 및 공정"
+    en: "Energy Storage Electrode Materials & Processing"
+    ja: "エネルギー貯蔵電極材料およびプロセス"
+    zh: "能量存储电极材料与制备工艺"
+  "전기화학 에너지 소재 및 전극 계면 공학":
+    ko: "전기화학 에너지 소재 및 전극 계면 공학"
+    en: "Electrochemical Energy Materials & Electrode Interface Engineering"
+    ja: "電気化学エネルギー材料および電極界面工学"
+    zh: "电化学能源材料与电极界面工程"
+  "2D 나노복합소재 및 광촉매 환경 소재":
+    ko: "2D 나노복합소재 및 광촉매 환경 소재"
+    en: "2D Nanocomposites & Photocatalytic Environmental Materials"
+    ja: "2Dナノ複合材料および光触媒環境材料"
+    zh: "二维纳米复合材料与光催化环境材料"
+  "상전이 기능성 소재 및 스마트 디바이스":
+    ko: "상전이 기능성 소재 및 스마트 디바이스"
+    en: "Phase-Transition Functional Materials & Smart Devices"
+    ja: "相転移機能性材料およびスマートデバイス"
+    zh: "相变功能材料与智能器件"
+  "2D 나노소재 및 마이크로 에너지 소자":
+    ko: "2D 나노소재 및 마이크로 에너지 소자"
+    en: "2D Nanomaterials & Micro-Energy Devices"
+    ja: "2Dナノ材料およびマイクロエネルギー素子"
+    zh: "二维纳米材料与微型能源器件"
+  "전이금속 산화물 전극 및 의사커패시터":
+    ko: "전이금속 산화물 전극 및 의사커패시터"
+    en: "Transition-Metal Oxide Electrodes & Pseudocapacitors"
+    ja: "遷移金属酸化物電極および擬似キャパシタ"
+    zh: "过渡金属氧化物电极与赝电容器"
 
   # --- Alumni Destinations & Theses ---
+  "경북대학교":
+    ko: "경북대학교"
+    en: "Kyungpook National University"
+    ja: "慶北大学校"
+    zh: "庆北大学"
+  "국립창원대학교":
+    ko: "국립창원대학교"
+    en: "Changwon National University"
+    ja: "国立昌原大学校"
+    zh: "国立昌原大学"
+  "삼성SDI(주)":
+    ko: "삼성SDI(주)"
+    en: "Samsung SDI Co., Ltd."
+    ja: "Samsung SDI"
+    zh: "三星 SDI"
+  "LS MnM":
+    ko: "LS MnM"
+    en: "LS MnM Inc."
+    ja: "LS MnM"
+    zh: "LS MnM"
   "KNU 대학원":
     ko: "KNU 대학원"
     en: "KNU Graduate School"
@@ -2119,3 +2228,135 @@ terms:
     en: "Impact Recognition Award"
     ja: "Impact Recognition Award"
     zh: "Impact Recognition Award"
+
+  # --- Issuers, Presentation Types, Patent Statuses & Media Outlets ---
+  "산업통상부 장관":
+    ko: "산업통상부 장관"
+    en: "Minister of Trade, Industry and Energy (MOTIE)"
+    ja: "産業通商部長官"
+    zh: "产业通商部长官"
+  "한국화학공학회":
+    ko: "한국화학공학회"
+    en: "Korean Institute of Chemical Engineers (KIChE)"
+    ja: "韓国化学工学会 (KIChE)"
+    zh: "韩国化学工学会 (KIChE)"
+  "경북대학교 총장":
+    ko: "경북대학교 총장"
+    en: "President of Kyungpook National University"
+    ja: "慶北大学校 総長"
+    zh: "庆北大学 校长"
+  "경북대학교 과학기술대학장":
+    ko: "경북대학교 과학기술대학장"
+    en: "Dean, College of Science and Technology, KNU"
+    ja: "慶北大学校 科学技術学部長"
+    zh: "庆北大学 科学技术学院院长"
+  "롯데케미칼(주) 대표이사":
+    ko: "롯데케미칼(주) 대표이사"
+    en: "CEO, LOTTE Chemical Corp."
+    ja: "ロッテケミカル(株) 代表理事"
+    zh: "乐天化学株式会社 代表理事"
+  "상주시장":
+    ko: "상주시장"
+    en: "Mayor of Sangju City"
+    ja: "尚州市長"
+    zh: "尚州市市长"
+  "음성군수":
+    ko: "음성군수"
+    en: "Governor of Eumseong County"
+    ja: "陰城郡守"
+    zh: "阴城郡郡守"
+  "국가연구안전관리본부장":
+    ko: "국가연구안전관리본부장"
+    en: "Director, National Research Safety Headquarters"
+    ja: "国家研究安全管理本部長"
+    zh: "国家研究安全管理本部长"
+  "스마트융복합재난관리교육연구단장":
+    ko: "스마트융복합재난관리교육연구단장"
+    en: "Director, Smart Convergence Disaster Management BK21 Group"
+    ja: "スマート融合複合災害管理教育研究団長"
+    zh: "智能融合灾害管理教育研究团团长"
+  "Invited":
+    ko: "초청강연 (Invited)"
+    en: "Invited"
+    ja: "招待講演 (Invited)"
+    zh: "特邀报告 (Invited)"
+  "Oral":
+    ko: "구두발표 (Oral)"
+    en: "Oral"
+    ja: "口頭発表 (Oral)"
+    zh: "口头报告 (Oral)"
+  "Poster":
+    ko: "포스터 (Poster)"
+    en: "Poster"
+    ja: "ポスター (Poster)"
+    zh: "海报展示 (Poster)"
+  "출원":
+    ko: "출원"
+    en: "Filed"
+    ja: "出願"
+    zh: "申请"
+  "등록":
+    ko: "등록"
+    en: "Registered"
+    ja: "登録"
+    zh: "授权"
+  "대한민국":
+    ko: "대한민국"
+    en: "Republic of Korea"
+    ja: "韓国"
+    zh: "韩国"
+  "Spring":
+    ko: "1학기 (Spring)"
+    en: "Spring"
+    ja: "春学期 (Spring)"
+    zh: "春季学期 (Spring)"
+  "Fall":
+    ko: "2학기 (Fall)"
+    en: "Fall"
+    ja: "秋学期 (Fall)"
+    zh: "秋季学期 (Fall)"
+  "기사":
+    ko: "기사"
+    en: "Article"
+    ja: "記事"
+    zh: "报道"
+  "전자신문":
+    ko: "전자신문"
+    en: "ETNews"
+    ja: "電子新聞 (ETNews)"
+    zh: "电子新闻 (ETNews)"
+  "뉴시스":
+    ko: "뉴시스"
+    en: "Newsis"
+    ja: "ニューシス (Newsis)"
+    zh: "纽西斯通讯社 (Newsis)"
+  "뉴스프리존":
+    ko: "뉴스프리존"
+    en: "NewsFreeZone"
+    ja: "NewsFreeZone"
+    zh: "NewsFreeZone"
+  "경북매일":
+    ko: "경북매일"
+    en: "KBMaeil"
+    ja: "慶北毎日"
+    zh: "庆北每日"
+  "영남일보":
+    ko: "영남일보"
+    en: "Yeongnam Ilbo"
+    ja: "嶺南日報"
+    zh: "岭南日报"
+  "매일신문":
+    ko: "매일신문"
+    en: "Maeil Shinmun"
+    ja: "毎日新聞 (韓国)"
+    zh: "每日新闻 (韩国)"
+  "베리타스알파":
+    ko: "베리타스알파"
+    en: "Veritas Alpha"
+    ja: "Veritas Alpha"
+    zh: "Veritas Alpha"
+  "대경일보":
+    ko: "대경일보"
+    en: "Daekyung Ilbo"
+    ja: "大慶日報"
+    zh: "大庆日报"

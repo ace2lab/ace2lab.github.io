@@ -61,6 +61,8 @@ for (const [secName, map] of Object.entries(sections)) {
     for (const lang of LANGS) {
       if (!info.langs[lang] || info.langs[lang].trim() === "") {
         fail(`_data/i18n.yml:${info.line} [${secName}.${key}] missing or empty '${lang}' translation.`);
+      } else if ((lang === "ja" || lang === "zh") && /[가-힣]/.test(info.langs[lang])) {
+        fail(`_data/i18n.yml:${info.line} [${secName}.${key}.${lang}] contains residual Hangul characters: "${info.langs[lang]}".`);
       }
     }
   }
@@ -148,6 +150,12 @@ for (const absFile of templateFiles) {
         if (!sections.ui.has(fullKey)) {
           fail(`${relFile}:${idx + 1} i18n_prefix='${pfx}' missing ui key '${fullKey}'.`);
         }
+      }
+    }
+
+    for (const inlineCjk of line.matchAll(/data-i18n-(ja|zh)=["\x27]([^"\x27{]+)["\x27]/g)) {
+      if (/[가-힣]/.test(inlineCjk[2])) {
+        fail(`${relFile}:${idx + 1} data-i18n-${inlineCjk[1]} contains residual Hangul characters: "${inlineCjk[2]}".`);
       }
     }
   });
@@ -254,6 +262,24 @@ if (fs.existsSync(path.join(root, "_data/student_papers.yml"))) {
 for (const dynKey of ["ach.type_sci", "ach.type_domestic", "ach.badge_accepted", "publications.badge_front_cover"]) {
   if (!sections.ui.has(dynKey)) {
     fail(`_data/i18n.yml missing required achievement modal UI key '${dynKey}'.`);
+  }
+}
+
+// 5b. Verify _news/*.md include 4-language summary_{en,ja,zh} with zero Hangul in JA/ZH
+const newsDir = path.join(root, "_news");
+if (fs.existsSync(newsDir)) {
+  for (const entry of fs.readdirSync(newsDir, { withFileTypes: true })) {
+    if (!entry.isFile() || !entry.name.endsWith(".md")) continue;
+    const relNews = path.join("_news", entry.name);
+    const newsContent = fs.readFileSync(path.join(root, relNews), "utf8");
+    for (const sKey of ["summary_en", "summary_ja", "summary_zh"]) {
+      const sm = newsContent.match(new RegExp(`^${sKey}:\\s*(.+)$`, "m"));
+      if (!sm || !sm[1].trim()) {
+        fail(`${relNews} missing required frontmatter '${sKey}'.`);
+      } else if ((sKey === "summary_ja" || sKey === "summary_zh") && /[가-힣]/.test(sm[1])) {
+        fail(`${relNews} '${sKey}' contains residual Hangul characters: ${sm[1].trim()}`);
+      }
+    }
   }
 }
 

@@ -5,7 +5,7 @@
 # ///
 """Generate deterministic ASCII-hashed WebP card thumbnails in assets/img/thumbs/.
 
-Preserves original full-resolution images in assets/img/{publication_preview,gallery,research,awards}
+Preserves original full-resolution images in assets/img/{publication_preview,gallery,research,awards,facilities,team}
 untouched for lossless modal lightbox inspection, while emitting lightweight Retina-ready WebP
 thumbnails keyed by SHA-1(NFC(rel_path))[:16] so macOS (NFD), Linux CI (NFC), and HTML srcset
 parsers never encounter Korean encoding or whitespace/comma issues.
@@ -29,6 +29,9 @@ TARGETS: list[tuple[str, int, int]] = [
     ("assets/img/gallery", 640, 80),
     ("assets/img/research", 800, 84),
     ("assets/img/awards", 640, 82),
+    ("assets/img/facilities", 640, 82),
+    ("assets/img/team", 480, 84),
+    ("assets/img/lee_ji_an_avatar_circle.png", 480, 84),
     ("assets/mario_falling_film_bg.jpg", 960, 82),
 ]
 
