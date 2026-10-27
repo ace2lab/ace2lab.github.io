@@ -1,0 +1,45 @@
+---
+version: 1
+overrides:
+  _includes/bib_search.liquid:
+    owner: al_folio_core
+    gem_version: 1.0.15
+    upstream_path: _includes/bib_search.liquid
+    upstream_sha256: 36332b8a7d2ac99156f3499c03655f18f0e6b95c6aec8c66c30550be941c4b2c
+    local_sha256: d6e58278b9134a600ba4bfc2d0b98c3a7a41cd2333f5e1b10f966859bfe0bac3
+    acknowledged_at: "2026-10-27"
+  _includes/figure.liquid:
+    owner: al_folio_core
+    gem_version: 1.0.15
+    upstream_path: _includes/figure.liquid
+    upstream_sha256: d094ba62f74e50ec9a3a7aca01d41f3d499f7fb3bc3507ca8aecd946347132bb
+    local_sha256: 16deb9872cd417a63e06626ad6ec0553f7596736925ae06401a733e2ea277920
+    acknowledged_at: "2026-10-27"
+  _includes/footer.liquid:
+    owner: al_folio_core
+    gem_version: 1.0.15
+    upstream_path: _includes/footer.liquid
+    upstream_sha256: 65219faad5445eb4456649d77921acd07845875bbcad4fb8f33b12b3d52d96d2
+    local_sha256: 82b508391765a0b8662a18559a7cea410dd7f71bb077114af726ef00d66a8ac5
+    acknowledged_at: "2026-10-27"
+  _includes/head.liquid:
+    owner: al_folio_core
+    gem_version: 1.0.15
+    upstream_path: _includes/head.liquid
+    upstream_sha256: 4e49d3921c880e78cab0158eeca453794c97f5ba26d0f494695fa793e56303a6
+    local_sha256: 1cd85014cea7a88abc05fceb62925d4ae0bb365b3b6da283ba594ee41fb36240
+    acknowledged_at: "2026-10-27"
+  _includes/plugins/al_search_assets.liquid:
+    owner: al_folio_core
+    gem_version: 1.0.15
+    upstream_path: _includes/plugins/al_search_assets.liquid
+    upstream_sha256: f502a9eefa1bbcff7cea239755b4144004b501cfd6c57a29b1c91866eb7805fe
+    local_sha256: ac200bd974a93137a56d4af6bb5545f7e24cad39096588d60efd186be29667a6
+    acknowledged_at: "2026-10-27"
+  assets/js/bibsearch.js:
+    owner: al_folio_core
+    gem_version: 1.0.15
+    upstream_path: assets/js/bibsearch.js
+    upstream_sha256: 959f7ee592686a73204b936eada490fe07f7bb6b723a8c8ee98266e4a71dd3fb
+    local_sha256: 104046699fc10555e898010fc0ea2253c6d8f444bc78ced3050b26033c370b61
+    acknowledged_at: "2026-10-27"

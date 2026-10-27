@@ -6,9 +6,8 @@ description: ACE² Lab Intranet
 nav: true
 nav_order: 9
 sitemap: false
+ace2_editorial: true
 ---
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <div class="text-center mt-5 mb-5 p-4" style="background: var(--global-card-bg-color); border-radius: 12px; border: 1px solid var(--global-divider-color);">
   <h2><i class="fa-solid fa-lock text-warning" aria-hidden="true"></i> ACE² Lab Intranet (DOBBY)</h2>

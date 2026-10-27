@@ -5,10 +5,9 @@ permalink: /members/
 description: Research team members of ACE² Lab
 nav: true
 nav_order: 2
+ace2_editorial: true
+ace2_team_grid: true
 ---
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
-<link rel="stylesheet" href="{{ '/assets/css/team_grid.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% assign yim = site.data.members | where: "id", "changyong-yim" | first %}
 {% assign kim = site.data.members | where: "id", "taewook-kim" | first %}
@@ -320,6 +319,6 @@ nav_order: 2
 {%- endfor %}
 
   <!-- Synchronous on purpose: it must run before first paint to avoid a flash of all panels -->
-  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-  <script src="{{ '/assets/js/member_achievements.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url | bust_file_cache }}"></script>
+  <script src="{{ '/assets/js/member_achievements.js' | relative_url | bust_file_cache }}" defer></script>
 </div>

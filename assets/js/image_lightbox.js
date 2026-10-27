@@ -49,6 +49,9 @@
     full.addEventListener("load", function () {
       dialog.classList.remove("is-loading");
     });
+    full.addEventListener("error", function () {
+      dialog.classList.remove("is-loading");
+    });
 
     dialog.querySelector(".ed-viewer__close").addEventListener("click", function () {
       dialog.close();
@@ -98,8 +101,8 @@
     index = i;
     dialog.classList.add("is-loading");
     full.alt = captionFor(img);
-    // Original file: the page <img> already points at it, so currentSrc is the full-resolution asset.
-    full.src = img.currentSrc || img.src;
+    // Prefer explicit data-zoom-src or canonical <img src> (full-resolution original) over <picture> WebP thumb currentSrc.
+    full.src = img.getAttribute("data-zoom-src") || img.src || img.currentSrc;
     caption.textContent = full.alt;
     var multi = group.length > 1;
     counter.textContent = multi ? i + 1 + " / " + group.length : "";

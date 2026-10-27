@@ -5,9 +5,8 @@ description: Conferences, defenses and moments from ACE² Lab, newest first.
 permalink: /gallery/
 nav: true
 nav_order: 7
+ace2_editorial: true
 ---
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% assign albums_by_year = site.data.gallery | group_by: "year" | sort: "name" | reverse %}
 {% assign photo_total = 0 %}
@@ -40,6 +39,10 @@ nav_order: 7
         <ul class="ed-albums" role="list">
           {% for a in group.items %}
             {% assign dp = a.date | remove: " " | split: "." %}
+            {% assign is_lcp_cover = false %}
+            {% if forloop.parentloop.first and forloop.first %}
+              {% assign is_lcp_cover = true %}
+            {% endif %}
             <li class="ed-album" id="album-{{ a.id }}">
               {% if a.cover and a.cover != "" %}
                 <figure class="ed-album__cover">
@@ -48,13 +51,22 @@ nav_order: 7
                   {% else %}
                     {% assign cover_src = a.cover | prepend: '/assets/img/' %}
                   {% endif %}
-                  <img
-                    src="{{ cover_src | relative_url }}"
-                    alt="{{ a.alt | default: a.title | escape }}"
-                    loading="lazy"
-                    decoding="async"
-                    data-zoomable
-                  >
+                  {% assign cover_thumb = cover_src | ace2_thumb_webp %}
+                  <picture class="ace2-pic">
+                    {% if cover_thumb != "" %}<source srcset="{{ cover_thumb | relative_url }}" type="image/webp">{% endif %}
+                    <img
+                      src="{{ cover_src | relative_url }}"
+                      alt="{{ a.alt | default: a.title | escape }}"
+                      {% if is_lcp_cover %}
+                        loading="eager"
+                        fetchpriority="high"
+                      {% else %}
+                        loading="lazy"
+                      {% endif %}
+                      decoding="async"
+                      data-zoomable
+                    >
+                  </picture>
                   {% if a.photos and a.photos.size > 1 %}
                     <span class="ed-album__badge"><i class="fa-solid fa-camera" aria-hidden="true"></i> {{ a.photos.size }}</span>
                   {% endif %}
@@ -72,13 +84,18 @@ nav_order: 7
                   </summary>
                   <div class="ed-album__grid">
                     {% for p in a.photos %}
+                      {% assign photo_thumb = p | ace2_thumb_webp %}
                       <figure class="ed-album__thumb">
-                        <img
-                          src="{{ p | relative_url }}"
-                          alt="{{ a.title | escape }} - photo {{ forloop.index }}"
-                          loading="lazy"
-                          data-zoomable
-                        >
+                        <picture class="ace2-pic">
+                          {% if photo_thumb != "" %}<source srcset="{{ photo_thumb | relative_url }}" type="image/webp">{% endif %}
+                          <img
+                            src="{{ p | relative_url }}"
+                            alt="{{ a.title | escape }} - photo {{ forloop.index }}"
+                            loading="lazy"
+                            decoding="async"
+                            data-zoomable
+                          >
+                        </picture>
                       </figure>
                     {% endfor %}
                   </div>
@@ -93,4 +110,4 @@ nav_order: 7
 
 </div>
 
-<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url | bust_file_cache }}"></script>

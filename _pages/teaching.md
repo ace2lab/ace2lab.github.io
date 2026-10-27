@@ -5,9 +5,8 @@ title: 강의
 description: Interactive engineering simulations, lecture notes, and curriculum courses by ACE² Lab.
 nav: true
 nav_order: 8
+ace2_editorial: true
 ---
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <style>
   .teaching-container {
@@ -310,9 +309,16 @@ nav_order: 8
     <!-- Flagship Simulation Card: Falling Film Flow -->
     <article class="sim-card">
       <div class="sim-card__media">
-        <img src="{{ '/assets/mario_falling_film_bg.jpg' | relative_url }}"
-             alt="Super Transport Bros Falling Film Simulation Thumbnail"
-             loading="lazy" />
+        {% assign sim_thumb = '/assets/mario_falling_film_bg.jpg' | ace2_thumb_webp %}
+        <picture class="ace2-pic">
+          {% if sim_thumb != "" %}<source srcset="{{ sim_thumb | relative_url }}" type="image/webp">{% endif %}
+          <img
+            src="{{ '/assets/mario_falling_film_bg.jpg' | relative_url }}"
+            alt="Super Transport Bros Falling Film Simulation Thumbnail"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <div class="sim-card__media-badge">
           <span>🕹️ 8-BIT NES THEME</span>
           <span>BSL CH. 2.2</span>

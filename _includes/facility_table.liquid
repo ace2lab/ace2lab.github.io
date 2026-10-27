@@ -29,6 +29,7 @@
             src="{{ item.img | relative_url }}"
             alt="{{ item.name | escape }}"
             loading="lazy"
+            decoding="async"
             data-zoomable
           >
         {% else %}

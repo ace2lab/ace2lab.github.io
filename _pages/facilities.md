@@ -5,9 +5,8 @@ permalink: /facilities/
 description: Advanced research instrumentation, fabrication tools, and analytical equipment of ACE² Lab
 nav: true
 nav_order: 4
+ace2_editorial: true
 ---
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% assign all_facilities = site.data.facilities %}
 {% assign synthesis_items = all_facilities | where: "category", "Synthesis & Thermal/Photonic Processing" %}
@@ -138,7 +137,7 @@ nav_order: 4
   </div>
 
   <!-- Synchronous tab initializer -->
-  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url | bust_file_cache }}"></script>
 </div>
 
-<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url | bust_file_cache }}"></script>

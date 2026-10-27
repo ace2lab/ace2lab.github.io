@@ -301,6 +301,59 @@ if (fs.existsSync(siteDir)) {
       }
     }
   }
+
+  // 7. Performance asset contracts: shared i18n script, lazy paper previews, and existing WebP thumbs
+  const sharedI18nJs = path.join(siteDir, "assets/js/ace2_i18n_data.js");
+  if (!fs.existsSync(sharedI18nJs) || fs.statSync(sharedI18nJs).size < 1000) {
+    fail("_site/assets/js/ace2_i18n_data.js missing or unexpectedly small.");
+  }
+
+  const builtPubs = path.join(siteDir, "publications/index.html");
+  if (fs.existsSync(builtPubs)) {
+    const pubHtml = fs.readFileSync(builtPubs, "utf8");
+    const eagerPreviews = [...pubHtml.matchAll(/<img\b[^>]*\bclass=["\x27][^"\x27]*\bpreview\b[^"\x27]*["\x27][^>]*>/gi)].filter((m) =>
+      /\bloading=["\x27]eager["\x27]/i.test(m[0])
+    );
+    if (eagerPreviews.length > 0) {
+      fail(`_site/publications/index.html contains ${eagerPreviews.length} .preview <img> with loading="eager" (expected 0).`);
+    }
+    const pubThumbSources = [
+      ...pubHtml.matchAll(/<source\b[^>]*\bsrcset=["\x27]([^"\x27]*\/assets\/img\/thumbs\/[a-f0-9]{16}\.webp)(?:\?v=[a-f0-9]+)?["\x27]/gi),
+    ];
+    if (pubThumbSources.length < 50) {
+      fail(`_site/publications/index.html expected >= 50 WebP thumbnail <source> tags, found ${pubThumbSources.length}.`);
+    }
+    for (const sm of pubThumbSources) {
+      const relWebp = sm[1].replace(/^\/+/, "");
+      if (!fs.existsSync(path.join(siteDir, relWebp))) {
+        fail(`_site/publications/index.html references missing WebP thumb: ${relWebp}`);
+      }
+    }
+    // In production builds (detected by stripped sample blog route), ensure eager ninja-keys module tag was swapped out
+    if (
+      !fs.existsSync(path.join(siteDir, "blog/index.html")) &&
+      /<script\s+type=["\x27]module["\x27]\s+src=["\x27][^"\x27]*ninja-keys\.min\.js["\x27]/i.test(pubHtml)
+    ) {
+      fail("_site/publications/index.html still contains eager <script type='module' src='...ninja-keys.min.js'> in production build.");
+    }
+  }
+
+  const builtGallery = path.join(siteDir, "gallery/index.html");
+  if (fs.existsSync(builtGallery)) {
+    const galHtml = fs.readFileSync(builtGallery, "utf8");
+    const galThumbSources = [
+      ...galHtml.matchAll(/<source\b[^>]*\bsrcset=["\x27]([^"\x27]*\/assets\/img\/thumbs\/[a-f0-9]{16}\.webp)(?:\?v=[a-f0-9]+)?["\x27]/gi),
+    ];
+    if (galThumbSources.length < 100) {
+      fail(`_site/gallery/index.html expected >= 100 WebP thumbnail <source> tags, found ${galThumbSources.length}.`);
+    }
+    for (const sm of galThumbSources) {
+      const relWebp = sm[1].replace(/^\/+/, "");
+      if (!fs.existsSync(path.join(siteDir, relWebp))) {
+        fail(`_site/gallery/index.html references missing WebP thumb: ${relWebp}`);
+      }
+    }
+  }
 }
 
 if (failures.length > 0) {

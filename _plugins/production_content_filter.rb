@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 module Ace2
-  # Strips upstream al-folio starter demo content during production builds
-  # while keeping fixture files on disk for development-env CI integration tests.
+  # Strips upstream al-folio starter demo content and unused global JS/asset bundles
+  # during production builds while keeping fixture files and defaults intact for
+  # development-env CI integration tests.
   module ProductionContentFilter
     DEMO_COLLECTIONS = %w[books teachings projects].freeze
     DEMO_PAGE_PATHS = %w[
@@ -14,6 +15,15 @@ module Ace2
       _pages/profiles.md
       _pages/repositories.md
     ].freeze
+    DEMO_STATIC_PATTERNS = [
+      %r{\Aassets/video/tutorial_al_folio\.mp4\z},
+      %r{\Aassets/video/pexels-.*\.mp4\z},
+      %r{\Aassets/plotly/},
+      %r{\Aassets/audio/},
+      %r{\Aassets/img/rhino\.png\z},
+      %r{\Aassets/img/[0-9]+\.jpg\z},
+      %r{\Aassets/img/prof_pic\.jpg\z}
+    ].freeze
 
     module_function
 
@@ -23,6 +33,19 @@ module Ace2
       site.config["external_sources"] = []
       site.config["pagination"] = { "enabled" => false }
       site.config["jekyll-archives"] = {}
+
+      # Disable unused global runtime bundles across ACE2 Lab production pages
+      # (0 pages use MathJax, Masonry, Altmetric/Dimensions embeds, or medium-zoom,
+      # as custom image_lightbox.js and award_lightbox.js handle modal zooming).
+      site.config["enable_math"] = false
+      site.config["enable_masonry"] = false
+      site.config["enable_medium_zoom"] = false
+      site.config["enable_publication_badges"] = {
+        "altmetric" => false,
+        "dimensions" => false,
+        "google_scholar" => false,
+        "inspirehep" => false
+      }
 
       site.posts.docs.clear
       DEMO_COLLECTIONS.each do |label|
@@ -35,6 +58,10 @@ module Ace2
       end
 
       site.pages.reject! { |page| DEMO_PAGE_PATHS.include?(page.path) }
+      site.static_files.reject! do |sf|
+        rel = sf.relative_path.to_s.sub(%r{\A/+}, "")
+        DEMO_STATIC_PATTERNS.any? { |pat| pat.match?(rel) }
+      end
     end
   end
 end

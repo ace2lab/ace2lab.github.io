@@ -14,9 +14,8 @@ announcements:
 
 latest_posts:
   enabled: false
+ace2_editorial: true
 ---
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <style>
   .post > header.post-header {
@@ -239,11 +238,16 @@ latest_posts:
 <div class="research-grid">
   <a href="{{ '/research/' | relative_url }}#energy-storage" class="research-card" id="area-01">
     <div class="research-card__media">
-      <img
-        src="{{ '/assets/img/research/area1_energy_storage.jpg' | relative_url }}"
-        alt="Energy Storage & Materials"
-        loading="lazy"
-      >
+      {% assign area1_thumb = '/assets/img/research/area1_energy_storage.jpg' | ace2_thumb_webp %}
+      <picture class="ace2-pic">
+        {% if area1_thumb != '' %}<source srcset="{{ area1_thumb | relative_url }}" type="image/webp">{% endif %}
+        <img
+          src="{{ '/assets/img/research/area1_energy_storage.jpg' | relative_url }}"
+          alt="Energy Storage & Materials"
+          loading="lazy"
+          decoding="async"
+        >
+      </picture>
       <span class="research-card__badge">Area 01</span>
     </div>
     <div class="research-card__content">
@@ -261,11 +265,16 @@ latest_posts:
 
   <a href="{{ '/research/' | relative_url }}#photonic" class="research-card" id="area-02">
     <div class="research-card__media">
-      <img
-        src="{{ '/assets/img/research/area2_photonic_ipl.jpg' | relative_url }}"
-        alt="Photonic Nanomanufacturing"
-        loading="lazy"
-      >
+      {% assign area2_thumb = '/assets/img/research/area2_photonic_ipl.jpg' | ace2_thumb_webp %}
+      <picture class="ace2-pic">
+        {% if area2_thumb != '' %}<source srcset="{{ area2_thumb | relative_url }}" type="image/webp">{% endif %}
+        <img
+          src="{{ '/assets/img/research/area2_photonic_ipl.jpg' | relative_url }}"
+          alt="Photonic Nanomanufacturing"
+          loading="lazy"
+          decoding="async"
+        >
+      </picture>
       <span class="research-card__badge">Area 02</span>
     </div>
     <div class="research-card__content">
@@ -283,11 +292,16 @@ latest_posts:
 
   <a href="{{ '/research/' | relative_url }}#sensors" class="research-card" id="area-03">
     <div class="research-card__media">
-      <img
-        src="{{ '/assets/img/research/area3_flexible_sensors.jpg' | relative_url }}"
-        alt="Sensors & Devices"
-        loading="lazy"
-      >
+      {% assign area3_thumb = '/assets/img/research/area3_flexible_sensors.jpg' | ace2_thumb_webp %}
+      <picture class="ace2-pic">
+        {% if area3_thumb != '' %}<source srcset="{{ area3_thumb | relative_url }}" type="image/webp">{% endif %}
+        <img
+          src="{{ '/assets/img/research/area3_flexible_sensors.jpg' | relative_url }}"
+          alt="Sensors & Devices"
+          loading="lazy"
+          decoding="async"
+        >
+      </picture>
       <span class="research-card__badge">Area 03</span>
     </div>
     <div class="research-card__content">
@@ -366,5 +380,5 @@ latest_posts:
   </div>
 </div>
 
-<script src="{{ '/assets/js/author_enrichment.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/author_enrichment.js' | relative_url | bust_file_cache }}"></script>
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url | bust_file_cache }}"></script>

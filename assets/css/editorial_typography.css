@@ -10,7 +10,9 @@
    5. Academic Parity     — balanced visual weight for Co-PIs and research
    ============================================================ */
 
-@import url("./ace2_tokens.css");
+.ace2-pic {
+  display: contents;
+}
 
 :root {
   /* Suppress al-folio core magenta (#b509ac) with Deep Academic Navy */

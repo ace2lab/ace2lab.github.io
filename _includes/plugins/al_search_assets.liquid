@@ -1,0 +1,112 @@
+{% comment %}
+  Parse-safe wrapper for al_search custom tag.
+  In production builds, replaces the eager 36-file ES module waterfall
+  (`ninja-keys.min.js`) with an on-demand dynamic import loader triggered on
+  `#search-toggle` interaction or `Cmd+K` / `Ctrl+K` outside form fields.
+{% endcomment %}
+{% if jekyll.environment == 'production' %}
+  {% capture ace2_raw_search %}{% al_search_assets %}{% endcapture %}
+  {% assign ace2_ninja_src = '/assets/al_search/js/search/ninja-keys.min.js' | relative_url %}
+  {% capture ace2_eager_tag %}<script type="module" src="{{ ace2_ninja_src }}"></script>{% endcapture %}
+  {% capture ace2_lazy_loader %}
+<script>
+  (function () {
+    var src = {{ ace2_ninja_src | jsonify }};
+    var loading = null;
+    var preloaded = false;
+
+    function warmSearchModule() {
+      if (preloaded || customElements.get("ninja-keys")) return;
+      preloaded = true;
+      var link = document.createElement("link");
+      link.rel = "modulepreload";
+      link.href = src;
+      document.head.appendChild(link);
+    }
+
+    function ensureAndOpen() {
+      var el = document.querySelector("ninja-keys");
+      if (!el) return;
+      if (customElements.get("ninja-keys") && typeof el.open === "function") {
+        el.open();
+        return;
+      }
+      if (!loading) {
+        loading = import(src)
+          .then(function () {
+            return customElements.whenDefined("ninja-keys");
+          })
+          .then(function () {
+            document.removeEventListener("keydown", onBootstrapKeydown, true);
+            var toggle = document.getElementById("search-toggle");
+            if (toggle) toggle.removeEventListener("click", onBootstrapClick, true);
+          })
+          .catch(function () {
+            loading = null;
+          });
+      }
+      loading.then(function () {
+        var upgraded = document.querySelector("ninja-keys");
+        if (upgraded && typeof upgraded.open === "function") {
+          var isDark =
+            document.documentElement.getAttribute("data-theme") === "dark" ||
+            (typeof determineComputedTheme === "function" && determineComputedTheme() === "dark");
+          if (isDark) upgraded.classList.add("dark");
+          else upgraded.classList.remove("dark");
+          upgraded.open();
+        }
+      });
+    }
+
+    function isEditableTarget(t) {
+      if (!t || !t.tagName) return false;
+      var tag = t.tagName.toUpperCase();
+      return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || t.isContentEditable;
+    }
+
+    function onBootstrapKeydown(e) {
+      if (customElements.get("ninja-keys")) {
+        document.removeEventListener("keydown", onBootstrapKeydown, true);
+        return;
+      }
+      var isK = String(e.key).toLowerCase() === "k" || e.code === "KeyK";
+      if ((e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && isK) {
+        if (isEditableTarget(e.target)) return;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        ensureAndOpen();
+      }
+    }
+
+    function onBootstrapClick(e) {
+      if (customElements.get("ninja-keys")) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      ensureAndOpen();
+    }
+
+    document.addEventListener("keydown", onBootstrapKeydown, true);
+    document.addEventListener("DOMContentLoaded", function () {
+      var toggle = document.getElementById("search-toggle");
+      if (toggle) {
+        toggle.addEventListener("mouseenter", warmSearchModule, { once: true, passive: true });
+        toggle.addEventListener("focusin", warmSearchModule, { once: true, passive: true });
+        toggle.addEventListener("pointerdown", warmSearchModule, { once: true, passive: true });
+        toggle.addEventListener("click", onBootstrapClick, true);
+      }
+      var origOpen = window.openSearchModal;
+      window.openSearchModal = function () {
+        if (customElements.get("ninja-keys") && typeof origOpen === "function") {
+          origOpen();
+        } else {
+          ensureAndOpen();
+        }
+      };
+    });
+  })();
+</script>
+  {% endcapture %}
+  {{ ace2_raw_search | replace_first: ace2_eager_tag, ace2_lazy_loader }}
+{% else %}
+  {% al_search_assets %}
+{% endif %}

@@ -5,11 +5,10 @@ title: 연구성과
 description: Peer-reviewed articles, patents and conference presentations of ACE² Lab, in reverse chronological order.
 nav: true
 nav_order: 5
+ace2_editorial: true
 ---
 
 <!-- _pages/publications.md -->
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% capture intl_count %}{% bibliography_count %}{% endcapture %}
 {% assign intl_count = intl_count | strip | plus: 0 %}
@@ -126,8 +125,12 @@ nav_order: 5
             {% for cover in site.data.covers %}
               <article class="pub-cover-card" data-pi="{{ cover.pi | default: 'yim' }}" id="cover-card-{{ cover.key }}">
                 <div class="pub-cover-card__poster">
+                  {% assign jc_thumb = cover.image | ace2_thumb_webp %}
                   <a href="{{ cover.image | relative_url }}" class="pub-cover-card__imglink glightbox" data-gallery="covers" data-title="{{ cover.journal }} Vol. {{ cover.volume }}, No. {{ cover.issue }} ({{ cover.date | date: '%Y' }}) · {{ cover.title | escape }}">
-                    <img src="{{ cover.image | relative_url }}" alt="{{ cover.journal }} Cover Art: {{ cover.title | escape }}" loading="lazy" class="pub-cover-card__img">
+                    <picture class="ace2-pic">
+                      {% if jc_thumb != "" %}<source srcset="{{ jc_thumb | relative_url }}" type="image/webp">{% endif %}
+                      <img src="{{ cover.image | relative_url }}" alt="{{ cover.journal }} Cover Art: {{ cover.title | escape }}" loading="lazy" decoding="async" class="pub-cover-card__img">
+                    </picture>
                   </a>
                 </div>
                 <div class="pub-cover-card__body">
@@ -404,13 +407,13 @@ nav_order: 5
   </div>
 
   <!-- Synchronous tab initializer -->
-  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url | bust_file_cache }}"></script>
 </div>
 
-<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url | bust_file_cache }}"></script>
 
-<script src="{{ '/assets/js/author_enrichment.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-<script src="{{ '/assets/js/pub_pi_filter.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/author_enrichment.js' | relative_url | bust_file_cache }}"></script>
+<script src="{{ '/assets/js/pub_pi_filter.js' | relative_url | bust_file_cache }}"></script>
 
 <script>
   (function () {

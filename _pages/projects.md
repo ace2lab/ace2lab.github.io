@@ -5,9 +5,8 @@ permalink: /research/
 description: Research pillars, ultrafast photonic nanomanufacturing, energy storage, and flexible sensory electronics at ACE² Lab
 nav: true
 nav_order: 3
+ace2_editorial: true
 ---
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> <span data-i18n="research.badge_p1">에너지 저장 소재 (Pillar 01)</span></span>
@@ -55,12 +54,17 @@ nav_order: 3
       <div class="ed-pillar__figure-grid">
         <figure class="ed-pillar__figure">
           <div class="ed-pillar__figure-canvas">
-            <img
-              src="{{ '/assets/img/research/area1_energy_storage.jpg' | relative_url }}"
-              alt="Room-temperature synthesis of Co-MOF and Ni-Co sulfide composite nanopetal arrays on Ni foam for hybrid coin-cell supercapacitors"
-              loading="lazy"
-              data-zoomable
-            >
+            {% assign p1_f1_thumb = '/assets/img/research/area1_energy_storage.jpg' | ace2_thumb_webp %}
+            <picture class="ace2-pic">
+              {% if p1_f1_thumb != "" %}<source srcset="{{ p1_f1_thumb | relative_url }}" type="image/webp">{% endif %}
+              <img
+                src="{{ '/assets/img/research/area1_energy_storage.jpg' | relative_url }}"
+                alt="Room-temperature synthesis of Co-MOF and Ni-Co sulfide composite nanopetal arrays on Ni foam for hybrid coin-cell supercapacitors"
+                loading="lazy"
+                decoding="async"
+                data-zoomable
+              >
+            </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p1.fig1_cap">
             <span class="ed-pillar__fig-label">Figure 1(a).</span> 하이브리드 코인셀 슈퍼커패시터 응용을 위한 3D 니켈 폼 위 Co-MOF/Ni–Co 황화물(NCS) 복합 나노페탈 어레이의 상온 연속 합성 (<em>J. Energy Storage</em>, 2024).
@@ -69,12 +73,17 @@ nav_order: 3
 
         <figure class="ed-pillar__figure">
           <div class="ed-pillar__figure-canvas">
-            <img
-              src="{{ '/assets/img/publication_preview/hong2024flashlight.jpg' | relative_url }}"
-              alt="Flashlight-induced structuring of dense Ti3C2Tx MXene film into porous MXene/TiO2 nanocomposite for Li-ion battery anodes"
-              loading="lazy"
-              data-zoomable
-            >
+            {% assign p1_f2_thumb = '/assets/img/publication_preview/hong2024flashlight.jpg' | ace2_thumb_webp %}
+            <picture class="ace2-pic">
+              {% if p1_f2_thumb != "" %}<source srcset="{{ p1_f2_thumb | relative_url }}" type="image/webp">{% endif %}
+              <img
+                src="{{ '/assets/img/publication_preview/hong2024flashlight.jpg' | relative_url }}"
+                alt="Flashlight-induced structuring of dense Ti3C2Tx MXene film into porous MXene/TiO2 nanocomposite for Li-ion battery anodes"
+                loading="lazy"
+                decoding="async"
+                data-zoomable
+              >
+            </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p1.fig2_cap">
             <span class="ed-pillar__fig-label">Figure 1(b).</span> 리튬이온전지 음극 응용을 위해 재적층된 Ti₃C₂Tₓ MXene 필름을 3차원 다공성 MXene/TiO₂ 나노복합체로 순간 전환하는 제논 플래시광(IPL) 구조화 공정 (<em>Chem. Eng. J.</em>, 2024).
@@ -154,12 +163,17 @@ nav_order: 3
       <div class="ed-pillar__figure-grid">
         <figure class="ed-pillar__figure">
           <div class="ed-pillar__figure-canvas">
-            <img
-              src="{{ '/assets/img/research/area2_photonic_ipl.jpg' | relative_url }}"
-              alt="Millisecond flashlight annealing of PbS colloidal quantum dot solids for surface trap suppression and solar cell efficiency enhancement"
-              loading="lazy"
-              data-zoomable
-            >
+            {% assign p2_f1_thumb = '/assets/img/research/area2_photonic_ipl.jpg' | ace2_thumb_webp %}
+            <picture class="ace2-pic">
+              {% if p2_f1_thumb != "" %}<source srcset="{{ p2_f1_thumb | relative_url }}" type="image/webp">{% endif %}
+              <img
+                src="{{ '/assets/img/research/area2_photonic_ipl.jpg' | relative_url }}"
+                alt="Millisecond flashlight annealing of PbS colloidal quantum dot solids for surface trap suppression and solar cell efficiency enhancement"
+                loading="lazy"
+                decoding="async"
+                data-zoomable
+              >
+            </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p2.fig1_cap">
             <span class="ed-pillar__fig-label">Figure 2(a).</span> 콜로이드 양자점(PbS CQD) 박막의 열유도 표면 트랩 억제를 위한 밀리초 플래시광 어닐링(FLA) 광열 표면 처리 (<em>Small</em>, 2024, 표지논문(Front Cover) 선정).
@@ -168,12 +182,17 @@ nav_order: 3
 
         <figure class="ed-pillar__figure">
           <div class="ed-pillar__figure-canvas">
-            <img
-              src="{{ '/assets/img/research/ipl_cu_ag_sintering.png' | relative_url }}"
-              alt="Xenon flash lamp photothermal reduction and sintering of oxidation-resistant Cu-Ag hybrid conductive tracks"
-              loading="lazy"
-              data-zoomable
-            >
+            {% assign p2_f2_thumb = '/assets/img/research/ipl_cu_ag_sintering.png' | ace2_thumb_webp %}
+            <picture class="ace2-pic">
+              {% if p2_f2_thumb != "" %}<source srcset="{{ p2_f2_thumb | relative_url }}" type="image/webp">{% endif %}
+              <img
+                src="{{ '/assets/img/research/ipl_cu_ag_sintering.png' | relative_url }}"
+                alt="Xenon flash lamp photothermal reduction and sintering of oxidation-resistant Cu-Ag hybrid conductive tracks"
+                loading="lazy"
+                decoding="async"
+                data-zoomable
+              >
+            </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p2.fig2_cap">
             <span class="ed-pillar__fig-label">Figure 2(b).</span> 포름산구리 및 Cu–Ag 하이브리드 나노입자의 제논 플래시 램프 광열 환원·소결을 통한 내산화성 고전도성 전극 형성 (<em>ACS Appl. Mater. Interfaces</em>).
@@ -253,12 +272,17 @@ nav_order: 3
       <div class="ed-pillar__figure-grid">
         <figure class="ed-pillar__figure">
           <div class="ed-pillar__figure-canvas">
-            <img
-              src="{{ '/assets/img/research/area3_flexible_sensors.jpg' | relative_url }}"
-              alt="MXene-coated mulberry paper flexible tactile sensor with wireless Bluetooth communication for real-time CPR feedback"
-              loading="lazy"
-              data-zoomable
-            >
+            {% assign p3_f1_thumb = '/assets/img/research/area3_flexible_sensors.jpg' | ace2_thumb_webp %}
+            <picture class="ace2-pic">
+              {% if p3_f1_thumb != "" %}<source srcset="{{ p3_f1_thumb | relative_url }}" type="image/webp">{% endif %}
+              <img
+                src="{{ '/assets/img/research/area3_flexible_sensors.jpg' | relative_url }}"
+                alt="MXene-coated mulberry paper flexible tactile sensor with wireless Bluetooth communication for real-time CPR feedback"
+                loading="lazy"
+                decoding="async"
+                data-zoomable
+              >
+            </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p3.fig1_cap">
             <span class="ed-pillar__fig-label">Figure 3(a).</span> 실시간 심폐소생술(CPR) 압박 깊이·속도 피드백을 위해 무선 모바일 텔레메트리와 결합된 다층 MXene/한지(닥종이) 기반 유연 촉각 센서 (<em>Small</em>, 2026).
@@ -267,12 +291,17 @@ nav_order: 3
 
         <figure class="ed-pillar__figure">
           <div class="ed-pillar__figure-canvas">
-            <img
-              src="{{ '/assets/img/publication_preview/Shanmugasundaram_2026_cej.jpg' | relative_url }}"
-              alt="Nanostructured composite electronic nose sensor array and machine learning pipeline for exhaled nitric oxide breath analysis"
-              loading="lazy"
-              data-zoomable
-            >
+            {% assign p3_f2_thumb = '/assets/img/publication_preview/Shanmugasundaram_2026_cej.jpg' | ace2_thumb_webp %}
+            <picture class="ace2-pic">
+              {% if p3_f2_thumb != "" %}<source srcset="{{ p3_f2_thumb | relative_url }}" type="image/webp">{% endif %}
+              <img
+                src="{{ '/assets/img/publication_preview/Shanmugasundaram_2026_cej.jpg' | relative_url }}"
+                alt="Nanostructured composite electronic nose sensor array and machine learning pipeline for exhaled nitric oxide breath analysis"
+                loading="lazy"
+                decoding="async"
+                data-zoomable
+              >
+            </picture>
           </div>
           <figcaption class="ed-pillar__figure-caption" data-i18n-html="research.p3.fig2_cap">
             <span class="ed-pillar__fig-label">Figure 3(b).</span> 호기 일산화질소(NO) 분석 및 호흡기 질환 진단을 위한 나노구조 복합 전자코(E-nose) 어레이 및 머신러닝 특징 추출 파이프라인 (<em>Chem. Eng. J.</em>, 2026).
@@ -346,7 +375,7 @@ nav_order: 3
   </div>
 
   <!-- Synchronous tab initializer -->
-  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/ace2_tabs.js' | relative_url | bust_file_cache }}"></script>
 </div>
 
-<script src="{{ '/assets/js/image_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/image_lightbox.js' | relative_url | bust_file_cache }}"></script>

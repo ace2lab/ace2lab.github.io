@@ -5,9 +5,8 @@ description: Announcements, awards and media coverage of ACE² Lab.
 permalink: /news/
 nav: true
 nav_order: 6
+ace2_editorial: true
 ---
-
-<link rel="stylesheet" href="{{ '/assets/css/editorial_typography.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 {% assign all_achievements = site.data.awards | concat: site.data.press %}
 {% assign achievements_by_year = all_achievements | group_by: "year" | sort: "name" | reverse %}
@@ -158,13 +157,17 @@ nav_order: 6
                     aria-haspopup="dialog"
                     aria-label="{{ a.title | escape }} - view certificate"
                   >
-                    <img
-                      src="{{ a.img | relative_url }}"
-                      alt="{{ a.title | escape }}"
-                      loading="lazy"
-                      decoding="async"
-                      {% if a.img_pos %}style="object-position: {{ a.img_pos | escape }}"{% endif %}
-                    >
+                    {% assign aw_thumb = a.img | ace2_thumb_webp %}
+                    <picture class="ace2-pic">
+                      {% if aw_thumb != "" %}<source srcset="{{ aw_thumb | relative_url }}" type="image/webp">{% endif %}
+                      <img
+                        src="{{ a.img | relative_url }}"
+                        alt="{{ a.title | escape }}"
+                        loading="lazy"
+                        decoding="async"
+                        {% if a.img_pos %}style="object-position: {{ a.img_pos | escape }}"{% endif %}
+                      >
+                    </picture>
                     <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                   </button>
                 {% endif %}
@@ -250,7 +253,7 @@ nav_order: 6
       <p class="ed-lightbox__hint" aria-hidden="true" data-i18n="news.lb_hint">← → 이전 / 다음 · Esc 닫기 · 이미지 클릭으로 확대 / 축소</p>
     </div>
   </dialog>
-  <script src="{{ '/assets/js/award_lightbox.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
-  <script src="{{ '/assets/js/news_ach_filter.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+  <script src="{{ '/assets/js/award_lightbox.js' | relative_url | bust_file_cache }}"></script>
+  <script src="{{ '/assets/js/news_ach_filter.js' | relative_url | bust_file_cache }}"></script>
 
 </div>
