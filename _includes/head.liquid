@@ -1,5 +1,15 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
+{% assign ga_id = site.analytics.google | default: '' | strip %}
+{% if ga_id != '' %}
+  <script>
+    try {
+      if (localStorage.getItem('skipgc') === 't' || (location.hash === '#toggle-goatcounter' && localStorage.getItem('skipgc') !== 't')) {
+        window['ga-disable-{{ ga_id }}'] = true;
+      }
+    } catch (e) {}
+  </script>
+{% endif %}
 
 <!-- Security: Content Security Policy -->
 <!-- Permissive CSP suitable for academic websites. Allows external images, videos, and common embed services. -->
