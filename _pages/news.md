@@ -132,7 +132,7 @@ ace2_editorial: true
           {% for a in year_items %}
             {% if a.kind == 'award' or a.type %}
               {% assign dp = a.date | remove: " " | split: "." %}
-              {% if a.type contains '장관상' or a.type contains '대상' %}
+              {% if a.type contains '장관상' or a.type contains '대상' or a.issuer contains '장관' %}
                 {% assign tier = 'crimson' %}
               {% elsif a.type == '우수상' or a.type == '최우수상' %}
                 {% assign tier = 'amber' %}

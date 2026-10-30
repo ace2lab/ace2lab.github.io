@@ -308,8 +308,10 @@ ace2_team_grid: true
 <section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_awards">수상</span> <span class="ach-group__count">{{ ach_awards.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_awards %}
 {%- assign is_top_award = false -%}
-{%- if x.type contains '장관상' or x.type contains '대상' -%}{%- assign is_top_award = true -%}{%- endif -%}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if is_top_award %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.type | escape }}</span></span>{{ x.date | escape }}{% else %}<span class="ach-item__tag" data-i18n-term>{{ x.type | escape }}</span><span data-i18n-term>{{ x.issuer | escape }}</span> · {{ x.date | escape }}{% endif %}</p></li>
+{%- if x.type contains '장관상' or x.type contains '대상' or x.issuer contains '장관' -%}{%- assign is_top_award = true -%}{%- endif -%}
+{%- assign hide_top_issuer = false -%}
+{%- if x.type contains '장관상' or x.type contains '대상' -%}{%- assign hide_top_issuer = true -%}{%- endif -%}
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if is_top_award %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.type | escape }}</span></span>{% unless hide_top_issuer %}<span data-i18n-term>{{ x.issuer | escape }}</span> · {% endunless %}{{ x.date | escape }}{% else %}<span class="ach-item__tag" data-i18n-term>{{ x.type | escape }}</span><span data-i18n-term>{{ x.issuer | escape }}</span> · {{ x.date | escape }}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}

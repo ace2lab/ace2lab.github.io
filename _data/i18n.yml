@@ -2223,6 +2223,11 @@ terms:
     en: "Commendation Award"
     ja: "表彰状"
     zh: "表彰状"
+  "장학증서":
+    ko: "장학증서"
+    en: "Scholarship Certificate"
+    ja: "奨学証書"
+    zh: "奖学证书"
   "장려상":
     ko: "장려상"
     en: "Honorable Mention Award"
@@ -2240,6 +2245,11 @@ terms:
     en: "Minister of Trade, Industry and Energy (MOTIE)"
     ja: "産業通商部長官"
     zh: "产业通商部长官"
+  "부총리 겸 과학기술정보통신부 장관":
+    ko: "부총리 겸 과학기술정보통신부 장관"
+    en: "Deputy Prime Minister & Minister of Science and ICT (MSIT)"
+    ja: "副総理兼科学技術情報通信部長官"
+    zh: "副总理兼科学技术信息通信部长官"
   "한국화학공학회":
     ko: "한국화학공학회"
     en: "Korean Institute of Chemical Engineers (KIChE)"

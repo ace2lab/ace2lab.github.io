@@ -25,6 +25,15 @@
   year: 2026
   img: assets/img/awards/award_2026_chemfrontier.jpg
   img_pos: "center bottom"
+- type: 장학증서
+  kind: award
+  title: 2026년 과학기술정보통신부 박사우수장학금(이공계) 장학생 선정
+  recipient: 이재호
+  issuer: 부총리 겸 과학기술정보통신부 장관
+  date: 2026.08.31
+  year: 2026
+  img: assets/img/awards/award_2026_jaeho_lee.jpg
+  img_pos: "center top"
 - type: 우수상
   kind: award
   title: 2025 첨성인 대학원생 논문 경진대회
