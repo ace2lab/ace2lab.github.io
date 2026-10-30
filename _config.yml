@@ -8,9 +8,16 @@ middle_name:
 last_name: Lab
 contact_note: >
   Please contact the principal investigators by email for inquiries about research collaboration and student recruitment.
-description: Official Website of ACE² Lab, Kyungpook National University
+description: >-
+  경북대학교 과학기술대학 에너지화학공학과 차세대 화학 및 에너지 공학 연구실 (ACE² Lab).
+  임창용·김태욱 교수 연구팀으로 유연 생체·환경 센서, 2D MXene, 에너지 저장 소재 및 IPL 광소결을 연구합니다.
 footer_text: ""
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: >-
+  경북대학교 에너지화학공학과, 경북대 에너지화학공학과, 경북대학교 화학공학과, 경북대 화학공학과,
+  경북대 화공, 경북대 화공과, 경북대학교 응용화학공학부, 경북대 에너지공학부,
+  임창용, 임창용 교수, Changyong Yim, CY Yim, 김태욱, 김태욱 교수, Taewook Kim,
+  차세대 화학 및 에너지 공학 연구실, ACE² Lab, ACE2 Lab, KNU Energy Chemical Engineering,
+  에너지 저장 소재, 고강도 펄스광, IPL, 유연 센서, 웨어러블 바이오센서, 2D MXene, 가스 센서
 lang: ko # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: knu_favicon.png # Kyungpook National University official emblem favicon
 apple_touch_icon: knu_apple_touch_icon.png # iOS Retina home-screen bookmark 180x180 PNG
@@ -107,7 +114,7 @@ max_width: 930px
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
 og_image: /assets/img/branding/og_image.png # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------

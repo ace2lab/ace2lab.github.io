@@ -2,7 +2,12 @@
 layout: page
 title: 구성원
 permalink: /members/
-description: Research team members of ACE² Lab
+description: >-
+  경북대학교 에너지화학공학과 ACE² Lab 연구진 안내. 임창용 부교수, 김태욱 부교수 및 석·박사 대학원생, 학부연구생 소개 및 연구실 지원(대학원/인턴) 안내.
+keywords: >-
+  임창용, 임창용 교수, Changyong Yim, CY Yim, 김태욱, 김태욱 교수, Taewook Kim,
+  경북대 임창용, 경북대 김태욱, 경북대 에너지화학공학과 교수, ACE² Lab 연구원,
+  대학원생 모집, 학부연구생 모집, 대학원 진학, 석사과정, 박사과정
 nav: true
 nav_order: 2
 ace2_editorial: true

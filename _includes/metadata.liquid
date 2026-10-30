@@ -1,0 +1,172 @@
+{% if site.enable_google_verification or site.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+{% endif %}
+{% if site.enable_bing_verification %}
+  <meta name="msvalidate.01" content="{{ site.bing_site_verification }}">
+{% endif %}
+<meta name="naver-site-verification" content="66b28497109cdd5d5ff2d8b1f71c08c7">
+
+{% capture author_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- SEO Optimized Title Tag (Option A: 학과 공식명칭 최우선) -->
+<title>
+  {%- if page.url == '/' or page.url == '/index.html' -%}
+    경북대학교 에너지화학공학과 | ACE² Lab (차세대 화학 및 에너지 공학 연구실)
+  {%- elsif page.url contains '/members' -%}
+    연구실 구성원 | 임창용·김태욱 교수 | 경북대학교 에너지화학공학과 ACE² Lab
+  {%- elsif page.url contains '/publications' -%}
+    연구성과 (논문·특허) | 경북대학교 에너지화학공학과 ACE² Lab
+  {%- elsif page.url contains '/facilities' -%}
+    연구 장비 및 인프라 | 경북대학교 에너지화학공학과 ACE² Lab
+  {%- elsif page.url contains '/news' -%}
+    연구실 소식 및 수상 | 경북대학교 에너지화학공학과 ACE² Lab
+  {%- elsif page.url contains '/research' -%}
+    핵심 연구분야 | 경북대학교 에너지화학공학과 ACE² Lab
+  {%- elsif page.url contains '/gallery' -%}
+    연구실 갤러리 | 경북대학교 에너지화학공학과 ACE² Lab
+  {%- elsif page.url contains '/teaching' -%}
+    강의 및 교과목 | 경북대학교 에너지화학공학과 ACE² Lab
+  {%- elsif page.title and page.title != 'blank' and page.title != '' -%}
+    {{ page.title }} | ACE² Lab | 경북대학교 에너지화학공학과
+  {%- else -%}
+    ACE² Lab | 경북대학교 에너지화학공학과
+  {%- endif -%}
+</title>
+
+<meta name="author" content="ACE² Lab | 임창용 · 김태욱 (Changyong Yim, Taewook Kim)">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.keywords or site.keywords %}
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+{% endif %}
+
+{% assign is_blog_post = false %}
+{% if page.url != '/blog/index.html' and page.url contains '/blog/' %}
+  {% unless page.url contains '/tag/' or page.url contains '/category/' %}
+    {% assign is_blog_post = true %}
+  {% endunless %}
+{% endif %}
+
+{% if site.serve_og_meta %}
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="경북대학교 에너지화학공학과 ACE² Lab">
+  <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if page.url == '/' or page.url == '/index.html' %}경북대학교 에너지화학공학과 | ACE² Lab (차세대 화학 및 에너지 공학 연구실){% elsif page.title %}{{ page.title }} | ACE² Lab | 경북대학교 에너지화학공학과{% else %}ACE² Lab | 경북대학교 에너지화학공학과{% endif %}">
+  <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% if page.og_image or site.og_image %}
+    {% assign og_image_source = page.og_image | default: site.og_image %}
+    {% if og_image_source contains '://' %}
+      {% assign og_image_url = og_image_source %}
+    {% else %}
+      {% assign og_image_url = og_image_source | prepend: site.baseurl | prepend: site.url %}
+    {% endif %}
+    <meta property="og:image" content="{{ og_image_url }}">
+  {% endif %}
+  <meta property="og:locale" content="{{ site.lang | default: 'ko' }}">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.url == '/' or page.url == '/index.html' %}경북대학교 에너지화학공학과 | ACE² Lab{% elsif page.title %}{{ page.title }} | ACE² Lab{% else %}ACE² Lab{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% if og_image_url %}
+    <meta name="twitter:image" content="{{ og_image_url }}">
+  {% endif %}
+{% endif %}
+
+{% if site.serve_schema_org %}
+  <!-- Schema.org JSON-LD (Search Engine & Generative AI Knowledge Graph) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["EducationalOrganization", "ResearchOrganization"],
+        "@id": "https://ace2.knu.ac.kr/#organization",
+        "name": "경북대학교 에너지화학공학과 차세대 화학 및 에너지 공학 연구실",
+        "alternateName": [
+          "ACE² Lab",
+          "ACE2 Lab",
+          "차세대 화학 및 에너지 공학 연구실",
+          "Advanced Chemical & Energy Engineering Laboratory",
+          "KNU Energy Chemical Engineering",
+          "경북대 에너지화학공학과 연구실"
+        ],
+        "url": "https://ace2.knu.ac.kr/",
+        "logo": "https://ace2.knu.ac.kr/assets/img/branding/logo.png",
+        "parentOrganization": {
+          "@type": "CollegeOrUniversity",
+          "name": "경북대학교",
+          "alternateName": "Kyungpook National University",
+          "url": "https://www.knu.ac.kr/",
+          "department": {
+            "@type": "Department",
+            "name": "에너지화학공학과",
+            "alternateName": "Department of Energy Chemical Engineering",
+            "url": "https://ace2.knu.ac.kr/"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "상주시",
+            "addressRegion": "경상북도",
+            "postalCode": "37224",
+            "streetAddress": "경상대로 2559, 경북대학교 7호관 에너지화학공학과 (상주캠퍼스)",
+            "addressCountry": "KR"
+          }
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://ace2.knu.ac.kr/#prof-changyong-yim",
+        "name": "Changyong Yim",
+        "alternateName": ["임창용", "임창용 교수", "CY Yim", "Prof. Changyong Yim", "Changyong (CY) Yim", "Yim Changyong"],
+        "jobTitle": "Associate Professor",
+        "worksFor": {
+          "@id": "https://ace2.knu.ac.kr/#organization"
+        },
+        "affiliation": {
+          "@type": "EducationalOrganization",
+          "name": "경북대학교 과학기술대학 에너지화학공학과"
+        },
+        "sameAs": [
+          "https://scholar.google.com/citations?user=qc6CJjYAAAAJ",
+          "https://orcid.org/0000-0002-3909-5735"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://ace2.knu.ac.kr/#prof-taewook-kim",
+        "name": "Taewook Kim",
+        "alternateName": ["김태욱", "김태욱 교수", "Prof. Taewook Kim", "Kim Taewook"],
+        "jobTitle": "Associate Professor",
+        "worksFor": {
+          "@id": "https://ace2.knu.ac.kr/#organization"
+        },
+        "affiliation": {
+          "@type": "EducationalOrganization",
+          "name": "경북대학교 과학기술대학 에너지화학공학과"
+        },
+        "sameAs": [
+          "https://scholar.google.com/citations?user=2qPTMYUAAAAJ"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ace2.knu.ac.kr/#website",
+        "url": "https://ace2.knu.ac.kr/",
+        "name": "경북대학교 에너지화학공학과 | ACE² Lab",
+        "description": "경북대학교 과학기술대학 에너지화학공학과 차세대 화학 및 에너지 공학 연구실 (ACE² Lab). 임창용·김태욱 교수 연구팀.",
+        "publisher": {
+          "@id": "https://ace2.knu.ac.kr/#organization"
+        },
+        "inLanguage": "ko"
+      }
+    ]
+  }
+  </script>
+{% endif %}
