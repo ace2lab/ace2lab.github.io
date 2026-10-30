@@ -25,7 +25,7 @@
   {%- elsif page.url contains '/facilities' -%}
     연구 장비 및 인프라 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/news' -%}
-    연구실 소식 및 수상 | 경북대학교 에너지화학공학과 ACE² Lab
+    수상 실적 및 연구실 소식 | Chem Frontier 장관상·대상 3년 연속 석권 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/research' -%}
     핵심 연구분야 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/gallery' -%}
@@ -58,7 +58,7 @@
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
   <meta
     property="og:title"
-    content="{% if page.url == '/' or page.url == '/index.html' %}경북대학교 에너지화학공학과 | ACE² Lab (차세대 화학 및 에너지 공학 연구실){% elsif page.title %}{{ page.title }} | ACE² Lab | 경북대학교 에너지화학공학과{% else %}ACE² Lab | 경북대학교 에너지화학공학과{% endif %}"
+    content="{% if page.url == '/' or page.url == '/index.html' %}경북대학교 에너지화학공학과 | ACE² Lab (차세대 화학 및 에너지 공학 연구실){% elsif page.url contains '/news' %}수상 실적 및 연구실 소식 | Chem Frontier 장관상·대상 3년 연속 석권 | 경북대학교 에너지화학공학과 ACE² Lab{% elsif page.title %}{{ page.title }} | ACE² Lab | 경북대학교 에너지화학공학과{% else %}ACE² Lab | 경북대학교 에너지화학공학과{% endif %}"
   >
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
@@ -67,7 +67,8 @@
     {% if og_image_source contains '://' %}
       {% assign og_image_url = og_image_source %}
     {% else %}
-      {% assign og_image_url = og_image_source | prepend: site.baseurl | prepend: site.url %}
+      {% assign og_image_norm = og_image_source | prepend: '/' | replace: '//', '/' %}
+      {% assign og_image_url = og_image_norm | prepend: site.baseurl | prepend: site.url %}
     {% endif %}
     <meta property="og:image" content="{{ og_image_url }}">
   {% endif %}
@@ -77,7 +78,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta
     name="twitter:title"
-    content="{% if page.url == '/' or page.url == '/index.html' %}경북대학교 에너지화학공학과 | ACE² Lab{% elsif page.title %}{{ page.title }} | ACE² Lab{% else %}ACE² Lab{% endif %}"
+    content="{% if page.url == '/' or page.url == '/index.html' %}경북대학교 에너지화학공학과 | ACE² Lab{% elsif page.url contains '/news' %}수상 실적 및 연구실 소식 | Chem Frontier 장관상·대상 3년 연속 석권 | 경북대학교 에너지화학공학과 ACE² Lab{% elsif page.title %}{{ page.title }} | ACE² Lab{% else %}ACE² Lab{% endif %}"
   >
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if og_image_url %}
@@ -101,7 +102,22 @@
             "차세대 화학 및 에너지 공학 연구실",
             "Advanced Chemical & Energy Engineering Laboratory",
             "KNU Energy Chemical Engineering",
-            "경북대 에너지화학공학과 연구실"
+            "경북대 에너지화학공학과 연구실",
+            "경북대학교 에너지화학공학과",
+            "경북대 에너지화학공학과",
+            "경북대학교 화학공학과",
+            "경북대 화학공학과",
+            "경북대 화학공학 ACE² Lab"
+          ],
+          "award": [
+            "2026 한국화학공학회 Chem Frontier 화학공학 대학생 창의설계 경진대회 산업통상자원부장관상 (김경진, 이종민, 이동건)",
+            "2025 한국화학공학회 Chem Frontier 화학공학 대학생 창의설계 경진대회 산업통상자원부장관상 (안재빈, 김민수, 김성우)",
+            "2024 한국화학공학회 Chem Frontier 화학공학 대학생 창의설계 경진대회 대상 롯데케미칼 대표이사상 (김다윈, 안재빈, 이동호)",
+            "2026 과학기술정보통신부 박사우수장학금(이공계) 장학생 선정 (이재호)",
+            "2026 한국화학공학회 가을 총회 우수 구두 발표상 (김다윈)",
+            "2026 한국화학공학회 가을 총회 우수 포스터 발표상 (강명서)",
+            "2026 경북대학교 2025 첨성인 대학원생 논문 경진대회 우수상 (이희진)",
+            "2024 경북대학교 참여대학원생 성과대회 최우수상 (안준혁)"
           ],
           "url": "https://ace2.knu.ac.kr/",
           "logo": "https://ace2.knu.ac.kr/assets/img/branding/logo.png",
