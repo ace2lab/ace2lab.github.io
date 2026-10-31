@@ -2,7 +2,11 @@
 layout: page
 title: 연구분야
 permalink: /research/
-description: Research pillars, ultrafast photonic nanomanufacturing, energy storage, and flexible sensory electronics at ACE² Lab
+description: >-
+  경북대학교 에너지화학공학과 ACE² Lab의 3대 화학공학 연구분야. 이차전지·슈퍼커패시터용 에너지 저장 소재(2D MXene·MOF), 초고속 광열(IPL) 나노공정, 웨어러블 유연 생체·환경 가스 센서 소자 기술을 임창용·김태욱 교수 연구팀이 연구합니다.
+keywords: >-
+  경북대학교 에너지화학공학과 연구분야, 경북대 화학공학 연구실, 대구경북 화학공학 연구실, 에너지 저장 소재, 이차전지 음극재, 슈퍼커패시터,
+  고강도 펄스광, IPL 광소결, 2D MXene, MOF, 레이저 유도 그래핀, 유연 센서, 웨어러블 바이오센서, 가스 센서
 nav: true
 nav_order: 3
 ace2_editorial: true

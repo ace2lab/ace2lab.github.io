@@ -2,7 +2,11 @@
 layout: page
 permalink: /publications/
 title: 연구성과
-description: Peer-reviewed articles, patents and conference presentations of ACE² Lab, in reverse chronological order.
+description: >-
+  경북대학교 에너지화학공학과 ACE² Lab(임창용·김태욱 교수)의 국제 SCI 학술지 논문, 국내 학술지 논문, 등록·출원 특허 및 학술대회 발표 성과. 에너지 저장 소재, IPL 광열 나노공정, 2D MXene 유연 센서 분야의 화학공학 연구 실적을 소개합니다.
+keywords: >-
+  경북대학교 에너지화학공학과 논문, 경북대 에너지화학공학과 연구실적, 경북대 화학공학 논문, 임창용 교수 논문, 김태욱 교수 논문,
+  ACE² Lab 논문, ACE² Lab 특허, 이차전지 논문, 2D MXene 센서 논문, IPL 광소결 특허
 nav: true
 nav_order: 5
 ace2_editorial: true

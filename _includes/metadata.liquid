@@ -14,33 +14,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<!-- SEO Optimized Title Tag (Option A: 학과 공식명칭 최우선) -->
-<title>
+<!-- SEO title/description SSOT: shared by <title>, og:*, twitter:* and meta description -->
+{% capture seo_title -%}
   {%- if page.url == '/' or page.url == '/index.html' -%}
-    경북대학교 에너지화학공학과 | ACE² Lab (차세대 화학 및 에너지 공학 연구실)
+    경북대학교 에너지화학공학과 ACE² Lab | 차세대 화학 및 에너지 공학 연구실 (임창용·김태욱 교수)
   {%- elsif page.url contains '/members' -%}
     연구실 구성원 | 임창용·김태욱 교수 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/publications' -%}
-    연구성과 (논문·특허) | 경북대학교 에너지화학공학과 ACE² Lab
+    연구성과 (SCI 논문·특허) | 임창용·김태욱 교수 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/facilities' -%}
-    연구 장비 및 인프라 | 경북대학교 에너지화학공학과 ACE² Lab
+    연구 장비 및 실험 인프라 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/news' -%}
     수상 실적 및 연구실 소식 | Chem Frontier 장관상·대상 3년 연속 석권 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/research' -%}
-    핵심 연구분야 | 경북대학교 에너지화학공학과 ACE² Lab
+    핵심 연구분야 (이차전지·광소결·유연센서) | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/gallery' -%}
-    연구실 갤러리 | 경북대학교 에너지화학공학과 ACE² Lab
+    연구실 갤러리 | 학술대회 및 연구 활동 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/teaching' -%}
-    강의 및 교과목 | 경북대학교 에너지화학공학과 ACE² Lab
+    강의 및 화학공학 시뮬레이션 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.title and page.title != 'blank' and page.title != '' -%}
     {{ page.title }} | ACE² Lab | 경북대학교 에너지화학공학과
   {%- else -%}
     ACE² Lab | 경북대학교 에너지화학공학과
   {%- endif -%}
-</title>
+{%- endcapture %}
+{% assign seo_title = seo_title | strip %}
+{% assign seo_description = page.description | default: site.description | strip | escape %}
+<title>{{ seo_title }}</title>
 
 <meta name="author" content="ACE² Lab | 임창용 · 김태욱 (Changyong Yim, Taewook Kim)">
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="{{ seo_description }}">
 {% if page.keywords or site.keywords %}
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
 {% endif %}
@@ -56,12 +59,9 @@
   <!-- OpenGraph -->
   <meta property="og:site_name" content="경북대학교 에너지화학공학과 ACE² Lab">
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
-  <meta
-    property="og:title"
-    content="{% if page.url == '/' or page.url == '/index.html' %}경북대학교 에너지화학공학과 | ACE² Lab (차세대 화학 및 에너지 공학 연구실){% elsif page.url contains '/news' %}수상 실적 및 연구실 소식 | Chem Frontier 장관상·대상 3년 연속 석권 | 경북대학교 에너지화학공학과 ACE² Lab{% elsif page.title %}{{ page.title }} | ACE² Lab | 경북대학교 에너지화학공학과{% else %}ACE² Lab | 경북대학교 에너지화학공학과{% endif %}"
-  >
+  <meta property="og:title" content="{{ seo_title }}">
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{{ seo_description }}">
   {% if page.og_image or site.og_image %}
     {% assign og_image_source = page.og_image | default: site.og_image %}
     {% if og_image_source contains '://' %}
@@ -76,11 +76,8 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta
-    name="twitter:title"
-    content="{% if page.url == '/' or page.url == '/index.html' %}경북대학교 에너지화학공학과 | ACE² Lab{% elsif page.url contains '/news' %}수상 실적 및 연구실 소식 | Chem Frontier 장관상·대상 3년 연속 석권 | 경북대학교 에너지화학공학과 ACE² Lab{% elsif page.title %}{{ page.title }} | ACE² Lab{% else %}ACE² Lab{% endif %}"
-  >
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:title" content="{{ seo_title }}">
+  <meta name="twitter:description" content="{{ seo_description }}">
   {% if og_image_url %}
     <meta name="twitter:image" content="{{ og_image_url }}">
   {% endif %}
@@ -108,6 +105,21 @@
             "경북대학교 화학공학과",
             "경북대 화학공학과",
             "경북대 화학공학 ACE² Lab"
+          ],
+          "knowsAbout": [
+            "화학공학 (Chemical Engineering)",
+            "에너지화학공학 (Energy Chemical Engineering)",
+            "에너지 저장 소재 (Energy Storage Materials)",
+            "이차전지 (Rechargeable Batteries)",
+            "슈퍼커패시터 (Supercapacitors)",
+            "고강도 펄스광 광소결 (Intense Pulsed Light Sintering)",
+            "광열 나노공정 (Photothermal Nanomanufacturing)",
+            "2D MXene",
+            "금속-유기 골격체 (Metal-Organic Frameworks)",
+            "레이저 유도 그래핀 (Laser-Induced Graphene)",
+            "유연 웨어러블 센서 (Flexible Wearable Sensors)",
+            "가스 센서 (Gas Sensors)",
+            "전달현상 (Transport Phenomena)"
           ],
           "award": [
             "2026 한국화학공학회 Chem Frontier 화학공학 대학생 창의설계 경진대회 산업통상자원부장관상 (김경진, 이종민, 이동건)",

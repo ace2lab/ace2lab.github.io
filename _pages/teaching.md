@@ -2,7 +2,11 @@
 layout: page
 permalink: /teaching/
 title: 강의
-description: Interactive engineering simulations, lecture notes, and curriculum courses by ACE² Lab.
+description: >-
+  경북대학교 과학기술대학 에너지화학공학과 임창용 교수의 학부·대학원 교과목(고분자 합성 및 물성, 전달현상 2, 고급나노화학공학)과 강의노트, 인터랙티브 웹 시뮬레이션. 화학공학 전달현상의 강하 액막 유동과 열·물질전달 방정식을 실시간으로 구현합니다.
+keywords: >-
+  경북대학교 에너지화학공학과 교과목, 경북대 화학공학 강의, 전달현상, Transport Phenomena, 강하 액막 유동,
+  고분자 합성 및 물성, 고급나노화학공학, 화학공학 웹 시뮬레이션, 임창용 교수 강의
 nav: true
 nav_order: 8
 ace2_editorial: true

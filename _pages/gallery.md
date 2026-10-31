@@ -1,7 +1,8 @@
 ---
 layout: page
 title: 갤러리
-description: Conferences, defenses and moments from ACE² Lab, newest first.
+description: >-
+  경북대학교 과학기술대학 에너지화학공학과 차세대 화학 및 에너지 공학 연구실(ACE² Lab)의 한국화학공학회 학술대회 발표, Chem Frontier 수상, 석사학위 논문 디펜스, 초청 세미나 및 연구실 행사 사진을 연도별 앨범으로 소개합니다.
 permalink: /gallery/
 nav: true
 nav_order: 7

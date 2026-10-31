@@ -2,7 +2,11 @@
 layout: page
 title: 연구장비
 permalink: /facilities/
-description: Advanced research instrumentation, fabrication tools, and analytical equipment of ACE² Lab
+description: >-
+  경북대학교 과학기술대학 에너지화학공학과 ACE² Lab 연구장비 35종 안내. 제논 플래시 램프 광소결(IPL) 시스템, 전기방사기, 튜브·머플 퍼니스, 글러브박스, 포텐시오스탯, 가스 센서 측정 시스템, Mini-SEM 및 BET 비표면적 분석기를 보유하고 있습니다.
+keywords: >-
+  경북대학교 에너지화학공학과 연구장비, ACE² Lab 실험장비, 제논 플래시 램프 광소결기, IPL 소결 장비, 전기방사,
+  글러브박스, 포텐시오스탯, 튜브 퍼니스, 가스 센서 측정 시스템, Mini-SEM, BET 비표면적 분석기
 nav: true
 nav_order: 4
 ace2_editorial: true
