@@ -100,6 +100,12 @@ ui:
     ja: "© 2026 ACE² Lab. Hosted on GitHub Pages."
     zh: "© 2026 ACE² Lab. Hosted on GitHub Pages."
 
+  footer.chemfrontier:
+    ko: "Chem Frontier 쇼케이스"
+    en: "Chem Frontier Showcase"
+    ja: "Chem Frontier ショーケース"
+    zh: "Chem Frontier 成果展"
+
   footer.visitors:
     ko: "방문"
     en: "Views"
@@ -162,10 +168,10 @@ ui:
     ja: 研究業績
     zh: 论文与专利
   hero.home.act_chemfrontier:
-    ko: Chem Frontier(켐프론티어) 3년 연속 최고상
-    en: Chem Frontier 3-Yr Top Honors
-    ja: Chem Frontier 3年連続最高賞
-    zh: Chem Frontier 连续3年最高奖
+    ko: Chem Frontier(켐프론티어) 2년 연속 전국 1위
+    en: Chem Frontier 2 Consecutive National 1st Places
+    ja: Chem Frontier 2年連続全国1位
+    zh: Chem Frontier 连续2年全国第一
 
   # ----------------------------------------------------------------------------
   # Home Page (_pages/about.md)
@@ -228,10 +234,10 @@ ui:
     ja: 研究室紹介 (About the Laboratory)
     zh: 实验室简介 (About the Laboratory)
   home.about.lead:
-    ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·다공성 MOF·금속 산화물 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 3년 연속 전국 최고상(2024 대상, 2025·2026 장관상)을 수상하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다."
-    en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By combining Intense Pulsed Light (IPL) and Laser-Induced Graphene (LIG) nanomanufacturing with 2D MXene, porous MOF, and metal-oxide nanomaterial design, we develop high-performance rechargeable batteries, hybrid supercapacitors, environmental catalysts, and flexible bio-environmental sensors, winning the overall top national prizes at the KIChE Chem Frontier competition for three consecutive years (2024–2026)."
-    ja: "ACE² Lab（次世代化学・エネルギー工学研究室）は、慶北大学校 科学技術学部 エネルギー化学工学科において Changyong Yim 教授と Taewook Kim 教授が共同研究責任者（Co-PIs）として主宰する融合ナノ化学・エネルギー工学研究室です。超高速フラッシュ光（IPL）・レーザー誘起グラフェン（LIG）に基づくナノ製造プロセスと、2次元MXene・多孔質MOF・金属酸化物などの機能性ナノ材料設計を融合し、高性能二次電池・スーパーキャパシタおよび高感度フレキシブル生体・環境センサー素子を開発しており、韓国化学工学会 Chem Frontier にて3年連続で全国最高賞（2024大賞、2025・2026長官賞）を受賞しています。"
-    zh: "ACE² Lab（先进化学与能源工程实验室）是庆北大学 科学技术学院 能源化学工程系由 Changyong Yim 教授与 Taewook Kim 教授共同担任课题组负责人（Co-PIs）的交叉纳米化学与能源工程实验室。实验室将强脉冲光（IPL）与激光诱导石墨烯（LIG）纳米制造工艺同二维 MXene、多孔 MOF 及金属氧化物等功能纳米材料设计相结合，致力于开发高性能二次电池、混合超级电容器、环境催化剂及高灵敏柔性生物与环境传感器件，并在韩国化学工学会 Chem Frontier 竞赛中连续3年斩获全国最高奖（2024大奖、2025及2026部长奖）。"
+    ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·다공성 MOF·금속 산화물 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다."
+    en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By combining Intense Pulsed Light (IPL) and Laser-Induced Graphene (LIG) nanomanufacturing with 2D MXene, porous MOF, and metal-oxide nanomaterial design, we develop high-performance rechargeable batteries, hybrid supercapacitors, environmental catalysts, and flexible bio-environmental sensors, winning two consecutive national 1st-place Minister of Trade, Industry and Energy Awards (2025–2026) and placing among the top honors at the KIChE Chem Frontier competition for three consecutive years (2024–2026)."
+    ja: "ACE² Lab（次世代化学・エネルギー工学研究室）は、慶北大学校 科学技術学部 エネルギー化学工学科において Changyong Yim 教授と Taewook Kim 教授が共同研究責任者（Co-PIs）として主宰する融合ナノ化学・エネルギー工学研究室です。超高速フラッシュ光（IPL）・レーザー誘起グラフェン（LIG）に基づくナノ製造プロセスと、2次元MXene・多孔質MOF・金属酸化物などの機能性ナノ材料設計を融合し、高性能二次電池・スーパーキャパシタおよび高感度フレキシブル生体・環境センサー素子を開発しており、韓国化学工学会 Chem Frontier にて2年連続全国1位（2025・2026年 産業通商部長官賞）、3年連続最上位入賞（2024年 大賞を含む）を達成しています。"
+    zh: "ACE² Lab（先进化学与能源工程实验室）是庆北大学 科学技术学院 能源化学工程系由 Changyong Yim 教授与 Taewook Kim 教授共同担任课题组负责人（Co-PIs）的交叉纳米化学与能源工程实验室。实验室将强脉冲光（IPL）与激光诱导石墨烯（LIG）纳米制造工艺同二维 MXene、多孔 MOF 及金属氧化物等功能纳米材料设计相结合，致力于开发高性能二次电池、混合超级电容器、环境催化剂及高灵敏柔性生物与环境传感器件，并在韩国化学工学会 Chem Frontier 竞赛中连续2年荣获全国第一（2025、2026年产业通商部部长奖），连续3年跻身最高荣誉行列（含2024年大奖）。"
   home.about.p1_title:
     ko: "에너지 저장 및 기능성 소재"
     en: "Energy Storage & Materials"
@@ -1376,10 +1382,10 @@ ui:
     ja: 受賞・メディア報道
     zh: 获奖与媒体报道
   hero.news.subtitle:
-    ko: "연구실 수상 실적 및 주요 언론 보도 · Chem Frontier(켐프론티어) 3년 연속 최고상"
-    en: "Honors, awards, and media press coverage of ACE² Lab · 3-Year Consecutive Chem Frontier Top Honors"
-    ja: "研究室の受賞実績および主要メディア報道 · Chem Frontier 3年連続最高賞"
-    zh: "实验室获奖荣誉与重要媒体报道 · Chem Frontier 连续3年最高奖"
+    ko: "연구실 수상 실적 및 주요 언론 보도 · Chem Frontier(켐프론티어) 2년 연속 전국 1위"
+    en: "Honors, awards, and media press coverage of ACE² Lab · Two Consecutive National 1st Places at Chem Frontier"
+    ja: "研究室の受賞実績および主要メディア報道 · Chem Frontier 2年連続全国1位"
+    zh: "实验室获奖荣誉与重要媒体报道 · Chem Frontier 连续2年全国第一"
   hero.news.subtitle_en:
     ko: "Honors, awards, and media press coverage of ACE² Lab."
     en: "Chronological record of research honors, student awards, and media press releases."
@@ -1387,35 +1393,35 @@ ui:
     zh: "Honors, awards, and media press coverage of ACE² Lab."
 
   news.act_chemfrontier:
-    ko: "Chem Frontier(켐프론티어) 3년 연속 최고상 특집"
-    en: "Chem Frontier 3-Yr Grand Slam"
-    ja: "Chem Frontier 3年連続最高賞特集"
-    zh: "Chem Frontier 连续3年最高奖特辑"
+    ko: "Chem Frontier(켐프론티어) 2년 연속 전국 1위 특집"
+    en: "Chem Frontier 2 Consecutive National 1st Places"
+    ja: "Chem Frontier 2年連続全国1位特集"
+    zh: "Chem Frontier 连续2年全国第一特辑"
   news.idx_chemfrontier:
-    ko: "Chem Frontier(켐프론티어) 3년 연속 최고상 총람 →"
-    en: "Chem Frontier 3-Year Showcase →"
-    ja: "Chem Frontier 3年連続最高賞総覧 →"
-    zh: "Chem Frontier 连续3年最高奖总览 →"
+    ko: "Chem Frontier(켐프론티어) 2년 연속 전국 1위 총람 →"
+    en: "Chem Frontier Showcase: 2 Consecutive National 1st Places →"
+    ja: "Chem Frontier 2年連続全国1位総覧 →"
+    zh: "Chem Frontier 连续2年全国第一总览 →"
   news.cf_banner.pill1:
-    ko: "3년 연속 전국 최고상 (2024–2026)"
-    en: "3-Year Consecutive Top Honors (2024–2026)"
-    ja: "3年連続全国最高賞 (2024–2026)"
-    zh: "连续3年全国最高奖 (2024–2026)"
+    ko: "2년 연속 전국 1위 · 3년 연속 최상위 입상 (2024–2026)"
+    en: "2 Consecutive National 1st Places · 3 Consecutive Years of Top Honors (2024–2026)"
+    ja: "2年連続全国1位 · 3年連続最上位入賞 (2024–2026)"
+    zh: "连续2年全国第一 · 连续3年跻身最高荣誉 (2024–2026)"
   news.cf_banner.pill2:
     ko: "한국화학공학회 Chem Frontier (켐프론티어)"
     en: "KIChE Chem Frontier Competition"
     ja: "韓国化学工学会 Chem Frontier"
     zh: "韩国化学工学会 Chem Frontier"
   news.cf_banner.title:
-    ko: "한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 3년 연속 전국 최고상 석권"
-    en: "Three Consecutive Overall Top Prizes at the KIChE Chem Frontier Competition (2024–2026)"
-    ja: "韓国化学工学会 Chem Frontier 創意設計競進大会 3年連続で全国最高賞を席巻"
-    zh: "韩国化学工学会 Chem Frontier 创意设计竞赛连续3年包揽全国最高奖"
+    ko: "한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(산업통상부장관상)"
+    en: "Two Consecutive National 1st-Place Minister's Awards at the KIChE Chem Frontier Competition (2025–2026)"
+    ja: "韓国化学工学会 Chem Frontier 創意設計競進大会 2年連続全国1位（産業通商部長官賞）"
+    zh: "韩国化学工学会 Chem Frontier 创意设计竞赛连续2年荣获全国第一（产业通商部部长奖）"
   news.cf_banner.desc:
-    ko: "경북대학교 에너지화학공학과 ACE² Lab 학부연구생 연구팀(지도교수: 임창용·김태욱)이 한국화학공학회 주관 전국 화학공학 대학생 창의설계 경진대회 Chem Frontier(켐프론티어, 포스터 심화 부문)에서 2024년 종합 대상과 2025·2026년 2년 연속 산업통상부장관상을 수상하며 3년 연속 전국 1위 최고상을 달성했습니다."
-    en: "Undergraduate research teams of ACE² Lab (advisors: Profs. Changyong Yim & Taewook Kim) achieved overall 1st-place top honors for three consecutive years at the KIChE Chem Frontier Undergraduate Creative Design Competition (Advanced Poster Category): the 2024 Grand Prize (LOTTE Chemical CEO Award) and consecutive 2025 & 2026 Minister of Trade, Industry and Energy Awards."
-    ja: "慶北大学校エネルギー化学工学科 ACE² Lab の学部生研究チーム（指導教員：Changyong Yim 教授・Taewook Kim 教授）が、韓国化学工学会主催の全国化学工学大学生創意設計競進大会 Chem Frontier（ポスター深化部門）にて、2024年総合大賞および2025・2026年2年連続の産業通商部長官賞を受賞し、3年連続全国1位を達成しました。"
-    zh: "庆北大学能源化学工程系 ACE² Lab 本科生科研团队（指导教授：Changyong Yim、Taewook Kim）在韩国化学工学会主办的全国化学工程大学生创意设计竞赛 Chem Frontier（海报深化类）中，先后斩获2024年综合大奖及2025、2026连续两年产业通商部部长奖，实现连续3年全国第一最高荣誉。"
+    ko: "경북대학교 에너지화학공학과 ACE² Lab 학부연구생 연구팀(지도교수: 임창용·김태욱)이 한국화학공학회 주관 전국 화학공학 대학생 창의설계 경진대회 Chem Frontier(켐프론티어, 포스터 심화 부문)에서 2025·2026년 2년 연속 산업통상부장관상(전국 1위)과 2024년 대상(전국 2위)을 수상하며 3년 연속 최상위 입상을 달성했습니다."
+    en: "Undergraduate research teams of ACE² Lab (advisors: Profs. Changyong Yim & Taewook Kim) won two consecutive national 1st-place Minister of Trade, Industry and Energy Awards (2025 & 2026) and the 2024 Grand Prize (LOTTE Chemical CEO Award, 2nd place), achieving 3 consecutive years of top honors (2024–2026) at the KIChE Chem Frontier Undergraduate Creative Design Competition (Advanced Poster Category)."
+    ja: "慶北大学校エネルギー化学工学科 ACE² Lab の学部生研究チーム（指導教員：Changyong Yim 教授・Taewook Kim 教授）が、韓国化学工学会主催の全国化学工学大学生創意設計競進大会 Chem Frontier（ポスター深化部門）にて、2025・2026年2年連続で産業通商部長官賞（全国1位）、2024年に大賞（全国2位）を受賞し、3年連続最上位入賞を達成しました。"
+    zh: "庆北大学能源化学工程系 ACE² Lab 本科生科研团队（指导教授：Changyong Yim、Taewook Kim）在韩国化学工学会主办的全国化学工程大学生创意设计竞赛 Chem Frontier（海报深化类）中，连续两年（2025、2026）荣获产业通商部部长奖（全国第一），并于2024年获得大奖（全国第二），实现连续3年跻身最高荣誉行列。"
   news.cf_banner.note:
     ko: "수상 학부연구생 8명 · 지도교수 임창용·김태욱"
     en: "8 Undergraduate Awardees · Advisors: Profs. Yim & Kim"
@@ -1431,25 +1437,25 @@ ui:
   # Chem Frontier Dedicated Showcase Page (_pages/chem_frontier.md)
   # ----------------------------------------------------------------------------
   hero.chemfrontier.label:
-    ko: "KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER GRAND SLAM"
-    en: "KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER GRAND SLAM"
-    ja: "慶北大学校 科学技術学部 · KIChE CHEM FRONTIER 3年連続最高賞"
-    zh: "庆北大学 科学技术学院 · KIChE CHEM FRONTIER 连续3年最高奖"
+    ko: "KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER NATIONAL AWARDS"
+    en: "KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER NATIONAL AWARDS"
+    ja: "慶北大学校 科学技術学部 · KIChE CHEM FRONTIER 全国表彰"
+    zh: "庆北大学 科学技术学院 · KIChE CHEM FRONTIER 全国奖项"
   hero.chemfrontier.title:
-    ko: "Chem Frontier — 3-Year National Top Honors (2024–2026)"
-    en: "Chem Frontier — 3-Year National Top Honors (2024–2026)"
-    ja: "Chem Frontier — 3年連続全国最高賞 (2024–2026)"
-    zh: "Chem Frontier — 连续3年全国最高奖 (2024–2026)"
+    ko: "Chem Frontier — Two Consecutive National 1st Places (2025–2026)"
+    en: "Chem Frontier — Two Consecutive National 1st Places (2025–2026)"
+    ja: "Chem Frontier — 2年連続全国1位 (2025–2026)"
+    zh: "Chem Frontier — 连续2年全国第一 (2025–2026)"
   hero.chemfrontier.subtitle:
-    ko: "한국화학공학회 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 3년 연속 전국 최고상 (장관상·대상)"
-    en: "Three Consecutive Overall 1st-Place National Prizes at the KIChE Chem Frontier Undergraduate Creative Design Competition"
-    ja: "韓国化学工学会 Chem Frontier 化学工学大学生創意設計競進大会 3年連続全国最高賞（長官賞・大賞）"
-    zh: "韩国化学工学会 Chem Frontier 化学工程大学生创意设计竞赛连续3年全国最高奖（部长奖·大奖）"
+    ko: "한국화학공학회 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 2년 연속 전국 1위(산업통상부장관상) · 3년 연속 최상위 입상"
+    en: "Two Consecutive National 1st-Place Minister's Awards (2025–2026) and 3 Consecutive Years of Top Honors (2024–2026) at the KIChE Chem Frontier Undergraduate Creative Design Competition"
+    ja: "韓国化学工学会 Chem Frontier 化学工学大学生創意設計競進大会 2年連続全国1位（産業通商部長官賞）・3年連続最上位入賞"
+    zh: "韩国化学工学会 Chem Frontier 化学工程大学生创意设计竞赛连续2年全国第一（产业通商部部长奖）· 连续3年跻身最高荣誉"
   hero.chemfrontier.subtitle_en:
-    ko: "2024 Grand Prize (LOTTE Chemical CEO Award) · 2025 & 2026 Minister of Trade, Industry and Energy Awards · ACE² Lab, KNU"
+    ko: "2025 & 2026 Minister of Trade, Industry and Energy Awards (National 1st) · 2024 Grand Prize, LOTTE Chemical CEO Award (National 2nd) · ACE² Lab, KNU"
     en: "Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University (Advisors: Profs. Changyong Yim & Taewook Kim)"
-    ja: "2024 Grand Prize (LOTTE Chemical CEO Award) · 2025 & 2026 Minister of Trade, Industry and Energy Awards · ACE² Lab, KNU"
-    zh: "2024 Grand Prize (LOTTE Chemical CEO Award) · 2025 & 2026 Minister of Trade, Industry and Energy Awards · ACE² Lab, KNU"
+    ja: "2025 & 2026 Minister of Trade, Industry and Energy Awards (National 1st) · 2024 Grand Prize, LOTTE Chemical CEO Award (National 2nd) · ACE² Lab, KNU"
+    zh: "2025 & 2026 Minister of Trade, Industry and Energy Awards (National 1st) · 2024 Grand Prize, LOTTE Chemical CEO Award (National 2nd) · ACE² Lab, KNU"
   cf.badge_2026:
     ko: "2026 산업통상부장관상 (1위)"
     en: "2026 Minister's Award (1st)"
@@ -1461,15 +1467,15 @@ ui:
     ja: "2025 産業通商部長官賞 (1位)"
     zh: "2025 产业通商部长官奖 (第1名)"
   cf.badge_2024:
-    ko: "2024 대상 · 롯데케미칼 대표이사상 (1위)"
-    en: "2024 Grand Prize · LOTTE Chemical CEO (1st)"
-    ja: "2024 大賞・ロッテケミカル代表理事賞 (1位)"
-    zh: "2024 大奖·乐天化学代表理事奖 (第1名)"
+    ko: "2024 대상 · 롯데케미칼 대표이사상 (전국 2위)"
+    en: "2024 Grand Prize · LOTTE Chemical CEO Award (2nd)"
+    ja: "2024 大賞・ロッテケミカル代表理事賞 (全国2位)"
+    zh: "2024 大奖·乐天化学代表理事奖 (全国第2名)"
   cf.badge_streak:
-    ko: "포스터 심화 부문 3년 연속 최고상"
-    en: "3-Yr Streak in Advanced Poster Track"
-    ja: "ポスター深化部門 3年連続最高賞"
-    zh: "海报深化组连续3年最高奖"
+    ko: "포스터 심화 부문 3년 연속 최상위 입상"
+    en: "3 Consecutive Years of Top Honors in Advanced Poster Track"
+    ja: "ポスター深化部門 3年連続最上位入賞"
+    zh: "海报深化组连续3年跻身最高荣誉"
   cf.act_timeline:
     ko: "연도별 수상작 상세 보기"
     en: "Awarded Projects (2024–2026)"
@@ -1491,10 +1497,10 @@ ui:
     ja: "研究室メンバーを見る"
     zh: "查看团队成员"
   cf.idx_overview:
-    ko: "대회 소개 및 3년 연속 석권 의의"
+    ko: "대회 소개 및 3년 연속 최상위 입상 의의"
     en: "Overview & Significance"
-    ja: "大会紹介と3年連続受賞の意義"
-    zh: "竞赛简介与三连冠意义"
+    ja: "大会紹介と3年連続最上位入賞の意義"
+    zh: "竞赛简介与连续3年跻身最高荣誉的意义"
   cf.idx_timeline:
     ko: "연도별 수상 연구과제 (2026·2025·2024)"
     en: "Winning Projects (2026·2025·2024)"
@@ -1511,25 +1517,25 @@ ui:
     ja: "学部生研究教育システム"
     zh: "本科生科研培养体系"
   cf.stat1_label:
-    ko: "전국 최고상 연속 수상"
-    en: "Consecutive Top National Honors"
-    ja: "全国最高賞連続受賞"
-    zh: "全国最高奖连续获奖"
+    ko: "전국 최상위 입상 연속 수상"
+    en: "Consecutive Years of National Top Honors"
+    ja: "全国最上位入賞 連続受賞"
+    zh: "全国最高荣誉连续获奖"
   cf.stat1_desc:
-    ko: "2024 대상 · 2025 장관상 · 2026 장관상"
-    en: "2024 Grand Prize · 2025 & 2026 Minister's Awards"
-    ja: "2024 大賞 · 2025・2026 長官賞"
-    zh: "2024 大奖 · 2025及2026 部长奖"
+    ko: "2026·2025 장관상(1위) · 2024 대상(2위)"
+    en: "2026 & 2025 Minister's Awards (1st) · 2024 Grand Prize (2nd)"
+    ja: "2026・2025 長官賞 (1位) · 2024 大賞 (2位)"
+    zh: "2026及2025 部长奖（第1名）· 2024 大奖（第2名）"
   cf.stat2_label:
-    ko: "산업통상부장관상 (정부 훈격 1위)"
-    en: "Minister of Trade, Industry & Energy Awards"
-    ja: "産業通商部長官賞（政府表彰1位）"
-    zh: "产业通商部长官奖（政府最高奖）"
+    ko: "산업통상부장관상 (전국 1위)"
+    en: "Minister of Trade, Industry & Energy Awards (National 1st)"
+    ja: "産業通商部長官賞（全国1位）"
+    zh: "产业通商部长官奖（全国第一）"
   cf.stat2_desc:
-    ko: "2025·2026년 2년 연속 장관상 석권"
-    en: "Back-to-Back Minister's Awards in 2025 & 2026"
-    ja: "2025・2026年 2年連続長官賞"
-    zh: "2025与2026连续两年蝉联部长奖"
+    ko: "2025·2026년 2년 연속 전국 1위"
+    en: "Two Consecutive National 1st Places in 2025 & 2026"
+    ja: "2025・2026年 2年連続全国1位"
+    zh: "2025与2026连续两年全国第一"
   cf.stat3_label:
     ko: "수상 배출 학부연구생"
     en: "Awarded Undergraduate Researchers"
@@ -1551,10 +1557,10 @@ ui:
     ja: "Changyong Yim 教授 · Taewook Kim 教授"
     zh: "Changyong Yim 教授 · Taewook Kim 教授"
   cf.sec_overview:
-    ko: "한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 및 3년 연속 최고상 의의"
-    en: "About KIChE Chem Frontier & Significance of the 3-Year Consecutive Sweep"
-    ja: "韓国化学工学会 Chem Frontier 創意設計競進大会および3年連続最高賞の意義"
-    zh: "韩国化学工学会 Chem Frontier 创意设计竞赛及连续3年最高奖的意义"
+    ko: "한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 및 3년 연속 최상위 입상 의의"
+    en: "About KIChE Chem Frontier & Significance of 3 Consecutive Years of Top Honors"
+    ja: "韓国化学工学会 Chem Frontier 創意設計競進大会および3年連続最上位入賞の意義"
+    zh: "韩国化学工学会 Chem Frontier 创意设计竞赛及连续3年跻身最高荣誉的意义"
   cf.sec_timeline:
     ko: "연도별 Chem Frontier(켐프론티어) 수상 연구과제 총람 (2026 · 2025 · 2024)"
     en: "Chronological Showcase of Winning Research Projects (2026 · 2025 · 2024)"
