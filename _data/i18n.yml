@@ -161,6 +161,11 @@ ui:
     en: Publications
     ja: 研究業績
     zh: 论文与专利
+  hero.home.act_chemfrontier:
+    ko: Chem Frontier(켐프론티어) 3년 연속 최고상
+    en: Chem Frontier 3-Yr Top Honors
+    ja: Chem Frontier 3年連続最高賞
+    zh: Chem Frontier 连续3年最高奖
 
   # ----------------------------------------------------------------------------
   # Home Page (_pages/about.md)
@@ -223,10 +228,10 @@ ui:
     ja: 研究室紹介 (About the Laboratory)
     zh: 实验室简介 (About the Laboratory)
   home.about.lead:
-    ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·다공성 MOF·금속 산화물 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하며 학부연구생 및 대학원생을 양성하고 있습니다."
-    en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By combining Intense Pulsed Light (IPL) and Laser-Induced Graphene (LIG) nanomanufacturing with 2D MXene, porous MOF, and metal-oxide nanomaterial design, we develop high-performance rechargeable batteries, hybrid supercapacitors, environmental catalysts, and flexible bio-environmental sensors."
-    ja: "ACE² Lab（次世代化学・エネルギー工学研究室）は、慶北大学校 科学技術学部 エネルギー化学工学科において Changyong Yim 教授と Taewook Kim 教授が共同研究責任者（Co-PIs）として主宰する融合ナノ化学・エネルギー工学研究室です。超高速フラッシュ光（IPL）・レーザー誘起グラフェン（LIG）に基づくナノ製造プロセスと、2次元MXene・多孔質MOF・金属酸化物などの機能性ナノ材料設計を融合し、高性能二次電池・スーパーキャパシタおよび高感度フレキシブル生体・環境センサー素子を開発しています。"
-    zh: "ACE² Lab（先进化学与能源工程实验室）是庆北大学 科学技术学院 能源化学工程系由 Changyong Yim 教授与 Taewook Kim 教授共同担任课题组负责人（Co-PIs）的交叉纳米化学与能源工程实验室。实验室将强脉冲光（IPL）与激光诱导石墨烯（LIG）纳米制造工艺同二维 MXene、多孔 MOF 及金属氧化物等功能纳米材料设计相结合，致力于开发高性能二次电池、混合超级电容器、环境催化剂及高灵敏柔性生物与环境传感器件。"
+    ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·다공성 MOF·금속 산화물 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 3년 연속 전국 최고상(2024 대상, 2025·2026 장관상)을 수상하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다."
+    en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By combining Intense Pulsed Light (IPL) and Laser-Induced Graphene (LIG) nanomanufacturing with 2D MXene, porous MOF, and metal-oxide nanomaterial design, we develop high-performance rechargeable batteries, hybrid supercapacitors, environmental catalysts, and flexible bio-environmental sensors, winning the overall top national prizes at the KIChE Chem Frontier competition for three consecutive years (2024–2026)."
+    ja: "ACE² Lab（次世代化学・エネルギー工学研究室）は、慶北大学校 科学技術学部 エネルギー化学工学科において Changyong Yim 教授と Taewook Kim 教授が共同研究責任者（Co-PIs）として主宰する融合ナノ化学・エネルギー工学研究室です。超高速フラッシュ光（IPL）・レーザー誘起グラフェン（LIG）に基づくナノ製造プロセスと、2次元MXene・多孔質MOF・金属酸化物などの機能性ナノ材料設計を融合し、高性能二次電池・スーパーキャパシタおよび高感度フレキシブル生体・環境センサー素子を開発しており、韓国化学工学会 Chem Frontier にて3年連続で全国最高賞（2024大賞、2025・2026長官賞）を受賞しています。"
+    zh: "ACE² Lab（先进化学与能源工程实验室）是庆北大学 科学技术学院 能源化学工程系由 Changyong Yim 教授与 Taewook Kim 教授共同担任课题组负责人（Co-PIs）的交叉纳米化学与能源工程实验室。实验室将强脉冲光（IPL）与激光诱导石墨烯（LIG）纳米制造工艺同二维 MXene、多孔 MOF 及金属氧化物等功能纳米材料设计相结合，致力于开发高性能二次电池、混合超级电容器、环境催化剂及高灵敏柔性生物与环境传感器件，并在韩国化学工学会 Chem Frontier 竞赛中连续3年斩获全国最高奖（2024大奖、2025及2026部长奖）。"
   home.about.p1_title:
     ko: "에너지 저장 및 기능성 소재"
     en: "Energy Storage & Materials"
@@ -1371,15 +1376,200 @@ ui:
     ja: 受賞・メディア報道
     zh: 获奖与媒体报道
   hero.news.subtitle:
-    ko: "연구실 수상 실적 및 주요 언론 보도"
-    en: "Honors, awards, and media press coverage of ACE² Lab"
-    ja: "研究室の受賞実績および主要メディア報道"
-    zh: "实验室获奖荣誉与重要媒体报道"
+    ko: "연구실 수상 실적 및 주요 언론 보도 · Chem Frontier(켐프론티어) 3년 연속 최고상"
+    en: "Honors, awards, and media press coverage of ACE² Lab · 3-Year Consecutive Chem Frontier Top Honors"
+    ja: "研究室の受賞実績および主要メディア報道 · Chem Frontier 3年連続最高賞"
+    zh: "实验室获奖荣誉与重要媒体报道 · Chem Frontier 连续3年最高奖"
   hero.news.subtitle_en:
     ko: "Honors, awards, and media press coverage of ACE² Lab."
     en: "Chronological record of research honors, student awards, and media press releases."
     ja: "Honors, awards, and media press coverage of ACE² Lab."
     zh: "Honors, awards, and media press coverage of ACE² Lab."
+
+  news.act_chemfrontier:
+    ko: "Chem Frontier(켐프론티어) 3년 연속 최고상 특집"
+    en: "Chem Frontier 3-Yr Grand Slam"
+    ja: "Chem Frontier 3年連続最高賞特集"
+    zh: "Chem Frontier 连续3年最高奖特辑"
+  news.idx_chemfrontier:
+    ko: "Chem Frontier(켐프론티어) 3년 연속 최고상 총람 →"
+    en: "Chem Frontier 3-Year Showcase →"
+    ja: "Chem Frontier 3年連続最高賞総覧 →"
+    zh: "Chem Frontier 连续3年最高奖总览 →"
+  news.cf_banner.pill1:
+    ko: "3년 연속 전국 최고상 (2024–2026)"
+    en: "3-Year Consecutive Top Honors (2024–2026)"
+    ja: "3年連続全国最高賞 (2024–2026)"
+    zh: "连续3年全国最高奖 (2024–2026)"
+  news.cf_banner.pill2:
+    ko: "한국화학공학회 Chem Frontier (켐프론티어)"
+    en: "KIChE Chem Frontier Competition"
+    ja: "韓国化学工学会 Chem Frontier"
+    zh: "韩国化学工学会 Chem Frontier"
+  news.cf_banner.title:
+    ko: "한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 3년 연속 전국 최고상 석권"
+    en: "Three Consecutive Overall Top Prizes at the KIChE Chem Frontier Competition (2024–2026)"
+    ja: "韓国化学工学会 Chem Frontier 創意設計競進大会 3年連続で全国最高賞を席巻"
+    zh: "韩国化学工学会 Chem Frontier 创意设计竞赛连续3年包揽全国最高奖"
+  news.cf_banner.desc:
+    ko: "경북대학교 에너지화학공학과 ACE² Lab 학부연구생 연구팀(지도교수: 임창용·김태욱)이 한국화학공학회 주관 전국 화학공학 대학생 창의설계 경진대회 Chem Frontier(켐프론티어, 포스터 심화 부문)에서 2024년 종합 대상과 2025·2026년 2년 연속 산업통상부장관상을 수상하며 3년 연속 전국 1위 최고상을 달성했습니다."
+    en: "Undergraduate research teams of ACE² Lab (advisors: Profs. Changyong Yim & Taewook Kim) achieved overall 1st-place top honors for three consecutive years at the KIChE Chem Frontier Undergraduate Creative Design Competition (Advanced Poster Category): the 2024 Grand Prize (LOTTE Chemical CEO Award) and consecutive 2025 & 2026 Minister of Trade, Industry and Energy Awards."
+    ja: "慶北大学校エネルギー化学工学科 ACE² Lab の学部生研究チーム（指導教員：Changyong Yim 教授・Taewook Kim 教授）が、韓国化学工学会主催の全国化学工学大学生創意設計競進大会 Chem Frontier（ポスター深化部門）にて、2024年総合大賞および2025・2026年2年連続の産業通商部長官賞を受賞し、3年連続全国1位を達成しました。"
+    zh: "庆北大学能源化学工程系 ACE² Lab 本科生科研团队（指导教授：Changyong Yim、Taewook Kim）在韩国化学工学会主办的全国化学工程大学生创意设计竞赛 Chem Frontier（海报深化类）中，先后斩获2024年综合大奖及2025、2026连续两年产业通商部部长奖，实现连续3年全国第一最高荣誉。"
+  news.cf_banner.note:
+    ko: "수상 학부연구생 8명 · 지도교수 임창용·김태욱"
+    en: "8 Undergraduate Awardees · Advisors: Profs. Yim & Kim"
+    ja: "受賞学部生8名 · 指導教員：Yim・Kim教授"
+    zh: "8名获奖本科生 · 指导教授：Yim、Kim"
+  news.cf_banner.btn:
+    ko: "Chem Frontier 수상실적 총람 보기"
+    en: "Explore Chem Frontier Showcase"
+    ja: "Chem Frontier 受賞実績総覧を見る"
+    zh: "查看 Chem Frontier 获奖总览"
+
+  # ----------------------------------------------------------------------------
+  # Chem Frontier Dedicated Showcase Page (_pages/chem_frontier.md)
+  # ----------------------------------------------------------------------------
+  hero.chemfrontier.label:
+    ko: "KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER GRAND SLAM"
+    en: "KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER GRAND SLAM"
+    ja: "慶北大学校 科学技術学部 · KIChE CHEM FRONTIER 3年連続最高賞"
+    zh: "庆北大学 科学技术学院 · KIChE CHEM FRONTIER 连续3年最高奖"
+  hero.chemfrontier.title:
+    ko: "Chem Frontier — 3-Year National Top Honors (2024–2026)"
+    en: "Chem Frontier — 3-Year National Top Honors (2024–2026)"
+    ja: "Chem Frontier — 3年連続全国最高賞 (2024–2026)"
+    zh: "Chem Frontier — 连续3年全国最高奖 (2024–2026)"
+  hero.chemfrontier.subtitle:
+    ko: "한국화학공학회 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 3년 연속 전국 최고상 (장관상·대상)"
+    en: "Three Consecutive Overall 1st-Place National Prizes at the KIChE Chem Frontier Undergraduate Creative Design Competition"
+    ja: "韓国化学工学会 Chem Frontier 化学工学大学生創意設計競進大会 3年連続全国最高賞（長官賞・大賞）"
+    zh: "韩国化学工学会 Chem Frontier 化学工程大学生创意设计竞赛连续3年全国最高奖（部长奖·大奖）"
+  hero.chemfrontier.subtitle_en:
+    ko: "2024 Grand Prize (LOTTE Chemical CEO Award) · 2025 & 2026 Minister of Trade, Industry and Energy Awards · ACE² Lab, KNU"
+    en: "Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University (Advisors: Profs. Changyong Yim & Taewook Kim)"
+    ja: "2024 Grand Prize (LOTTE Chemical CEO Award) · 2025 & 2026 Minister of Trade, Industry and Energy Awards · ACE² Lab, KNU"
+    zh: "2024 Grand Prize (LOTTE Chemical CEO Award) · 2025 & 2026 Minister of Trade, Industry and Energy Awards · ACE² Lab, KNU"
+  cf.badge_2026:
+    ko: "2026 산업통상부장관상 (1위)"
+    en: "2026 Minister's Award (1st)"
+    ja: "2026 産業通商部長官賞 (1位)"
+    zh: "2026 产业通商部长官奖 (第1名)"
+  cf.badge_2025:
+    ko: "2025 산업통상부장관상 (1위)"
+    en: "2025 Minister's Award (1st)"
+    ja: "2025 産業通商部長官賞 (1位)"
+    zh: "2025 产业通商部长官奖 (第1名)"
+  cf.badge_2024:
+    ko: "2024 대상 · 롯데케미칼 대표이사상 (1위)"
+    en: "2024 Grand Prize · LOTTE Chemical CEO (1st)"
+    ja: "2024 大賞・ロッテケミカル代表理事賞 (1位)"
+    zh: "2024 大奖·乐天化学代表理事奖 (第1名)"
+  cf.badge_streak:
+    ko: "포스터 심화 부문 3년 연속 최고상"
+    en: "3-Yr Streak in Advanced Poster Track"
+    ja: "ポスター深化部門 3年連続最高賞"
+    zh: "海报深化组连续3年最高奖"
+  cf.act_timeline:
+    ko: "연도별 수상작 상세 보기"
+    en: "Awarded Projects (2024–2026)"
+    ja: "年度別受賞研究の詳細"
+    zh: "查看历年获奖项目详情"
+  cf.act_certs:
+    ko: "공식 상장 및 언론보도"
+    en: "Certificates & Press"
+    ja: "公式表彰状・メディア報道"
+    zh: "官方证书与媒体报道"
+  cf.act_news:
+    ko: "수상/언론보도 전체"
+    en: "All Awards & Press"
+    ja: "受賞・報道一覧"
+    zh: "全部获奖与报道"
+  cf.act_members:
+    ko: "연구실 구성원 보기"
+    en: "Meet Our Team"
+    ja: "研究室メンバーを見る"
+    zh: "查看团队成员"
+  cf.idx_overview:
+    ko: "대회 소개 및 3년 연속 석권 의의"
+    en: "Overview & Significance"
+    ja: "大会紹介と3年連続受賞の意義"
+    zh: "竞赛简介与三连冠意义"
+  cf.idx_timeline:
+    ko: "연도별 수상 연구과제 (2026·2025·2024)"
+    en: "Winning Projects (2026·2025·2024)"
+    ja: "年度別受賞課題 (2026·2025·2024)"
+    zh: "历年获奖课题 (2026·2025·2024)"
+  cf.idx_certs:
+    ko: "수상 상장 및 언론 보도"
+    en: "Certificates & Press"
+    ja: "表彰状・メディア報道"
+    zh: "获奖证书与媒体报道"
+  cf.idx_mentorship:
+    ko: "학부연구생 연구 교육 시스템"
+    en: "Undergraduate Research Pipeline"
+    ja: "学部生研究教育システム"
+    zh: "本科生科研培养体系"
+  cf.stat1_label:
+    ko: "전국 최고상 연속 수상"
+    en: "Consecutive Top National Honors"
+    ja: "全国最高賞連続受賞"
+    zh: "全国最高奖连续获奖"
+  cf.stat1_desc:
+    ko: "2024 대상 · 2025 장관상 · 2026 장관상"
+    en: "2024 Grand Prize · 2025 & 2026 Minister's Awards"
+    ja: "2024 大賞 · 2025・2026 長官賞"
+    zh: "2024 大奖 · 2025及2026 部长奖"
+  cf.stat2_label:
+    ko: "산업통상부장관상 (정부 훈격 1위)"
+    en: "Minister of Trade, Industry & Energy Awards"
+    ja: "産業通商部長官賞（政府表彰1位）"
+    zh: "产业通商部长官奖（政府最高奖）"
+  cf.stat2_desc:
+    ko: "2025·2026년 2년 연속 장관상 석권"
+    en: "Back-to-Back Minister's Awards in 2025 & 2026"
+    ja: "2025・2026年 2年連続長官賞"
+    zh: "2025与2026连续两年蝉联部长奖"
+  cf.stat3_label:
+    ko: "수상 배출 학부연구생"
+    en: "Awarded Undergraduate Researchers"
+    ja: "受賞学部生研究員"
+    zh: "获奖本科生科研助理"
+  cf.stat3_desc:
+    ko: "김경진·이종민·이동건·안재빈·김민수·김성우·김다윈·이동호"
+    en: "8 Undergraduate Researchers Trained in ACE² Lab"
+    ja: "ACE² Lab 所属学部生研究員 8名"
+    zh: "ACE² Lab 培养的8名本科生科研助理"
+  cf.stat4_label:
+    ko: "공동 지도교수 (Co-PIs)"
+    en: "Co-Principal Investigators"
+    ja: "共同指導教員 (Co-PIs)"
+    zh: "共同指导教授 (Co-PIs)"
+  cf.stat4_desc:
+    ko: "임창용 교수 · 김태욱 교수 밀착 지도"
+    en: "Profs. Changyong Yim & Taewook Kim"
+    ja: "Changyong Yim 教授 · Taewook Kim 教授"
+    zh: "Changyong Yim 教授 · Taewook Kim 教授"
+  cf.sec_overview:
+    ko: "한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 및 3년 연속 최고상 의의"
+    en: "About KIChE Chem Frontier & Significance of the 3-Year Consecutive Sweep"
+    ja: "韓国化学工学会 Chem Frontier 創意設計競進大会および3年連続最高賞の意義"
+    zh: "韩国化学工学会 Chem Frontier 创意设计竞赛及连续3年最高奖的意义"
+  cf.sec_timeline:
+    ko: "연도별 Chem Frontier(켐프론티어) 수상 연구과제 총람 (2026 · 2025 · 2024)"
+    en: "Chronological Showcase of Winning Research Projects (2026 · 2025 · 2024)"
+    ja: "年度別 Chem Frontier 受賞研究課題総覧 (2026 · 2025 · 2024)"
+    zh: "历年 Chem Frontier 获奖科研课题总览 (2026 · 2025 · 2024)"
+  cf.sec_certs:
+    ko: "공식 수상 상장 및 언론 보도 (Official Certificates & Press Coverage)"
+    en: "Official Certificates & Media Press Coverage"
+    ja: "公式表彰状およびメディア報道 (Official Certificates & Press Coverage)"
+    zh: "官方获奖证书与媒体报道 (Official Certificates & Press Coverage)"
+  cf.sec_mentorship:
+    ko: "ACE² Lab 학부연구생 연구 참여 및 대학원 연계 교육 시스템"
+    en: "ACE² Lab Undergraduate Research & Graduate Mentorship Pipeline"
+    ja: "ACE² Lab 学部生研究参加および大学院連携教育システム"
+    zh: "ACE² Lab 本科生科研参与及本硕博贯通培养体系"
 
   news.idx_latest:
     ko: 최신 소식 (Latest)
