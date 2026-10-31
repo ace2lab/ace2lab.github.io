@@ -4662,6 +4662,166 @@ html[data-theme="dark"] .ed-pillar__crosslink {
 }
 
 /* ------------------------------------------------------------
+   Chem Frontier — 2026 finals field (overview highlight + university chip grid)
+   ------------------------------------------------------------ */
+.cf-competition-highlight {
+  margin: 0 0 var(--ed-s5, 1.25rem);
+  padding: 0.9rem 1.1rem;
+  background: rgba(217, 83, 15, 0.06);
+  border: 1px solid rgba(217, 83, 15, 0.28);
+  border-left: 4px solid #d9530f;
+  border-radius: 8px;
+}
+
+html[data-theme="dark"] .cf-competition-highlight {
+  background: rgba(243, 112, 33, 0.1);
+  border-color: rgba(243, 112, 33, 0.35);
+  border-left-color: #ff9248;
+}
+
+.cf-competition-highlight__title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--ed-ink, #0f172a);
+}
+
+.cf-competition-highlight__title i {
+  margin-top: 0.2rem;
+  color: #d9530f;
+}
+
+html[data-theme="dark"] .cf-competition-highlight__title i {
+  color: #ff9248;
+}
+
+.cf-competition-highlight__desc {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--ed-text, #334155);
+}
+
+.cf-field-container {
+  margin: 0 0 var(--ed-s6, 1.5rem);
+  padding: var(--ed-s5, 1.25rem);
+  background: var(--global-code-bg-color, #f8fafc);
+  border: 1px solid var(--ed-line, #e2e8f0);
+  border-radius: 8px;
+}
+
+.cf-field-container .ed-pillar__section-title {
+  margin-top: 0;
+}
+
+.cf-field-container > .ed-pillar__topic-body {
+  margin-bottom: var(--ed-s4, 1rem);
+}
+
+.cf-field-group + .cf-field-group {
+  margin-top: var(--ed-s4, 1rem);
+}
+
+.cf-field-category {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ed-muted, #64748b);
+}
+
+.cf-field-category__count {
+  padding: 0 0.5rem;
+  font-family: var(--font-mono-meta);
+  font-size: var(--fs-label);
+  color: var(--ed-text, #334155);
+  border: 1px solid var(--ed-line, #e2e8f0);
+  border-radius: 999px;
+}
+
+.cf-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--ed-text, #334155);
+  background: var(--global-card-bg-color, #ffffff);
+  border: 1px solid var(--ed-line, #e2e8f0);
+  border-radius: 999px;
+}
+
+html[data-theme="dark"] .cf-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.cf-chip--winner {
+  font-weight: 700;
+  color: #8a0f31;
+  background: rgba(163, 18, 58, 0.08);
+  border-color: #a3123a;
+}
+
+html[data-theme="dark"] .cf-chip--winner {
+  color: #ffd1dc;
+  background: rgba(255, 122, 150, 0.16);
+  border-color: rgba(255, 122, 150, 0.55);
+}
+
+.cf-chip--winner i {
+  font-size: 0.8125rem;
+}
+
+.cf-chip__tag {
+  padding: 0 0.45rem;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  color: #ffffff;
+  background: #a3123a;
+  border-radius: 999px;
+}
+
+html[data-theme="dark"] .cf-chip__tag {
+  color: #3b0a17;
+  background: #ff9db3;
+}
+
+.cf-field-note {
+  margin: var(--ed-s4, 1rem) 0 0;
+  font-size: var(--fs-label);
+  line-height: 1.5;
+  color: var(--ed-muted, #64748b);
+}
+
+@media (max-width: 520px) {
+  .cf-field-container {
+    padding: var(--ed-s4, 1rem);
+  }
+
+  .cf-chip {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ------------------------------------------------------------
    Funding acknowledgment & press coverage (publications, awards)
    ------------------------------------------------------------ */
 .ed-entry__funding {
