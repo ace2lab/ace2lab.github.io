@@ -18,8 +18,8 @@ ace2_editorial: true
 ---
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-crown" aria-hidden="true"></i> <span data-i18n="cf.badge_2026">2026 산업통상부장관상 (1위)</span></span>
-<span class="hero-badge"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="cf.badge_2025">2025 산업통상부장관상 (1위)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-crown" aria-hidden="true"></i> <span data-i18n="cf.badge_2026">2026 산업통상부장관상 (전국 1위)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="cf.badge_2025">2025 산업통상부장관상 (전국 1위)</span></span>
 <span class="hero-badge"><i class="fa-solid fa-medal" aria-hidden="true"></i> <span data-i18n="cf.badge_2024">2024 대상 · 롯데케미칼 대표이사상 (전국 2위)</span></span>
 <span class="hero-badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="cf.badge_streak">포스터 심화 부문 3년 연속 최상위 입상</span></span>
 {% endcapture %}
@@ -57,7 +57,7 @@ ace2_editorial: true
         <div class="lab-stat-card__icon"><i class="fa-solid fa-trophy" aria-hidden="true"></i></div>
         <div class="lab-stat-card__number">3년 연속</div>
         <div class="lab-stat-card__label" data-i18n="cf.stat1_label">전국 최상위 입상 연속 수상</div>
-        <div class="lab-stat-card__desc" data-i18n="cf.stat1_desc">2026·2025 장관상(1위) · 2024 대상(2위)</div>
+        <div class="lab-stat-card__desc" data-i18n="cf.stat1_desc">2026·2025 장관상(전국 1위) · 2024 대상(전국 2위)</div>
       </div>
       <div class="lab-stat-card">
         <div class="lab-stat-card__icon"><i class="fa-solid fa-crown" aria-hidden="true"></i></div>
@@ -467,7 +467,7 @@ ace2_editorial: true
           </p>
         </div>
         <div class="course-card__footer">
-          <span><i class="fa-solid fa-trophy" aria-hidden="true"></i> 2026·2025 장관상(1위) · 2024 대상(2위)</span>
+          <span><i class="fa-solid fa-trophy" aria-hidden="true"></i> 2026·2025 장관상(전국 1위) · 2024 대상(전국 2위)</span>
           <a href="{{ '/publications/' | relative_url }}#talks">학회 발표 실적 →</a>
         </div>
       </div>

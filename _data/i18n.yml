@@ -1457,18 +1457,18 @@ ui:
     ja: "2025 & 2026 Minister of Trade, Industry and Energy Awards (National 1st) · 2024 Grand Prize, LOTTE Chemical CEO Award (National 2nd) · ACE² Lab, KNU"
     zh: "2025 & 2026 Minister of Trade, Industry and Energy Awards (National 1st) · 2024 Grand Prize, LOTTE Chemical CEO Award (National 2nd) · ACE² Lab, KNU"
   cf.badge_2026:
-    ko: "2026 산업통상부장관상 (1위)"
-    en: "2026 Minister's Award (1st)"
-    ja: "2026 産業通商部長官賞 (1位)"
-    zh: "2026 产业通商部长官奖 (第1名)"
+    ko: "2026 산업통상부장관상 (전국 1위)"
+    en: "2026 Minister's Award (National 1st)"
+    ja: "2026 産業通商部長官賞 (全国1位)"
+    zh: "2026 产业通商部长官奖 (全国第1名)"
   cf.badge_2025:
-    ko: "2025 산업통상부장관상 (1위)"
-    en: "2025 Minister's Award (1st)"
-    ja: "2025 産業通商部長官賞 (1位)"
-    zh: "2025 产业通商部长官奖 (第1名)"
+    ko: "2025 산업통상부장관상 (전국 1위)"
+    en: "2025 Minister's Award (National 1st)"
+    ja: "2025 産業通商部長官賞 (全国1位)"
+    zh: "2025 产业通商部长官奖 (全国第1名)"
   cf.badge_2024:
     ko: "2024 대상 · 롯데케미칼 대표이사상 (전국 2위)"
-    en: "2024 Grand Prize · LOTTE Chemical CEO Award (2nd)"
+    en: "2024 Grand Prize · LOTTE Chemical CEO Award (National 2nd)"
     ja: "2024 大賞・ロッテケミカル代表理事賞 (全国2位)"
     zh: "2024 大奖·乐天化学代表理事奖 (全国第2名)"
   cf.badge_streak:
@@ -1522,10 +1522,10 @@ ui:
     ja: "全国最上位入賞 連続受賞"
     zh: "全国最高荣誉连续获奖"
   cf.stat1_desc:
-    ko: "2026·2025 장관상(1위) · 2024 대상(2위)"
-    en: "2026 & 2025 Minister's Awards (1st) · 2024 Grand Prize (2nd)"
-    ja: "2026・2025 長官賞 (1位) · 2024 大賞 (2位)"
-    zh: "2026及2025 部长奖（第1名）· 2024 大奖（第2名）"
+    ko: "2026·2025 장관상(전국 1위) · 2024 대상(전국 2위)"
+    en: "2026 & 2025 Minister's Awards (National 1st) · 2024 Grand Prize (National 2nd)"
+    ja: "2026・2025 長官賞 (全国1位) · 2024 大賞 (全国2位)"
+    zh: "2026及2025 部长奖（全国第1名）· 2024 大奖（全国第2名）"
   cf.stat2_label:
     ko: "산업통상부장관상 (전국 1위)"
     en: "Minister of Trade, Industry & Energy Awards (National 1st)"
