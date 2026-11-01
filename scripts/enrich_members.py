@@ -22,12 +22,11 @@ for m in members:
         m["email"] = "cy.yim@knu.ac.kr"
         m["photo"] = "assets/img/team/changyong_yim_portrait.jpg"
         m["topics"] = [
-            "Pulsed Light Processing (IPL)",
-            "Laser-Induced Graphene (LIG)",
-            "MXene & MOF Nanocomposites",
+            "Intense Pulsed Light Processing",
+            "2D Nanomaterials & Interfaces",
             "Supercapacitors & Battery Anodes",
-            "Flexible Respiration & Gas Sensors",
-            "Colloidal Quantum Dots"
+            "Flexible Bio & Gas Sensors",
+            "Photothermal Surface Engineering"
         ]
         m["links"] = {
             "email": "cy.yim@knu.ac.kr",
@@ -41,7 +40,7 @@ for m in members:
             "캐나다 캘거리대학교(University of Calgary) 기계생산공학과 Eyes-High 박사후연구원, "
             "삼성전자 무선사업부 Staff Engineer(모바일 헬스케어 센서 H/W 개발), "
             "포항산업과학연구원(RIST) 미세먼지연구센터 수석연구원을 거쳐 경북대학교 에너지화학공학과 부교수로 재직 중입니다. "
-            "극한 광-물질 상호작용 기반의 초고속 광열 나노제조(IPL·LIG) 공정과 원자층 2차원 계면 엔지니어링을 바탕으로 "
+            "극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 계면 엔지니어링을 바탕으로 "
             "차세대 고출력·고밀도 에너지 저장 소자와 지능형 유연 바이오·가스 센싱 플랫폼 연구를 이끌고 있습니다."
         )
     elif m.get("id") == "taewook-kim":

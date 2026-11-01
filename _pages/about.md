@@ -5,7 +5,7 @@ permalink: /
 subtitle: Advanced Chemical & Energy Engineering Laboratory | KNU
 description: >-
   경북대학교(경북대) 에너지화학공학과 차세대 화학 및 에너지 공학 연구실(ACE² Lab, 임창용·김태욱 교수).
-  화학공학·에너지공학 융합 이차전지·슈퍼커패시터, 광열(IPL) 나노공정, MXene 유연 센서를 연구하며 학부연구생 및 대학원생을 모집합니다. 한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위(산업통상부장관상) 수상.
+  화학공학·에너지공학 융합 이차전지·슈퍼커패시터, 초고속 펄스광(Intense Pulsed Light) 나노제조, 2D 나노소재 유연 센서를 연구하며 학부연구생 및 대학원생을 모집합니다. 한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위(산업통상부장관상) 수상.
 
 selected_papers: false # Option B: rendered in-body dual-column grid
 social: false # clean academic minimalism
@@ -22,9 +22,9 @@ ace2_editorial: true
 
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="hero.home.badge_es">에너지 저장 소재</span></span>
-<span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="hero.home.badge_ipl">고강도 펄스광 (IPL)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="hero.home.badge_ipl">초고속 펄스광 (Intense Pulsed Light)</span></span>
 <span class="hero-badge"><i class="fa-solid fa-microchip" aria-hidden="true"></i> <span data-i18n="hero.home.badge_sensors">유연 생체·환경 센서</span></span>
-<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span data-i18n="hero.home.badge_mxene">2D MXene &amp; MOFs</span></span>
+<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span data-i18n="hero.home.badge_mxene">원자층 2D 나노소재</span></span>
 {% endcapture %}
 
 {% capture hero_actions %}
@@ -90,7 +90,7 @@ ace2_editorial: true
 <section class="lab-about" aria-labelledby="about-lab-title">
   <h2 id="about-lab-title" class="lab-about__title" data-i18n="home.about.title">연구실 소개 (About the Laboratory)</h2>
   <p class="lab-about__lead" data-i18n="home.about.lead">
-    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 극한 광-물질 상호작용 기반의 초고속 광열 나노제조(IPL·LIG) 공정과 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 에너지 저장 소자(이차전지·슈퍼커패시터) 및 고감도 유연 생체·환경 센서를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다.
+    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 에너지 저장 소자(이차전지·슈퍼커패시터) 및 고감도 유연 생체·환경 센서를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다.
   </p>
 
   <div class="lab-about__pillars">
@@ -102,7 +102,7 @@ ace2_editorial: true
     <a href="#area-02" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
       <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p2_title">초고속 광열 나노공정</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
-      <p class="lab-about__pillar-desc" data-i18n="home.about.p2_desc">초고속 펄스광(IPL) 광열 소결·표면 개질과 레이저 유도 그래핀(LIG) 나노패터닝 및 유연 전극 공정</p>
+      <p class="lab-about__pillar-desc" data-i18n="home.about.p2_desc">초고속 펄스광(Intense Pulsed Light) 기반 비평형 광열 소결·표면 개질 및 고전도성 유연 전극 나노공정</p>
     </a>
     <a href="#area-03" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
@@ -279,11 +279,11 @@ ace2_editorial: true
     <div class="research-card__content">
       <h3 class="research-card__title" data-i18n="home.about.p2_title">초고속 광열 나노공정</h3>
       <div class="research-card__desc" data-i18n="home.areas.c2_desc">
-        초고속 제논 플래시 펄스광(IPL) 열처리를 활용한 저온·밀리초 급 나노소재 소결·표면 결함 제어 및 레이저 유도 그래핀(LIG) 유연 전극 직접 공정.
+        초고속 펄스광(Intense Pulsed Light) 열처리를 활용한 저온·밀리초 급 나노소재 소결·표면 결함 제어 및 고전도성 유연 전극 직접 공정.
       </div>
       <div class="research-card__topics">
-        <span class="research-topic-chip">IPL Processing</span>
-        <span class="research-topic-chip">Laser-Induced Graphene</span>
+        <span class="research-topic-chip">Intense Pulsed Light</span>
+        <span class="research-topic-chip">Photothermal Engineering</span>
         <span class="research-topic-chip">Roll-to-Roll</span>
       </div>
     </div>
@@ -306,10 +306,10 @@ ace2_editorial: true
     <div class="research-card__content">
       <h3 class="research-card__title" data-i18n="home.about.p3_title">유연 센서 및 스마트 소자</h3>
       <div class="research-card__desc" data-i18n="home.areas.c3_desc">
-        MXene·레이저 유도 그래핀(LIG) 기반 고감도 유연 촉각·호흡 센서 및 머신러닝 결합 나노 전자코(E-nose) 호기·환경 가스 모니터링 소자.
+        원자층 2D 나노소재 기반 고감도 유연 촉각·호흡 센서 및 머신러닝 결합 나노 전자코(E-nose) 호기·환경 가스 모니터링 소자.
       </div>
       <div class="research-card__topics">
-        <span class="research-topic-chip">Tactile &amp; LIG Sensors</span>
+        <span class="research-topic-chip">Tactile &amp; Respiration Sensors</span>
         <span class="research-topic-chip">AI E-Nose</span>
         <span class="research-topic-chip">Bio-Environmental</span>
       </div>

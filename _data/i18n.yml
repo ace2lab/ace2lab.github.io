@@ -138,20 +138,20 @@ ui:
     ja: エネルギー貯蔵
     zh: 能量存储材料
   hero.home.badge_ipl:
-    ko: 고강도 펄스광 (IPL)
-    en: Intense Pulsed Light (IPL)
-    ja: 高強度パルス光 (IPL)
-    zh: 强脉冲光 (IPL)
+    ko: 초고속 펄스광 (Intense Pulsed Light)
+    en: Intense Pulsed Light
+    ja: 超高速パルス光 (Intense Pulsed Light)
+    zh: 超快强脉冲光 (Intense Pulsed Light)
   hero.home.badge_sensors:
     ko: 유연 생체·환경 센서
     en: Flexible Sensors
     ja: フレキシブルセンサー
     zh: 柔性传感器
   hero.home.badge_mxene:
-    ko: 2D MXene & MOFs
-    en: 2D MXene & MOFs
-    ja: 2D MXene & MOFs
-    zh: 2D MXene & MOFs
+    ko: 원자층 2D 나노소재
+    en: 2D Nanomaterials
+    ja: 原子層2次元ナノ材料
+    zh: 原子级二维纳米材料
   hero.home.act_research:
     ko: 핵심 연구분야
     en: Research Areas
@@ -234,10 +234,10 @@ ui:
     ja: 研究室紹介 (About the Laboratory)
     zh: 实验室简介 (About the Laboratory)
   home.about.lead:
-    ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 극한 광-물질 상호작용 기반의 초고속 광열 나노제조(IPL·LIG) 공정과 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 에너지 저장 소자(이차전지·슈퍼커패시터) 및 고감도 유연 생체·환경 센서를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다."
-    en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By integrating extreme light-matter interactions and ultrafast photonic nanomanufacturing (IPL and LIG) with atomically thin 2D materials and functional nanoarchitecture control, we develop high-power, high-energy-density storage devices (batteries and hybrid supercapacitors) alongside ultrasensitive flexible bio and environmental sensors, winning two consecutive national 1st-place Minister of Trade, Industry and Energy Awards (2025–2026) and placing among the top honors at the KIChE Chem Frontier competition for three consecutive years (2024–2026)."
-    ja: "ACE² Lab（次世代化学・エネルギー工学研究室）は、慶北大学校 科学技術学部 エネルギー化学工学科において Changyong Yim 教授と Taewook Kim 教授が共同研究責任者（Co-PIs）として主宰する融合ナノ化学・エネルギー工学研究室です。極限の光-物質相互作用に基づく超高速光熱ナノ製造（IPL・LIG）プロセスと原子層2次元材料および機能性ナノアーキテクチャ制御を融合し、高出力・高エネルギー密度貯蔵素子（二次電池・スーパーキャパシタ）および高感度フレキシブル生体・環境センサーを開発しており、韓国化学工学会 Chem Frontier にて2年連続全国1位（2025・2026年 産業通商部長官賞）、3年連続最上位入賞（2024年 大賞を含む）を達成しています。"
-    zh: "ACE² Lab（先进化学与能源工程实验室）是庆北大学 科学技术学院 能源化学工程系由 Changyong Yim 教授与 Taewook Kim 教授共同担任课题组负责人（Co-PIs）的交叉纳米化学与能源工程实验室。实验室将基于极端光-物质相互作用的超快光热纳米制造（IPL与LIG）工艺同原子级二维材料及功能纳米构型调控深度融合，致力于开发高功率、高能量密度储能器件（二次电池与超级电容器）及高灵敏柔性生理与环境传感器件，并在韩国化学工学会 Chem Frontier 竞赛中连续2年荣获全国第一（2025、2026年产业通商部部长奖），连续3年跻身最高荣誉行列（含2024年大奖）。"
+    ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 에너지 저장 소자(이차전지·슈퍼커패시터) 및 고감도 유연 생체·환경 센서를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다."
+    en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By integrating extreme light-matter interactions and ultrafast Intense Pulsed Light nanomanufacturing with atomically thin 2D materials and functional nanoarchitecture control, we develop high-power, high-energy-density storage devices (batteries and hybrid supercapacitors) alongside ultrasensitive flexible bio and environmental sensors, winning two consecutive national 1st-place Minister of Trade, Industry and Energy Awards (2025–2026) and placing among the top honors at the KIChE Chem Frontier competition for three consecutive years (2024–2026)."
+    ja: "ACE² Lab（次世代化学・エネルギー工学研究室）は、慶北大学校 科学技術学部 エネルギー化学工学科において Changyong Yim 教授と Taewook Kim 教授が共同研究責任者（Co-PIs）として主宰する融合ナノ化学・エネルギー工学研究室です。極限の光-物質相互作用に基づく超高速パルス光（Intense Pulsed Light）ナノ製造プロセスと原子層2次元材料および機能性ナノアーキテクチャ制御を融合し、高出力・高エネルギー密度貯蔵素子（二次電池・スーパーキャパシタ）および高感度フレキシブル生体・環境センサーを開発しており、韓国化学工学会 Chem Frontier にて2年連続全国1位（2025・2026年 産業通商部長官賞）、3年連続最上位入賞（2024年 大賞を含む）を達成しています。"
+    zh: "ACE² Lab（先进化学与能源工程实验室）是庆北大学 科学技术学院 能源化学工程系由 Changyong Yim 教授与 Taewook Kim 教授共同担任课题组负责人（Co-PIs）的交叉纳米化学与能源工程实验室。实验室将基于极端光-物质相互作用的超快强脉冲光（Intense Pulsed Light）纳米制造工艺同原子级二维材料及功能纳米构型调控深度融合，致力于开发高功率、高能量密度储能器件（二次电池与超级电容器）及高灵敏柔性生理与环境传感器件，并在韩国化学工学会 Chem Frontier 竞赛中连续2年荣获全国第一（2025、2026年产业通商部部长奖），连续3年跻身最高荣誉行列（含2024年大奖）。"
   home.about.p1_title:
     ko: "에너지 저장 및 기능성 소재"
     en: "Energy Storage & Materials"
@@ -254,10 +254,10 @@ ui:
     ja: "超高速光熱ナノ製造プロセス"
     zh: "超快光热纳米制造工艺"
   home.about.p2_desc:
-    ko: "초고속 펄스광(IPL) 광열 소결·표면 개질과 레이저 유도 그래핀(LIG) 나노패터닝 및 유연 전극 공정"
-    en: "Millisecond Intense Pulsed Light (IPL) photothermal sintering, surface defect engineering, and Laser-Induced Graphene (LIG) flexible electrode patterning"
-    ja: "超高速フラッシュ光（IPL）光熱焼結・表面改質とレーザー誘起グラフェン（LIG）ナノパターニングおよび柔軟電極プロセス"
-    zh: "超快强脉冲光（IPL）光热烧结与表面改性，以及激光诱导石墨烯（LIG）纳米图案化与柔性电极工艺"
+    ko: "초고속 펄스광(Intense Pulsed Light) 기반 비평형 광열 소결·표면 개질 및 고전도성 유연 전극 나노공정"
+    en: "Millisecond Intense Pulsed Light photothermal sintering, surface defect engineering, and flexible electrode nanomanufacturing"
+    ja: "超高速パルス光（Intense Pulsed Light）に基づく非平衡光熱焼結・表面改質および高導電性フレキシブル電極ナノプロセス"
+    zh: "基于超快强脉冲光（Intense Pulsed Light）的非平衡光热烧结、表面改性及高导电柔性电极纳米工艺"
   home.about.p3_title:
     ko: "유연 센서 및 스마트 소자"
     en: "Sensors & Devices"
@@ -306,15 +306,15 @@ ui:
     ja: "次世代ハイブリッドコインセル型スーパーキャパシタおよび多孔質MXene/TiO₂複合材料リチウムイオン電池負極の設計。高出力・高エネルギー密度電気化学素子の実現。"
     zh: "设计下一代混合纽扣超级电容器与多孔 MXene/TiO₂ 纳米复合材料锂离子电池负极，实现高功率、高能量密度电化学器件。"
   home.areas.c2_desc:
-    ko: "초고속 제논 플래시 펄스광(IPL) 열처리를 활용한 저온·밀리초 급 나노소재 소결·표면 결함 제어 및 레이저 유도 그래핀(LIG) 유연 전극 직접 공정."
-    en: "Low-temperature, millisecond-scale nanomaterial sintering and surface defect control via xenon Intense Pulsed Light (IPL) alongside direct Laser-Induced Graphene (LIG) flexible electrode patterning."
-    ja: "超高速キセノンフラッシュ光（IPL）熱処理を活用した低温・ミリ秒級ナノ材料焼結・表面欠陥制御、およびレーザー誘起グラフェン（LIG）柔軟電極の直接加工プロセス。"
-    zh: "利用超快氙灯强脉冲光（IPL）热处理实现低温毫秒级纳米材料烧结与表面缺陷调控，以及激光诱导石墨烯（LIG）柔性电极直写工艺。"
+    ko: "초고속 펄스광(Intense Pulsed Light) 열처리를 활용한 저온·밀리초 급 나노소재 소결·표면 결함 제어 및 고전도성 유연 전극 직접 공정."
+    en: "Low-temperature, millisecond-scale nanomaterial sintering, interfacial defect control, and flexible electrode nanomanufacturing via Intense Pulsed Light."
+    ja: "超高速パルス光（Intense Pulsed Light）熱処理を活用した低温・ミリ秒級ナノ材料焼結・表面欠陥制御、および高導電性柔軟電極直接加工プロセス。"
+    zh: "利用超快强脉冲光（Intense Pulsed Light）热处理实现低温毫秒级纳米材料烧结、表面缺陷调控及高导电柔性电极直写工艺。"
   home.areas.c3_desc:
-    ko: "MXene·레이저 유도 그래핀(LIG) 기반 고감도 유연 촉각·호흡 센서 및 머신러닝 결합 나노 전자코(E-nose) 호기·환경 가스 모니터링 소자."
-    en: "High-sensitivity MXene and Laser-Induced Graphene (LIG) flexible tactile/respiration sensors and machine-learning-coupled nanostructured E-nose exhaled breath and gas monitors."
-    ja: "MXene・レーザー誘起グラフェン（LIG）に基づく高感度柔軟触覚・呼吸センサー、および機械学習を融合したナノ電子鼻（E-nose）呼気・環境ガスモニタリング素子。"
-    zh: "基于 MXene 与激光诱导石墨烯（LIG）的高灵敏柔性触觉与呼吸传感器，以及结合机器学习的纳米电子鼻（E-nose）呼气与环境气体监测器件。"
+    ko: "원자층 2D 나노소재 기반 고감도 유연 촉각·호흡 센서 및 머신러닝 결합 나노 전자코(E-nose) 호기·환경 가스 모니터링 소자."
+    en: "High-sensitivity flexible tactile and respiration sensors engineered with atomically thin 2D nanomaterials and machine-learning-coupled nanostructured E-nose exhaled breath and gas monitors."
+    ja: "原子層2次元ナノ材料に基づく高感度柔軟触覚・呼吸センサー、および機械学習を融合したナノ電子鼻（E-nose）呼気・環境ガスモニタリング素子。"
+    zh: "基于原子级二维纳米材料的高灵敏柔性触觉与呼吸传感器，以及结合机器学习的纳米电子鼻（E-nose）呼气与环境气体监测器件。"
 
   home.news.title:
     ko: 최근 소식 (Latest News)
