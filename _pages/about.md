@@ -90,14 +90,14 @@ ace2_editorial: true
 <section class="lab-about" aria-labelledby="about-lab-title">
   <h2 id="about-lab-title" class="lab-about__title" data-i18n="home.about.title">연구실 소개 (About the Laboratory)</h2>
   <p class="lab-about__lead" data-i18n="home.about.lead">
-    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·다공성 MOF·금속 산화물 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다.
+    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 극한 광-물질 상호작용 기반의 초고속 광열 나노제조(IPL·LIG) 공정과 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 에너지 저장 소자(이차전지·슈퍼커패시터) 및 고감도 유연 생체·환경 센서를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다.
   </p>
 
   <div class="lab-about__pillars">
     <a href="#area-01" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
       <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p1_title">에너지 저장 및 기능성 소재</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
-      <p class="lab-about__pillar-desc" data-i18n="home.about.p1_desc">MXene·MOF 복합소재 기반 하이브리드 슈퍼커패시터, 차세대 이차전지 음극 및 환경 촉매 소재</p>
+      <p class="lab-about__pillar-desc" data-i18n="home.about.p1_desc">원자층 2차원 나노구조 및 다공성 나노아키텍처 기반 하이브리드 슈퍼커패시터, 차세대 전지 음극 및 환경 촉매 소재</p>
     </a>
     <a href="#area-02" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>

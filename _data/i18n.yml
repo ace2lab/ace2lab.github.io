@@ -234,20 +234,20 @@ ui:
     ja: 研究室紹介 (About the Laboratory)
     zh: 实验室简介 (About the Laboratory)
   home.about.lead:
-    ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 초고속 펄스광(IPL)·레이저 유도 그래핀(LIG) 기반 나노공정과 2차원 MXene·다공성 MOF·금속 산화물 등 기능성 나노소재 설계를 결합하여, 고성능 이차전지·슈퍼커패시터 및 고감도 유연 생체·환경 센서 소자를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다."
-    en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By combining Intense Pulsed Light (IPL) and Laser-Induced Graphene (LIG) nanomanufacturing with 2D MXene, porous MOF, and metal-oxide nanomaterial design, we develop high-performance rechargeable batteries, hybrid supercapacitors, environmental catalysts, and flexible bio-environmental sensors, winning two consecutive national 1st-place Minister of Trade, Industry and Energy Awards (2025–2026) and placing among the top honors at the KIChE Chem Frontier competition for three consecutive years (2024–2026)."
-    ja: "ACE² Lab（次世代化学・エネルギー工学研究室）は、慶北大学校 科学技術学部 エネルギー化学工学科において Changyong Yim 教授と Taewook Kim 教授が共同研究責任者（Co-PIs）として主宰する融合ナノ化学・エネルギー工学研究室です。超高速フラッシュ光（IPL）・レーザー誘起グラフェン（LIG）に基づくナノ製造プロセスと、2次元MXene・多孔質MOF・金属酸化物などの機能性ナノ材料設計を融合し、高性能二次電池・スーパーキャパシタおよび高感度フレキシブル生体・環境センサー素子を開発しており、韓国化学工学会 Chem Frontier にて2年連続全国1位（2025・2026年 産業通商部長官賞）、3年連続最上位入賞（2024年 大賞を含む）を達成しています。"
-    zh: "ACE² Lab（先进化学与能源工程实验室）是庆北大学 科学技术学院 能源化学工程系由 Changyong Yim 教授与 Taewook Kim 教授共同担任课题组负责人（Co-PIs）的交叉纳米化学与能源工程实验室。实验室将强脉冲光（IPL）与激光诱导石墨烯（LIG）纳米制造工艺同二维 MXene、多孔 MOF 及金属氧化物等功能纳米材料设计相结合，致力于开发高性能二次电池、混合超级电容器、环境催化剂及高灵敏柔性生物与环境传感器件，并在韩国化学工学会 Chem Frontier 竞赛中连续2年荣获全国第一（2025、2026年产业通商部部长奖），连续3年跻身最高荣誉行列（含2024年大奖）。"
+    ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 극한 광-물질 상호작용 기반의 초고속 광열 나노제조(IPL·LIG) 공정과 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 에너지 저장 소자(이차전지·슈퍼커패시터) 및 고감도 유연 생체·환경 센서를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다."
+    en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By integrating extreme light-matter interactions and ultrafast photonic nanomanufacturing (IPL and LIG) with atomically thin 2D materials and functional nanoarchitecture control, we develop high-power, high-energy-density storage devices (batteries and hybrid supercapacitors) alongside ultrasensitive flexible bio and environmental sensors, winning two consecutive national 1st-place Minister of Trade, Industry and Energy Awards (2025–2026) and placing among the top honors at the KIChE Chem Frontier competition for three consecutive years (2024–2026)."
+    ja: "ACE² Lab（次世代化学・エネルギー工学研究室）は、慶北大学校 科学技術学部 エネルギー化学工学科において Changyong Yim 教授と Taewook Kim 教授が共同研究責任者（Co-PIs）として主宰する融合ナノ化学・エネルギー工学研究室です。極限の光-物質相互作用に基づく超高速光熱ナノ製造（IPL・LIG）プロセスと原子層2次元材料および機能性ナノアーキテクチャ制御を融合し、高出力・高エネルギー密度貯蔵素子（二次電池・スーパーキャパシタ）および高感度フレキシブル生体・環境センサーを開発しており、韓国化学工学会 Chem Frontier にて2年連続全国1位（2025・2026年 産業通商部長官賞）、3年連続最上位入賞（2024年 大賞を含む）を達成しています。"
+    zh: "ACE² Lab（先进化学与能源工程实验室）是庆北大学 科学技术学院 能源化学工程系由 Changyong Yim 教授与 Taewook Kim 教授共同担任课题组负责人（Co-PIs）的交叉纳米化学与能源工程实验室。实验室将基于极端光-物质相互作用的超快光热纳米制造（IPL与LIG）工艺同原子级二维材料及功能纳米构型调控深度融合，致力于开发高功率、高能量密度储能器件（二次电池与超级电容器）及高灵敏柔性生理与环境传感器件，并在韩国化学工学会 Chem Frontier 竞赛中连续2年荣获全国第一（2025、2026年产业通商部部长奖），连续3年跻身最高荣誉行列（含2024年大奖）。"
   home.about.p1_title:
     ko: "에너지 저장 및 기능성 소재"
     en: "Energy Storage & Materials"
     ja: "エネルギー貯蔵・機能性材料"
     zh: "能量存储与功能材料"
   home.about.p1_desc:
-    ko: "MXene·MOF 복합소재 기반 하이브리드 슈퍼커패시터, 차세대 이차전지 음극 및 환경 촉매 소재"
-    en: "Hybrid supercapacitors, next-generation Li-ion battery anodes, and environmental catalysts based on MXene and MOF nanocomposites"
-    ja: "MXene・MOF複合材料に基づくハイブリッドスーパーキャパシタ、次世代二次電池負極および環境触媒材料"
-    zh: "基于 MXene 与 MOF 纳米复合材料的混合超级电容器、下一代二次电池负极及环境催化材料"
+    ko: "원자층 2차원 나노구조 및 다공성 나노아키텍처 기반 하이브리드 슈퍼커패시터, 차세대 전지 음극 및 환경 촉매 소재"
+    en: "Hybrid supercapacitors, next-generation battery anodes, and environmental catalysts engineered via atomically thin 2D nanostructures and porous nanoarchitectures"
+    ja: "原子層2次元ナノ構造および多孔質ナノアーキテクチャに基づくハイブリッドスーパーキャパシタ、次世代電池負極および環境触媒材料"
+    zh: "基于原子级二维纳米结构与多孔纳米构型的混合超级电容器、下一代电池负极及环境催化材料"
   home.about.p2_title:
     ko: "초고속 광열 나노공정"
     en: "Photonic Nanomanufacturing"
