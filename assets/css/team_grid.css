@@ -2213,9 +2213,68 @@ html[data-theme="dark"] .ach-item__tag--accepted {
   border-color: rgba(52, 211, 153, 0.5);
 }
 
+.ach-item__tag i {
+  font-size: 0.88em;
+}
+
+.ach-item__tag--oral {
+  color: #78350f;
+  background: #fef3c7;
+  border: 1px solid rgba(180, 83, 9, 0.25);
+}
+
+html[data-theme="dark"] .ach-item__tag--oral {
+  color: #fde68a;
+  background: rgba(251, 191, 36, 0.16);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.ach-item__tag--poster {
+  color: #064e3b;
+  background: #d1fae5;
+  border: 1px solid rgba(5, 150, 105, 0.28);
+}
+
+html[data-theme="dark"] .ach-item__tag--poster {
+  color: #a7f3d0;
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(52, 211, 153, 0.38);
+}
+
+.ach-item__tag--invited {
+  color: #5b21b6;
+  background: #ede9fe;
+  border: 1px solid rgba(109, 40, 217, 0.25);
+}
+
+html[data-theme="dark"] .ach-item__tag--invited {
+  color: #c4b5fd;
+  background: rgba(139, 92, 246, 0.16);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+}
+
 .ach-item__tag--award {
-  color: var(--tm-crimson);
-  background: var(--tm-crimson-soft);
+  color: #9f1239;
+  background: #ffe4e6;
+  border: 1px solid rgba(225, 29, 72, 0.28);
+}
+
+html[data-theme="dark"] .ach-item__tag--award {
+  color: #fda4af;
+  background: rgba(244, 63, 94, 0.16);
+  border: 1px solid rgba(251, 113, 133, 0.38);
+}
+
+.ach-item__tag--patent {
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 1px solid rgba(2, 132, 199, 0.28);
+}
+
+html[data-theme="dark"] .ach-item__tag--patent {
+  color: #7dd3fc;
+  background: rgba(14, 165, 233, 0.16);
+  border: 1px solid rgba(56, 189, 248, 0.38);
 }
 
 @keyframes ach-pop-in {

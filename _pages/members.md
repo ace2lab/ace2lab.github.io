@@ -305,18 +305,16 @@ ace2_team_grid: true
 {%- if ach_patents.size > 0 %}
 <section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_patents">특허</span> <span class="ach-group__count">{{ ach_patents.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_patents %}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag" data-i18n-term>{{ x.status | escape }}</span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · <span data-i18n-term>{{ x.country | escape }}</span>{% endif %}{% if x.app_number and x.app_number != blank %} (<span data-i18n-term>출원</span> {{ x.app_number | escape }}{% if x.app_date and x.app_date != blank %} · {{ x.app_date | escape }}{% endif %}){% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.status != blank %}<span class="ach-item__tag ach-item__tag--patent"><i class="fa-solid fa-certificate" aria-hidden="true"></i> <span data-i18n-term>{{ x.status | escape }}</span></span>{% endif %}{{ x.number | default: '' | escape }}{% if x.number != blank %} · {% endif %}{{ x.date | default: x.year | escape }}{% if x.country != blank %} · <span data-i18n-term>{{ x.country | escape }}</span>{% endif %}{% if x.app_number and x.app_number != blank %} (<span data-i18n-term>출원</span> {{ x.app_number | escape }}{% if x.app_date and x.app_date != blank %} · {{ x.app_date | escape }}{% endif %}){% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
 {%- if ach_awards.size > 0 %}
 <section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_awards">수상</span> <span class="ach-group__count">{{ ach_awards.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_awards %}
-{%- assign is_top_award = false -%}
-{%- if x.type contains '장관상' or x.type contains '대상' or x.issuer contains '장관' -%}{%- assign is_top_award = true -%}{%- endif -%}
 {%- assign hide_top_issuer = false -%}
 {%- if x.type contains '장관상' or x.type contains '대상' -%}{%- assign hide_top_issuer = true -%}{%- endif -%}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if is_top_award %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.type | escape }}</span></span>{% unless hide_top_issuer %}<span data-i18n-term>{{ x.issuer | escape }}</span> · {% endunless %}{{ x.date | escape }}{% else %}<span class="ach-item__tag" data-i18n-term>{{ x.type | escape }}</span><span data-i18n-term>{{ x.issuer | escape }}</span> · {{ x.date | escape }}{% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta"><span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.type | escape }}</span></span>{% unless hide_top_issuer %}<span data-i18n-term>{{ x.issuer | escape }}</span> · {% endunless %}{{ x.date | escape }}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
@@ -327,7 +325,16 @@ ace2_team_grid: true
 {%- assign p_lead = p_list | first | strip -%}
 {%- assign p_rest = p_list | slice: 1, p_list.size -%}
 {%- assign x_type_ko = site.data.i18n.terms[x.type].ko | default: x.type -%}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag" data-i18n-term data-orig-term="{{ x.type | escape }}">{{ x_type_ko | escape }}</span>{% endif %}{% if x.award and x.award != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.award | escape }}</span></span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if x.presenters != blank %} · <span class="ach-presenter--lead">{{ p_lead | escape }}</span>{%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}{% endif %}</p></li>
+{%- assign talk_cls = "ach-item__tag--oral" -%}
+{%- assign talk_ico = "fa-microphone" -%}
+{%- if x.type contains "Poster" or x.type contains "포스터" -%}
+  {%- assign talk_cls = "ach-item__tag--poster" -%}
+  {%- assign talk_ico = "fa-clipboard-list" -%}
+{%- elsif x.type contains "Invited" or x.type contains "초청" -%}
+  {%- assign talk_cls = "ach-item__tag--invited" -%}
+  {%- assign talk_ico = "fa-microphone-lines" -%}
+{%- endif -%}
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag {{ talk_cls }}"><i class="fa-solid {{ talk_ico }}" aria-hidden="true"></i> <span data-i18n-term data-orig-term="{{ x.type | escape }}">{{ x_type_ko | escape }}</span></span>{% endif %}{% if x.award and x.award != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.award | escape }}</span></span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if x.presenters != blank %} · <span class="ach-presenter--lead">{{ p_lead | escape }}</span>{%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
