@@ -23,7 +23,7 @@ ace2_team_grid: true
 {% assign n_ms = grads | where: "stat_role", "석사과정" | size %}
 {% assign n_res = grads | where: "stat_role", "연구원(석사)" | size %}
 {% assign n_joint = grads | where: "stat_role", "학연과정(석사)" | size %}
-{% assign alumni = site.data.members | where: "group", "alumni" | sort: "grad_year" | reverse %}
+{% assign alumni = site.data.members | where: "group", "alumni" | sort: "order" %}
 {% assign interns = site.data.interns %}
 {% assign intern_affiliations = interns | map: "affiliation" | uniq %}
 
