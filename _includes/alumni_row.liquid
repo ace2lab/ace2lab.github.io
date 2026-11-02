@@ -1,4 +1,9 @@
 {% assign a = include.alumni %}
+{% assign ach_papers = site.data.student_papers | where_exp: 'x', 'x.members contains a.name_ko' %}
+{% assign ach_patents = site.data.patents | where_exp: 'x', 'x.inventors contains a.name_ko' %}
+{% assign ach_awards = site.data.awards | where_exp: 'x', 'x.recipient contains a.name_ko' %}
+{% assign ach_talks = site.data.talks | where_exp: 'x', 'x.members contains a.name_ko' %}
+{% assign ach_total = ach_papers.size | plus: ach_patents.size | plus: ach_awards.size | plus: ach_talks.size %}
 
 <div class="alumni-row" id="{{ a.id }}">
   <div class="alumni-row__avatar-wrapper">
@@ -38,8 +43,25 @@
     </div>
     <div class="alumni-row__thesis">
       {% if a.thesis and a.thesis != '' -%}
-        <em data-i18n-term>{{ a.thesis }}</em>
+        <div class="alumni-row__thesis-title">
+          <em data-i18n-term>{{ a.thesis }}</em>
+        </div>
       {%- endif %}
+      {% if ach_total > 0 %}
+        <div class="alumni-row__ach-wrap">
+          <button
+            type="button"
+            class="member-card__ach-btn alumni-row__ach-btn"
+            data-ach-target="ach-{{ a.id }}"
+            data-ach-name="{{ a.name_ko | escape }}"
+            data-ach-name-en="{{ a.name_en | escape }}"
+            aria-haspopup="dialog"
+            aria-label="{{ a.name_ko }} 연구 실적 {{ ach_total }}건 보기"
+          >
+            <i class="fa-solid fa-award" aria-hidden="true"></i><span data-i18n-term>연구 실적 · {{ ach_total }}</span>
+          </button>
+        </div>
+      {% endif %}
     </div>
     <div class="alumni-row__now">
       <span class="alumni-row__arrow" aria-hidden="true">→</span>

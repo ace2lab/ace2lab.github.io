@@ -221,9 +221,23 @@ ace2_team_grid: true
         <span data-i18n="members.sec.alumni">졸업생 및 역대 연구원 (Proud Alumni)</span>
         <span class="team-section__count">{{ alumni.size }}</span>
       </h2>
-      <div class="alumni-list">
-        {% for a in alumni %}
-          {% include alumni_row.liquid alumni=a %}
+      {% assign alumni_by_year = alumni | group_by: "grad_year" %}
+      <div class="alumni-year-rail">
+        {% for year_group in alumni_by_year %}
+          <div class="alumni-year-group" id="alumni-class-{{ year_group.name }}">
+            <div class="alumni-year-header">
+              <h3 class="alumni-year-title">
+                <span class="alumni-year-title__year">{{ year_group.name }}</span>
+                <span class="alumni-year-title__label">Class</span>
+              </h3>
+              <span class="alumni-year-count">{{ year_group.items.size }}</span>
+            </div>
+            <div class="alumni-list">
+              {% for a in year_group.items %}
+                {% include alumni_row.liquid alumni=a %}
+              {% endfor %}
+            </div>
+          </div>
         {% endfor %}
       </div>
     </section>
@@ -284,7 +298,7 @@ ace2_team_grid: true
       <div class="ach-dialog__body" data-ach="body" tabindex="-1"></div>
     </div>
   </dialog>
-{%- assign ach_members = grads | concat: ugs -%}
+{%- assign ach_members = grads | concat: ugs | concat: alumni -%}
 {%- for m in ach_members -%}
 {%- assign ach_papers = site.data.student_papers | where_exp: 'x', 'x.members contains m.name_ko' -%}
 {%- assign ach_patents = site.data.patents | where_exp: 'x', 'x.inventors contains m.name_ko' -%}

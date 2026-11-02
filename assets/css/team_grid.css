@@ -1548,9 +1548,64 @@ html[data-theme="dark"] .pi-action:focus-visible {
    5. Alumni — photo + typographic row
    Grid: [portrait] [degree · name | thesis | → destination]
    ------------------------------------------------------------ */
+.alumni-year-rail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tm-s10);
+}
+
+.alumni-year-group {
+  scroll-margin-top: 8rem;
+}
+
+.alumni-year-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 var(--tm-s2) var(--tm-s2);
+  margin-bottom: 0;
+  border-bottom: 2px solid var(--tm-ink);
+}
+
+.alumni-year-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--tm-s2);
+  margin: 0;
+  font-family: var(--tm-font);
+  font-size: var(--tm-fs-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--tm-ink);
+}
+
+.alumni-year-title__year {
+  font-variant-numeric: tabular-nums;
+}
+
+.alumni-year-title__label {
+  font-size: var(--tm-fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tm-muted);
+}
+
+.alumni-year-count {
+  font-size: var(--tm-fs-xs);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--tm-muted);
+  font-variant-numeric: tabular-nums;
+}
+
 .alumni-list {
   border-top: 1px solid var(--tm-line);
   background: transparent;
+}
+
+.alumni-year-group .alumni-list {
+  border-top: 0;
 }
 
 .alumni-row {
@@ -1652,12 +1707,69 @@ html[data-theme="dark"] .pi-action:focus-visible {
   text-wrap: pretty;
 }
 
+.alumni-row__thesis-title {
+  line-height: 1.4;
+}
+
 .alumni-row__thesis i {
   display: none; /* icon is decoration; the italic quote already signals a title */
 }
 
 .alumni-row__thesis em {
   font-style: normal;
+}
+
+.alumni-row__ach-wrap {
+  margin-top: var(--tm-s2);
+  display: flex;
+  align-items: center;
+}
+
+.alumni-row__ach-wrap:first-child {
+  margin-top: 0;
+}
+
+.alumni-row__ach-btn {
+  margin: 0;
+  padding: 4px 10px;
+  min-height: 28px;
+  font-size: var(--tm-fs-2xs);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--tm-accent);
+  background: var(--tm-accent-soft);
+  border: 1px solid var(--tm-line-strong);
+  border-radius: 9999px;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.alumni-row__ach-btn:hover,
+.alumni-row__ach-btn:focus-visible {
+  color: var(--tm-ink);
+  background: rgba(30, 58, 95, 0.12);
+  border-color: var(--tm-accent);
+}
+
+.alumni-row__ach-btn:focus-visible {
+  outline: 2px solid var(--tm-accent);
+  outline-offset: 2px;
+}
+
+html[data-theme="dark"] .alumni-row__ach-btn {
+  color: var(--tm-accent);
+  background: rgba(157, 183, 217, 0.1);
+  border-color: var(--tm-line-strong);
+}
+
+html[data-theme="dark"] .alumni-row__ach-btn:hover,
+html[data-theme="dark"] .alumni-row__ach-btn:focus-visible {
+  color: #ffffff;
+  background: rgba(157, 183, 217, 0.2);
+  border-color: var(--tm-accent);
 }
 
 .alumni-row__now {
