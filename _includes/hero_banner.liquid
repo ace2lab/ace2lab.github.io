@@ -63,14 +63,25 @@
       {{ include.title }}
     </h1>
     {%- if include.subtitle and include.subtitle != '' %}
-      <p
-        class="ed-hero-banner__subtitle"
-        {% if i18n_pfx != '' %}
-          data-i18n="{{ i18n_pfx }}.subtitle"
-        {% endif %}
-      >
-        {{ include.subtitle | strip }}
-      </p>
+      {%- if hero_variant == 'home' %}
+        <h2
+          class="ed-hero-banner__subtitle"
+          {% if i18n_pfx != '' %}
+            data-i18n="{{ i18n_pfx }}.subtitle"
+          {% endif %}
+        >
+          {{ include.subtitle | strip }}
+        </h2>
+      {%- else %}
+        <p
+          class="ed-hero-banner__subtitle"
+          {% if i18n_pfx != '' %}
+            data-i18n="{{ i18n_pfx }}.subtitle"
+          {% endif %}
+        >
+          {{ include.subtitle | strip }}
+        </p>
+      {%- endif %}
     {%- endif %}
     {%- if include.subtitle_en and include.subtitle_en != '' %}
       <p
