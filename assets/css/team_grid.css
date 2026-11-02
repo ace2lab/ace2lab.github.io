@@ -1686,12 +1686,35 @@ html[data-theme="dark"] .pi-action:focus-visible {
 }
 
 .alumni-row__meta {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   font-size: var(--tm-fs-xs);
   color: var(--tm-muted);
   line-height: 1.4;
   margin-top: var(--tm-s1);
   letter-spacing: -0.01em;
+}
+
+.alumni-row__edu-line {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--tm-s1);
+}
+
+.alumni-row__edu-line--bs {
+  color: var(--tm-muted);
+  opacity: 0.9;
+}
+
+.alumni-row__edu-tag {
+  display: inline-block;
+  min-width: 2.1rem;
+  font-family: var(--font-mono-meta, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--tm-accent);
 }
 
 .alumni-row__joint {

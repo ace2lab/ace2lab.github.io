@@ -701,6 +701,7 @@
   name_en: Jaeho Lee
   degree: M.S.
   dept: KNU 에너지화학공학과
+  bs_dept: KNU 에너지화학공학과
   grad_year: 2026
   thesis: Synthesis of Cobalt Oxide @ Porous Carbon Nanofibers via Intense Pulsed
     Light for Supercapacitor Electrodes
@@ -716,6 +717,7 @@
   name_en: Huijin Lee
   degree: M.S.
   dept: KNU 미래과학기술융합학부 에너지·신소재화학공학전공
+  bs_dept: KNU 에너지화학공학과
   grad_year: 2026
   thesis: Synthesis of TiO₂/MXene Composite Photocatalyst via Intense Pulsed Light
     Processing for Organic Pollutant Removal
@@ -732,6 +734,7 @@
   aliases_en: ["Seong Gwang Lee"]
   degree: M.S.
   dept: KNU 에너지화학공학과
+  bs_dept: KNU 나노신소재공학과
   joint_inst: 한국생산기술연구원(울산본부)
   grad_year: 2026
   thesis: 적층제조된 SUS 316L의 미세조직에 따른 수소취화 저항성 변화
@@ -747,6 +750,7 @@
   name_en: Kyuhyun Park
   degree: M.S.
   dept: KNU 에너지화학공학과
+  bs_dept: KNU 에너지화학공학과
   joint_inst: 한국기계연구원(현풍)
   grad_year: 2025
   thesis: ""
@@ -762,6 +766,7 @@
   name_en: Changung Paeng
   degree: M.S.
   dept: KNU 미래과학기술융합학부 에너지·신소재화학공학전공
+  bs_dept: KNU 에너지화학공학과
   grad_year: 2025
   thesis: Rapid structuring of porous MXene via intense pulsed light for energy storage
     devices
@@ -777,6 +782,7 @@
   name_en: Junhyuck Ahn
   degree: M.S.
   dept: KNU 미래과학기술융합학부 에너지·신소재화학공학전공
+  bs_dept: KNU 에너지화학공학과
   grad_year: 2024
   thesis: 3D structured cobalt oxide via hydrothermal and instant heat treatment for
     supercapacitor electrodes

@@ -316,6 +316,30 @@ for (const b of alumniBlocks) {
       fail(`_data/i18n.yml missing required glossary term for alumni position '${pos}'.`);
     }
   }
+  const degMatch = b.match(/^\s+degree:\s*(.+)$/m);
+  const deg = degMatch ? degMatch[1].trim().replace(/^["\x27]|["\x27]$/g, "") : "";
+  const bsDeptMatch = b.match(/^\s+bs_dept:\s*(.+)$/m);
+  if (deg === "M.S.") {
+    if (!bsDeptMatch) {
+      fail(`_data/members.yml M.S. alumnus requires 'bs_dept'.`);
+    }
+  } else {
+    if (bsDeptMatch) {
+      fail(`_data/members.yml non-M.S. alumnus (${deg}) must not have 'bs_dept'.`);
+    }
+  }
+  if (bsDeptMatch) {
+    const bsDept = bsDeptMatch[1].trim().replace(/^["\x27]|["\x27]$/g, "");
+    if (!bsDept.startsWith("KNU ")) {
+      fail(`_data/members.yml alumni bs_dept '${bsDept}' must start with 'KNU '.`);
+    }
+    if (!sections.terms.has(bsDept)) {
+      fail(`_data/i18n.yml missing required glossary term for alumni bs_dept '${bsDept}'.`);
+    }
+    if (b.includes("id: seonggwang-lee-alumni") && bsDept !== "KNU 나노신소재공학과") {
+      fail(`_data/members.yml seonggwang-lee-alumni bs_dept must be 'KNU 나노신소재공학과' (found '${bsDept}').`);
+    }
+  }
 }
 
 // 6. If _site/ exists, verify built [data-i18n-term] elements render Korean text and student modal cover badges match SSOT

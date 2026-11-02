@@ -24,19 +24,35 @@
     <div class="alumni-row__left">
       <span class="alumni-row__degree">
         {{- a.degree -}}
-        {%- if a.joint_inst %} (학연){% endif %} · {{ a.grad_year -}}
+        {%- if a.joint_inst %}
+          (<span data-i18n-term>학연</span>)
+        {%- endif %}
+        · {{ a.grad_year -}}
       </span>
       <span class="alumni-row__name">
         {{- a.name_ko -}}
         <span class="alumni-row__name-en">{{ a.name_en }}</span></span
       >
-      {% if a.dept or a.joint_inst %}
+      {% if a.dept or a.joint_inst or a.bs_dept %}
         <span class="alumni-row__meta">
-          {% if a.dept -%}
-            <span class="alumni-row__dept" data-i18n-term>{{ a.dept }}</span>
-          {%- endif %}
-          {% if a.joint_inst %}
-            <span class="alumni-row__joint" data-i18n-term> · {{ a.joint_inst }}</span>
+          <span class="alumni-row__edu-line alumni-row__edu-line--primary">
+            {% if a.bs_dept and a.bs_dept != '' %}
+              <span class="alumni-row__edu-tag">{{ a.degree }}</span>
+            {% endif %}
+            {% if a.dept -%}
+              <span class="alumni-row__dept" data-i18n-term>{{ a.dept }}</span>
+            {%- endif %}
+            {% if a.joint_inst -%}
+              <span class="alumni-row__joint">
+                · <span data-i18n-term>{{ a.joint_inst }}</span></span
+              >
+            {%- endif -%}
+          </span>
+          {% if a.bs_dept and a.bs_dept != '' %}
+            <span class="alumni-row__edu-line alumni-row__edu-line--bs">
+              <span class="alumni-row__edu-tag">B.S.</span>
+              <span class="alumni-row__dept" data-i18n-term>{{ a.bs_dept }}</span>
+            </span>
           {% endif %}
         </span>
       {% endif %}

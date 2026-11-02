@@ -123,10 +123,10 @@ ui:
     ja: 次世代化学・エネルギー工学研究室 (ACE² Lab)
     zh: 先进化学与能源工程实验室 (ACE² Lab)
   hero.home.subtitle:
-    ko: 차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과
-    en: Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
-    ja: 慶北大学校 科学技術学部 エネルギー化学工学科 · 機能性ナノ材料・超高速光熱プロセス・次世代エネルギー素子
-    zh: 庆北大学 科学技术学院 能源化学工程系 · 功能纳米材料、超快光热加工与下一代能源器件
+    ko: 차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과 (임창용 교수·김태욱 교수)
+    en: Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University (Profs. Changyong Yim & Taewook Kim)
+    ja: 慶北大学校 科学技術学部 エネルギー化学工学科 · 次世代化学・エネルギー工学研究室（Changyong Yim 教授・Taewook Kim 教授）
+    zh: 庆北大学 科学技术学院 能源化学工程系 · 先进化学与能源工程实验室（Changyong Yim 教授·Taewook Kim 教授）
   hero.home.subtitle_en:
     ko: Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University
     en: Pioneering functional nanomaterials, ultrafast photonic processing, and next-generation electrochemical energy & sensing devices.
@@ -229,10 +229,10 @@ ui:
     zh: 2020年创立 · 庆北大学 能源化学工程系
 
   home.about.title:
-    ko: 연구실 소개 (About the Laboratory)
-    en: About the Laboratory
-    ja: 研究室紹介 (About the Laboratory)
-    zh: 实验室简介 (About the Laboratory)
+    ko: 차세대 화학 및 에너지 공학 연구실 소개 — 에너지 저장·광열 나노공정·유연 센서
+    en: About ACE² Lab — Energy Storage, Photonic Nanomanufacturing & Flexible Sensors
+    ja: 次世代化学・エネルギー工学研究室紹介 — エネルギー貯蔵・光熱ナノプロセス・柔軟センサー
+    zh: 先进化学与能源工程实验室简介 — 能量存储·光热纳米制造·柔性传感
   home.about.lead:
     ko: "ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 에너지 저장 소자(이차전지·슈퍼커패시터) 및 고감도 유연 생체·환경 센서를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다."
     en: "ACE² Lab (Advanced Chemical & Energy Engineering Laboratory) in the Department of Energy Chemical Engineering, College of Science and Technology at Kyungpook National University is an interdisciplinary nanochemistry and energy engineering group co-directed by Prof. Changyong Yim and Prof. Taewook Kim. By integrating extreme light-matter interactions and ultrafast Intense Pulsed Light nanomanufacturing with atomically thin 2D materials and functional nanoarchitecture control, we develop high-power, high-energy-density storage devices (batteries and hybrid supercapacitors) alongside ultrasensitive flexible bio and environmental sensors, winning two consecutive national 1st-place Minister of Trade, Industry and Energy Awards (2025–2026) and placing among the top honors at the KIChE Chem Frontier competition for three consecutive years (2024–2026)."
@@ -1932,6 +1932,16 @@ terms:
     en: "M.S. Student (Joint KICET)"
     ja: "連携大学院 修士課程（KICET）"
     zh: "学研联合培养硕士生"
+  "학연":
+    ko: "학연"
+    en: "Joint"
+    ja: "連携"
+    zh: "联合培养"
+  "(학연)":
+    ko: "(학연)"
+    en: "(Joint)"
+    ja: "(連携)"
+    zh: "(联合培养)"
   "연구원(석사)":
     ko: "연구원(석사)"
     en: "Researcher (M.S.)"
@@ -2146,6 +2156,16 @@ terms:
     en: "School of Advanced Sci. & Tech. Convergence (Energy & Materials Chem. Eng.), KNU"
     ja: "慶北大学校 未来科学技術融合学部 エネルギー・新素材化学工学専攻"
     zh: "庆北大学 未来科学技术融合学部 能源·新材料化学工程专业"
+  "KNU 나노신소재공학과":
+    ko: "KNU 나노신소재공학과"
+    en: "Dept. of Nano & Advanced Materials Engineering, KNU"
+    ja: "慶北大学校 ナノ新素材工学科"
+    zh: "庆北大学 纳米新材料工程系"
+  "나노신소재공학과":
+    ko: "나노신소재공학과"
+    en: "Dept. of Nano & Advanced Materials Engineering"
+    ja: "ナノ新素材工学科"
+    zh: "纳米新材料工程系"
   "KNU 나노소재공학부 에너지화학공학전공":
     ko: "KNU 나노소재공학부 에너지화학공학전공"
     en: "School of Nano Materials Engineering (Energy Chemical Engineering), KNU"
