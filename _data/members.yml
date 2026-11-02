@@ -495,7 +495,7 @@
   degree_program: 연구원(석사) (2026.02 – 현재)
   affiliation: "KNU 에너지화학공학과 연구원"
   education:
-    - "M.S.  KNU 미래과학기술융합학부 ('24학번)"
+    - "M.S.  KNU 미래과학기술융합학부 에너지·신소재화학공학전공 ('24학번)"
     - "B.S.  KNU 에너지화학공학과 ('18학번)"
   research_field: "2D 나노복합소재 및 광촉매 환경 소재"
   office: 7호관 406호
@@ -515,7 +515,7 @@
   email: ehdgh614@knu.ac.kr
   photo: assets/img/team/dongho_lee.jpg
   degree_program: 석박통합과정 (2025.03 – 현재)
-  affiliation: "KNU 미래과학기술융합학부 석박통합과정"
+  affiliation: "KNU 미래과학기술융합학부 에너지·신소재화학공학전공 석박통합과정"
   education:
     - "B.S.  KNU 에너지화학공학과 ('19학번)"
   research_field: "전기화학 에너지 소재 및 전극 계면 공학"
@@ -559,7 +559,7 @@
   email: coco24245@knu.ac.kr
   photo: assets/img/team/jaebeen_ahn.jpg
   degree_program: 석사과정 (2026.03 – 현재)
-  affiliation: "KNU 미래과학기술융합학부 석사과정"
+  affiliation: "KNU 미래과학기술융합학부 에너지·신소재화학공학전공 석사과정"
   education:
     - "B.S.  KNU 에너지화학공학과 ('20학번)"
   research_field: "2D 나노소재 및 마이크로 에너지 소자"
@@ -700,6 +700,7 @@
   name_ko: 이재호
   name_en: Jaeho Lee
   degree: M.S.
+  dept: 에너지화학공학과
   grad_year: 2026
   thesis: Synthesis of Cobalt Oxide @ Porous Carbon Nanofibers via Intense Pulsed
     Light for Supercapacitor Electrodes
@@ -714,6 +715,7 @@
   name_ko: 이희진
   name_en: Huijin Lee
   degree: M.S.
+  dept: 미래과학기술융합학부 에너지·신소재화학공학전공
   grad_year: 2026
   thesis: Synthesis of TiO₂/MXene Composite Photocatalyst via Intense Pulsed Light
     Processing for Organic Pollutant Removal
@@ -729,6 +731,8 @@
   name_en: Seonggwang Lee
   aliases_en: ["Seong Gwang Lee"]
   degree: M.S.
+  dept: 에너지화학공학과
+  joint_inst: 한국생산기술연구원(울산본부)
   grad_year: 2026
   thesis: 적층제조된 SUS 316L의 미세조직에 따른 수소취화 저항성 변화
   now:
@@ -742,6 +746,8 @@
   name_ko: 박규현
   name_en: Kyuhyun Park
   degree: M.S.
+  dept: 에너지화학공학과
+  joint_inst: 한국기계연구원(현풍)
   grad_year: 2025
   thesis: ""
   now:
@@ -755,6 +761,7 @@
   name_ko: 팽창웅
   name_en: Changung Paeng
   degree: M.S.
+  dept: 미래과학기술융합학부 에너지·신소재화학공학전공
   grad_year: 2025
   thesis: Rapid structuring of porous MXene via intense pulsed light for energy storage
     devices
@@ -769,6 +776,7 @@
   name_ko: 안준혁
   name_en: Junhyuck Ahn
   degree: M.S.
+  dept: 미래과학기술융합학부 에너지·신소재화학공학전공
   grad_year: 2024
   thesis: 3D structured cobalt oxide via hydrothermal and instant heat treatment for
     supercapacitor electrodes
@@ -783,6 +791,7 @@
   name_ko: 양수빈
   name_en: Subin Yang
   degree: B.S.
+  dept: 나노소재공학부 에너지화학공학전공
   grad_year: 2024
   thesis: ""
   now:
@@ -796,6 +805,7 @@
   name_ko: 윤태호
   name_en: Tae Ho Yun
   degree: Postdoc
+  dept: 에너지화학공학과
   grad_year: 2024
   thesis: ""
   now:
@@ -810,6 +820,7 @@
   name_en: Ninad Velhal
   aliases_en: ["Ninad B. Velhal", "Ninad Baburao Velhal"]
   degree: Postdoc
+  dept: 과학기술실용화학과
   grad_year: 2024
   thesis: ""
   now:
@@ -823,6 +834,7 @@
   name_ko: 이동현
   name_en: Donghyun Lee
   degree: B.S.
+  dept: 나노소재공학부 에너지화학공학전공
   grad_year: 2023
   thesis: ""
   now:

@@ -2116,6 +2116,51 @@ terms:
     en: "Undergraduate Researcher, Dept. of Energy Chemical Engineering, KNU"
     ja: "慶北大学校 エネルギー化学工学科 学部生研究員"
     zh: "庆北大学 能源化学工程系 本科生科研助理"
+  "KNU 미래과학기술융합학부 에너지·신소재화학공학전공 석박통합과정":
+    ko: "KNU 미래과학기술융합학부 에너지·신소재화학공학전공 석박통합과정"
+    en: "Integrated M.S.–Ph.D. Program, School of Advanced Sci. & Tech. Convergence (Energy & Materials Chem. Eng.), KNU"
+    ja: "慶北大学校 未来科学技術融合学部 エネルギー・新素材化学工学専攻 一貫制博士課程"
+    zh: "庆北大学 未来科学技术融合学部 能源·新材料化学工程专业 硕博连读生"
+  "KNU 미래과학기술융합학부 에너지·신소재화학공학전공 석사과정":
+    ko: "KNU 미래과학기술융합학부 에너지·신소재화학공학전공 석사과정"
+    en: "M.S. Program, School of Advanced Sci. & Tech. Convergence (Energy & Materials Chem. Eng.), KNU"
+    ja: "慶北大学校 未来科学技術融合学部 エネルギー・新素材化学工学専攻 修士課程"
+    zh: "庆北大学 未来科学技术融合学部 能源·新材料化学工程专业 硕士研究生"
+  "미래과학기술융합학부 에너지·신소재화학공학전공":
+    ko: "미래과학기술융합학부 에너지·신소재화학공학전공"
+    en: "School of Advanced Sci. & Tech. Convergence (Energy & Materials Chem. Eng.)"
+    ja: "未来科学技術融合学部 エネルギー・新素材化学工学専攻"
+    zh: "未来科学技术融合学部 能源·新材料化学工程专业"
+  "나노소재공학부 에너지화학공학전공":
+    ko: "나노소재공학부 에너지화학공학전공"
+    en: "School of Nano Materials Engineering (Energy Chemical Engineering)"
+    ja: "ナノ材料工学部 エネルギー化学工学専攻"
+    zh: "纳米材料工程学部 能源化学工程专业"
+  "에너지화학공학과":
+    ko: "에너지화학공학과"
+    en: "Dept. of Energy Chemical Engineering"
+    ja: "エネルギー化学工学科"
+    zh: "能源化学工程系"
+  "과학기술실용화학과":
+    ko: "과학기술실용화학과"
+    en: "Dept. of Practical Science & Technology"
+    ja: "科学技術実用化学科"
+    zh: "科技成果转化系"
+  "한국생산기술연구원(울산본부)":
+    ko: "한국생산기술연구원(울산본부)"
+    en: "KITECH (Ulsan)"
+    ja: "韓国生産技術研究院（蔚山本部）"
+    zh: "韩国生产技术研究院（蔚山本部）"
+  "한국기계연구원(현풍)":
+    ko: "한국기계연구원(현풍)"
+    en: "KIMM (Hyeonpung)"
+    ja: "韓国機械研究院（玄風）"
+    zh: "韩国机械研究院（玄风）"
+  "한국세라믹기술연구원(KICET)":
+    ko: "한국세라믹기술연구원(KICET)"
+    en: "KICET"
+    ja: "韓国セラミックス技術院（KICET）"
+    zh: "韩国陶瓷技术院（KICET）"
   "7호관 411호 (Room 411, Bldg. 7)":
     ko: "7호관 411호 (Room 411, Bldg. 7)"
     en: "Room 411, Building 7"
