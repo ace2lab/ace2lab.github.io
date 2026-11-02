@@ -283,6 +283,34 @@ if (fs.existsSync(newsDir)) {
   }
 }
 
+// 5c. Enforce Alumni KNU notation and glossary terms coverage
+const alumniBlocks = membersContent.split(/(?:^|\n)-\s+id:\s+/).filter((b) => b.includes("group: alumni"));
+if (alumniBlocks.length < 10) {
+  fail(`_data/members.yml expected at least 10 alumni blocks, found ${alumniBlocks.length}.`);
+}
+for (const b of alumniBlocks) {
+  const deptMatch = b.match(/^\s+dept:\s*(.+)$/m);
+  if (deptMatch) {
+    const dept = deptMatch[1].trim().replace(/^["\x27]|["\x27]$/g, "");
+    if (!dept.startsWith("KNU ")) {
+      fail(`_data/members.yml alumni dept '${dept}' must start with 'KNU '.`);
+    }
+    if (!sections.terms.has(dept)) {
+      fail(`_data/i18n.yml missing required glossary term for alumni dept '${dept}'.`);
+    }
+  }
+  const affMatch = b.match(/^\s+affiliation:\s*(.+)$/m);
+  if (affMatch) {
+    const aff = affMatch[1].trim().replace(/^["\x27]|["\x27]$/g, "");
+    if (aff === "경북대학교") {
+      fail("_data/members.yml alumni now.affiliation must not use bare '경북대학교' (use 'KNU ...').");
+    }
+    if (!sections.terms.has(aff)) {
+      fail(`_data/i18n.yml missing required glossary term for alumni affiliation '${aff}'.`);
+    }
+  }
+}
+
 // 6. If _site/ exists, verify built [data-i18n-term] elements render Korean text and student modal cover badges match SSOT
 const siteDir = path.join(root, "_site");
 if (fs.existsSync(siteDir)) {
