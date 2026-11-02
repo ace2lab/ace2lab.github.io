@@ -501,9 +501,27 @@
   links:
     email: ehdgh614@knu.ac.kr
     gmail: ehdgh61485@gmail.com
+- id: gunwoo-we
+  group: phd
+  order: 3
+  name_ko: 위건우
+  name_en: Gunwoo We
+  aliases_en: ["Geonwoo Wi", "Gunwoo Wi"]
+  role_ko: 석박통합과정
+  role_en: Integrated M.S.-Ph.D. Student
+  email: ""
+  photo: assets/img/team/gunwoo_we.jpg
+  degree_program: 석박통합과정 (2027.03 – 현재)
+  affiliation: "KNU 에너지화학공학과 석박통합과정"
+  education:
+    - "B.S.  KNU 에너지화학공학과 ('20학번)"
+  research_field: "나노복합소재 가스 센서 및 광열 나노공정"
+  office: TBD
+  links:
+    gmail: wegunwoo@gmail.com
 - id: huijin-lee-res
   group: ms
-  order: 3
+  order: 4
   name_ko: 이희진
   name_en: Huijin Lee
   role_ko: 연구원
@@ -524,7 +542,7 @@
     gmail: hij20010302@gmail.com
 - id: dawin-kim
   group: ms
-  order: 4
+  order: 5
   name_ko: 김다윈
   name_en: Dawin Kim
   role_ko: 석사과정
@@ -545,7 +563,7 @@
     gmail: windagim@gmail.com
 - id: jaebin-an
   group: ms
-  order: 5
+  order: 6
   name_ko: 안재빈
   name_en: Jaebeen Ahn
   aliases_en: ["Jaebin An"]
@@ -567,7 +585,7 @@
     gmail: woqls095@gmail.com
 - id: myeongseo-kang
   group: ms
-  order: 6
+  order: 7
   name_ko: 강명서
   name_en: Myeong Seo Kang
   aliases_en: ["Myeongseo Kang", "MyungSeo Kang"]
@@ -588,7 +606,7 @@
     gmail: koewq707@gmail.com
 - id: wooyoung-kim
   group: ms
-  order: 7
+  order: 8
   name_ko: 김우영
   name_en: Wooyoung Kim
   role_ko: 학연과정(석사)

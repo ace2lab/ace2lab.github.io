@@ -2086,6 +2086,11 @@ terms:
     en: "Integrated M.S.–Ph.D. Program, School of Future Science & Tech. Convergence, KNU"
     ja: "慶北大学校 未来科学技術融合学部 一貫制博士課程"
     zh: "庆北大学 未来科学技术融合学部 硕博连读生"
+  "KNU 에너지화학공학과 석박통합과정":
+    ko: "KNU 에너지화학공학과 석박통합과정"
+    en: "Integrated M.S.–Ph.D. Program, Dept. of Energy Chemical Engineering, KNU"
+    ja: "慶北大学校 エネルギー化学工学科 一貫制博士課程"
+    zh: "庆北大学 能源化学工程系 硕博连读生"
   "KNU 에너지화학공학과 연구원":
     ko: "KNU 에너지화학공학과 연구원"
     en: "Researcher, Dept. of Energy Chemical Engineering, KNU"
@@ -2146,6 +2151,11 @@ terms:
     en: "KICET / Bldg. 7"
     ja: "韓国セラミック技術研究院 (KICET) / 7号館"
     zh: "韩国陶瓷技术研究院 (KICET) / 7号馆"
+  "TBD":
+    ko: "TBD"
+    en: "TBD"
+    ja: "TBD"
+    zh: "TBD"
 
   # --- Student Research Fields (Active 6 Graduate Umbrella Scopes) ---
   "에너지 저장 전극 소재 및 공정":
@@ -2158,6 +2168,11 @@ terms:
     en: "Electrochemical Energy Materials & Electrode Interface Engineering"
     ja: "電気化学エネルギー材料および電極界面工学"
     zh: "电化学能源材料与电极界面工程"
+  "나노복합소재 가스 센서 및 광열 나노공정":
+    ko: "나노복합소재 가스 센서 및 광열 나노공정"
+    en: "Nanocomposite Gas Sensors & Photothermal Nanoprocessing"
+    ja: "ナノ複合材料ガスセンサーおよび光熱ナノプロセス"
+    zh: "纳米复合材料气体传感器与光热纳米工艺"
   "2D 나노복합소재 및 광촉매 환경 소재":
     ko: "2D 나노복합소재 및 광촉매 환경 소재"
     en: "2D Nanocomposites & Photocatalytic Environmental Materials"
