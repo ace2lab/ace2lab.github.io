@@ -35,23 +35,41 @@
       >
       {% if a.dept or a.joint_inst or a.bs_dept %}
         <span class="alumni-row__meta">
-          <span class="alumni-row__edu-line alumni-row__edu-line--primary">
+          <span class="alumni-row__edu-line alumni-row__edu-line--primary{% if a.bs_dept and a.bs_dept != '' %} alumni-row__edu-line--tagged{% endif %}">
             {% if a.bs_dept and a.bs_dept != '' %}
               <span class="alumni-row__edu-tag">{{ a.degree }}</span>
             {% endif %}
-            {% if a.dept -%}
-              <span class="alumni-row__dept" data-i18n-term>{{ a.dept }}</span>
-            {%- endif %}
-            {% if a.joint_inst -%}
-              <span class="alumni-row__joint">
-                · <span data-i18n-term>{{ a.joint_inst }}</span></span
-              >
-            {%- endif -%}
+            <span class="alumni-row__edu-content">
+              {% if a.dept -%}
+                <span class="alumni-row__dept" data-i18n-term>{{ a.dept }}</span>
+              {%- endif %}
+              {% if a.cohort and a.cohort != '' %}
+                <span class="alumni-row__cohort"
+                  >(<span data-i18n-term>
+                    {%- if a.cohort == 'TBA' %}TBA{% else %}'{{ a.cohort | slice: 2, 2 }}학번{% endif -%}</span
+                  >)</span
+                >
+              {% endif %}
+              {% if a.joint_inst -%}
+                <span class="alumni-row__joint">
+                  · <span data-i18n-term>{{ a.joint_inst }}</span></span
+                >
+              {%- endif -%}
+            </span>
           </span>
           {% if a.bs_dept and a.bs_dept != '' %}
-            <span class="alumni-row__edu-line alumni-row__edu-line--bs">
+            <span class="alumni-row__edu-line alumni-row__edu-line--bs alumni-row__edu-line--tagged">
               <span class="alumni-row__edu-tag">B.S.</span>
-              <span class="alumni-row__dept" data-i18n-term>{{ a.bs_dept }}</span>
+              <span class="alumni-row__edu-content">
+                <span class="alumni-row__dept" data-i18n-term>{{ a.bs_dept }}</span>
+                {% if a.bs_cohort and a.bs_cohort != '' %}
+                  <span class="alumni-row__cohort"
+                    >(<span data-i18n-term>
+                      {%- if a.bs_cohort == 'TBA' %}TBA{% else %}'{{ a.bs_cohort | slice: 2, 2 }}학번{% endif -%}</span
+                    >)</span
+                  >
+                {% endif %}
+              </span>
             </span>
           {% endif %}
         </span>

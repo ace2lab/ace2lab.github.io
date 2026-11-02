@@ -1697,10 +1697,20 @@ html[data-theme="dark"] .pi-action:focus-visible {
 }
 
 .alumni-row__edu-line {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
+  align-items: baseline;
+  gap: var(--tm-s1);
+}
+
+.alumni-row__edu-line--tagged {
+  display: grid;
+  grid-template-columns: 2.1rem minmax(0, 1fr);
   align-items: baseline;
   column-gap: var(--tm-s1);
+}
+
+.alumni-row__edu-content {
+  min-width: 0;
 }
 
 .alumni-row__edu-line--bs {
@@ -1715,6 +1725,13 @@ html[data-theme="dark"] .pi-action:focus-visible {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--tm-accent);
+}
+
+.alumni-row__cohort {
+  font-family: var(--font-mono-meta, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+  font-size: 0.8125rem;
+  color: var(--tm-muted);
+  white-space: nowrap;
 }
 
 .alumni-row__joint {

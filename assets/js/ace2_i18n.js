@@ -126,7 +126,7 @@
         return trimmed
           .replace("KNU 에너지화학공학과", "KNU Energy Chem. Eng.")
           .replace("KNU 미래과학기술융합학부", "KNU Future Sci. & Tech. Convergence")
-          .replace(/\('(\d+)학번\)/g, "(Class of '$1)");
+          .replace(/\('(\d+)학번\)/g, "(Entered '$1)");
       }
       if (lang === "ja") {
         return trimmed
@@ -142,10 +142,10 @@
       }
     }
 
-    // 2b. Standalone student cohort badge (e.g. "21학번")
-    var cohortMatch = trimmed.match(/^(\d{2})학번$/);
+    // 2b. Standalone student cohort badge (e.g. "21학번" or "'21학번")
+    var cohortMatch = trimmed.match(/^'?(\d{2})학번$/);
     if (cohortMatch) {
-      if (lang === "en") return "Class of '" + cohortMatch[1];
+      if (lang === "en") return "Entered '" + cohortMatch[1];
       if (lang === "ja") return "'" + cohortMatch[1] + "入学";
       if (lang === "zh") return "'" + cohortMatch[1] + "级";
     }

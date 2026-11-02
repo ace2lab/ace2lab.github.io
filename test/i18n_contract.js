@@ -340,6 +340,42 @@ for (const b of alumniBlocks) {
       fail(`_data/members.yml seonggwang-lee-alumni bs_dept must be 'KNU 나노신소재공학과' (found '${bsDept}').`);
     }
   }
+  const cohortMatch = b.match(/^\s+cohort:\s*(.+)$/m);
+  const bsCohortMatch = b.match(/^\s+bs_cohort:\s*(.+)$/m);
+  if (deg === "M.S.") {
+    if (!cohortMatch) {
+      fail(`_data/members.yml M.S. alumnus requires 'cohort'.`);
+    } else {
+      const c = cohortMatch[1].trim();
+      if (!/^\d{4}$/.test(c)) {
+        fail(`_data/members.yml M.S. alumnus cohort must be 4-digit integer (found '${c}').`);
+      }
+    }
+    if (!bsCohortMatch) {
+      fail(`_data/members.yml M.S. alumnus requires 'bs_cohort' (YYYY or TBA).`);
+    } else {
+      const bc = bsCohortMatch[1].trim();
+      if (!/^(?:\d{4}|TBA)$/.test(bc)) {
+        fail(`_data/members.yml M.S. alumnus bs_cohort must be 4-digit integer or 'TBA' (found '${bc}').`);
+      }
+    }
+  } else if (deg === "B.S.") {
+    if (!cohortMatch) {
+      fail(`_data/members.yml B.S. alumnus requires 'cohort'.`);
+    } else {
+      const c = cohortMatch[1].trim();
+      if (!/^\d{4}$/.test(c)) {
+        fail(`_data/members.yml B.S. alumnus cohort must be 4-digit integer (found '${c}').`);
+      }
+    }
+    if (bsCohortMatch) {
+      fail(`_data/members.yml B.S. alumnus must not have 'bs_cohort'.`);
+    }
+  } else if (deg === "Postdoc") {
+    if (cohortMatch || bsCohortMatch) {
+      fail(`_data/members.yml Postdoc alumnus must not have cohort fields.`);
+    }
+  }
 }
 
 // 6. If _site/ exists, verify built [data-i18n-term] elements render Korean text and student modal cover badges match SSOT
