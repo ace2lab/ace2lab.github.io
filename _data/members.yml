@@ -796,7 +796,7 @@
   thesis: ""
   now:
     affiliation: 삼성SDI(주)
-    position: 연구원
+    position: 엔지니어
     url: ""
   photo: assets/img/team/alumni/alumni_subin_yang.jpg
 - id: tae-ho-yun-alumni
@@ -810,7 +810,7 @@
   thesis: ""
   now:
     affiliation: 삼성SDI(주)
-    position: 연구원
+    position: 엔지니어
     url: ""
   photo: assets/img/team/alumni/alumni_tae_ho_yun.jpg
 - id: ninad-velhal-alumni
@@ -839,7 +839,7 @@
   thesis: ""
   now:
     affiliation: LS MnM
-    position: 연구원
+    position: 엔지니어
     url: ""
   photo: assets/img/team/alumni/alumni_donghyun_lee.jpg
 - id: jian-lee

@@ -309,6 +309,13 @@ for (const b of alumniBlocks) {
       fail(`_data/i18n.yml missing required glossary term for alumni affiliation '${aff}'.`);
     }
   }
+  const posMatch = b.match(/^\s+position:\s*(.+)$/m);
+  if (posMatch) {
+    const pos = posMatch[1].trim().replace(/^["\x27]|["\x27]$/g, "");
+    if (pos && !sections.terms.has(pos)) {
+      fail(`_data/i18n.yml missing required glossary term for alumni position '${pos}'.`);
+    }
+  }
 }
 
 // 6. If _site/ exists, verify built [data-i18n-term] elements render Korean text and student modal cover badges match SSOT

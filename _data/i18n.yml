@@ -1947,6 +1947,16 @@ terms:
     en: "Researcher"
     ja: "研究員"
     zh: "研究人员"
+  "엔지니어":
+    ko: "엔지니어"
+    en: "Engineer"
+    ja: "エンジニア"
+    zh: "工程师"
+  "Engineer":
+    ko: "엔지니어"
+    en: "Engineer"
+    ja: "エンジニア"
+    zh: "工程师"
   "학부연구생":
     ko: "학부연구생"
     en: "Undergraduate Researcher"
