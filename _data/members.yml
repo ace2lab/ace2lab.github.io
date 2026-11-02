@@ -465,6 +465,7 @@
   name_ko: 이재호
   name_en: Jaeho Lee
   role_ko: 박사과정
+  stat_role: 박사과정
   role_en: Ph.D. Student
   email: mikybuzz@knu.ac.kr
   photo: assets/img/team/jaeho_lee.jpg
@@ -486,11 +487,12 @@
   order: 2
   name_ko: 이희진
   name_en: Huijin Lee
-  role_ko: 연구원
-  role_en: Researcher
+  role_ko: 연구원(석사)
+  stat_role: 연구원(석사)
+  role_en: Researcher (M.S.)
   email: gmlwls8262@knu.ac.kr
   photo: assets/img/team/huijin_lee.jpg
-  degree_program: 연구원 (2026.02 – 현재)
+  degree_program: 연구원(석사) (2026.02 – 현재)
   affiliation: "KNU 에너지화학공학과 연구원"
   education:
     - "M.S.  KNU 미래과학기술융합학부 ('24학번)"
@@ -508,6 +510,7 @@
   name_ko: 이동호
   name_en: Dongho Lee
   role_ko: 석박통합과정
+  stat_role: 박사과정
   role_en: Integrated M.S.-Ph.D. Student
   email: ehdgh614@knu.ac.kr
   photo: assets/img/team/dongho_lee.jpg
@@ -528,6 +531,7 @@
   name_ko: 김다윈
   name_en: Dawin Kim
   role_ko: 석사과정
+  stat_role: 석사과정
   role_en: M.S. Student
   email: dawin0530@knu.ac.kr
   photo: assets/img/team/dawin_kim.jpg
@@ -550,6 +554,7 @@
   name_en: Jaebeen Ahn
   aliases_en: ["Jaebin An"]
   role_ko: 석사과정
+  stat_role: 석사과정
   role_en: M.S. Student
   email: coco24245@knu.ac.kr
   photo: assets/img/team/jaebeen_ahn.jpg
@@ -572,6 +577,7 @@
   name_en: Myeong Seo Kang
   aliases_en: ["Myeongseo Kang", "MyungSeo Kang"]
   role_ko: 석사과정
+  stat_role: 석사과정
   role_en: M.S. Student
   email: audtj707@knu.ac.kr
   photo: assets/img/team/myeong_seo_kang.jpg
@@ -593,6 +599,7 @@
   name_en: Gunwoo We
   aliases_en: ["Geonwoo Wi", "Gunwoo Wi"]
   role_ko: 석박통합과정
+  stat_role: 석사과정
   role_en: Integrated M.S.-Ph.D. Student
   email: ""
   photo: assets/img/team/gunwoo_we.jpg
@@ -610,6 +617,7 @@
   name_ko: 김우영
   name_en: Wooyoung Kim
   role_ko: 학연과정(석사)
+  stat_role: 학연과정(석사)
   role_en: M.S. Student (Joint)
   email: ""
   photo: ""

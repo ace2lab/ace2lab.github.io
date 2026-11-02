@@ -31,6 +31,9 @@
     {% case role_key %}
       {% when 'phd' %}
         {% assign en_role_short = 'Ph.D.' %}
+        {% if m.role_ko == '석박통합과정' %}
+          {% assign en_role_short = 'M.S./Ph.D.' %}
+        {% endif %}
       {% when 'ms' %}
         {% assign en_role_short = 'M.S.' %}
         {% if m.role_ko == '학연과정(석사)' %}
