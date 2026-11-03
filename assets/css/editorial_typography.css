@@ -5346,6 +5346,39 @@ html[data-theme="dark"] .ed-datepill {
   border-color: var(--ed-accent);
 }
 
+.ed-press-card--media {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.ed-press-card--media .ed-award-card__thumb {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 130px;
+  width: 130px;
+  height: 95px;
+}
+
+.ed-press-card--media .ed-press-card__content {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ed-s2);
+}
+
+@media (max-width: 640px) {
+  .ed-press-card--media {
+    flex-direction: column;
+  }
+
+  .ed-press-card--media .ed-award-card__thumb {
+    flex-basis: auto;
+    width: 100%;
+    height: 150px;
+  }
+}
+
 .ed-pill--paper {
   position: relative; /* stays above the stretched title link */
   border-color: rgba(30, 58, 95, 0.35);

@@ -1,0 +1,124 @@
+"2026":
+  title_key: cf.field_title
+  lead_key: cf.field_lead
+  winner_id: kyungpook
+  winner_tag_key: cf.field_winner_tag
+  winner_icon: fa-crown
+  note_key: cf.field_note
+  groups:
+    - category_key: cf.field_cat1
+      universities:
+        - postech
+        - unist
+        - gist
+    - category_key: cf.field_cat2
+      universities:
+        - kyungpook
+        - pusan
+        - chonnam
+        - chungnam
+        - jeonbuk
+        - chungbuk
+        - gyeongsang
+    - category_key: cf.field_cat3
+      universities:
+        - seoultech
+        - seoul_univ
+        - pukyong
+        - kumoh
+    - category_key: cf.field_cat4
+      universities:
+        - yonsei
+        - korea_joint
+        - sungkyunkwan
+        - sogang
+        - ewha
+        - chungang
+        - kyunghee
+        - konkuk_joint
+        - dongguk
+        - hongik
+        - ajou
+        - kwangwoon
+        - gachon
+    - category_key: cf.field_cat5
+      universities:
+        - ulsan
+        - yeungnam
+        - donga
+"2025":
+  title_key: cf.field_title_2025
+  lead_key: cf.field_lead_2025
+  winner_id: kyungpook
+  winner_tag_key: cf.field_winner_tag
+  winner_icon: fa-crown
+  note_key: null
+  groups:
+    - category_key: cf.field_cat1
+      universities:
+        - gist
+    - category_key: cf.field_cat2
+      universities:
+        - kyungpook
+        - pusan
+        - chonnam
+        - jeonbuk
+        - chungnam
+        - kangwon
+        - gyeongsang
+    - category_key: cf.field_cat3
+      universities:
+        - seoul_univ
+        - seoultech
+        - kumoh
+        - sunchon
+    - category_key: cf.field_cat4
+      universities:
+        - hanyang
+        - sogang
+        - chungang
+        - kyunghee
+        - ewha
+        - inha
+        - kwangwoon
+        - catholic
+        - gachon
+        - myongji
+    - category_key: cf.field_cat5
+      universities:
+        - ulsan
+        - yeungnam
+        - donga
+        - cheongju
+        - hannam
+"2024":
+  title_key: cf.field_title_2024
+  lead_key: cf.field_lead_2024
+  winner_id: kyungpook
+  winner_tag_key: cf.field_winner_tag_2024
+  winner_icon: fa-trophy
+  note_key: cf.field_note_2024
+  groups:
+    - category_key: cf.field_cat1
+      universities:
+        - dgist
+    - category_key: cf.field_cat2
+      universities:
+        - kyungpook
+        - pusan
+        - chonnam
+        - jeonbuk
+    - category_key: cf.field_cat4
+      universities:
+        - korea
+        - sogang
+        - ewha
+        - dongguk
+        - kwangwoon
+        - myongji
+        - catholic_joint
+    - category_key: cf.field_cat5
+      universities:
+        - ulsan
+        - yeungnam
+        - soonchunhyang

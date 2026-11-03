@@ -1,0 +1,61 @@
+{% assign f = site.data.cf_fields[include.year] %}
+{% if f %}
+  <div class="cf-field-container" id="cf-field-{{ include.year }}">
+    <h4 class="ed-pillar__section-title">
+      <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+      <span data-i18n="{{ f.title_key }}">{{ site.data.i18n.ui[f.title_key].ko }}</span>
+    </h4>
+    <p class="ed-pillar__topic-body" data-i18n="{{ f.lead_key }}">
+      {{ site.data.i18n.ui[f.lead_key].ko }}
+    </p>
+
+    {% for g in f.groups %}
+      {% if g.universities.size > 0 %}
+        <div class="cf-field-group">
+          <h5 class="cf-field-category">
+            <span data-i18n="{{ g.category_key }}">{{ site.data.i18n.ui[g.category_key].ko }}</span>
+            <span class="cf-field-category__count">{{ g.universities.size }}</span>
+          </h5>
+          <ul class="cf-chip-list" role="list">
+            {% for u_id in g.universities %}
+              {% assign u = site.data.cf_universities[u_id] %}
+              {% if u %}
+                {% if u_id == f.winner_id %}
+                  <li class="cf-chip cf-chip--winner">
+                    <i class="fa-solid {{ f.winner_icon | default: 'fa-crown' }}" aria-hidden="true"></i>
+                    <span
+                      data-i18n-ko="{{ u.ko }}"
+                      data-i18n-en="{{ u.en }}"
+                      data-i18n-ja="{{ u.ja }}"
+                      data-i18n-zh="{{ u.zh }}"
+                    >
+                      {{- u.ko -}}
+                    </span>
+                    <span class="cf-chip__tag" data-i18n="{{ f.winner_tag_key }}">{{ site.data.i18n.ui[f.winner_tag_key].ko }}</span>
+                  </li>
+                {% else %}
+                  <li class="cf-chip">
+                    <span
+                      data-i18n-ko="{{ u.ko }}"
+                      data-i18n-en="{{ u.en }}"
+                      data-i18n-ja="{{ u.ja }}"
+                      data-i18n-zh="{{ u.zh }}"
+                    >
+                      {{- u.ko -}}
+                    </span>
+                  </li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% if f.note_key %}
+      <p class="cf-field-note" data-i18n="{{ f.note_key }}">
+        {{ site.data.i18n.ui[f.note_key].ko }}
+      </p>
+    {% endif %}
+  </div>
+{% endif %}

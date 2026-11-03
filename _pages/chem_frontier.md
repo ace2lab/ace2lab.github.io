@@ -126,7 +126,7 @@ ace2_editorial: true
             <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>2026년 산업통상부장관상 (김경진, 이종민, 이동건)</span></div>
             <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>2025년 산업통상부장관상 (안재빈, 김민수, 김성우)</span></div>
             <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>2024년 대상 롯데케미칼 대표이사상 (김다윈, 안재빈, 이동호)</span></div>
-            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>학부연구생 전원 제1저자 SCI 논문 및 대학원 진학 연계</span></div>
+            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>학부연구생 SCI 논문 게재 및 대학원 진학 연계</span></div>
           </div>
         </div>
         <div class="sim-card__action">
@@ -180,66 +180,7 @@ ace2_editorial: true
         </div>
       </div>
 
-      <div class="cf-field-container">
-        <h4 class="ed-pillar__section-title"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> <span data-i18n="cf.field_title">2026 본선 참가 30개 대학 명단 (61개 정예 팀)</span></h4>
-        <p class="ed-pillar__topic-body" data-i18n="cf.field_lead">본선 참가 대학을 유형별로 정리했습니다. 경북대학교(ACE² Lab)는 61개 팀 중 전국 1위를 차지했습니다.</p>
-      <div class="cf-field-group">
-        <h5 class="cf-field-category"><span data-i18n="cf.field_cat1">연구중심 과학기술대학</span><span class="cf-field-category__count">3</span></h5>
-        <ul class="cf-chip-list" role="list">
-          <li class="cf-chip"><span data-i18n-ko="POSTECH" data-i18n-en="POSTECH" data-i18n-ja="POSTECH" data-i18n-zh="POSTECH">POSTECH</span></li>
-          <li class="cf-chip"><span data-i18n-ko="UNIST" data-i18n-en="UNIST" data-i18n-ja="UNIST" data-i18n-zh="UNIST">UNIST</span></li>
-          <li class="cf-chip"><span data-i18n-ko="GIST" data-i18n-en="GIST" data-i18n-ja="GIST" data-i18n-zh="GIST">GIST</span></li>
-        </ul>
-      </div>
-      <div class="cf-field-group">
-        <h5 class="cf-field-category"><span data-i18n="cf.field_cat2">거점국립대학교</span><span class="cf-field-category__count">7</span></h5>
-        <ul class="cf-chip-list" role="list">
-          <li class="cf-chip cf-chip--winner"><i class="fa-solid fa-crown" aria-hidden="true"></i> <span data-i18n-ko="경북대학교" data-i18n-en="Kyungpook National University" data-i18n-ja="慶北大学校" data-i18n-zh="庆北大学">경북대학교</span> <span class="cf-chip__tag" data-i18n="cf.field_winner_tag">전국 1위 · ACE² Lab</span></li>
-          <li class="cf-chip"><span data-i18n-ko="부산대학교" data-i18n-en="Pusan National University" data-i18n-ja="釜山大学校" data-i18n-zh="釜山大学">부산대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="전남대학교" data-i18n-en="Chonnam National University" data-i18n-ja="全南大学校" data-i18n-zh="全南大学">전남대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="충남대학교" data-i18n-en="Chungnam National University" data-i18n-ja="忠南大学校" data-i18n-zh="忠南大学">충남대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="전북대학교" data-i18n-en="Jeonbuk National University" data-i18n-ja="全北大学校" data-i18n-zh="全北大学">전북대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="충북대학교" data-i18n-en="Chungbuk National University" data-i18n-ja="忠北大学校" data-i18n-zh="忠北大学">충북대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="경상국립대학교" data-i18n-en="Gyeongsang National University" data-i18n-ja="慶尚国立大学校" data-i18n-zh="庆尚国立大学">경상국립대학교</span></li>
-        </ul>
-      </div>
-      <div class="cf-field-group">
-        <h5 class="cf-field-category"><span data-i18n="cf.field_cat3">국공립대학교</span><span class="cf-field-category__count">4</span></h5>
-        <ul class="cf-chip-list" role="list">
-          <li class="cf-chip"><span data-i18n-ko="서울과학기술대학교" data-i18n-en="Seoul National University of Science and Technology" data-i18n-ja="ソウル科学技術大学校" data-i18n-zh="首尔科学技术大学">서울과학기술대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="서울시립대학교" data-i18n-en="University of Seoul" data-i18n-ja="ソウル市立大学校" data-i18n-zh="首尔市立大学">서울시립대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="국립부경대학교" data-i18n-en="Pukyong National University" data-i18n-ja="釜慶大学校" data-i18n-zh="釜庆大学">국립부경대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="국립금오공과대학교" data-i18n-en="Kumoh National Institute of Technology" data-i18n-ja="金烏工科大学校" data-i18n-zh="金乌工科大学">국립금오공과대학교</span></li>
-        </ul>
-      </div>
-      <div class="cf-field-group">
-        <h5 class="cf-field-category"><span data-i18n="cf.field_cat4">수도권 주요 사립대학</span><span class="cf-field-category__count">13</span></h5>
-        <ul class="cf-chip-list" role="list">
-          <li class="cf-chip"><span data-i18n-ko="연세대학교" data-i18n-en="Yonsei University" data-i18n-ja="延世大学校" data-i18n-zh="延世大学">연세대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="고려대학교*" data-i18n-en="Korea University*" data-i18n-ja="高麗大学校*" data-i18n-zh="高丽大学*">고려대학교*</span></li>
-          <li class="cf-chip"><span data-i18n-ko="성균관대학교" data-i18n-en="Sungkyunkwan University" data-i18n-ja="成均館大学校" data-i18n-zh="成均馆大学">성균관대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="서강대학교" data-i18n-en="Sogang University" data-i18n-ja="西江大学校" data-i18n-zh="西江大学">서강대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="이화여자대학교" data-i18n-en="Ewha Womans University" data-i18n-ja="梨花女子大学校" data-i18n-zh="梨花女子大学">이화여자대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="중앙대학교" data-i18n-en="Chung-Ang University" data-i18n-ja="中央大学校" data-i18n-zh="中央大学">중앙대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="경희대학교" data-i18n-en="Kyung Hee University" data-i18n-ja="慶熙大学校" data-i18n-zh="庆熙大学">경희대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="건국대학교*" data-i18n-en="Konkuk University*" data-i18n-ja="建国大学校*" data-i18n-zh="建国大学*">건국대학교*</span></li>
-          <li class="cf-chip"><span data-i18n-ko="동국대학교" data-i18n-en="Dongguk University" data-i18n-ja="東国大学校" data-i18n-zh="东国大学">동국대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="홍익대학교" data-i18n-en="Hongik University" data-i18n-ja="弘益大学校" data-i18n-zh="弘益大学">홍익대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="아주대학교" data-i18n-en="Ajou University" data-i18n-ja="亜洲大学校" data-i18n-zh="亚洲大学">아주대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="광운대학교" data-i18n-en="Kwangwoon University" data-i18n-ja="光雲大学校" data-i18n-zh="光云大学">광운대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="가천대학교" data-i18n-en="Gachon University" data-i18n-ja="嘉泉大学校" data-i18n-zh="嘉泉大学">가천대학교</span></li>
-        </ul>
-      </div>
-      <div class="cf-field-group">
-        <h5 class="cf-field-category"><span data-i18n="cf.field_cat5">비수도권 주요 사립대학</span><span class="cf-field-category__count">3</span></h5>
-        <ul class="cf-chip-list" role="list">
-          <li class="cf-chip"><span data-i18n-ko="울산대학교" data-i18n-en="University of Ulsan" data-i18n-ja="蔚山大学校" data-i18n-zh="蔚山大学">울산대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="영남대학교" data-i18n-en="Yeungnam University" data-i18n-ja="嶺南大学校" data-i18n-zh="岭南大学">영남대학교</span></li>
-          <li class="cf-chip"><span data-i18n-ko="동아대학교" data-i18n-en="Dong-A University" data-i18n-ja="東亜大学校" data-i18n-zh="东亚大学">동아대학교</span></li>
-        </ul>
-      </div>
-        <p class="cf-field-note" data-i18n="cf.field_note">* 고려대학교·건국대학교는 타 대학과의 연합팀으로 참가했습니다. 발표번호 65개 중 철회 4건을 제외한 61개 팀이 본선에 참가했습니다.</p>
-      </div>
+      {% include cf_field.liquid year="2026" %}
 
       <div class="ed-pillar__footer-action">
         <a href="{{ '/research/' | relative_url }}#photonic" class="ed-pillar__crosslink">
@@ -284,6 +225,8 @@ ace2_editorial: true
         </div>
       </div>
 
+      {% include cf_field.liquid year="2025" %}
+
       <div class="ed-pillar__footer-action">
         <a href="https://www.etnews.com/20251118000380" target="_blank" rel="noopener" class="ed-pillar__crosslink">
           <i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span>전자신문 공식 언론보도 기사 전문 보기 ↗</span>
@@ -326,6 +269,8 @@ ace2_editorial: true
           </p>
         </div>
       </div>
+
+      {% include cf_field.liquid year="2024" %}
 
       <div class="ed-pillar__footer-action">
         <a href="https://www.newsis.com/view/NISX20241105_0002947119" target="_blank" rel="noopener" class="ed-pillar__crosslink">
@@ -472,25 +417,81 @@ ace2_editorial: true
       </li>
 
       <!-- 2025 Press Card -->
-      <li class="ed-press-card">
-        <div class="ed-press-card__top">
-          <span class="ed-media ed-media--navy"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> <span data-i18n-term>전자신문</span></span>
-          <time class="ed-datepill" datetime="2025-11-18">2025.11.18</time>
+      <li class="ed-press-card ed-press-card--media">
+        <button
+          type="button"
+          class="ed-award-card__thumb"
+          data-award-zoom
+          data-full="{{ '/assets/img/awards/award_2025_chemfrontier_ceremony.jpg' | relative_url }}"
+          data-tier="navy"
+          data-type="시상식 언론보도"
+          data-title="2025 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (전자신문 보도)"
+          data-recipient="안재빈, 김성우, 김민수"
+          data-issuer="전자신문"
+          data-date="2025.11.18"
+          aria-haspopup="dialog"
+          aria-label="2025 Chem Frontier 시상식 보도 사진 확대 보기"
+        >
+          {% assign aw2025_press_thumb = 'assets/img/awards/award_2025_chemfrontier_ceremony.jpg' | ace2_thumb_webp %}
+          <picture class="ace2-pic">
+            {% if aw2025_press_thumb != '' %}<source srcset="{{ aw2025_press_thumb | relative_url }}" type="image/webp">{% endif %}
+            <img
+              src="{{ '/assets/img/awards/award_2025_chemfrontier_ceremony.jpg' | relative_url }}"
+              alt="2025 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 사진 (안재빈, 김성우, 김민수)"
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
+          <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </button>
+        <div class="ed-press-card__content">
+          <div class="ed-press-card__top">
+            <span class="ed-media ed-media--navy"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> <span data-i18n-term>전자신문</span></span>
+            <time class="ed-datepill" datetime="2025-11-18">2025.11.18</time>
+          </div>
+          <h4 class="ed-press-card__title">
+            <a href="https://www.etnews.com/20251118000380" target="_blank" rel="noopener">안재빈(20학번, 4학년), 김성우(19학번, 4학년), 김민수(21학번, 3학년) 학생 “2025 한국화학공학회 Chem Frontier” 에서 장관상 (산업통상부) 수상 <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span></a>
+          </h4>
         </div>
-        <h4 class="ed-press-card__title">
-          <a href="https://www.etnews.com/20251118000380" target="_blank" rel="noopener">안재빈(20학번, 4학년), 김성우(19학번, 4학년), 김민수(21학번, 3학년) 학생 “2025 한국화학공학회 Chem Frontier” 에서 장관상 (산업통상부) 수상 <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span></a>
-        </h4>
       </li>
 
       <!-- 2024 Press Card -->
-      <li class="ed-press-card">
-        <div class="ed-press-card__top">
-          <span class="ed-media ed-media--crimson"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> <span data-i18n-term>뉴시스</span></span>
-          <time class="ed-datepill" datetime="2024-11-05">2024.11.05</time>
+      <li class="ed-press-card ed-press-card--media">
+        <button
+          type="button"
+          class="ed-award-card__thumb"
+          data-award-zoom
+          data-full="{{ '/assets/img/awards/award_2024_chemfrontier_ceremony.jpg' | relative_url }}"
+          data-tier="crimson"
+          data-type="시상식 언론보도"
+          data-title="2024 한국화학공학회 Chem Frontier 대상 (롯데케미칼 대표이사상) 시상식 (뉴시스 보도)"
+          data-recipient="이동호, 김다윈, 안재빈"
+          data-issuer="뉴시스"
+          data-date="2024.11.05"
+          aria-haspopup="dialog"
+          aria-label="2024 Chem Frontier 시상식 보도 사진 확대 보기"
+        >
+          {% assign aw2024_press_thumb = 'assets/img/awards/award_2024_chemfrontier_ceremony.jpg' | ace2_thumb_webp %}
+          <picture class="ace2-pic">
+            {% if aw2024_press_thumb != '' %}<source srcset="{{ aw2024_press_thumb | relative_url }}" type="image/webp">{% endif %}
+            <img
+              src="{{ '/assets/img/awards/award_2024_chemfrontier_ceremony.jpg' | relative_url }}"
+              alt="2024 한국화학공학회 Chem Frontier 대상 (롯데케미칼 대표이사상) 시상식 사진 (이동호, 김다윈, 안재빈)"
+              loading="lazy"
+              decoding="async"
+            >
+          </picture>
+          <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </button>
+        <div class="ed-press-card__content">
+          <div class="ed-press-card__top">
+            <span class="ed-media ed-media--crimson"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> <span data-i18n-term>뉴시스</span></span>
+            <time class="ed-datepill" datetime="2024-11-05">2024.11.05</time>
+          </div>
+          <h4 class="ed-press-card__title">
+            <a href="https://www.newsis.com/view/NISX20241105_0002947119" target="_blank" rel="noopener">이동호(19학번, 4학년), 김다윈(20학번, 4학년), 안재빈(20학번, 3학년) 학생 “2024 한국화학공학회 Chem Frontier” 에서 대상 (롯데케미칼 대표이사) 수상 <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span></a>
+          </h4>
         </div>
-        <h4 class="ed-press-card__title">
-          <a href="https://www.newsis.com/view/NISX20241105_0002947119" target="_blank" rel="noopener">이동호(19학번, 4학년), 김다윈(20학번, 4학년), 안재빈(20학번, 3학년) 학생 “2024 한국화학공학회 Chem Frontier” 에서 대상 (롯데케미칼 대표이사) 수상 <i class="fa-solid fa-arrow-up-right-from-square ed-ext-icon" aria-hidden="true"></i><span class="ed-sr"> (opens in a new tab)</span></a>
-        </h4>
       </li>
     </ul>
 

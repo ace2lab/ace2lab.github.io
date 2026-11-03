@@ -1,0 +1,210 @@
+dgist:
+  ko: DGIST
+  en: DGIST
+  ja: DGIST
+  zh: DGIST
+gist:
+  ko: GIST
+  en: GIST
+  ja: GIST
+  zh: GIST
+postech:
+  ko: POSTECH
+  en: POSTECH
+  ja: POSTECH
+  zh: POSTECH
+unist:
+  ko: UNIST
+  en: UNIST
+  ja: UNIST
+  zh: UNIST
+kyungpook:
+  ko: 경북대학교
+  en: Kyungpook National University
+  ja: 慶北大学校
+  zh: 庆北大学
+pusan:
+  ko: 부산대학교
+  en: Pusan National University
+  ja: 釜山大学校
+  zh: 釜山大学
+chonnam:
+  ko: 전남대학교
+  en: Chonnam National University
+  ja: 全南大学校
+  zh: 全南大学
+jeonbuk:
+  ko: 전북대학교
+  en: Jeonbuk National University
+  ja: 全北大学校
+  zh: 全北大学
+chungnam:
+  ko: 충남대학교
+  en: Chungnam National University
+  ja: 忠南大学校
+  zh: 忠南大学
+chungbuk:
+  ko: 충북대학교
+  en: Chungbuk National University
+  ja: 忠北大学校
+  zh: 忠北大学
+kangwon:
+  ko: 강원대학교
+  en: Kangwon National University
+  ja: 江原大学校
+  zh: 江原大学
+gyeongsang:
+  ko: 경상국립대학교
+  en: Gyeongsang National University
+  ja: 慶尚国立大学校
+  zh: 庆尚国立大学
+seoultech:
+  ko: 서울과학기술대학교
+  en: Seoul National University of Science and Technology
+  ja: ソウル科学技術大学校
+  zh: 首尔科学技术大学
+seoul_univ:
+  ko: 서울시립대학교
+  en: University of Seoul
+  ja: ソウル市立大学校
+  zh: 首尔市立大学
+pukyong:
+  ko: 국립부경대학교
+  en: Pukyong National University
+  ja: 釜慶大学校
+  zh: 釜庆大学
+kumoh:
+  ko: 국립금오공과대학교
+  en: Kumoh National Institute of Technology
+  ja: 金烏工科大学校
+  zh: 金乌工科大学
+sunchon:
+  ko: 국립순천대학교
+  en: Sunchon National University
+  ja: 順天大学校
+  zh: 顺天大学
+yonsei:
+  ko: 연세대학교
+  en: Yonsei University
+  ja: 延世大学校
+  zh: 延世大学
+korea:
+  ko: 고려대학교
+  en: Korea University
+  ja: 高麗大学校
+  zh: 高丽大学
+korea_joint:
+  ko: 고려대학교*
+  en: Korea University*
+  ja: 高麗大学校*
+  zh: 高丽大学*
+sungkyunkwan:
+  ko: 성균관대학교
+  en: Sungkyunkwan University
+  ja: 成均館大学校
+  zh: 成均馆大学
+hanyang:
+  ko: 한양대학교
+  en: Hanyang University
+  ja: 漢陽大学校
+  zh: 汉阳大学
+sogang:
+  ko: 서강대학교
+  en: Sogang University
+  ja: 西江大学校
+  zh: 西江大学
+ewha:
+  ko: 이화여자대학교
+  en: Ewha Womans University
+  ja: 梨花女子大学校
+  zh: 梨花女子大学
+chungang:
+  ko: 중앙대학교
+  en: Chung-Ang University
+  ja: 中央大学校
+  zh: 中央大学
+kyunghee:
+  ko: 경희대학교
+  en: Kyung Hee University
+  ja: 慶熙大学校
+  zh: 庆熙大学
+konkuk_joint:
+  ko: 건국대학교*
+  en: Konkuk University*
+  ja: 建国大学校*
+  zh: 建国大学*
+dongguk:
+  ko: 동국대학교
+  en: Dongguk University
+  ja: 東国大学校
+  zh: 东国大学
+hongik:
+  ko: 홍익대학교
+  en: Hongik University
+  ja: 弘益大学校
+  zh: 弘益大学
+ajou:
+  ko: 아주대학교
+  en: Ajou University
+  ja: 亜洲大学校
+  zh: 亚洲大学
+kwangwoon:
+  ko: 광운대학교
+  en: Kwangwoon University
+  ja: 光雲大学校
+  zh: 光云大学
+gachon:
+  ko: 가천대학교
+  en: Gachon University
+  ja: 嘉泉大学校
+  zh: 嘉泉大学
+inha:
+  ko: 인하대학교
+  en: Inha University
+  ja: 仁荷大学校
+  zh: 仁荷大学
+catholic:
+  ko: 가톨릭대학교
+  en: Catholic University of Korea
+  ja: カトリック大学校
+  zh: 韩国天主教大学
+catholic_joint:
+  ko: 동국대학교/가톨릭대학교*
+  en: Dongguk Univ. / Catholic Univ. of Korea*
+  ja: 東国大学校／カトリック大学校*
+  zh: 东国大学/韩国天主教大学*
+myongji:
+  ko: 명지대학교
+  en: Myongji University
+  ja: 明知大学校
+  zh: 明知大学
+ulsan:
+  ko: 울산대학교
+  en: University of Ulsan
+  ja: 蔚山大学校
+  zh: 蔚山大学
+yeungnam:
+  ko: 영남대학교
+  en: Yeungnam University
+  ja: 嶺南大学校
+  zh: 岭南大学
+donga:
+  ko: 동아대학교
+  en: Dong-A University
+  ja: 東亜大学校
+  zh: 东亚大学
+soonchunhyang:
+  ko: 순천향대학교
+  en: Soonchunhyang University
+  ja: 順天郷大学校
+  zh: 顺天乡大学
+cheongju:
+  ko: 청주대학교
+  en: Cheongju University
+  ja: 清州大学校
+  zh: 清州大学
+hannam:
+  ko: 한남대학교
+  en: Hannam University
+  ja: 韓南大学校
+  zh: 韩南大学

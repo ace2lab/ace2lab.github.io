@@ -1616,6 +1616,36 @@ ui:
     en: "* Korea University and Konkuk University entered as joint teams with other universities. Of 65 presentation numbers, 4 withdrawals were excluded, leaving 61 finalist teams."
     ja: "※ 高麗大学校・建国大学校は他大学との連合チームとして参加しました。発表番号65件のうち辞退4件を除く61チームが本選に参加しました。"
     zh: "* 高丽大学与建国大学以与其他高校组成联合队的形式参赛。65个发表编号中，除4个撤回外，共61支队伍参加决赛。"
+  cf.field_title_2025:
+    ko: "2025 본선 참가 27개 대학 명단 (59개 정예 팀)"
+    en: "27 Participating Universities in the 2025 Finals (59 Finalist Teams)"
+    ja: "2025 本選参加27大学一覧（59の精鋭チーム）"
+    zh: "2025决赛参赛27所高校名单（59支精英团队）"
+  cf.field_lead_2025:
+    ko: "본선 참가 대학을 유형별로 정리했습니다. 경북대학교(ACE² Lab)는 59개 팀 중 전국 1위(산업통상부장관상)를 차지했습니다."
+    en: "Participating universities grouped by type. Kyungpook National University (ACE² Lab) placed 1st nationally (Minister's Award) among 59 teams."
+    ja: "参加大学を類型別に整理しました。慶北大学校（ACE² Lab）は59チーム中、全国1位（産業通商部長官賞）を獲得しました。"
+    zh: "按类型整理的参赛高校。庆北大学（ACE² Lab）在59支队伍中荣获全国第一（产业通商部部长奖）。"
+  cf.field_title_2024:
+    ko: "2024 본선 참가 15개 대학 명단 (22개 정예 팀)"
+    en: "15 Participating Universities in the 2024 Finals (22 Finalist Teams)"
+    ja: "2024 本選参加15大学一覧（22の精鋭チーム）"
+    zh: "2024决赛参赛15所高校名单（22支精英团队）"
+  cf.field_lead_2024:
+    ko: "포스터 심화 부문 본선 참가 대학을 유형별로 정리했습니다. 경북대학교(ACE² Lab)는 전국 2위(대상 · 롯데케미칼 대표이사상)를 수상했습니다."
+    en: "Participating universities in the advanced poster finals grouped by type. Kyungpook National University (ACE² Lab) placed 2nd nationally (Grand Prize, LOTTE Chemical CEO Award)."
+    ja: "ポスター深化部門の本選参加大学を類型別に整理しました。慶北大学校（ACE² Lab）は全国2位（大賞・ロッテケミカル代表理事賞）を受賞しました。"
+    zh: "按类型整理的海报深化组决赛参赛高校。庆北大学（ACE² Lab）荣获全国第二名（大奖·乐天化学代表理事奖）。"
+  cf.field_winner_tag_2024:
+    ko: "전국 2위 (대상) · ACE² Lab"
+    en: "National 2nd (Grand Prize) · ACE² Lab"
+    ja: "全国2位（大賞）・ACE² Lab"
+    zh: "全国第二名（大奖）· ACE² Lab"
+  cf.field_note_2024:
+    ko: "* 동국대학교/가톨릭대학교는 연합팀으로 참가했습니다. 포스터 심화 부문 본선 22개 정예 팀이 경쟁했습니다."
+    en: "* Dongguk University and the Catholic University of Korea entered as a joint team. 22 finalist teams competed in the advanced poster track."
+    ja: "※ 東国大学校・カトリック大学校は連合チームとして参加しました。ポスター深化部門で22の精鋭チームが競い合いました。"
+    zh: "* 东国大学与韩国天主教大学以联合队形式参赛。海报深化组共有22支精英团队参赛。"
   cf.sec_overview:
     ko: "한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 및 3년 연속 최상위 입상 의의"
     en: "About KIChE Chem Frontier & Significance of 3 Consecutive Years of Top Honors"
@@ -2601,6 +2631,11 @@ terms:
     zh: "Impact Recognition Award"
 
   # --- Issuers, Presentation Types, Patent Statuses & Media Outlets ---
+  "시상식 언론보도":
+    ko: "시상식 언론보도"
+    en: "Ceremony Press Coverage"
+    ja: "授賞式 報道"
+    zh: "颁奖仪式 媒体报道"
   "산업통상부 장관":
     ko: "산업통상부 장관"
     en: "Minister of Trade, Industry and Energy (MOTIE)"
