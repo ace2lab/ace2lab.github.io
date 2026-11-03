@@ -120,7 +120,7 @@ ace2_editorial: true
           </p>
           <div class="cf-competition-highlight">
             <p class="cf-competition-highlight__title"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> <span data-i18n="cf.field_hl_title">2026 본선 경쟁 구도 — 전국 30개 대학 · 61개 정예 팀 참가</span></p>
-            <p class="cf-competition-highlight__desc" data-i18n="cf.field_hl_desc">POSTECH·UNIST·GIST 등 연구중심 과학기술대학, 경북대 포함 7개 거점국립대학교, 연세대·고려대·성균관대 등 수도권 주요 사립대학이 참가한 본선에서 ACE² Lab 팀은 경북대학교 유일 출전팀으로서 61개 팀 중 전국 1위(산업통상부장관상)를 수상했습니다.</p>
+            <p class="cf-competition-highlight__desc" data-i18n="cf.field_hl_desc">POSTECH·UNIST·GIST 등 연구중심대학, 경북대 포함 7개 거점국립대학교, 연세대·고려대·성균관대 등 수도권 주요 사립대학이 참가한 본선에서 ACE² Lab 팀은 경북대학교 유일 출전팀으로서 61개 팀 중 전국 1위(산업통상부장관상)를 수상했습니다.</p>
           </div>
           <div class="sim-features-grid">
             <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>2026년 산업통상부장관상 (김경진, 이종민, 이동건)</span></div>
