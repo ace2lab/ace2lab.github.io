@@ -4,7 +4,7 @@ title: 소개
 permalink: /
 subtitle: Advanced Chemical & Energy Engineering Laboratory | KNU
 description: >-
-  경북대학교 과학기술대학 에너지화학공학과 차세대 화학 및 에너지 공학 연구실 (ACE² Lab, 임창용·김태욱 교수) — 한국화학공학회 Chem Frontier 2년 연속 전국 1위(산업통상부장관상) 수상, 대학원생·학부연구생 모집. 이차전지·슈퍼커패시터, 초고속 펄스광(Intense Pulsed Light) 광열 나노공정, 2D MXene 유연 센서를 연구합니다.
+  초고속 펄스광(Intense Pulsed Light, IPL) 광열 나노공정·2D MXene·슈퍼커패시터·이차전지·유연 센서를 연구하는 경북대학교 에너지화학공학과 ACE² Lab(임창용·김태욱 교수). Chem Frontier 2년 연속 전국 1위 · 대학원생·학부연구생 모집.
 
 selected_papers: false # Option B: rendered in-body dual-column grid
 social: false # clean academic minimalism
@@ -20,10 +20,10 @@ ace2_editorial: true
 ---
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="hero.home.badge_es">에너지 저장 소재</span></span>
-<span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="hero.home.badge_ipl">초고속 펄스광 (Intense Pulsed Light)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="hero.home.badge_es">슈퍼커패시터·이차전지</span></span>
+<span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> <span data-i18n="hero.home.badge_ipl">초고속 펄스광(IPL) 광열 나노공정</span></span>
 <span class="hero-badge"><i class="fa-solid fa-microchip" aria-hidden="true"></i> <span data-i18n="hero.home.badge_sensors">유연 생체·환경 센서</span></span>
-<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span data-i18n="hero.home.badge_mxene">원자층 2D 나노소재</span></span>
+<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span data-i18n="hero.home.badge_mxene">2D MXene 나노소재</span></span>
 {% endcapture %}
 
 {% capture hero_actions %}
@@ -87,20 +87,20 @@ ace2_editorial: true
 </div>
 
 <section class="lab-about" aria-labelledby="about-lab-title">
-  <h2 id="about-lab-title" class="lab-about__title" data-i18n="home.about.title">차세대 화학 및 에너지 공학 연구실 소개 — 에너지 저장·광열 나노공정·유연 센서</h2>
+  <h2 id="about-lab-title" class="lab-about__title" data-i18n="home.about.title">차세대 화학 및 에너지 공학 연구실 — 초고속 펄스광(IPL) 광열 나노공정·2D MXene·슈퍼커패시터·유연 센서 연구</h2>
   <p class="lab-about__lead" data-i18n="home.about.lead">
-    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 에너지 저장 소자(이차전지·슈퍼커패시터) 및 고감도 유연 생체·환경 센서를 개발하며, 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생 및 대학원생을 세계적 수준으로 양성하고 있습니다.
+    ACE² Lab(차세대 화학 및 에너지 공학 연구실)은 경북대학교 과학기술대학 에너지화학공학과에서 임창용 교수와 김태욱 교수가 공동 연구책임자(Co-PIs)로 이끄는 화학공학·에너지공학 융합 연구실입니다. 초고속 펄스광(Intense Pulsed Light, IPL) 광열 나노공정과 2D MXene 등 원자층 2차원 소재 및 기능성 나노아키텍처 제어를 융합하여, 고출력·고밀도 슈퍼커패시터·이차전지 에너지 저장 소자와 고감도 유연 생체·환경 센서를 개발합니다. 한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상 포함)을 달성하는 등 학부연구생과 대학원생을 세계적 수준으로 양성하고 있습니다.
   </p>
 
   <div class="lab-about__pillars">
     <a href="#area-01" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p1_title">에너지 저장 및 기능성 소재</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p1_title">슈퍼커패시터·이차전지 에너지 저장 소재</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
       <p class="lab-about__pillar-desc" data-i18n="home.about.p1_desc">원자층 2차원 나노구조 및 다공성 나노아키텍처 기반 하이브리드 슈퍼커패시터, 차세대 전지 음극 및 환경 촉매 소재</p>
     </a>
     <a href="#area-02" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p2_title">초고속 광열 나노공정</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p2_title">초고속 펄스광(IPL) 광열 나노공정</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
       <p class="lab-about__pillar-desc" data-i18n="home.about.p2_desc">초고속 펄스광(Intense Pulsed Light) 기반 비평형 광열 소결·표면 개질 및 고전도성 유연 전극 나노공정</p>
     </a>
     <a href="#area-03" class="lab-about__pillar">
@@ -249,7 +249,7 @@ ace2_editorial: true
       <span class="research-card__badge">Area 01</span>
     </div>
     <div class="research-card__content">
-      <h3 class="research-card__title" data-i18n="home.about.p1_title">에너지 저장 및 기능성 소재</h3>
+      <h3 class="research-card__title" data-i18n="home.about.p1_title">슈퍼커패시터·이차전지 에너지 저장 소재</h3>
       <div class="research-card__desc" data-i18n="home.areas.c1_desc">
         차세대 하이브리드 코인셀 슈퍼커패시터 및 다공성 MXene/TiO₂ 복합소재 리튬이온전지 음극 설계. 고출력·고에너지밀도 전기화학 소자 구현.
       </div>
@@ -276,7 +276,7 @@ ace2_editorial: true
       <span class="research-card__badge">Area 02</span>
     </div>
     <div class="research-card__content">
-      <h3 class="research-card__title" data-i18n="home.about.p2_title">초고속 광열 나노공정</h3>
+      <h3 class="research-card__title" data-i18n="home.about.p2_title">초고속 펄스광(IPL) 광열 나노공정</h3>
       <div class="research-card__desc" data-i18n="home.areas.c2_desc">
         초고속 펄스광(Intense Pulsed Light) 열처리를 활용한 저온·밀리초 급 나노소재 소결·표면 결함 제어 및 고전도성 유연 전극 직접 공정.
       </div>

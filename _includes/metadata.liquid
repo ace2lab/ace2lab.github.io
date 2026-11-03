@@ -17,7 +17,7 @@
 <!-- SEO title/description SSOT: shared by <title>, og:*, twitter:* and meta description -->
 {% capture seo_title -%}
   {%- if page.url == '/' or page.url == '/index.html' -%}
-    경북대학교 에너지화학공학과 ACE² Lab (임창용·김태욱 교수) | 차세대 화학 및 에너지 공학 연구실 · 대학원생·학부연구생 모집
+    ACE² Lab | 경북대학교 에너지화학공학과 펄스광(IPL) 광열 나노공정·MXene·슈퍼커패시터 연구실
   {%- elsif page.url contains '/members' -%}
     경북대학교 에너지화학공학과 ACE² Lab 구성원 | 임창용·김태욱 교수 및 대학원생·학부연구생
   {%- elsif page.url contains '/publications' -%}
@@ -29,7 +29,7 @@
   {%- elsif page.url contains '/news' -%}
     수상 실적 및 연구실 소식 | Chem Frontier(켐프론티어) 2년 연속 전국 1위 (산업통상부장관상) | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/research' -%}
-    경북대학교 에너지화학공학과 ACE² Lab 핵심 연구분야 (이차전지·광소결·유연센서) | 임창용·김태욱 교수
+    펄스광(IPL) 광열 나노공정·MXene·슈퍼커패시터·유연 센서 연구분야 | ACE² Lab 경북대학교 에너지화학공학과
   {%- elsif page.url contains '/gallery' -%}
     연구실 갤러리 | 학술대회 및 연구 활동 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/teaching' -%}
@@ -76,7 +76,7 @@
     {% endif %}
     <meta property="og:image" content="{{ og_image_url }}">
   {% endif %}
-  <meta property="og:locale" content="{{ site.lang | default: 'ko' }}">
+  <meta property="og:locale" content="ko_KR">
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -88,6 +88,8 @@
 {% endif %}
 
 {% if site.serve_schema_org %}
+  {% assign ld_yim = site.data.members | where: 'id', 'changyong-yim' | first %}
+  {% assign ld_kim = site.data.members | where: 'id', 'taewook-kim' | first %}
   <!-- Schema.org JSON-LD (Search Engine & Generative AI Knowledge Graph) -->
   <script type="application/ld+json">
     {
@@ -119,13 +121,18 @@
             "에너지 저장 소재 (Energy Storage Materials)",
             "이차전지 (Rechargeable Batteries)",
             "슈퍼커패시터 (Supercapacitors)",
+            "하이브리드 슈퍼커패시터 (Hybrid Supercapacitors)",
+            "리튬이온전지 음극 (Li-ion Battery Anodes)",
+            "초고속 펄스광 (Intense Pulsed Light, IPL)",
             "고강도 펄스광 광소결 (Intense Pulsed Light Sintering)",
+            "플래시 램프 어닐링 (Flash Lamp Annealing)",
             "광열 나노공정 (Photothermal Nanomanufacturing)",
-            "2D MXene",
+            "2D MXene (Ti₃C₂Tₓ)",
             "금속-유기 골격체 (Metal-Organic Frameworks)",
             "레이저 유도 그래핀 (Laser-Induced Graphene)",
             "유연 웨어러블 센서 (Flexible Wearable Sensors)",
             "가스 센서 (Gas Sensors)",
+            "나노 전자코 (E-nose)",
             "전달현상 (Transport Phenomena)"
           ],
           "award": [
@@ -156,7 +163,7 @@
               "addressLocality": "상주시",
               "addressRegion": "경상북도",
               "postalCode": "37224",
-              "streetAddress": "경상대로 2559, 경북대학교 7호관 에너지화학공학과 (상주캠퍼스)",
+              "streetAddress": "경상대로 2559, 경북대학교 7호관 4층 에너지화학공학과 (상주캠퍼스)",
               "addressCountry": "KR"
             }
           }
@@ -174,6 +181,7 @@
             "@type": "EducationalOrganization",
             "name": "경북대학교 과학기술대학 에너지화학공학과"
           },
+          {% if ld_yim.topics %}"knowsAbout": {{ ld_yim.topics | jsonify }},{% endif %}
           "sameAs": ["https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "https://orcid.org/0000-0002-3909-5735"]
         },
         {
@@ -189,6 +197,7 @@
             "@type": "EducationalOrganization",
             "name": "경북대학교 과학기술대학 에너지화학공학과"
           },
+          {% if ld_kim.topics %}"knowsAbout": {{ ld_kim.topics | jsonify }},{% endif %}
           "sameAs": ["https://scholar.google.com/citations?user=2qPTMYUAAAAJ"]
         },
         {
@@ -196,7 +205,7 @@
           "@id": "https://ace2.knu.ac.kr/#website",
           "url": "https://ace2.knu.ac.kr/",
           "name": "경북대학교 에너지화학공학과 | ACE² Lab",
-          "description": "경북대학교 과학기술대학 에너지화학공학과 차세대 화학 및 에너지 공학 연구실 (ACE² Lab, 임창용·김태욱 교수). 화학공학·에너지공학 융합 이차전지, 광열 나노공정, 유연 센서 연구 및 학부연구생·대학원생 모집.",
+          "description": "초고속 펄스광(IPL) 광열 나노공정·2D MXene·슈퍼커패시터·이차전지·유연 센서 연구 | 경북대학교 과학기술대학 에너지화학공학과 ACE² Lab (임창용·김태욱 교수), 대학원생·학부연구생 모집.",
           "publisher": {
             "@id": "https://ace2.knu.ac.kr/#organization"
           },
