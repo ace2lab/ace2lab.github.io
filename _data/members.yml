@@ -495,7 +495,7 @@
   degree_program: 연구원(석사) (2026.02 – 현재)
   affiliation: "KNU 에너지화학공학과 연구원"
   education:
-    - "M.S.  KNU 미래과학기술융합학부 에너지·신소재화학공학전공 ('24학번)"
+    - "M.S.  KNU 미래과학기술융합학부 에너지 신소재・화학공학전공 ('24학번)"
     - "B.S.  KNU 에너지화학공학과 ('18학번)"
   research_field: "2D 나노복합소재 및 광촉매 환경 소재"
   office: 7호관 406호
@@ -515,7 +515,7 @@
   email: ehdgh614@knu.ac.kr
   photo: assets/img/team/dongho_lee.jpg
   degree_program: 석박통합과정 (2025.03 – 현재)
-  affiliation: "KNU 미래과학기술융합학부 에너지·신소재화학공학전공 석박통합과정"
+  affiliation: "KNU 미래과학기술융합학부 에너지 신소재・화학공학전공 석박통합과정"
   education:
     - "B.S.  KNU 에너지화학공학과 ('19학번)"
   research_field: "전기화학 에너지 소재 및 전극 계면 공학"
@@ -559,7 +559,7 @@
   email: coco24245@knu.ac.kr
   photo: assets/img/team/jaebeen_ahn.jpg
   degree_program: 석사과정 (2026.03 – 현재)
-  affiliation: "KNU 미래과학기술융합학부 에너지·신소재화학공학전공 석사과정"
+  affiliation: "KNU 미래과학기술융합학부 에너지 신소재・화학공학전공 석사과정"
   education:
     - "B.S.  KNU 에너지화학공학과 ('20학번)"
   research_field: "2D 나노소재 및 마이크로 에너지 소자"
@@ -718,7 +718,7 @@
   name_ko: 이희진
   name_en: Huijin Lee
   degree: M.S.
-  dept: KNU 미래과학기술융합학부 에너지·신소재화학공학전공
+  dept: KNU 미래과학기술융합학부 에너지 신소재・화학공학전공
   cohort: 2024
   bs_dept: KNU 에너지화학공학과
   bs_cohort: 2018
@@ -773,7 +773,7 @@
   name_ko: 팽창웅
   name_en: Changung Paeng
   degree: M.S.
-  dept: KNU 미래과학기술융합학부 에너지·신소재화학공학전공
+  dept: KNU 미래과학기술융합학부 에너지 신소재・화학공학전공
   cohort: 2023
   bs_dept: KNU 에너지화학공학과
   bs_cohort: TBA
@@ -791,7 +791,7 @@
   name_ko: 안준혁
   name_en: Junhyuck Ahn
   degree: M.S.
-  dept: KNU 미래과학기술융합학부 에너지·신소재화학공학전공
+  dept: KNU 미래과학기술융합학부 에너지 신소재・화학공학전공
   cohort: 2022
   bs_dept: KNU 에너지화학공학과
   bs_cohort: TBA

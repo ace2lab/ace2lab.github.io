@@ -120,23 +120,28 @@
       }
     }
 
-    // 2. Education lines (e.g. "M.S.  KNU 에너지화학공학과 ('24학번)", "M.S.  KNU 미래과학기술융합학부 ('24학번)")
+    // 2. Education lines (e.g. "M.S.  KNU 에너지화학공학과 ('24학번)", "M.S.  KNU 미래과학기술융합학부 에너지 신소재・화학공학전공 ('24학번)")
+    // Full major (canonical U+30FB or alias U+00B7 middle dot) is replaced before the bare faculty-name fallback.
+    var futureMajorRe = /KNU 미래과학기술융합학부\s*에너지\s*신소재\s*[\u30FB\u00B7]\s*화학공학전공/;
     if ((trimmed.indexOf("KNU 에너지화학공학과") !== -1 || trimmed.indexOf("KNU 미래과학기술융합학부") !== -1) && trimmed.indexOf("학번") !== -1) {
       if (lang === "en") {
         return trimmed
           .replace("KNU 에너지화학공학과", "KNU Energy Chem. Eng.")
+          .replace(futureMajorRe, "KNU Future Sci. & Tech. Convergence (Energy Advanced Materials & Chem. Eng.)")
           .replace("KNU 미래과학기술융합학부", "KNU Future Sci. & Tech. Convergence")
           .replace(/\('(\d+)학번\)/g, "(Entered '$1)");
       }
       if (lang === "ja") {
         return trimmed
           .replace("KNU 에너지화학공학과", "慶北大学校 エネルギー化学工学科")
+          .replace(futureMajorRe, "慶北大学校 未来科学技術融合学部 エネルギー新素材・化学工学専攻")
           .replace("KNU 미래과학기술융합학부", "慶北大学校 未来科学技術融合学部")
           .replace(/\('(\d+)학번\)/g, "('$1入学)");
       }
       if (lang === "zh") {
         return trimmed
           .replace("KNU 에너지화학공학과", "庆北大学 能源化学工程系")
+          .replace(futureMajorRe, "庆北大学 未来科学技术融合学部 能源新材料·化学工程专业")
           .replace("KNU 미래과학기술융합학부", "庆北大学 未来科学技术融合学部")
           .replace(/\('(\d+)학번\)/g, "('$1级)");
       }
