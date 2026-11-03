@@ -17,19 +17,19 @@
 <!-- SEO title/description SSOT: shared by <title>, og:*, twitter:* and meta description -->
 {% capture seo_title -%}
   {%- if page.url == '/' or page.url == '/index.html' -%}
-    경북대학교 에너지화학공학과 ACE² Lab | 차세대 화학 및 에너지 공학 연구실 (임창용·김태욱 교수)
+    경북대학교 에너지화학공학과 ACE² Lab (임창용·김태욱 교수) | 차세대 화학 및 에너지 공학 연구실 · 대학원생·학부연구생 모집
   {%- elsif page.url contains '/members' -%}
-    연구실 구성원 | 임창용·김태욱 교수 | 경북대학교 에너지화학공학과 ACE² Lab
+    경북대학교 에너지화학공학과 ACE² Lab 구성원 | 임창용·김태욱 교수 및 대학원생·학부연구생
   {%- elsif page.url contains '/publications' -%}
-    연구성과 (SCI 논문·특허) | 임창용·김태욱 교수 | 경북대학교 에너지화학공학과 ACE² Lab
+    경북대학교 에너지화학공학과 ACE² Lab 연구성과 (SCI 논문·특허) | 임창용·김태욱 교수
   {%- elsif page.url contains '/chem-frontier' -%}
     Chem Frontier(켐프론티어) 2년 연속 전국 1위 (산업통상부장관상) · 3년 연속 최상위 입상 | 한국화학공학회 창의설계 경진대회 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/facilities' -%}
-    연구 장비 및 실험 인프라 | 경북대학교 에너지화학공학과 ACE² Lab
+    경북대학교 에너지화학공학과 ACE² Lab 연구장비·실험 인프라 | 차세대 화학 및 에너지 공학 연구실
   {%- elsif page.url contains '/news' -%}
     수상 실적 및 연구실 소식 | Chem Frontier(켐프론티어) 2년 연속 전국 1위 (산업통상부장관상) | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/research' -%}
-    화학공학·에너지공학 핵심 연구분야 (이차전지·광소결·유연센서) | 경북대학교 에너지화학공학과 ACE² Lab
+    경북대학교 에너지화학공학과 ACE² Lab 핵심 연구분야 (이차전지·광소결·유연센서) | 임창용·김태욱 교수
   {%- elsif page.url contains '/gallery' -%}
     연구실 갤러리 | 학술대회 및 연구 활동 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/teaching' -%}
@@ -42,7 +42,9 @@
 {%- endcapture %}
 {% assign seo_title = seo_title | strip %}
 {% assign seo_description = page.description | default: site.description | strip | escape %}
+{% assign canonical_url = page.url | replace: 'index.html', '' | absolute_url %}
 <title>{{ seo_title }}</title>
+<link rel="canonical" href="{{ canonical_url }}">
 
 <meta name="author" content="ACE² Lab | 임창용 · 김태욱 (Changyong Yim, Taewook Kim)">
 <meta name="description" content="{{ seo_description }}">

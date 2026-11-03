@@ -13,9 +13,9 @@ ace2_editorial: true
 ---
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> <span data-i18n="research.badge_p1">에너지 저장 소재 (Pillar 01)</span></span>
-<span class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.badge_p2">광열 소결 공정 (Pillar 02)</span></span>
-<span class="hero-badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.badge_p3">유연 센서 소자 (Pillar 03)</span></span>
+<a href="#energy-storage" class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> <span data-i18n="research.badge_p1">에너지 저장 소재 (Pillar 01)</span></a>
+<a href="#photonic" class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.badge_p2">광열 소결 공정 (Pillar 02)</span></a>
+<a href="#sensors" class="hero-badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.badge_p3">유연 센서 소자 (Pillar 03)</span></a>
 <a href="{{ '/facilities/' | relative_url }}" class="hero-badge"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> <span data-i18n-ko="연구장비 바로가기 ({{ site.data.facilities.size }}대)" data-i18n-en="View Lab Facilities ({{ site.data.facilities.size }})" data-i18n-ja="研究設備を見る ({{ site.data.facilities.size }}台)" data-i18n-zh="查看实验仪器 ({{ site.data.facilities.size }}台)">연구장비 바로가기 ({{ site.data.facilities.size }}대)</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 {% endcapture %}
 

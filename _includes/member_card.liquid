@@ -117,10 +117,19 @@
           </li>
         {% endif %}
         {% if research_field != blank %}
+          {% assign research_tab_hash = 'energy-storage' %}
+          {% if research_field contains '광열' or research_field contains '상전이' %}
+            {% assign research_tab_hash = 'photonic' %}
+          {% elsif research_field contains '센서' %}
+            {% assign research_tab_hash = 'sensors' %}
+          {% endif %}
           <li class="member-meta__research">
             <i class="fa-solid fa-flask" aria-hidden="true"></i
             ><span
-              ><span class="tm-sr-only">연구분야: </span><span data-i18n-term>{{ research_field }}</span></span
+              ><span class="tm-sr-only">연구분야: </span
+              ><a href="{{ '/research/' | relative_url }}#{{ research_tab_hash }}" class="member-meta__research-link" data-i18n-term>
+                {{- research_field -}}
+              </a></span
             >
           </li>
         {% endif %}

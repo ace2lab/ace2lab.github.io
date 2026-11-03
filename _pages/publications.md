@@ -101,7 +101,21 @@ ace2_editorial: true
         <span data-i18n="publications.sec_journals">국제 SCI(E) 학술지 논문 (International Journals)</span>
         <span class="ed-section__count">{{ intl_count }}</span>
       </h2>
-      <p class="pub-pi-filter__note" id="pubPiFilterNote" data-i18n="publications.pi_note">※ 경북대학교 부임 이전 연구책임자(PI)의 주요 학술지 발표 논문을 포함합니다.</p>
+      <div class="pub-research-crosslinks" aria-label="Core research pillars">
+        <p class="pub-pi-filter__note" id="pubPiFilterNote" data-i18n="publications.pi_note">※ 경북대학교 부임 이전 연구책임자(PI)의 주요 학술지 발표 논문을 포함합니다.</p>
+        <div class="pub-research-crosslinks__chips">
+          <span class="pub-research-crosslinks__label"><i class="fa-solid fa-compass" aria-hidden="true"></i> <span data-i18n="hero.home.act_research">핵심 연구분야</span></span>
+          <a href="{{ '/research/#energy-storage' | relative_url }}" class="pub-research-crosslinks__chip">
+            <i class="fa-solid fa-battery-three-quarters" aria-hidden="true"></i> <span data-i18n="research.tab.p1">에너지 저장 및 기능성 소재</span>
+          </a>
+          <a href="{{ '/research/#photonic' | relative_url }}" class="pub-research-crosslinks__chip">
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.tab.p2">초고속 광열 나노공정</span>
+          </a>
+          <a href="{{ '/research/#sensors' | relative_url }}" class="pub-research-crosslinks__chip">
+            <i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.tab.p3">유연 센서 및 스마트 소자</span>
+          </a>
+        </div>
+      </div>
 
       <fieldset class="pub-pi-filter" id="pubPiFilter" role="radiogroup" aria-labelledby="pubPiFilterLegend" aria-describedby="pubPiFilterNote">
         <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> <span data-i18n="publications.pi_legend">연구책임자</span></legend>

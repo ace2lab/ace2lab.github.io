@@ -4,8 +4,7 @@ title: 소개
 permalink: /
 subtitle: Advanced Chemical & Energy Engineering Laboratory | KNU
 description: >-
-  경북대학교(경북대) 에너지화학공학과 차세대 화학 및 에너지 공학 연구실(ACE² Lab, 임창용 교수·김태욱 교수).
-  화학공학·에너지공학 융합 이차전지·슈퍼커패시터, 초고속 펄스광(Intense Pulsed Light) 광열 나노공정, 2D MXene 유연 센서를 연구하며 학부연구생 및 대학원생을 모집합니다. 한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위(산업통상부장관상) 수상.
+  경북대학교 과학기술대학 에너지화학공학과 차세대 화학 및 에너지 공학 연구실 (ACE² Lab, 임창용·김태욱 교수) — 한국화학공학회 Chem Frontier 2년 연속 전국 1위(산업통상부장관상) 수상, 대학원생·학부연구생 모집. 이차전지·슈퍼커패시터, 초고속 펄스광(Intense Pulsed Light) 광열 나노공정, 2D MXene 유연 센서를 연구합니다.
 
 selected_papers: false # Option B: rendered in-body dual-column grid
 social: false # clean academic minimalism
