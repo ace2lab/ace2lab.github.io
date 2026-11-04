@@ -336,8 +336,7 @@ ace2_team_grid: true
 <section class="ach-group"><h3 class="ach-group__title"><span data-i18n="ach.group_talks">학회 발표</span> <span class="ach-group__count">{{ ach_talks.size }}</span></h3><ul class="ach-list" role="list">
 {%- for x in ach_talks %}
 {%- assign p_list = x.presenters | split: "," -%}
-{%- assign p_lead = p_list | first | strip -%}
-{%- assign p_rest = p_list | slice: 1, p_list.size -%}
+{%- capture ach_presenters -%}{%- if x.presenters != blank -%}{%- for p_raw in p_list -%}{%- assign p_name = p_raw | strip -%}{%- unless forloop.first -%}, {% endunless -%}{%- if p_name == m.name_ko or p_name contains m.name_ko -%}<span class="ach-author--self">{{ p_name | escape }}</span>{%- else -%}{{ p_name | escape }}{%- endif -%}{%- endfor -%}{%- endif -%}{%- endcapture -%}
 {%- assign x_type_ko = site.data.i18n.terms[x.type].ko | default: x.type -%}
 {%- assign talk_cls = "ach-item__tag--oral" -%}
 {%- assign talk_ico = "fa-microphone" -%}
@@ -348,7 +347,7 @@ ace2_team_grid: true
   {%- assign talk_cls = "ach-item__tag--invited" -%}
   {%- assign talk_ico = "fa-microphone-lines" -%}
 {%- endif -%}
-<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag {{ talk_cls }}"><i class="fa-solid {{ talk_ico }}" aria-hidden="true"></i> <span data-i18n-term data-orig-term="{{ x.type | escape }}">{{ x_type_ko | escape }}</span></span>{% endif %}{% if x.award and x.award != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.award | escape }}</span></span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if x.presenters != blank %} · <span class="ach-presenter--lead">{{ p_lead | escape }}</span>{%- for co in p_rest -%}, {{ co | strip | escape }}{%- endfor -%}{% endif %}</p></li>
+<li class="ach-item"><p class="ach-item__title">{{ x.title | escape }}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag {{ talk_cls }}"><i class="fa-solid {{ talk_ico }}" aria-hidden="true"></i> <span data-i18n-term data-orig-term="{{ x.type | escape }}">{{ x_type_ko | escape }}</span></span>{% endif %}{% if x.award and x.award != blank %}<span class="ach-item__tag ach-item__tag--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n-term>{{ x.award | escape }}</span></span>{% endif %}{{ x.conference | escape }} · {{ x.date | escape }}{% if x.location != blank %} · {{ x.location | escape }}{% endif %}{% if ach_presenters != blank %} · {{ ach_presenters }}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}
