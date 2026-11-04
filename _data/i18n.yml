@@ -168,10 +168,10 @@ ui:
     ja: 研究業績
     zh: 论文与专利
   hero.home.act_chemfrontier:
-    ko: Chem Frontier(켐프론티어) 2년 연속 전국 1위
-    en: Chem Frontier 2 Consecutive National 1st Places
-    ja: Chem Frontier 2年連続全国1位
-    zh: Chem Frontier 连续2年全国第一
+    ko: 한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위
+    en: KIChE Chem Frontier — Two Consecutive National 1st Places
+    ja: 韓国化学工学会 Chem Frontier 2年連続全国1位
+    zh: 韩国化学工学会 Chem Frontier 连续2年全国第一
 
   # ----------------------------------------------------------------------------
   # Home Page (_pages/about.md)
@@ -1382,10 +1382,10 @@ ui:
     ja: 受賞・メディア報道
     zh: 获奖与媒体报道
   hero.news.subtitle:
-    ko: "연구실 수상 실적 및 주요 언론 보도 · Chem Frontier(켐프론티어) 2년 연속 전국 1위"
-    en: "Honors, awards, and media press coverage of ACE² Lab · Two Consecutive National 1st Places at Chem Frontier"
-    ja: "研究室の受賞実績および主要メディア報道 · Chem Frontier 2年連続全国1位"
-    zh: "实验室获奖荣誉与重要媒体报道 · Chem Frontier 连续2年全国第一"
+    ko: "연구실 수상 실적 및 주요 언론 보도 · 한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위"
+    en: "Honors, awards, and media press coverage of ACE² Lab · Two Consecutive National 1st Places at KIChE Chem Frontier"
+    ja: "研究室の受賞実績および主要メディア報道 · 韓国化学工学会 Chem Frontier 2年連続全国1位"
+    zh: "实验室获奖荣誉与重要媒体报道 · 韩国化学工学会 Chem Frontier 连续2年全国第一"
   hero.news.subtitle_en:
     ko: "Honors, awards, and media press coverage of ACE² Lab."
     en: "Chronological record of research honors, student awards, and media press releases."
@@ -1393,15 +1393,15 @@ ui:
     zh: "Honors, awards, and media press coverage of ACE² Lab."
 
   news.act_chemfrontier:
-    ko: "Chem Frontier(켐프론티어) 2년 연속 전국 1위 특집"
-    en: "Chem Frontier 2 Consecutive National 1st Places"
-    ja: "Chem Frontier 2年連続全国1位特集"
-    zh: "Chem Frontier 连续2年全国第一特辑"
+    ko: "한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위 특집"
+    en: "KIChE Chem Frontier 2 Consecutive National 1st Places"
+    ja: "韓国化学工学会 Chem Frontier 2年連続全国1位特集"
+    zh: "韩国化学工学会 Chem Frontier 连续2年全国第一特辑"
   news.idx_chemfrontier:
-    ko: "Chem Frontier(켐프론티어) 2년 연속 전국 1위 총람 →"
-    en: "Chem Frontier Showcase: 2 Consecutive National 1st Places →"
-    ja: "Chem Frontier 2年連続全国1位総覧 →"
-    zh: "Chem Frontier 连续2年全国第一总览 →"
+    ko: "한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위 총람 →"
+    en: "KIChE Chem Frontier Showcase: 2 Consecutive National 1st Places →"
+    ja: "韓国化学工学会 Chem Frontier 2年連続全国1位総覧 →"
+    zh: "韩国化学工学会 Chem Frontier 连续2年全国第一总览 →"
   news.cf_banner.pill1:
     ko: "2년 연속 전국 1위 · 3년 연속 최상위 입상 (2024–2026)"
     en: "2 Consecutive National 1st Places · 3 Consecutive Years of Top Honors (2024–2026)"

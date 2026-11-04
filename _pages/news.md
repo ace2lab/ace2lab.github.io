@@ -21,7 +21,7 @@ ace2_editorial: true
 {% endcapture %}
 
 {% capture hero_actions %}
-<a href="{{ '/chem-frontier/' | relative_url }}" class="hero-action-btn hero-action-btn--primary"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="news.act_chemfrontier">Chem Frontier(켐프론티어) 2년 연속 전국 1위 특집</span></a>
+<a href="{{ '/chem-frontier/' | relative_url }}" class="hero-action-btn hero-action-btn--primary"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="news.act_chemfrontier">한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위 특집</span></a>
 {% endcapture %}
 
 {% include hero_banner.liquid
@@ -29,7 +29,7 @@ ace2_editorial: true
   i18n_prefix="hero.news"
   label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
   title="Awards & Press"
-  subtitle="연구실 수상 실적 및 주요 언론 보도 · Chem Frontier(켐프론티어) 2년 연속 전국 1위"
+  subtitle="연구실 수상 실적 및 주요 언론 보도 · 한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위"
   subtitle_en="Honors, awards, and media press coverage of ACE² Lab."
   badges=hero_badges
   actions=hero_actions
@@ -40,7 +40,7 @@ ace2_editorial: true
   <nav class="ed-index" aria-label="News sections">
     <a href="#latest"><span data-i18n="news.idx_latest">최신 소식</span></a>
     <a href="#achievements"><span data-i18n="news.idx_achievements">수상 및 언론보도</span><span class="ed-index__count">{{ all_achievements.size }}</span></a>
-    <a href="{{ '/chem-frontier/' | relative_url }}"><span data-i18n="news.idx_chemfrontier">Chem Frontier(켐프론티어) 2년 연속 전국 1위 총람 →</span></a>
+    <a href="{{ '/chem-frontier/' | relative_url }}"><span data-i18n="news.idx_chemfrontier">한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위 총람 →</span></a>
   </nav>
 
   <div class="sim-card">

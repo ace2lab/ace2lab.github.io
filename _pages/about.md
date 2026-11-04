@@ -4,7 +4,7 @@ title: 소개
 permalink: /
 subtitle: Advanced Chemical & Energy Engineering Laboratory | KNU
 description: >-
-  초고속 펄스광(Intense Pulsed Light, IPL) 광열 나노공정·2D MXene·슈퍼커패시터·이차전지·유연 센서를 연구하는 경북대학교 에너지화학공학과 ACE² Lab(임창용·김태욱 교수). Chem Frontier 2년 연속 전국 1위 · 대학원생·학부연구생 모집.
+  초고속 펄스광(Intense Pulsed Light, IPL) 광열 나노공정·2D MXene·슈퍼커패시터·이차전지·유연 센서를 연구하는 경북대학교 에너지화학공학과 ACE² Lab(임창용·김태욱 교수). 한국화학공학회 Chem Frontier 2년 연속 전국 1위 · 대학원생·학부연구생 모집.
 
 selected_papers: false # Option B: rendered in-body dual-column grid
 social: false # clean academic minimalism
@@ -30,7 +30,7 @@ ace2_editorial: true
 <a href="#research-areas" class="hero-action-btn hero-action-btn--primary"><i class="fa-solid fa-compass" aria-hidden="true"></i> <span data-i18n="hero.home.act_research">핵심 연구분야</span></a>
 <a href="{{ '/members/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-users" aria-hidden="true"></i> <span data-i18n="hero.home.act_team">연구실 구성원</span></a>
 <a href="{{ '/publications/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-book-open" aria-hidden="true"></i> <span data-i18n="hero.home.act_pubs">연구성과 (논문·특허)</span></a>
-<a href="{{ '/chem-frontier/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="hero.home.act_chemfrontier">Chem Frontier(켐프론티어) 2년 연속 전국 1위</span></a>
+<a href="{{ '/chem-frontier/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="hero.home.act_chemfrontier">한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위</span></a>
 {% endcapture %}
 
 {% include hero_banner.liquid
