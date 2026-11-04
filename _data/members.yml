@@ -11,9 +11,9 @@
   email: taewook@knu.ac.kr
   photo: assets/img/team/taewook_kim_portrait.jpg
   photo_position: center top
-  summary: 차세대 배터리·슈퍼커패시터 전극 소재, 부존량이 풍부한 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 연구합니다. Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소, POSTECH 박사후연구원, 한국생산기술연구원(KITECH)을 거친 산·학·연 융합 연구 경험을 바탕으로 청정 에너지 변환, 환경 정화, 지속가능한 제조를 위한 확장 가능한 소재 기술을 개발하고 있습니다.
+  summary: 차세대 배터리·슈퍼커패시터 전극 소재, 부존량이 풍부한 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 연구합니다. 삼성전자 DS(Device Solution)부문 CTO 반도체연구소, POSTECH 박사후연구원, 한국생산기술연구원(KITECH)을 거친 산·학·연 융합 연구 경험을 바탕으로 청정 에너지 변환, 환경 정화, 지속가능한 제조를 위한 확장 가능한 소재 기술을 개발하고 있습니다.
   summary_i18n:
-    ko: 차세대 배터리·슈퍼커패시터 전극 소재, 부존량이 풍부한 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 연구합니다. Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소, POSTECH 박사후연구원, 한국생산기술연구원(KITECH)을 거친 산·학·연 융합 연구 경험을 바탕으로 청정 에너지 변환, 환경 정화, 지속가능한 제조를 위한 확장 가능한 소재 기술을 개발하고 있습니다.
+    ko: 차세대 배터리·슈퍼커패시터 전극 소재, 부존량이 풍부한 금속 기반 환경·에너지 촉매, 세라믹·금속 3D 프린팅용 적층제조 소재를 연구합니다. 삼성전자 DS(Device Solution)부문 CTO 반도체연구소, POSTECH 박사후연구원, 한국생산기술연구원(KITECH)을 거친 산·학·연 융합 연구 경험을 바탕으로 청정 에너지 변환, 환경 정화, 지속가능한 제조를 위한 확장 가능한 소재 기술을 개발하고 있습니다.
     en: Researches next-generation battery and supercapacitor electrode materials, earth-abundant environmental and energy catalysts, and ceramic/metal 3D additive manufacturing materials. Building on industry-academia-institute R&D experience at Samsung Electronics DS Division (Semiconductor R&D Center), POSTECH, and KITECH, Prof. Kim develops scalable material technologies for clean energy conversion, environmental remediation, and sustainable manufacturing.
     ja: 次世代バッテリー・スーパーキャパシタ電極材料、地殻に豊富な金属に基づく環境・エネルギー触媒、およびセラミックス・金属3Dプリンティング用積層造形材料を研究しています。サムスン電子 DS部門 半導体研究所、POSTECH博士研究員、韓国生産技術研究院（KITECH）を経た産学官連携の研究経験を基に、クリーンエネルギー変換、環境浄化、持続可能な製造のためのスケーラブルな材料技術を開発しています。
     zh: 致力于下一代电池与超级电容器电极材料、丰产金属基环境与能源催化剂，以及陶瓷/金属 3D 打印增材制造材料研究。依托在三星电子 DS 事业部 半导体研究所、浦项科技大学（POSTECH）及韩国生产技术研究院（KITECH）积累的产学研多元研发经历，开发面向清洁能源转化、环境净化与可持续制造的规模化材料技术。
@@ -33,13 +33,12 @@
       brand: knu
     - period: 2019.02 – 2022.02
       role: 선임연구원
-      org: 한국생산기술연구원(KITECH)
-      note: 울산본부
+      org: 한국생산기술연구원(KITECH) 울산본부
       kind: institute
       brand: kitech
     - period: 2018.03 – 2019.01
       role: Staff Engineer
-      org: Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소
+      org: 삼성전자 DS(Device Solution)부문 CTO 반도체연구소
       note: 차세대 메모리 공정
       kind: industry
       brand: samsung
@@ -61,7 +60,7 @@
       brand: kitech
     - period: 2018.03 – 2019.01
       role: Staff Engineer
-      org: Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소
+      org: 삼성전자 DS(Device Solution)부문 CTO 반도체연구소
       note: 차세대 메모리 공정
       kind: industry
       brand: samsung
@@ -90,7 +89,7 @@
   links:
     email: taewook@knu.ac.kr
   bio:
-    POSTECH (포스텍, 포항공과대학교) 화학공학과에서 학사 및 박사학위를 취득하고, 동 대학 박사후연구원, Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소 Staff Engineer(차세대
+    POSTECH (포스텍, 포항공과대학교) 화학공학과에서 학사 및 박사학위를 취득하고, 동 대학 박사후연구원, 삼성전자 DS(Device Solution)부문 CTO 반도체연구소 Staff Engineer(차세대
     메모리 공정), 한국생산기술연구원(KITECH) 울산본부 선임연구원을 거쳐 경북대학교 에너지화학공학과 부교수로 재직 중입니다. 차세대 배터리·슈퍼커패시터
     전극 소재, 친환경 촉매 기술, 세라믹 및 금속 3D 프린팅 첨단 적층제조 소재 연구를 이끌고 있습니다.
   role_ko: 공동 연구책임자 (Co-PI)
@@ -110,9 +109,9 @@
   email: cy.yim@knu.ac.kr
   photo: assets/img/team/changyong_yim_portrait.jpg
   photo_position: center 30%
-  summary: 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 계면 엔지니어링을 바탕으로, 비평형 반응 동역학을 제어하여 차세대 고출력·고밀도 에너지 저장 소자(하이브리드 슈퍼커패시터·이차전지)와 지능형 유연 바이오·가스 센싱 플랫폼을 연구합니다. Samsung Electronics IM(IT·모바일)부문 무선사업부에서의 모바일 헬스케어 H/W 개발, POSTECH, University of Calgary(Canada) 박사후연구원, 포항산업과학연구원(RIST) 수석연구원을 거친 독보적인 산·학·연 융합 연구 경험을 바탕으로, 원자층 기초 화학부터 대면적 디바이스 시스템 집적까지 관통하는 ACE² Lab을 공동으로 이끌고 있습니다.
+  summary: 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 계면 엔지니어링을 바탕으로, 비평형 반응 동역학을 제어하여 차세대 고출력·고밀도 에너지 저장 소자(하이브리드 슈퍼커패시터·이차전지)와 지능형 유연 바이오·가스 센싱 플랫폼을 연구합니다. 삼성전자 IM(IT·모바일)부문 무선사업부에서의 모바일 헬스케어 H/W 개발, POSTECH, University of Calgary, Canada 박사후연구원, 포항산업과학연구원(RIST) 수석연구원을 거친 독보적인 산·학·연 융합 연구 경험을 바탕으로, 원자층 기초 화학부터 대면적 디바이스 시스템 집적까지 관통하는 ACE² Lab을 공동으로 이끌고 있습니다.
   summary_i18n:
-    ko: 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 계면 엔지니어링을 바탕으로, 비평형 반응 동역학을 제어하여 차세대 고출력·고밀도 에너지 저장 소자(하이브리드 슈퍼커패시터·이차전지)와 지능형 유연 바이오·가스 센싱 플랫폼을 연구합니다. Samsung Electronics IM(IT·모바일)부문 무선사업부에서의 모바일 헬스케어 H/W 개발, POSTECH, University of Calgary(Canada) 박사후연구원, 포항산업과학연구원(RIST) 수석연구원을 거친 독보적인 산·학·연 융합 연구 경험을 바탕으로, 원자층 기초 화학부터 대면적 디바이스 시스템 집적까지 관통하는 ACE² Lab을 공동으로 이끌고 있습니다.
+    ko: 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 계면 엔지니어링을 바탕으로, 비평형 반응 동역학을 제어하여 차세대 고출력·고밀도 에너지 저장 소자(하이브리드 슈퍼커패시터·이차전지)와 지능형 유연 바이오·가스 센싱 플랫폼을 연구합니다. 삼성전자 IM(IT·모바일)부문 무선사업부에서의 모바일 헬스케어 H/W 개발, POSTECH, University of Calgary, Canada 박사후연구원, 포항산업과학연구원(RIST) 수석연구원을 거친 독보적인 산·학·연 융합 연구 경험을 바탕으로, 원자층 기초 화학부터 대면적 디바이스 시스템 집적까지 관통하는 ACE² Lab을 공동으로 이끌고 있습니다.
     en: Investigates ultrafast Intense Pulsed Light nanomanufacturing and atomically thin 2D interfacial engineering driven by extreme light-matter interactions, mastering non-equilibrium reaction kinetics to pioneer next-generation high-power, high-energy-density energy storage devices (hybrid supercapacitors and batteries) and intelligent flexible bio/gas sensing platforms. Drawing on extensive cross-sector leadership spanning mobile healthcare H/W engineering at Samsung Electronics IM Division, postdoctoral research at POSTECH and the University of Calgary (Canada), and senior research at RIST, Prof. Yim co-directs ACE² Lab with an end-to-end paradigm spanning atomic-scale chemistry to system-level device integration.
     ja: 極限の光-物質相互作用に基づく超高速パルス光（Intense Pulsed Light）ナノ製造プロセスと原子層2次元界面工学を基盤に、非平衡反応動力学を制御することで次世代高出力・高エネルギー密度エネルギー貯蔵素子（ハイブリッドスーパーキャパシタ・二次電池）および知能型フレキシブル生体・ガスセンシングプラットフォームを研究しています。サムスン電子 IM部門 無線事業部におけるモバイルヘルスケアH/W開発、POSTECH、カルガリー大学（カナダ）博士研究員、浦項産業科学研究院（RIST）首席研究員を経た産学官融合の研究経験を基に、原子層基礎化学から大面積デバイスシステム集積までを一貫して推進し、ACE² Labを共同主宰しています。
     zh: 致力于基于极端光-物质相互作用的超快强脉冲光（Intense Pulsed Light）纳米制造工艺及原子级二维界面工程，通过调控非平衡反应动力学，开发下一代高功率、高能量密度储能器件（混合超级电容器与二次电池）及智能柔性生理与气体传感平台。依托在三星电子 IM 部门无线事业部从事移动健康硬件研发、浦项科技大学（POSTECH）、加拿大卡尔加里大学（University of Calgary）博士后以及浦项产业科学研究院（RIST）主任研究员等独具优势的产学研融合经历，贯通从原子尺度基础化学到大面积器件系统集成的全链条，共同领导 ACE² Lab。
@@ -130,20 +129,18 @@
       brand: knu
     - period: 2019.08 – 2020.02
       role: 수석연구원
-      org: 포항산업과학연구원(RIST)
-      note: 미세먼지연구센터
+      org: 포항산업과학연구원(RIST) 미세먼지연구센터
       kind: institute
       brand: rist
     - period: 2017.09 – 2019.07
       role: Staff Engineer
-      org: Samsung Electronics IM(IT·모바일)부문 무선사업부
+      org: 삼성전자 IM(IT·모바일)부문 무선사업부
       note: 모바일 헬스케어 센서 H/W 개발
       kind: industry
       brand: samsung
     - period: 2016.01 – 2017.07
       role: Eyes-High 박사후연구원
-      org: University of Calgary, Canada
-      note: 기계생산공학과
+      org: University of Calgary, Canada 기계생산공학과
       kind: academia
       brand: calgary
     - period: 2015.02 – 2015.12
@@ -165,7 +162,7 @@
       brand: rist
     - period: 2017.09 – 2019.07
       role: Staff Engineer
-      org: Samsung Electronics IM(IT·모바일)부문 무선사업부
+      org: 삼성전자 IM(IT·모바일)부문 무선사업부
       note: 모바일 헬스케어 센서 H/W 개발
       kind: industry
       brand: samsung
@@ -454,7 +451,7 @@
     orcid: https://orcid.org/0000-0001-5987-9580
     github: https://github.com/Cdragon-github
     researchgate: https://www.researchgate.net/profile/Changyong_Yim2
-  bio: POSTECH (포스텍, 포항공과대학교) 화학공학과에서 학사 및 박사학위를 취득하고, 동 대학 BK21+ 박사후연구원, University of Calgary, Canada 기계생산공학과 Eyes-High 박사후연구원, Samsung Electronics IM(IT·모바일)부문 무선사업부 Staff Engineer(모바일 헬스케어 센서 H/W 개발), 포항산업과학연구원(RIST) 미세먼지연구센터 수석연구원을 거쳐 경북대학교 에너지화학공학과 부교수로 재직 중입니다. 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 계면 엔지니어링을 바탕으로 차세대 고출력·고밀도 에너지 저장 소자와 지능형 유연 바이오·가스 센싱 플랫폼 연구를 이끌고 있습니다.
+  bio: POSTECH (포스텍, 포항공과대학교) 화학공학과에서 학사 및 박사학위를 취득하고, 동 대학 BK21+ 박사후연구원, University of Calgary, Canada 기계생산공학과 Eyes-High 박사후연구원, 삼성전자 IM(IT·모바일)부문 무선사업부 Staff Engineer(모바일 헬스케어 센서 H/W 개발), 포항산업과학연구원(RIST) 미세먼지연구센터 수석연구원을 거쳐 경북대학교 에너지화학공학과 부교수로 재직 중입니다. 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 계면 엔지니어링을 바탕으로 차세대 고출력·고밀도 에너지 저장 소자와 지능형 유연 바이오·가스 센싱 플랫폼 연구를 이끌고 있습니다.
   role_ko: 공동 연구책임자 (Co-PI)
   role_en: Co-Principal Investigator
   office: 7호관 411호 (Room 411, Bldg. 7)

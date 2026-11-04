@@ -2034,26 +2034,16 @@ terms:
     en: "Mobile Communications Business, IT & Mobile (IM) Division, Samsung Electronics"
     ja: "サムスン電子 IM（IT・モバイル）部門 無線事業部"
     zh: "三星电子 IM（IT与移动通信）部门 无线事业部"
-  "Samsung Electronics IM(IT·모바일)부문 무선사업부":
-    ko: "Samsung Electronics IM(IT·모바일)부문 무선사업부"
-    en: "Mobile Communications Business, IT & Mobile (IM) Division, Samsung Electronics"
-    ja: "Samsung Electronics IM（IT・モバイル）部門 無線事業部"
-    zh: "Samsung Electronics IM（IT与移动通信）部门 无线事业部"
   "모바일 헬스케어 센서 H/W 개발":
     ko: "모바일 헬스케어 센서 H/W 개발"
     en: "Mobile Healthcare Sensor H/W R&D"
     ja: "モバイルヘルスケアセンサー H/W 開発"
     zh: "移动医疗健康传感器硬件研发"
-  "삼성전자 DS(Device Solution)부문 CTO_반도체연구소":
-    ko: "삼성전자 DS(Device Solution)부문 CTO_반도체연구소"
+  "삼성전자 DS(Device Solution)부문 CTO 반도체연구소":
+    ko: "삼성전자 DS(Device Solution)부문 CTO 반도체연구소"
     en: "Semiconductor R&D Center (CTO), Device Solutions (DS) Division, Samsung Electronics"
     ja: "サムスン電子 DS（デバイスソリューション）部門 CTO 半導体研究所"
     zh: "三星电子 DS（设备解决方案）部门 CTO 半导体研究所"
-  "Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소":
-    ko: "Samsung Electronics DS(Device Solution)부문 CTO 반도체연구소"
-    en: "Semiconductor R&D Center (CTO), Device Solutions (DS) Division, Samsung Electronics"
-    ja: "Samsung Electronics DS（デバイスソリューション）部門 CTO 半導体研究所"
-    zh: "Samsung Electronics DS（设备解决方案）部门 CTO 半导体研究所"
   "차세대 메모리 공정":
     ko: "차세대 메모리 공정"
     en: "Next-Generation Memory Process R&D"
@@ -2074,24 +2064,14 @@ terms:
     en: "Ulsan Division"
     ja: "蔚山本部"
     zh: "蔚山分院"
-  "University of Calgary(Canada)":
-    ko: "University of Calgary(Canada)"
-    en: "University of Calgary, Canada"
-    ja: "カルガリー大学 (University of Calgary, カナダ)"
-    zh: "卡尔加里大学 (University of Calgary, 加拿大)"
   "University of Calgary, Canada":
     ko: "University of Calgary, Canada"
     en: "University of Calgary, Canada"
     ja: "カルガリー大学 (University of Calgary, カナダ)"
     zh: "卡尔加里大学 (University of Calgary, 加拿大)"
-  "University of Calgary(Canada) 기계생산공학과":
-    ko: "University of Calgary(Canada) 기계생산공학과"
-    en: "Dept. of Mechanical & Manufacturing Engineering, University of Calgary, Canada"
-    ja: "カルガリー大学 機械・製造工学科 (カナダ)"
-    zh: "卡尔加里大学 机械与制造工程系 (加拿大)"
   "University of Calgary, Canada 기계생산공학과":
     ko: "University of Calgary, Canada 기계생산공학과"
-    en: "Dept. of Mechanical & Manufacturing Engineering, University of Calgary, Canada"
+    en: "Dept. of Mechanical and Manufacturing Engineering, University of Calgary, Canada"
     ja: "カルガリー大学 機械・製造工学科 (カナダ)"
     zh: "卡尔加里大学 机械与制造工程系 (加拿大)"
   "기계생산공학과":
