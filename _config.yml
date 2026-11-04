@@ -9,7 +9,7 @@ last_name: Lab
 contact_note: >
   Please contact the principal investigators by email for inquiries about research collaboration and student recruitment.
 description: >-
-  초고속 펄스광(Intense Pulsed Light, IPL) 광열 나노공정·2D MXene·슈퍼커패시터·이차전지·유연 센서를 연구하는 경북대학교 에너지화학공학과 ACE² Lab(임창용·김태욱 교수). 한국화학공학회 Chem Frontier 2년 연속 전국 1위 · 대학원생·학부연구생 모집.
+  초고속 펄스광(Intense Pulsed Light, IPL) 광열 나노공정·2D MXene·슈퍼커패시터·이차전지·유연 센서를 연구하는 경북대학교 과학기술대학 에너지화학공학과 화학공학·에너지공학 연구실 ACE² Lab(임창용·김태욱 교수). 한국화학공학회 Chem Frontier 2년 연속 전국 1위 · 대학원생·학부연구생 모집.
 footer_text: ""
 keywords: >-
   경북대학교 과학기술대학 에너지화학공학과, 차세대 화학 및 에너지 공학 연구실 (ACE² Lab), 임창용·김태욱 교수, 한국화학공학회 Chem Frontier 2년 연속 전국 1위(산업통상부장관상), 대학원생·학부연구생 모집,
@@ -337,6 +337,10 @@ defaults:
       path: "naver66b28497109cdd5d5ff2d8b1f71c08c7.html"
     values:
       sitemap: false
+  - scope:
+      path: "llms.txt"
+    values:
+      sitemap: false
 
 sass:
   style: compressed
@@ -353,7 +357,7 @@ jekyll-minifier:
   # breaking every spacing/positioning utility (e.g. .fixed-top -> broken navbar). Disable it.
   compress_css: false
   # JS minification is delegated to jekyll-terser (compress_javascript above is false).
-  exclude: ["robots.txt", "googleae572b96d43fd307.html", "naver66b28497109cdd5d5ff2d8b1f71c08c7.html"]
+  exclude: ["robots.txt", "llms.txt", "googleae572b96d43fd307.html", "naver66b28497109cdd5d5ff2d8b1f71c08c7.html"]
 
 # -----------------------------------------------------------------------------
 # Terser

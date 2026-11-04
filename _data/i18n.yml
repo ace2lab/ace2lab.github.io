@@ -89,10 +89,10 @@ ui:
     zh: 庆北大学 科学技术学院 能源化学工程系
 
   footer.location:
-    ko: (37224) 경상북도 상주시 경상대로 2559, 경북대학교 7호관 4층 에너지화학공학과
-    en: Department of Energy Chemical Engineering, 4th Fl., Bldg. 7, Kyungpook National University, 2559 Gyeongsang-daero, Sangju-si, Gyeongsangbuk-do 37224, Republic of Korea
-    ja: 〒37224 大韓民国 慶尚北道 尚州市 慶尚大路 2559 慶北大学校 7号館 4階 エネルギー化学工学科
-    zh: 韩国庆尚北道尚州市庆尚大路 2559号 庆北大学 7号馆 4层 能源化学工程系（邮编 37224）
+    ko: "(37224) 경상북도 상주시 경상대로 2559, 경북대학교 7호관 4층 에너지화학공학과 (교수연구실: 7호관 411호·413호 · 학생연구실: 7호관 404호·406호)"
+    en: "Dept. of Energy Chemical Engineering, 4th Fl., Bldg. 7 (PI Offices Rm 411 & 413 · Student Labs Rm 404 & 406), Kyungpook National University, 2559 Gyeongsang-daero, Sangju-si, Gyeongsangbuk-do 37224, Republic of Korea"
+    ja: "〒37224 大韓民国 慶尚北道 尚州市 慶尚大路 2559 慶北大学校 7号館 4階 エネルギー化学工学科（教授室: 7号館 411号・413号 · 学生研究室: 7号館 404号・406号）"
+    zh: "韩国庆尚北道尚州市庆尚大路 2559号 庆北大学 7号馆 4层 能源化学工程系（教授办公室：7号馆 411室·413室 · 学生研究室：7号馆 404室·406室，邮编 37224）"
 
   footer.copyright:
     ko: "© 2026 ACE² Lab. Hosted on GitHub Pages."
@@ -300,6 +300,11 @@ ui:
     en: Core Research Areas
     ja: コア研究領域
     zh: 核心研究领域
+  home.areas.all:
+    ko: 연구분야 상세 보기
+    en: Explore Research Pillars
+    ja: 研究分野の詳細を見る
+    zh: 查看研究方向详情
   home.areas.c1_desc:
     ko: "차세대 하이브리드 코인셀 슈퍼커패시터 및 다공성 MXene/TiO₂ 복합소재 리튬이온전지 음극 설계. 고출력·고에너지밀도 전기화학 소자 구현."
     en: "Next-generation hybrid coin-cell supercapacitors, porous MXene/TiO₂ nanocomposite Li-ion battery anodes, and environmental De-NOₓ catalysts delivering high power and energy density."
@@ -336,6 +341,42 @@ ui:
     en: All Publications
     ja: 全論文業績
     zh: 全部论文
+
+  home.contact.title:
+    ko: 연구실 위치 및 연락처
+    en: Location & Contact
+    ja: 研究室所在地・連絡先
+    zh: 实验室位置与联系方式
+  home.contact.pi_yim:
+    ko: 임창용 교수 연구실
+    en: Prof. Changyong Yim Office
+    ja: Changyong Yim 教授 研究室
+    zh: Changyong Yim 教授办公室
+  home.contact.rm_411:
+    ko: 경북대학교 7호관 411호
+    en: Bldg. 7, Rm 411, Kyungpook National University
+    ja: 慶北大学校 7号館 411号室
+    zh: 庆北大学 7号馆 411室
+  home.contact.pi_kim:
+    ko: 김태욱 교수 연구실
+    en: Prof. Taewook Kim Office
+    ja: Taewook Kim 教授 研究室
+    zh: Taewook Kim 教授办公室
+  home.contact.rm_413:
+    ko: 경북대학교 7호관 413호
+    en: Bldg. 7, Rm 413, Kyungpook National University
+    ja: 慶北大学校 7号館 413号室
+    zh: 庆北大学 7号馆 413室
+  home.contact.student_lab:
+    ko: 대학원생·학부연구생 연구실 및 실험실
+    en: Student Researcher Office & Laboratories
+    ja: 大学院生・学部研究生 研究室および実験室
+    zh: 博硕士与本科生研究室及实验室
+  home.contact.rm_406_labs:
+    ko: "학생 연구실: 경북대학교 7호관 404호·406호 · 실험실: 7호관 403호 · 7호관 414호 · 8호관 313호"
+    en: "Student Labs: Bldg. 7, Rms 404 & 406 · Experiment Labs: Bldg. 7 Rm 403 & 414 · Bldg. 8 Rm 313"
+    ja: "学生研究室: 慶北大学校 7号館 404号室・406号室 · 実験室: 7号館 403号室・414号室 · 8号館 313号室"
+    zh: "学生研究室：庆北大学 7号馆 404室·406室 · 实验室：7号馆 403室·414室 · 8号馆 313室"
 
   # ----------------------------------------------------------------------------
   # Members Page (_pages/members.md & _includes/*)

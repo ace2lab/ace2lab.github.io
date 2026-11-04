@@ -1,0 +1,48 @@
+---
+permalink: /llms.txt
+sitemap: false
+---
+# ACE² Lab (Advanced Chemical & Energy Engineering Laboratory | 차세대 화학 및 에너지 공학 연구실)
+
+> ACE² Lab is an interdisciplinary chemical and energy engineering research laboratory in the Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University (경북대학교 과학기술대학 에너지화학공학과), co-directed by Associate Professors Changyong Yim (임창용 교수) and Taewook Kim (김태욱 교수). Located in Building 7 on the Sangju Campus, the laboratory pioneers ultrafast Intense Pulsed Light (IPL) photothermal nanomanufacturing, atomically thin 2D nanomaterials (MXene, MOFs, laser-induced graphene), next-generation electrochemical energy storage (hybrid supercapacitors, Li-ion battery anodes), environmental De-NOx SCR catalysis, and machine-learning-coupled flexible bio/gas sensors (E-nose).
+
+## Institutional Identity & Location (SSOT)
+
+- Official Lab Name (EN): Advanced Chemical & Energy Engineering Laboratory (ACE² Lab)
+- Official Lab Name (KO): 차세대 화학 및 에너지 공학 연구실 (ACE² Lab)
+- University & Department (KO): 경북대학교 과학기술대학 에너지화학공학과 (경북대학교 에너지화학공학과)
+- University & Department (EN): Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University (KNU Energy Chemical Engineering)
+- Campus & Postal Address (KO): (37224) 경상북도 상주시 경상대로 2559, 경북대학교 7호관 4층 에너지화학공학과 (상주캠퍼스)
+- Campus & Postal Address (EN): Dept. of Energy Chemical Engineering, Bldg. 7, Kyungpook National University, 2559 Gyeongsang-daero, Sangju-si, Gyeongsangbuk-do 37224, Republic of Korea
+- Room Directory:
+  - Prof. Changyong Yim Office (임창용 교수 연구실): 경북대학교 7호관 411호 (Rm 411, Bldg. 7) | Email: cy.yim@knu.ac.kr | Tel: +82-54-530-1331
+  - Prof. Taewook Kim Office (김태욱 교수 연구실): 경북대학교 7호관 413호 (Rm 413, Bldg. 7) | Email: taewook@knu.ac.kr | Tel: +82-54-530-1332
+  - Student Researcher Offices (대학원생·학부연구생 연구실): 경북대학교 7호관 404호, 406호 (Rms 404 & 406, Bldg. 7)
+  - Experiment & Characterization Laboratories (실험실): 경북대학교 7호관 403호, 7호관 414호, 8호관 313호
+
+## Principal Investigators (Co-PIs)
+
+- [Prof. Changyong Yim (임창용 교수)](https://ace2.knu.ac.kr/members/#yim): Associate Professor, Ph.D. (POSTECH Chemical Engineering B.S. & Ph.D.; former Postdoc at POSTECH & University of Calgary; former Staff Engineer at Samsung Electronics IM Division; former Principal Researcher at RIST). Research focus: Intense Pulsed Light (IPL) photonic nanomanufacturing, 2D MXene/oxide interfacial engineering, hybrid supercapacitors, Li-ion battery anodes, flexible tactile/respiration and AI E-nose gas sensors.
+- [Prof. Taewook Kim (김태욱 교수)](https://ace2.knu.ac.kr/members/#kim): Associate Professor, Ph.D. (POSTECH Chemical Engineering B.S. & Ph.D.; former Postdoc at POSTECH; former Staff Engineer at Samsung Electronics DS Division Semiconductor R&D Center; former Senior Researcher at KITECH). Research focus: Next-generation battery and supercapacitor electrode materials, environmental De-NOx SCR catalysis, desulfurization sorbents, and ceramic/metal 3D additive manufacturing materials.
+
+## Core Research Pillars
+
+- [Pillar 01 — Advanced Energy Storage & Nanomaterials (차세대 에너지 저장 및 기능성 나노소재)](https://ace2.knu.ac.kr/research/#energy-storage): Hybrid coin-cell supercapacitors (Co-MOF/Ni-Co sulfide nanopetal arrays, IPL/laser-processed Co3O4 and Co(OH)2 electrodes), porous 2D Ti3C2Tx and vanadium MXene/TiO2 nanocomposite anodes for Li-ion batteries, V2O5-WO3/TiO2 SCR catalysts, and additive manufacturing alloy durability.
+- [Pillar 02 — Ultrafast Photonic Nanomanufacturing (초고속 펄스광 IPL 광열 나노공정)](https://ace2.knu.ac.kr/research/#photonic): Millisecond xenon flash lamp annealing (Intense Pulsed Light, IPL) for room-temperature sintering of oxidation-resistant Cu-Ag electrodes, VO2 phase-transition thermochromic films, colloidal quantum dot surface trap healing, and flashlight/laser-induced graphene (FIG/LIG).
+- [Pillar 03 — Flexible Sensors & Bio-Environmental Devices (유연 센서 및 생체·환경 모니터링 소자)](https://ace2.knu.ac.kr/research/#sensors): Multi-layered MXene/mulberry-paper (Hanji) flexible tactile sensors for real-time CPR feedback, LIG respiration humidity sensors, machine-learning-assisted nanostructured electronic nose (E-nose) arrays for exhaled NO/NO2/NH3 breath diagnosis, and MOF-functionalized QCM/microcantilever resonators.
+
+## Key Honors & Achievements
+
+- [KIChE Chem Frontier National 1st Place (한국화학공학회 창의설계 경진대회 2년 연속 전국 1위)](https://ace2.knu.ac.kr/chem-frontier/): Two consecutive Minister of Trade, Industry and Energy Awards (산업통상부장관상, 2025 & 2026) and three consecutive top national honors including the 2024 Grand Prize (대상).
+- [Publications & Intellectual Property (연구성과)](https://ace2.knu.ac.kr/publications/): Peer-reviewed SCI(E) international journal articles (featured on journal covers in Small, Inorganic Chemistry, etc.), {{ site.data.domestic.size }} domestic journal papers, {{ site.data.patents.size }} registered and filed patents, and {{ site.data.talks.size }} academic conference presentations.
+
+## Canonical Site Map
+
+- [Home & Lab Overview (소개 및 연락처)](https://ace2.knu.ac.kr/): Mission, Co-PI showcase, core research areas, AI executive concierge (Jian Lee), latest news, selected publications, and contact/location (`https://ace2.knu.ac.kr/#contact`).
+- [Members & Recruitment (연구실 구성원)](https://ace2.knu.ac.kr/members/): Co-PI CVs (`#yim`, `#kim`), current Ph.D./M.S. graduate students and undergraduate researchers (`#members`), alumni (`#alumni`), and former interns (`#interns`).
+- [Research Areas (핵심 연구분야)](https://ace2.knu.ac.kr/research/): Detailed technical descriptions, representative figures, and DOIs across the 3 research pillars.
+- [Research Facilities (보유 연구장비)](https://ace2.knu.ac.kr/facilities/): {{ site.data.facilities.size }} instruments across synthesis/photonic processing (PSTEK IPL system, electrospinning, glove box), sample prep, electrochemical/gas characterization (potentiostats, SMU, Mini-SEM, FT-IR, BET, GC/HPLC), and safety infrastructure.
+- [Publications & Patents (논문·특허·발표)](https://ace2.knu.ac.kr/publications/): Full searchable bibliography (`#journals`, `#domestic`, `#patents`, `#talks`).
+- [Awards & Press (수상 및 언론보도)](https://ace2.knu.ac.kr/news/): Chronological record of awards, scholarships, and media coverage.
+- [Chem Frontier Showcase (켐프론티어 쇼케이스)](https://ace2.knu.ac.kr/chem-frontier/): National competition winning projects and prototypes.
+- [Teaching & Simulations (강의 및 시뮬레이션)](https://ace2.knu.ac.kr/teaching/): Transport Phenomena interactive web simulations and curriculum.

@@ -93,19 +93,19 @@ ace2_editorial: true
   </p>
 
   <div class="lab-about__pillars">
-    <a href="#area-01" class="lab-about__pillar">
+    <a href="{{ '/research/#energy-storage' | relative_url }}" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p1_title">슈퍼커패시터·이차전지 에너지 저장 소재</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p1_title">슈퍼커패시터·이차전지 에너지 저장 소재</span> <i class="fa-solid fa-arrow-right lab-about__pillar-arrow" aria-hidden="true"></i></h3>
       <p class="lab-about__pillar-desc" data-i18n="home.about.p1_desc">원자층 2차원 나노구조 및 다공성 나노아키텍처 기반 하이브리드 슈퍼커패시터, 차세대 전지 음극 및 환경 촉매 소재</p>
     </a>
-    <a href="#area-02" class="lab-about__pillar">
+    <a href="{{ '/research/#photonic' | relative_url }}" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p2_title">초고속 펄스광(IPL) 광열 나노공정</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p2_title">초고속 펄스광(IPL) 광열 나노공정</span> <i class="fa-solid fa-arrow-right lab-about__pillar-arrow" aria-hidden="true"></i></h3>
       <p class="lab-about__pillar-desc" data-i18n="home.about.p2_desc">초고속 펄스광(Intense Pulsed Light) 기반 비평형 광열 소결·표면 개질 및 고전도성 유연 전극 나노공정</p>
     </a>
-    <a href="#area-03" class="lab-about__pillar">
+    <a href="{{ '/research/#sensors' | relative_url }}" class="lab-about__pillar">
       <div class="lab-about__pillar-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
-      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p3_title">유연 센서 및 스마트 소자</span> <i class="fa-solid fa-arrow-down-long lab-about__pillar-arrow" aria-hidden="true"></i></h3>
+      <h3 class="lab-about__pillar-title"><span data-i18n="home.about.p3_title">유연 센서 및 스마트 소자</span> <i class="fa-solid fa-arrow-right lab-about__pillar-arrow" aria-hidden="true"></i></h3>
       <p class="lab-about__pillar-desc" data-i18n="home.about.p3_desc">고감도 유연 촉각·호흡 센서와 머신러닝 결합 나노 전자코(E-nose) 실시간 모니터링 소자</p>
     </a>
   </div>
@@ -231,7 +231,12 @@ ace2_editorial: true
 
 ---
 
-<h2 id="research-areas" data-i18n="home.areas.title">핵심 연구 분야</h2>
+<div class="home-section-header">
+  <h2 id="research-areas" data-i18n="home.areas.title">핵심 연구 분야</h2>
+  <a href="{{ '/research/' | relative_url }}" class="selected-papers-block__all-link">
+    <span data-i18n="home.areas.all">연구분야 상세 보기</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+  </a>
+</div>
 
 <div class="research-grid">
   <a href="{{ '/research/' | relative_url }}#energy-storage" class="research-card" id="area-01">
@@ -387,6 +392,29 @@ ace2_editorial: true
     </div>
   </div>
 </div>
+
+<section class="lab-contact-strip" id="contact" aria-labelledby="contact-strip-title">
+  <div class="lab-contact-strip__header">
+    <h2 id="contact-strip-title" class="lab-contact-strip__title">
+      <i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-i18n="home.contact.title">연구실 위치 및 연락처</span>
+    </h2>
+    <p class="lab-contact-strip__address" data-i18n="footer.location">(37224) 경상북도 상주시 경상대로 2559, 경북대학교 7호관 4층 에너지화학공학과 (교수연구실: 7호관 411호·413호 · 학생연구실: 7호관 404호·406호)</p>
+  </div>
+  <div class="lab-contact-strip__grid">
+    <div class="lab-contact-strip__item">
+      <span class="lab-contact-strip__label" data-i18n="home.contact.pi_yim">임창용 교수 연구실</span>
+      <span class="lab-contact-strip__val"><span data-i18n="home.contact.rm_411">경북대학교 7호관 411호</span> · <a href="mailto:cy.yim@knu.ac.kr">cy.yim@knu.ac.kr</a> · <a href="tel:+82545301331">054-530-1331</a></span>
+    </div>
+    <div class="lab-contact-strip__item">
+      <span class="lab-contact-strip__label" data-i18n="home.contact.pi_kim">김태욱 교수 연구실</span>
+      <span class="lab-contact-strip__val"><span data-i18n="home.contact.rm_413">경북대학교 7호관 413호</span> · <a href="mailto:taewook@knu.ac.kr">taewook@knu.ac.kr</a> · <a href="tel:+82545301332">054-530-1332</a></span>
+    </div>
+    <div class="lab-contact-strip__item">
+      <span class="lab-contact-strip__label" data-i18n="home.contact.student_lab">대학원생·학부연구생 연구실 및 실험실</span>
+      <span class="lab-contact-strip__val" data-i18n="home.contact.rm_406_labs">학생 연구실: 경북대학교 7호관 404호·406호 · 실험실: 7호관 403호 · 7호관 414호 · 8호관 313호</span>
+    </div>
+  </div>
+</section>
 
 <script src="{{ '/assets/js/author_enrichment.js' | relative_url | bust_file_cache }}"></script>
 <script src="{{ '/assets/js/image_lightbox.js' | relative_url | bust_file_cache }}"></script>

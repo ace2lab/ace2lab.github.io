@@ -3,9 +3,9 @@ layout: page
 permalink: /publications/
 title: 연구성과
 description: >-
-  경북대학교 에너지화학공학과 ACE² Lab(임창용·김태욱 교수)의 국제 SCI 학술지 논문, 국내 학술지 논문, 등록·출원 특허 및 학술대회 발표 성과. 에너지 저장 소재, IPL 광열 나노공정, 2D MXene 유연 센서 분야의 화학공학 연구 실적을 소개합니다.
+  경북대학교 과학기술대학 에너지화학공학과 화학공학·에너지공학 연구실 ACE² Lab(임창용·김태욱 교수)의 국제 SCI 학술지 논문, 국내 학술지 논문, 등록·출원 특허 및 학술대회 발표 성과. 에너지 저장 소재, IPL 광열 나노공정, 2D MXene 유연 센서 분야의 연구 실적을 소개합니다.
 keywords: >-
-  경북대학교 에너지화학공학과 논문, 경북대 에너지화학공학과 연구실적, 경북대 화학공학 논문, 임창용 교수 논문, 김태욱 교수 논문,
+  경북대학교 에너지화학공학과 논문, 경북대 에너지화학공학과 연구실, 경북대 화학공학과 논문, 경북대 화학공학 연구실, 경북대 에너지공학부, 임창용 교수 논문, 김태욱 교수 논문,
   ACE² Lab 논문, ACE² Lab 특허, 이차전지 논문, 2D MXene 센서 논문, IPL 광소결 특허
 nav: true
 nav_order: 5
@@ -68,6 +68,22 @@ ace2_editorial: true
     </button>
   </div>
 
+  <div class="pub-research-crosslinks" aria-label="Core research pillars">
+    <p class="pub-pi-filter__note" id="pubPiFilterNote" data-i18n="publications.pi_note">※ 경북대학교 부임 이전 연구책임자(PI)의 주요 학술지 발표 논문을 포함합니다.</p>
+    <div class="pub-research-crosslinks__chips">
+      <span class="pub-research-crosslinks__label"><i class="fa-solid fa-compass" aria-hidden="true"></i> <span data-i18n="hero.home.act_research">핵심 연구분야</span></span>
+      <a href="{{ '/research/#energy-storage' | relative_url }}" class="pub-research-crosslinks__chip">
+        <i class="fa-solid fa-battery-three-quarters" aria-hidden="true"></i> <span data-i18n="research.tab.p1">에너지 저장 및 기능성 소재</span>
+      </a>
+      <a href="{{ '/research/#photonic' | relative_url }}" class="pub-research-crosslinks__chip">
+        <i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.tab.p2">초고속 광열 나노공정</span>
+      </a>
+      <a href="{{ '/research/#sensors' | relative_url }}" class="pub-research-crosslinks__chip">
+        <i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.tab.p3">유연 센서 및 스마트 소자</span>
+      </a>
+    </div>
+  </div>
+
   <!-- Panel 1: International Journals (jekyll-scholar + bib_search) -->
   <div class="ace2-tabpanel is-active" role="tabpanel" id="panel-journals" aria-labelledby="tab-journals" tabindex="0">
     <section class="ed-section" id="journals">
@@ -101,21 +117,6 @@ ace2_editorial: true
         <span data-i18n="publications.sec_journals">국제 SCI(E) 학술지 논문</span>
         <span class="ed-section__count">{{ intl_count }}</span>
       </h2>
-      <div class="pub-research-crosslinks" aria-label="Core research pillars">
-        <p class="pub-pi-filter__note" id="pubPiFilterNote" data-i18n="publications.pi_note">※ 경북대학교 부임 이전 연구책임자(PI)의 주요 학술지 발표 논문을 포함합니다.</p>
-        <div class="pub-research-crosslinks__chips">
-          <span class="pub-research-crosslinks__label"><i class="fa-solid fa-compass" aria-hidden="true"></i> <span data-i18n="hero.home.act_research">핵심 연구분야</span></span>
-          <a href="{{ '/research/#energy-storage' | relative_url }}" class="pub-research-crosslinks__chip">
-            <i class="fa-solid fa-battery-three-quarters" aria-hidden="true"></i> <span data-i18n="research.tab.p1">에너지 저장 및 기능성 소재</span>
-          </a>
-          <a href="{{ '/research/#photonic' | relative_url }}" class="pub-research-crosslinks__chip">
-            <i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.tab.p2">초고속 광열 나노공정</span>
-          </a>
-          <a href="{{ '/research/#sensors' | relative_url }}" class="pub-research-crosslinks__chip">
-            <i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.tab.p3">유연 센서 및 스마트 소자</span>
-          </a>
-        </div>
-      </div>
 
       <fieldset class="pub-pi-filter" id="pubPiFilter" role="radiogroup" aria-labelledby="pubPiFilterLegend" aria-describedby="pubPiFilterNote">
         <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> <span data-i18n="publications.pi_legend">연구책임자</span></legend>

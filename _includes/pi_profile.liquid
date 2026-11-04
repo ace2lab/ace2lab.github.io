@@ -266,27 +266,28 @@
       </section>
     {% endif %}
 
-    {% if m.links.scholar or m.links.orcid or m.links.researchgate or m.links.github %}
-      <nav class="pi-actions" aria-label="{{ m.name_en }} academic profiles">
-        {% if m.links.scholar and m.links.scholar != '' %}
-          <a class="pi-action" href="{{ m.links.scholar }}" target="_blank" rel="noopener"
-            ><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a
-          >
-        {% endif %}
-        {% if m.links.orcid and m.links.orcid != '' %}
-          <a class="pi-action" href="{{ m.links.orcid }}" target="_blank" rel="noopener"><i class="ai ai-orcid" aria-hidden="true"></i>ORCID</a>
-        {% endif %}
-        {% if m.links.researchgate and m.links.researchgate != '' %}
-          <a class="pi-action" href="{{ m.links.researchgate }}" target="_blank" rel="noopener"
-            ><i class="ai ai-researchgate" aria-hidden="true"></i>ResearchGate</a
-          >
-        {% endif %}
-        {% if m.links.github and m.links.github != '' %}
-          <a class="pi-action" href="{{ m.links.github }}" target="_blank" rel="noopener"
-            ><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a
-          >
-        {% endif %}
-      </nav>
-    {% endif %}
+    <nav class="pi-actions" aria-label="{{ m.name_en }} academic profiles">
+      <a class="pi-action pi-action--research" href="{{ '/research/' | relative_url }}"
+        ><i class="fa-solid fa-compass" aria-hidden="true"></i><span data-i18n="home.areas.all">연구분야 상세 보기</span></a
+      >
+      {% if m.links.scholar and m.links.scholar != '' %}
+        <a class="pi-action" href="{{ m.links.scholar }}" target="_blank" rel="noopener"
+          ><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a
+        >
+      {% endif %}
+      {% if m.links.orcid and m.links.orcid != '' %}
+        <a class="pi-action" href="{{ m.links.orcid }}" target="_blank" rel="noopener"><i class="ai ai-orcid" aria-hidden="true"></i>ORCID</a>
+      {% endif %}
+      {% if m.links.researchgate and m.links.researchgate != '' %}
+        <a class="pi-action" href="{{ m.links.researchgate }}" target="_blank" rel="noopener"
+          ><i class="ai ai-researchgate" aria-hidden="true"></i>ResearchGate</a
+        >
+      {% endif %}
+      {% if m.links.github and m.links.github != '' %}
+        <a class="pi-action" href="{{ m.links.github }}" target="_blank" rel="noopener"
+          ><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a
+        >
+      {% endif %}
+    </nav>
   </div>
 </article>

@@ -3,10 +3,11 @@ layout: page
 title: 구성원
 permalink: /members/
 description: >-
-  경북대학교 과학기술대학 에너지화학공학과 ACE² Lab 구성원 소개. 공동 연구책임자 임창용 교수(Changyong Yim)·김태욱 교수(Taewook Kim), 석·박사과정 대학원생, 학부연구생 및 졸업생 현황과 대학원 진학·학부인턴 지원 안내를 제공합니다.
+  경북대학교 과학기술대학 에너지화학공학과 화학공학·에너지공학 연구실 ACE² Lab 구성원 소개. 공동 연구책임자 임창용 교수(Changyong Yim)·김태욱 교수(Taewook Kim), 석·박사과정 대학원생, 학부연구생 및 졸업생 현황과 대학원 진학·학부인턴 지원 안내를 제공합니다.
 keywords: >-
   임창용, 임창용 교수, Changyong Yim, CY Yim, 김태욱, 김태욱 교수, Taewook Kim,
-  경북대 임창용, 경북대 김태욱, 경북대 에너지화학공학과 교수, ACE² Lab 연구원,
+  경북대 임창용, 경북대 김태욱, 경북대학교 에너지화학공학과 교수, 경북대 에너지화학공학과 연구실,
+  경북대학교 화학공학과, 경북대 화학공학과, 경북대 화학공학 연구실, 경북대학교 에너지공학부, 경북대 에너지공학부, ACE² Lab 연구원,
   대학원생 모집, 학부연구생 모집, 대학원 진학, 석사과정, 박사과정
 nav: true
 nav_order: 2
@@ -180,6 +181,20 @@ ace2_team_grid: true
       <span class="lead-info__item" data-i18n-mode="html" data-i18n-ko="{{ lead_org_ko | escape }}" data-i18n-en="{{ lead_org_en | escape }}" data-i18n-ja="{{ lead_org_ja | escape }}" data-i18n-zh="{{ lead_org_zh | escape }}">{{ lead_org_ko }}</span>
       <span class="lead-info__divider" aria-hidden="true">·</span>
       <span class="lead-info__item" data-i18n-mode="html" data-i18n-ko="{{ lead_cnt_ko | escape }}" data-i18n-en="{{ lead_cnt_en | escape }}" data-i18n-ja="{{ lead_cnt_ja | escape }}" data-i18n-zh="{{ lead_cnt_zh | escape }}">{{ lead_cnt_ko }}</span>
+    </div>
+    <div class="pub-research-crosslinks pub-research-crosslinks--members" aria-label="Core research pillars">
+      <div class="pub-research-crosslinks__chips">
+        <span class="pub-research-crosslinks__label"><i class="fa-solid fa-compass" aria-hidden="true"></i> <span data-i18n="hero.home.act_research">핵심 연구분야</span></span>
+        <a href="{{ '/research/#energy-storage' | relative_url }}" class="pub-research-crosslinks__chip">
+          <i class="fa-solid fa-battery-three-quarters" aria-hidden="true"></i> <span data-i18n="research.tab.p1">에너지 저장 및 기능성 소재</span>
+        </a>
+        <a href="{{ '/research/#photonic' | relative_url }}" class="pub-research-crosslinks__chip">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.tab.p2">초고속 광열 나노공정</span>
+        </a>
+        <a href="{{ '/research/#sensors' | relative_url }}" class="pub-research-crosslinks__chip">
+          <i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.tab.p3">유연 센서 및 스마트 소자</span>
+        </a>
+      </div>
     </div>
     {% if grads.size > 0 %}
     <section class="team-section" id="graduate-students">

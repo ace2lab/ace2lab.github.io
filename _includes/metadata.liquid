@@ -17,19 +17,19 @@
 <!-- SEO title/description SSOT: shared by <title>, og:*, twitter:* and meta description -->
 {% capture seo_title -%}
   {%- if page.url == '/' or page.url == '/index.html' -%}
-    ACE² Lab | 경북대학교 에너지화학공학과 펄스광(IPL) 광열 나노공정·MXene·슈퍼커패시터 연구실
+    ACE² Lab | 경북대학교 에너지화학공학과 화학공학·에너지공학 연구실 (펄스광 IPL·MXene·이차전지·슈퍼커패시터·센서)
   {%- elsif page.url contains '/members' -%}
-    경북대학교 에너지화학공학과 ACE² Lab 구성원 | 임창용·김태욱 교수 및 대학원생·학부연구생
+    경북대학교 에너지화학공학과 ACE² Lab 구성원 | 임창용·김태욱 교수 및 화학공학·에너지공학 연구실 대학원생·학부연구생
   {%- elsif page.url contains '/publications' -%}
-    경북대학교 에너지화학공학과 ACE² Lab 연구성과 (SCI 논문·특허) | 임창용·김태욱 교수
+    경북대학교 에너지화학공학과 ACE² Lab 연구성과 (SCI 논문·특허) | 임창용·김태욱 교수 화학공학·에너지공학 연구실
   {%- elsif page.url contains '/chem-frontier' -%}
     한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위 (산업통상부장관상) · 3년 연속 최상위 입상 | 한국화학공학회 창의설계 경진대회 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/facilities' -%}
-    경북대학교 에너지화학공학과 ACE² Lab 연구장비·실험 인프라 | 차세대 화학 및 에너지 공학 연구실
+    경북대학교 에너지화학공학과 ACE² Lab 연구장비·실험실 인프라 | 차세대 화학 및 에너지 공학 연구실
   {%- elsif page.url contains '/news' -%}
     수상 실적 및 연구실 소식 | 한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위 (산업통상부장관상) | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/research' -%}
-    펄스광(IPL) 광열 나노공정·MXene·슈퍼커패시터·유연 센서 연구분야 | ACE² Lab 경북대학교 에너지화학공학과
+    경북대학교 에너지화학공학과 ACE² Lab 연구분야 | 화학공학·에너지공학 이차전지·슈퍼커패시터·펄스광(IPL)·MXene·유연 센서 연구실
   {%- elsif page.url contains '/gallery' -%}
     연구실 갤러리 | 학술대회 및 연구 활동 | 경북대학교 에너지화학공학과 ACE² Lab
   {%- elsif page.url contains '/teaching' -%}
@@ -147,24 +147,34 @@
           ],
           "url": "https://ace2.knu.ac.kr/",
           "logo": "https://ace2.knu.ac.kr/assets/img/branding/logo.png",
+          "email": "cy.yim@knu.ac.kr",
+          "telephone": "+82-54-530-1331",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "상주시",
+            "addressRegion": "경상북도",
+            "postalCode": "37224",
+            "streetAddress": "경상대로 2559, 경북대학교 7호관 4층 에너지화학공학과 (교수연구실 411호·413호, 학생연구실 404호·406호)",
+            "addressCountry": "KR"
+          },
           "parentOrganization": {
-            "@type": "CollegeOrUniversity",
-            "name": "경북대학교",
-            "alternateName": "Kyungpook National University",
-            "url": "https://www.knu.ac.kr/",
-            "department": {
-              "@type": "Department",
-              "name": "에너지화학공학과",
-              "alternateName": "Department of Energy Chemical Engineering",
-              "url": "https://ace2.knu.ac.kr/"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "상주시",
-              "addressRegion": "경상북도",
-              "postalCode": "37224",
-              "streetAddress": "경상대로 2559, 경북대학교 7호관 4층 에너지화학공학과 (상주캠퍼스)",
-              "addressCountry": "KR"
+            "@type": "EducationalOrganization",
+            "name": "경북대학교 과학기술대학 에너지화학공학과",
+            "alternateName": "Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University",
+            "url": "https://ace2.knu.ac.kr/",
+            "parentOrganization": {
+              "@type": "CollegeOrUniversity",
+              "name": "경북대학교",
+              "alternateName": "Kyungpook National University",
+              "url": "https://www.knu.ac.kr/",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "상주시",
+                "addressRegion": "경상북도",
+                "postalCode": "37224",
+                "streetAddress": "경상대로 2559, 경북대학교 (상주캠퍼스)",
+                "addressCountry": "KR"
+              }
             }
           }
         },
@@ -173,7 +183,15 @@
           "@id": "https://ace2.knu.ac.kr/#prof-changyong-yim",
           "name": "Changyong Yim",
           "alternateName": ["임창용", "임창용 교수", "CY Yim", "Prof. Changyong Yim", "Changyong (CY) Yim", "Yim Changyong"],
+          "url": "https://ace2.knu.ac.kr/members/#yim",
+          "image": "https://ace2.knu.ac.kr/assets/img/team/changyong_yim.jpg",
           "jobTitle": "Associate Professor",
+          "email": "{{ ld_yim.email | default: 'cy.yim@knu.ac.kr' }}",
+          "telephone": "{{ ld_yim.phone | default: '+82-54-530-1331' }}",
+          "workLocation": {
+            "@type": "Place",
+            "name": "경북대학교 7호관 411호"
+          },
           "worksFor": {
             "@id": "https://ace2.knu.ac.kr/#organization"
           },
@@ -182,23 +200,35 @@
             "name": "경북대학교 과학기술대학 에너지화학공학과"
           },
           {% if ld_yim.topics %}"knowsAbout": {{ ld_yim.topics | jsonify }},{% endif %}
-          "sameAs": ["https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "https://orcid.org/0000-0002-3909-5735"]
+          "sameAs": [
+            "{{ ld_yim.links.scholar | default: 'https://scholar.google.com/citations?user=2qPTMYUAAAAJ' }}",
+            "{{ ld_yim.links.orcid | default: 'https://orcid.org/0000-0001-5987-9580' }}",
+            "{{ ld_yim.links.researchgate | default: 'https://www.researchgate.net/profile/Changyong_Yim2' }}",
+            "{{ ld_yim.links.github | default: 'https://github.com/Cdragon-github' }}"
+          ]
         },
         {
           "@type": "Person",
           "@id": "https://ace2.knu.ac.kr/#prof-taewook-kim",
           "name": "Taewook Kim",
           "alternateName": ["김태욱", "김태욱 교수", "Prof. Taewook Kim", "Kim Taewook"],
+          "url": "https://ace2.knu.ac.kr/members/#kim",
+          "image": "https://ace2.knu.ac.kr/assets/img/team/taewook_kim.jpg",
           "jobTitle": "Associate Professor",
+          "email": "{{ ld_kim.email | default: 'taewook@knu.ac.kr' }}",
+          "telephone": "{{ ld_kim.phone | default: '+82-54-530-1332' }}",
+          "workLocation": {
+            "@type": "Place",
+            "name": "경북대학교 7호관 413호"
+          },
           "worksFor": {
             "@id": "https://ace2.knu.ac.kr/#organization"
           },
           "affiliation": {
             "@type": "EducationalOrganization",
             "name": "경북대학교 과학기술대학 에너지화학공학과"
-          },
-          {% if ld_kim.topics %}"knowsAbout": {{ ld_kim.topics | jsonify }},{% endif %}
-          "sameAs": ["https://scholar.google.com/citations?user=2qPTMYUAAAAJ"]
+          }{% if ld_kim.topics %},
+          "knowsAbout": {{ ld_kim.topics | jsonify }}{% endif %}
         },
         {
           "@type": "WebSite",

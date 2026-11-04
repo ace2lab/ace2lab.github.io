@@ -5662,6 +5662,10 @@ html[data-theme="dark"] .pub-research-crosslinks__chip {
   border-color: rgba(157, 183, 217, 0.28);
 }
 
+.pub-research-crosslinks--members {
+  margin: 0 0 1.25rem;
+}
+
 @media (pointer: coarse) {
   .pub-research-crosslinks__chip {
     min-height: 44px;
@@ -6417,11 +6421,82 @@ html[data-theme="dark"] .member-duties-list li i {
 /* ------------------------------------------------------------
    Anchor offsets: land below the fixed navbar (and the sticky tab bar where one exists)
    ------------------------------------------------------------ */
+#contact,
 #research-areas,
 #ai-operations,
 #about-lab-title,
 .pub-cover-card {
   scroll-margin-top: 90px;
+}
+
+.home-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.home-section-header h2 {
+  margin: 0;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.lab-contact-strip {
+  margin: 2.5rem 0 1rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--global-card-bg-color, #ffffff);
+  border: 1px solid var(--global-divider-color, #e2e8f0);
+  border-radius: 12px;
+}
+
+.lab-contact-strip__header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--global-divider-color, #e2e8f0);
+}
+
+.lab-contact-strip__title {
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.lab-contact-strip__address {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--c-muted);
+}
+
+.lab-contact-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem 1.5rem;
+}
+
+.lab-contact-strip__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.lab-contact-strip__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--c-ink, var(--global-text-color));
+}
+
+.lab-contact-strip__val {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--global-text-color);
 }
 
 .ed-spec__row[id],
