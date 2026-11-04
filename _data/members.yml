@@ -3,6 +3,8 @@
   order: 2
   name_ko: 김태욱
   name_en: Taewook Kim
+  display_name_ko: 김태욱 교수
+  display_name_en: Prof. Taewook Kim
   title_ko: 부교수 · 공학박사
   title_en: Associate Professor, Ph.D.
   affiliation_ko: 경북대학교 과학기술대학 에너지화학공학과
@@ -101,6 +103,8 @@
   order: 1
   name_ko: 임창용
   name_en: Changyong Yim
+  display_name_ko: 임창용 교수
+  display_name_en: Prof. Changyong Yim
   title_ko: 부교수 · 공학박사
   title_en: Associate Professor, Ph.D.
   affiliation_ko: 경북대학교 과학기술대학 에너지화학공학과
@@ -820,6 +824,8 @@
   order: 8
   name_ko: 윤태호
   name_en: Tae Ho Yun
+  display_name_ko: 윤태호 박사
+  display_name_en: Dr. Tae Ho Yun
   degree: Postdoc
   dept: KNU 에너지화학공학과
   grad_year: 2024
@@ -834,6 +840,8 @@
   order: 9
   name_ko: 니나드 벨할
   name_en: Ninad Velhal
+  display_name_ko: 니나드 벨할 박사
+  display_name_en: Dr. Ninad Velhal
   aliases_en: ["Ninad B. Velhal", "Ninad Baburao Velhal"]
   degree: Postdoc
   dept: KNU 에너지화학공학과

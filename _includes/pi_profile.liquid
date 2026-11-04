@@ -20,7 +20,7 @@
       {% if m.photo and m.photo != '' %}
         <img
           src="{{ m.photo | relative_url }}"
-          alt="{{ m.name_en }} ({{ m.name_ko }})"
+          alt="{{ m.display_name_en | default: m.name_en }} ({{ m.display_name_ko | default: m.name_ko }})"
           loading="lazy"
           decoding="async"
           style="object-position: {{ m.photo_position | default: 'center 20%' }};"
@@ -80,8 +80,8 @@
         </p>
       {% endif %}
       <h3 class="pi-profile__name" id="member-{{ m.id }}-name">
-        {{ m.name_ko }}
-        <span class="pi-profile__name-en" lang="en">{{ m.name_en }}</span>
+        {{ m.display_name_ko | default: m.name_ko }}
+        <span class="pi-profile__name-en" lang="en">{{ m.display_name_en | default: m.name_en }}</span>
       </h3>
       <p class="pi-profile__title">
         <span data-i18n-term>{{ m.title_ko -}}</span>

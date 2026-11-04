@@ -85,8 +85,8 @@
     {% endif %}
 
     <h3 class="member-card__name">
-      {{ m.name_ko }}
-      <span class="member-card__name-en">{{ m.name_en }}</span>
+      {{ m.display_name_ko | default: m.name_ko }}
+      <span class="member-card__name-en">{{ m.display_name_en | default: m.name_en }}</span>
     </h3>
 
     {% comment %} Fixed 4-row metadata: affiliation → education → research field → office. {% endcomment %}
@@ -205,8 +205,8 @@
             type="button"
             class="member-card__ach-btn"
             data-ach-target="ach-{{ m.id }}"
-            data-ach-name="{{ m.name_ko | escape }}"
-            data-ach-name-en="{{ m.name_en | escape }}"
+            data-ach-name="{{ m.display_name_ko | default: m.name_ko | escape }}"
+            data-ach-name-en="{{ m.display_name_en | default: m.name_en | escape }}"
             aria-haspopup="dialog"
           >
             <i class="fa-solid fa-award" aria-hidden="true"></i><span data-i18n-term>연구 실적 · {{ ach_total }}</span>

@@ -121,7 +121,7 @@ ace2_editorial: true
           <div class="pi-showcase-card__portrait">
             <img
               src="{{ pi.photo | relative_url }}"
-              alt="{{ pi.name_en }}"
+              alt="{{ pi.display_name_en | default: pi.name_en }}"
               class="pi-showcase-card__img"
               style="object-position: {{ pi.photo_position | default: 'center top' }};"
               loading="lazy"
@@ -133,8 +133,8 @@ ace2_editorial: true
               <span class="pi-rank-tag" data-i18n-term>{{ pi.title_ko }}</span>
             </div>
             <h3 class="pi-showcase-card__name">
-              {{ pi.name_en }}
-              <span class="pi-showcase-card__name-ko">{{ pi.name_ko }}</span>
+              {{ pi.display_name_en | default: pi.name_en }}
+              <span class="pi-showcase-card__name-ko">{{ pi.display_name_ko | default: pi.name_ko }}</span>
             </h3>
             <div class="pi-showcase-card__affil" data-i18n-term>{{ pi.affiliation_ko }}</div>
           </div>

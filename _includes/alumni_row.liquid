@@ -1,4 +1,6 @@
 {% assign a = include.alumni %}
+{% assign a_disp_ko = a.display_name_ko | default: a.name_ko %}
+{% assign a_disp_en = a.display_name_en | default: a.name_en %}
 {% assign ach_papers = site.data.student_papers | where_exp: 'x', 'x.members contains a.name_ko' %}
 {% assign ach_patents = site.data.patents | where_exp: 'x', 'x.inventors contains a.name_ko' %}
 {% assign ach_awards = site.data.awards | where_exp: 'x', 'x.recipient contains a.name_ko' %}
@@ -8,7 +10,7 @@
 <div class="alumni-row" id="{{ a.id }}">
   <div class="alumni-row__avatar-wrapper">
     {% if a.photo and a.photo != '' %}
-      <img src="{{ a.photo | relative_url }}" alt="{{ a.name_en }}" class="alumni-row__avatar" loading="lazy" decoding="async">
+      <img src="{{ a.photo | relative_url }}" alt="{{ a_disp_en }}" class="alumni-row__avatar" loading="lazy" decoding="async">
     {% else %}
       {% assign name_parts = a.name_en | split: ' ' %}
       <div class="alumni-row__avatar alumni-row__avatar--placeholder" aria-hidden="true">
@@ -30,8 +32,8 @@
         · {{ a.grad_year -}}
       </span>
       <span class="alumni-row__name">
-        {{- a.name_ko -}}
-        <span class="alumni-row__name-en">{{ a.name_en }}</span></span
+        {{- a_disp_ko -}}
+        <span class="alumni-row__name-en">{{ a_disp_en }}</span></span
       >
       {% if a.dept or a.joint_inst or a.bs_dept %}
         <span class="alumni-row__meta">
@@ -87,10 +89,10 @@
             type="button"
             class="member-card__ach-btn alumni-row__ach-btn"
             data-ach-target="ach-{{ a.id }}"
-            data-ach-name="{{ a.name_ko | escape }}"
-            data-ach-name-en="{{ a.name_en | escape }}"
+            data-ach-name="{{ a_disp_ko | escape }}"
+            data-ach-name-en="{{ a_disp_en | escape }}"
             aria-haspopup="dialog"
-            aria-label="{{ a.name_ko }} 연구 실적 {{ ach_total }}건 보기"
+            aria-label="{{ a_disp_ko }} 연구 실적 {{ ach_total }}건 보기"
           >
             <i class="fa-solid fa-award" aria-hidden="true"></i><span data-i18n-term>연구 실적 · {{ ach_total }}</span>
           </button>
