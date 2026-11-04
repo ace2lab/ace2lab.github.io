@@ -51,12 +51,12 @@ ace2_team_grid: true
   <nav class="team-tabnav" role="tablist" aria-label="Members tabs">
     {% if yim %}
       <button type="button" role="tab" class="team-tab" id="tab-yim" aria-controls="panel-yim" aria-selected="false" tabindex="-1" data-hash="yim" data-aliases="yim,changyong-yim,pi-changyong-yim,member-changyong-yim">
-        <span data-i18n="members.tab.yim">임창용 교수 (Prof. Yim)</span>
+        <span data-i18n="members.tab.yim">임창용 교수</span>
       </button>
     {% endif %}
     {% if kim %}
       <button type="button" role="tab" class="team-tab" id="tab-kim" aria-controls="panel-kim" aria-selected="false" tabindex="-1" data-hash="kim" data-aliases="kim,taewook-kim,pi-taewook-kim,member-taewook-kim">
-        <span data-i18n="members.tab.kim">김태욱 교수 (Prof. Kim)</span>
+        <span data-i18n="members.tab.kim">김태욱 교수</span>
       </button>
     {% endif %}
     {% if current_count > 0 %}
@@ -66,7 +66,7 @@ ace2_team_grid: true
     {% endif %}
     {% if alumni.size > 0 %}
       <button type="button" role="tab" class="team-tab" id="tab-alumni" aria-controls="panel-alumni" aria-selected="false" tabindex="-1" data-hash="alumni" data-aliases="alumni,proud-alumni">
-        <span data-i18n="members.tab.alumni">졸업생 (Alumni)</span><span class="team-tab__count">{{ alumni.size }}</span>
+        <span data-i18n="members.tab.alumni">졸업생</span><span class="team-tab__count">{{ alumni.size }}</span>
       </button>
     {% endif %}
     {% if interns.size > 0 %}
@@ -83,7 +83,7 @@ ace2_team_grid: true
   <div class="team-tabpanel" role="tabpanel" id="panel-yim" aria-labelledby="tab-yim" tabindex="0" hidden>
     <section class="team-section" id="principal-investigators">
       <h2 class="team-section__title team-section__title--print-only">
-        <span data-i18n="members.sec.pi">공동 연구책임자 (Principal Investigators)</span>
+        <span data-i18n="members.sec.pi">공동 연구책임자</span>
         <span class="team-section__count">{{ site.data.members | where: "group", "pi" | size }}</span>
       </h2>
       <div class="team-grid team-grid--pi">
@@ -127,7 +127,7 @@ ace2_team_grid: true
         <div class="member-card__identity">
           <div class="member-card__eyebrow">
             <i class="fa-solid fa-robot" aria-hidden="true"></i>
-            <span data-i18n="members.eyebrow.ai_concierge">AI EXECUTIVE CONCIERGE · 연구실 AI 비서실</span>
+            <span data-i18n="members.eyebrow.ai_concierge">연구실 AI 비서실</span>
           </div>
           <h2 class="member-card__name">
             <span class="member-card__name-ko">{{ m.name_ko }}</span>
@@ -184,7 +184,7 @@ ace2_team_grid: true
     {% if grads.size > 0 %}
     <section class="team-section" id="graduate-students">
       <h2 class="team-section__title">
-        <span data-i18n="members.sec.students">대학원생 및 연구원 (Graduate Students)</span>
+        <span data-i18n="members.sec.students">대학원생 및 연구원</span>
         <span class="team-section__count">{{ grads.size }}</span>
       </h2>
       <div class="team-grid">
@@ -197,7 +197,7 @@ ace2_team_grid: true
     {% if ugs.size > 0 %}
     <section class="team-section" id="undergraduate-researchers">
       <h2 class="team-section__title">
-        <span data-i18n="members.sec.interns">학부연구생 (Undergraduate Researchers)</span>
+        <span data-i18n="members.sec.interns">학부연구생</span>
         <span class="team-section__count">{{ ugs.size }}</span>
       </h2>
       <div class="team-grid">
@@ -218,7 +218,7 @@ ace2_team_grid: true
   <div class="team-tabpanel" role="tabpanel" id="panel-alumni" aria-labelledby="tab-alumni" tabindex="0" hidden>
     <section class="team-section" id="proud-alumni">
       <h2 class="team-section__title">
-        <span data-i18n="members.sec.alumni">졸업생 및 역대 연구원 (Proud Alumni)</span>
+        <span data-i18n="members.sec.alumni">졸업생 및 역대 연구원</span>
         <span class="team-section__count">{{ alumni.size }}</span>
       </h2>
       {% assign alumni_by_year = alumni | group_by: "grad_year" %}
@@ -251,7 +251,7 @@ ace2_team_grid: true
   <div class="team-tabpanel" role="tabpanel" id="panel-interns" aria-labelledby="tab-interns" tabindex="0" hidden>
     <section class="team-section" id="former-interns">
       <h2 class="team-section__title">
-        <span data-i18n="members.sec.former_interns">역대 학부연구생 인턴 (Former Interns)</span>
+        <span data-i18n="members.sec.former_interns">역대 학부연구생 인턴</span>
         <span class="team-section__count">{{ interns.size }}</span>
       </h2>
       {% if intern_affiliations.size == 1 %}
@@ -289,7 +289,7 @@ ace2_team_grid: true
     <div class="ach-dialog__panel">
       <header class="ach-dialog__head">
         <div>
-          <p class="ach-dialog__eyebrow" data-i18n="ach.eyebrow">연구 실적 · Research Achievements</p>
+          <p class="ach-dialog__eyebrow" data-i18n="ach.eyebrow">연구 실적</p>
           <h2 id="ach-dialog-title" class="ach-dialog__title" data-ach="title"></h2>
           <p class="ach-dialog__summary" data-ach="summary"></p>
         </div>
@@ -312,7 +312,7 @@ ace2_team_grid: true
 {%- for x in ach_papers %}
 {%- capture p_title_html -%}{%- if x.title_html and x.title_html != '' -%}{{ x.title_html }}{%- else -%}{{ x.title | escape }}{%- endif -%}{%- endcapture -%}
 {%- capture ach_authors -%}{%- if x.author_items and x.author_items.size > 0 -%}{%- for a in x.author_items -%}{%- unless forloop.first -%}, {% endunless -%}{%- if a.ko == m.name_ko -%}<span class="ach-author--self">{{ a.name | escape }}</span>{{ a.syms | escape }}{%- else -%}{{ a.name | escape }}{{ a.syms | escape }}{%- endif -%}{%- endfor -%}{%- else -%}{{ x.authors | escape }}{%- endif -%}{%- endcapture -%}
-<li class="ach-item{% if x.is_cover %} ach-item--cover{% endif %}"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ p_title_html }}</a>{% else %}{{ p_title_html }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag{% if x.type_class != blank %} {{ x.type_class }}{% endif %}"{% if x.type_i18n_key %} data-i18n="{{ x.type_i18n_key }}"{% endif %}>{{ x.type | escape }}</span>{% endif %}{% if x.is_cover %}<span class="ach-item__tag ach-item__tag--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">표지논문 (Front Cover)</span></span>{% endif %}{% if x.is_accepted %}<span class="ach-item__tag ach-item__tag--accepted"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span data-i18n="ach.badge_accepted">게재 확정 (Just Accepted)</span></span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.date_label | default: x.year | escape }}{% if ach_authors != blank %} · {{ ach_authors }}{% endif %}</p></li>
+<li class="ach-item{% if x.is_cover %} ach-item--cover{% endif %}"><p class="ach-item__title">{% if x.doi != blank %}<a href="https://doi.org/{{ x.doi | escape }}" target="_blank" rel="noopener">{{ p_title_html }}</a>{% else %}{{ p_title_html }}{% endif %}</p><p class="ach-item__meta">{% if x.type != blank %}<span class="ach-item__tag{% if x.type_class != blank %} {{ x.type_class }}{% endif %}"{% if x.type_i18n_key %} data-i18n="{{ x.type_i18n_key }}"{% endif %}>{{ x.type | escape }}</span>{% endif %}{% if x.is_cover %}<span class="ach-item__tag ach-item__tag--cover"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">표지논문</span></span>{% endif %}{% if x.is_accepted %}<span class="ach-item__tag ach-item__tag--accepted"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span data-i18n="ach.badge_accepted">게재 확정</span></span>{% endif %}<em>{{ x.journal | escape }}</em> · {{ x.date_label | default: x.year | escape }}{% if ach_authors != blank %} · {{ ach_authors }}{% endif %}</p></li>
 {%- endfor %}
 </ul></section>
 {%- endif %}

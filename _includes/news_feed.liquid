@@ -1,8 +1,6 @@
 <div class="news-feed">
   <div class="news-feed__header">
-    <h2 class="news-feed__title">
-      <i class="fa-solid fa-bullhorn" aria-hidden="true"></i> <span data-i18n="home.news.title">최근 소식 (Latest News)</span>
-    </h2>
+    <h2 class="news-feed__title"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i> <span data-i18n="home.news.title">최근 소식</span></h2>
     <a href="{{ '/news/' | relative_url }}" class="news-feed__all-link">
       <span data-i18n="home.news.all">전체 소식</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
     </a>
@@ -25,19 +23,19 @@
           {% endif %}
           {% if item.category == 'award' %}
             <span class="news-cat-badge news-cat-badge--award"
-              ><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="news.cat_award">수상 (Award)</span></span
+              ><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="news.cat_award">수상</span></span
             >
           {% elsif item.category == 'member' %}
             <span class="news-cat-badge news-cat-badge--member"
-              ><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> <span data-i18n="news.cat_member">구성원 (Member)</span></span
+              ><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> <span data-i18n="news.cat_member">구성원</span></span
             >
           {% elsif item.category == 'honor' %}
             <span class="news-cat-badge news-cat-badge--honor"
-              ><i class="fa-solid fa-star" aria-hidden="true"></i> <span data-i18n="news.cat_honor">영예·선정 (Honor)</span></span
+              ><i class="fa-solid fa-star" aria-hidden="true"></i> <span data-i18n="news.cat_honor">영예·선정</span></span
             >
           {% elsif item.category == 'milestone' %}
             <span class="news-cat-badge news-cat-badge--milestone"
-              ><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> <span data-i18n="news.cat_milestone">주요 성과 (Milestone)</span></span
+              ><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> <span data-i18n="news.cat_milestone">주요 성과</span></span
             >
           {% endif %}
         </div>

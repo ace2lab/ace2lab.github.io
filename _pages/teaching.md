@@ -14,7 +14,7 @@ ace2_editorial: true
 
 {% capture hero_badges %}
 <span class="hero-badge"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> <span data-i18n="teaching.badge_webapp">인터랙티브 웹앱</span></span>
-<span class="hero-badge"><i class="fa-solid fa-water" aria-hidden="true"></i> <span data-i18n="teaching.badge_tp">전달현상 (Transport Phenomena)</span></span>
+<span class="hero-badge"><i class="fa-solid fa-water" aria-hidden="true"></i> <span data-i18n="teaching.badge_tp">전달현상</span></span>
 <span class="hero-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> <span data-i18n="teaching.badge_courses">2026-2 개설 강좌</span></span>
 {% endcapture %}
 
@@ -34,7 +34,7 @@ ace2_editorial: true
   <section aria-labelledby="heading-simulations" class="mb-5">
     <h2 id="heading-simulations" class="teaching-section-title">
       <i class="fa-solid fa-flask-vial text-primary" aria-hidden="true"></i>
-      <span data-i18n="teaching.sim_sec_title">인터랙티브 강의노트 및 물리 시뮬레이션 (Interactive Simulations)</span>
+      <span data-i18n="teaching.sim_sec_title">인터랙티브 강의노트 및 물리 시뮬레이션</span>
     </h2>
     <p class="teaching-section-desc" data-i18n="teaching.sim_sec_desc">
       복잡한 수학적 전달방정식과 경계조건을 직접 조작하며 직관적으로 이해할 수 있는 실시간 웹 시뮬레이션 모듈입니다.
@@ -62,7 +62,7 @@ ace2_editorial: true
       <div class="sim-card__body">
         <div>
           <div class="sim-card__tag-bar">
-            <span class="sim-pill sim-pill--amber" data-i18n="teaching.sim1_tag1">전달현상 2 (Transport Phenomena II)</span>
+            <span class="sim-pill sim-pill--amber" data-i18n="teaching.sim1_tag1">전달현상 2</span>
             <span class="sim-pill" data-i18n="teaching.sim1_tag2">Manim 수식 애니메이션 연동</span>
             <span class="sim-pill" data-i18n="teaching.sim1_tag3">Web Audio 3채널 합성</span>
           </div>
@@ -106,7 +106,7 @@ ace2_editorial: true
   <section aria-labelledby="heading-courses" class="mb-5">
     <h2 id="heading-courses" class="teaching-section-title">
       <i class="fa-solid fa-book-open-reader text-primary" aria-hidden="true"></i>
-      <span data-i18n="teaching.course_sec_title">담당 교과목 및 커리큘럼 (Academic Courses &amp; Curriculum)</span>
+      <span data-i18n="teaching.course_sec_title">담당 교과목 및 커리큘럼</span>
     </h2>
     <p class="teaching-section-desc" data-i18n="teaching.course_sec_desc">
       2026학년도 2학기 경북대학교 과학기술대학 에너지화학공학과 및 대학원에서 임창용 교수가 담당하여 강의하는 교과목입니다.

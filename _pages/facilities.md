@@ -54,7 +54,7 @@ ace2_editorial: true
   <!-- Accessible Tab Navigation -->
   <div class="ace2-tabnav" role="tablist" aria-label="Research facilities tabs">
     <button type="button" role="tab" class="ace2-tab is-active" id="tab-all" aria-controls="panel-all" aria-selected="true" tabindex="0" data-hash="all" data-default="true">
-      <span data-i18n="facilities.tab_all">전체 장비 (All Instruments)</span><span class="ace2-tab__count">{{ all_facilities.size }}</span>
+      <span data-i18n="facilities.tab_all">전체 장비</span><span class="ace2-tab__count">{{ all_facilities.size }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-synthesis" aria-controls="panel-synthesis" aria-selected="false" tabindex="-1" data-hash="synthesis" data-aliases="material-synthesis,thermal-processing,processing">
       <span data-i18n="facilities.tab_synthesis">합성 및 광열 공정</span><span class="ace2-tab__count">{{ synthesis_items.size }}</span>
@@ -88,7 +88,7 @@ ace2_editorial: true
   <div class="ace2-tabpanel fac-panel-cat" role="tabpanel" id="panel-synthesis" aria-labelledby="tab-synthesis" tabindex="0" hidden>
     <section class="ed-section">
       <h2 class="ed-section__title">
-        <span data-i18n="facilities.sec_synthesis">나노소재 합성 및 광열 공정 장비 (Synthesis & Thermal/Photonic Processing)</span>
+        <span data-i18n="facilities.sec_synthesis">나노소재 합성 및 광열 공정 장비</span>
         <span class="ed-section__count">{{ synthesis_items.size }}</span>
       </h2>
       <p class="ed-lede" data-i18n="facilities.lede_synthesis">
@@ -102,7 +102,7 @@ ace2_editorial: true
   <div class="ace2-tabpanel fac-panel-cat" role="tabpanel" id="panel-thermal" aria-labelledby="tab-thermal" tabindex="0" hidden>
     <section class="ed-section">
       <h2 class="ed-section__title">
-        <span data-i18n="facilities.sec_thermal">시료 전처리 및 정밀 건조 장비 (Sample Preparation & Drying)</span>
+        <span data-i18n="facilities.sec_thermal">시료 전처리 및 정밀 건조 장비</span>
         <span class="ed-section__count">{{ thermal_items.size }}</span>
       </h2>
       <p class="ed-lede" data-i18n="facilities.lede_thermal">
@@ -116,7 +116,7 @@ ace2_editorial: true
   <div class="ace2-tabpanel fac-panel-cat" role="tabpanel" id="panel-characterization" aria-labelledby="tab-characterization" tabindex="0" hidden>
     <section class="ed-section">
       <h2 class="ed-section__title">
-        <span data-i18n="facilities.sec_char">전기화학·광학·물성 분석 및 센서 측정 장비 (Characterization & Measurement)</span>
+        <span data-i18n="facilities.sec_char">전기화학·광학·물성 분석 및 센서 측정 장비</span>
         <span class="ed-section__count">{{ char_items.size }}</span>
       </h2>
       <p class="ed-lede" data-i18n="facilities.lede_char">
@@ -130,7 +130,7 @@ ace2_editorial: true
   <div class="ace2-tabpanel fac-panel-cat" role="tabpanel" id="panel-utility" aria-labelledby="tab-utility" tabindex="0" hidden>
     <section class="ed-section">
       <h2 class="ed-section__title">
-        <span data-i18n="facilities.sec_utility">실험실 안전 인프라 및 유틸리티 (Infrastructure & Laboratory Utility)</span>
+        <span data-i18n="facilities.sec_utility">실험실 안전 인프라 및 유틸리티</span>
         <span class="ed-section__count">{{ utility_items.size }}</span>
       </h2>
       <p class="ed-lede" data-i18n="facilities.lede_utility">

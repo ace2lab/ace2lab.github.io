@@ -15,9 +15,9 @@ ace2_editorial: true
 {% assign achievements_by_year = all_achievements | group_by: "year" | sort: "name" | reverse %}
 
 {% capture hero_badges %}
-<span class="hero-badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="news.idx_awards">수상 실적 (Awards)</span> ({{ site.data.awards.size }})</span>
-<span class="hero-badge"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="news.idx_press">언론 보도 (In the Press)</span> ({{ site.data.press.size }})</span>
-<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span data-i18n="news.filter_all">전체 (All)</span> ({{ all_achievements.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="news.idx_awards">수상 실적</span> ({{ site.data.awards.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="news.idx_press">언론 보도</span> ({{ site.data.press.size }})</span>
+<span class="hero-badge"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> <span data-i18n="news.filter_all">전체</span> ({{ all_achievements.size }})</span>
 {% endcapture %}
 
 {% capture hero_actions %}
@@ -38,8 +38,8 @@ ace2_editorial: true
 <div class="ed-page">
 
   <nav class="ed-index" aria-label="News sections">
-    <a href="#latest"><span data-i18n="news.idx_latest">최신 소식 (Latest)</span></a>
-    <a href="#achievements"><span data-i18n="news.idx_achievements">수상 및 언론보도 (Awards & Press)</span><span class="ed-index__count">{{ all_achievements.size }}</span></a>
+    <a href="#latest"><span data-i18n="news.idx_latest">최신 소식</span></a>
+    <a href="#achievements"><span data-i18n="news.idx_achievements">수상 및 언론보도</span><span class="ed-index__count">{{ all_achievements.size }}</span></a>
     <a href="{{ '/chem-frontier/' | relative_url }}"><span data-i18n="news.idx_chemfrontier">Chem Frontier(켐프론티어) 2년 연속 전국 1위 총람 →</span></a>
   </nav>
 
@@ -92,17 +92,17 @@ ace2_editorial: true
 
   <div class="news-cat-legend" role="group" aria-label="News category color legend">
     <span class="news-cat-legend__title"><i class="fa-solid fa-tags" aria-hidden="true"></i> <span data-i18n="news.cat_title">분류</span></span>
-    <span class="news-cat-legend__item" data-cat="award"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_award">수상 (Award)</span><span class="news-cat-legend__count">{{ n_award.size }}</span></span>
-    <span class="news-cat-legend__item" data-cat="member"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_member">구성원 (Member)</span><span class="news-cat-legend__count">{{ n_member.size }}</span></span>
-    <span class="news-cat-legend__item" data-cat="milestone"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_milestone">주요 성과 (Milestone)</span><span class="news-cat-legend__count">{{ n_milestone.size }}</span></span>
-    <span class="news-cat-legend__item" data-cat="honor"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_honor">영예·선정 (Honor)</span><span class="news-cat-legend__count">{{ n_honor.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="award"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_award">수상</span><span class="news-cat-legend__count">{{ n_award.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="member"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_member">구성원</span><span class="news-cat-legend__count">{{ n_member.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="milestone"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_milestone">주요 성과</span><span class="news-cat-legend__count">{{ n_milestone.size }}</span></span>
+    <span class="news-cat-legend__item" data-cat="honor"><span class="news-cat-legend__dot" aria-hidden="true"></span><span data-i18n="news.cat_honor">영예·선정</span><span class="news-cat-legend__count">{{ n_honor.size }}</span></span>
   </div>
 
   <!-- 1. Lab announcements (_news collection) -->
 
   <section class="ed-section" id="latest">
     <h2 class="ed-section__title">
-      <span data-i18n="news.idx_latest">최신 소식 (Latest)</span>
+      <span data-i18n="news.idx_latest">최신 소식</span>
       <span class="ed-section__count">{{ news_items.size }}</span>
     </h2>
 
@@ -117,13 +117,13 @@ ace2_editorial: true
               <span class="news-badge-new">NEW</span>
             {% endif %}
             {% if item.category == 'award' %}
-              <span class="news-cat-badge news-cat-badge--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="news.cat_award">수상 (Award)</span></span>
+              <span class="news-cat-badge news-cat-badge--award"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="news.cat_award">수상</span></span>
             {% elsif item.category == 'member' %}
-              <span class="news-cat-badge news-cat-badge--member"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> <span data-i18n="news.cat_member">구성원 (Member)</span></span>
+              <span class="news-cat-badge news-cat-badge--member"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> <span data-i18n="news.cat_member">구성원</span></span>
             {% elsif item.category == 'honor' %}
-              <span class="news-cat-badge news-cat-badge--honor"><i class="fa-solid fa-star" aria-hidden="true"></i> <span data-i18n="news.cat_honor">영예·선정 (Honor)</span></span>
+              <span class="news-cat-badge news-cat-badge--honor"><i class="fa-solid fa-star" aria-hidden="true"></i> <span data-i18n="news.cat_honor">영예·선정</span></span>
             {% elsif item.category == 'milestone' %}
-              <span class="news-cat-badge news-cat-badge--milestone"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> <span data-i18n="news.cat_milestone">주요 성과 (Milestone)</span></span>
+              <span class="news-cat-badge news-cat-badge--milestone"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> <span data-i18n="news.cat_milestone">주요 성과</span></span>
             {% endif %}
           </div>
           <div class="news-feed-card__body">
@@ -152,7 +152,7 @@ ace2_editorial: true
 
   <section class="ed-section" id="achievements">
     <h2 class="ed-section__title">
-      <span data-i18n="news.idx_achievements">수상 및 언론보도 (Awards & Press)</span>
+      <span data-i18n="news.idx_achievements">수상 및 언론보도</span>
       <span class="ed-section__count" id="newsAchTotalCount">{{ all_achievements.size }}</span>
     </h2>
 
@@ -161,11 +161,11 @@ ace2_editorial: true
         <legend class="pub-pi-filter__legend" id="newsAchFilterLegend"><i class="fa-solid fa-filter" aria-hidden="true"></i> <span data-i18n="news.filter_legend">분류 필터</span></legend>
         <div class="pub-pi-filter__options">
           <input type="radio" class="pub-pi-filter__input" name="news-ach" id="newsAchAll" value="all" autocomplete="off" checked>
-          <label class="pub-pi-filter__pill" for="newsAchAll"><span data-i18n="news.filter_all">전체 (All)</span> <span class="pub-pi-filter__count" data-ach-count="all">{{ all_achievements.size }}</span></label>
+          <label class="pub-pi-filter__pill" for="newsAchAll"><span data-i18n="news.filter_all">전체</span> <span class="pub-pi-filter__count" data-ach-count="all">{{ all_achievements.size }}</span></label>
           <input type="radio" class="pub-pi-filter__input" name="news-ach" id="newsAchAward" value="award" autocomplete="off">
-          <label class="pub-pi-filter__pill" for="newsAchAward"><span data-i18n="news.filter_awards">수상 실적 (Awards)</span> <span class="pub-pi-filter__count" data-ach-count="award">{{ site.data.awards.size }}</span></label>
+          <label class="pub-pi-filter__pill" for="newsAchAward"><span data-i18n="news.filter_awards">수상 실적</span> <span class="pub-pi-filter__count" data-ach-count="award">{{ site.data.awards.size }}</span></label>
           <input type="radio" class="pub-pi-filter__input" name="news-ach" id="newsAchPress" value="press" autocomplete="off">
-          <label class="pub-pi-filter__pill" for="newsAchPress"><span data-i18n="news.filter_press">언론 보도 (Press)</span> <span class="pub-pi-filter__count" data-ach-count="press">{{ site.data.press.size }}</span></label>
+          <label class="pub-pi-filter__pill" for="newsAchPress"><span data-i18n="news.filter_press">언론 보도</span> <span class="pub-pi-filter__count" data-ach-count="press">{{ site.data.press.size }}</span></label>
         </div>
       </fieldset>
     </div>

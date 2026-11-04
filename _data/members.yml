@@ -94,7 +94,7 @@
     전극 소재, 친환경 촉매 기술, 세라믹 및 금속 3D 프린팅 첨단 적층제조 소재 연구를 이끌고 있습니다.
   role_ko: 공동 연구책임자 (Co-PI)
   role_en: Co-Principal Investigator
-  office: 7호관 413호 (Room 413, Bldg. 7)
+  office: 7호관 413호
   phone: +82-54-530-1332
 - id: changyong-yim
   group: pi
@@ -234,7 +234,7 @@
               title: "고분자 합성 및 물성"
               credits: "3"
     - year: "2025"
-      note: "Spring & Fall · 연구년 (Sabbatical Year)"
+      note: "1학기·2학기 · 연구년"
     - year: "2024"
       semesters:
         - term: "Spring"
@@ -454,7 +454,7 @@
   bio: POSTECH (포스텍, 포항공과대학교) 화학공학과에서 학사 및 박사학위를 취득하고, 동 대학 BK21+ 박사후연구원, University of Calgary, Canada 기계생산공학과 Eyes-High 박사후연구원, 삼성전자 IM(IT·모바일)부문 무선사업부 Staff Engineer(모바일 헬스케어 센서 H/W 개발), 포항산업과학연구원(RIST) 미세먼지연구센터 수석연구원을 거쳐 경북대학교 에너지화학공학과 부교수로 재직 중입니다. 극한 광-물질 상호작용 기반의 초고속 펄스광(Intense Pulsed Light) 나노제조 공정과 원자층 2차원 계면 엔지니어링을 바탕으로 차세대 고출력·고밀도 에너지 저장 소자와 지능형 유연 바이오·가스 센싱 플랫폼 연구를 이끌고 있습니다.
   role_ko: 공동 연구책임자 (Co-PI)
   role_en: Co-Principal Investigator
-  office: 7호관 411호 (Room 411, Bldg. 7)
+  office: 7호관 411호
   phone: +82-54-530-1331
 - id: jaeho-lee
   group: phd

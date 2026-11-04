@@ -40,9 +40,9 @@
   --font-mono-meta: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
 
   /* ------------------------------------------------------------
-     Type Scale SSOT (13px floor for any readable text)
+     Type Scale SSOT (14px floor for any readable text)
      ------------------------------------------------------------ */
-  --fs-label: 0.8125rem; /* 13px — badges, chips, tags, counts */
+  --fs-label: 0.875rem; /* 14px — badges, chips, tags, counts */
   --fs-meta: 0.875rem; /* 14px — dates, bylines, secondary meta */
   --fs-body-sm: 0.9375rem; /* 15px — dense body copy */
   --fs-body: 1rem; /* 16px — body copy, form inputs (no iOS zoom) */

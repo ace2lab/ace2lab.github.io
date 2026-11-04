@@ -76,7 +76,7 @@
     <header class="pi-profile__header">
       {% if m.role_en %}
         <p class="pi-profile__eyebrow">
-          <i class="fa-solid fa-user-tie" aria-hidden="true"></i><span data-i18n="home.copi.role_tag">공동 연구책임자 (Co-PI)</span>
+          <i class="fa-solid fa-user-tie" aria-hidden="true"></i><span data-i18n="home.copi.role_tag">공동 연구책임자</span>
         </p>
       {% endif %}
       <h3 class="pi-profile__name" id="member-{{ m.id }}-name">
@@ -127,7 +127,7 @@
       <div class="pi-profile__history">
         {% if m.career %}
           <section class="pi-history" aria-label="Career">
-            <h4 class="pi-profile__label" data-i18n="pi.section.career">경력 (Career)</h4>
+            <h4 class="pi-profile__label" data-i18n="pi.section.career">경력</h4>
             <ol class="pi-timeline">
               {% for c in m.career %}
                 {% assign is_current = false -%}
@@ -159,7 +159,7 @@
         {% endif %}
         {% if m.degrees %}
           <section class="pi-history" aria-label="Education">
-            <h4 class="pi-profile__label" data-i18n="pi.section.education">학력 (Education)</h4>
+            <h4 class="pi-profile__label" data-i18n="pi.section.education">학력</h4>
             <ol class="pi-timeline">
               {% for d in m.degrees %}
                 <li class="pi-timeline__item pi-timeline__item--{{ d.kind | default: 'academia' }}{% if d.brand %} pi-timeline__item--brand-{{ d.brand }}{% endif %}">
@@ -185,7 +185,7 @@
 
     {% if m.topics and m.topics.size > 0 %}
       <div class="pi-profile__block">
-        <h4 class="pi-profile__label" data-i18n="pi.section.topics">주요 연구 분야 (Research Topics)</h4>
+        <h4 class="pi-profile__label" data-i18n="pi.section.topics">주요 연구 분야</h4>
         <ul class="pi-topics" role="list">
           {% for t in m.topics %}
             <li class="topic-tag">{{ t }}</li>
@@ -197,7 +197,7 @@
     {% if m.teaching and m.teaching.size > 0 %}
       <section class="pi-profile__block pi-teaching" aria-label="Teaching">
         <div class="pi-teaching__head">
-          <h4 class="pi-profile__label" data-i18n="pi.section.teaching">개설 교과목 (Teaching)</h4>
+          <h4 class="pi-profile__label" data-i18n="pi.section.teaching">개설 교과목</h4>
           <p class="pi-teaching__legend" aria-hidden="true">
             <span data-i18n="pi.teaching.legend1">(학점) · 시수</span>
             <span class="pi-teaching__legend-sep">/</span>

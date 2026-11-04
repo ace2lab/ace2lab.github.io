@@ -287,7 +287,7 @@ ace2_editorial: true
   <!-- 3. Official Certificates & Media Press Coverage -->
   <section class="ed-section" id="certificates">
     <h2 class="ed-section__title">
-      <span data-i18n="cf.sec_certs">공식 수상 상장 및 언론 보도 (Official Certificates & Press Coverage)</span>
+      <span data-i18n="cf.sec_certs">공식 수상 상장 및 언론 보도</span>
       <span class="ed-section__count">5</span>
     </h2>
 

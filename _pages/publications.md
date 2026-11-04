@@ -55,16 +55,16 @@ ace2_editorial: true
   <!-- Accessible Tab Navigation -->
   <div class="ace2-tabnav" role="tablist" aria-label="Publications category tabs">
     <button type="button" role="tab" class="ace2-tab is-active" id="tab-journals" aria-controls="panel-journals" aria-selected="true" tabindex="0" data-hash="journals" data-default="true" data-aliases="international,papers,articles">
-      <span data-i18n="publications.tab_journals">국제 학술지 (International Journals)</span><span class="ace2-tab__count">{{ intl_count }}</span>
+      <span data-i18n="publications.tab_journals">국제 학술지</span><span class="ace2-tab__count">{{ intl_count }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-domestic" aria-controls="panel-domestic" aria-selected="false" tabindex="-1" data-hash="domestic" data-aliases="domestic-journals,korean">
-      <span data-i18n="publications.tab_domestic">국내 학술지 (Domestic Journals)</span><span class="ace2-tab__count">{{ site.data.domestic.size }}</span>
+      <span data-i18n="publications.tab_domestic">국내 학술지</span><span class="ace2-tab__count">{{ site.data.domestic.size }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-patents" aria-controls="panel-patents" aria-selected="false" tabindex="-1" data-hash="patents" data-aliases="intellectual-property,ip">
-      <span data-i18n="publications.tab_patents">특허 및 지식재산권 (Patents & IP)</span><span class="ace2-tab__count">{{ site.data.patents.size }}</span>
+      <span data-i18n="publications.tab_patents">특허 및 지식재산권</span><span class="ace2-tab__count">{{ site.data.patents.size }}</span>
     </button>
     <button type="button" role="tab" class="ace2-tab" id="tab-talks" aria-controls="panel-talks" aria-selected="false" tabindex="-1" data-hash="talks" data-aliases="conferences,presentations">
-      <span data-i18n="publications.tab_talks">학술대회 발표 (Presentations)</span><span class="ace2-tab__count">{{ site.data.talks.size }}</span>
+      <span data-i18n="publications.tab_talks">학회 발표</span><span class="ace2-tab__count">{{ site.data.talks.size }}</span>
     </button>
   </div>
 
@@ -98,7 +98,7 @@ ace2_editorial: true
       </div>
 
       <h2 class="ed-section__title">
-        <span data-i18n="publications.sec_journals">국제 SCI(E) 학술지 논문 (International Journals)</span>
+        <span data-i18n="publications.sec_journals">국제 SCI(E) 학술지 논문</span>
         <span class="ed-section__count">{{ intl_count }}</span>
       </h2>
       <div class="pub-research-crosslinks" aria-label="Core research pillars">
@@ -121,7 +121,7 @@ ace2_editorial: true
         <legend class="pub-pi-filter__legend" id="pubPiFilterLegend"><i class="fa-solid fa-user-tie" aria-hidden="true"></i> <span data-i18n="publications.pi_legend">연구책임자</span></legend>
         <div class="pub-pi-filter__options">
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiAll" value="all" autocomplete="off" checked>
-          <label class="pub-pi-filter__pill" for="pubPiAll"><span data-i18n="publications.filter_all">전체 (All)</span> <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
+          <label class="pub-pi-filter__pill" for="pubPiAll"><span data-i18n="publications.filter_all">전체</span> <span class="pub-pi-filter__count" data-pi-count="all">{{ intl_count }}</span></label>
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiYim" value="yim" autocomplete="off">
           <label class="pub-pi-filter__pill" for="pubPiYim"><span class="pub-pi-filter__honorific">Prof. </span>Changyong Yim <span class="pub-pi-filter__count" data-pi-count="yim">57</span></label>
           <input type="radio" class="pub-pi-filter__input" name="pub-pi" id="pubPiKim" value="kim" autocomplete="off">
@@ -135,7 +135,7 @@ ace2_editorial: true
           <div class="pub-cover-showcase__header">
             <h3 class="pub-cover-showcase__title" id="pubCoverTitle">
               <i class="fa-solid fa-award" aria-hidden="true"></i>
-              <span data-i18n="publications.sec_covers">표지 선정 논문 (Featured Journal Covers)</span>
+              <span data-i18n="publications.sec_covers">표지 선정 논문</span>
               <span class="pub-cover-showcase__count">{{ site.data.covers.size }}</span>
             </h3>
           </div>
@@ -153,7 +153,7 @@ ace2_editorial: true
                 </div>
                 <div class="pub-cover-card__body">
                   <div class="pub-cover-card__meta">
-                    <span class="pub-cover-card__badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">표지논문 (Front Cover)</span></span>
+                    <span class="pub-cover-card__badge"><i class="fa-solid fa-award" aria-hidden="true"></i> <span data-i18n="publications.badge_front_cover">표지논문</span></span>
                     <span class="pub-cover-card__journal">{{ cover.journal }}</span>
                     <span class="pub-cover-card__issue">Vol. {{ cover.volume }}, No. {{ cover.issue }} ({{ cover.date | date: "%Y" }})</span>
                   </div>
@@ -180,9 +180,9 @@ ace2_editorial: true
       {% include bib_search.liquid %}
 
       <div class="pub-contribution-legend" role="note" aria-label="Author contribution notation">
-        <span><span class="author-symbol">†</span> <span data-i18n="publications.contrib_equal">공동 제1저자 (Equal contribution)</span></span>
+        <span><span class="author-symbol">†</span> <span data-i18n="publications.contrib_equal">공동 제1저자</span></span>
         <span>·</span>
-        <span><span class="author-symbol">*</span> <span data-i18n="publications.contrib_corr">교신저자 (Corresponding author)</span></span>
+        <span><span class="author-symbol">*</span> <span data-i18n="publications.contrib_corr">교신저자</span></span>
         <span>·</span>
         <span><span data-i18n="publications.contrib_member">ACE² Lab 소속 연구원 (굵은 밑줄)</span></span>
       </div>
@@ -199,10 +199,10 @@ ace2_editorial: true
     {% if site.data.domestic.size > 0 %}
       <section class="ed-section" id="domestic">
         <h2 class="ed-section__title">
-          <span data-i18n="publications.sec_domestic">국내 학술지 논문 (Domestic Journals)</span>
+          <span data-i18n="publications.sec_domestic">국내 학술지 논문</span>
           <span class="ed-section__count">{{ site.data.domestic.size }}</span>
         </h2>
-        <p class="ed-section__note" data-i18n="publications.dom_note">‡ 공동 제1저자 (Equal contribution) · * 교신저자 (Corresponding author)</p>
+        <p class="ed-section__note" data-i18n="publications.dom_note">‡ 공동 제1저자 · * 교신저자</p>
 
         <div class="ed-rail">
           {% for group in domestic_by_year %}
@@ -253,18 +253,18 @@ ace2_editorial: true
             <legend class="pub-pi-filter__legend" id="pubPatentFilterLegend"><i class="fa-solid fa-certificate" aria-hidden="true"></i> <span data-i18n="publications.patent_legend">상태</span></legend>
             <div class="pub-pi-filter__options">
               <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentAll" value="all" autocomplete="off" checked>
-              <label class="pub-pi-filter__pill" for="pubPatentAll"><span data-i18n="publications.filter_all">전체 (All)</span> <span class="pub-pi-filter__count" data-patent-count="all">{{ site.data.patents.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubPatentAll"><span data-i18n="publications.filter_all">전체</span> <span class="pub-pi-filter__count" data-patent-count="all">{{ site.data.patents.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentRegistered" value="registered" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubPatentRegistered"><span data-i18n="publications.status_registered">등록 (Registered)</span> <span class="pub-pi-filter__count" data-patent-count="registered">{{ registered_patents.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubPatentRegistered"><span data-i18n="publications.status_registered">등록</span> <span class="pub-pi-filter__count" data-patent-count="registered">{{ registered_patents.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-patent" id="pubPatentFiled" value="filed" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubPatentFiled"><span data-i18n="publications.status_filed">출원 (Filed)</span> <span class="pub-pi-filter__count" data-patent-count="filed">{{ filed_patents.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubPatentFiled"><span data-i18n="publications.status_filed">출원</span> <span class="pub-pi-filter__count" data-patent-count="filed">{{ filed_patents.size }}</span></label>
             </div>
           </fieldset>
         </div>
         <p class="pub-pi-filter__status" id="pubPatentStatus" role="status" aria-live="polite"></p>
 
         <h2 class="ed-section__title">
-          <span data-i18n="publications.sec_patents">특허 및 지식재산권 (Patents & Intellectual Property)</span>
+          <span data-i18n="publications.sec_patents">특허 및 지식재산권</span>
           <span class="ed-section__count">{{ site.data.patents.size }}</span>
         </h2>
 
@@ -277,11 +277,11 @@ ace2_editorial: true
                   {% assign dp = p.date | remove: " " | split: "." %}
                   {% if p.status == "등록" %}
                     {% assign status_key = "registered" %}
-                    {% assign status_label = "등록 (Registered)" %}
+                    {% assign status_label = "등록" %}
                     {% assign status_icon = "fa-circle-check" %}
                   {% else %}
                     {% assign status_key = "filed" %}
-                    {% assign status_label = "출원 (Filed)" %}
+                    {% assign status_label = "출원" %}
                     {% assign status_icon = "fa-file-pen" %}
                   {% endif %}
                   <li class="ed-entry" data-patent-status="{{ status_key }}">
@@ -346,20 +346,20 @@ ace2_editorial: true
             <legend class="pub-pi-filter__legend" id="pubTalkFilterLegend"><i class="fa-solid fa-microphone" aria-hidden="true"></i> <span data-i18n="publications.talk_legend">구분</span></legend>
             <div class="pub-pi-filter__options">
               <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkAll" value="all" autocomplete="off" checked>
-              <label class="pub-pi-filter__pill" for="pubTalkAll"><span data-i18n="publications.filter_all">전체 (All)</span> <span class="pub-pi-filter__count" data-talk-count="all">{{ site.data.talks.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubTalkAll"><span data-i18n="publications.filter_all">전체</span> <span class="pub-pi-filter__count" data-talk-count="all">{{ site.data.talks.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkInvited" value="invited" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubTalkInvited"><span data-i18n="publications.type_invited">초청강연 (Invited)</span> <span class="pub-pi-filter__count" data-talk-count="invited">{{ invited_talks.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubTalkInvited"><span data-i18n="publications.type_invited">초청강연</span> <span class="pub-pi-filter__count" data-talk-count="invited">{{ invited_talks.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkOral" value="oral" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubTalkOral"><span data-i18n="publications.type_oral">구두발표 (Oral)</span> <span class="pub-pi-filter__count" data-talk-count="oral">{{ oral_talks.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubTalkOral"><span data-i18n="publications.type_oral">구두발표</span> <span class="pub-pi-filter__count" data-talk-count="oral">{{ oral_talks.size }}</span></label>
               <input type="radio" class="pub-pi-filter__input" name="pub-talk" id="pubTalkPoster" value="poster" autocomplete="off">
-              <label class="pub-pi-filter__pill" for="pubTalkPoster"><span data-i18n="publications.type_poster">포스터 (Poster)</span> <span class="pub-pi-filter__count" data-talk-count="poster">{{ poster_talks.size }}</span></label>
+              <label class="pub-pi-filter__pill" for="pubTalkPoster"><span data-i18n="publications.type_poster">포스터</span> <span class="pub-pi-filter__count" data-talk-count="poster">{{ poster_talks.size }}</span></label>
             </div>
           </fieldset>
         </div>
         <p class="pub-pi-filter__status" id="pubTalkStatus" role="status" aria-live="polite"></p>
 
         <h2 class="ed-section__title">
-          <span data-i18n="publications.sec_talks">학술대회 발표 (Conference Presentations)</span>
+          <span data-i18n="publications.sec_talks">학회 발표</span>
           <span class="ed-section__count">{{ site.data.talks.size }}</span>
         </h2>
 

@@ -129,7 +129,7 @@ ace2_editorial: true
           </div>
           <div class="pi-showcase-card__id">
             <div class="pi-showcase-card__role">
-              <span class="pi-role-tag" data-i18n="home.copi.role_tag">공동 연구책임자 (Co-PI)</span>
+              <span class="pi-role-tag" data-i18n="home.copi.role_tag">공동 연구책임자</span>
               <span class="pi-rank-tag" data-i18n-term>{{ pi.title_ko }}</span>
             </div>
             <h3 class="pi-showcase-card__name">
@@ -231,7 +231,7 @@ ace2_editorial: true
 
 ---
 
-<h2 id="research-areas" data-i18n="home.areas.title">핵심 연구 분야 (Core Research Areas)</h2>
+<h2 id="research-areas" data-i18n="home.areas.title">핵심 연구 분야</h2>
 
 <div class="research-grid">
   <a href="{{ '/research/' | relative_url }}#energy-storage" class="research-card" id="area-01">
@@ -375,7 +375,7 @@ ace2_editorial: true
     <div class="selected-papers-block">
       <div class="selected-papers-block__header">
         <h2 class="selected-papers-block__title">
-          <i class="fa-solid fa-star" aria-hidden="true"></i> <span data-i18n="home.pubs.title">주요 발표 논문 (Selected Publications)</span>
+          <i class="fa-solid fa-star" aria-hidden="true"></i> <span data-i18n="home.pubs.title">주요 발표 논문</span>
         </h2>
         <a href="{{ '/publications/' | relative_url }}" class="selected-papers-block__all-link">
           <span data-i18n="home.pubs.all">전체 논문</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
