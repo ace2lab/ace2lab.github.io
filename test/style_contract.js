@@ -261,6 +261,19 @@ if (exists("_data/awards.yml")) {
   }
 }
 
+// 7. Sticky-dock negative-margin adjacency guard: a negative top margin on a sticky dock
+//    (flush-docking trick) must be gated by a `:has()` structural adjacency selector, so any
+//    element inserted between the tab bar and the dock falls back to margin 0 instead of overlapping it.
+for (const relCss of collectFiles("assets/css", /\.css$/)) {
+  const css = read(relCss).replace(/\/\*[\s\S]*?\*\//g, "");
+  for (const m of css.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    const selector = m[1].trim().replace(/\s+/g, " ");
+    if (/sticky/.test(selector) && /(?:^|[;\s])margin(?:-top|-block|-block-start)?\s*:\s*(?:calc\(\s*-|-)/.test(m[2]) && !/:has\(/.test(selector)) {
+      failures.push(`\`${relCss}\` rule \`${selector}\` applies a negative margin to a sticky dock without a \`:has()\` adjacency guard.`);
+    }
+  }
+}
+
 if (failures.length > 0) {
   console.error("Starter style contract check failed:");
   failures.forEach((message) => console.error(`- ${message}`));

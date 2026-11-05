@@ -1655,7 +1655,18 @@ html[data-theme="dark"] .news-degree {
 
 .ace2-tab-container.is-tabbed .pub-sticky-toolbar {
   top: calc(var(--sticky-navbar) + var(--sticky-tabnav)); /* clears navbar + sticky tab bar */
-  margin-top: calc(-1 * var(--ed-s8, 2rem));
+}
+
+/* Flush docking under .ace2-tabnav: cancel its bottom margin ONLY when the toolbar is
+   structurally adjacent (tabnav + panel > section:first-child > toolbar:first-child).
+   Any element inserted between tabnav and panels breaks the :has() match, so the toolbar
+   safely falls back to margin-top: 0 (clean gap, never an overlap). Keep this a standalone rule:
+   inside a selector list, an unsupported :has() would invalidate the whole list.
+   Contract: skills/ace2lab-website-architect/references/sticky_dock_layout_contract.md */
+@media screen and (min-width: 768px) {
+  .ace2-tab-container.is-tabbed:has(> .ace2-tabnav + .ace2-tabpanel) > .ace2-tabpanel > .ed-section:first-child > .pub-sticky-toolbar:first-child {
+    margin-top: calc(-1 * var(--ed-s8, 2rem));
+  }
 }
 
 #achievements .pub-sticky-toolbar {
