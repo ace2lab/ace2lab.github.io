@@ -50,7 +50,7 @@ ace2_editorial: true
   <nav class="ed-index" aria-label="Chem Frontier showcase sections">
     <a href="#overview"><span data-i18n="cf.idx_overview">대회 소개 및 3년 연속 최상위 입상 의의</span></a>
     <a href="#awards-timeline"><span data-i18n="cf.idx_timeline">연도별 수상작 (2026·2025·2024)</span><span class="ed-index__count">3</span></a>
-    <a href="#prizes"><span data-i18n="cf.idx_prizes">시상 훈격·상금 및 연구장려 지원</span></a>
+    <a href="#prizes"><span data-i18n="cf.idx_prizes">시상 훈격·상금 및 학부연구생 연구 기회</span></a>
     <a href="#certificates"><span data-i18n="cf.idx_certs">수상 상장 및 언론 보도</span><span class="ed-index__count">5</span></a>
     <a href="#mentorship"><span data-i18n="cf.idx_mentorship">학부연구생 연구 교육 시스템</span></a>
   </nav>
@@ -173,7 +173,7 @@ ace2_editorial: true
           <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격·상금 및 대회 정보</h4>
           <p class="ed-pillar__topic-body">
             수상 훈격: 산업통상부장관상 (수여 기관: 산업통상부 장관 · 포스터 부문 전국 1위)<br>
-            시상 내역: 장관상 상장 및 상금 수여<br>
+            시상 내역: 장관상 상장 및 상금 300만 원 수여 (팀당)<br>
             대회 부문: 한국화학공학회 2026 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 포스터 심화 부문 (2026.10.06, 부산 BEXCO)
           </p>
         </div>
@@ -219,7 +219,7 @@ ace2_editorial: true
           <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격·상금 및 대회 정보</h4>
           <p class="ed-pillar__topic-body">
             수상 훈격: 산업통상부장관상 (수여 기관: 산업통상부 장관 · 포스터 부문 전국 1위)<br>
-            시상 내역: 장관상 상장 및 상금 수여<br>
+            시상 내역: 장관상 상장 및 상금 300만 원 수여 (팀당)<br>
             대회 부문: 한국화학공학회 2025 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 포스터 심화 부문 (발표: 2025.09.26 수원 컨벤션센터 · 시상: 2025.11.07)
           </p>
         </div>
@@ -265,7 +265,7 @@ ace2_editorial: true
           <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격·상금 및 대회 정보</h4>
           <p class="ed-pillar__topic-body">
             수상 훈격: 대상 · 롯데케미칼 대표이사상 (수여 기관: 한국화학공학회 · 롯데케미칼 대표이사 · 전국 2위)<br>
-            시상 내역: 롯데케미칼 대표이사상 상장 및 상금 수여<br>
+            시상 내역: 롯데케미칼 대표이사상 상장 및 상금 300만 원 수여 (팀당)<br>
             대회 부문: 한국화학공학회 2024 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 포스터 심화 부문 (발표: 2024.10.16 부산 BEXCO · 시상: 2024.10.31)
           </p>
         </div>
@@ -291,10 +291,10 @@ ace2_editorial: true
 
   </section>
 
-  <!-- 3. Award Tiers, Prize Money & Undergraduate Research Incentives -->
+  <!-- 3. Award Tiers, Prize Money & Undergraduate Research Mentorship -->
   <section class="ed-section" id="prizes">
     <h2 class="ed-section__title">
-      <span data-i18n="cf.sec_prizes">Chem Frontier(켐프론티어) 시상 훈격·상금 및 학부연구생 연구장려 지원</span>
+      <span data-i18n="cf.sec_prizes">Chem Frontier(켐프론티어) 시상 훈격·상금 및 학부연구생 연구 기회·교수 직접 지도</span>
     </h2>
 
     <div class="ed-pillar__grid">
@@ -309,15 +309,18 @@ ace2_editorial: true
       <div class="ed-pillar__topic-card">
         <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> ACE² Lab 수상 훈격 및 상금</h3>
         <p class="ed-pillar__topic-body">
-          2026 · 2025 산업통상부장관상 (전국 1위): 장관상 상장 및 상금 수여<br>
-          2024 대상 · 롯데케미칼 대표이사상 (전국 2위): 대표이사상 상장 및 상금 수여<br>
-          훈격별 상금 규모는 매년 한국화학공학회 경진대회 공고에서 확정·안내됩니다.
+          2026 산업통상부장관상 (전국 1위): 장관상 상장 및 상금 300만 원 수여 (팀당)<br>
+          2025 산업통상부장관상 (전국 1위): 장관상 상장 및 상금 300만 원 수여 (팀당)<br>
+          2024 대상 · 롯데케미칼 대표이사상 (전국 2위): 대표이사상 상장 및 상금 300만 원 수여 (팀당)<br>
+          3년 연속 누적 상금: 총 900만 원
         </p>
       </div>
       <div class="ed-pillar__topic-card">
-        <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> 학부연구생 연구장려 지원</h3>
-        <p class="ed-pillar__topic-body">
-          ACE² Lab은 Chem Frontier 등 학술 연구에 참여하는 학부연구생에게 연구실 차원의 학부연구생 연구장려금을 지원하고, 본 연구실 대학원(석사·박사과정) 진학 시 장학금 연계 지원을 제공합니다.
+        <h3 class="ed-pillar__topic-title">
+          <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i> <span data-i18n="cf.prize_c3_title">학부연구생 연구 기회 및 교수 직접 지도</span>
+        </h3>
+        <p class="ed-pillar__topic-body" data-i18n="cf.prize_c3_body">
+          ACE² Lab은 학부연구생에게 실제 연구에 참여할 기회를 제공합니다. 초고속 펄스광(IPL) 광소결 시스템, 전기방사기, 글로브박스 등 35종의 연구 장비를 직접 다루며 독립적인 실험 주제를 수행하고, 임창용·김태욱 교수의 직접 지도와 대학원생 선배 멘토링을 받습니다. 본 연구실 대학원(석사·박사과정)에 진학하면 학생인건비 및 장학금을 지원합니다.
         </p>
       </div>
     </div>

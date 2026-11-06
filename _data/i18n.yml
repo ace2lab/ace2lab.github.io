@@ -1553,10 +1553,10 @@ ui:
     ja: "年度別受賞作品 (2026·2025·2024)"
     zh: "历年获奖作品 (2026·2025·2024)"
   cf.idx_prizes:
-    ko: "시상 훈격·상금 및 연구장려 지원"
-    en: "Award Tiers, Prize Money & Research Incentives"
-    ja: "表彰区分・賞金および研究奨励支援"
-    zh: "奖项等级、奖金及科研激励支持"
+    ko: "시상 훈격·상금 및 학부연구생 연구 기회"
+    en: "Award Tiers, Prize Money & Undergraduate Research Opportunities"
+    ja: "表彰区分・賞金および学部研究生の研究機会"
+    zh: "奖项等级、奖金及本科研究生科研机会"
   cf.idx_certs:
     ko: "수상 상장 및 언론 보도"
     en: "Certificates & Press"
@@ -1708,10 +1708,20 @@ ui:
     ja: "年度別 Chem Frontier 受賞作品総覧 (2026 · 2025 · 2024)"
     zh: "历年 Chem Frontier 获奖作品总览 (2026 · 2025 · 2024)"
   cf.sec_prizes:
-    ko: "Chem Frontier(켐프론티어) 시상 훈격·상금 및 학부연구생 연구장려 지원"
-    en: "Chem Frontier Award Tiers, Prize Money & Undergraduate Research Incentives"
-    ja: "Chem Frontier 表彰区分・賞金および学部生研究奨励支援"
-    zh: "Chem Frontier 奖项等级、奖金及本科生科研激励支持"
+    ko: "Chem Frontier(켐프론티어) 시상 훈격·상금 및 학부연구생 연구 기회·교수 직접 지도"
+    en: "Chem Frontier Award Tiers, Prize Money & Undergraduate Research Opportunities with Direct Faculty Mentorship"
+    ja: "Chem Frontier 表彰区分・賞金および学部研究生の研究機会・教授による直接指導"
+    zh: "Chem Frontier 奖项等级、奖金及本科研究生科研机会与教授直接指导"
+  cf.prize_c3_title:
+    ko: "학부연구생 연구 기회 및 교수 직접 지도"
+    en: "Undergraduate Research Opportunities & Direct Faculty Mentorship"
+    ja: "学部研究生の研究機会と教授による直接指導"
+    zh: "本科研究生科研机会与教授直接指导"
+  cf.prize_c3_body:
+    ko: "ACE² Lab은 학부연구생에게 실제 연구에 참여할 기회를 제공합니다. 초고속 펄스광(IPL) 광소결 시스템, 전기방사기, 글로브박스 등 35종의 연구 장비를 직접 다루며 독립적인 실험 주제를 수행하고, 임창용·김태욱 교수의 직접 지도와 대학원생 선배 멘토링을 받습니다. 본 연구실 대학원(석사·박사과정)에 진학하면 학생인건비 및 장학금을 지원합니다."
+    en: "ACE² Lab gives undergraduate researchers the opportunity to take part in real research. Students operate 35 types of research equipment firsthand, including an intense pulsed light (IPL) photonic sintering system, an electrospinner, and a glovebox, carry out independent experimental projects, and receive direct supervision from Prof. Changyong Yim and Prof. Taewook Kim along with mentoring from senior graduate students. Students who continue into the lab's graduate program (M.S. or Ph.D.) receive student research stipends and scholarships."
+    ja: "ACE² Labは、学部研究生に実際の研究へ参加する機会を提供します。超高速パルス光（IPL）光焼結システム、電界紡糸装置、グローブボックスなど35種の研究装置を自ら操作して独立した実験テーマに取り組み、Changyong Yim 教授・Taewook Kim 教授による直接指導と大学院生の先輩によるメンタリングを受けます。本研究室の大学院（修士・博士課程）に進学した場合は、学生人件費および奨学金を支給します。"
+    zh: "ACE² Lab 为本科研究生提供参与真实科研的机会。学生亲自操作超快脉冲光（IPL）光烧结系统、静电纺丝机、手套箱等35种科研设备，独立开展实验课题，并接受 Changyong Yim 教授与 Taewook Kim 教授的直接指导以及研究生学长的指导。进入本实验室研究生院（硕士·博士课程）深造的学生，将获得学生劳务费及奖学金支持。"
   cf.sec_certs:
     ko: "공식 수상 상장 및 언론 보도"
     en: "Official Certificates & Media Press Coverage"
