@@ -1522,6 +1522,11 @@ ui:
     en: "Awarded Projects (2024–2026)"
     ja: "年度別受賞研究の詳細"
     zh: "查看历年获奖项目详情"
+  cf.act_prizes:
+    ko: "시상 훈격·상금 안내"
+    en: "Award Tiers & Prize Money"
+    ja: "表彰区分・賞金のご案内"
+    zh: "奖项等级与奖金说明"
   cf.act_certs:
     ko: "공식 상장 및 언론보도"
     en: "Certificates & Press"
@@ -1543,10 +1548,15 @@ ui:
     ja: "大会紹介と3年連続最上位入賞の意義"
     zh: "竞赛简介与连续3年跻身最高荣誉的意义"
   cf.idx_timeline:
-    ko: "연도별 수상 연구과제 (2026·2025·2024)"
-    en: "Winning Projects (2026·2025·2024)"
-    ja: "年度別受賞課題 (2026·2025·2024)"
-    zh: "历年获奖课题 (2026·2025·2024)"
+    ko: "연도별 수상작 (2026·2025·2024)"
+    en: "Award-Winning Projects by Year (2026·2025·2024)"
+    ja: "年度別受賞作品 (2026·2025·2024)"
+    zh: "历年获奖作品 (2026·2025·2024)"
+  cf.idx_prizes:
+    ko: "시상 훈격·상금 및 연구장려 지원"
+    en: "Award Tiers, Prize Money & Research Incentives"
+    ja: "表彰区分・賞金および研究奨励支援"
+    zh: "奖项等级、奖金及科研激励支持"
   cf.idx_certs:
     ko: "수상 상장 및 언론 보도"
     en: "Certificates & Press"
@@ -1693,10 +1703,15 @@ ui:
     ja: "韓国化学工学会 Chem Frontier 創意設計競進大会および3年連続最上位入賞の意義"
     zh: "韩国化学工学会 Chem Frontier 创意设计竞赛及连续3年跻身最高荣誉的意义"
   cf.sec_timeline:
-    ko: "연도별 Chem Frontier(켐프론티어) 수상 연구과제 총람 (2026 · 2025 · 2024)"
-    en: "Chronological Showcase of Winning Research Projects (2026 · 2025 · 2024)"
-    ja: "年度別 Chem Frontier 受賞研究課題総覧 (2026 · 2025 · 2024)"
-    zh: "历年 Chem Frontier 获奖科研课题总览 (2026 · 2025 · 2024)"
+    ko: "연도별 Chem Frontier(켐프론티어) 수상작 총람 (2026 · 2025 · 2024)"
+    en: "Chem Frontier Award-Winning Projects by Year (2026 · 2025 · 2024)"
+    ja: "年度別 Chem Frontier 受賞作品総覧 (2026 · 2025 · 2024)"
+    zh: "历年 Chem Frontier 获奖作品总览 (2026 · 2025 · 2024)"
+  cf.sec_prizes:
+    ko: "Chem Frontier(켐프론티어) 시상 훈격·상금 및 학부연구생 연구장려 지원"
+    en: "Chem Frontier Award Tiers, Prize Money & Undergraduate Research Incentives"
+    ja: "Chem Frontier 表彰区分・賞金および学部生研究奨励支援"
+    zh: "Chem Frontier 奖项等级、奖金及本科生科研激励支持"
   cf.sec_certs:
     ko: "공식 수상 상장 및 언론 보도"
     en: "Official Certificates & Media Press Coverage"

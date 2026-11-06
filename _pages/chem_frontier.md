@@ -1,12 +1,14 @@
 ---
 layout: page
-title: Chem Frontier(켐프론티어) 수상실적
+title: Chem Frontier(켐프론티어) 수상작 및 상금 총람 — 2년 연속 전국 1위 산업통상부장관상
 permalink: /chem-frontier/
 description: >-
-  한국화학공학회 Chem Frontier(켐프론티어·캠프론티어) 화학공학 대학생 창의설계 경진대회 2년 연속 전국 1위(산업통상부장관상) 및 3년 연속 최상위 입상(2026·2025 장관상, 2024 대상 롯데케미칼 대표이사상). 경북대학교 과학기술대학 에너지화학공학과 차세대 화학 및 에너지 공학 연구실(ACE² Lab, 지도교수 임창용·김태욱) 학부연구생 수상 실적 총람.
+  한국화학공학회 Chem Frontier(켐프론티어·캠프론티어) 화학공학 대학생 창의설계 경진대회 연도별 수상작과 시상 훈격·상금 안내. 경북대학교 에너지화학공학과 ACE² Lab(지도교수 임창용·김태욱) 학부연구생 팀의 2026·2025 산업통상부장관상(2년 연속 전국 1위), 2024 대상 롯데케미칼 대표이사상(전국 2위) 수상작 총람.
 keywords: >-
   Chem Frontier, 켐프론티어, 캠프론티어, 켐 프론티어, 캠 프론티어,
+  Chem Frontier 수상작, Chem Frontier 상금, 켐프론티어 수상작, 켐프론티어 상금, 캠프론티어 수상작, 캠프론티어 상금,
   Chem Frontier 대상, Chem Frontier 장관상, 켐프론티어 대상, 켐프론티어 장관상, 캠프론티어 대상, 캠프론티어 장관상,
+  화학공학 창의설계경진대회 상금, 화학공학 창의설계 경진대회 수상작, 화학공학 경진대회 수상작, 화학공학 경진대회 상금, 창의설계경진대회 시상 내역,
   한국화학공학회 Chem Frontier, 한국화학공학회 켐프론티어, 한국화학공학회 창의설계경진대회, 화학공학 대학생 창의설계 경진대회,
   경북대학교 화학공학 수상, 경북대 에너지화학공학과 수상, 경북대학교 과학기술대학 에너지화학공학과,
   산업통상부장관상, 산업통상자원부장관상, 롯데케미칼 대표이사상,
@@ -26,6 +28,7 @@ ace2_editorial: true
 
 {% capture hero_actions %}
 <a href="#awards-timeline" class="hero-action-btn hero-action-btn--primary"><i class="fa-solid fa-trophy" aria-hidden="true"></i> <span data-i18n="cf.act_timeline">연도별 수상작 상세 보기</span></a>
+<a href="#prizes" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> <span data-i18n="cf.act_prizes">시상 훈격·상금 안내</span></a>
 <a href="#certificates" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-certificate" aria-hidden="true"></i> <span data-i18n="cf.act_certs">공식 상장 및 언론보도</span></a>
 <a href="{{ '/news/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> <span data-i18n="cf.act_news">수상/언론보도 전체</span></a>
 <a href="{{ '/members/' | relative_url }}" class="hero-action-btn hero-action-btn--outline"><i class="fa-solid fa-users" aria-hidden="true"></i> <span data-i18n="cf.act_members">연구실 구성원 보기</span></a>
@@ -46,7 +49,8 @@ ace2_editorial: true
 
   <nav class="ed-index" aria-label="Chem Frontier showcase sections">
     <a href="#overview"><span data-i18n="cf.idx_overview">대회 소개 및 3년 연속 최상위 입상 의의</span></a>
-    <a href="#awards-timeline"><span data-i18n="cf.idx_timeline">연도별 수상 연구과제 (2026·2025·2024)</span><span class="ed-index__count">3</span></a>
+    <a href="#awards-timeline"><span data-i18n="cf.idx_timeline">연도별 수상작 (2026·2025·2024)</span><span class="ed-index__count">3</span></a>
+    <a href="#prizes"><span data-i18n="cf.idx_prizes">시상 훈격·상금 및 연구장려 지원</span></a>
     <a href="#certificates"><span data-i18n="cf.idx_certs">수상 상장 및 언론 보도</span><span class="ed-index__count">5</span></a>
     <a href="#mentorship"><span data-i18n="cf.idx_mentorship">학부연구생 연구 교육 시스템</span></a>
   </nav>
@@ -123,9 +127,9 @@ ace2_editorial: true
             <p class="cf-competition-highlight__desc" data-i18n="cf.field_hl_desc">POSTECH·UNIST·GIST 등 연구중심대학, 경북대 포함 7개 거점국립대학교, 연세대·고려대·성균관대 등 수도권 주요 사립대학이 참가한 본선에서 ACE² Lab 팀은 경북대학교 유일 출전팀으로서 61개 팀 중 전국 1위(산업통상부장관상)를 수상했습니다.</p>
           </div>
           <div class="sim-features-grid">
-            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>2026년 산업통상부장관상 (김경진, 이종민, 이동건)</span></div>
-            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>2025년 산업통상부장관상 (안재빈, 김민수, 김성우)</span></div>
-            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>2024년 대상 롯데케미칼 대표이사상 (김다윈, 안재빈, 이동호)</span></div>
+            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2026">2026년 수상작</a> · 산업통상부장관상 (김경진, 이종민, 이동건)</span></div>
+            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2025">2025년 수상작</a> · 산업통상부장관상 (안재빈, 김민수, 김성우)</span></div>
+            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2024">2024년 수상작</a> · 대상 롯데케미칼 대표이사상 (김다윈, 안재빈, 이동호)</span></div>
             <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>학부연구생 SCI 논문 게재 및 대학원 진학 연계</span></div>
           </div>
         </div>
@@ -143,15 +147,15 @@ ace2_editorial: true
   <!-- 2. Year-by-Year Awarded Research Projects (2026, 2025, 2024) -->
   <section class="ed-section" id="awards-timeline">
     <h2 class="ed-section__title">
-      <span data-i18n="cf.sec_timeline">연도별 Chem Frontier(켐프론티어) 수상 연구과제 총람 (2026 · 2025 · 2024)</span>
+      <span data-i18n="cf.sec_timeline">연도별 Chem Frontier(켐프론티어) 수상작 총람 (2026 · 2025 · 2024)</span>
       <span class="ed-section__count">3</span>
     </h2>
 
     <!-- 2026 Minister's Award -->
     <article class="ed-pillar" id="chem-frontier-2026">
       <header class="ed-pillar__header">
-        <span class="ed-pillar__tag">2026 KIChE CHEM FRONTIER (켐프론티어) · 산업통상부장관상 (전국 1위 · 2년 연속 장관상)</span>
-        <h3 class="ed-pillar__title">2026 한국화학공학회 Chem Frontier(켐프론티어) 산업통상부장관상 — IPL 초고속 광열 공정 기반 W-doped VO₂ 합성 및 다기능 어플리케이션</h3>
+        <span class="ed-pillar__tag">2026 KIChE CHEM FRONTIER (켐프론티어) 수상작 · 산업통상부장관상 (전국 1위 · 2년 연속 장관상)</span>
+        <h3 class="ed-pillar__title">2026 한국화학공학회 Chem Frontier(켐프론티어) 산업통상부장관상 수상작 — IPL 초고속 광열 공정 기반 W-doped VO₂ 합성 및 다기능 어플리케이션</h3>
         <p class="ed-pillar__desc">
           김경진, 이종민, 이동건 학부연구생(지도교수: 임창용, 김태욱)은 2026년 10월 부산 BEXCO에서 개최된 한국화학공학회 2026 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회(포스터 심화 부문)에서 초고속 제논 펄스광(Intense Pulsed Light, IPL) 광열 소결 나노공정을 활용한 텅스텐 도핑 이산화바나듐(W-doped VO₂) 나노복합체 초고속 합성 및 고용량 에너지·스마트 윈도우 다기능 응용 연구를 발표하여 대회 최고 영예인 산업통상부장관상을 수상했습니다. 기존 수 시간의 고온 열처리가 필수적이던 상전이 산화물 및 고용량 리튬 배터리·에너지 소재용 광열 소결 나노복합체 공정을 상온·밀리초(ms) 단위로 단축한 독창적 화학공학 공정 설계를 높이 평가받았습니다.
         </p>
@@ -166,9 +170,10 @@ ace2_editorial: true
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격 및 대회 정보</h4>
+          <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격·상금 및 대회 정보</h4>
           <p class="ed-pillar__topic-body">
-            수상 훈격: 산업통상부장관상 (수여 기관: 산업통상부 장관)<br>
+            수상 훈격: 산업통상부장관상 (수여 기관: 산업통상부 장관 · 포스터 부문 전국 1위)<br>
+            시상 내역: 장관상 상장 및 상금 수여<br>
             대회 부문: 한국화학공학회 2026 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 포스터 심화 부문 (2026.10.06, 부산 BEXCO)
           </p>
         </div>
@@ -195,8 +200,8 @@ ace2_editorial: true
     <!-- 2025 Minister's Award -->
     <article class="ed-pillar" id="chem-frontier-2025">
       <header class="ed-pillar__header">
-        <span class="ed-pillar__tag">2025 KIChE CHEM FRONTIER (켐프론티어) · 산업통상부장관상 (전국 1위 · 첫 정부 장관상)</span>
-        <h3 class="ed-pillar__title">2025 한국화학공학회 Chem Frontier(켐프론티어) 산업통상부장관상 — 프린트 토너 기반 플래시 유도 그래핀(FIG) 패터닝 및 마이크로 슈퍼커패시터 전극 응용</h3>
+        <span class="ed-pillar__tag">2025 KIChE CHEM FRONTIER (켐프론티어) 수상작 · 산업통상부장관상 (전국 1위 · 첫 정부 장관상)</span>
+        <h3 class="ed-pillar__title">2025 한국화학공학회 Chem Frontier(켐프론티어) 산업통상부장관상 수상작 — 프린트 토너 기반 플래시 유도 그래핀(FIG) 패터닝 및 마이크로 슈퍼커패시터 전극 응용</h3>
         <p class="ed-pillar__desc">
           안재빈, 김민수, 김성우 학부연구생(지도교수: 임창용, 김태욱)은 2025 한국화학공학회 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회(포스터 심화 부문)에서 상용 레이저 프린터 탄소 토너 패턴에 백색 제논 플래시 펄스광(IPL)을 조사하여 상온·대기 중에서 3차원 다공성 플래시 유도 그래핀(Flash-Induced Graphene, FIG) 유연 전극을 직접 제조하는 공정을 발표하여 대회 최고상인 산업통상부장관상을 수상했습니다. 고가의 진공 장비나 포토리소그래피 마스크 없이 유연 생체 웨어러블 센서 및 고출력 마이크로 슈퍼커패시터(MSC) 인터디지털 전극을 대면적으로 패터닝하는 혁신적 나노제조 플랫폼을 구현했습니다.
         </p>
@@ -211,9 +216,10 @@ ace2_editorial: true
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격 및 대회 정보</h4>
+          <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격·상금 및 대회 정보</h4>
           <p class="ed-pillar__topic-body">
-            수상 훈격: 산업통상부장관상 (수여 기관: 산업통상부 장관)<br>
+            수상 훈격: 산업통상부장관상 (수여 기관: 산업통상부 장관 · 포스터 부문 전국 1위)<br>
+            시상 내역: 장관상 상장 및 상금 수여<br>
             대회 부문: 한국화학공학회 2025 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 포스터 심화 부문 (발표: 2025.09.26 수원 컨벤션센터 · 시상: 2025.11.07)
           </p>
         </div>
@@ -240,8 +246,8 @@ ace2_editorial: true
     <!-- 2024 Grand Prize -->
     <article class="ed-pillar" id="chem-frontier-2024">
       <header class="ed-pillar__header">
-        <span class="ed-pillar__tag">2024 KIChE CHEM FRONTIER (켐프론티어) · 대상 · 롯데케미칼 대표이사상 (전국 2위)</span>
-        <h3 class="ed-pillar__title">2024 한국화학공학회 Chem Frontier(켐프론티어) 대상 (롯데케미칼 대표이사상) — 대량생산 가능한 Electrospun MXene/Carbon 나노섬유 웨어러블 스트레인 센서의 제조 기술 개발</h3>
+        <span class="ed-pillar__tag">2024 KIChE CHEM FRONTIER (켐프론티어) 수상작 · 대상 · 롯데케미칼 대표이사상 (전국 2위)</span>
+        <h3 class="ed-pillar__title">2024 한국화학공학회 Chem Frontier(켐프론티어) 대상 (롯데케미칼 대표이사상) 수상작 — 대량생산 가능한 Electrospun MXene/Carbon 나노섬유 웨어러블 스트레인 센서의 제조 기술 개발</h3>
         <p class="ed-pillar__desc">
           김다윈, 안재빈, 이동호 학부연구생(지도교수: 임창용, 김태욱)은 2024년 10월 부산 BEXCO에서 열린 한국화학공학회 2024 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회(포스터 심화 부문)에서 전기방사(Electrospinning) 기반 다기능 2차원 맥신(2D Ti₃C₂Tₓ MXene)/탄소 나노섬유 복합소재 설계 및 초고속 광열 탄화 공정을 결합한 고감도 웨어러블 스트레인 센서 제조 기술을 발표하여 대상(롯데케미칼 대표이사상, 전국 2위)을 수상했습니다. 다기능 2D MXene 복합소재의 대량생산 공정 한계를 극복하고 인체 관절 움직임 및 미세 생체신호를 정밀 감지하는 차세대 유연 센서 기술을 제시했습니다.
         </p>
@@ -256,9 +262,10 @@ ace2_editorial: true
           </p>
         </div>
         <div class="ed-pillar__topic-card">
-          <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격 및 대회 정보</h4>
+          <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-award" aria-hidden="true"></i> 훈격·상금 및 대회 정보</h4>
           <p class="ed-pillar__topic-body">
-            수상 훈격: 대상 · 롯데케미칼 대표이사상 (수여 기관: 한국화학공학회 · 롯데케미칼 대표이사)<br>
+            수상 훈격: 대상 · 롯데케미칼 대표이사상 (수여 기관: 한국화학공학회 · 롯데케미칼 대표이사 · 전국 2위)<br>
+            시상 내역: 롯데케미칼 대표이사상 상장 및 상금 수여<br>
             대회 부문: 한국화학공학회 2024 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 포스터 심화 부문 (발표: 2024.10.16 부산 BEXCO · 시상: 2024.10.31)
           </p>
         </div>
@@ -284,7 +291,49 @@ ace2_editorial: true
 
   </section>
 
-  <!-- 3. Official Certificates & Media Press Coverage -->
+  <!-- 3. Award Tiers, Prize Money & Undergraduate Research Incentives -->
+  <section class="ed-section" id="prizes">
+    <h2 class="ed-section__title">
+      <span data-i18n="cf.sec_prizes">Chem Frontier(켐프론티어) 시상 훈격·상금 및 학부연구생 연구장려 지원</span>
+    </h2>
+
+    <div class="ed-pillar__grid">
+      <div class="ed-pillar__topic-card">
+        <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i> 대회 공식 시상 체계</h3>
+        <p class="ed-pillar__topic-body">
+          포스터 및 작품전시 부문: 산업통상부장관상(공고 표기: 산업통상자원부장관상), 대상, 금상, 은상, 동상, 장려상<br>
+          PPT 부문 · 동영상 부문: 대상, 금상, 은상, 동상, 장려상<br>
+          (한국화학공학회 2026 대학생 화학공학 창의설계 경진대회 공고 기준)
+        </p>
+      </div>
+      <div class="ed-pillar__topic-card">
+        <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> ACE² Lab 수상 훈격 및 상금</h3>
+        <p class="ed-pillar__topic-body">
+          2026 · 2025 산업통상부장관상 (전국 1위): 장관상 상장 및 상금 수여<br>
+          2024 대상 · 롯데케미칼 대표이사상 (전국 2위): 대표이사상 상장 및 상금 수여<br>
+          훈격별 상금 규모는 매년 한국화학공학회 경진대회 공고에서 확정·안내됩니다.
+        </p>
+      </div>
+      <div class="ed-pillar__topic-card">
+        <h3 class="ed-pillar__topic-title"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> 학부연구생 연구장려 지원</h3>
+        <p class="ed-pillar__topic-body">
+          ACE² Lab은 Chem Frontier 등 학술 연구에 참여하는 학부연구생에게 연구실 차원의 학부연구생 연구장려금을 지원하고, 본 연구실 대학원(석사·박사과정) 진학 시 장학금 연계 지원을 제공합니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="ed-pillar__footer-action">
+      <a href="https://www.kiche.or.kr/conference/funfestival" target="_blank" rel="noopener" class="ed-pillar__crosslink">
+        <i class="fa-solid fa-bullhorn" aria-hidden="true"></i> <span>한국화학공학회 창의설계 경진대회 공식 공고 보기 ↗</span><span class="ed-sr"> (opens in a new tab)</span>
+      </a>
+      <a href="#mentorship" class="ed-pillar__crosslink">
+        <i class="fa-solid fa-user-graduate" aria-hidden="true"></i> <span>학부연구생 참여 및 대학원 연계 과정 보기 →</span>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- 4. Official Certificates & Media Press Coverage -->
   <section class="ed-section" id="certificates">
     <h2 class="ed-section__title">
       <span data-i18n="cf.sec_certs">공식 수상 상장 및 언론 보도</span>
@@ -497,7 +546,7 @@ ace2_editorial: true
 
   </section>
 
-  <!-- 4. Undergraduate Research Mentorship & Recruitment -->
+  <!-- 5. Undergraduate Research Mentorship & Recruitment -->
   <section class="ed-section" id="mentorship">
     <h2 class="ed-section__title">
       <span data-i18n="cf.sec_mentorship">ACE² Lab 학부연구생 연구 참여 및 대학원 연계 교육 시스템</span>
