@@ -1,14 +1,12 @@
 name: Update Google Scholar Citations
 
 on:
-  schedule:
-    - cron: "0 0 * * 1" # Monday
-    - cron: "0 0 * * 3" # Wednesday
-    - cron: "0 0 * * 5" # Friday
+  # Disabled per ACE2 Lab 3-Tier HITL governance (no unattended git push to main).
   workflow_dispatch:
 
 jobs:
   update-citations:
+    if: false
     runs-on: ubuntu-latest
 
     steps:
