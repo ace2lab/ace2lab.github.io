@@ -1,3 +1,11 @@
+- id: 29
+  title: 연구실 과메기 파티
+  date: 2026.11.10
+  year: 2026
+  cover: assets/img/gallery/29_연구실_과메기_파티/cover.jpg
+  photos:
+    - assets/img/gallery/29_연구실_과메기_파티/1.jpg
+    - assets/img/gallery/29_연구실_과메기_파티/2.jpg
 - id: 28
   title: 한국화학공학회 26년도 추계 학술대회 (Chem Frontier 장관상 수상)
   date: 2026.10.06
