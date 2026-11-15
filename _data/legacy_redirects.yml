@@ -80,3 +80,7 @@
 # Gallery
 - from: /photos
   to: /gallery/
+
+# 404 mitigation for image folder crawl probe (2026-11-15)
+- from: /assets/img/publication_preview
+  to: /publications/
