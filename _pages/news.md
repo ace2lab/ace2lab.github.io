@@ -27,8 +27,8 @@ ace2_editorial: true
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.news"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="Awards & Press"
+  label="경북대학교 에너지화학공학과 · ACE² LAB"
+  title="수상 실적 및 언론보도"
   subtitle="연구실 수상 실적 및 주요 언론 보도 · 한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위"
   subtitle_en="Honors, awards, and media press coverage of ACE² Lab."
   badges=hero_badges

@@ -13,17 +13,17 @@ ace2_editorial: true
 ---
 
 {% capture hero_badges %}
-<a href="#energy-storage" class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> <span data-i18n="research.badge_p1">에너지 저장 소재 (Pillar 01)</span></a>
-<a href="#photonic" class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.badge_p2">광열 소결 공정 (Pillar 02)</span></a>
-<a href="#sensors" class="hero-badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.badge_p3">유연 센서 소자 (Pillar 03)</span></a>
+<a href="#energy-storage" class="hero-badge"><i class="fa-solid fa-battery-half" aria-hidden="true"></i> <span data-i18n="research.badge_p1">에너지 저장 소재</span></a>
+<a href="#photonic" class="hero-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span data-i18n="research.badge_p2">광열 소결 공정</span></a>
+<a href="#sensors" class="hero-badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i> <span data-i18n="research.badge_p3">유연 센서 소자</span></a>
 <a href="{{ '/facilities/' | relative_url }}" class="hero-badge"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> <span data-i18n-ko="연구장비 바로가기 ({{ site.data.facilities.size }}대)" data-i18n-en="View Lab Facilities ({{ site.data.facilities.size }})" data-i18n-ja="研究設備を見る ({{ site.data.facilities.size }}台)" data-i18n-zh="查看实验仪器 ({{ site.data.facilities.size }}台)">연구장비 바로가기 ({{ site.data.facilities.size }}대)</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 {% endcapture %}
 
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.research"
-  label="ACE² LAB · RESEARCH PILLARS"
-  title="Core Research Areas & Scientific Innovations"
+  label="ACE² LAB · 3대 핵심 연구분야"
+  title="핵심 연구분야 및 기술 혁신"
   subtitle="차세대 에너지 저장 및 변환 소재부터 초고속 광열처리 나노공정, 유연 생체·환경 센서 소자까지"
   subtitle_en="Pioneering ultrafast photonic nanomanufacturing, multifunctional energy storage, and flexible sensory electronics."
   badges=hero_badges
@@ -48,8 +48,8 @@ ace2_editorial: true
   <div class="ace2-tabpanel is-active" role="tabpanel" id="panel-energy-storage" aria-labelledby="tab-energy-storage" tabindex="0">
     <article class="ed-pillar">
       <header class="ed-pillar__header">
-        <span class="ed-pillar__tag" data-i18n="research.p1.kicker">Pillar 01 · Energy Systems</span>
-        <h2 class="ed-pillar__title" data-i18n="research.p1.title">차세대 에너지 저장 및 기능성 나노소재 (Advanced Energy Storage & Nanomaterials)</h2>
+        <span class="ed-pillar__tag" data-i18n="research.p1.kicker">핵심 연구 01 · 에너지 저장 및 촉매 시스템</span>
+        <h2 class="ed-pillar__title" data-i18n="research.p1.title">차세대 에너지 저장 및 기능성 나노소재</h2>
         <p class="ed-pillar__desc" data-i18n="research.p1.lead">
           본 연구실은 차세대 전기화학 에너지 저장 및 환경 촉매 시스템을 위한 저차원 나노소재의 합리적 구조 설계와 계면 공학에 집중하고 있습니다. 빠른 이온 전달 동역학과 장기 충·방전 안정성을 갖춘 하이브리드 슈퍼커패시터, 다공성 2D MXene 이차전지 음극재, 그리고 고내구성 환경·에너지 변환 촉매를 개발합니다.
         </p>
@@ -116,7 +116,7 @@ ace2_editorial: true
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문 (Representative Publications)</span></h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문</span></h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Journal of Energy Storage (2024)</span>
@@ -157,8 +157,8 @@ ace2_editorial: true
   <div class="ace2-tabpanel" role="tabpanel" id="panel-photonic" aria-labelledby="tab-photonic" tabindex="0" hidden>
     <article class="ed-pillar">
       <header class="ed-pillar__header">
-        <span class="ed-pillar__tag" data-i18n="research.p2.kicker">Pillar 02 · Photonic Processing</span>
-        <h2 class="ed-pillar__title" data-i18n="research.p2.title">초고속 광열 나노공정 (Ultrafast Photonic Nanomanufacturing)</h2>
+        <span class="ed-pillar__tag" data-i18n="research.p2.kicker">핵심 연구 02 · 초고속 광열 나노공정</span>
+        <h2 class="ed-pillar__title" data-i18n="research.p2.title">초고속 광열 나노공정</h2>
         <p class="ed-pillar__desc" data-i18n="research.p2.lead">
           기존의 고온 전기로 열처리 공정은 수 시간이 소요되며 열에 취약한 유연 고분자 기판을 손상시키고 원치 않는 상분리를 유발합니다. ACE² Lab은 상온·밀리초(ms) 단위의 나노제조 플랫폼으로서 초고속 제논 펄스광(IPL) 광열 소결과 레이저 유도 그래핀(LIG) 공정을 선도하고 있습니다.
         </p>
@@ -225,7 +225,7 @@ ace2_editorial: true
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문 (Representative Publications)</span></h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문</span></h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Small (2024, Front Cover)</span>
@@ -266,8 +266,8 @@ ace2_editorial: true
   <div class="ace2-tabpanel" role="tabpanel" id="panel-sensors" aria-labelledby="tab-sensors" tabindex="0" hidden>
     <article class="ed-pillar">
       <header class="ed-pillar__header">
-        <span class="ed-pillar__tag" data-i18n="research.p3.kicker">Pillar 03 · Sensor Technologies</span>
-        <h2 class="ed-pillar__title" data-i18n="research.p3.title">유연 센서 및 생체·환경 모니터링 소자 (Flexible Sensors & Bio-Environmental Devices)</h2>
+        <span class="ed-pillar__tag" data-i18n="research.p3.kicker">핵심 연구 03 · 유연 센서 및 생체·환경 소자</span>
+        <h2 class="ed-pillar__title" data-i18n="research.p3.title">유연 센서 및 생체·환경 모니터링 소자</h2>
         <p class="ed-pillar__desc" data-i18n="research.p3.lead">
           ACE² Lab은 실시간 헬스케어 생체신호 모니터링, 호기(날숨) 기반 질병 진단, 유해 환경가스 감지를 위한 유연 웨어러블 센싱 시스템을 설계합니다. 2D MXene, 레이저 유도 그래핀(LIG), 반도체 나노구조체와 머신러닝 데이터 분석을 결합하여 높은 민감도·선택성·기계적 신뢰성을 달성합니다.
         </p>
@@ -334,7 +334,7 @@ ace2_editorial: true
         </div>
       </div>
 
-      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문 (Representative Publications)</span></h3>
+      <h3 class="ed-pillar__section-title"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> <span data-i18n="research.rep_pubs">대표 발표 논문</span></h3>
       <ul class="ed-pillar__pub-list">
         <li class="ed-pillar__pub-item">
           <span class="ed-pillar__pub-journal">Small (2026)</span>

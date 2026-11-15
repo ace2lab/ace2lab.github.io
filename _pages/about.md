@@ -36,9 +36,9 @@ ace2_editorial: true
 {% include hero_banner.liquid
   variant="home"
   i18n_prefix="hero.home"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="Advanced Chemical & Energy Engineering Laboratory"
-  subtitle="차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과 (임창용 교수·김태욱 교수)"
+  label="경북대학교 과학기술대학 에너지화학공학과 · ACE² LAB"
+  title="차세대 화학 및 에너지 공학 연구실"
+  subtitle="Advanced Chemical & Energy Engineering Laboratory · 공동 연구책임자 임창용 교수 · 김태욱 교수"
   subtitle_en="Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University"
   badges=hero_badges
   actions=hero_actions

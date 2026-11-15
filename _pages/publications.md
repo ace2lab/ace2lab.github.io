@@ -33,8 +33,8 @@ ace2_editorial: true
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.publications"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="Publications & Intellectual Property"
+  label="경북대학교 에너지화학공학과 · ACE² LAB"
+  title="연구성과 및 지식재산권"
   subtitle=hero_subtitle
   subtitle_en="Peer-reviewed international journal articles, domestic publications, registered & filed patents, and invited presentations."
   badges=hero_badges

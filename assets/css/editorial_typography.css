@@ -223,27 +223,44 @@ a:hover {
 
 .hero-banner__label,
 .ed-hero-banner__label {
-  font-family: var(--font-mono-meta);
-  font-size: 0.82rem;
+  font-family: var(--font-sans-body);
+  font-size: var(--fs-label);
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #ffa05e;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   margin-bottom: 14px;
 }
 
+html[data-lang="en"] .hero-banner__label,
+html[data-lang="en"] .ed-hero-banner__label {
+  font-family: var(--font-mono-meta);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+}
+
 .hero-banner__title,
 .ed-hero-banner__title {
+  font-family: var(--font-sans-body);
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.24;
+  margin-bottom: 16px;
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  text-wrap: balance;
+}
+
+html[data-lang="en"] .hero-banner__title,
+html[data-lang="en"] .ed-hero-banner__title {
   font-family: var(--font-serif-editorial);
   font-size: clamp(2rem, 4vw, 2.95rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.16;
   margin-bottom: 18px;
-  color: #ffffff !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
-  text-wrap: balance;
 }
 
 .hero-banner__subtitle,
@@ -254,7 +271,10 @@ a:hover {
   color: #ffffff !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   line-height: 1.7;
+  margin-top: 0;
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
   max-width: none;
   word-break: keep-all;
 }
@@ -413,7 +433,8 @@ a:hover {
   font-size: var(--fs-body-sm);
 }
 
-html[data-lang="ko"] .ed-hero-banner--page .ed-hero-banner__subtitle-en {
+html[data-lang="ko"] .ed-hero-banner .ed-hero-banner__subtitle-en,
+html:not([data-lang]) .ed-hero-banner .ed-hero-banner__subtitle-en {
   display: none !important;
 }
 
@@ -4469,16 +4490,21 @@ html:has(dialog.ed-viewer[open]) {
 
 .ed-pillar__tag {
   display: inline-block;
-  font-family: var(--font-mono-meta, monospace);
+  font-family: var(--font-sans-body);
   font-size: var(--fs-label);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   color: var(--color-knu-crimson, #a3123a);
   background: rgba(163, 18, 58, 0.08);
   padding: 3px 8px;
   border-radius: 4px;
   margin-bottom: 0.5rem;
+}
+
+html[data-lang="en"] .ed-pillar__tag {
+  font-family: var(--font-mono-meta, monospace);
+  letter-spacing: 0.06em;
 }
 
 .ed-pillar__title {

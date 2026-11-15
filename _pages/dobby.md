@@ -12,8 +12,8 @@ ace2_editorial: true
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.dobby"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="ACE² Lab Intranet (DOBBY)"
+  label="경북대학교 에너지화학공학과 · ACE² LAB"
+  title="ACE² Lab 인트라넷 (DOBBY)"
   subtitle="차세대 화학 및 에너지 공학 연구실 구성원 전용 인트라넷 포털"
   subtitle_en="Internal portal and operational workspace exclusively for ACE² Lab members."
 %}

@@ -113,17 +113,17 @@ ui:
     zh: "访问"
 
   hero.home.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 과학기술대학 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.home.title:
-    ko: Advanced Chemical & Energy Engineering Laboratory
+    ko: 차세대 화학 및 에너지 공학 연구실
     en: Advanced Chemical & Energy Engineering Laboratory
     ja: 次世代化学・エネルギー工学研究室 (ACE² Lab)
     zh: 先进化学与能源工程实验室 (ACE² Lab)
   hero.home.subtitle:
-    ko: 차세대 화학 및 에너지 공학 연구실 · 경북대학교 과학기술대학 에너지화학공학과 (임창용 교수·김태욱 교수)
+    ko: Advanced Chemical & Energy Engineering Laboratory · 공동 연구책임자 임창용 교수 · 김태욱 교수
     en: Department of Energy Chemical Engineering, College of Science and Technology, Kyungpook National University (Profs. Changyong Yim & Taewook Kim)
     ja: 慶北大学校 科学技術学部 エネルギー化学工学科 · 次世代化学・エネルギー工学研究室（Changyong Yim 教授・Taewook Kim 教授）
     zh: 庆北大学 科学技术学院 能源化学工程系 · 先进化学与能源工程实验室（Changyong Yim 教授·Taewook Kim 教授）
@@ -382,12 +382,12 @@ ui:
   # Members Page (_pages/members.md & _includes/*)
   # ----------------------------------------------------------------------------
   hero.members.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.members.title:
-    ko: Research Team & Members
+    ko: 연구실 구성원
     en: Research Team & Members
     ja: 研究室メンバー (Research Team & Members)
     zh: 研究团队成员 (Research Team & Members)
@@ -639,12 +639,12 @@ ui:
   # Research Page (_pages/projects.md)
   # ----------------------------------------------------------------------------
   hero.research.label:
-    ko: ACE² LAB · RESEARCH PILLARS
+    ko: ACE² LAB · 3대 핵심 연구분야
     en: ACE² LAB · RESEARCH PILLARS
     ja: ACE² LAB · 3大コア研究領域
     zh: ACE² LAB · 三大核心研究领域
   hero.research.title:
-    ko: Core Research Areas & Scientific Innovations
+    ko: 핵심 연구분야 및 기술 혁신
     en: Core Research Areas & Scientific Innovations
     ja: 主要研究分野と学術的イノベーション
     zh: 核心研究方向与学术创新
@@ -675,17 +675,17 @@ ui:
     ja: フレキシブルセンサー・スマート素子
     zh: 柔性传感器与智能器件
   research.badge_p1:
-    ko: 에너지 저장 소재 (Pillar 01)
+    ko: 에너지 저장 소재
     en: Energy Materials (Pillar 01)
     ja: エネルギー材料 (Pillar 01)
     zh: 能源材料 (Pillar 01)
   research.badge_p2:
-    ko: 광열 소결 공정 (Pillar 02)
+    ko: 광열 소결 공정
     en: Photonic Sintering (Pillar 02)
     ja: 光熱焼結プロセス (Pillar 02)
     zh: 光热烧结工艺 (Pillar 02)
   research.badge_p3:
-    ko: 유연 센서 소자 (Pillar 03)
+    ko: 유연 센서 소자
     en: Flexible Sensors (Pillar 03)
     ja: フレキシブルセンサー (Pillar 03)
     zh: 柔性传感芯片 (Pillar 03)
@@ -702,7 +702,7 @@ ui:
     zh: 代表性发表论文
 
   research.p1.kicker:
-    ko: Pillar 01 · Energy Systems
+    ko: 핵심 연구 01 · 에너지 저장 및 촉매 시스템
     en: Pillar 01 · Energy Systems
     ja: Pillar 01 · エネルギー貯蔵・触媒システム
     zh: Pillar 01 · 能量存储与催化系统
@@ -759,7 +759,7 @@ ui:
     zh: "合理设计用于氮氧化物（NOₓ）选择性催化还原（SCR）的 V₂O₅–WO₃/TiO₂ 催化剂、工业钠基脱硫吸附剂再生工艺，以及 3D 增材制造合金的原位氢脆抗性诊断技术。"
 
   research.p2.kicker:
-    ko: Pillar 02 · Photonic Processing
+    ko: 핵심 연구 02 · 초고속 광열 나노공정
     en: Pillar 02 · Photonic Processing
     ja: Pillar 02 · 超高速光熱ナノ製造プロセス
     zh: Pillar 02 · 超快光热纳米制造工艺
@@ -816,7 +816,7 @@ ui:
     zh: "在常温大气环境下对聚酰亚胺薄膜、纤维素纸及印刷碳粉进行无掩模光热石墨化，直接制备面向微型超级电容器、湿气诱导发电器件及可穿戴电子产品的三维多孔石墨烯电极。"
 
   research.p3.kicker:
-    ko: Pillar 03 · Sensor Technologies
+    ko: 핵심 연구 03 · 유연 센서 및 생체·환경 소자
     en: Pillar 03 · Sensor Technologies
     ja: Pillar 03 · フレキシブルセンサー・バイオ環境素子
     zh: Pillar 03 · 柔性传感与生物环境器件
@@ -907,12 +907,12 @@ ui:
   # Secondary Pages Hero Titles & Subtitles + Phase 2 UI Keys
   # ----------------------------------------------------------------------------
   hero.publications.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.publications.title:
-    ko: Publications & Intellectual Property
+    ko: 연구성과 및 지식재산권
     en: Publications & Intellectual Property
     ja: 研究業績・知的財産 (Publications & IP)
     zh: 学术论文与知识产权 (Publications & IP)
@@ -1112,12 +1112,12 @@ ui:
   # Facilities Page (_pages/facilities.md & _includes/facility_table.liquid)
   # ----------------------------------------------------------------------------
   hero.facilities.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.facilities.title:
-    ko: Research Facilities & Instrumentation
+    ko: 연구장비 및 분석 인프라
     en: Research Facilities & Instrumentation
     ja: 研究設備・分析装置 (Facilities)
     zh: 科研仪器与实验设备 (Facilities)
@@ -1232,12 +1232,12 @@ ui:
   # Teaching Page (_pages/teaching.md)
   # ----------------------------------------------------------------------------
   hero.teaching.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.teaching.title:
-    ko: Teaching & Interactive Simulations
+    ko: 강의 및 인터랙티브 시뮬레이션
     en: Teaching & Interactive Simulations
     ja: 講義・インタラクティブ物理シミュレーション
     zh: 教学课程与交互式物理仿真
@@ -1413,12 +1413,12 @@ ui:
   # News Page (_pages/news.md)
   # ----------------------------------------------------------------------------
   hero.news.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.news.title:
-    ko: Awards & Press
+    ko: 수상 실적 및 언론보도
     en: Awards & Press
     ja: 受賞・メディア報道
     zh: 获奖与媒体报道
@@ -1478,12 +1478,12 @@ ui:
   # Chem Frontier Dedicated Showcase Page (_pages/chem_frontier.md)
   # ----------------------------------------------------------------------------
   hero.chemfrontier.label:
-    ko: "KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER NATIONAL AWARDS"
+    ko: "경북대학교 에너지화학공학과 · 한국화학공학회 CHEM FRONTIER 수상 총람"
     en: "KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER NATIONAL AWARDS"
     ja: "慶北大学校 科学技術学部 · KIChE CHEM FRONTIER 全国表彰"
     zh: "庆北大学 科学技术学院 · KIChE CHEM FRONTIER 全国奖项"
   hero.chemfrontier.title:
-    ko: "Chem Frontier — Two Consecutive National 1st Places (2025–2026)"
+    ko: "Chem Frontier — 2년 연속 전국 1위 (2025–2026)"
     en: "Chem Frontier — Two Consecutive National 1st Places (2025–2026)"
     ja: "Chem Frontier — 2年連続全国1位 (2025–2026)"
     zh: "Chem Frontier — 连续2年全国第一 (2025–2026)"
@@ -1838,12 +1838,12 @@ ui:
   # 404 & Intranet (DOBBY) Pages (_pages/404.md, _pages/dobby.md)
   # ----------------------------------------------------------------------------
   hero.notfound.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.notfound.title:
-    ko: 404 — Page Not Found
+    ko: 404 — 페이지를 찾을 수 없습니다
     en: 404 — Page Not Found
     ja: 404 — ページが見つかりません (Page Not Found)
     zh: 404 — 未找到页面 (Page Not Found)
@@ -1858,12 +1858,12 @@ ui:
     ja: "The requested page could not be found or has been moved."
     zh: "The requested page could not be found or has been moved."
   hero.dobby.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.dobby.title:
-    ko: ACE² Lab Intranet (DOBBY)
+    ko: ACE² Lab 인트라넷 (DOBBY)
     en: ACE² Lab Intranet (DOBBY)
     ja: ACE² Lab イントラネット (DOBBY)
     zh: ACE² Lab 内部门户 (DOBBY)
@@ -1882,12 +1882,12 @@ ui:
   # Gallery Page (_pages/gallery.md)
   # ----------------------------------------------------------------------------
   hero.gallery.label:
-    ko: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
+    ko: 경북대학교 에너지화학공학과 · ACE² LAB
     en: KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB
     ja: 慶北大学校 科学技術学部 · ACE² LAB
     zh: 庆北大学 科学技术学院 · ACE² LAB
   hero.gallery.title:
-    ko: Gallery
+    ko: 연구실 갤러리
     en: Gallery
     ja: ギャラリー (Gallery)
     zh: 图集 (Gallery)

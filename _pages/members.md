@@ -39,8 +39,8 @@ ace2_team_grid: true
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.members"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="Research Team & Members"
+  label="경북대학교 에너지화학공학과 · ACE² LAB"
+  title="연구실 구성원"
   subtitle="차세대 화학 및 에너지 공학 연구실 연구책임자, 대학원생, 학부연구생 및 졸업생"
   subtitle_en="Principal investigators, graduate students, undergraduate researchers, and alumni of ACE² Lab."
   badges=hero_badges

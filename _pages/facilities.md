@@ -34,8 +34,8 @@ ace2_editorial: true
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.facilities"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="Research Facilities & Instrumentation"
+  label="경북대학교 에너지화학공학과 · ACE² LAB"
+  title="연구장비 및 분석 인프라"
   subtitle=hero_subtitle
   subtitle_en="State-of-the-art materials synthesis, ultrafast photonic sintering, and electrochemical characterization facilities."
   badges=hero_badges

@@ -24,8 +24,8 @@ ace2_editorial: true
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.gallery"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="Gallery"
+  label="경북대학교 에너지화학공학과 · ACE² LAB"
+  title="연구실 갤러리"
   subtitle="학회 발표, 학위 심사 및 연구실 활동 기록"
   subtitle_en="Conferences, defenses and moments from ACE² Lab, newest first."
   badges=hero_badges

@@ -37,8 +37,8 @@ ace2_editorial: true
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.chemfrontier"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · KIChE CHEM FRONTIER NATIONAL AWARDS"
-  title="Chem Frontier — Two Consecutive National 1st Places (2025–2026)"
+  label="경북대학교 에너지화학공학과 · 한국화학공학회 CHEM FRONTIER 수상 총람"
+  title="Chem Frontier — 2년 연속 전국 1위 (2025–2026)"
   subtitle="한국화학공학회 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 2년 연속 전국 1위(산업통상부장관상) · 3년 연속 최상위 입상"
   subtitle_en="2025 & 2026 Minister of Trade, Industry and Energy Awards (National 1st) · 2024 Grand Prize, LOTTE Chemical CEO Award (National 2nd) · ACE² Lab, KNU"
   badges=hero_badges

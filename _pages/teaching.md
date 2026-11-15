@@ -21,8 +21,8 @@ ace2_editorial: true
 {% include hero_banner.liquid
   variant="page"
   i18n_prefix="hero.teaching"
-  label="KYUNGPOOK NATIONAL UNIVERSITY · ACE² LAB"
-  title="Teaching & Interactive Simulations"
+  label="경북대학교 에너지화학공학과 · ACE² LAB"
+  title="강의 및 인터랙티브 시뮬레이션"
   subtitle="화학공학 전달현상 이론과 프로세스 엔지니어링을 웹 기반 실시간 물리 시뮬레이션 및 강의노트로 구현합니다."
   subtitle_en="Interactive lecture notes, mathematical Manim animations, and academic courses by Prof. Changyong Yim."
   badges=hero_badges
