@@ -54,7 +54,7 @@ ace2_editorial: true
     </p>
   </div>
 
-{% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni' and m.group != 'ai'" %}
+{% assign active_members = site.data.members | where_exp: "m", "m.group != 'alumni' and m.group != 'ai' and m.on_campus != false and m.stat_role != '학연과정(석사)'" %}
 {% capture intl_raw %}{% bibliography_count -f papers %}{% endcapture %}
 {% assign total_intl = intl_raw | strip | plus: 0 %}
 

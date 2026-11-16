@@ -18,12 +18,12 @@ ace2_team_grid: true
 {% assign yim = site.data.members | where: "id", "changyong-yim" | first %}
 {% assign kim = site.data.members | where: "id", "taewook-kim" | first %}
 {% assign grads = site.data.members | where_exp: "item", "item.group == 'phd' or item.group == 'ms'" | sort: "order" %}
+{% assign on_campus_grads = grads | where_exp: "item", "item.on_campus != false and item.stat_role != '학연과정(석사)'" %}
 {% assign ugs = site.data.members | where: "group", "ug" | sort: "order" %}
-{% assign current_count = grads.size | plus: ugs.size %}
-{% assign n_phd = grads | where: "stat_role", "박사과정" | size %}
-{% assign n_ms = grads | where: "stat_role", "석사과정" | size %}
-{% assign n_res = grads | where: "stat_role", "연구원(석사)" | size %}
-{% assign n_joint = grads | where: "stat_role", "학연과정(석사)" | size %}
+{% assign current_count = on_campus_grads.size | plus: ugs.size %}
+{% assign n_phd = on_campus_grads | where: "stat_role", "박사과정" | size %}
+{% assign n_ms = on_campus_grads | where: "stat_role", "석사과정" | size %}
+{% assign n_res = on_campus_grads | where: "stat_role", "연구원(석사)" | size %}
 {% assign alumni = site.data.members | where: "group", "alumni" | sort: "order" %}
 {% assign interns = site.data.interns %}
 {% assign intern_affiliations = interns | map: "affiliation" | uniq %}
@@ -172,10 +172,10 @@ ace2_team_grid: true
     {% capture lead_org_en %}<span class="lead-info__label">KNU</span>: Kyungpook National University{% endcapture %}
     {% capture lead_org_ja %}<span class="lead-info__label">KNU</span>: Kyungpook National University（慶北大学校）{% endcapture %}
     {% capture lead_org_zh %}<span class="lead-info__label">KNU</span>: Kyungpook National University（庆北大学）{% endcapture %}
-    {% capture lead_cnt_ko %}<span class="lead-info__label">연구원 구성</span> (총 {{ current_count }}명): 대학원생 {{ grads.size }} (박사과정 {{ n_phd }}, 석사과정 {{ n_ms }}, 연구원(석사) {{ n_res }}, 학연과정(석사) {{ n_joint }}) · 학부연구생 {{ ugs.size }}{% endcapture %}
-    {% capture lead_cnt_en %}<span class="lead-info__label">Team</span> ({{ current_count }} total): {{ grads.size }} graduate students (Ph.D. {{ n_phd }}, M.S. {{ n_ms }}, researcher (M.S.) {{ n_res }}, joint-institute M.S. {{ n_joint }}) · {{ ugs.size }} undergraduate researchers{% endcapture %}
-    {% capture lead_cnt_ja %}<span class="lead-info__label">研究員構成</span>（計 {{ current_count }} 名）: 大学院生 {{ grads.size }}（博士課程 {{ n_phd }}、修士課程 {{ n_ms }}、研究員（修士） {{ n_res }}、連携大学院修士 {{ n_joint }}）· 学部生研究員 {{ ugs.size }}{% endcapture %}
-    {% capture lead_cnt_zh %}<span class="lead-info__label">成员构成</span>（共 {{ current_count }} 人）: 研究生 {{ grads.size }}（博士生 {{ n_phd }}、硕士生 {{ n_ms }}、科研人员（硕士） {{ n_res }}、联合培养硕士生 {{ n_joint }}）· 本科生科研助理 {{ ugs.size }}{% endcapture %}
+    {% capture lead_cnt_ko %}<span class="lead-info__label">연구원 구성</span> (총 {{ current_count }}명): 대학원생 {{ on_campus_grads.size }} (박사과정 {{ n_phd }}, 석사과정 {{ n_ms }}, 연구원(석사) {{ n_res }}) · 학부연구생 {{ ugs.size }}{% endcapture %}
+    {% capture lead_cnt_en %}<span class="lead-info__label">Team</span> ({{ current_count }} total): {{ on_campus_grads.size }} graduate students (Ph.D. {{ n_phd }}, M.S. {{ n_ms }}, researcher (M.S.) {{ n_res }}) · {{ ugs.size }} undergraduate researchers{% endcapture %}
+    {% capture lead_cnt_ja %}<span class="lead-info__label">研究員構成</span>（計 {{ current_count }} 名）: 大学院生 {{ on_campus_grads.size }}（博士課程 {{ n_phd }}、修士課程 {{ n_ms }}、研究員（修士） {{ n_res }}）· 学部生研究員 {{ ugs.size }}{% endcapture %}
+    {% capture lead_cnt_zh %}<span class="lead-info__label">成员构成</span>（共 {{ current_count }} 人）: 研究生 {{ on_campus_grads.size }}（博士生 {{ n_phd }}、硕士生 {{ n_ms }}、科研人员（硕士） {{ n_res }}）· 本科生科研助理 {{ ugs.size }}{% endcapture %}
     <div class="team-section__lead-info">
       <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
       <span class="lead-info__item" data-i18n-mode="html" data-i18n-ko="{{ lead_org_ko | escape }}" data-i18n-en="{{ lead_org_en | escape }}" data-i18n-ja="{{ lead_org_ja | escape }}" data-i18n-zh="{{ lead_org_zh | escape }}">{{ lead_org_ko }}</span>
@@ -200,7 +200,7 @@ ace2_team_grid: true
     <section class="team-section" id="graduate-students">
       <h2 class="team-section__title">
         <span data-i18n="members.sec.students">대학원생 및 연구원</span>
-        <span class="team-section__count">{{ grads.size }}</span>
+        <span class="team-section__count">{{ on_campus_grads.size }}</span>
       </h2>
       <div class="team-grid">
         {% for m in grads %}
