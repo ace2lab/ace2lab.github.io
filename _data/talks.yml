@@ -2,6 +2,18 @@
 # "presenters" always lists the actual presenter first (styled in bold dark ink).
 # "members" lists students credited in /members/ (only the actual presenter for regular talks; all participating students for Chem Frontier competitions).
 
+- no: 25
+  year: 2026
+  type: "Poster"
+  award: "우수 포스터 발표상"
+  title: "Rapid Microwave-Driven Synthesis of High-Purity Ti₃C₂Tₓ MXenes: Reaction Kinetics and Selective Impurity Elimination"
+  presenters: "안재빈, 김태욱, 임창용"
+  members:
+    - 안재빈
+  conference: "GMXC2026 (Global MXENE and 2D Materials Conference 2026)"
+  date: "2026.11.13"
+  location: "수원 성균관대학교"
+
 - no: 24
   year: 2026
   type: "Oral"
