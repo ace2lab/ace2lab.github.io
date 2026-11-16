@@ -174,7 +174,7 @@ ace2_editorial: true
           <p class="ed-pillar__topic-body">
             수상 훈격: 산업통상부장관상 (수여 기관: 산업통상부 장관 · 포스터 부문 전국 1위)<br>
             시상 내역: 장관상 상장 및 상금 300만 원 수여 (팀당)<br>
-            대회 부문: 한국화학공학회 2026 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 포스터 심화 부문 (2026.10.06, 부산 BEXCO)
+            대회 부문: 한국화학공학회 2026 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 포스터 심화 부문 (발표: 2026.10.06 부산 BEXCO · 시상: 2026.11.13)
           </p>
         </div>
         <div class="ed-pillar__topic-card">
@@ -350,25 +350,24 @@ ace2_editorial: true
           type="button"
           class="ed-award-card__thumb"
           data-award-zoom
-          data-full="{{ '/assets/img/awards/award_2026_chemfrontier.jpg' | relative_url }}"
+          data-full="{{ '/assets/img/awards/award_2026_chemfrontier_cert.jpg' | relative_url }}"
           data-tier="crimson"
           data-type="산업통상부장관상"
           data-title="한국화학공학회 2026 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)"
           data-recipient="김경진, 이종민, 이동건"
           data-issuer="산업통상부 장관"
-          data-date="2026.10.06"
+          data-date="2026.11.13"
           aria-haspopup="dialog"
           aria-label="2026 Chem Frontier 산업통상부장관상 상장 확대 보기"
         >
-          {% assign aw2026_thumb = 'assets/img/awards/award_2026_chemfrontier.jpg' | ace2_thumb_webp %}
+          {% assign aw2026_thumb = 'assets/img/awards/award_2026_chemfrontier_cert.jpg' | ace2_thumb_webp %}
           <picture class="ace2-pic">
             {% if aw2026_thumb != '' %}<source srcset="{{ aw2026_thumb | relative_url }}" type="image/webp">{% endif %}
             <img
-              src="{{ '/assets/img/awards/award_2026_chemfrontier.jpg' | relative_url }}"
+              src="{{ '/assets/img/awards/award_2026_chemfrontier_cert.jpg' | relative_url }}"
               alt="2026 한국화학공학회 Chem Frontier(켐프론티어) 산업통상부장관상 상장 (김경진, 이종민, 이동건)"
               loading="lazy"
               decoding="async"
-              style="object-position: center bottom"
             >
           </picture>
           <span class="ed-award-card__zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
@@ -379,7 +378,7 @@ ace2_editorial: true
           <dl class="ed-award-card__meta">
             <div><dt><i class="fa-solid fa-user" aria-hidden="true"></i><span class="ed-sr">Recipient</span></dt><dd>김경진, 이종민, 이동건 (지도교수: 임창용, 김태욱)</dd></div>
             <div><dt><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span class="ed-sr">Issuer</span></dt><dd data-i18n-term>산업통상부 장관</dd></div>
-            <div><dt><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date</span></dt><dd><time datetime="2026-10-06">2026.10.06</time></dd></div>
+            <div><dt><i class="fa-regular fa-calendar" aria-hidden="true"></i><span class="ed-sr">Date</span></dt><dd><time datetime="2026-11-13">2026.11.13</time></dd></div>
           </dl>
         </div>
       </li>
