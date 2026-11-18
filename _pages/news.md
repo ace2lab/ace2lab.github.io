@@ -4,7 +4,7 @@ title: 수상/언론보도
 description: >-
   경북대학교 에너지화학공학과 ACE² Lab 수상 실적 및 언론보도. 한국화학공학회 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회 2년 연속 전국 1위(2025·2026 산업통상부장관상) 및 3년 연속 최상위 입상(2024 대상)과 과기정통부 박사우수장학생 등 주요 성과를 전합니다.
 keywords: Chem Frontier, 켐프론티어, 캠프론티어, 켐 프론티어, 캠 프론티어, Chem Frontier 장관상, Chem Frontier 대상, 켐프론티어 장관상, 켐프론티어 대상, 캠프론티어 장관상, 캠프론티어 대상, 한국화학공학회 Chem Frontier, 한국화학공학회 켐프론티어, 한국화학공학회 창의설계경진대회, 화학공학 대학생 창의설계 경진대회, 경북대 에너지화학공학과, 경북대학교 에너지화학공학과, 경북대학교 과학기술대학 에너지화학공학과, 경북대 화학공학과, 경북대학교 화학공학과, 대구 화학공학과, 대구 화학공학 수상, 경북대 화공, 경북대 화공과, 경북대학교 응용화학공학부, 경북대 에너지공학부, 산업통상자원부장관상, 산업통상부장관상, 롯데케미칼 대표이사상, 경북대 화학공학 수상, 경북대 에너지화학공학과 수상, 경북대 화학공학과 수상실적, 경북대 공대 장관상, 대학생 창의설계경진대회 대상, 과학기술정보통신부 박사우수장학금, 김경진, 이종민, 이동건, 안재빈, 김민수, 김성우, 김다윈, 이동호, 이재호, 임창용 교수, 김태욱 교수, ACE² Lab
-og_image: /assets/img/awards/award_2026_chemfrontier.jpg
+og_image: /assets/img/awards/award_2026_chemfrontier_ceremony.jpg
 permalink: /news/
 nav: true
 nav_order: 6
@@ -45,12 +45,12 @@ ace2_editorial: true
 
   <div class="sim-card">
     <div class="sim-card__media">
-      {% assign cf_cover_thumb = '/assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/cover.jpg' | ace2_thumb_webp %}
+      {% assign cf_cover_thumb = '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | ace2_thumb_webp %}
       <picture class="ace2-pic">
         {% if cf_cover_thumb != '' %}<source srcset="{{ cf_cover_thumb | relative_url }}" type="image/webp">{% endif %}
         <img
-          src="{{ '/assets/img/gallery/28_한국화학공학회_26년도_추계_학술대회_ChemFrontier_장관상/cover.jpg' | relative_url }}"
-          alt="한국화학공학회 Chem Frontier(켐프론티어) 산업통상부장관상 수상"
+          src="{{ '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | relative_url }}"
+          alt="2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 한국화학공학회장, 김경진·이동건·이종민 학생)"
           loading="lazy"
           decoding="async"
         >
@@ -69,7 +69,7 @@ ace2_editorial: true
         <h3 class="sim-card__title" data-i18n="news.cf_banner.title">한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 2년 연속 전국 1위(산업통상부장관상)</h3>
         <div class="sim-card__sub">2026 산업통상부장관상 · 2025 산업통상부장관상 · 2024 대상(롯데케미칼 대표이사상, 전국 2위)</div>
         <p class="sim-card__desc" data-i18n="news.cf_banner.desc">
-          경북대학교 에너지화학공학과 ACE² Lab 학부연구생 연구팀(지도교수: 임창용·김태욱)이 한국화학공학회 주관 전국 화학공학 대학생 창의설계 경진대회 Chem Frontier(켐프론티어, 포스터 심화 부문)에서 2025·2026년 2년 연속 산업통상부장관상(전국 1위)과 2024년 대상(전국 2위)을 수상하며 3년 연속 최상위 입상을 달성했습니다.
+          경북대학교 에너지화학공학과 ACE² Lab 학부연구생 연구팀(공동지도교수: 임창용·김태욱)이 한국화학공학회 주관 전국 화학공학 대학생 창의설계 경진대회 Chem Frontier(켐프론티어) 포스터 및 작품전시 부문에서 2025·2026년 2년 연속 산업통상부장관상(전국 1위)과 2024년 포스터 심화 부문 대상(전국 2위)을 수상하며 3년 연속 최상위 입상을 달성했습니다.
         </p>
       </div>
       <div class="sim-card__action">

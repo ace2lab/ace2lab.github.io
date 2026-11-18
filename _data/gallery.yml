@@ -1,3 +1,12 @@
+- id: 30
+  title: 2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식
+  alt: "2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 한국화학공학회장, 김경진·이동건·이종민 학생)"
+  date: 2026.11.13
+  year: 2026
+  cover: assets/img/gallery/30_2026_한국화학공학회_ChemFrontier_산업통상부장관상_시상식/cover.jpg
+  photos:
+    - assets/img/gallery/30_2026_한국화학공학회_ChemFrontier_산업통상부장관상_시상식/1.jpg
+    - assets/img/gallery/30_2026_한국화학공학회_ChemFrontier_산업통상부장관상_시상식/2.jpg
 - id: 29
   title: 연구실 과메기 파티
   date: 2026.11.10

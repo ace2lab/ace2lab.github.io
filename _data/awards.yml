@@ -9,7 +9,7 @@
   img_pos: "center top"
 - type: 산업통상부장관상
   kind: award
-  title: 한국화학공학회 2026 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)
+  title: 한국화학공학회 2026 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 및 작품전시 부문)
   recipient: 김경진, 이종민, 이동건
   issuer: 산업통상부 장관
   date: 2026.11.13
@@ -52,7 +52,7 @@
   img: assets/img/awards/award_1.jpg
 - type: 산업통상부장관상
   kind: award
-  title: 한국화학공학회 2025 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 심화 부문)
+  title: 한국화학공학회 2025 Chem Frontier 화학공학 대학생 창의설계 경진대회 (포스터 및 작품전시 부문)
   recipient: 안재빈, 김민수, 김성우
   issuer: 산업통상부 장관
   date: 2025.11.07
