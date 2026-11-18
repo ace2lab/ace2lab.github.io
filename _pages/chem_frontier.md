@@ -90,23 +90,23 @@ ace2_editorial: true
       <span data-i18n="cf.sec_overview">한국화학공학회 Chem Frontier(켐프론티어) 창의설계 경진대회 및 3년 연속 최상위 입상 의의</span>
     </h2>
 
-    <div class="sim-card">
-      <div class="sim-card__media">
-        {% assign cf2026_cover_thumb = '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | ace2_thumb_webp %}
-        <picture class="ace2-pic">
-          {% if cf2026_cover_thumb != '' %}<source srcset="{{ cf2026_cover_thumb | relative_url }}" type="image/webp">{% endif %}
-          <img
-            src="{{ '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | relative_url }}"
-            alt="2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 한국화학공학회장, 김경진·이동건·이종민 학생)"
-            loading="lazy"
-            decoding="async"
-          >
-        </picture>
-        <div class="sim-card__media-badge">
-          <span>KIChE Chem Frontier</span>
-          <span>2024 · 2025 · 2026 National Awards</span>
+    <div class="sim-card sim-card--photo">
+      <figure class="sim-card__media">
+        <div class="sim-card__media-frame">
+          {% assign cf2026_cover_thumb = '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | ace2_thumb_webp %}
+          <picture class="ace2-pic">
+            {% if cf2026_cover_thumb != '' %}<source srcset="{{ cf2026_cover_thumb | relative_url }}" type="image/webp">{% endif %}
+            <img
+              src="{{ '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | relative_url }}"
+              alt="2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 한국화학공학회장, 김경진·이동건·이종민 학생)"
+              loading="lazy"
+              decoding="async"
+              data-zoomable
+            >
+          </picture>
         </div>
-      </div>
+        <figcaption class="sim-card__caption" data-i18n="cf.photo_caption_2026">2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 회장, 김경진·이동건·이종민 학생)</figcaption>
+      </figure>
       <div class="sim-card__body">
         <div>
           <div class="sim-card__tag-bar">
@@ -122,16 +122,18 @@ ace2_editorial: true
           <p class="sim-card__desc">
             경북대학교 과학기술대학 에너지화학공학과 ACE² Lab(차세대 화학 및 에너지 공학 연구실, 공동 연구책임자 임창용 교수·김태욱 교수) 학부연구생 연구팀은 대회 전체 부문(PPT·동영상·포스터) 중 유일하게 정부 장관상이 걸려 있는 포스터 및 작품전시 부문에서 2025년·2026년 대회 최고상인 산업통상부장관상(전국 1위)을 2년 연속 수상하고, 2024년 대회(포스터 심화 부문)에서는 2위인 대상(롯데케미칼 대표이사상)을 수상하여 3년 연속 최상위 입상 기록을 수립했습니다.
           </p>
-          <div class="cf-competition-highlight">
-            <p class="cf-competition-highlight__title"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> <span data-i18n="cf.field_hl_title">2026 포스터 및 작품전시 부문 경쟁 구도 — 전국 30개 대학 · 61개 팀 출품</span></p>
-            <p class="cf-competition-highlight__desc" data-i18n="cf.field_hl_desc">POSTECH·UNIST·GIST 등 연구중심대학, 경북대 포함 7개 거점국립대학교, 연세대·고려대·성균관대 등 수도권 주요 사립대학이 출품한 포스터 및 작품전시 부문에서 ACE² Lab 팀은 경북대학교 유일 출품팀으로서 61개 팀 중 전국 1위(산업통상부장관상)를 수상했습니다.</p>
-          </div>
-          <div class="sim-features-grid">
-            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2026">2026년 수상작</a> · 산업통상부장관상 (김경진, 이종민, 이동건)</span></div>
-            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2025">2025년 수상작</a> · 산업통상부장관상 (안재빈, 김민수, 김성우)</span></div>
-            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2024">2024년 수상작</a> · 대상 롯데케미칼 대표이사상 (김다윈, 안재빈, 이동호)</span></div>
-            <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>학부연구생 SCI 논문 게재 및 대학원 진학 연계</span></div>
-          </div>
+        </div>
+      </div>
+      <div class="sim-card__footer-full">
+        <div class="cf-competition-highlight">
+          <p class="cf-competition-highlight__title"><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> <span data-i18n="cf.field_hl_title">2026 포스터 및 작품전시 부문 경쟁 구도 — 전국 30개 대학 · 61개 팀 출품</span></p>
+          <p class="cf-competition-highlight__desc" data-i18n="cf.field_hl_desc">POSTECH·UNIST·GIST 등 연구중심대학, 경북대 포함 7개 거점국립대학교, 연세대·고려대·성균관대 등 수도권 주요 사립대학이 출품한 포스터 및 작품전시 부문에서 ACE² Lab 팀은 경북대학교 유일 출품팀으로서 61개 팀 중 전국 1위(산업통상부장관상)를 수상했습니다.</p>
+        </div>
+        <div class="sim-features-grid">
+          <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2026">2026년 수상작</a> · 산업통상부장관상 (김경진, 이종민, 이동건)</span></div>
+          <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2025">2025년 수상작</a> · 산업통상부장관상 (안재빈, 김민수, 김성우)</span></div>
+          <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span><a href="#chem-frontier-2024">2024년 수상작</a> · 대상 롯데케미칼 대표이사상 (김다윈, 안재빈, 이동호)</span></div>
+          <div><i class="fa-solid fa-circle-check" aria-hidden="true"></i> <span>학부연구생 SCI 논문 게재 및 대학원 진학 연계</span></div>
         </div>
         <div class="sim-card__action">
           <span class="sim-card__client-note"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> 경북대학교 과학기술대학 에너지화학공학과 (상주캠퍼스 7호관)</span>
@@ -157,7 +159,7 @@ ace2_editorial: true
         <span class="ed-pillar__tag">2026 KIChE CHEM FRONTIER (켐프론티어) 수상작 · 산업통상부장관상 (전국 1위 · 2년 연속 장관상)</span>
         <h3 class="ed-pillar__title">2026 한국화학공학회 Chem Frontier(켐프론티어) 산업통상부장관상 수상작 — IPL 초고속 광열 공정 기반 W-doped VO₂ 합성 및 다기능 어플리케이션</h3>
         <p class="ed-pillar__desc">
-          김경진(발표), 이종민, 이동건 학부연구생으로 구성된 ‘38光땡’ 팀(공동지도교수: 임창용, 김태욱)은 2026년 10월 부산 BEXCO에서 개최된 한국화학공학회 2026 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회(포스터 및 작품전시 부문)에서 초고속 제논 펄스광(Intense Pulsed Light, IPL) 광열 소결 공정과 인공지능(AI) 베이지안 최적화를 결합해 2분 이내에 고순도 단일상 텅스텐 도핑 이산화바나듐(W-doped VO₂) 분말을 합성하고 무전원 광열 소프트 액추에이터를 구현한 연구로 대회 최고 영예인 산업통상부장관상을 수상했습니다. 기존 700 ℃ 고온 퍼니스에서 6시간 이상 소요되던 상전이 산화물 합성 공정을 획기적으로 단축하고, 상전이 온도를 40 ℃ 부근으로 낮추어 전력 차단 비상 상황에서도 배터리 과열을 감지해 방열 통로를 여는 무전원 안전 셔터와 소프트 로보틱스 응용 가능성을 입증했습니다.
+          김경진(발표), 이종민, 이동건 학부연구생으로 구성된 ‘38光땡’ 팀(공동지도교수: 임창용, 김태욱)은 2026년 10월 부산 BEXCO에서 개최된 한국화학공학회 2026 Chem Frontier(켐프론티어) 화학공학 대학생 창의설계 경진대회(포스터 및 작품전시 부문)에서 수열합성 전구체에 초고속 제논 펄스광(Intense Pulsed Light, IPL) 광열 소결 공정을 도입하고 광 조사 조건을 정밀 제어해 단 2분 이내에 고순도 단일상 텅스텐 도핑 이산화바나듐(W-doped VO₂) 분말을 합성하고 무전원 광열 소프트 액추에이터를 구현한 연구로 대회 최고 영예인 산업통상부장관상을 수상했습니다. 기존 700 ℃ 고온 퍼니스에서 6시간 이상 소요되던 상전이 산화물 합성 공정을 획기적으로 단축하고, 상전이 온도를 40 ℃ 부근으로 낮추어 전력 차단 비상 상황에서도 배터리 과열을 감지해 방열 통로를 여는 무전원 안전 셔터와 소프트 로보틱스 응용 가능성을 입증했습니다.
         </p>
       </header>
 
@@ -180,7 +182,7 @@ ace2_editorial: true
         <div class="ed-pillar__topic-card">
           <h4 class="ed-pillar__topic-title"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> 핵심 화학공학·나노공정 기술</h4>
           <p class="ed-pillar__topic-body">
-            초고속 펄스광(IPL) 광열 소결 및 AI 베이지안 공정 최적화 기반 2분 이내 고순도 단일상 W-doped VO₂(M) 합성, 40 ℃ 부근 상전이 온도 정밀 제어, 대면적 바이모프(Bimorph) 무전원 소프트 액추에이터 및 배터리 과열 방지 방열 셔터 응용.
+            수열합성 전구체 기반 초고속 펄스광(IPL) 광열 소결 공정 정밀 제어를 통한 2분 이내 고순도 단일상 W-doped VO₂(M) 합성, 40 ℃ 부근 상전이 온도 정밀 제어, 대면적 바이모프(Bimorph) 무전원 소프트 액추에이터 및 배터리 과열 방지 방열 셔터 응용.
           </p>
         </div>
       </div>
@@ -685,5 +687,6 @@ ace2_editorial: true
     </div>
   </dialog>
   <script src="{{ '/assets/js/award_lightbox.js' | relative_url | bust_file_cache }}"></script>
+  <script src="{{ '/assets/js/image_lightbox.js' | relative_url | bust_file_cache }}"></script>
 
 </div>

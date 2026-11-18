@@ -6635,6 +6635,66 @@ html[data-theme="dark"] .member-duties-list li i {
   border-radius: 4px;
 }
 
+.sim-card.sim-card--photo {
+  grid-template-columns: minmax(0, 5.2fr) minmax(0, 6.8fr);
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .sim-card.sim-card--photo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.sim-card--photo .sim-card__media {
+  min-height: 0;
+  padding: 24px 0 24px 26px;
+  overflow: visible;
+  background: transparent;
+}
+
+@media (max-width: 860px) {
+  .sim-card--photo .sim-card__media {
+    padding: 22px 22px 0;
+  }
+}
+
+.sim-card__media-frame {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--global-divider-color, #e2e8f0);
+  background: #141414;
+}
+
+.sim-card--photo .sim-card__media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+.sim-card__caption {
+  margin: 8px 0 0;
+  font-size: var(--fs-label, 0.875rem);
+  line-height: 1.45;
+  color: var(--c-muted, #64748b);
+  text-align: center;
+}
+
+.sim-card__footer-full {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 30px 28px;
+}
+
+@media (max-width: 860px) {
+  .sim-card__footer-full {
+    padding: 0 22px 24px;
+  }
+}
+
 .sim-card__body {
   display: flex;
   flex-direction: column;

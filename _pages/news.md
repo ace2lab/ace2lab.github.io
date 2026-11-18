@@ -43,23 +43,23 @@ ace2_editorial: true
     <a href="{{ '/chem-frontier/' | relative_url }}"><span data-i18n="news.idx_chemfrontier">한국화학공학회 Chem Frontier(켐프론티어) 2년 연속 전국 1위 총람 →</span></a>
   </nav>
 
-  <div class="sim-card">
-    <div class="sim-card__media">
-      {% assign cf_cover_thumb = '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | ace2_thumb_webp %}
-      <picture class="ace2-pic">
-        {% if cf_cover_thumb != '' %}<source srcset="{{ cf_cover_thumb | relative_url }}" type="image/webp">{% endif %}
-        <img
-          src="{{ '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | relative_url }}"
-          alt="2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 한국화학공학회장, 김경진·이동건·이종민 학생)"
-          loading="lazy"
-          decoding="async"
-        >
-      </picture>
-      <div class="sim-card__media-badge">
-        <span>KIChE Chem Frontier</span>
-        <span>2024 · 2025 · 2026</span>
+  <div class="sim-card sim-card--photo">
+    <figure class="sim-card__media">
+      <div class="sim-card__media-frame">
+        {% assign cf_cover_thumb = '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | ace2_thumb_webp %}
+        <picture class="ace2-pic">
+          {% if cf_cover_thumb != '' %}<source srcset="{{ cf_cover_thumb | relative_url }}" type="image/webp">{% endif %}
+          <img
+            src="{{ '/assets/img/awards/award_2026_chemfrontier_ceremony.jpg' | relative_url }}"
+            alt="2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 한국화학공학회장, 김경진·이동건·이종민 학생)"
+            loading="lazy"
+            decoding="async"
+            data-zoomable
+          >
+        </picture>
       </div>
-    </div>
+      <figcaption class="sim-card__caption" data-i18n="cf.photo_caption_2026">2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 회장, 김경진·이동건·이종민 학생)</figcaption>
+    </figure>
     <div class="sim-card__body">
       <div>
         <div class="sim-card__tag-bar">
@@ -313,5 +313,6 @@ ace2_editorial: true
   </dialog>
   <script src="{{ '/assets/js/award_lightbox.js' | relative_url | bust_file_cache }}"></script>
   <script src="{{ '/assets/js/news_ach_filter.js' | relative_url | bust_file_cache }}"></script>
+  <script src="{{ '/assets/js/image_lightbox.js' | relative_url | bust_file_cache }}"></script>
 
 </div>

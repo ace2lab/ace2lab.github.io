@@ -1473,6 +1473,11 @@ ui:
     en: "Explore Chem Frontier Showcase"
     ja: "Chem Frontier 受賞実績総覧を見る"
     zh: "查看 Chem Frontier 获奖总览"
+  cf.photo_caption_2026:
+    ko: "2026 한국화학공학회 Chem Frontier 산업통상부장관상 시상식 (왼쪽부터 정찬화 회장, 김경진·이동건·이종민 학생)"
+    en: "2026 KIChE Chem Frontier Minister's Award Ceremony (from left: KIChE President Chan Hwa Chung, Gyeongjin Kim, Donggeon Lee, Jongmin Lee)"
+    ja: "2026 韓国化学工学会 Chem Frontier 産業通商部長官賞 授賞式（左から Chan Hwa Chung 会長、Gyeongjin Kim・Donggeon Lee・Jongmin Lee）"
+    zh: "2026 韩国化学工学会 Chem Frontier 产业通商部部长奖颁奖仪式（左起：Chan Hwa Chung 会长、Gyeongjin Kim、Donggeon Lee、Jongmin Lee）"
 
   # ----------------------------------------------------------------------------
   # Chem Frontier Dedicated Showcase Page (_pages/chem_frontier.md)
