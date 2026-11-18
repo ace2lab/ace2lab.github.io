@@ -186,6 +186,46 @@ a:hover {
   color: var(--global-theme-color) !important;
 }
 
+/* Keep the 12-item navbar inside the hamburger drawer until desktop >= 1200px so
+   landscape phones, foldables, and tablets (576px-1199px) never wrap to a 137px multi-row bar.
+   Wrapped in @layer components so !important matches Tailwind's layer order and wins by specificity/source order. */
+@layer components {
+  @media (max-width: 1199.98px) {
+    .navbar.navbar-expand-sm .navbar-collapse.show {
+      max-height: calc(100dvh - var(--sticky-navbar));
+      overflow-y: auto;
+    }
+  }
+
+  @media (min-width: 576px) and (max-width: 1199.98px) {
+    .navbar.navbar-expand-sm > .container {
+      flex-wrap: wrap;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .navbar.navbar-expand-sm .navbar-toggler {
+      display: block;
+    }
+
+    .navbar.navbar-expand-sm .navbar-collapse {
+      display: none !important;
+      flex-basis: 100%;
+      width: 100%;
+      padding: 0.5rem 0 0.75rem;
+    }
+
+    .navbar.navbar-expand-sm .navbar-collapse.show {
+      display: block !important;
+    }
+
+    .navbar.navbar-expand-sm .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
 /* ------------------------------------------------------------
    Hero & Welcome Section (Home Page)
    ------------------------------------------------------------ */
@@ -1475,6 +1515,44 @@ html[data-theme="dark"] .news-degree {
   font-weight: 400;
 }
 
+/* Tablets & phones: multi-row wrapped in-page TOC must not stay pinned over prose */
+@media (max-width: 991.98px) {
+  .ed-index {
+    position: static;
+    top: auto;
+    z-index: auto;
+    margin-bottom: var(--ed-s6);
+  }
+}
+
+/* Phones: compact vertical TOC card at top of page; scrolls away naturally */
+@media (max-width: 767.98px) {
+  .ed-index {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--ed-s1) var(--ed-s4);
+    background: var(--ed-surface-alt, #f1f5f9);
+    border: 1px solid var(--ed-line);
+    border-radius: 10px;
+  }
+
+  .ed-index a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ed-s2);
+    width: 100%;
+    padding: var(--ed-s2) 0;
+    border-bottom: 1px solid var(--ed-line);
+    line-height: 1.4;
+  }
+
+  .ed-index a:last-child {
+    border-bottom: 0;
+  }
+}
+
 /* ------------------------------------------------------------
    Sections
    ------------------------------------------------------------ */
@@ -1491,6 +1569,12 @@ html[data-theme="dark"] .news-degree {
 
 .ed-section[id] {
   scroll-margin-top: 7rem; /* navbar + sticky index */
+}
+
+@media (max-width: 991.98px) {
+  .ed-section[id] {
+    scroll-margin-top: calc(var(--sticky-navbar) + 1rem);
+  }
 }
 
 .ed-section__title {
@@ -1694,6 +1778,12 @@ html[data-theme="dark"] .news-degree {
   top: calc(var(--sticky-navbar) + 50px); /* clears navbar + in-page .ed-index */
 }
 
+@media (max-width: 991.98px) {
+  #achievements .pub-sticky-toolbar {
+    top: var(--sticky-navbar);
+  }
+}
+
 @supports (backdrop-filter: blur(1px)) {
   .pub-sticky-toolbar {
     background: color-mix(in srgb, var(--ed-surface, #ffffff) 98%, transparent);
@@ -1789,8 +1879,8 @@ html[data-theme="dark"] .news-degree {
   scrollbar-width: thin;
 }
 
-/* Phones: a sticky bar would eat a large portion of the viewport, so it scrolls away */
-@media (max-width: 767.98px) {
+/* Phones (portrait & short landscape): a sticky bar would eat a large portion of the viewport, so it scrolls away */
+@media (max-width: 767.98px), (max-height: 500px) {
   .pub-sticky-toolbar,
   .pub-year-jump,
   .ace2-tab-container.is-tabbed .pub-sticky-toolbar,
@@ -4967,6 +5057,12 @@ html[data-theme="dark"] .ed-pill--press:hover {
   .pub-year-chip {
     padding-left: 12px;
     padding-right: 12px;
+  }
+}
+
+@media (pointer: coarse) and (min-width: 992px) {
+  .ed-index {
+    padding: 2px 0;
   }
 }
 
