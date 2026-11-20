@@ -2,6 +2,39 @@
 # "presenters" always lists the actual presenter first (styled in bold dark ink).
 # "members" lists students credited in /members/ (only the actual presenter for regular talks; all participating students for Chem Frontier competitions).
 
+- no: 28
+  year: 2026
+  type: "Poster"
+  title: "Directional Ion Highways and Amorphous TiO₂ Surface Modification for Fast-Charging MXene Supercapacitors"
+  presenters: "이동호, 김태욱, 임창용"
+  members:
+    - 이동호
+  conference: "한국전기화학회 2026년도 추계 총회 및 학술발표회"
+  date: "2026.11.19"
+  location: "제주 ICC"
+
+- no: 27
+  year: 2026
+  type: "Poster"
+  title: "Print-and-Flash: Maskless Photothermal Patterning of Porous Graphene Electrodes on Polyimide for Planar Supercapacitors"
+  presenters: "안재빈, 김태욱, 임창용"
+  members:
+    - 안재빈
+  conference: "한국전기화학회 2026년도 추계 총회 및 학술발표회"
+  date: "2026.11.19"
+  location: "제주 ICC"
+
+- no: 26
+  year: 2026
+  type: "Poster"
+  title: "Intense Pulsed Light-Driven Phase Conversion of Electrodeposited Co₃O₄ Nanoflakes on 3D Nickel Foam for Binder-Free Supercapacitors"
+  presenters: "강명서, 김태욱, 임창용"
+  members:
+    - 강명서
+  conference: "한국전기화학회 2026년도 추계 총회 및 학술발표회"
+  date: "2026.11.19"
+  location: "제주 ICC"
+
 - no: 25
   year: 2026
   type: "Poster"
